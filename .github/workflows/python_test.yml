@@ -1,0 +1,42 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org/ | python -
+    - name: Add Poetry to PATH
+      run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+    - name: Install dependencies
+      run: poetry install
+    - name: Check code formatting
+      run: poetry run black --check src/
+    - name: Check imports formatting
+      run: poetry run isort --check src/
+    - name: Check type annotations
+      run: poetry run mypy --check src/
+    - name: Run unit tests
+      run: poetry run make test-ci
+    - name: Upload coverage to CodeCov
+      uses: codecov/codecov-action@v1
+      with:
+        token: $\{\{ secrets.CODECOV_SECRET \}\}
+        files: coverage.xml
+        verbose: true
+    - name: Bandit security check
+      run: |
+        poetry run bandit -r src/ -ll -ii
+    - name: Safety vulnerability check
+      run: |
+        poetry export -f requirements.txt | poetry run safety check --full-report --stdin
