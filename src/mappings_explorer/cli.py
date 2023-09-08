@@ -1,14 +1,17 @@
 import argparse
 import csv, yaml
 import os
+import json
 
 def main():
     """Main entry point for `mapex` command line."""
     args = _parse_args()
     if args.mappings == 'cve':
         parseCveMappings()
-    if args.mappings == 'nist':
+    elif args.mappings == 'nist':
         parseNistMappings()
+    elif args.mappings == 'veris':
+        parseVerisMappings()
 
 
 def _parse_args():
@@ -20,6 +23,14 @@ def _parse_args():
                         help="Set of mappings to parse")
     args: argparse.Namespace = parser.parse_args()
     return args
+
+
+def parseVerisMappings():
+    veris_mappings_file = "./mappings/veris-mappings.json"
+    with open(veris_mappings_file, encoding='UTF-8') as user_file:
+        veris_mappings = user_file.read()
+    veris_mappings_dict = json.loads(veris_mappings)
+    print(yaml.dump(veris_mappings_dict))
 
 
 def parseCveMappings():
