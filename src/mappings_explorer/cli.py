@@ -1,12 +1,14 @@
 import argparse
 import csv, yaml
+import os
 
 def main():
     """Main entry point for `mapex` command line."""
     args = _parse_args()
-    print(args.mappings)
     if args.mappings == 'cve':
         parseCveMappings()
+    if args.mappings == 'nist':
+        parseNistMappings()
 
 
 def _parse_args():
@@ -21,12 +23,35 @@ def _parse_args():
 
 
 def parseCveMappings():
-
     # read in csv file
     cve_mappings = open('./mappings/Att&ckToCveMappings.csv',
                         'r',
                         encoding='UTF-8')
     datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
+    csvToYaml(datareader)
+
+
+def parseNistMappings():
+    # read in tsv files
+    directory = './mappings/NIST_800-53'
+    # iterate over files in directory
+    for filename in os.listdir(directory):
+        file = os.path.join(directory, filename)
+        # checking if it is a file
+        if os.path.isfile(file):
+            nist_mappings = open(
+                f"{directory}/{filename}",
+                'r',
+                encoding='UTF-8')
+            datareader = csv.reader(
+                nist_mappings,
+                delimiter="\t",
+                quotechar='"'
+            )
+            csvToYaml(datareader)
+
+
+def csvToYaml(datareader):
     result = list()
     type_index = -1
     child_fields_index = -1
@@ -60,6 +85,7 @@ def parseCveMappings():
 
     # print out yaml
     print(yaml.dump(result))
+
 
 if __name__ == "__main__":
     main()
