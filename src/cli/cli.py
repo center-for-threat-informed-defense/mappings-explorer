@@ -25,11 +25,7 @@ def _parse_args():
                         type=str,
                         required=True,
                         help='''Set of mappings to parse
-                        Options:
-                        - cve
-                        - nist
-                        - veris
-                        - security-stack
+                        Options: cve, nist, veris, security-stack
                         ''')
     args: argparse.Namespace = parser.parse_args()
     return args
