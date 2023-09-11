@@ -1,17 +1,21 @@
 import argparse
-import csv, yaml
-import os
+import csv
 import json
+import os
+import yaml
+
 
 def main():
     """Main entry point for `mapex` command line."""
     args = _parse_args()
     if args.mappings == 'cve':
-        parseCveMappings()
+        parse_cve_mappings()
     elif args.mappings == 'nist':
-        parseNistMappings()
+        parse_nist_mappings()
     elif args.mappings == 'veris':
-        parseVerisMappings()
+        parse_veris_mappings()
+    elif args.mappings == 'security-stack':
+        parse_security_stack_mappings()
 
 
 def _parse_args():
@@ -20,20 +24,19 @@ def _parse_args():
     parser.add_argument('--mappings',
                         type=str,
                         required=True,
-                        help="Set of mappings to parse")
+                        help='''Set of mappings to parse
+                        Options:
+                        - cve
+                        - nist
+                        - veris
+                        - security-stack
+                        ''')
     args: argparse.Namespace = parser.parse_args()
     return args
 
 
-def parseVerisMappings():
-    veris_mappings_file = "./mappings/veris-mappings.json"
-    with open(veris_mappings_file, encoding='UTF-8') as user_file:
-        veris_mappings = user_file.read()
-    veris_mappings_dict = json.loads(veris_mappings)
-    print(yaml.dump(veris_mappings_dict))
 
-
-def parseCveMappings():
+def parse_cve_mappings():
     # read in csv file
     cve_mappings = open('./mappings/Att&ckToCveMappings.csv',
                         'r',
@@ -42,7 +45,7 @@ def parseCveMappings():
     csvToYaml(datareader)
 
 
-def parseNistMappings():
+def parse_nist_mappings():
     # read in tsv files
     directory = './mappings/NIST_800-53'
     # iterate over files in directory
@@ -60,6 +63,26 @@ def parseNistMappings():
                 quotechar='"'
             )
             csvToYaml(datareader)
+
+
+def parse_veris_mappings():
+    veris_mappings_file = "./mappings/veris-mappings.json"
+    with open(veris_mappings_file, encoding='UTF-8') as user_file:
+        veris_mappings = user_file.read()
+    veris_mappings_dict = json.loads(veris_mappings)
+    print(yaml.dump(veris_mappings_dict))
+
+
+def parse_security_stack_mappings():
+    rootdir = "./mappings/SecurityStack"
+    # read in all files in SecurityStack directory
+    result = list()
+
+    for subdir, _, files in os.walk(rootdir):
+        for file in files:
+            with open(os.path.join(subdir, file), encoding="UTF-8") as file:
+                result.append(file.read())
+    print(yaml.dump(result))
 
 
 def csvToYaml(datareader):
