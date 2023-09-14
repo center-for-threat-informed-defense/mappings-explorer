@@ -38,7 +38,7 @@ def parse_cve_mappings():
                         'r',
                         encoding='UTF-8')
     datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
-    csvToYaml(datareader)
+    print(yaml.dump(csv_to_yaml(datareader)))
 
 
 def parse_nist_mappings():
@@ -58,63 +58,48 @@ def parse_nist_mappings():
                 delimiter="\t",
                 quotechar='"'
             )
-            csvToYaml(datareader)
+            print(yaml.dump(csv_to_yaml(datareader)))
 
 
 def parse_veris_mappings():
     veris_mappings_file = "./mappings/veris-mappings.json"
     with open(veris_mappings_file, encoding='UTF-8') as user_file:
         veris_mappings = user_file.read()
-    veris_mappings_dict = json.loads(veris_mappings)
-    print(yaml.dump(veris_mappings_dict))
+        result = json_to_yaml(veris_mappings)
+    print(yaml.dump(result))
 
 
 def parse_security_stack_mappings():
     rootdir = "./mappings/SecurityStack"
     # read in all files in SecurityStack directory
-    result = list()
 
     for subdir, _, files in os.walk(rootdir):
         for file in files:
-            with open(os.path.join(subdir, file), encoding="UTF-8") as file:
-                result.append(file.read())
-    print(yaml.dump(result))
+            filepath = os.path.join(subdir, file)
+            result = read_yaml(filepath)
+            print(result)
 
 
-def csvToYaml(datareader):
-    result = list()
-    type_index = -1
-    child_fields_index = -1
+def csv_to_yaml(datareader):
+    result = []
+    keys = next(datareader)
 
     # parse csv file to yaml
-    for row_index, row in enumerate(datareader):
-        if row_index == 0:
-            data_headings = list()
-            for heading_index, heading in enumerate(row):
-                fixed_heading = heading.lower().replace(" ", "_").replace("-", "")
-                data_headings.append(fixed_heading)
-                if fixed_heading == "type":
-                    type_index = heading_index
-                elif fixed_heading == "childfields":
-                    child_fields_index = heading_index
-        else:
-            content = dict()
-            is_array = False
-            for cell_index, cell in enumerate(row):
-                if cell_index == child_fields_index and is_array:
-                    content[data_headings[cell_index]] = [{
-                        "source": "fra:" + value.capitalize(),
-                        "destination": value,
-                        "type": "string",
-                        "childfields": "null"
-                    } for value in cell.split(",")]
-                else:
-                    content[data_headings[cell_index]] = cell
-                    is_array = (cell_index == type_index) and (cell == "array")
-                result.append(content)
+    for row in datareader:
+        result.append(dict(zip(keys, row)))
 
     # print out yaml
-    print(yaml.dump(result))
+    return result
+
+
+def json_to_yaml(file):
+    veris_mappings_dict = json.loads(file)
+    return veris_mappings_dict
+
+
+def read_yaml(filepath):
+    with open(filepath, encoding="UTF-8") as file:
+        return file.read()
 
 
 if __name__ == "__main__":
