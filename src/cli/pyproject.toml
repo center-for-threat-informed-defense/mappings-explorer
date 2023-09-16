@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "mappings-cli"
+version = "0.0.0"
+description = "A CLI to manage ATT&CK Mappings."
+authors = ["TODO <todo@mitre.org>"]
+packages = [{ include = "mappings_cli" }]
+readme = "README.md"
+license = "Apache-2.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+repository = "https://github.com/center-for-threat-informed-defense/mappings-explorer"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+bandit = "1.7.0"
+black = "^22.3.0"
+pytest = "^7.1.2"
+pytest-cov = "4.1.0"
+safety = "1.10.3"
+mypy = "^1.2.0"
+ruff = "^0.0.289"
+invoke = "^2.2.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.ruff]
+select = ["E", "F", "W", "I"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

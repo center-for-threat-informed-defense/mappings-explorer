@@ -1,5 +1,5 @@
-import pytest
 from mappings_explorer import palindrome
+
 
 # TODO Replace with tests for your modules.
 def test_palindrome():
