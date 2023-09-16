@@ -1,0 +1,49 @@
+name: CLI Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  mappings_cli_tests:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Configure Environment
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install Poetry
+      run: curl -sSL https://install.python-poetry.org/ | python -
+    - name: Add Poetry to PATH
+      run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+
+    # Check Lint, Test, Security
+    - name: Install Mappings CLI
+      working-directory: ./src/cli
+      run: poetry install
+    - name: Lint Mappings CLI
+      working-directory: ./src/cli
+      run: poetry run invoke lint
+    - name: Test Mappings CLI
+      working-directory: ./src/cli
+      run: poetry run invoke test -xml
+    - name: Run Bandit security check
+      working-directory: ./src/cli
+      run: poetry run bandit -r ./mappings_cli -ll -ii
+    - name: Safety vulnerability check
+      working-directory: ./src/cli
+      run: |
+        poetry export -f requirements.txt | poetry run safety check --full-report --stdin
+
+    # Upload Test Coverage
+    - name: Upload coverage to CodeCov
+      uses: codecov/codecov-action@v3
+      with:
+        token: $\{\{ secrets.CODECOV_SECRET \}\}
+        files: ./src/cli/coverage.xml
+        verbose: true
