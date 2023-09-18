@@ -19,30 +19,24 @@ jobs:
       with:
         python-version: 3.9
 
-    # Prepare Poetry from cache
-    # - name: Attempt Poetry install from cache
-    #   uses: actions/cache@v3
-    #   id: cached-poetry
-    #   with:
-    #     path: ./.poetry
-    #     key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::poetry
-    # - name: Install Poetry
-    #   if: steps.cached-poetry.outputs.cache-hit != 'true'
-    #   run: |
-    #     python -m venv .poetry
-    #     source ./.poetry/bin/activate
-    #     pip install poetry
-    #     mkdir ./.poetry/.bin
-    #     ln -s ./.poetry/bin/poetry ./.poetry/.bin/poetry
-    #     deactivate
-    # - name: Add Poetry to PATH
-    #   run: echo "$PWD/.poetry/.bin" >> $GITHUB_PATH
-
     # Prepare Poetry
+    - name: Attempt Poetry install from cache
+      uses: actions/cache@v3
+      id: cached-poetry
+      with:
+        path: ./.poetry
+        key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::poetry
     - name: Install Poetry
-      run: curl -sSL https://install.python-poetry.org/ | python -
+      if: steps.cached-poetry.outputs.cache-hit != 'true'
+      run: |
+        python -m venv .poetry
+        source ./.poetry/bin/activate
+        pip install poetry
+        deactivate
+        mkdir $PWD/.poetry/.bin
+        ln -s $PWD/.poetry/bin/poetry $PWD/.poetry/.bin/poetry
     - name: Add Poetry to PATH
-      run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+      run: echo "$PWD/.poetry/.bin" >> $GITHUB_PATH
 
     # Prepare Virtual Environment
     - name: Configure Poetry
