@@ -67,7 +67,7 @@ jobs:
       run: poetry run invoke lint
     - name: Test Mappings CLI
       working-directory: ./src/cli
-      run: poetry run invoke test -xml
+      run: poetry run invoke test --xml
     - name: Run Bandit security check
       working-directory: ./src/cli
       run: poetry run bandit -r ./mappings_cli -ll -ii

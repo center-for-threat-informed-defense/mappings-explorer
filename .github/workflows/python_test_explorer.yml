@@ -67,7 +67,7 @@ jobs:
       run: poetry run invoke lint
     - name: Test Mappings Explorer
       working-directory: ./src/explorer
-      run: poetry run invoke test -xml
+      run: poetry run invoke test --xml
     - name: Run Bandit security check
       working-directory: ./src/explorer
       run: poetry run bandit -r ./mappings_explorer -ll -ii
