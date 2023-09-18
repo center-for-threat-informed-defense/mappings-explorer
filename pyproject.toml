@@ -10,6 +10,9 @@ packages = [
 ]
 license = "Apache"
 
+[tool.poetry.scripts]
+mapex = "mappings_explorer.cli.cli:main"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 

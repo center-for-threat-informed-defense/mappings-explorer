@@ -4,6 +4,7 @@ import json
 import os
 import yaml
 
+ROOT_DIR = cwd = os.getcwd()
 
 def main():
     """Main entry point for `mapex` command line."""
@@ -34,16 +35,17 @@ def _parse_args():
 
 def parse_cve_mappings():
     # read in csv file
-    cve_mappings = open('./mappings/Att&ckToCveMappings.csv',
-                        'r',
-                        encoding='UTF-8')
+    cve_mappings = open(
+        f'{ROOT_DIR}/mappings/Att&ckToCveMappings.csv',
+        'r',
+        encoding='UTF-8')
     datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
     print(yaml.dump(csv_to_yaml(datareader)))
 
 
 def parse_nist_mappings():
     # read in tsv files
-    directory = './mappings/NIST_800-53'
+    directory = f'{ROOT_DIR}/mappings/NIST_800-53'
     # iterate over files in directory
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
@@ -62,7 +64,7 @@ def parse_nist_mappings():
 
 
 def parse_veris_mappings():
-    veris_mappings_file = "./mappings/veris-mappings.json"
+    veris_mappings_file = f"{ROOT_DIR}/mappings/veris-mappings.json"
     with open(veris_mappings_file, encoding='UTF-8') as user_file:
         veris_mappings = user_file.read()
         result = json_to_yaml(veris_mappings)
@@ -70,7 +72,7 @@ def parse_veris_mappings():
 
 
 def parse_security_stack_mappings():
-    rootdir = "./mappings/SecurityStack"
+    rootdir = f"{ROOT_DIR}/mappings/SecurityStack"
     # read in all files in SecurityStack directory
 
     for subdir, _, files in os.walk(rootdir):
@@ -101,6 +103,3 @@ def read_yaml(filepath):
     with open(filepath, encoding="UTF-8") as file:
         return file.read()
 
-
-if __name__ == "__main__":
-    main()

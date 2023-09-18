@@ -1,7 +1,7 @@
 import csv
 import os
 import yaml
-from cli.cli import csv_to_yaml, json_to_yaml, read_yaml
+from src.mappings_explorer.cli.cli import csv_to_yaml, json_to_yaml, read_yaml
 
 def read_csv_file(filename):
     csv_file = open(filename, 'r', encoding='UTF-8')
@@ -102,7 +102,5 @@ def test_read_yaml():
     # ACT
     result = read_yaml(filename)
 
-    print("RESULT", result)
-    print("EXPECTED", expected)
     # ASSERT
     assert result == expected
