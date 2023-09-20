@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Update tags
-        uses: ./.github/actions/add_tags
       - name: Update release
         uses: google-github-actions/release-please-action@v3
         with:
