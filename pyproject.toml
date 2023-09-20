@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "mappings-cli"
+name = "mappings-explorer"
 version = "0.0.0"
-description = "A CLI to manage ATT&CK Mappings."
+description = "A CLI to build the ATT&CK Mappings Explorer."
 authors = ["TODO <todo@mitre.org>"]
-packages = [{ include = "mappings_cli" }]
+packages = [{ include = "mappings_explorer", from="./src" }]
 readme = "README.md"
 license = "Apache-2.0"
 classifiers = [
@@ -23,7 +23,6 @@ pytest-cov = "4.1.0"
 safety = "1.10.3"
 mypy = "^1.2.0"
 ruff = "^0.0.289"
-invoke = "^2.2.0"
 
 [tool.black]
 line-length = 88
