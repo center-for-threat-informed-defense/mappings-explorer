@@ -45,28 +45,22 @@ jobs:
       uses: actions/cache@v3
       id: cached-dependencies
       with:
-        path: ./src/explorer/.venv
-        key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::${{ hashFiles('./src/explorer/poetry.lock') }}
+        path: ./.venv
+        key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::${{ hashFiles('./poetry.lock') }}
     - name: Install dependencies
       if: steps.cached-dependencies.outputs.cache-hit != 'true'
-      working-directory: ./src/explorer
       run: poetry install --no-interaction --no-root
     - name: Install Mappings Explorer
-      working-directory: ./src/explorer
       run: poetry install --no-interaction --only-root
 
     # Check Lint, Test, Security
     - name: Lint Mappings Explorer
-      working-directory: ./src/explorer
-      run: poetry run invoke lint
+      run: poetry run make lint
     - name: Test Mappings Explorer
-      working-directory: ./src/explorer
-      run: poetry run invoke test --xml
+      run: poetry run make test-ci
     - name: Run Bandit security check
-      working-directory: ./src/explorer
-      run: poetry run bandit -r ./mappings_explorer -ll -ii
+      run: poetry run bandit -r ./src -ll -ii
     - name: Safety vulnerability check
-      working-directory: ./src/explorer
       run: |
         poetry export -f requirements.txt | poetry run safety check --full-report --stdin
 
@@ -75,5 +69,5 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         token: $\{\{ secrets.CODECOV_SECRET \}\}
-        files: ./src/explorer/coverage.xml
+        files: ./coverage.xml
         verbose: true
