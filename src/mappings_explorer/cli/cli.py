@@ -6,6 +6,12 @@ import os
 import pandas as pd
 import requests
 import yaml
+import pandas as pd
+
+from src.mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
+from src.mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
+from src.mappings_explorer.cli.parse_veris_mappings import configure_veris_mappings
+from src.mappings_explorer.cli.parse_security_stack_mappings import configure_security_stack_mappings
 
 from mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
 from mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
@@ -103,6 +109,7 @@ def read_csv_file(filepath):
 
 
 def parse_nist_mappings():
+
     # read in tsv files
     directory = f"{ROOT_DIR}/mappings/NIST_800-53"
 
@@ -154,6 +161,7 @@ def parse_security_stack_mappings():
     # read in all files in SecurityStack directory
     parsed_mappings = []
     for subdir, _, files in os.walk(rootdir):
+        parsed_mappings = []
         for file in files:
             filepath = os.path.join(subdir, file)
             data = read_yaml(filepath)
