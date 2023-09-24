@@ -5,7 +5,8 @@ def configure_security_stack_mappings(data, parsed_mappings):
         # associated with the technique
         related_score = True if technique.get('sub-techniques-scores') else False
 
-        comments = data.get('comments') or []
+        print(data.get('comments'))
+        comment = data.get('comments') or ''
         tags = data.get('tags') or []
         references = data.get('references') or []
 
@@ -29,7 +30,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     'value': data['name'],
                     'mapping-pattern': '',
                     'secondary-property': '',
-                    'comments': list(comments),
+                    'comments': comment,
                     'references': list(references),
                     'score-category': technique_score['category'],
                     'score-value': technique_score['value'],

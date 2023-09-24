@@ -1,106 +1,66 @@
-import csv
 import os
 import yaml
-from src.mappings_explorer.cli.cli import csv_to_yaml, json_to_yaml, read_yaml
+from tests.expected_results import (
+    expected_nist_mapping,
+    expected_security_stack_mapping,
+    expected_veris_mapping
+)
+from src.mappings_explorer.cli.cli import (
+    configure_nist_mappings,
+    configure_security_stack_mappings,
+    configure_veris_mappings,
+    read_excel_file,
+    read_json_file,
+    read_yaml,
+)
 
-def read_csv_file(filename):
-    csv_file = open(filename, 'r', encoding='UTF-8')
-    return csv.reader(csv_file, delimiter=",", quotechar='"')
-
-
-def read_tsv_file(filename):
-    csv_file = open(filename, 'r', encoding='UTF-8')
-    return csv.reader(csv_file, delimiter="\t", quotechar='"')
-
-
-def read_json_file(filename):
-    with open(filename, encoding='UTF-8') as user_file:
-        return user_file.read()
-
-
-def test_csv_parser():
-
+def test_nist_mappings_parser():
     # ARRANGE
-    filename = os.path.join(os.path.dirname(__file__), 'files/test.csv')
-    datareader = read_csv_file(filename)
-    expected = yaml.dump([{
-          'First_Name': 'Joe',
-          'Last_Name': 'Fried',
-          'Shirt_Size': 'XS'
-        },
-        {
-          'First_Name': 'Alex',
-          'Last_Name': 'Fine',
-          'Shirt_Size': 'L'
-        }])
+    filepath = os.path.join(os.path.dirname(__file__), 'files/test_nist_mappings.xlsx')
+    attack_version = '13.0'
+    mappings_version = '1'
+    expected = expected_nist_mapping
 
     # ACT
-    result = yaml.dump(csv_to_yaml(datareader))
+    dataframe = read_excel_file(filepath)
+    parsed_mappings = []
+    parsed_mappings = configure_nist_mappings(
+        dataframe,
+        parsed_mappings,
+        attack_version,
+        mappings_version
+    )
+    result = yaml.dump(parsed_mappings)
 
     # ASSERT
     assert result == expected
 
 
-def test_tsv_parser():
+def test_security_stack_mappings():
     # ARRANGE
-    filename = os.path.join(os.path.dirname(__file__), 'files/test.tsv')
-    datareader = read_tsv_file(filename)
-    expected = yaml.dump([{
-          'First_Name': 'Joe',
-          'Last_Name': 'Fried',
-          'Shirt_Size': 'XS'
-        },
-        {
-          'First_Name': 'Alex',
-          'Last_Name': 'Fine',
-          'Shirt_Size': 'L'
-        }])
+    filepath = os.path.join(os.path.dirname(__file__), 'files/test_security_stack_mappings.yaml')
+    expected = expected_security_stack_mapping
 
     # ACT
-    result = yaml.dump(csv_to_yaml(datareader))
+    data = read_yaml(filepath)
+    parsed_mappings = []
+    parsed_mappings = configure_security_stack_mappings(data, parsed_mappings)
+    result = yaml.dump(parsed_mappings)
 
     # ASSERT
     assert result == expected
 
-def test_json_parser():
 
+def test_veris_mappings():
     # ARRANGE
-    filename = os.path.join(os.path.dirname(__file__), 'files/test.json')
-    file = read_json_file(filename)
-    expected = yaml.dump([{
-          'First_Name': 'Joe',
-          'Last_Name': 'Fried',
-          'Shirt_Size': 'XS'
-        },
-        {
-          'First_Name': 'Alex',
-          'Last_Name': 'Fine',
-          'Shirt_Size': 'L'
-        }])
+    filepath = os.path.join(os.path.dirname(__file__), 'files/test_veris_mappings.json')
+    expected = expected_veris_mapping
 
     # ACT
-    result = yaml.dump(json_to_yaml(file))
-
-    # ASSERT
-    assert result == expected
-
-def test_read_yaml():
-    # ARRANGE
-    filename = os.path.join(os.path.dirname(__file__), 'files/test.yaml')
-    expected = yaml.dump([{
-          'First_Name': 'Joe',
-          'Last_Name': 'Fried',
-          'Shirt_Size': 'XS'
-        },
-        {
-          'First_Name': 'Alex',
-          'Last_Name': 'Fine',
-          'Shirt_Size': 'L'
-        }])
-
-
-    # ACT
-    result = read_yaml(filename)
+    parsed_mappings = []
+    veris_mappings = read_json_file(filepath)
+    parsed_mappings = configure_veris_mappings(veris_mappings, parsed_mappings)
+    result = yaml.dump(parsed_mappings)
 
     # ASSERT
     assert result == expected
