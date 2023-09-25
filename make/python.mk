@@ -1,8 +1,8 @@
 .PHONY: lint test test-ci
 
-lint: ## Run black, isort, and mypy
-    poetry run black --check src/
-    poetry run isort --check src/
+lint: ## Run ruff, black, and mypy
+	poetry run ruff check src/
+	poetry run black --check src/
 	poetry run mypy --check src/
 
 test: ## Run Python tests
