@@ -12,10 +12,16 @@ def configure_cve_mappings(datareader, attack_id_to_name_dict):
                 mapped_attack_objects = row[i].split('; ')
                 for attack_object in mapped_attack_objects:
                     name = ""
+
+                    # technique id is not in the dictionary, set it to an empty string
+                    # this can happen if the technique has been deprecated or revoked
+                    # will likely change when we get concrete guidance on how to deal
+                    # with deprecated and/or revoked technique
                     try:
                         name = attack_id_to_name_dict[attack_object.strip()]
                     except:
-                        name = attack_object
+                        name = ''
+
                     result.append({
                         'metadata': {
                             'mapping-verision': row[5], # confirm that this value is correct

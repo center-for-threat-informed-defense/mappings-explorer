@@ -44,25 +44,36 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
+    # load mobile attack stix json to map technique ids to names
+    enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
+    response = requests.get(enterpise_attack_url, verify=False)
+    mobile_attack_data = json.loads(response.text)
+
+    # load ics attack stix json to map technique ids to names
+    enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
+    response = requests.get(enterpise_attack_url, verify=False)
+    ics_attack_data = json.loads(response.text)
 
     attack_object_id_to_name = {}
-    for attack_object in enterprise_attack_data['objects']:
-        if not attack_object["type"] == "relationship":
-            # skip objects without IDs
-            if not attack_object.get("external_references"):
-                continue
-            # skip deprecated and revoked objects
-            # Note: False is the default value if the property is not present
-            if attack_object.get("revoked", False):
-                continue
-            # Note: False is the default value if the property is not present
-            if attack_object.get("x_mitre_deprecated", False):
-                continue
-            # map attackID to stixID
-            attack_object_id_to_name[attack_object["external_references"][0]["external_id"]] = attack_object["name"]
+    for domain_data in [enterprise_attack_data, mobile_attack_data, ics_attack_data]:
+        for attack_object in domain_data['objects']:
+            if not domain_data["type"] == "relationship":
+                # skip objects without IDs
+                if not attack_object.get("external_references"):
+                    continue
+                # skip deprecated and revoked objects
+                # Note: False is the default value if the property is not present
+                if attack_object.get("revoked", False):
+                    continue
+                # Note: False is the default value if the property is not present
+                if attack_object.get("x_mitre_deprecated", False):
+                    continue
+                # map attackID to stixID
+                if(attack_object["external_references"][0].get("external_id") and attack_object.get("name")):
+                    attack_object_id_to_name[attack_object["external_references"][0]["external_id"]] = attack_object["name"]
 
     return attack_object_id_to_name
 

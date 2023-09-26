@@ -187,3 +187,104 @@ expected_veris_mapping = yaml.dump(
     },
   }
 ])
+
+
+expected_cve_mapping = yaml.dump([
+    {
+      'metadata': {
+        'mapping-verision': 'Phase 2', # confirm that this value is correct
+        'attack-version': '9.0',
+        'creation-date': '02/03/21', # confirm this value is correct
+        'last-update': '10/27/21', # confirm this value is correct
+        'author': '',
+        'contact': '',
+        'organization': '',
+        'platform': 'CVE Vulnerability List',
+        'platform-version': 13, # confirm this value is correct
+        'mapping-type': 'association',
+      },
+      'attack-object': {
+        'id': 'T1059',
+        'name': 'Name for T1059',
+        'value':'CVE-2019-15243',
+        'mapping-pattern': '',
+        'secondary-property': '',
+        'tags': [],
+        'comments': '',
+        'references': []
+      }
+    },
+    {
+      'metadata': {
+        'mapping-verision': 'Phase 2', # confirm that this value is correct
+        'attack-version': '9.0',
+        'creation-date': '02/03/21', # confirm this value is correct
+        'last-update': '10/27/21', # confirm this value is correct
+        'author': '',
+        'contact': '',
+        'organization': '',
+        'platform': 'CVE Vulnerability List',
+        'platform-version': 13, # confirm this value is correct
+        'mapping-type': 'association',
+      },
+      'attack-object': {
+        'id': 'T1190',
+        'name': 'Name for T1190',
+        'value':'CVE-2019-15243',
+        'mapping-pattern': '',
+        'secondary-property': '',
+        'tags': [],
+        'comments': '',
+        'references': []
+      }
+    },
+    {
+      'metadata': {
+        'mapping-verision': 'Phase 2', # confirm that this value is correct
+        'attack-version': '9.0',
+        'creation-date': '02/03/21', # confirm this value is correct
+        'last-update': '10/27/21', # confirm this value is correct
+        'author': '',
+        'contact': '',
+        'organization': '',
+        'platform': 'CVE Vulnerability List',
+        'platform-version': 13, # confirm this value is correct
+        'mapping-type': 'association',
+      },
+      'attack-object': {
+        'id': 'T1078',
+        'name': 'Name for T1078',
+        'value':'CVE-2019-15243',
+        'mapping-pattern': '',
+        'secondary-property': '',
+        'tags': [],
+        'comments': '',
+        'references': []
+      }
+    },
+     {
+      'metadata': {
+        'mapping-verision': 'Phase 2', # confirm that this value is correct
+        'attack-version': '9.0',
+        'creation-date': '02/03/21', # confirm this value is correct
+        'last-update': '10/27/21', # confirm this value is correct
+        'author': '',
+        'contact': '',
+        'organization': '',
+        'platform': 'CVE Vulnerability List',
+        'platform-version': 13, # confirm this value is correct
+        'mapping-type': 'association',
+      },
+      'attack-object': {
+        'id': 'T1068',
+        'name': 'Name for T1068',
+        'value':'CVE-2019-15976',
+        'mapping-pattern': '',
+        'secondary-property': '',
+        'tags': [],
+        'comments': '',
+        'references': []
+      }
+    }
+  ]
+)
