@@ -2,13 +2,20 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "files.exclude": {
-        "**/__pycache__": true
+        "**/__pycache__": true,
+        "**/.ruff_cache": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true
     },
     "editor.rulers": [
         88
     ],
-    "python.formatting.autopep8Path": "black",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
     "markdown.extension.toc.levels": "2..6",
-    "python.formatting.provider": "black",
-    "editor.formatOnSave": true
 }
