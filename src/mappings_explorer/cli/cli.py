@@ -161,7 +161,6 @@ def parse_security_stack_mappings():
     # read in all files in SecurityStack directory
     parsed_mappings = []
     for subdir, _, files in os.walk(rootdir):
-        parsed_mappings = []
         for file in files:
             filepath = os.path.join(subdir, file)
             data = read_yaml(filepath)
