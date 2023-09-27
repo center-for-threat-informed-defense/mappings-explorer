@@ -55,12 +55,12 @@ def load_attack_json():
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
     attack_object_id_to_name = {}
@@ -118,7 +118,7 @@ def parse_nist_mappings():
                 filename.rfind("-") + 1 : filename.index("mappings")
             ].replace("_", ".")
             mappings_version = filename[filename.index("r") : filename.index("r") + 2]
-            parsed_mappings = configure_nist_mappings(
+            configure_nist_mappings(
                 dataframe, parsed_mappings, attack_version, mappings_version
             )
 
@@ -138,7 +138,7 @@ def parse_veris_mappings():
         # checking if it is a file
         if os.path.isfile(file):
             veris_mappings = read_json_file(file)
-            parsed_mappings = configure_veris_mappings(veris_mappings, parsed_mappings)
+            configure_veris_mappings(veris_mappings, parsed_mappings)
     print(yaml.dump(parsed_mappings))
 
 
@@ -152,13 +152,12 @@ def parse_security_stack_mappings():
     rootdir = f"{ROOT_DIR}/mappings/SecurityStack"
 
     # read in all files in SecurityStack directory
+    parsed_mappings = []
     for subdir, _, files in os.walk(rootdir):
-        parsed_mappings = []
         for file in files:
             filepath = os.path.join(subdir, file)
             data = read_yaml(filepath)
-            parsed_mappings = configure_security_stack_mappings(data, parsed_mappings)
-
+            configure_security_stack_mappings(data, parsed_mappings)
     print(yaml.dump(parsed_mappings))
 
 

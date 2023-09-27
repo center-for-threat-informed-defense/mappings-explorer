@@ -30,5 +30,3 @@ def configure_veris_mappings(veris_mappings, parsed_mappings):
                     },
                 }
             )
-
-    return parsed_mappings

@@ -28,5 +28,3 @@ def configure_nist_mappings(
                 },
             }
         )
-
-    return parsed_mappings
