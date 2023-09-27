@@ -213,24 +213,29 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             if mapping["mapping_type"]
             else None
         )
-        stix_bundle["objects"].append(
-            {
-                "type": "relationship",
-                "id": f"relationship--{relationship_uuid}",
-                "spec_version": "2.1",
-                "created": datetime.now(timezone.utc)
-                .isoformat()
-                .replace("+00:00", "Z"),
-                "modified": datetime.now(timezone.utc)
-                .isoformat()
-                .replace("+00:00", "Z"),
-                "relationship_type": mapping_type,
-                "source_ref": related_source_ref,
-                "target_ref": technique_target_dict.get(
-                    mapping["attack_object_id"], ""
-                ),
-            },
-        )
+        # do not add a relationship node for a non-mappable technique
+        if not mapping_type == "non-mappable" and technique_target_dict.get(
+            mapping["attack_object_id"], ""
+        ):
+            stix_bundle["objects"].append(
+                {
+                    "type": "relationship",
+                    "id": f"relationship--{relationship_uuid}",
+                    "spec_version": "2.1",
+                    "created": datetime.now(timezone.utc)
+                    .isoformat()
+                    .replace("+00:00", "Z"),
+                    "modified": datetime.now(timezone.utc)
+                    .isoformat()
+                    .replace("+00:00", "Z"),
+                    "relationship_type": mapping_type,
+                    "source_ref": related_source_ref,
+                    "target_ref": technique_target_dict.get(
+                        mapping["attack_object_id"], ""
+                    ),
+                },
+            )
+    # only write to file if stix is valid
     validation_results = validate_instance(stix_bundle)
     if validation_results.is_valid:
         filepath = f"{filepath}_stix"
