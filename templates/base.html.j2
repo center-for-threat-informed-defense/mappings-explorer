@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>{% block title %}{{ title }}{% endblock title %}</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="../templates/static/main.css" rel="stylesheet">
+        <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
+
+    </head>
+    <body class="page-index">
+        <header class="header d-flex align-items-center fixed-top">
+            {% include "_navigation.html.j2"%}
+        </header>
+        {% block content %}
+            <h1>Welcome to Mappings Explorer</h1>
+        {% endblock content %}
+
+        <script src="../templates/static/main.js"></script>
+    </body>
+</html>
