@@ -4,7 +4,7 @@ def main():
     print("Creating site index")
     templateLoader = FileSystemLoader(searchpath="./templates")
     templateEnv = Environment(loader=templateLoader)
-    TEMPLATE_FILE = "base.html.j2"
+    TEMPLATE_FILE = "landing.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
     template.stream(
