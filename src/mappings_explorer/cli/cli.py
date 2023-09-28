@@ -101,13 +101,26 @@ def parse_cve_mappings():
     datareader = read_csv_file(cve_filepath)
     parsed_mappings = configure_cve_mappings(datareader, attack_object_id_to_name)
 
+    parsed_mappings_filepath = (
+        f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/cve/parsed_cve_mappings"
+    )
+
+    # write parsed mappings to yaml file
     result_yaml_file = open(
-        f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/cve/parsed_cve_mappings.yaml",
+        f"{parsed_mappings_filepath}.yaml",
         "w",
         encoding="UTF-8",
     )
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
     result_yaml_file.write(parsed_mappings_yaml)
+
+    # write parsed mappings to json file
+    result_json_file = open(
+        f"{parsed_mappings_filepath}.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(parsed_mappings, fp=result_json_file)
 
 
 def read_csv_file(filepath):
@@ -135,6 +148,7 @@ def parse_nist_mappings():
                 dataframe, attack_version, mappings_version
             )
 
+            # write parsed mappings to yaml file
             parsed_mappings_yaml = yaml.dump(parsed_mappings)
             mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
 
@@ -148,12 +162,21 @@ def parse_nist_mappings():
             if not mappings_version_path_exists:
                 os.makedirs(mappings_version_path)
 
+            filepath = f"{mappings_version_path}/{mapped_filename}"
             result_yaml_file = open(
-                f"{mappings_version_path}/{mapped_filename}.yaml",
+                f"{filepath}.yaml",
                 "w",
                 encoding="UTF-8",
             )
             result_yaml_file.write(parsed_mappings_yaml)
+
+            # write parsed mappings to json file
+            result_json_file = open(
+                f"{filepath}.json",
+                "w",
+                encoding="UTF-8",
+            )
+            json.dump(parsed_mappings, fp=result_json_file)
 
 
 def read_excel_file(filepath):
@@ -170,15 +193,25 @@ def parse_veris_mappings():
             veris_mappings = read_json_file(file)
             parsed_mappings = configure_veris_mappings(veris_mappings)
 
-            parsed_mappings_yaml = yaml.dump(parsed_mappings)
             veris_version_folder = "1.3.7" if "1_3_7" in filename else "1.3.5"
-            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version_folder}"
+            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version_folder}/mapped_{filename[0 : filename.index('.')]}"
+
+            # write parsed mappings to yaml file
+            parsed_mappings_yaml = yaml.dump(parsed_mappings)
             result_file_yaml = open(
-                f"{filepath}/mapped_{filename[0 : filename.index('.')]}.yaml",
+                f"{filepath}.yaml",
                 "w",
                 encoding="UTF-8",
             )
             result_file_yaml.write(parsed_mappings_yaml)
+
+            # write parsed mappings to json file
+            result_json_file = open(
+                f"{filepath}.json",
+                "w",
+                encoding="UTF-8",
+            )
+            json.dump(parsed_mappings, fp=result_json_file)
 
 
 def read_json_file(filepath):
@@ -197,19 +230,33 @@ def parse_security_stack_mappings():
             data = read_yaml(filepath)
             parsed_mappings = configure_security_stack_mappings(data)
 
-            parsed_mappings_yaml = yaml.dump(parsed_mappings)
+            # define directory parsed data goes into
             security_stack_folder_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/security_stack/{os.path.basename(os.path.normpath(subdir))}"
             security_stack_folder_path_exists = os.path.exists(
                 security_stack_folder_path
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
+            filepath = (
+                f"{security_stack_folder_path}/mapped_{file[0 : file.index('.')]}"
+            )
+
+            # write parsed data to a csv file
+            parsed_mappings_yaml = yaml.dump(parsed_mappings)
             result_file_yaml = open(
-                f"{security_stack_folder_path}/mapped_{file[0 : file.index('.')]}.yaml",
+                f"{filepath}.yaml",
                 "w",
                 encoding="UTF-8",
             )
             result_file_yaml.write(parsed_mappings_yaml)
+
+            # write parsed data to a json file
+            result_file_json = open(
+                f"{filepath}.json",
+                "w",
+                encoding="UTF-8",
+            )
+            json.dump(parsed_mappings, fp=result_file_json)
 
 
 def read_yaml(filepath):
