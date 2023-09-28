@@ -1,5 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 
+
 def main():
     print("Creating site index")
     templateLoader = FileSystemLoader(searchpath="./templates")

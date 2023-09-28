@@ -270,11 +270,13 @@
 
   .header .logo h1 {
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     font-family: var(--font-primary);
     margin: 0;
+    text-transform: uppercase;
   }
+
   .header .input-group-text {
     background: none !important;
   }
@@ -519,7 +521,7 @@
   .hero {
     width: 100%;
     min-height: 100vh;
-    background: url("../img/hero-bg.jpg") top center;
+    background: url("../static/img/background.jpeg") top center;
     background-size: cover;
     position: relative;
     padding: 120px 0;
@@ -571,11 +573,12 @@
 
   .hero h2 {
     margin: 0;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.1;
     color: #fff;
     font-family: var(--font-default);
+    text-transform: uppercase;
   }
 
   .hero blockquote {
@@ -584,7 +587,7 @@
     font-size: 15px;
     font-family: var(--font-default);
     border-left: 2px solid var(--color-primary);
-    margin: 40px 0;
+    margin: 30px 0;
   }
   .services-list .title .stretched-link{
     text-transform: capitalize;
@@ -783,26 +786,26 @@
     font-size: 32px;
     line-height: 0;
     margin-right: 20px;
-    color: #38618e;
+    color: var(--color-text);
   }
 
   .services-list .service-item .title {
     font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 18px;
-  }
-
-  .services-list .service-item .title a {
-    color: var(--color-link);
-  }
-
-  .services-list .service-item .title a:hover {
-    color: #38618e;
+    font-size: 24px;
+    color: var(--color-text);
   }
 
   .services-list .service-item .description {
     line-height: 24px;
     font-size: 14px;
+  }
+
+  .readmore.stretched-link {
+    color: var(--color-link);
+  }
+  .readmore.stretched-link:hover {
+    color: var(--color-link);
+    text-decoration: underline;
   }
 
   /*
@@ -897,6 +900,14 @@
 
   .call-to-action .cta-btn:hover {
     background: var(--color-primary);
+  }
+
+  .call-to-action .input-group-text {
+    background: none !important;
+  }
+
+  .call-to-action .search-input {
+    background: none !important;
   }
 
   /*--------------------------------------------------------------
@@ -2176,6 +2187,7 @@
     color: #fff;
     font-family: var(--font-secondary);
     margin-top: 3px;
+    text-transform: uppercase;
   }
 
   .footer .footer-content .footer-info p {
