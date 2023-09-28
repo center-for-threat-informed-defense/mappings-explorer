@@ -1,0 +1,961 @@
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1020
+    mapping-pattern: ''
+    name: Automated Exfiltration
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Protect
+    score-comment: This control provides partial coverage for this technique's only
+      sub-technique, but without specific coverage for its procedures, resulting in
+      an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Protect
+    score-comment: 'The following AWS IoT Device Defender audit checks and corresponding
+      mitigation actions can identify and resolve configuration problems that should
+      be fixed in order to ensure SSL/TLS encryption is enabled and secure to protect
+      network traffic to/from IoT devices: "CA certificate expiring" ("CA_CERTIFICATE_EXPIRING_CHECK"
+      in the CLI and API), "CA certificate key quality" ("CA_CERTIFICATE_KEY_QUALITY_CHECK"
+      in the CLI and API), and "CA certificate revoked but device certificates still
+      active" ("REVOKED_CA_CERTIFICATE_STILL_ACTIVE_CHECK" in the CLI and API) can
+      identify problems with certificate authority (CA) certificates being used for
+      signing and support the "UPDATE_CA_CERTIFICATE" mitigation action which can
+      resolve them. "Device certificate expiring" ("DEVICE_CERTIFICATE_EXPIRING_CHECK"
+      in the CLI and API), "Device certificate key quality" ("DEVICE_CERTIFICATE_KEY_QUALITY_CHECK"
+      in the CLI and API), "Device certificate shared" ("DEVICE_CERTIFICATE_SHARED_CHECK"
+      in the CLI and API), and "Revoked device certificate still active" ("REVOKED_DEVICE_CERTIFICATE_STILL_ACTIVE_CHECK"
+      in the CLI and API) can identify problems with IoT devices'' certificates and
+      support the "UPDATE_DEVICE_CERTIFICATE" and "ADD_THINGS_TO_THING_GROUP" mitigation
+      actions which can resolve them.
+
+      Coverage factor is partial for these checks and mitigations, since they are
+      specific to IoT device communication and can only mitigate behavior for adversaries
+      who are unable to decrypt the relevant traffic, resulting in an overall score
+      of Partial.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1041
+    mapping-pattern: ''
+    name: Exfiltration Over C2 Channel
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender device-side detection metrics
+      can detect indicators that an adversary may be exfiltrating collected data from
+      compromised AWS IoT devices using an established command and control channel
+      to/from those devices: "Destination IPs" ("aws:destination-ip-addresses") outside
+      of expected IP address ranges may suggest that a device is communicating with
+      unexpected parties. "Bytes in" ("aws:all-bytes-in"), "Bytes out" ("aws:all-bytes-out"),
+      "Packets in" ("aws:all-packets-in"), and "Packets out" ("aws:all-packets-out")
+      values outside of expected norms may indicate that the device is sending and/or
+      receiving non-standard traffic, which may include exfiltration of stolen data.
+      "Listening TCP ports" ("aws:listening-tcp-ports"), "Listening TCP port count"
+      ("aws:num-listening-tcp-ports"), "Established TCP connections count" ("aws:num-established-tcp-connections"),
+      "Listening UDP ports" ("aws:listening-udp-ports"), and "Listening UDP port count"
+      ("aws:num-listening-udp-ports") values outside of expected norms may indicate
+      that devices are communicating via unexpected ports/protocols, which may include
+      exfiltration of data over command and control channels.
+
+      Coverage factor is partial, since these metrics are limited to exfiltration
+      from IoT devices, resulting in an overall score of Partial.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender device-side detection metrics
+      can detect indicators that an adversary may be leveraging compromised AWS IoT
+      devices to search their networks for other hosts and their running services,
+      possibly to subsequently carry out lateral movement techniques: "Destination
+      IPs" ("aws:destination-ip-addresses") outside of expected IP address ranges
+      may suggest that a device is communicating with unexpected devices. "Bytes in"
+      ("aws:all-bytes-in"), "Bytes out" ("aws:all-bytes-out"), "Packets in" ("aws:all-packets-in"),
+      and "Packets out" ("aws:all-packets-out") values outside of expected norms may
+      indicate that the device is sending and/or receiving non-standard traffic, which
+      may traffic used to discover other hosts/services. "Listening TCP ports" ("aws:listening-tcp-ports"),
+      "Listening TCP port count" ("aws:num-listening-tcp-ports"), "Established TCP
+      connections count" ("aws:num-established-tcp-connections"), "Listening UDP ports"
+      ("aws:listening-udp-ports"), and "Listening UDP port count" ("aws:num-listening-udp-ports")
+      values outside of expected norms may indicate that devices are communicating
+      via unexpected ports/protocols that may suggest scanning is taking place.
+
+      Coverage factor is partial, since these metrics are limited to IoT device communication
+      and detection is only based on network traffic, resulting in an overall score
+      of Partial.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial coverage for this technique and all
+      of its sub-techniques, resulting in an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender cloud-side detection metrics
+      can detect indicators that an adversary may be leveraging compromised AWS IoT
+      devices and application layer protocols - especially the Message Queuing Telemetry
+      Transport (MQTT) protocol - to communicate for command and control purposes:
+      "Source IP" ("aws:source-ip-address") values outside of expected IP address
+      ranges may suggest that a device has been stolen. "Messages sent" ("aws:num-messages-sent"),
+      "Messages received" ("aws:num-messages-received"), and "Message size" ("aws:message-byte-size")
+      values outside of expected norms may indicate that devices are sending and/or
+      receiving non-standard traffic, which may include command and control traffic.
+
+      The following AWS IoT Device Defender device-side detection metrics can detect
+      indicators that an adversary may be leveraging compromised AWS IoT devices and
+      application layer protocols - especially the Message Queuing Telemetry Transport
+      (MQTT) protocol - to communicate for command and control purposes: "Destination
+      IPs" ("aws:destination-ip-addresses") outside of expected IP address ranges
+      may suggest that a device is communicating with unexpected parties. "Bytes in"
+      ("aws:all-bytes-in"), "Bytes out" ("aws:all-bytes-out"), "Packets in" ("aws:all-packets-in"),
+      and "Packets out" ("aws:all-packets-out") values outside of expected norms may
+      indicate that the device is sending and/or receiving non-standard traffic, which
+      may include command and control traffic. "Listening TCP ports" ("aws:listening-tcp-ports"),
+      "Listening TCP port count" ("aws:num-listening-tcp-ports"), "Established TCP
+      connections count" ("aws:num-established-tcp-connections"), "Listening UDP ports"
+      ("aws:listening-udp-ports"), and "Listening UDP port count" ("aws:num-listening-udp-ports")
+      values outside of expected norms may indicate that devices are communicating
+      via unexpected ports/protocols that may suggest application layer command and
+      control traffic.
+
+      Coverage factor is minimal, since these metrics are limited to IoT device communication
+      and none of this technique''s sub-techniques are addressed, resulting in an
+      overall score of Minimal.'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial detection capability for one of this
+      technique's sub-techniques and a few of its procedure examples resulting in
+      an overall Minimal protection score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Protect
+    score-comment: This control provides partial protection for one of this technique's
+      sub-techniques and a few of its procedure examples resulting in an overall Minimal
+      protection score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1095
+    mapping-pattern: ''
+    name: Non-Application Layer Protocol
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender cloud-side detection metrics
+      can detect indicators that an adversary may be leveraging compromised AWS IoT
+      devices and non-application layer protocols - especially TCP and UDP - to communicate
+      for command and control purposes: "Source IP" ("aws:source-ip-address") values
+      outside of expected IP address ranges may suggest that a device has been stolen.
+      "Messages sent" ("aws:num-messages-sent"), "Messages received" ("aws:num-messages-received"),
+      and "Message size" ("aws:message-byte-size") values outside of expected norms
+      may indicate that devices are sending and/or receiving non-standard traffic,
+      which may include command and control traffic.
+
+      The following AWS IoT Device Defender device-side detection metrics can detect
+      indicators that an adversary may be leveraging compromised AWS IoT devices and
+      non-application layer protocols - especially TCP and UDP - to communicate for
+      command and control purposes: "Destination IPs" ("aws:destination-ip-addresses")
+      outside of expected IP address ranges may suggest that a device is communicating
+      with unexpected parties. "Bytes in" ("aws:all-bytes-in"), "Bytes out" ("aws:all-bytes-out"),
+      "Packets in" ("aws:all-packets-in"), and "Packets out" ("aws:all-packets-out")
+      values outside of expected norms may indicate that the device is sending and/or
+      receiving non-standard traffic, which may include command and control traffic.
+      "Listening TCP ports" ("aws:listening-tcp-ports"), "Listening TCP port count"
+      ("aws:num-listening-tcp-ports"), "Established TCP connections count" ("aws:num-established-tcp-connections"),
+      "Listening UDP ports" ("aws:listening-udp-ports"), and "Listening UDP port count"
+      ("aws:num-listening-udp-ports") values outside of expected norms may indicate
+      that devices are communicating via TCP and/or UDP on unexpected ports that may
+      suggest command and control traffic.
+
+      Coverage factor is minimal, since these metrics are limited to IoT device communication
+      and none of this technique''s sub-techniques are addressed, resulting in an
+      overall score of Minimal.'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1496
+    mapping-pattern: ''
+    name: Resource Hijacking
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender device-side detection metrics
+      can detect indicators that an adversary may be leveraging compromised AWS IoT
+      devices'' resources to perform resource-intensive operations like mining cryptocurrency
+      or performing denial of service attacks on other environments: "Destination
+      IPs" ("aws:destination-ip-addresses") outside of expected IP address ranges
+      may suggest that a device is communicating with unexpected parties. "Bytes in"
+      ("aws:all-bytes-in"), "Bytes out" ("aws:all-bytes-out"), "Packets in" ("aws:all-packets-in"),
+      and "Packets out" ("aws:all-packets-out") values outside of expected norms may
+      indicate that the device is sending and/or receiving non-standard traffic, which
+      may include traffic related to resource hijacking activities. "Listening TCP
+      ports" ("aws:listening-tcp-ports"), "Listening TCP port count" ("aws:num-listening-tcp-ports"),
+      "Established TCP connections count" ("aws:num-established-tcp-connections"),
+      "Listening UDP ports" ("aws:listening-udp-ports"), and "Listening UDP port count"
+      ("aws:num-listening-udp-ports") values outside of expected norms may indicate
+      that devices are communicating via unexpected ports/protocols which may include
+      traffic related to resource hijacking activities.
+
+      Coverage factor is partial, since these metrics are limited to IoT device hijacking,
+      resulting in an overall score of Partial.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following AWS IoT Device Defender cloud-side detection metrics
+      can detect indicators that an adversary may be leveraging compromised AWS IoT
+      devices and the Message Queuing Telemetry Transport (MQTT) protocol for unauthorized
+      data transfer from cloud-side data sources: "Source IP" ("aws:source-ip-address")
+      values outside of expected IP address ranges may suggest that a device has been
+      stolen. "Messages sent" ("aws:num-messages-sent"), "Messages received" ("aws:num-messages-received"),
+      and "Message size" ("aws:message-byte-size") values outside of expected norms
+      may indicate that devices are sending and/or receiving non-standard traffic,
+      which may include data retrieved from cloud storage.
+
+      The following AWS IoT Device Defender device-side detection metrics can detect
+      indicators that an adversary may be leveraging compromised AWS IoT devices and
+      the Message Queuing Telemetry Transport (MQTT) protocol for unauthorized data
+      transfer from cloud-side data sources: "Bytes in" ("aws:all-bytes-in"), "Bytes
+      out" ("aws:all-bytes-out"), "Packets in" ("aws:all-packets-in"), and "Packets
+      out" ("aws:all-packets-out") values outside of expected norms may indicate that
+      devices are sending and/or receiving non-standard traffic, which may include
+      data retrieved from cloud storage.
+
+      Coverage factor is partial, since these metrics are limited to IoT device-based
+      collection, resulting in an overall score of Partial.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1552
+    mapping-pattern: ''
+    name: Unsecured Credentials
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial coverage for a minority of this technique's
+      sub-techniques, resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1557
+    mapping-pattern: ''
+    name: Man-in-the-Middle
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: false
+    score-category: Protect
+    score-comment: 'The following AWS IoT Device Defender audit checks and corresponding
+      mitigation actions can identify and resolve configuration problems that should
+      be fixed in order to ensure SSL/TLS encryption is enabled and secure to protect
+      network traffic to/from IoT devices: "CA certificate expiring" ("CA_CERTIFICATE_EXPIRING_CHECK"
+      in the CLI and API), "CA certificate key quality" ("CA_CERTIFICATE_KEY_QUALITY_CHECK"
+      in the CLI and API), and "CA certificate revoked but device certificates still
+      active" ("REVOKED_CA_CERTIFICATE_STILL_ACTIVE_CHECK" in the CLI and API) can
+      identify problems with certificate authority (CA) certificates being used for
+      signing and support the "UPDATE_CA_CERTIFICATE" mitigation action which can
+      resolve them. "Device certificate expiring" ("DEVICE_CERTIFICATE_EXPIRING_CHECK"
+      in the CLI and API), "Device certificate key quality" ("DEVICE_CERTIFICATE_KEY_QUALITY_CHECK"
+      in the CLI and API), "Device certificate shared" ("DEVICE_CERTIFICATE_SHARED_CHECK"
+      in the CLI and API), and "Revoked device certificate still active" ("REVOKED_DEVICE_CERTIFICATE_STILL_ACTIVE_CHECK"
+      in the CLI and API) can identify problems with IoT devices'' certificates and
+      support the "UPDATE_DEVICE_CERTIFICATE" and "ADD_THINGS_TO_THING_GROUP" mitigation
+      actions which can resolve them.
+
+      Coverage factor is partial for these checks and mitigations, since they are
+      specific to IoT device communication and can only mitigate behavior for adversaries
+      who are unable to decrypt the relevant traffic, resulting in an overall score
+      of Partial. This control does not provide specific coverage for this technique''s
+      sub-techniques, resulting in an overall score of Minimal.'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1562
+    mapping-pattern: ''
+    name: Impair Defenses
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial coverage for a minority of this technique's
+      sub-techniques, resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'Mappings for AWS IoT Device Defender audit are based on the current
+      set of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device
+      Defender''s predefined mitigation actions are also included for those audit
+      checks that support them. Audit checks can be run as needed (on-demand audits)
+      or scheduled to be run periodically (scheduled audits), so temporal scoring
+      factors are uniformly high for this control, based on the assumption that checks
+      are run (at minimum) on a frequent basis. Audit check and mitigation names are
+      identified in quotes throughout this mapping.
+
+      Mappings for AWS IoT Device Defender detect are based on the current set of
+      AWS IoT Device Defender device-side and cloud-side detection metrics. Cloud-side
+      detection alarms are triggered when set thresholds are exceeded, and device-side
+      detection metrics are published on a chosen interval with a minimum value of
+      5 minutes, so temporal scoring factors are uniformly high for this control,
+      based on the assumption that thresholds are set to sensible values that detect
+      suspicious values quickly and device-side metric publishing is not set to an
+      unreasonably large interval. Detect metric names are identified in quotes throughout
+      this mapping.'
+    id: T1562
+    mapping-pattern: ''
+    name: Impair Defenses
+    references:
+    - https://aws.amazon.com/iot-device-defender/
+    - https://docs.aws.amazon.com/iot-device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+    - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+    - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+    related-score: true
+    score-category: Respond
+    score-comment: This control provides partial coverage for a minority of this technique's
+      sub-techniques, resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Internet of Things
+    - IoT
+    value: AWS IoT Device Defender
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/30/2021
+    last-update: 06/30/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

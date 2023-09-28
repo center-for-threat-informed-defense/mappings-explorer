@@ -1,0 +1,1083 @@
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: 'This control is able to detect some of this technique''s sub-techniques
+      resulting in a Partial Coverage score and consequently an overall score of Partial. '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1059
+    mapping-pattern: ''
+    name: Command and Scripting Interpreter
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1204
+    mapping-pattern: ''
+    name: User Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides detection for one of the two sub-techniques
+      of this technique,  Malicious File, resulting in a Partial Coverage score and
+      consequently an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1547
+    mapping-pattern: ''
+    name: Boot or Logon Autostart Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1136
+    mapping-pattern: ''
+    name: Create Account
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1543
+    mapping-pattern: ''
+    name: Create or Modify System Process
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1546
+    mapping-pattern: ''
+    name: Event Triggered Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1548
+    mapping-pattern: ''
+    name: Abuse Elevation Control Mechanism
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: The only sub-technique scored (Bypass User Account Control) is
+      the only one relevant to Windows.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1055
+    mapping-pattern: ''
+    name: Process Injection
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection covers all relevant sub-techniques.
+      Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1203
+    mapping-pattern: ''
+    name: Exploitation for Client Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1212
+    mapping-pattern: ''
+    name: Exploitation for Credential Access
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1211
+    mapping-pattern: ''
+    name: Exploitation for Defense Evasion
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1068
+    mapping-pattern: ''
+    name: Exploitation for Privilege Escalation
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1189
+    mapping-pattern: ''
+    name: Drive-by Compromise
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s Fileless Attack Detection identifies shellcode
+      executing within process memory, including shellcode executed as a payload in
+      the exploitation of a software vulnerability. Detection is periodic at an unknown
+      rate. The following alerts may be generated: "Fileless attack technique detected",
+      "Fileless attack behavior detected", "Fileless  attack toolkit detected", "Suspicious
+      SVCHOST process executed".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1140
+    mapping-pattern: ''
+    name: Deobfuscate/Decode Files or Information
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect decoding of suspicious files by certutil.exe
+      and may detect the presence of various encoding schemes to obfuscate malicious
+      scripts and commandline arguments. The following alerts may be generated: "Suspicious
+      download using Certutil detected", "Suspicious download using Certutil detected
+      [seen multiple times]", "Detected decoding of an executable using built-in certutil.exe
+      tool".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1222
+    mapping-pattern: ''
+    name: File and Directory Permissions Modification
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: 'This control provides minimal detection for some of this technique''s
+      sub-techniques resulting in an overall score of Minimal. '
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1564
+    mapping-pattern: ''
+    name: Hide Artifacts
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1562
+    mapping-pattern: ''
+    name: Impair Defenses
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1070
+    mapping-pattern: ''
+    name: Indicator Removal on Host
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques and procedure examples  resulting in a Minimal Coverage score
+      and consequently an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1112
+    mapping-pattern: ''
+    name: Modify Registry
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect several methods used to modify the registry
+      for purposes of persistence, privilege elevation, and execution. The following
+      alerts may be generated: "Detected change to a registry key that can be abused
+      to bypass UAC", "Detected enabling of the WDigest UseLogonCredential registry
+      key", "Detected suppression of legal notice displayed to users at logon", "Suspicious
+      WindowPosition registry value detected", "Windows registry persistence method
+      detected".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1027
+    mapping-pattern: ''
+    name: Obfuscated Files or Information
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect usage of VBScript.Encode and base-64 encoding
+      to obfuscate malicious commands and scripts. The following alerts may be generated:
+      "Detected suspicious execution of VBScript.Encode command", "Detected encoded
+      executable in command line data".'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1218
+    mapping-pattern: ''
+    name: Signed Binary Proxy Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides detection for some of this technique's sub-techniques
+      and procedure examples resulting  in a Partial Coverage score and consequently
+      an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1003
+    mapping-pattern: ''
+    name: OS Credential Dumping
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides detection for a minority of this technique's
+      sub-techniques and procedure examples  resulting in a Minimal Coverage score
+      and consequently an overall score of Minimal.  Furthermore, its detection capability
+      relies on detecting the usage of specific tools (e.g. sqldumper.exe) further
+      adversely impacting  its score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1558
+    mapping-pattern: ''
+    name: Steal or Forge Kerberos Tickets
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques resulting in a Minimal Coverage score and consequently an overall
+      score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1087
+    mapping-pattern: ''
+    name: Account Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial detection for some of this technique's
+      sub-techniques and procedure examples resulting in a Partial Coverage score
+      and consequently an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1082
+    mapping-pattern: ''
+    name: System Information Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect local reconnaissance activity specific
+      to using the systeminfo commands. The following alerts may be generated: "Detected
+      possible local reconnaissance activity".'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1563
+    mapping-pattern: ''
+    name: Remote Service Session Hijacking
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial detection for some of this technique's
+      sub-techniques  resulting in a Partial Coverage score and consequently an overall
+      score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1105
+    mapping-pattern: ''
+    name: Ingress Tool Transfer
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect usage of malware droppers and creation
+      of suspicious files on the host machine. The following alerts may be generated:
+      "Detected possible execution of malware dropper", "Detected suspicious file
+      creation".'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: true
+    score-category: Detect
+    score-comment: This control's detection is specific to a minority of this technique's
+      sub-techniques and procedure examples resulting in a Minimal Coverage score
+      and consequently an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1489
+    mapping-pattern: ''
+    name: Service Stop
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect when critical services have been disabled
+      through the usage of specifically net.exe. The following alerts may be generated:
+      "Detected the disabling of critical services".'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1202
+    mapping-pattern: ''
+    name: Indirect Command Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-windows
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control may detect suspicious use of Pcalua.exe to launch
+      executable code. There are other methods of indirect command execution that
+      this control may not detect. The following alerts may be generated: "Detected
+      suspicious use of Pcalua.exe to launch executable code".'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Defender for Servers
+    - Windows
+    value: Alerts for Windows Machines
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

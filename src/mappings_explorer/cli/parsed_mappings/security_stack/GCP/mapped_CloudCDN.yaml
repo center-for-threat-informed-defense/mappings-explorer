@@ -1,0 +1,34 @@
+- attack-object:
+    comments: ''
+    id: T1498
+    mapping-pattern: ''
+    name: Network Denial of Service
+    references:
+    - https://cloud.google.com/cdn/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: 'Cloud CDN acts as a proxy between clients and origin servers.
+      Cloud CDN can distribute requests for cacheable content across multiple points-of-presence
+      (POPs), thereby providing a larger set of locations to absorb a DOS attack.
+
+
+      However, Cloud CDN doesn''t provide protection against DOS attacks for uncached
+      content.'
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Kubernetes
+    - Logging
+    value: Cloud CDN
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 1/26/2022
+    last-update: 1/26/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

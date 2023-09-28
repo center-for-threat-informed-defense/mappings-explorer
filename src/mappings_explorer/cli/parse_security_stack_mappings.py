@@ -1,4 +1,5 @@
-def configure_security_stack_mappings(data, parsed_mappings):
+def configure_security_stack_mappings(data):
+    parsed_mappings = []
     for technique in data["techniques"]:
         # related score is true if there are subtechnique scores
         # associated with the technique
@@ -43,3 +44,4 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     },
                 }
             )
+    return parsed_mappings

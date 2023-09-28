@@ -1,0 +1,58 @@
+- attack-object:
+    comments: ''
+    id: T1199
+    mapping-pattern: ''
+    name: Trusted Relationship
+    references:
+    - https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may expose and detect malicious access of customer
+      data and resources by compromised Google personnel accounts. The trusted relationship
+      between Google personnel who administer and allow customers to host their workloads
+      on the cloud may be abused by insider threats or compromise of Google.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Auditing
+    - Access Management
+    value: Access Transparency
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/29/2022
+    last-update: 03/29/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may expose and detect malicious access of data from
+      cloud storage by compromised Google personnel accounts.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Auditing
+    - Access Management
+    value: Access Transparency
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/29/2022
+    last-update: 03/29/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

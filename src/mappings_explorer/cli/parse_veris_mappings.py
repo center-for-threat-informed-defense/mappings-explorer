@@ -1,4 +1,5 @@
-def configure_veris_mappings(veris_mappings, parsed_mappings):
+def configure_veris_mappings(veris_mappings):
+    parsed_mappings = []
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
@@ -30,3 +31,4 @@ def configure_veris_mappings(veris_mappings, parsed_mappings):
                     },
                 }
             )
+    return parsed_mappings

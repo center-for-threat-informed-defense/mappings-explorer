@@ -1,0 +1,117 @@
+- attack-object:
+    comments: ''
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://support.google.com/a/answer/1734200?hl=en
+    related-score: false
+    score-category: Protect
+    score-comment: This control allows for enforcement of strong password requirements
+      for all mobile devices, desktops, laptops, and other endpoints. This control
+      also allows for use of Google Credential Provider for Windows (GCPW) to utilize
+      Google single sign on for Windows devices that can leverage two-factor authentication
+      and login challenges.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Identity
+    - Patch Management
+    value: Endpoint Management
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/09/2022
+    last-update: 05/09/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://support.google.com/a/answer/1734200?hl=en
+    related-score: false
+    score-category: Respond
+    score-comment: This control allows for blocking endpoints that have been compromised
+      from accessing company networks or resources. This control also allows for deletion
+      of any compromised accounts and data from compromised endpoints.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Identity
+    - Patch Management
+    value: Endpoint Management
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/09/2022
+    last-update: 05/09/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1052.001
+    mapping-pattern: ''
+    name: Exfiltration over USB
+    references:
+    - https://support.google.com/a/answer/1734200?hl=en
+    related-score: false
+    score-category: Protect
+    score-comment: This control can prevent exfiltration over USB by disabling USB
+      file transfers on enrolled Android devices.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Identity
+    - Patch Management
+    value: Endpoint Management
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/09/2022
+    last-update: 05/09/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1567.002
+    mapping-pattern: ''
+    name: Exfiltration to Cloud Storage
+    references:
+    - https://support.google.com/a/answer/1734200?hl=en
+    related-score: false
+    score-category: Protect
+    score-comment: This control may restrict which apps can be installed and accessed
+      on enrolled devices, preventing exfiltration of sensitive information from compromised
+      endpoints to cloud storage.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Identity
+    - Patch Management
+    value: Endpoint Management
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/09/2022
+    last-update: 05/09/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

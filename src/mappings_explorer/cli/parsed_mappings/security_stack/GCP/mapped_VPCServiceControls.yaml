@@ -1,0 +1,153 @@
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://cloud.google.com/vpc-service-controls/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: This control is able to mitigate against abuse of compromised valid
+      accounts by restricting access from those accounts to resources contained within
+      the VPC perimeter the account belongs to. Resources and services contained in
+      other VPC networks also cannot be accessed by user accounts that are not within
+      the VPC network perimeter.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Virtual Private Cloud
+    - Access Control Policies
+    - Network
+    value: VPC Service Controls
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/14/2022
+    last-update: 02/14/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1537
+    mapping-pattern: ''
+    name: Transfer Data to Cloud Account
+    references:
+    - https://cloud.google.com/vpc-service-controls/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: 'This control may mitigate against exfiltration attempts to external
+      cloud accounts by limiting egress of data from accounts and services contained
+      within the VPC network perimeter. '
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Virtual Private Cloud
+    - Access Control Policies
+    - Network
+    value: VPC Service Controls
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/14/2022
+    last-update: 02/14/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://cloud.google.com/vpc-service-controls/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: 'This control may mitigate against access to cloud storage objects
+      by limiting access to accounts and services contained within the VPC network
+      perimeter that contains those cloud storage objects. '
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Virtual Private Cloud
+    - Access Control Policies
+    - Network
+    value: VPC Service Controls
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/14/2022
+    last-update: 02/14/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1567
+    mapping-pattern: ''
+    name: Exfiltration Over Web Service
+    references:
+    - https://cloud.google.com/vpc-service-controls/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: This control is able to mitigate against exfiltration of data over
+      a web service. Data contained within a VPC network perimeter can not be moved
+      to a Google cloud resource or service outside of the perimeter but may be moved
+      to third party services or storage.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Virtual Private Cloud
+    - Access Control Policies
+    - Network
+    value: VPC Service Controls
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/14/2022
+    last-update: 02/14/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1619
+    mapping-pattern: ''
+    name: Cloud Storage Object Discovery
+    references:
+    - https://cloud.google.com/vpc-service-controls/docs/overview
+    related-score: false
+    score-category: Protect
+    score-comment: 'This control may mitigate against discovery of cloud storage objects.
+      This control is not able to protect metadata, such as cloud storage bucket names
+      but can protect against discovery of the contents of a storage bucket. '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Virtual Private Cloud
+    - Access Control Policies
+    - Network
+    value: VPC Service Controls
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/14/2022
+    last-update: 02/14/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

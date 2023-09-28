@@ -1,0 +1,64 @@
+- attack-object:
+    comments: There is not much documentation that lends itself useful to scoring
+      the accuracy of this control although offerings such as Shield Advanced protection
+      groups and the AWS Shield Response Team (SRT) can be leveraged to improve the
+      accuracy of this control. The control states that DDOS attacks can be mitigated
+      in real time (temporal factor) and not increase cause latency for impacted services.
+    id: T1498
+    mapping-pattern: ''
+    name: Network Denial of Service
+    references:
+    - https://aws.amazon.com/shield/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc
+    - https://aws.amazon.com/shield/features/
+    related-score: true
+    score-category: Respond
+    score-comment: null
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Denial of Service
+    - Network
+    value: AWS Shield
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/14/2021
+    last-update: 06/14/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: There is not much documentation that lends itself useful to scoring
+      the accuracy of this control although offerings such as Shield Advanced protection
+      groups and the AWS Shield Response Team (SRT) can be leveraged to improve the
+      accuracy of this control. The control states that DDOS attacks can be mitigated
+      in real time (temporal factor) and not increase cause latency for impacted services.
+    id: T1499
+    mapping-pattern: ''
+    name: Endpoint Denial of Service
+    references:
+    - https://aws.amazon.com/shield/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc
+    - https://aws.amazon.com/shield/features/
+    related-score: true
+    score-category: Respond
+    score-comment: null
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Denial of Service
+    - Network
+    value: AWS Shield
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/14/2021
+    last-update: 06/14/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

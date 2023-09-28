@@ -1,0 +1,136 @@
+- attack-object:
+    comments: There are other methods available for users to secure data with the
+      use of client-side encryption and customer encryption-keys.
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://cloud.google.com/storage/docs/encryption
+    - https://cloud.google.com/storage
+    related-score: false
+    score-category: Protect
+    score-comment: The cloud service provider's default encryption setting for data
+      stored and written to disk in the cloud may protect against adversary's attempt
+      to access data from improperly secured cloud storage. This technique was rated
+      as significant due to the high protect coverage factor.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Storage
+    - Data Security
+    - Encryption
+    - Credentials
+    value: Cloud Storage
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/13/2022
+    last-update: 04/13/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: There are other methods available for users to secure data with the
+      use of client-side encryption and customer encryption-keys.
+    id: T1565.001
+    mapping-pattern: ''
+    name: Stored Data Manipulation
+    references:
+    - https://cloud.google.com/storage/docs/encryption
+    - https://cloud.google.com/storage
+    related-score: false
+    score-category: Protect
+    score-comment: The cloud service provider's default encryption setting for data
+      stored and written to disk in the cloud may protect against adversary's attempt
+      to manipulate customer data-at-rest. This technique was rated as significant
+      due to the high protect coverage factor.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Storage
+    - Data Security
+    - Encryption
+    - Credentials
+    value: Cloud Storage
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/13/2022
+    last-update: 04/13/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: There are other methods available for users to secure data with the
+      use of client-side encryption and customer encryption-keys.
+    id: T1588.004
+    mapping-pattern: ''
+    name: Digital Certificates
+    references:
+    - https://cloud.google.com/storage/docs/encryption
+    - https://cloud.google.com/storage
+    related-score: false
+    score-category: Protect
+    score-comment: The cloud service provider's default encryption setting for data
+      stored and written to disk in the cloud may protect against adversary's attempt
+      to manipulate customer data-at-rest. This technique was rated as partial due
+      to the medium to high protect coverage factor against variations of this attack.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Storage
+    - Data Security
+    - Encryption
+    - Credentials
+    value: Cloud Storage
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/13/2022
+    last-update: 04/13/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: There are other methods available for users to secure data with the
+      use of client-side encryption and customer encryption-keys.
+    id: T1588.003
+    mapping-pattern: ''
+    name: Code Signing Certificates
+    references:
+    - https://cloud.google.com/storage/docs/encryption
+    - https://cloud.google.com/storage
+    related-score: false
+    score-category: Protect
+    score-comment: The cloud service provider's default encryption setting for data
+      stored and written to disk in the cloud may protect against adversary's attempt
+      to manipulate customer data-at-rest. This technique was rated as partial due
+      to the medium to high protect coverage factor against variations of this attack.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Storage
+    - Data Security
+    - Encryption
+    - Credentials
+    value: Cloud Storage
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/13/2022
+    last-update: 04/13/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

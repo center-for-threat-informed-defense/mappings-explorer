@@ -1,0 +1,117 @@
+- attack-object:
+    comments: ''
+    id: T1098
+    mapping-pattern: ''
+    name: Account Manipulation
+    references:
+    - https://cloud.google.com/asset-inventory/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may be able to detect when adversaries use cloud accounts
+      to elevate privileges through manipulation of IAM or access policies. This monitoring
+      can be fine tuned to specific assets, policies, and organizations.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - Access Management
+    value: Cloud Asset Inventory
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/27/2022
+    last-update: 03/27/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1098.001
+    mapping-pattern: ''
+    name: Additional Cloud Credentials
+    references:
+    - https://cloud.google.com/asset-inventory/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may be able to detect when adversaries use cloud accounts
+      to elevate privileges through manipulation of IAM or access policies for the
+      creation of additional accounts. This monitoring can be fine tuned to specific
+      assets, policies, and organizations.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - Access Management
+    value: Cloud Asset Inventory
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/27/2022
+    last-update: 03/27/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://cloud.google.com/asset-inventory/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may be able to detect when adversaries use valid cloud
+      accounts to elevate privileges through manipulation of IAM or access policies.
+      This monitoring can be fine tuned to specific assets, policies, and organizations.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - Access Management
+    value: Cloud Asset Inventory
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/27/2022
+    last-update: 03/27/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1078.004
+    mapping-pattern: ''
+    name: Cloud Accounts
+    references:
+    - https://cloud.google.com/asset-inventory/docs/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control may be able to detect when adversaries use valid cloud
+      accounts to elevate privileges through manipulation of IAM or access policies.
+      This monitoring can be fine tuned to specific assets, policies, and organizations.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - Access Management
+    value: Cloud Asset Inventory
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/27/2022
+    last-update: 03/27/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

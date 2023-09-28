@@ -1,0 +1,169 @@
+- attack-object:
+    comments: Google Cloud's Artifact Registry is the recommended service for managing
+      containers. Container Registry provides a subset of the features found in Artifact
+      Registry and will only receive critical security fixes.
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://cloud.google.com/container-registry/docs/container-analysis
+    - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+    related-score: false
+    score-category: Protect
+    score-comment: Using Container Analysis, Container Registry scans the repository
+      for vulnerabilities that could potentially be used to escalate privileges, such
+      as default accounts with root permissions in Docker containers. Due to the medium
+      threat protection coverage and scan results being available 48 hours after completion,
+      this control was scored as partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Vulnerability Analysis
+    value: Container Registry
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/15/2022
+    last-update: 02/15/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: Google Cloud's Artifact Registry is the recommended service for managing
+      containers. Container Registry provides a subset of the features found in Artifact
+      Registry and will only receive critical security fixes.
+    id: T1068
+    mapping-pattern: ''
+    name: Exploitation for Privilege Escalation
+    references:
+    - https://cloud.google.com/container-registry/docs/container-analysis
+    - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+    related-score: false
+    score-category: Protect
+    score-comment: Container Registry scans the repository for known software vulnerabilities
+      and various system artifacts that could potentially be used to execute adversary-controlled
+      code. Due to the medium threat protection coverage and temporal factor, this
+      control was scored as partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Vulnerability Analysis
+    value: Container Registry
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/15/2022
+    last-update: 02/15/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: Google Cloud's Artifact Registry is the recommended service for managing
+      containers. Container Registry provides a subset of the features found in Artifact
+      Registry and will only receive critical security fixes.
+    id: T1525
+    mapping-pattern: ''
+    name: Implant Internal Image
+    references:
+    - https://cloud.google.com/container-registry/docs/container-analysis
+    - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+    related-score: false
+    score-category: Protect
+    score-comment: Using Container Analysis and Vulnerability scanning, this security
+      solution can detect known vulnerabilities in Docker containers. This information
+      can be used to detect images that deviate from the baseline norm, and could
+      indicate a malicious implanted images in the environment. Due to the medium
+      threat detection coverage and temporal factor, the control was scored as partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Vulnerability Analysis
+    value: Container Registry
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/15/2022
+    last-update: 02/15/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: Google Cloud's Artifact Registry is the recommended service for managing
+      containers. Container Registry provides a subset of the features found in Artifact
+      Registry and will only receive critical security fixes.
+    id: T1610
+    mapping-pattern: ''
+    name: Deploy Container
+    references:
+    - https://cloud.google.com/container-registry/docs/container-analysis
+    - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+    related-score: false
+    score-category: Protect
+    score-comment: Once this control is deployed, it can scan for known vulnerabilities
+      in containers. This information can be used to detect malicious deployed containers
+      used to evade defenses and execute processes in a target environment. Due to
+      the medium threat detection coverage and temporal factor, the control was scored
+      as partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Vulnerability Analysis
+    value: Container Registry
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/15/2022
+    last-update: 02/15/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''
+- attack-object:
+    comments: Google Cloud's Artifact Registry is the recommended service for managing
+      containers. Container Registry provides a subset of the features found in Artifact
+      Registry and will only receive critical security fixes.
+    id: T1212
+    mapping-pattern: ''
+    name: Exploitation for Credential Access
+    references:
+    - https://cloud.google.com/container-registry/docs/container-analysis
+    - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
+    related-score: false
+    score-category: Detect
+    score-comment: Once this control is deployed, it can detect known vulnerabilities
+      in various OS packages that could be used to escalate privileges and execute
+      adversary-controlled code (e.g., Debian, Ubuntu, Alpine, RHEL, CentOS, National
+      Vulnerability Database). Due to the medium threat detection coverage and temporal
+      factor, the control was scored as partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Containers
+    - Vulnerability Analysis
+    value: Container Registry
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/15/2022
+    last-update: 02/15/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

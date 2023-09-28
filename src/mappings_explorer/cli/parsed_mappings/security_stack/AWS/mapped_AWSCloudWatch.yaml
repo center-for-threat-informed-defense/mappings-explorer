@@ -1,0 +1,101 @@
+- attack-object:
+    comments: ''
+    id: T1496
+    mapping-pattern: ''
+    name: Resource Hijacking
+    references:
+    - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'AWS CloudWatch provides various metrics including CPU utilization,
+      connections, disk space, memory, bytes sent/received, and the number of running
+      containers among others. The following metrics (not an exhaustive list) could
+      be used to detect if the usage of a resource has increased such as when an adversary
+      hijacks a resource to perform intensive tasks.
+
+      Linux/Mac OS ------------- cpu_time_active cpu_time_guest cpu_usage_active cpu_usage_guest
+      disk_free disk_total disk_used ethtool_bw_in_allowance_exceeded ethtool_bw_out_allowance_exceeded
+      ethtool_conntrack_allowance_exceeded mem_active mem_available_percent mem_free
+      net_bytes_recv net_bytes_sent net_packets_sent net_packets_recv netstat_tcp_established
+      netstat_tcp_listen processes_running processes_total swap_free swap_used
+
+      Containers ---------- CpuUtilized MemoryUtilized NetworkRxBytes NetworkTxBytes
+      node_cpu_usage_total node_cpu_utilization node_filesystem_utilization node_memory_utilization
+
+      This mapping is given a score of Partial because it is not possible to differentiate
+      between an authorized and unauthorized increase in resource utilization. '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Metrics
+    value: AWS CloudWatch
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 08/04/2021
+    last-update: 08/04/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1610
+    mapping-pattern: ''
+    name: Deploy Container
+    references:
+    - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+    related-score: false
+    score-category: Detect
+    score-comment: "AWS CloudWatch provides various metrics including CPU utilization,\
+      \ connections, disk space, memory, bytes sent/received, and the number of running\
+      \ containers among others. The following metric could be used to detect if an\
+      \ adversary deployed a new container in the environment. \nnode_number_of_running_containers\n\
+      This mapping is given a score of Partial because it is not possible to differentiate\
+      \ between an authorized and unauthorized deployment of a new container.  "
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Metrics
+    value: AWS CloudWatch
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 08/04/2021
+    last-update: 08/04/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+    related-score: false
+    score-category: Protect
+    score-comment: AWS CloudWatch uses TLS/SSL connections to communicate with other
+      AWS resources which protects against network sniffing attacks. As a result,
+      this mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Metrics
+    value: AWS CloudWatch
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 08/04/2021
+    last-update: 08/04/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

@@ -1,0 +1,1074 @@
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1595
+    mapping-pattern: ''
+    name: Active Scanning
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'Documentation states that the Service can flag such attempts:
+      Reconnaissance -- Activity suggesting reconnaissance by an attacker, such as
+      unusual API activity, intra-VPC port scanning, unusual patterns of failed login
+      requests, or unblocked port probing from a known bad IP. Note: This is from
+      the perspective of the resource running in the AWS account. Meaning GuardDuty
+      has several finding types that flag events that take place via a resource (e.g.,
+      EC2, IAM, S3).'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1189
+    mapping-pattern: ''
+    name: Drive-by Compromise
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'There is a GuardDuty Finding that flags this behavior: Trojan:EC2/DriveBySourceTraffic!DNS'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'There is a GuardDuty finding type that captures when vulnerable
+      publicly facing resources are leveraged to capture data not intended to be viewable
+      (e.g., IAM credentials associated with the resource).
+
+      UnauthorizedAccess:EC2/MetadataDNSRebind - This finding type only detects MetadataDNSRebind
+      and is more focused on the EC2 instance and not the application running on the
+      instance itself resulting in Minimal coverage.'
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1566
+    mapping-pattern: ''
+    name: Phishing
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty implements a finding type that flags/alerts when an
+      EC2 service queries a Domain known to be tied to a phishing attack.
+
+      Trojan:EC2/PhishingDomainRequest!DNS'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty implements a finding that flags occurrences unattended
+      behavior from an IAM User in the Account.
+
+      PenTest:IAMUser/KaliLinux, PenTest:IAMUser/ParrotLinux, PenTest:IAMUser/PentooLinux,
+      Policy:IAMUser/RootCredentialUsage, PrivilegeEscalation:IAMUser/AdministrativePermissions,
+      UnauthorizedAccess:IAMUser/ConsoleLogin, UnauthorizedAccess:IAMUser/ConsoleLoginSuccess.B,
+      UnauthorizedAccess:IAMUser/MaliciousIPCaller, UnauthorizedAccess:IAMUser/MaliciousIPCaller.Custom,
+      UnauthorizedAccess:IAMUser/TorIPCaller, Policy:S3/AccountBlockPublicAccessDisabled,
+      Policy:S3/BucketAnonymousAccessGranted, Policy:S3/BucketBlockPublicAccessDisabled,
+      Policy:S3/BucketPublicAccessGranted, CredentialAccess:IAMUser/AnomalousBehavior,
+      DefenseEvasion:IAMUser/AnomalousBehavior, Discovery:IAMUser/AnomalousBehavior,
+      Exfiltration:IAMUser/AnomalousBehavior, Impact:IAMUser/AnomalousBehavior, Persistence:IAMUser/AnomalousBehavior,
+      Recon:IAMUser/MaliciousIPCaller, Recon:IAMUser/MaliciousIPCaller.Custom, UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1098
+    mapping-pattern: ''
+    name: Account Manipulation
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty has a finding types that flag events where an adversary
+      may have compromised an AWS IAM User.  Finding Type: Persistence:IAMUser/AnomalousBehavior'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1562
+    mapping-pattern: ''
+    name: Impair Defenses
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty flags the following finding type DefenseEvasion:IAMUser/AnomalousBehavior
+      as a defense evasion technique. It looks for API calls that delete, disable,
+      or stop operations, such as, DeleteFlowLogs, DisableAlarmActions, or StopLogging.
+      The following Finding types are examples:
+
+      Stealth:IAMUser/CloudTrailLoggingDisabled Stealth:IAMUser/PasswordPolicyChange
+      Stealth:S3/ServerAccessLoggingDisabled'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: Finding types such as UnauthorizedAccess:EC2/RDPBruteForce, UnauthorizedAccess:EC2/SSHBruteForce,
+      Impact:EC2/WinRMBruteForce, and Stealth:IAMUser/PasswordPolicyChange can detect
+      when an EC2 instance may be involved in a brute force attack aimed at obtaining
+      passwords.  Due to the detection being limited to a specific set of application
+      protocols, its coverage is Minimal resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1552
+    mapping-pattern: ''
+    name: Unsecured Credentials
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal to partial coverage for a minority
+      of this technique's sub-techniques, and without specific coverage for its procedures,
+      resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1580
+    mapping-pattern: ''
+    name: Cloud Infrastructure Discovery
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding types flag events that are linked
+      to Discovery techniques and can be used to capture events where a malicious
+      user may be searching through the account looking for available resources. The
+      finding types are also used to flag certain signatures of running services to
+      detect malicious user activities from commonly used pentest operating systems.
+
+      Discovery:IAMUser/AnomalousBehavior Discovery:S3/MaliciousIPCaller Discovery:S3/MaliciousIPCaller.Custom
+      Discovery:S3/TorIPCaller PenTest:IAMUser/KaliLinux PenTest:IAMUser/ParrotLinux
+      PenTest:IAMUser/PentooLinux PenTest:S3/KaliLinux PenTest:S3/ParrotLinux PenTest:S3/PentooLinux'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1526
+    mapping-pattern: ''
+    name: Cloud Service Discovery
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'GuardDuty has the following finding types to flag events where
+      there is an attempt to discover information about resources on the account.
+
+      Recon:IAMUser/MaliciousIPCaller Recon:IAMUser/MaliciousIPCaller.Custom Recon:IAMUser/TorIPCaller'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding types reflect flagged events where
+      there is an attempt to get a list of services running on a remote host.
+
+      Recon:EC2/PortProbeEMRUnprotectedPort Recon:EC2/PortProbeUnprotectedPort Recon:EC2/Portscan
+      Impact:EC2/PortSweep'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding types flag events where adversaries
+      may have access data objects from improperly secured cloud storage.
+
+      UnauthorizedAccess:S3/MaliciousIPCaller.Custom UnauthorizedAccess:S3/TorIPCaller
+      Impact:S3/MaliciousIPCaller Exfiltration:S3/MaliciousIPCaller Exfiltration:S3/ObjectRead.Unusual
+      PenTest:S3/KaliLinux PenTest:S3/ParrotLinux PenTest:S3/PentooLinux UnauthorizedAccess:S3/MaliciousIPCaller.Custom
+      UnauthorizedAccess:S3/TorIPCaller'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty flags events matching the following finding types that
+      relate to adversaries attempting to communicate using application layer protocols
+      to avoid detection.
+
+      UnauthorizedAccess:EC2/MaliciousIPCaller.Custom Trojan:EC2/DropPoint!DNS Trojan:EC2/DropPoint
+      Backdoor:EC2/C&CActivity.B!DNS Trojan:EC2/BlackholeTraffic Trojan:EC2/BlackholeTraffic!DNS
+
+      '
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1568
+    mapping-pattern: ''
+    name: Dynamic Resolution
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty has the following finding types to flag events where
+      adversaries may dynamically establish connections to command-and-control infrastructure
+      to evade common detections and remediations.
+
+      Trojan:EC2/DGADomainRequest.B Trojan:EC2/DGADomainRequest.C!DNS'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1571
+    mapping-pattern: ''
+    name: Non-Standard Port
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'GuardDuty has the following finding type to flag events where
+      adversaries may communicate using a protocol and port paring that are typically
+      not associated.
+
+      Behavior:EC2/NetworkPortUnusual'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1090
+    mapping-pattern: ''
+    name: Proxy
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events where adversaries
+      may use a connection proxy to direct network traffic between systems or act
+      as an intermediary for network communications to a command-and-control server
+      to avoid direct connections to their infrastructure.
+
+      UnauthorizedAccess:EC2/TorClient UnauthorizedAccess:EC2/TorRelay
+
+      Due to the detection being limited to a specific type of proxy, Tor, its coverage
+      is Minimal resulting in a Minimal score.'
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1020
+    mapping-pattern: ''
+    name: Automated Exfiltration
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events that may indicate
+      adversaries attempting to exfiltrate data, such as sensitive documents, through
+      the use of automated processing after being gathered during Collection.
+
+      Behavior:EC2/TrafficVolumeUnusual Exfiltration:S3/MaliciousIPCaller Exfiltration:S3/ObjectRead.Unusual
+      PenTest:S3/KaliLinux PenTest:S3/ParrotLinux PenTest:S3/PentooLinux UnauthorizedAccess:S3/MaliciousIPCaller.Custom
+      UnauthorizedAccess:S3/TorIPCaller'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1029
+    mapping-pattern: ''
+    name: Scheduled Transfer
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events that may indicate
+      adversaries attempting to exfiltrate data, such as sensitive documents, through
+      the use of automated processing after being gathered during Collection.
+
+      Behavior:EC2/TrafficVolumeUnusual
+
+      Accuracy and Coverage is unknown, as this finding flags traffic volume that
+      differs from a baseline.'
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1041
+    mapping-pattern: ''
+    name: Exfiltration Over C2 Channel
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events that may indicate
+      adversaries attempting to exfiltrate data, such as sensitive documents.
+
+      Behavior:EC2/TrafficVolumeUnusual
+
+      Accuracy and Coverage is unknown, as this finding flags traffic volume that
+      differs from a baseline.'
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events where adversaries
+      may steal data by exfiltrating it over a different protocol than that of the
+      existing command-and-control channel.
+
+      Trojan:EC2/DNSDataExfiltration Behavior:EC2/TrafficVolumeUnusual'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1567
+    mapping-pattern: ''
+    name: Exfiltration Over Web Service
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'The following finding types in GuardDuty flag events where adversaries
+      may use an existing, legitimate external Web service to exfiltrate data rather
+      than their primary command-and-control channel.
+
+      Exfiltration:S3/ObjectRead.Unusual Exfiltration:S3/MaliciousIPCaller Exfiltration:IAMUser/AnomalousBehavior
+      Behavior:EC2/TrafficVolumeUnusual'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1531
+    mapping-pattern: ''
+    name: Account Access Removal
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty Finding type flags events where adversaries
+      may interrupt availability of system and network resources by inhibiting access
+      to accounts utilized by legitimate users.
+
+      Impact:IAMUser/AnomalousBehavior'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events where adversaries
+      may destroy data and files on specific systems or in large numbers on a network
+      to interrupt availability to systems, services, and network resources.
+
+      Impact:S3/MaliciousIPCaller, Impact:IAMUser/AnomalousBehavior Stealth:S3/ServerAccessLoggingDisabled
+      UnauthorizedAccess:S3/MaliciousIPCaller.Custom UnauthorizedAccess:S3/TorIPCaller
+      PenTest:S3/PentooLinux PenTest:S3/ParrotLinux PenTest:S3/KaliLinux'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1486
+    mapping-pattern: ''
+    name: Data Encrypted for Impact
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events where adversaries
+      may encrypt data on target systems or on large numbers of systems in a network
+      to interrupt availability to system and network resources.
+
+      Impact:S3/MaliciousIPCaller Stealth:S3/ServerAccessLoggingDisabled UnauthorizedAccess:S3/MaliciousIPCaller.Custom
+      UnauthorizedAccess:S3/TorIPCaller PenTest:S3/PentooLinux PenTest:S3/ParrotLinux
+      PenTest:S3/KaliLinux'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1565
+    mapping-pattern: ''
+    name: Data Manipulation
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding type flags events where adversaries
+      may insert, delete, or manipulate data in order to manipulate external outcomes
+      or hide activity.
+
+      Impact:S3/MaliciousIPCaller'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1498
+    mapping-pattern: ''
+    name: Network Denial of Service
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'The following finding types in GuardDuty flag events where adversaries
+      may perform Network Denial of Service (DoS) attacks to degrade or block the
+      availability of targeted resources to users.
+
+      Backdoor:EC2/DenialOfService.UdpOnTcpPorts Backdoor:EC2/DenialOfService.UnusualProtocol
+      Backdoor:EC2/DenialOfService.Udp Backdoor:EC2/DenialOfService.Tcp Backdoor:EC2/DenialOfService.Dns'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1496
+    mapping-pattern: ''
+    name: Resource Hijacking
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'The following GuardDuty finding types flag events where adversaries
+      may leverage the resources of co-opted systems in order to solve resource intensive
+      problems which may impact system and/or hosted service availability.
+
+      CryptoCurrency:EC2/BitcoinTool.B CryptoCurrency:EC2/BitcoinTool.B!DNS Impact:EC2/BitcoinDomainRequest.Reputation
+      UnauthorizedAccess:EC2/TorRelay'
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: "Scores for this service are capped at Partial due to limited coverage\
+      \ and accuracy information.\nThe temporal factor for this control is consistent:\
+      \ the first instance of a finding taking place is alerted within 5 minutes of\
+      \ the event occurring. After that any subsequent events can be customized to\
+      \ be reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following\
+      \ findings were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+      \  InitialAccess:IAMUser/AnomalousBehavior"
+    id: T1491
+    mapping-pattern: ''
+    name: Defacement
+    references:
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+    related-score: true
+    score-category: Detect
+    score-comment: 'GuardDuty provides multiple finding types that flag malicious
+      activity against resources. These findings focus on API calls that look suspicious
+      and although they do not flag events such as Defacement specifically, it can
+      be inferred that these findings can result in mitigating this technique''s negative
+      impact. With this assumption the score is capped at Partial. '
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Amazon GuardDuty
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/19/2021
+    last-update: 04/19/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

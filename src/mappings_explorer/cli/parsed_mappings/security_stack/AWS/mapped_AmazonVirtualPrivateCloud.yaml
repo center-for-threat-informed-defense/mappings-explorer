@@ -1,0 +1,832 @@
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1590
+    mapping-pattern: ''
+    name: Gather Victim Network Information
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      prevent the gathering of victim network information via (active) scanning methods
+      but is not effective against other methods of gathering victim network information
+      such as via Phishing or online databases (e.g. WHOIS) resulting in a Partial
+      coverage score and an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1595
+    mapping-pattern: ''
+    name: Active Scanning
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to restrict inbound traffic that can protect against active scanning
+      techniques such as Scanning IP Blocks and/or Vulnerability Scanning.  Because
+      this protection is limited to known malicious IP addresses and domains and does
+      not provide protection from such attacks from unknown domains and IP addresses,
+      this is scored as partial coverage resulting in an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      limit access to external remote services  to the minimum necessary.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1205
+    mapping-pattern: ''
+    name: Traffic Signaling
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      provide significant protection for some variations of this technique, for example
+      Port Knocking.  Other variations of this technique such as using traffic signaling
+      to execute a malicious task is not easily mitigated by security groups or NACLs.  Consequently,
+      its coverage score is Partial resulting in an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      filter both internal and external network traffic and therefore, can mitigate
+      unauthorized network service scanning.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1018
+    mapping-pattern: ''
+    name: Remote System Discovery
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      filter network traffic and therefore can be effective for mitigating network
+      based remote system discovery.  Other remote system discovery methods such as
+      discovering hosts from local host files are not mitigated resulting in Partial
+      coverage score and an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1008
+    mapping-pattern: ''
+    name: Fallback Channels
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to restrict external network access to the minimum required and can
+      therefore mitigate an adversary utilizing a fallback or alternative communication
+      channels.  In environments where unrestricted Internet access is required, security
+      groups and NACLs can still be used to block known malicious endpoints.  Because
+      in such environments the protection is limited to known  malicious IP addresses
+      and domains and does not provide protection from such attacks from unknown domains
+      and IP addresses, this is scored as partial coverage resulting in an overall
+      Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1095
+    mapping-pattern: ''
+    name: Non-Application Layer Protocol
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to restrict external network access to the minimum required and can
+      therefore mitigate adversary attempts to utilize non-application layer protocols
+      for communication.  In environments where unrestricted Internet access is required,
+      security groups and NACLs can still be used to block known malicious endpoints.  Because
+      in such environments the protection is limited to known  malicious IP addresses
+      and domains and does not provide protection from such attacks from unknown domains
+      and IP addresses, this is scored as partial coverage resulting in an overall
+      Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1571
+    mapping-pattern: ''
+    name: Non-Standard Port
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      limit access to the minimum required ports and therefore, protect against adversaries
+      attempting to use non-standard ports for C2 traffic.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1219
+    mapping-pattern: ''
+    name: Remote Access Software
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to limit outgoing traffic to only sites and services used by authorized
+      remote access tools.  This is scored as partial because it doesn't protect against
+      an adversary using an authorized remote access tool for malicious activity.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      limit access to external hosts and can therefore provide mitigation of this
+      technique.  For environments where Internet access is required, these controls
+      can be used to block known malicious addresses.  Because this latter protection
+      is limited to known malicious endpoints, it provides Partial coverage resulting
+      in an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: The VPC service's support for the AWS Virtual Private Network (VPN)
+      can be used to encrypt traffic traversing over untrusted networks which can
+      prevent information from being gathered via network sniffing.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1557
+    mapping-pattern: ''
+    name: Man-in-the-Middle
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: The VPC service's support for the AWS Virtual Private Network (VPN)
+      can be used to encrypt traffic traversing over untrusted networks which can
+      mitigate Man-in-the-Middle attacks that manipulate network protocol data in
+      transit. VPC Peering can also be utilized to route traffic privately between
+      two VPCs which can reduce the Man-in-the-Middle attack surface.  VPC Endpoints
+      can also similarly reduce the attack surface of Man-in-the-Middle attacks by
+      ensuring network traffic between a VPC and supported AWS services are not exposed
+      to the Internet.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1565
+    mapping-pattern: ''
+    name: Data Manipulation
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: The VPC service's support for the AWS Virtual Private Network (VPN)
+      can be used to encrypt traffic traversing over untrusted networks which can
+      provide protection against one sub-technique (Transmitted Data Manipulation)
+      of this technique while not providing protection for its remaining sub-techniques
+      resulting in overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1199
+    mapping-pattern: ''
+    name: Trusted Relationship
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC network access control lists (NACLs) can isolate portions of
+      the network that do not require network-wide access, limiting some attackers
+      that leverage trusted relationships such as remote access for vendor maintenance.
+      Coverage partial, Temporal Immediate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1602
+    mapping-pattern: ''
+    name: Data from Configuration Repository
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      limit attackers' access to configuration repositories such as SNMP management
+      stations, or to dumps of client configurations from common management ports.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1542
+    mapping-pattern: ''
+    name: Pre-OS Boot
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      provide partial protection coverage of Pre-OS Boot  mechanisms that utilize
+      TFTP boot resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to restrict access to remote services to the minimum necessary.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1021
+    mapping-pattern: ''
+    name: Remote Services
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      provide partial protection for all of its sub-techniques and procedure examples
+      resulting in an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1072
+    mapping-pattern: ''
+    name: Software Deployment Tools
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to limit access to critical network systems such as software deployment
+      tools.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1482
+    mapping-pattern: ''
+    name: Domain Trust Discovery
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to isolate sensitive domains to limit discovery.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1498
+    mapping-pattern: ''
+    name: Network Denial of Service
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to restrict access to endpoints but will prove effective at mitigating
+      only low-end DOS attacks resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1499
+    mapping-pattern: ''
+    name: Endpoint Denial of Service
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) provides
+      minimal protection for a majority of this control's sub-techniques and procedure
+      examples resulting in an overall score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1570
+    mapping-pattern: ''
+    name: Lateral Tool Transfer
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: false
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      be used to limit traffic between systems and enclaves to minimum necessary for
+      example via a zero-trust strategy.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: 'The mappings contained in this file were based on Amazon''s "Security
+      in Amazon Virtual Private Cloud" documentation listed in the references section.
+      The following VPC components were assessed to produce this mapping: Security
+      Groups, Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and
+      Virtual Private Network (VPN).'
+    id: T1090
+    mapping-pattern: ''
+    name: Proxy
+    references:
+    - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+    related-score: true
+    score-category: Protect
+    score-comment: VPC security groups and network access control lists (NACLs) can
+      restrict ports and inter-system / inter-enclave connections as described by
+      the Proxy related sub-techniques although it doesn't provide protection for
+      domain-fronting.  It furthermore provides partial protection of this technique's
+      procedure examples resulting in an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Network
+    value: Amazon Virtual Private Cloud
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 06/26/2021
+    last-update: 06/26/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

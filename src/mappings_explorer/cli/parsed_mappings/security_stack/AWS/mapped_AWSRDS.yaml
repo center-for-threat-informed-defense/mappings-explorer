@@ -1,0 +1,551 @@
+- attack-object:
+    comments: ''
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: AWS RDS and AWS RDS Proxy support TLS/SSL connections to database
+      instances which protects against network sniffing attacks. As a result, this
+      mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1565
+    mapping-pattern: ''
+    name: Data Manipulation
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: true
+    score-category: Protect
+    score-comment: 'AWS RDS supports the encryption of database instances using the
+      AES-256 encryption algorithm. This can protect database instances from being
+      modified at rest. Furthermore, AWS RDS supports TLS/SSL connections which protect
+      data from being modified during transit. This mapping is given a score of Partial
+      because it only supports a subset of the sub-techniques (2 of 3). '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1565
+    mapping-pattern: ''
+    name: Data Manipulation
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: true
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that data is manipulated, AWS RDS can be used to restore the database
+      instance to a previous point in time. As a result, this mapping is given a score
+      of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1557
+    mapping-pattern: ''
+    name: Man-in-the-Middle
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: AWS RDS and AWS RDS Proxy support TLS/SSL connections to database
+      instances which protects against man-in-the-middle attacks. However, given that
+      it does not support any sub-techniques, the mapping is given a score of Partial.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: 'AWS RDS supports the automatic patching of minor versions of database
+      instances. This can result in security flaws in the database instances being
+      fixed before they can be exploited. This mapping is given a score of Partial
+      because it does not protect against misconfigured database instances which may
+      be susceptible to exploitation.     '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is compromised, AWS RDS can be used to
+      restore the database instance to a previous point in time. As a result, this
+      mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: 'AWS RDS supports the automatic patching of minor versions of database
+      instances. This can result in security flaws in the database instances being
+      fixed before they can be exploited. This mapping is given a score of Partial
+      because it does not protect against misconfigured database instances which may
+      be susceptible to exploitation.     '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is compromised, AWS RDS can be used to
+      restore the database instance to a previous point in time. As a result, this
+      mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: AWS RDS provides deletion protection which prevents any user from
+      deleting a database instance. If applied, the setting may mitigate attempts
+      to delete a database instance. As a result, this mapping is given a score of
+      Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'AWS RDS generates events for database instances and includes the
+      following events that may indicate that an adversary has destroyed the database
+      instance.
+
+      RDS-EVENT-0003: The DB instance has been deleted RDS-EVENT-0041: A DB snapshot
+      has been deleted
+
+      This mapping is given a score of Partial because it can''t differentiate between
+      an authorized and unauthorized deletion.
+
+      '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is deleted, AWS RDS can be used to restore
+      the database instance to a previous point in time. As a result, this mapping
+      is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1486
+    mapping-pattern: ''
+    name: Data Encrypted for Impact
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is encrypted by an adversary (e.g., ransomware),
+      AWS RDS can be used to restore the database instance to a previous point in
+      time. As a result, this mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1490
+    mapping-pattern: ''
+    name: Inhibit System Recovery
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'AWS RDS generates events for database instances and includes the
+      following event that may indicate that an adversary has attempted to inhibit
+      system recovery.
+
+      RDS-EVENT-0028: Automatic backups for this DB instance have been disabled
+
+      This mapping is given a score of Partial because it can''t differentiate between
+      an authorized and unauthorized disabling of automatic backups.
+
+      '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1490
+    mapping-pattern: ''
+    name: Inhibit System Recovery
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is compromised and modified to disrupt
+      recovery, AWS RDS can be used to restore the database instance to a previous
+      point in time. As a result, this mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1561
+    mapping-pattern: ''
+    name: Disk Wipe
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: true
+    score-category: Respond
+    score-comment: AWS RDS supports the replication and recovery of database instances.
+      In the event that a database instance is deleted during a disk wipe, AWS RDS
+      can be used to restore the database instance to a previous point in time. However,
+      this mapping is only given a score of Minimal because AWS RDS only provides
+      a backup of the database instance and not the underlying system that it is hosted
+      on.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Protect
+    score-comment: AWS RDS supports the encryption of the underlying storage for database
+      instances, backups, read replicas, and snapshots using the AES-256 encryption
+      algorithm. This can protect against an adversary from gaining access to a database
+      instance in the event they get access to the underlying system where the database
+      instance is hosted or to S3 where the backups are stored. Furthermore, with
+      AWS RDS, there is a setting that specifies whether or not a database instances
+      is publicly accessible. When public accessibility is turned off, the database
+      instance will not be available outside the VPC in which it was created. As a
+      result, this mapping is given a score of Significant.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1529
+    mapping-pattern: ''
+    name: System Shutdown/Reboot
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Detect
+    score-comment: "AWS RDS generates events for database instances and includes the\
+      \ following events that may indicate that an adversary has shutdown or rebooted\
+      \ the database instance. \nRDS-EVENT-0006: The DB instance restarted, RDS-EVENT-0004:\
+      \ The DB instance shutdown, RDS-EVENT-0022: An error has occurred while restarting\
+      \ MySQL or MariaDB\nThis mapping is given a score of Partial because it can't\
+      \ differentiate between an authorized and unauthorized shutdown/reboot."
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1489
+    mapping-pattern: ''
+    name: Service Stop
+    references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+    related-score: false
+    score-category: Detect
+    score-comment: 'AWS RDS generates events for database instances and includes the
+      following event that may indicate that an adversary has attempted to stop a
+      database instance.
+
+      RDS-EVENT-0087: The DB instance has been stopped
+
+      This mapping is given a score of Partial because it can''t differentiate between
+      an authorized and unauthorized stopping of the database instance.
+
+      '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Database
+    value: AWS RDS
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 07/22/2021
+    last-update: 07/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

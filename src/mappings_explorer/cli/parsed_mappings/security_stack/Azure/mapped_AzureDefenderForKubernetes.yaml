@@ -1,0 +1,122 @@
+- attack-object:
+    comments: ''
+    id: T1525
+    mapping-pattern: ''
+    name: Implant Container Image
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-kubernetes-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-akscluster
+    related-score: false
+    score-category: Detect
+    score-comment: This control may alert on containers with sensitive volume mounts,
+      unneeded privileges, or running an image with digital currency mining software.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center Recommendation
+    - Containers
+    value: Azure Defender for Kubernetes
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-kubernetes-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-akscluster
+    related-score: false
+    score-category: Protect
+    score-comment: This control may alert on publicly exposed Kubernetes services.
+      This may provide context on services that should be patched or hardened for
+      public access.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center Recommendation
+    - Containers
+    value: Azure Defender for Kubernetes
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1068
+    mapping-pattern: ''
+    name: Exploitation for Privilege Escalation
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-kubernetes-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-akscluster
+    related-score: false
+    score-category: Detect
+    score-comment: This control may alert on detection of new privileged containers
+      and high privilege roles.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center Recommendation
+    - Containers
+    value: Azure Defender for Kubernetes
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1070
+    mapping-pattern: ''
+    name: Indicator Removal on Host
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-kubernetes-introduction
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-akscluster
+    related-score: false
+    score-category: Detect
+    score-comment: This control may alert on deletion of Kubernetes events. Attackers
+      might delete those events for hiding their operations in the cluster. There
+      is no relevant sub-technique for this control but the parent applies.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center Recommendation
+    - Containers
+    value: Azure Defender for Kubernetes
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

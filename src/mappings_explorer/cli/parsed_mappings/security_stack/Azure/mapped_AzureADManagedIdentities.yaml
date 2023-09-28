@@ -1,0 +1,30 @@
+- attack-object:
+    comments: ''
+    id: T1552
+    mapping-pattern: ''
+    name: Unsecured Credentials
+    references:
+    - https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
+    related-score: true
+    score-category: Protect
+    score-comment: This control provides protection for one of this technique's sub-techniques,
+      while not providing any protection for its procedure examples nor its remaining
+      sub-techniques, resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Active Directory
+    - Azure Security Center Recommendation
+    - Identity
+    value: Managed identities for Azure resources
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/01/2021
+    last-update: 04/01/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

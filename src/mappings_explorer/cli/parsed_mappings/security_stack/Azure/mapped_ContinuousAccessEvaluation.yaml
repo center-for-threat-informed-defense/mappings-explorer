@@ -1,0 +1,28 @@
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-continuous-access-evaluation
+    related-score: true
+    score-category: Respond
+    score-comment: This control only protects cloud accounts and therefore its overall
+      coverage is minimal resulting in a Minimal respond score for this technique.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Active Directory
+    - Identity
+    value: Continuous Access Evaluation
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/20/2021
+    last-update: 03/20/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

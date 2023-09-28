@@ -1,0 +1,774 @@
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1087
+    mapping-pattern: ''
+    name: Account Discovery
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides significant detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1482
+    mapping-pattern: ''
+    name: Domain Trust Discovery
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s "Active Directory attributes reconnaissance (LDAP)
+      (external ID 2210)" alert may be able to detect this operation.  There are statements
+      in the documentation for the alert, such as: "Active Directory LDAP reconnaissance
+      is used by attackers to gain critical information about the domain environment.
+      This information can help attackers map the domain structure ...", that  may
+      indicate support for detecting this technique.  The level of detection though
+      is unknown and therefore a conservative assessment of a Minimal score is assigned.'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1201
+    mapping-pattern: ''
+    name: Password Policy Discovery
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s "Active Directory attributes reconnaissance (LDAP)
+      (external ID 2210)" alert may be able to detect this operation.  There are statements
+      in the documentation for the alert, such as: "Active Directory LDAP reconnaissance
+      is used by attackers to gain critical information about the domain environment.
+      This information can help attackers map the domain structure ...", that  may
+      indicate support for detecting this technique.  The level of detection though
+      is unknown and therefore a conservative assessment of a Minimal score is assigned.'
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1069
+    mapping-pattern: ''
+    name: Permission Groups Discovery
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides significant detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: "This control's \"Remote code execution over DNS (external ID 2036)\"\
+      \ alert can look for an attacker attempting to exploit CVE-2018-8626, a remote\
+      \ code execution vulnerability exists in Windows Domain Name System (DNS) servers.\
+      \  In this detection, a Defender for Identity security alert is triggered when\
+      \ DNS queries suspected of exploiting the CVE-2018-8626 security vulnerability\
+      \ are made against a domain controller in the network.  \nLikewise this controls\
+      \ \"Suspected SMB packet manipulation (CVE-2020-0796 exploitation)\" alert can\
+      \ detect a remote code execution vulnerability with SMBv3.\nBecause these detections\
+      \ are specific to a few CVEs, its coverage is Minimal resulting in a Minimal\
+      \ score."
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1550
+    mapping-pattern: ''
+    name: Use Alternate Authentication Material
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial detection for some of this technique's
+      sub-techniques  (due to unknown false-positive/true-positive rate), resulting
+      in a Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1557
+    mapping-pattern: ''
+    name: Man-in-the-Middle
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the other, resulting in
+      an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides significant detection of some of the sub-techniques
+      of this technique and has therefore been assessed an overall score of Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1558
+    mapping-pattern: ''
+    name: Steal or Forge Kerberos Tickets
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides partial detection for most of this technique's
+      sub-techniques, resulting in an overall Partial score.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s "Suspicious VPN connection (external ID 2025)"
+      alert utilizes machine learning models to learn  normal VPN connections for
+      a user and detect deviations from the norm.  This detection is specific to VPN
+      traffic and therefore its overall coverage is Minimal. '
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1555
+    mapping-pattern: ''
+    name: Credentials from Password Stores
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1047
+    mapping-pattern: ''
+    name: Windows Management Instrumentation
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control''s "Remote code execution attempt (external ID 2019)"
+      alert can detect Remote code execution via WMI.  This may lead to false positives
+      as administrative workstations, IT team members, and service accounts can all
+      perform legitimate administrative tasks against domain controllers.  Additionally,
+      this alert seems to be specific to detecting execution on domain controllers
+      and AD FS servers, limiting its coverage.
+
+      '
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1059
+    mapping-pattern: ''
+    name: Command and Scripting Interpreter
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides Minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1021
+    mapping-pattern: ''
+    name: Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides Minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1569
+    mapping-pattern: ''
+    name: System Services
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides Minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1207
+    mapping-pattern: ''
+    name: Rogue Domain Controller
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: This control's "Suspected DCShadow attack (domain controller promotion)
+      (external ID 2028)" and "Suspected DCShadow attack (domain controller replication
+      request) (external ID 2029)" alerts can detect this technique.  Also should
+      be a low false positive rate as the quantity and identity of domain controllers
+      on the network should change very infrequently.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1003
+    mapping-pattern: ''
+    name: OS Credential Dumping
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides significant and partial detection for a few
+      of this technique's sub-techniques, while not providing any detection for the
+      remaining, resulting in a Minimal coverage score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1556
+    mapping-pattern: ''
+    name: Modify Authentication Process
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1098
+    mapping-pattern: ''
+    name: Account Manipulation
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: false
+    score-category: Detect
+    score-comment: "This controls's \"Suspicious additions to sensitive groups (external\
+      \ ID 2024)\" alert can utilize machine learning to detect when an attacker adds\
+      \ users to highly privileged groups. Adding users is done to gain access to\
+      \ more resources, and gain persistency.  This detection relies on profiling\
+      \ the group modification activities of users, and alerting when an abnormal\
+      \ addition to a sensitive group is observed. Defender for Identity profiles\
+      \ continuously. \nThis alert provides Partial coverage of this technique with\
+      \ a reduced false-positive rate by utilizing machine learning models."
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1543
+    mapping-pattern: ''
+    name: Create or Modify System Process
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides Partial detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Understandably (to avoid enabling adversaries to circumvent the detection),
+      many of the detections provided by this control do not provide a detailed description
+      of the detection logic making it often times difficult to map to ATT&CK Techniques.
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://docs.microsoft.com/en-us/defender-for-identity/what-is
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides Partial detection for one of this technique's
+      sub-techniques, while not providing any detection for the remaining, resulting
+      in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Credentials
+    - DNS
+    - Identity
+    - Microsoft 365 Defender
+    - Windows
+    value: Microsoft Defender for Identity
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/21/2021
+    last-update: 03/21/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

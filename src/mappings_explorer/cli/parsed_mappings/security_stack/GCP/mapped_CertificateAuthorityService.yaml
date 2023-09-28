@@ -1,0 +1,30 @@
+- attack-object:
+    comments: ''
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://cloud.google.com/certificate-authority-service/docs
+    related-score: false
+    score-category: Protect
+    score-comment: This control may mitigate against Network Sniffing by providing
+      certificates for internal endpoints and applications to use with asymmetric
+      encryption. This control helps protect the issuing Certificate Authority with
+      the use of Google's IAM and policy controls.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Certificate Service
+    - Network
+    value: Certificate Authority Service
+  metadata:
+    attack-version: 10
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/28/2022
+    last-update: 03/28/2022
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: GCP
+    platform-version: ''

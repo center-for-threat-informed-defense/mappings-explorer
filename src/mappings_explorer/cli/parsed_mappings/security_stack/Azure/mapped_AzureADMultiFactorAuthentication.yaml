@@ -1,0 +1,73 @@
+- attack-object:
+    comments: Note that MFA that is triggered in response to privileged operations
+      (such as assigning a user a privileged role) are considered functionality of
+      the Azure AD Privileged Identity Management control.  Consult the mapping for
+      this control for the ATT&CK (sub-)techniques it maps to.  This mapping specifically
+      deals with MFA when it is enabled as a security default.
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+    related-score: true
+    score-category: Protect
+    score-comment: MFA provides significant protection against password compromises,
+      requiring the adversary to complete an additional authentication method before
+      their access is permitted.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Azure Active Directory
+    - Azure Security Center Recommendation
+    - Credentials
+    - Identity
+    - Passwords
+    - MFA
+    value: Azure AD Multi-Factor Authentication
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/20/2021
+    last-update: 03/20/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: Note that MFA that is triggered in response to privileged operations
+      (such as assigning a user a privileged role) are considered functionality of
+      the Azure AD Privileged Identity Management control.  Consult the mapping for
+      this control for the ATT&CK (sub-)techniques it maps to.  This mapping specifically
+      deals with MFA when it is enabled as a security default.
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks
+    related-score: true
+    score-category: Protect
+    score-comment: This control only protects cloud accounts and therefore its overall
+      protection coverage is Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Active Directory
+    - Azure Security Center Recommendation
+    - Credentials
+    - Identity
+    - Passwords
+    - MFA
+    value: Azure AD Multi-Factor Authentication
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/20/2021
+    last-update: 03/20/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

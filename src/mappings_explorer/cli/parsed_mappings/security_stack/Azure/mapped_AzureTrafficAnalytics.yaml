@@ -1,0 +1,391 @@
+- attack-object:
+    comments: ''
+    id: T1199
+    mapping-pattern: ''
+    name: Trusted Relationship
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can be used to gain insight into normal traffic from
+      trusted third parties which can then be used to detect anomalous traffic that
+      may be indicative of a threat.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1602
+    mapping-pattern: ''
+    name: Data from Configuration Repository
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify anomalous traffic with respect to configuration
+      repositories or identified configuration management ports.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1542
+    mapping-pattern: ''
+    name: Pre-OS Boot
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify anomalous traffic related to one of its
+      sub-techniques (TFTP boot).
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1563
+    mapping-pattern: ''
+    name: Remote Service Session Hijacking
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can be used to identify anomalous traffic related
+      to RDP and SSH sessions or blocked attempts to access these management ports.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1048
+    mapping-pattern: ''
+    name: Exfiltration Over Alternative Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect anomalous traffic with respect to specific
+      protocols/ports.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect anomalous traffic to and from externally
+      facing systems with respect to network security group (NSG) policy.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1021
+    mapping-pattern: ''
+    name: Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect anomalous traffic or attempts related to
+      network security group (NSG) for remote services.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1072
+    mapping-pattern: ''
+    name: Software Deployment Tools
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect anomalous traffic with respect to critical
+      systems and software deployment ports.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify anomalous access to external remote services.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect network service scanning/discovery activity.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1571
+    mapping-pattern: ''
+    name: Non-Standard Port
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify anomalous traffic that utilizes non-standard
+      application ports.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify anomalous traffic with respect to NSG
+      and application layer protocols.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1499
+    mapping-pattern: ''
+    name: Endpoint Denial of Service
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify volumetric and multi-sourced denial-of-service
+      attacks.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1090
+    mapping-pattern: ''
+    name: Proxy
+    references:
+    - https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect anomalous traffic between systems and external
+      networks.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Analytics
+    - Network
+    value: Azure Network Traffic Analytics
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/22/2021
+    last-update: 03/22/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

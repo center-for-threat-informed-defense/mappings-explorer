@@ -1,0 +1,732 @@
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to restrict access to
+      applications that are public facing and providing information on vulnerable
+      applications.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to secure external remote
+      services, such as restricting SSH access, enabling multi-factor authentication
+      for VPN access, and auditing external remote services that are not necessary
+      or updated.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1590
+    mapping-pattern: ''
+    name: Gather Victim Network Information
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: This control may provide recommendations to restrict access to
+      cloud resources from public networks and to route traffic between resources
+      through Azure. Recommendations are also provided to use private DNS zones. If
+      these recommendations are implemented the visible network information should
+      be reduced.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1098
+    mapping-pattern: ''
+    name: Account Manipulation
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1525
+    mapping-pattern: ''
+    name: Implant Container Image
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Detect
+    score-comment: This control may provide recommendations to enable scanning and
+      auditing of container images. This can provide information on images that have
+      been added with high privileges or vulnerabilities.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1535
+    mapping-pattern: ''
+    name: Unused/Unsupported Cloud Regions
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to restrict the allowed
+      locations your organization can specify when deploying resources or creating
+      resource groups.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1505
+    mapping-pattern: ''
+    name: Server Software Component
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1068
+    mapping-pattern: ''
+    name: Exploitation for Privilege Escalation
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations for vulnerability assessment
+      and outdated applications and cloud services. This control covers a wide range
+      of Azure cloud services to help reduce the surface area for exploitation.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1211
+    mapping-pattern: ''
+    name: Exploitation for Defense Evasion
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations for vulnerability assessment
+      and outdated applications and cloud services. This control covers a wide range
+      of Azure cloud services to help reduce the surface area for exploitation.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1212
+    mapping-pattern: ''
+    name: Exploitation for Credential Access
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations for vulnerability assessment
+      and outdated applications and cloud services. This control covers a wide range
+      of Azure cloud services to help reduce the surface area for exploitation.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1203
+    mapping-pattern: ''
+    name: Exploitation for Client Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations for vulnerability assessment
+      and outdated applications and cloud services. This control covers a wide range
+      of Azure cloud services to help reduce the surface area for exploitation.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1555
+    mapping-pattern: ''
+    name: Credentials from Password Stores
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations for auditing and hardening
+      Azure Key Vault to prevent malicious access and segment key access.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1040
+    mapping-pattern: ''
+    name: Network Sniffing
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable various Azure
+      services that route traffic through secure networks, segment all network traffic,
+      and enable TLS encryption where available.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1580
+    mapping-pattern: ''
+    name: Cloud Infrastructure Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable Azure services
+      that limit access to cloud infrastructure. Several Azure services and controls
+      provide mitigations against cloud infrastructure discovery.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1538
+    mapping-pattern: ''
+    name: Cloud Service Dashboard
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable Azure services
+      that limit access to Azure Resource Manager and other Azure dashboards. Several
+      Azure services and controls provide mitigations against this technique.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1526
+    mapping-pattern: ''
+    name: Cloud Service Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable Azure services
+      that limit access to cloud services. Several Azure services and controls provide
+      mitigations against cloud service discovery.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable Azure security
+      controls to harden remote services and reduce surface area for possible exploitation.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1021
+    mapping-pattern: ''
+    name: Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: 'This control may provide recommendations to enable Azure Defender
+      for Storage and other security controls to prevent access to data from cloud
+      storage objects. '
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: true
+    score-category: Protect
+    score-comment: null
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1537
+    mapping-pattern: ''
+    name: Transfer Data to Cloud Account
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable security controls
+      that monitor and prevent malicious transfer of data to cloud accounts.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This mapping is focused on the list of built-in policy definitions provided
+      by Azure Policy. All scores are capped at Partial since this control provides
+      recommendations rather than applying/enforcing the recommended actions.
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.microsoft.com/en-us/azure/governance/policy/overview
+    - https://docs.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir
+    related-score: false
+    score-category: Protect
+    score-comment: This control may provide recommendations to enable soft deletion
+      and purge protection in Azure Key Vault. This can help mitigate against malicious
+      deletion of keys and secrets stored within Key Vault.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Policy
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/31/2021
+    last-update: 03/31/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

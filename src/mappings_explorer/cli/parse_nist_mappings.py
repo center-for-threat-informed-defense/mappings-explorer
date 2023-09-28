@@ -1,6 +1,5 @@
-def configure_nist_mappings(
-    dataframe, parsed_mappings, attack_version, mappings_version
-):
+def configure_nist_mappings(dataframe, attack_version, mappings_version):
+    parsed_mappings = []
     for _, row in dataframe.iterrows():
         parsed_mappings.append(
             {
@@ -28,3 +27,5 @@ def configure_nist_mappings(
                 },
             }
         )
+
+    return parsed_mappings

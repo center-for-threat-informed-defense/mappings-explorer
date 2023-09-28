@@ -1,0 +1,921 @@
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: "This control can identify anomalous behavior such as geographically\
+      \ impossible logins and out-of-character activity. \nRelevant alerts include\
+      \ \"Activity from anonymous IP address\" , \"Activity from infrequent country\"\
+      , \"Activity from suspicious IP address\", \"Impossible Travel\", and \"Activity\
+      \ performed by terminated user\"."
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1567
+    mapping-pattern: ''
+    name: Exfiltration Over Web Service
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Protect
+    score-comment: This control can limit user methods to send data over web services.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1567
+    mapping-pattern: ''
+    name: Exfiltration Over Web Service
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify large volume potential exfiltration activity,
+      and log user activity potentially related to exfiltration via web services.
+      A relevant alert is "Unusual file download (by user)".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1189
+    mapping-pattern: ''
+    name: Drive-by Compromise
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect outdated client browser software, which
+      is a common target of exploitation in drive-by compromises.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1535
+    mapping-pattern: ''
+    name: Unused/Unsupported Cloud Regions
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect unusual region and activity for cloud resources
+      (preview feature as of this writing).  Relevant alert is "Suspicious creation
+      activity for cloud region".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1187
+    mapping-pattern: ''
+    name: Forced Authentication
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Protect
+    score-comment: This control can provide significant protection against forced
+      authentication methods by restricting actions associated with multiple file
+      access methods such as SMB.
+    score-value: Significant
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1187
+    mapping-pattern: ''
+    name: Forced Authentication
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can alert on anomalous sharing attempts of confidential
+      data.
+    score-value: Significant
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1530
+    mapping-pattern: ''
+    name: Data from Cloud Storage Object
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect use of unsanctioned business apps and data
+      exfil to unsanctioned storage apps.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1528
+    mapping-pattern: ''
+    name: Steal Application Access Token
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Protect
+    score-comment: This control can restrict user app permissions which can limit
+      the potential for theft of application access tokens.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1528
+    mapping-pattern: ''
+    name: Steal Application Access Token
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control can detect potentially risky apps. Relevant alerts
+      include "Misleading publisher name for an Oauth app" and "Misleading OAuth app
+      name". '
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1526
+    mapping-pattern: ''
+    name: Cloud Service Discovery
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect anomalous user activity that may be associated
+      with cloud service discovery. Relevant alert is "Unusual file share activty
+      (by user)".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1213
+    mapping-pattern: ''
+    name: Data from Information Repositories
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Protect
+    score-comment: This control can provide fine-grained access control to information
+      sharing repositories such as Sharepoint or Confluence. Due to this capability
+      being limited to these services, it has been scored as Partial coverage resulting
+      in a Partial score.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1213
+    mapping-pattern: ''
+    name: Data from Information Repositories
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control may detect anomalous user behavior wrt information
+      repositories such as Sharepoint or Confluence.  Due to this capability being
+      limited to these services, it has been scored as Partial coverage resulting
+      in a Partial score.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1119
+    mapping-pattern: ''
+    name: Automated Collection
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Protect
+    score-comment: This control's Information protection policies can detect and encrypt
+      sensitive information at rest on supported platforms, which can inhibit automated
+      data collection activities.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1119
+    mapping-pattern: ''
+    name: Automated Collection
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect sensitive information at rest, which may
+      be indicative of data collection activities.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1565
+    mapping-pattern: ''
+    name: Data Manipulation
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Protect
+    score-comment: This control can detect and encrypt sensitive information at rest
+      on supported platforms and restrict access.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Protect
+    score-comment: This control's polices for access control can limit abuse of external
+      facing remote services.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1133
+    mapping-pattern: ''
+    name: External Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can provide logging of activity associated with potential
+      exploitation of remote services such as anomalous geographic access.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1219
+    mapping-pattern: ''
+    name: Remote Access Software
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Protect
+    score-comment: This control can limit potential C2 via unapproved remote access
+      software.
+    score-value: Significant
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1219
+    mapping-pattern: ''
+    name: Remote Access Software
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify potential malicious activity associated
+      with the use or attempted use of unapproved remote access software.
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1484
+    mapping-pattern: ''
+    name: Domain Policy Modification
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect admin activity from risky IP addresses.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1098
+    mapping-pattern: ''
+    name: Account Manipulation
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect anomalous admin activity that may be indicative
+      of account manipulation. Relevant alerts include "Unusual administrative activity
+      (by user)" and "Unusual addition of credentials to an OAuth app".
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1578
+    mapping-pattern: ''
+    name: Modify Cloud Compute Infrastructure
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: 'This control can identify anomalous admin activity.
+
+      Relevant alerts include "Multiple storage deletion activities", "Multiple VM
+      creation activities", and "Suspicious creation activity for cloud region". '
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1531
+    mapping-pattern: ''
+    name: Account Access Removal
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify anomalous admin activity.
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1496
+    mapping-pattern: ''
+    name: Resource Hijacking
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify some behaviors that are potential instances
+      of resource hijacking. Relevant alerts include "Multiple VM Creation activities"
+      and "Suspicious creation activity for cloud region".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1485
+    mapping-pattern: ''
+    name: Data Destruction
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: 'This control can identify deletion activity which could be potential
+      malicious data destruction. Relevant Alerts include "Multiple storage deletion
+      activities", "Multiple VM deletion activity", "Unusual file deletion activity
+      (by user), "Suspicous email deletion activiy", and "Ransomware activity".
+
+      '
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1486
+    mapping-pattern: ''
+    name: Data Encrypted for Impact
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect a range of ransomware-related activities
+      including encryption. Relevant alert include "Ransomware activities" and "Unusual
+      file deletion activity (by user)".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control can identify some evidence of potential C2 via a specific
+      application layer protocol (mail). Relevant alerts include  "Suspicious inbox
+      forwarding" and "Suspicious inbox manipulation rule".
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect some activity indicative of brute force
+      attempts to login. Relevant alert is "Multiple failed login attempts".
+    score-value: Partial
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: This control is basically a CASB, and various features can generate
+      logs and alerts that can be incorporated into a SIEM such as Sentinel for moderate
+      to high temporal score.
+    id: T1534
+    mapping-pattern: ''
+    name: Internal Spearphishing
+    references:
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-cloud-discovery
+    - https://docs.microsoft.com/en-us/cloud-app-security/policies-information-protection
+    - https://docs.microsoft.com/en-us/cloud-app-security/investigate-anomaly-alerts
+    related-score: false
+    score-category: Detect
+    score-comment: This control can identify anomalous user impersonation activity,
+      which can be an element of internal spearphishing. Relevant alert is "Unusual
+      impersonated activity (by user)".
+    score-value: Minimal
+    secondary-property: ''
+    tags: []
+    value: Cloud App Security Policies
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 03/15/2021
+    last-update: 03/15/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''

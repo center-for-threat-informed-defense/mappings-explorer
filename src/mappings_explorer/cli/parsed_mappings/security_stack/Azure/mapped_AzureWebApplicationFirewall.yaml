@@ -1,0 +1,196 @@
+- attack-object:
+    comments: ''
+    id: T1595
+    mapping-pattern: ''
+    name: Active Scanning
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: true
+    score-category: Protect
+    score-comment: This control can protect web applications from active scanning
+      by an adversary. Because this protection is specific to web applications (although
+      frequent targets) and not other application types, it has been scored as Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: false
+    score-category: Protect
+    score-comment: This control can protect web applications from common attacks (e.g.
+      SQL injection, XSS).
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect common web application attack vectors.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: false
+    score-category: Protect
+    score-comment: This control can protect web applications from network service
+      scanning by an adversary. Because this protection is specific to web applications
+      (although frequent targets) and not other application types enumerated in the
+      procedure examples of this technique (e.g. Active Directory), it has been scored
+      as Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1046
+    mapping-pattern: ''
+    name: Network Service Scanning
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: false
+    score-category: Detect
+    score-comment: This control can detect network service scanning of web applications
+      by an adversary. Because this detection is specific to web applications (although
+      frequent targets) and not other application types enumerated in the procedure
+      examples of this technique (e.g. Active Directory), it has been scored as Partial.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: true
+    score-category: Protect
+    score-comment: This control can protect against one of the sub-techniques of this
+      technique while not providing protection for the remaining, resulting in a Minimal
+      overall score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1071
+    mapping-pattern: ''
+    name: Application Layer Protocol
+    references:
+    - https://docs.microsoft.com/en-us/azure/web-application-firewall/overview
+    related-score: true
+    score-category: Detect
+    score-comment: This control can detect one of the sub-techniques of this technique
+      while not providing detection for the remaining, resulting in a Minimal overall
+      score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Security Center Recommendation
+    value: Azure Web Application Firewall
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 02/18/2021
+    last-update: 02/18/2021
+    mapping-type: scoring
+    mapping-verision: 1.0
+    organization: ''
+    platform: Azure
+    platform-version: ''

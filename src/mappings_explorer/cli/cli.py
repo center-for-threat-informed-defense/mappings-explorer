@@ -57,17 +57,17 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     ics_attack_data = json.loads(response.text)
 
     attack_object_id_to_name = {}
@@ -100,7 +100,14 @@ def parse_cve_mappings():
     cve_filepath = f"{ROOT_DIR}/mappings/Att&ckToCveMappings.csv"
     datareader = read_csv_file(cve_filepath)
     parsed_mappings = configure_cve_mappings(datareader, attack_object_id_to_name)
-    print(yaml.dump(parsed_mappings))
+
+    result_yaml_file = open(
+        f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/cve/parsed_cve_mappings.yaml",
+        "w",
+        encoding="UTF-8",
+    )
+    parsed_mappings_yaml = yaml.dump(parsed_mappings)
+    result_yaml_file.write(parsed_mappings_yaml)
 
 
 def read_csv_file(filepath):
@@ -113,7 +120,6 @@ def parse_nist_mappings():
     # read in tsv files
     directory = f"{ROOT_DIR}/mappings/NIST_800-53"
 
-    parsed_mappings = []
     # iterate through all nist mapping files in the directory
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
@@ -125,11 +131,29 @@ def parse_nist_mappings():
                 filename.rfind("-") + 1 : filename.index("mappings")
             ].replace("_", ".")
             mappings_version = filename[filename.index("r") : filename.index("r") + 2]
-            configure_nist_mappings(
-                dataframe, parsed_mappings, attack_version, mappings_version
+            parsed_mappings = configure_nist_mappings(
+                dataframe, attack_version, mappings_version
             )
 
-    print(yaml.dump(parsed_mappings))
+            parsed_mappings_yaml = yaml.dump(parsed_mappings)
+            mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
+
+            attack_version_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/nist/{attack_version}/"
+            attack_version_path_exists = os.path.exists(attack_version_path)
+            if not attack_version_path_exists:
+                os.makedirs(attack_version_path)
+
+            mappings_version_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/nist/{attack_version}/{mappings_version}/"
+            mappings_version_path_exists = os.path.exists(mappings_version_path)
+            if not mappings_version_path_exists:
+                os.makedirs(mappings_version_path)
+
+            result_yaml_file = open(
+                f"{mappings_version_path}/{mapped_filename}.yaml",
+                "w",
+                encoding="UTF-8",
+            )
+            result_yaml_file.write(parsed_mappings_yaml)
 
 
 def read_excel_file(filepath):
@@ -139,14 +163,22 @@ def read_excel_file(filepath):
 
 def parse_veris_mappings():
     directory = f"{ROOT_DIR}/mappings/Veris"
-    parsed_mappings = []
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
         # checking if it is a file
         if os.path.isfile(file):
             veris_mappings = read_json_file(file)
-            configure_veris_mappings(veris_mappings, parsed_mappings)
-    print(yaml.dump(parsed_mappings))
+            parsed_mappings = configure_veris_mappings(veris_mappings)
+
+            parsed_mappings_yaml = yaml.dump(parsed_mappings)
+            veris_version_folder = "1.3.7" if "1_3_7" in filename else "1.3.5"
+            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version_folder}"
+            result_file_yaml = open(
+                f"{filepath}/mapped_{filename[0 : filename.index('.')]}.yaml",
+                "w",
+                encoding="UTF-8",
+            )
+            result_file_yaml.write(parsed_mappings_yaml)
 
 
 def read_json_file(filepath):
@@ -159,13 +191,25 @@ def parse_security_stack_mappings():
     rootdir = f"{ROOT_DIR}/mappings/SecurityStack"
 
     # read in all files in SecurityStack directory
-    parsed_mappings = []
     for subdir, _, files in os.walk(rootdir):
         for file in files:
             filepath = os.path.join(subdir, file)
             data = read_yaml(filepath)
-            configure_security_stack_mappings(data, parsed_mappings)
-    print(yaml.dump(parsed_mappings))
+            parsed_mappings = configure_security_stack_mappings(data)
+
+            parsed_mappings_yaml = yaml.dump(parsed_mappings)
+            security_stack_folder_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/security_stack/{os.path.basename(os.path.normpath(subdir))}"
+            security_stack_folder_path_exists = os.path.exists(
+                security_stack_folder_path
+            )
+            if not security_stack_folder_path_exists:
+                os.makedirs(security_stack_folder_path)
+            result_file_yaml = open(
+                f"{security_stack_folder_path}/mapped_{file[0 : file.index('.')]}.yaml",
+                "w",
+                encoding="UTF-8",
+            )
+            result_file_yaml.write(parsed_mappings_yaml)
 
 
 def read_yaml(filepath):

@@ -1,0 +1,60 @@
+- attack-object:
+    comments: ''
+    id: T1078
+    mapping-pattern: ''
+    name: Valid Accounts
+    references:
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html
+    related-score: true
+    score-category: Protect
+    score-comment: This control provides partial protection for one of this technique's
+      sub-techniques and a few of its procedure examples resulting in an overall Minimal
+      protection score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Identity
+    value: Amazon Cognito
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/27/2021
+    last-update: 05/27/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''
+- attack-object:
+    comments: ''
+    id: T1110
+    mapping-pattern: ''
+    name: Brute Force
+    references:
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html
+    - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html
+    related-score: true
+    score-category: Protect
+    score-comment: Amazon Cognito's MFA capability provides significant protection
+      against password compromises, requiring the adversary to complete an additional
+      authentication method before their access is permitted.
+    score-value: Significant
+    secondary-property: ''
+    tags:
+    - Identity
+    value: Amazon Cognito
+  metadata:
+    attack-version: 9
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 05/27/2021
+    last-update: 05/27/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: AWS
+    platform-version: ''

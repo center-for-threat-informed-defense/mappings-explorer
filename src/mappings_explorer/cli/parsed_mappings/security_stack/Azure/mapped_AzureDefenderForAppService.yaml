@@ -1,0 +1,1448 @@
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1584
+    mapping-pattern: ''
+    name: Compromise Infrastructure
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Protect
+    score-comment: This control only addresses one of the technique's sub-techniques,
+      resulting in a score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1496
+    mapping-pattern: ''
+    name: Resource Hijacking
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control detects file downloads associated with digital currency
+      mining as well as host data related to process and command execution associated
+      with mining. It also includes fileless attack detection, which specifically
+      targets crypto mining activity. Temporal factor is unknown.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1204
+    mapping-pattern: ''
+    name: User Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only provides meaningful detection for one of the
+      technique's two sub-techniques, and the temporal factor is unknown, resulting
+      in a score of Minimal.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1140
+    mapping-pattern: ''
+    name: Deobfuscate/Decode Files or Information
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect base-64 encoded executables
+      within command sequences. It also monitors for use of certutil to decode executables.
+      Temporal factor is unknown.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1566
+    mapping-pattern: ''
+    name: Phishing
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Protect
+    score-comment: This control only provides (minimal) protection for one of the
+      technique's sub-techniques, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1059
+    mapping-pattern: ''
+    name: Command and Scripting Interpreter
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control provides minimal detection for this technique's procedure
+      examples and only two of its sub-techniques (only certain specific sub-technique
+      behaviors), resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1105
+    mapping-pattern: ''
+    name: Ingress Tool Transfer
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control detects binary downloads via certutil, monitors for
+      FTP access from IP addresses found in threat intelligence, monitors for references
+      to suspicious domain names and file downloads from known malware sources, and
+      monitors processes for downloads from raw-data websites like Pastebin. Temporal
+      factor is unknown.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1595
+    mapping-pattern: ''
+    name: Active Scanning
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only provides detection for one of its two sub-techniques,
+      resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1594
+    mapping-pattern: ''
+    name: Search Victim-Owned Websites
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control monitors for accesses of potentially sensitive web
+      pages from source IP addresses whose access pattern resembles that of a web
+      scanner or have not been logged before. Temporal factor is unknown.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1055
+    mapping-pattern: ''
+    name: Process Injection
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection covers all relevant sub-techniques.
+      The control also specifically detects process hollowing, executable image injection,
+      and threads started in a dynamically allocated code segment. Detection is periodic
+      at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1203
+    mapping-pattern: ''
+    name: Exploitation for Client Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode executed as a payload in the exploitation
+      of a software vulnerability. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1211
+    mapping-pattern: ''
+    name: Exploitation for Defense Evasion
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode executed as a payload in the exploitation
+      of a software vulnerability. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1068
+    mapping-pattern: ''
+    name: Exploitation for Privilege Escalation
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode executed as a payload in the exploitation
+      of a software vulnerability. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1212
+    mapping-pattern: ''
+    name: Exploitation for Credential Access
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode executed as a payload in the exploitation
+      of a software vulnerability. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1189
+    mapping-pattern: ''
+    name: Drive-by Compromise
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode injected into browser or other process
+      memory as part of a drive-by attack. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1190
+    mapping-pattern: ''
+    name: Exploit Public-Facing Application
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode injected to exploit a vulnerability
+      in a public-facing application. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1210
+    mapping-pattern: ''
+    name: Exploitation of Remote Services
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection identifies shellcode executing
+      within process memory, including shellcode injected to exploit a vulnerability
+      in an exposed service. Detection is periodic at an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1559
+    mapping-pattern: ''
+    name: Inter-Process Communication
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control's Fileless Attack Detection covers the command execution
+      aspects of both of this technique's sub-techniques. Detection is periodic at
+      an unknown rate.
+    score-value: Partial
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1036
+    mapping-pattern: ''
+    name: Masquerading
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only addresses a minority of this technique's procedure
+      examples and one of its sub-techniques resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1134
+    mapping-pattern: ''
+    name: Access Token Manipulation
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Invoke-TokenManipulation module on Windows, but does not address other procedures
+      or platforms, and temporal factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1087
+    mapping-pattern: ''
+    name: Account Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only covers one platform and procedure for one of
+      this technique's sub-techniques, and minimal coverage of its procedure examples
+      resulting in a Minimal overall score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1123
+    mapping-pattern: ''
+    name: Audio Capture
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Get-MicrophoneAudio module on Windows, but does not address other procedures
+      or platforms, and temporal factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1547
+    mapping-pattern: ''
+    name: Boot or Logon Autostart Execution
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only covers one platform and procedure for two of
+      this technique's many sub-techniques, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1543
+    mapping-pattern: ''
+    name: Create or Modify System Process
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only addresses a minority of this technique's procedure
+      examples and one of its sub-techniques resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1555
+    mapping-pattern: ''
+    name: Credentials from Password Stores
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the PowerSploit Exfiltration modules on Windows, but does not address other
+      procedures or platforms, and temporal factor is unknown, resulting in a Minimal
+      score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1005
+    mapping-pattern: ''
+    name: Data from Local System
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Exfiltration modules on Windows, but does not address other procedures or
+      platforms, and temporal factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1482
+    mapping-pattern: ''
+    name: Domain Trust Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Get-NetDomainTrust and Get-NetForestTrust modules, but does not address
+      other procedures, and temporal factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1574
+    mapping-pattern: ''
+    name: Hijack Execution Flow
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only addresses a minority of this technique's procedure
+      examples and provides  minimal detection of some of its sub-techniques resulting
+      in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1056
+    mapping-pattern: ''
+    name: Input Capture
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only covers one platform and procedure for one of
+      this technique's sub-techniques, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1027
+    mapping-pattern: ''
+    name: Obfuscated Files or Information
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only covers one platform and procedure for one of
+      this technique's sub-techniques, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1003
+    mapping-pattern: ''
+    name: OS Credential Dumping
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only addresses a minority of this technique's procedure
+      examples and one  of its sub-techniques resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1057
+    mapping-pattern: ''
+    name: Process Discovery
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Get-ProcessTokenPrivilege PowerUp module on Windows, but does not address
+      other procedures or platforms, and temporal factor is unknown, resulting in
+      a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1012
+    mapping-pattern: ''
+    name: Query Registry
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Privesc-PowerUp modules, but does not address other procedures, and temporal
+      factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1053
+    mapping-pattern: ''
+    name: Scheduled Task/Job
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control does not address this technique's procedure examples
+      and only one of its sub-techniques resulting in an overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1113
+    mapping-pattern: ''
+    name: Screen Capture
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Get-TimedScreenshot module on Windows, but does not address other procedures
+      or platforms, and temporal factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1558
+    mapping-pattern: ''
+    name: Steal or Forge Kerberos Tickets
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control only covers one procedure for one of this technique's
+      sub-techniques, resulting in an  overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1552
+    mapping-pattern: ''
+    name: Unsecured Credentials
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: true
+    score-category: Detect
+    score-comment: This control does not address this technique's procedure example
+      and provides minimal detection for some of its sub-techniques resulting in an
+      overall Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
+- attack-object:
+    comments: The AppServices_KnownCredentialAccessTools alert is used to detect suspicious
+      processes associated with credential theft. This is clearly linked to the Credential
+      Access tactic, but does not clearly detect any specific technique or set of
+      techniques, so it has been omitted from this mapping.
+    id: T1047
+    mapping-pattern: ''
+    name: Windows Management Instrumentation
+    references:
+    - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-app-service-introduction
+    - https://azure.microsoft.com/en-us/services/app-service/
+    - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
+    related-score: false
+    score-category: Detect
+    score-comment: This control analyzes host data to detect execution of known malicious
+      PowerShell PowerSploit cmdlets. This covers execution of this technique via
+      the Invoke-WmiCommand module, but does not address other procedures, and temporal
+      factor is unknown, resulting in a Minimal score.
+    score-value: Minimal
+    secondary-property: ''
+    tags:
+    - Azure Defender
+    - Azure Security Center
+    - Azure Security Center Recommendation
+    - Linux
+    - Windows
+    value: Azure Defender for App Service
+  metadata:
+    attack-version: 8.2
+    author: ''
+    contact: ctid@mitre-engenuity.org
+    creation-date: 04/05/2021
+    last-update: 04/05/2021
+    mapping-type: scoring
+    mapping-verision: 1
+    organization: ''
+    platform: Azure
+    platform-version: ''
