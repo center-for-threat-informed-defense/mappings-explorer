@@ -1,208 +1,216 @@
 - attack-object:
     comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Valid Accounts
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial detection for some of this technique's
-      sub-techniques and procedure examples resulting in an overall Partial detection
-      score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Partial
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Valid Accounts
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Respond
-    score-comment: This control provides a response capability that accompanies its
-      detection capability that can contain and eradicate the impact of this technique.  Because
-      this capability varies between containment (federated accounts) and eradication
-      (cloud accounts) and is only able to respond to some of this technique's sub-techniques,
-      it has been scored as Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1606
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Forge Web Credentials
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Detect
-    score-comment: This control can be effective at detecting forged web credentials
-      because it uses environmental properties (e.g. IP address, device info, etc.)
-      to detect risky users and sign-ins even when valid credentials are utilized.  It
-      provides partial coverage of this technique's sub-techniques and therefore has
-      been assessed a Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1606
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Partial
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Forge Web Credentials
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Respond
-    score-comment: Provides Significant response capabilities for one of this technique's
-      sub-techniques (SAML tokens).
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Brute Force
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides Minimal detection for one of this technique's
-      sub-techniques while not providing any detection for the remaining, resulting
-      in a Minimal score.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Minimal
+      tags:
+      - Credentials
+      - Azure Active Directory
+      - Identity
+      - Microsoft 365 Defender
+    mapping-target: Azure AD Identity Protection
     name: Brute Force
     references:
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-investigate-risk
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
     - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks
     - https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azuread-identity-protection-adds-support-for-federated/ba-p/244328
-    related-score: true
-    score-category: Respond
-    score-comment: Provides significant response capabilities for one of this technique's
-      sub-techniques (Password Spray).  Due to this capability being specific to one
-      of its sub-techniques and not its remaining sub-techniques, the coverage score
-      is Minimal resulting in an overall Minimal score.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Credentials
     - Azure Active Directory
     - Identity
     - Microsoft 365 Defender
-    value: Azure AD Identity Protection
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/4/2021
-    last-update: 03/4/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

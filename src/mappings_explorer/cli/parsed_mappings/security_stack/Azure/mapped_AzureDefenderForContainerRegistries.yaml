@@ -1,135 +1,128 @@
 - attack-object:
-    comments: This mapping file covers Docker container registries security features
-      along with the Azure Defender for Container Registries scanner. The scanning
-      capability of the control is only available for Linux images in registries accessible
-      from the public internet with shell access which limits the general applicability.
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Containers
+    mapping-target: Azure Defender for Container Registries
     name: Exploit Public-Facing Application
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-container-registries-introduction
     - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-intro
-    related-score: false
-    score-category: Protect
-    score-comment: This control may provide provide information about vulnerabilities
-      within container images. The limited scope of containers and registries that
-      are applicable to this control contribute to the lower score.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Containers
-    value: Azure Defender for Container Registries
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This mapping file covers Docker container registries security features
-      along with the Azure Defender for Container Registries scanner. The scanning
-      capability of the control is only available for Linux images in registries accessible
-      from the public internet with shell access which limits the general applicability.
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Containers
+    mapping-target: Azure Defender for Container Registries
     name: Exploitation for Privilege Escalation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-container-registries-introduction
     - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-intro
-    related-score: false
-    score-category: Protect
-    score-comment: This control may provide recommendations to avoid privileged containers
-      and running containers as root.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Containers
-    value: Azure Defender for Container Registries
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This mapping file covers Docker container registries security features
-      along with the Azure Defender for Container Registries scanner. The scanning
-      capability of the control is only available for Linux images in registries accessible
-      from the public internet with shell access which limits the general applicability.
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Containers
+    mapping-target: Azure Defender for Container Registries
     name: Implant Container Image
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-container-registries-introduction
     - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-intro
-    related-score: false
-    score-category: Protect
-    score-comment: This control may prevent adversaries from implanting malicious
-      container images through fine grained permissions and use of container image
-      tag signing. Image tag signing allows for verifiable container images that have
-      been signed with legitimate keys.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Containers
-    value: Azure Defender for Container Registries
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This mapping file covers Docker container registries security features
-      along with the Azure Defender for Container Registries scanner. The scanning
-      capability of the control is only available for Linux images in registries accessible
-      from the public internet with shell access which limits the general applicability.
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Containers
+    mapping-target: Azure Defender for Container Registries
     name: Implant Container Image
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-container-registries-introduction
     - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-intro
-    related-score: false
-    score-category: Detect
-    score-comment: This control may scan and alert on import or creation of container
-      images with known vulnerabilities or a possible expanded surface area for exploitation.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Containers
-    value: Azure Defender for Container Registries
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

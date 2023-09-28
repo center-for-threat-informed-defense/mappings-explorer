@@ -1,59 +1,54 @@
 - attack-object:
     comments: ''
     id: T1542
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Vulnerability Management
+    mapping-target: Shielded VM
     name: Pre-OS Boot
     references:
     - https://cloud.google.com/compute/shielded-vm/docs/shielded-vm
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control is able to mitigate malicious modification of any
-      portion of the pre-os boot process through a combination of Secure Boot to verify
-      signatures of firmware, Measured Boot to establish a known good boot baseline,
-      and Integrity Monitoring to measure subsequent boots to previously established
-      baselines. '
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Vulnerability Management
-    value: Shielded VM
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/03/2022
-    last-update: 02/03/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1014
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Vulnerability Management
+    mapping-target: Shielded VM
     name: Rootkit
     references:
     - https://cloud.google.com/compute/shielded-vm/docs/shielded-vm
-    related-score: false
-    score-category: Protect
-    score-comment: This control is able to mitigate the use of rootkits that target
-      any portion of the boot process, such as malicious modification of the Master
-      Boot Record or UEFI. This control does not mitigate rootkits that exist in the
-      kernel or userland.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Vulnerability Management
-    value: Shielded VM
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/03/2022
-    last-update: 02/03/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

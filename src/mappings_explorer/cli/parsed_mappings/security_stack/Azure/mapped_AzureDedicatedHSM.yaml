@@ -1,85 +1,84 @@
 - attack-object:
-    comments: Note there is also a Managed HSM service.
+    comments: ''
     id: T1552
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Credentials
+    mapping-target: Azure Dedicated HSM
     name: Unsecured Credentials
     references:
     - https://docs.microsoft.com/en-us/azure/dedicated-hsm/overview
     - https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/
-    related-score: true
-    score-category: Protect
-    score-comment: This control's protection is specific to a minority of this technique's
-      sub-techniques and procedure examples resulting in a Minimal Coverage score
-      and consequently an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Credentials
-    value: Azure Dedicated HSM
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/05/2021
-    last-update: 04/05/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Note there is also a Managed HSM service.
+    comments: ''
     id: T1588
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Credentials
+    mapping-target: Azure Dedicated HSM
     name: Obtain Capabilities
     references:
     - https://docs.microsoft.com/en-us/azure/dedicated-hsm/overview
     - https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/
-    related-score: true
-    score-category: Protect
-    score-comment: Provides protection against sub-techniques involved with stealing
-      credentials / certificates / keys from the organization.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
-    value: Azure Dedicated HSM
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/05/2021
-    last-update: 04/05/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Note there is also a Managed HSM service.
+    comments: ''
     id: T1553
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Credentials
+    mapping-target: Azure Dedicated HSM
     name: Subvert Trust Controls
     references:
     - https://docs.microsoft.com/en-us/azure/dedicated-hsm/overview
     - https://docs.microsoft.com/en-us/azure/key-vault/managed-hsm/
-    related-score: true
-    score-category: Protect
-    score-comment: Provides protection against sub-techniques involved with stealing
-      credentials / certificates / keys from the organization.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Credentials
-    value: Azure Dedicated HSM
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/05/2021
-    last-update: 04/05/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

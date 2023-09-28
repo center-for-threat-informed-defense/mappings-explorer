@@ -1,31 +1,29 @@
 - attack-object:
     comments: ''
     id: T1566
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Multi-Factor Authentication
+      - Identity
+    mapping-target: Titan Security Key
     name: Phishing
     references:
     - https://cloud.google.com/titan-security-key#section-3
-    related-score: false
-    score-category: Protect
-    score-comment: This control is able to mitigate against a variety of phishing
-      attacks by requiring an additional key for authentication outside of the user's
-      password. Compared to other forms of 2-factor authentication, this control will
-      not allow for authentication to an illegitimate service or website as the key
-      can not be transmitted from the hardware device to any other device.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Multi-Factor Authentication
     - Identity
-    value: Titan Security Key
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/04/2022
-    last-update: 02/04/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

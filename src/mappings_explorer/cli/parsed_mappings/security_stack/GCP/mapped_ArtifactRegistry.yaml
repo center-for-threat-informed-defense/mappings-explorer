@@ -1,294 +1,288 @@
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploit Public-Facing Application
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known vulnerabilities
-      in various Linux OS packages. This information can be used to patch, isolate,
-      or remove vulnerable software and machines. This control does not directly protect
-      against exploitation and is not effective against zero day attacks, vulnerabilities
-      with no available patch, and other end-of-life packages.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploitation for Privilege Escalation
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known OS package vulnerabilities
-      in various Linux OS packages (e.g., Debian, Ubuntu, Alpine, RHEL, CentOS, National
-      Vulnerability Database)
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1203
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploitation for Client Execution
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known vulnerabilities
-      in various Linux OS packages. This information can be used to patch, isolate,
-      or remove vulnerable software and machines. This control does not directly protect
-      against exploitation and is not effective against zero day attacks, vulnerabilities
-      with no available patch, and other end-of-life packages.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1210
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploitation of Remote Services
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known vulnerabilities
-      in various Linux OS packages. This information can be used to patch, isolate,
-      or remove vulnerable software and machines. This control does not directly protect
-      against exploitation and is not effective against zero day attacks, vulnerabilities
-      with no available patch, and other end-of-life packages.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Implant Internal Image
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known vulnerabilities
-      in Docker containers. This information can be used to detect malicious implanted
-      images in the environment. This control does not directly protect against exploitation.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1610
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Deploy Container
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect known vulnerabilities
-      in Docker containers. This information can be used to detect malicious implanted
-      images in the environment. This control does not directly protect against exploitation.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1072
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Software Deployment Tools
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect variations to store
-      system packages and container images.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1211
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploitation for Defense Evasion
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Protect
-    score-comment: Once this control is deployed, it can detect variations to store
-      system packages and images stored in the repository, which adversaries may target
-      to establish persistence while evading cyber defenses.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control may provide information about software vulnerabilities
-      in the environment. '
+    comments: ''
     id: T1212
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Containers
+      - Vulnerability Analysis
+      - OS Security
+    mapping-target: Artifact Registry
     name: Exploitation for Credential Access
     references:
     - https://cloud.google.com/container-analysis/docs/container-analysis
     - https://cloud.google.com/container-analysis/docs/container-scanning-overview
-    related-score: false
-    score-category: Detect
-    score-comment: Once this control is deployed, it can detect known OS package vulnerabilities
-      in various Linux OS packages that could be used to escalate privileges and execute
-      adversary-controlled code (e.g., Debian, Ubuntu, Alpine, RHEL, CentOS, National
-      Vulnerability Database)
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Containers
     - Vulnerability Analysis
     - OS Security
-    value: Artifact Registry
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

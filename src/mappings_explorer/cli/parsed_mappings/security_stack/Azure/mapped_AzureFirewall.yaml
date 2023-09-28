@@ -1,329 +1,319 @@
 - attack-object:
     comments: ''
     id: T1590
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Gather Victim Network Information
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: true
-    score-category: Protect
-    score-comment: This control can prevent the gathering of victim network information
-      via scanning methods but is not effective against methods such as Phishing resulting
-      in a Partial coverage score and an overall Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1595
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Active Scanning
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides Partial protection for its sub-techniques
-      resulting in an overall Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1133
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: External Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control can limit access to external remote services to the
-      minimum necessary.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1205
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Traffic Signaling
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides partial protection for this technique's sub-techniques
-      and procedure examples resulting in a Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1046
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Network Service Scanning
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control typically filters external network traffic and therefore
-      can be effective for preventing external network service scanning but network
-      service scanning originating from inside the trusted network is not mitigated.  Due
-      to this partial protection coverage, it has been scored as Partial protection.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1018
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Remote System Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control typically filters external network traffic and therefore
-      can be effective for preventing external remote system discovery but such activity
-      originating from inside the trusted network is not mitigated.  Due to this partial
-      protection coverage, it has been scored as Partial protection.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1008
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Fallback Channels
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control's threat intelligence-based filtering feature can
-      be enabled to alert and deny traffic from/to known malicious IP addresses and
-      domains. The IP addresses and domains are sourced from the Microsoft Threat
-      Intelligence feed.  Because this protection is limited to known malicious IP
-      addresses and domains and does not provide protection from such attacks from
-      unknown domains and IP addresses, this is scored as partial coverage resulting
-      in an overall Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1095
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Non-Application Layer Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control''s threat intelligence-based filtering feature can
-      be enabled to alert and deny traffic from/to known malicious IP addresses and
-      domains. The IP addresses and domains are sourced from the Microsoft Threat
-      Intelligence feed.  Because this protection is limited to known malicious IP
-      addresses and domains and does not provide protection from such attacks from
-      unknown domains and IP addresses, this is scored as partial coverage resulting
-      in an overall Partial score.
-
-      Furthermore, it can be used to filter non-application layer protocol traffic
-      such as ICMP.'
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1571
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Non-Standard Port
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control can limit access to the minimum required ports and
-      therefore protect against adversaries attempting to use non-standard ports for
-      C2 traffic.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1219
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Remote Access Software
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: false
-    score-category: Protect
-    score-comment: This control can be used to limit outgoing traffic to only sites
-      and services used by authorized remote access tools.  This is scored as partial
-      because it doesn't protect against an adversary using an authorized remote access
-      tool for malicious activity.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1048
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure Firewall
     name: Exfiltration Over Alternative Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/firewall/overview
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides partial protection for this technique's sub-techniques
-      and some of its procedure examples resulting in an overall Partial score.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure Firewall
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/22/2021
-    last-update: 02/22/2021
-    mapping-type: scoring
-    mapping-verision: 1.0
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1.0
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

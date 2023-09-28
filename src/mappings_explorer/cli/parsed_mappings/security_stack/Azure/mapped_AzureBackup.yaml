@@ -1,120 +1,108 @@
 - attack-object:
-    comments: Azure Backup service provides defense against destruction/manipulation
-      of data at rest. Scoring as "Significant" since it is an essential practice
-      against data destruction et al, and can eradicate the threat event by restoring
-      from backup.
+    comments: ''
     id: T1485
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+    mapping-target: Azure Backup
     name: Data Destruction
     references:
     - https://docs.microsoft.com/en-us/azure/backup/backup-overview
-    related-score: false
-    score-category: Respond
-    score-comment: Data backups provide a significant response to data destruction
-      by enabling the restoration of data from backup.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
-    value: Azure Backup
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Azure Backup service provides defense against destruction/manipulation
-      of data at rest. Scoring as "Significant" since it is an essential practice
-      against data destruction et al, and can eradicate the threat event by restoring
-      from backup.
+    comments: ''
     id: T1486
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+    mapping-target: Azure Backup
     name: Data Encrypted for Impact
     references:
     - https://docs.microsoft.com/en-us/azure/backup/backup-overview
-    related-score: false
-    score-category: Respond
-    score-comment: Data backups provide a significant response to data encryption/ransomware
-      by enabling the restoration of data from backup.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
-    value: Azure Backup
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Azure Backup service provides defense against destruction/manipulation
-      of data at rest. Scoring as "Significant" since it is an essential practice
-      against data destruction et al, and can eradicate the threat event by restoring
-      from backup.
+    comments: ''
     id: T1491
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+    mapping-target: Azure Backup
     name: Defacement
     references:
     - https://docs.microsoft.com/en-us/azure/backup/backup-overview
-    related-score: true
-    score-category: Respond
-    score-comment: Data backups provide a significant response to data defacement
-      attacks by enabling the restoration of data from backup.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
-    value: Azure Backup
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Azure Backup service provides defense against destruction/manipulation
-      of data at rest. Scoring as "Significant" since it is an essential practice
-      against data destruction et al, and can eradicate the threat event by restoring
-      from backup.
+    comments: ''
     id: T1561
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+    mapping-target: Azure Backup
     name: Disk Wipe
     references:
     - https://docs.microsoft.com/en-us/azure/backup/backup-overview
-    related-score: true
-    score-category: Respond
-    score-comment: Data backups provide a significant response to disk wipe attacks
-      by enabling the restoration of data from backup.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
-    value: Azure Backup
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/29/2021
-    last-update: 03/29/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

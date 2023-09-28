@@ -1,239 +1,224 @@
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1610
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Deploy Container
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Based on configured policies, Binary Authorization allows or blocks
-      deployment of container images.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1053.007
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Container Orchestration Job
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1612
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Build Image on Host
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each container image  generated has a signer digitally sign using
-      a private key to generate the attestation report. At deploy time, the enforcer
-      uses the attester's public key to verify the signature or will block this process.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1554
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Compromise Client Software Binary
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Implant Internal Image
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1036.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Invalid Code Signature
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1601
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Modify System Image
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Binary authorization provides the capability to configure a policy that
-      is enforced when an attempt is made to deploy a container image.
+    comments: ''
     id: T1204.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Binary Authorization
+    mapping-target: Binary Authorization
     name: Malicious Image
     references:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://cloud.google.com/binary-authorization/docs/attestations
-    related-score: false
-    score-category: Protect
-    score-comment: Each image has a signer digitally sign using a private key. At
-      deploy time, the enforcer uses the attester's public key to verify the signature
-      in the attestation.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Binary Authorization
-    value: Binary Authorization
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 02/15/2022
-    last-update: 02/15/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

@@ -1,446 +1,450 @@
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1059
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Command and Scripting Interpreter
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control may alert on suspicious Unix shell and PHP execution.
-      Mismatched script extensions may also generate alerts of suspicious activity.
-      Only one of the technique's sub-techniques is covered, resulting in a score
-      of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Exploitation for Privilege Escalation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: false
-    score-category: Detect
-    score-comment: This control may alert on suspicious arguments used to exploit
-      Xorg vulnerabilities for privilege escalation.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Account Manipulation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial detection for only one of this technique's
-      sub-techniques and does not cover most of its procedure examples, resulting
-      in a score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1547
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Boot or Logon Autostart Execution
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control is only relevant for Linux endpoint machines and the
-      only sub-technique relevant for Linux is Kernel Modules and Extensions.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1136
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Create Account
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control is only relevant for Linux endpoints, and it provides
-      partial coverage for the only sub-technique relevant on Linux endpoints, Local
-      Account.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1505
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Server Software Component
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides coverage for the only sub-technique this
-      control is relevant for, Web Shell, but that coverage is Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1564
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Hide Artifacts
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control only provides coverage for a minority of this technique's
-      relevant sub-techniques, resulting in a score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1562
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Impair Defenses
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control only provides coverage for a miniority of the sub-techniques
-      under this technique and provides no coverage for other relevant sub-techniques,
-      such as Impair Command History Logging or Disable or Modify Tools, resulting
-      in a score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1070
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Indicator Removal on Host
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control is only relevant for Linux environments and provides
-      partial coverage for multiple Linux-relevant sub-techniques.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1027
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Obfuscated Files or Information
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control only provides detection coverage for the Compile After
-      Delivery sub-technique while not providing detection for all other sub-techniques
-      relevant to the Linux platform or most of its procedure examples. As a result
-      of this minimal coverage, the overall score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Brute Force
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial coverage for most of this technique's
-      sub-techniques and procedures.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: OS Credential Dumping
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control is only relevant for Linux environments, and provides
-      partial coverage for one of the technique's two Linux-relevant sub-techniques.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1021
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: true
-    score-category: Detect
-    score-comment: This control is only relevant for Linux environments. Among the
-      sub-techinques that are relevant for Linux, this control may only alert on SSH.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Implant Container Image
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: false
-    score-category: Detect
-    score-comment: This control may alert on suspicious container images running mining
-      software or SSH servers. Privileged Docker containers and privileged commands
-      running within containers may also be detected. These alerts are only generated
-      on containers in Linux endpoint machines and not for containers running from
-      Azure Docker deployment.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: Detections are periodic at an unknown rate.
+    comments: ''
     id: T1113
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Linux
+    mapping-target: Linux auditd alerts and Log Analytics agent integration
     name: Screen Capture
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-servers-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-linux
-    related-score: false
-    score-category: Detect
-    score-comment: This control may alert on usage of a screenshot tool. Documentation
-      is not provided on the logic for determining a screenshot tool.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Linux
-    value: Linux auditd alerts and Log Analytics agent integration
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2021
-    last-update: 03/08/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

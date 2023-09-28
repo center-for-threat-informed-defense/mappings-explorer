@@ -1,999 +1,720 @@
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1040
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Network Sniffing
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: "This control's recommendations related to enforcing the usage\
-      \ of the secure versions of the HTTP and FTP protocols (HTTPS and FTPS) can\
-      \ lead to encrypting traffic which reduces the ability for an adversary to gather\
-      \ sensitive data via network sniffing.  \nThis also applies to the \"Service\
-      \ Fabric clusters should have the ClusterProtectionLevel property set to EncryptAndSign\"\
-      , \"Enforce SSL connection should be enabled for MySQL database servers\", \"\
-      Enforce SSL connection should be enabled for PostgreSQL database servers\",\
-      \ \"Only secure connections to your Redis Cache should be enabled\" and \"Secure\
-      \ transfer to storage accounts should be enabled\" recommendations for their\
-      \ respective protocols.\nThe \"Usage of host networking and ports should be\
-      \ restricted\" recommendation for Kubernetes clusters can also lead to mitigating\
-      \ this technique.\nThese recommendations are limited to specific technologies\
-      \ on the platform and therefore its coverage score is Minimal."
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Exploit Public-Facing Application
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: "This control's CORS related recommendations can help lead to hardened\
-      \ web applications.  This can reduce  the likelihood of an application being\
-      \ exploited to reveal sensitive data that can lead to the compromise of an environment.\
-      \ \nLikewise this control's recommendations related to keeping Java/PHP up to\
-      \ date for API/Function/Web apps can lead to hardening the public facing content\
-      \ that uses these runtimes.\nThis control's recommendations related to disabling\
-      \ Public network access for Azure databases can lead to reducing the exposure\
-      \ of resources to the public Internet and thereby reduce the attack surface.\n\
-      These recommendations are limited to specific technologies (Java, PHP and CORS,\
-      \ SQL DBs) and therefore provide Minimal coverage leading to a Minimal score."
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Brute Force
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Authentication to Linux machines should require
-      SSH keys" recommendation can  lead to obviating SSH Brute Force password attacks.  Because
-      this is specific to Linux, the coverage score is Minimal leading to an overall
-      Minimal score.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1542
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Pre-OS Boot
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides recommendations for enabling Secure Boot
-      of Linux VMs that can mitigate a few of the sub-techniques of this technique.  Because
-      this is a recommendation and only limited to a few sub-techniques of this technique,
-      its assessed score is Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1499
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Endpoint Denial of Service
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides recommendations for limiting the CPU and
-      memory resources consumed by a container to minimize resource exhaustion attacks.  Because
-      this control only covers one sub-technique of this technique, its score is assessed
-      as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Implant Container Image
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Container images should be deployed from trusted
-      registries only", "Container registries should not allow unrestricted network
-      access" and "Container registries should use private link" recommendations can
-      lead to ensuring that container images are only loaded from trusted registries
-      thereby mitigating this technique.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Exploitation for Privilege Escalation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Container with privilege escalation should be avoided",
-      "Least privileged Linux capabilities should be enforced for containers", "Privileged
-      containers should be avoided", "Running containers as root user should be avoided"
-      and "Containers sharing sensitive host namespaces should be avoided" recommendations
-      can make it difficult for adversaries to advance their operation through exploitation
-      of undiscovered or unpatched vulnerabilities.  Because this is a recommendation,
-      the assessed score has been capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Account Manipulation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can prevent modifying the ssh_authorized
-      keys file.  Because it is a recommendation and limited to only one sub-technique,
-      its score is Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1554
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Compromise Client Software Binary
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can lead to preventing modification
-      of binaries in Kubernetes containers thereby mitigating this technique.  Because
-      this is a recommendation, its score is capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1136
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Create Account
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-technique of this
-      technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1543
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Create or Modify System Process
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-technique of this
-      technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1546
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Event Triggered Execution
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-technique of this
-      technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1505
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Server Software Component
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-technique of this
-      technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1222
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: File and Directory Permissions Modification
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-technique of this
-      technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1564
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Hide Artifacts
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate some of the sub-techniques
-      of this technique.  Due to its partial coverage and Minimal score assessed for
-      its sub-techniques, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1053
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Scheduled Task/Job
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a few of the sub-techniques
-      of this technique.  Due to its Minimal coverage, its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1556
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Modify Authentication Process
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can mitigate a sub-techniques of this
-      technique.  Due to it being a recommendation and providing minimal coverage,
-      its score is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1080
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Taint Shared Content
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" and "Usage of pod HostPath volume mounts should be
-      restricted to a known list to restrict node access from compromised containers"
-      recommendations can mitigate this technique.  Due to it being a recommendation,
-      its score is capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1074
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Data Staged
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can lead to mitigating a sub-technique
-      of this technique by preventing modification of the local filesystem.  Due to
-      it being a recommendation, its score is capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1485
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Data Destruction
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can lead to mitigating this technique
-      by preventing modification of the local filesystem.  Due to it being a recommendation,
-      its score is capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1486
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Data Encrypted for Impact
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can lead to mitigating this technique
-      by preventing modification of the local filesystem.  Due to it being a recommendation,
-      its score is capped at Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1565
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Data Manipulation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's "Immutable (read-only) root filesystem should be
-      enforced for containers" recommendation can lead to mitigating a sub-technique
-      of this technique by preventing modification of the local filesystem.  Due to
-      it being a recommendation and mitigating only one sub-technique, its score is
-      assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: Valid Accounts
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: true
-    score-category: Protect
-    score-comment: This control's recommendations about removing deprecated and external
-      accounts with sensitive permissions from your subscription can lead to mitigating
-      the Cloud Accounts sub-technique of this technique.  Because this is a recommendation
-      and has low coverage, it is assessed as Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Security Center recommendations include recommendations to enable security
-      controls that have already been mapped separately (e.g. "Azure Defender for
-      App Service should be enabled").    Rather than including the (sub-)techniques
-      that these controls map to within this mapping, consult the mapping files for
-      these controls.  To make this latter task easier, we have tagged all such controls
-      with the "Azure Security Center Recommendation" tag.
-
-      All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
-
-      IoT related recommendations were not included in this mapping.'
+    comments: ''
     id: T1133
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Azure Security Center
+      - Azure Security Center Recommendation
+    mapping-target: Azure Security Center Recommendations
     name: External Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/recommendations-reference
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction
-    related-score: false
-    score-category: Protect
-    score-comment: This control's "Management ports should be closed on your virtual
-      machines" recommendation can lead to reducing the attack surface of your Azure
-      VMs by recommending closing management ports.  Because this is a recommendation,
-      its score is limited to Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Azure Security Center Recommendation
-    value: Azure Security Center Recommendations
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

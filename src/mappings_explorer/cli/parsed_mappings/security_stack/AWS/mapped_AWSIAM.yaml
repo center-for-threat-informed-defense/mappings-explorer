@@ -1,167 +1,174 @@
 - attack-object:
     comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Valid Accounts
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: true
-    score-category: Protect
-    score-comment: null
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Valid Accounts
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: true
-    score-category: Detect
-    score-comment: null
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Account Manipulation
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: true
-    score-category: Detect
-    score-comment: This control may generate logs for creation and manipulation of
-      accounts but the relevant security information would be handled by another security
-      control.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1550
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Use Alternate Authentication Material
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: true
-    score-category: Protect
-    score-comment: null
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Brute Force
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: true
-    score-category: Protect
-    score-comment: null
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1528
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: AWS Identity and Access Management
     name: Steal Application Access Token
     references:
     - https://docs.aws.amazon.com/iam/index.html
-    related-score: false
-    score-category: Protect
-    score-comment: This control may mitigate against application access token theft
-      if the application is configured to retrieve temporary security credentials
-      using an IAM role. This recommendation is a best practice for IAM but must be
-      explicitly implemented by the application developer.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: AWS Identity and Access Management
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/07/2021
-    last-update: 06/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise

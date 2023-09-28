@@ -1,874 +1,910 @@
 - attack-object:
     comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Account Manipulation
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform can help protect your app's users and prevent
-      account takeovers by offering multi-factor authentication (MFA) and integrating
-      with Google's intelligence for account protection. This will help mitigate adversaries
-      from gaining access to permission levels.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1098.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Additional Cloud Credentials
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform can help protect your app's users and prevent
-      account takeovers by offering multi-factor authentication (MFA) and integrating
-      with Google's intelligence for account protection. This will help mitigate adversaries
-      from gaining access to permission levels.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Brute Force
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Multi-factor authentication (MFA) methods, such as SMS, can also
-      be used to help protect user accounts from phishing attacks. MFA provides significant
-      protection against password compromises, requiring the adversary to complete
-      an additional authentication method before their access is permitted.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Password Guessing
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Multi-factor authentication (MFA) methods, such as SMS, can also
-      be used to help protect user accounts from phishing attacks. MFA provides significant
-      protection against password compromises, requiring the adversary to complete
-      an additional authentication method before their access is permitted.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Password Cracking
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Multi-factor authentication (MFA) methods, such as SMS, can also
-      be used to help protect user accounts from phishing attacks. MFA provides significant
-      protection against password compromises, requiring the adversary to complete
-      an additional authentication method before their access is permitted.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Valid Accounts
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' Identity Platform lets you add Google-grade authentication to
-      your apps and services, making it easier to secure user accounts and securely
-      managing credentials. MFA can provide protection against an adversary that obtains
-      valid credentials by requiring the adversary to complete an additional authentication
-      process before access is permitted. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1078.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Cloud Accounts
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' Identity Platform lets you add Google-grade authentication to
-      your apps and services, making it easier to secure user accounts and securely
-      managing credentials. MFA can provide protection against an adversary that obtains
-      valid credentials by requiring the adversary to complete an additional authentication
-      process before access is permitted. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1078.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Local Accounts
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' Identity Platform lets you add Google-grade authentication to
-      your apps and services, making it easier to secure user accounts and securely
-      managing credentials. MFA can provide protection against an adversary that obtains
-      valid credentials by requiring the adversary to complete an additional authentication
-      process before access is permitted. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Password Spraying
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Multi-factor authentication (MFA) methods, such as SMS, can also
-      be used to help protect user accounts from phishing attacks. MFA provides significant
-      protection against password compromises, requiring the adversary to complete
-      an additional authentication method before their access is permitted.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1136
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Create Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform multi-tenancy uses tenants to create unique silos
-      of users and configurations within a single Identity Platform project. It provides
-      provides secure, easy-to-use authentication if you're building a service on
-      Google Cloud, on your own backend or on another platform; thereby, helping to
-      mitigate adversaries from gaining access to systems.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1136.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Cloud Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform multi-tenancy uses tenants to create unique silos
-      of users and configurations within a single Identity Platform project. It provides
-      provides secure, easy-to-use authentication if you're building a service on
-      Google Cloud, on your own backend or on another platform; thereby, helping to
-      mitigate adversaries from gaining access to systems.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1087
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Account Discovery
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform is a customer identity and access management
-      (CIAM) platform that helps organizations add identity and access management
-      functionality to their applications, protect user accounts, and scale with confidence
-      on Google Cloud. With this, permissions are limited to discover cloud accounts
-      in accordance with least privilege and adversaries may be prevented from getting
-      access to a listing of domain accounts.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1087.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Cloud Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform is a customer identity and access management
-      (CIAM) platform that helps organizations add identity and access management
-      functionality to their applications, protect user accounts, and scale with confidence
-      on Google Cloud. With this, permissions are limited to discover cloud accounts
-      in accordance with least privilege and adversaries may be prevented from getting
-      access to a listing of cloud accounts.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1580
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Cloud Infrastructure Discovery
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform is a customer identity and access management
-      (CIAM) platform that helps organizations add identity and access management
-      functionality to their applications, protect user accounts, and scale with confidence
-      on Google Cloud. With this, permissions are limited to discover cloud accounts
-      in accordance with least privilege.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1528
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Steal Application Access Token
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform integrates tightly with Google Cloud services,
-      and it leverages industry standards like OAuth 2.0 and OpenID Connect, so it
-      can be easily integrated with your custom backend. This control may mitigate
-      application access token theft if the application is configured to retrieve
-      temporary security credentials using an IAM role.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1550
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Use Alternate Authentication Material
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' This control may mitigate application access token theft if the
-      application is  configured to retrieve temporary security credentials using
-      an IAM role. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1550.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Application Access Token
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' This control may mitigate application access token theft if the
-      application is  configured to retrieve temporary security credentials using
-      an IAM role. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1562
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Impair Defenses
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform provides Admin APIs to manage  users and authentication
-      tokens. To prevent unwanted access to your users and tokens through these APIs,
-      Identity Platform leverages IAM to manage permission to specific Identity Platform
-      APIs. This control will ensure proper process and file permissions are in place
-      to prevent adversaries from disabling or interfering with security/logging services.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1562.008
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Disable Cloud Logs
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform provides Admin APIs to manage  users and authentication
-      tokens. To prevent unwanted access to your users and tokens through these APIs,
-      Identity Platform leverages IAM to manage permission to specific Identity Platform
-      APIs. This control will ensure proper process and file permissions are in place
-      to prevent adversaries from disabling or interfering with security/logging services.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1556
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Modify Authentication Process
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: ' Identity Platform lets you add Google-grade authentication to
-      your apps and services, making it easier to secure user accounts and securely
-      managing credentials. MFA can be used to restrict access to cloud resources
-      and APIs and provide protection against an adversaries that try to access  user
-      credentials. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1087.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Domain Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform is a customer identity and access management
-      (CIAM) platform that helps organizations add identity and access management
-      functionality to their applications, protect user accounts, and scale with confidence
-      on Google Cloud. With this, permissions are limited to discover cloud accounts
-      in accordance with least privilege and adversaries may be prevented from getting
-      access to a listing of domain accounts.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1098.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Exchange Email Delegate Permissions
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform can help protect your app's users and prevent
-      account takeovers by offering multi-factor authentication (MFA) and integrating
-      with Google's intelligence for account protection. This will help mitigate adversaries
-      from gaining access to permission levels.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1098.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Add Office 365 Global Administrator Role
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform can help protect your app's users and prevent
-      account takeovers by offering multi-factor authentication (MFA) and integrating
-      with Google's intelligence for account protection. This will help mitigate adversaries
-      from gaining access to permission levels.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1098.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: SSH Authorized Keys
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform can help protect your app's users and prevent
-      account takeovers by offering multi-factor authentication (MFA) and integrating
-      with Google's intelligence for account protection. This will help mitigate adversaries
-      from gaining access to permission levels via files.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1136.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Local Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform multi-tenancy uses tenants to create unique silos
-      of users and configurations within a single Identity Platform project. It provides
-      provides secure, easy-to-use authentication if you're building a service on
-      Google Cloud, on your own backend or on another platform; thereby, helping to
-      mitigate adversaries from gaining access to systems and accounts.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1136.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Identity
+      - Multi-Factor Authentication
+      - Passwords
+      - Credentials
+      - Access Management
+    mapping-target: IdentityPlatform
     name: Domain Account
     references:
     - https://cloud.google.com/identity-platform/docs/concepts
-    related-score: false
-    score-category: Protect
-    score-comment: Identity Platform multi-tenancy uses tenants to create unique silos
-      of users and configurations within a single Identity Platform project. It provides
-      provides secure, easy-to-use authentication if you're building a service on
-      Google Cloud, on your own backend or on another platform; thereby, helping to
-      mitigate adversaries from gaining access to systems.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Identity
     - Multi-Factor Authentication
     - Passwords
     - Credentials
     - Access Management
-    value: IdentityPlatform
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2022
-    last-update: 03/25/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

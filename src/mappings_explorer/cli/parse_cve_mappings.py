@@ -1,6 +1,6 @@
 def configure_cve_mappings(datareader, attack_id_to_name_dict):
-    # skip the headers
-    next(datareader, None)
+    # store the headers and then skip them
+    headers = next(datareader, None)
 
     # put data in correct format with correct fields
     result = []
@@ -14,35 +14,41 @@ def configure_cve_mappings(datareader, attack_id_to_name_dict):
                     # this can happen if the technique has been deprecated or revoked
                     # will likely change when we get concrete guidance on how to deal
                     # with deprecated and/or revoked technique
-                    name = attack_id_to_name_dict.get(attack_object.strip(), "")
+                    attack_details = attack_id_to_name_dict.get(
+                        attack_object.strip(), {}
+                    )
+                    name = attack_details.get("name", "")
+                    domain = attack_details.get("domain", "")
 
                     result.append(
                         {
                             "metadata": {
-                                "mapping-verision": row[
-                                    5
-                                ],  # confirm that this value is correct
+                                "mapping-version": "",
                                 "attack-version": "9.0",
-                                # confirm this value is correct
-                                "creation-date": "02/03/21",
-                                # confirm this value is correct
-                                "last-update": "10/27/21",
+                                "technology-domain": domain,
                                 "author": "",
                                 "contact": "",
+                                # confirm creation-data value is correct
+                                "creation-date": "02/03/21",
+                                # confirm last-update value is correct
+                                "last-update": "10/27/21",
                                 "organization": "",
-                                "platform": "CVE Vulnerability List",
-                                "platform-version": 13,  # confirm this value is correct
-                                "mapping-type": "association",
+                                "mapping-platform": "CVE Vulnerability List",
+                                "mapping-platform-version": "",
                             },
                             "attack-object": {
+                                "comments": "",
                                 "id": attack_object,
                                 "name": name,
-                                "value": row[0],
-                                "mapping-pattern": "",
-                                "secondary-property": "",
-                                "tags": [],
-                                "comments": "",
                                 "references": [],
+                                "tags": [],
+                                "mapping-description": "",
+                                "mapping-target": row[0],
+                                "mapping-platform": {
+                                    "name": "CVE Vulnerability List",
+                                    "impact": headers[i],
+                                    "phase": row[5],
+                                },
                             },
                         }
                     )

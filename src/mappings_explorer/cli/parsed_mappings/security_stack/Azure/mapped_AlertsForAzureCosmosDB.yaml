@@ -1,68 +1,62 @@
 - attack-object:
-    comments: This control is still in preview, so its coverage will likely expand
-      in the future. This mapping is based on its current (preview) state.
+    comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Database
+    mapping-target: Alerts for Azure Cosmos DB
     name: Valid Accounts
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
     - https://docs.microsoft.com/en-us/azure/security-center/other-threat-protections
     - https://docs.microsoft.com/en-us/azure/cosmos-db/cosmos-db-advanced-threat-protection
-    related-score: true
-    score-category: Detect
-    score-comment: This control's detection is specific to the Cosmos DB and therefore
-      provides minimal overall detection coverage for Valid Accounts resulting in
-      a Minimal score. A relevant alert is "Access from an unusual location to a Cosmos
-      DB account".
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Database
-    value: Alerts for Azure Cosmos DB
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control is still in preview, so its coverage will likely expand
-      in the future. This mapping is based on its current (preview) state.
+    comments: ''
     id: T1213
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Database
+    mapping-target: Alerts for Azure Cosmos DB
     name: Data from Information Repositories
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference
     - https://docs.microsoft.com/en-us/azure/security-center/other-threat-protections
     - https://docs.microsoft.com/en-us/azure/cosmos-db/cosmos-db-advanced-threat-protection
-    related-score: false
-    score-category: Detect
-    score-comment: This control triggers an alert when an unusually large amount of
-      data is extracted from/by an account compared to recent activity. False positives
-      are fairly likely and extraction in quantities below the control's threshold
-      is not detected, so score is Minimal. Neither of the sub-techniques are relevant
-      in this context, since they are repository-specific.  Relevant alert is "Unusual
-      amount of data extracted from a Cosmos DB account"
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Database
-    value: Alerts for Azure Cosmos DB
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/07/2021
-    last-update: 04/07/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

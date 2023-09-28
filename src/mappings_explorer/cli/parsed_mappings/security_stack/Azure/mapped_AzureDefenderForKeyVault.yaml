@@ -1,71 +1,64 @@
 - attack-object:
-    comments: 'This control provides alerts for suspicious activity for Azure Key
-      Vault. Documentation has been offered on how to respond to alerts but no specific
-      tool or feature is offered for response. '
+    comments: ''
     id: T1580
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Credentials
+    mapping-target: Azure Defender for Key Vault
     name: Cloud Infrastructure Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-key-vault-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-azurekv
-    related-score: false
-    score-category: Detect
-    score-comment: This control may alert on suspicious access of key vaults, including
-      suspicious listing of key vault contents. This control does not alert on discovery
-      of other cloud services, such as VMs, snapshots, cloud storage and therefore
-      has minimal coverage. Suspicious activity based on patterns of access from certain
-      users and applications allows for managing false positive rates.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Credentials
-    value: Azure Defender for Key Vault
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/01/2021
-    last-update: 03/01/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'This control provides alerts for suspicious activity for Azure Key
-      Vault. Documentation has been offered on how to respond to alerts but no specific
-      tool or feature is offered for response. '
+    comments: ''
     id: T1555
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Azure Defender
+      - Azure Security Center Recommendation
+      - Credentials
+    mapping-target: Azure Defender for Key Vault
     name: Credentials from Password Stores
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/defender-for-key-vault-introduction
     - https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-azurekv
-    related-score: false
-    score-category: Detect
-    score-comment: 'This control may detect suspicious secret access from Azure key
-      vaults. This does not apply to any sub-techniques under T1555 - Credentials
-      from Password Stores but Azure Key Vault can be treated as a store for passwords,
-      keys, and certificates. The coverage of this control could be deemed high for
-      cloud credential and secret storage within Key Vault but is not applicable to
-      traditional password stores, such as password managers, keychain, or web browsers. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Azure Defender
     - Azure Security Center Recommendation
     - Credentials
-    value: Azure Defender for Key Vault
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/01/2021
-    last-update: 03/01/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

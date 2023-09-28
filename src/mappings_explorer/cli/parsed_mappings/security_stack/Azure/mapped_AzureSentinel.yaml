@@ -1,3610 +1,2490 @@
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Valid Accounts
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial coverage for all of this technique's
-      sub-techniques and a number of its procedures, resulting in an overall score
-      of Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1195
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Supply Chain Compromise
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial coverage for one of this technique's
-      sub-techniques, and its coverage is more for supply chain concerns of downstream
-      consumers of software developed within the environemnt than the Azure environment
-      itself, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Brute Force
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control includes partial detection coverage for most of this
-      technique's sub-techniques on a periodic basis.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Account Manipulation
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'The following Azure Sentinel Hunting queries can identify potentially
-      malicious manipulation of accounts to increase or maintain access: "Azure DevOps
-      - Guest users access enabled", "Azure DevOps - Additional Org Admin added",
-      "Anomalous Activity Role Assignment", "Anomalous Role Assignment", and "Anomalous
-      AAD Account Manipulation", which indicate expansion of accounts'' access/privileges;
-      "Bots added to multiple teams" which indicates workspace access granted to automated
-      accounts.
-
-      The following Azure Sentinel Analytics queries can identify potentially malicious
-      manipulation of accounts to increase or maintain access: "Suspicious granting
-      of permissions to an account" from a previously unobserved IP address, "External
-      user added and removed in short timeframe" for Teams resources, "Account added
-      and removed from privileged group", "User account added to built in domain local
-      or global group", and "New user created and added to the built-in administrator
-      group". "Multiple Password Reset by user" can detect potentially malicious iterative
-      password resets.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1071
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Application Layer Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Analytics "Malformed user agent" query can
-      detect potential C2 or C2 agent activity.
-
-      This control provides minimal to partial coverage for a minority of this technique''s
-      sub-techniques and only some of its procedure examples, resulting in an overall
-      score of Minimal.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1567
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exfiltration Over Web Service
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides minimal coverage to both of this technique''s
-      sub-techniques as well as some of its procedure examples, resulting in an overall
-      score of Minimal.
-
-      The Azure Sentinel Analytics "Malformed user agent" query can detect potential
-      exfiltration over a web service by malicious code with a hard-coded user agent
-      string, or possibly data encoded via the user agent string.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1595
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Active Scanning
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Analytics "Malformed user agent" query can
-      detect hard-coded user-agent strings associated with some vulnerability scanning
-      tools.
-
-      This control provides partial coverage for only one of this technique''s sub-techniques,
-      resulting in an overall score of Minimal.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1105
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Ingress Tool Transfer
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "Crypto currency miners EXECVE" query
-      can detect cryptocurrency mining software downloads through EXECVE.
-
-      The following Azure Sentinel Analytics queries can identify potentiall malicious
-      tool transfer: "Linked Malicious Storage Artifacts" may identify potential adversary
-      tool downloads that are missed by anti-malware. "Powershell Empire cmdlets seen
-      in command line" detects downloads via Empire. "New executable via Office FileUploaded
-      Operations" can identify ingress of malicious code and attacker tools to Office
-      services such as SharePoint and OneDrive, but with potential for high false
-      positive rates from normal user upload activity.'
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1048
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exfiltration Over Alternative Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage for a minority of this technique's
-      sub-techniques and does not cover all procedure examples, resulting in an overall
-      score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1496
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Resource Hijacking
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The following Azure Sentinel Hunting queries can identify potential
-      resource hijacking based on anomolies in access and usage patterns: "Anomalous
-      Resource Creation and related Network Activity", "Creation of an anomalous number
-      of resources".
-
-      The following Azure Sentinel Analytis queries can identify potential resource
-      hijacking: "Creation of Expensive Computes in Azure" and "Suspicious number
-      of resource creation or deployed" [sic] can identify suspicious outliers in
-      resource quantities requested. "Suspicious Resource deployment" can identify
-      deployments from new, potentially malicious, users. "Process execution frequency
-      anomaly" can identify execution that may indicate hijacking. "DNS events related
-      to mining pools", can identify potential cryptocurrency mining activity.'
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1070
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Indicator Removal on Host
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides specific minimal coverage for two of this
-      technique''s sub-techniques, without additional coverage of its procedure examples,
-      resulting in an overall score of Minimal.
-
-      The Azure Sentinel Analytics "Azure DevOps Agent Pool Created Then Deleted"
-      query can detect specific suspicious activity for DevOps Agent Pool. This is
-      close to this technique''s File Deletion sub-technique, but not a complete match.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1059
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Command and Scripting Interpreter
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides minimal coverage for most of this technique''s
-      sub-techniques, along with additional mappings for its procedure examples, resulting
-      in an overall score of Minimal.
-
-      The following Azure Sentinel Hunting queries can identify potentially malicious
-      use of command and scripting interpreters that does not map directly to one/more
-      sub-techniques: "Anomalous Code Execution" can identifyanomalous runCommand
-      operations on virtual machines, "Azure CloudShell Usage" can identify potentially
-      malicious use of CloudShell, "New processes observed in last 24 hours", "Rare
-      processes run by Service accounts", and "Rare Custom Script Extension" can identify
-      execution outliers that may suggest misuse.
-
-      The following Azure Sentinel Analytics queries can identify potentially malicious
-      use of command and scripting interpreters that does not map directly to one/more
-      sub-techniques: "New CloudShell User" can identify potentially malicious use
-      of CloudShell, "Rare and Potentially high-risk Office operations" can identify
-      specific rare mailbox-related  ccount and permission changes via execution.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1213
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Data from Information Repositories
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides partial detection coverage for only this
-      technique''s SharePoint sub-technique.
-
-      The Azure Sentinel Hunting "Cross workspace query anomaly" query can identify
-      potential adversary information collection (in this case from Azure ML workspaces),
-      but does not map directly to any sub-techniques.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1531
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Account Access Removal
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The following Azure Sentinel Hunting queries can identify potentially
-      malicious behavior on user accounts: "AD Account Lockout", "Anomalous Password
-      Reset", "SQL User deleted from Database", "User removed from SQL Server Roles",
-      and "User removed from SQL Server SecurityAdmin Group".
-
-      The Azure Sentinel Analytics "Sensitive Azure Key Vault operations" query can
-      identify attempts to remove account access by deleting keys or entire key vaults.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1018
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Remote System Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "High reverse DNS count by host" and
-      "Squid malformed requests" queries can indicate potentially malicious reconnaissance
-      aimed at detecting network layout and the presence of network security devices.
-
-      The Azure Sentinel Analytics "Several deny actions registered" query can identify
-      patterns in Azure Firewall incidents, potentially indicating that an adversary
-      is scanning resources on the network, at a default frequency of once per hour.
-      Note that detection only occurs if the firewall prevents the scanning. The Azure
-      Sentinel Analytics "Rare client observed with high reverse DNS lookup count"
-      query can detect when a particular IP address performs an unusually high number
-      of reverse DNS lookups and has not been observed doing so previously. The coverage
-      for these queries is minimal resulting in an overall Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1136
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Create Account
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial coverage for all of this technique's
-      sub-techniques, resulting in an overall score of Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1114
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Email Collection
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage for all of this technique's
-      sub-techniques, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1505
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Server Software Component
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides partial coverage for only one of this technique's
-      sub-techniques, resulting in overall coverage of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1573
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Encrypted Channel
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage for one sub-technique of
-      this technique, resulting in an overall coverage score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1090
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Proxy
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage for one sub-technique of
-      this technique, resulting in an overall coverage score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1562
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Impair Defenses
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides minimal (mostly) to partial coverage for
-      most of this technique''s sub-techniques, resulting in an overall score of Minimal.
-
-      The Azure Sentinel Hunting "Anomalous Defensive Mechanism Modification" query
-      detects users performing delete operations on security policies, which may indicate
-      an adversary attempting to impair defenses.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1119
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Automated Collection
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The following Azure Sentinel Hunting queries can identify potentially
-      malicious automated collection: "Multiple large queries made by user" and "Query
-      data volume anomolies" can identify that automated queries are being used to
-      collect data in bulk. "New ServicePrincipal running queries" can indicate that
-      an application is performing automated collection via queries.
-
-      The following Azure Sentinel Analytics queries can identify potentially malicious
-      automated collection: "Mass secret retrieval from Azure Key Vault" and "Azure
-      Key Vault access TimeSeries anomaly" can detect a sudden increase in access
-      counts, which may indicate that an adversary is dumping credentials via automated
-      methods. "Users searching for VIP user activity" can identify potentially suspicious
-      Log Analytics queries by users looking for a listing of ''VIP'' activity.
-
-      The coverage for these queries is minimal (applicable to specific technologies)
-      resulting in an overall Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1485
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Data Destruction
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "Multiple Teams deleted by a single
-      user" query can detect when a threshold is met for number of Teams deleted within
-      an hour. Coverage is minimal because the control is limited to a specific resource
-      (teams) and only works when the threshold is met.
-
-      The Azure Sentinel Analytics "Multiple Teams deleted by a single user" query
-      can detect when a threshold is met for number of Teams deleted within an hour.
-      Coverage is minimal because the control is limited to a specific resource (teams)
-      and only works when the threshold is met.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1568
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Dynamic Resolution
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control only provides partial coverage for one of this technique's
-      sub-techniques, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exploit Public-Facing Application
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "Potential IIS code injection attempt"
-      query can detect some potential injection attacks against public-facing applications.
-
-      The Azure Sentinel Analytics "A potentially malicious web request was executed
-      against a web server" query can detect a high ratio of blocked requests and
-      unobstructed requests to a Web Application Firewall (WAF) for a given client
-      IP and hostnam.
-
-      The coverage for these queries is minimal (e.g. IIS) resulting in an overall
-      Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1137
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Office Application Startup
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control only provides minimal to partial coverage for a minority
-      of this technique''s
-
-      sub-techniques and does not address all of its procedures, resulting in an overall
-      score
-
-      of Minimal.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1140
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Deobfuscate/Decode Files or Information
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "New PowerShell Scripts encoded on
-      the commandline" query can detect a specific type of obfuscated file.
-
-      The Azure Sentinel Analytics "Process executed from binary hidden in Base64
-      encoded file" query can use security event searches to detect decoding by Python,
-      bash/sh, and Ruby.
-
-      The coverage for these queries is minimal (e.g. base64, PowerShell) resulting
-      in an overall Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1558
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Steal or Forge Kerberos Tickets
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control only provides minimal to partial coverage for some
-      this technique's sub-techniques, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1047
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Windows Management Instrumentation
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Analytics "Gain Code Execution on ADFS Server
-      via Remote WMI Execution" query can detect use of Windows Managemement Instrumentation
-      on ADFS servers. The Azure Sentinel Analytics "Powershell Empire cmdlets seen
-      in command line" query can detect WMI use via Empire, but does not address other
-      procedures.
-
-      The coverage for these queries is minimal (specific to ADFS and Empire) resulting
-      in an overall Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1046
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Network Service Scanning
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "High count of connections by client
-      IP on many ports" query can detect when a given client IP has 30 or more ports
-      used within a 10 minute window, which may indicate malicious scanning. The Azure
-      Sentinel Analytics "Powershell Empire cmdlets seen in command line" query can
-      detect scanning via Empire, but does not address other procedures.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1021
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal to partial coverage for some of this
-      technique's sub-techniques, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1552
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Unsecured Credentials
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Protect
-    score-comment: This control provides a highly specific detection for a misconfiguration
-      that can lead to one of this technique's sub-techniques, ultimately preventing
-      it.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1552
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Unsecured Credentials
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal to partial coverage for a minority
-      of this technique's sub-techniques, resulting in an overall detection score
-      of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1590
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Gather Victim Network Information
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control detects a highly specific behavior that applies to
-      one sub-technique of this technique.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1548
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Abuse Elevation Control Mechanism
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1134
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Access Token Manipulation
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: 'This control provides minimal coverage of a minority of this technique''s
-      sub-techniques, but does not address other procedures, resulting in an overall
-      score of Minimal.
-
-      The Azure Sentinel Analytics "Azure DevOps Personal Access Token misuse" query
-      can identify anomalous use of Personal Access Tokens, but does not map directly
-      to any sub-techniques.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1087
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Account Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides specific forms of minimal coverage for half
-      of this technique's sub-techniques, but does not address other procedures, resulting
-      in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1560
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Archive Collected Data
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can ZIP directories
-      on target systems, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1547
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Boot or Logon Autostart Execution
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify three of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1217
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Browser Bookmark Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which has the ability to gather
-      browser data including bookmarks and history, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1115
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Clipboard Data
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can harvest clipboard
-      data on Windows, but does not address other procedures or platforms.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1543
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Create or Modify System Process
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1555
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Credentials from Password Stores
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1484
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Domain Policy Modification
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal to partial coverage of both of this
-      technique's sub-techniques, resulting in an overall score of Partial.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1482
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Domain Trust Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can enumerate domain
-      trusts, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1546
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Event Triggered Execution
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1041
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exfiltration Over C2 Channel
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can send data gathered
-      from a target through a command and control channel, but does not address other
-      procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exploitation for Privilege Escalation
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can exploit known system
-      vulnerabilities, but does not explicitly address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1210
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Exploitation of Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which includes built-in modules
-      for exploiting remote SMB, JBoss, and Jenkins servers, but does not address
-      other procedures. The Azure Sentinel Analytics "Gain Code Execution on ADFS
-      Server via SMB + Remote Service or Scheduled Task" query can detect when an
-      adversary gains execution capability on an ADFS server through SMB and Remote
-      Service or Scheduled Task.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1083
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: File and Directory Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which includes modules for
-      finding files of interest on hosts and network shares, but does not address
-      other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1574
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Hijack Execution Flow
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify several of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1056
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Input Capture
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify two of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1557
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Man-in-the-Middle
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1106
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Native API
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which includes a variety of
-      enumeration modules that have an option to use API calls to carry out tasks,
-      but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1135
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Network Share Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can perform port scans
-      from an infected host, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1040
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Network Sniffing
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can be used to conduct
-      packet capture on target hosts, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1027
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Obfuscated Files or Information
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can obfuscate commands
-      using Invoke-Obfuscation, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: OS Credential Dumping
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1057
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Process Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can find information
-      about processes running on local and remote systems, but does not address other
-      procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1055
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Process Injection
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which contains multiple modules
-      for injecting into processes, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1053
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Scheduled Task/Job
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal to partial coverage of a minority
-      of this technique's sub-techniques, resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1113
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Screen Capture
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can capture screenshots
-      on Windows, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1518
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Software Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1082
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: System Information Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can enumerate host information
-      like OS, architecture, applied patches, etc., but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1016
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: System Network Configuration Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can acquire network
-      configuration information including DNS servers and network proxies used by
-      a host, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1049
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: System Network Connections Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can enumerate the current
-      network connections of a host, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1569
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: System Services
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1127
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Trusted Developer Utilities Proxy Execution
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1550
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Use Alternate Authentication Material
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage of half of this technique's
-      sub-techniques, without additional coverage of procedure examples, resulting
-      in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1125
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Video Capture
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Powershell Empire cmdlets seen in
-      command line" query can detect the use of Empire, which can capture webcam data
-      on Windows, but does not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1102
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Web Service
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify one of this technique's sub-techniques
-      when executed via "Powershell Empire cmdlets seen in command line", but does
-      not address other procedures.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1556
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Modify Authentication Process
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Hunting "Azure DevOps Conditional Access Disabled"
-      query can identify potentially malicious modifications of the DevOps access
-      policy.
-
-      The Azure Sentinel Analytics "MFA disabled for a user" and "GitHub Two Factor
-      Auth Disable" queries can detect potentially malicious changes in multi-factor
-      authentication settings.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1080
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Taint Shared Content
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: 'The Azure Sentinel Analytics "Potential Build Process Compromise"
-      query can detect when source code files have been modified immediately after
-      the build process has started. The Azure Sentinel Analytics "ADO Build Variable
-      Modified by New User" query may indicate malicious modification to the build
-      process to taint shared content.
-
-      The coverage for these queries is minimal (specific to Azure DevOps) resulting
-      in an overall Minimal score.'
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1074
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Data Staged
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: null
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1490
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Inhibit System Recovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Sensitive Azure Key Vault Operations"
-      query can identify potential attacker activity intended to interfere with backups.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1486
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Data Encrypted for Impact
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Sensitive Azure Key Vault Operations"
-      query can identify potential attacker activity intended to delete private key(s)
-      required to decrypt content.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1535
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Unused/Unsupported Cloud Regions
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Analytics "Suspicious Resource deployment" query
-      can identify adversary attempts to maintain persistence or evade defenses by
-      leveraging unused and/or unmonitored resources.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1530
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Data from Cloud Storage Object
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Hunting "Anomalous Data Access" query identifies
-      all users performing out-of-profile read operations regarding data or files,
-      which may be indicative of adversarial collection from cloud storage objects.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1036
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Masquerading
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal to partial coverage of a minority
-      of this technique's sub-techniques and a minority of its procedure examples,
-      resulting in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1578
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Modify Cloud Compute Infrastructure
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Hunting "Azure Resources assigned Public IP
-      addresses" query detect suspicious IP address changes.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1580
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Cloud Infrastructure Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Hunting "Azure storage key enumeration" query
-      can identify potential attempts by an attacker to discover cloud infrastructure
-      resources.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1528
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Steal Application Access Token
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: false
-    score-category: Detect
-    score-comment: The Azure Sentinel Hunting "Consent to Application discovery" query
-      can identify recent permissions granted by a user to a particular app.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'The following capabilities of Azure Sentinel were mapped: Default list
-      of Azure Sentinel Analytics (from the rule template list) Default list of Azure
-      Sentinel Hunting queries
-
-      Queries based on 3rd party analytics and/or specific IOC information were omitted
-      from this mapping. Query names are identified in quotes throughout this mapping.
-
-      Azure Sentinel Analytics queries are generally periodic, typically on a period
-      of one or more hours.
-
-      Azure Sentinel Hunting queries are performed on demand. Note also that a number
-      of the Hunting queries are examples that can be modified for additional use,
-      but scoring was performed on the queries as-written.'
+    comments: ''
     id: T1069
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Analytics
+      - Threat Hunting
+    mapping-target: Azure Sentinel
     name: Permission Groups Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/sentinel/overview
     - https://docs.microsoft.com/en-us/azure/sentinel/hunting
-    related-score: true
-    score-category: Detect
-    score-comment: This control provides minimal coverage for one of this technique's
-      sub-techniques and only minimal coverage for its procedure examples, resulting
-      in an overall score of Minimal.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Analytics
     - Threat Hunting
-    value: Azure Sentinel
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2021
-    last-update: 04/16/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

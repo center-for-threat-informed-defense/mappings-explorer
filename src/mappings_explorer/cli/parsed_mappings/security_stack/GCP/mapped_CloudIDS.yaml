@@ -1,842 +1,646 @@
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1137
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Office Application Startup
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect malware found in executables
-      and Microsoft Office files (e.g., DOC, DOCX, RTF, XLS, XLSX, PPT, PPTX).
-
-
-      Although there are ways an attacker could modify the signature and deliver a
-      malicious office file, this technique was scored as significant based on  Palo
-      Alto Network''s advanced threat detection technology which constantly updates
-      to detect against the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1546.006
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: LC_LOAD_DYLIB Addition
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to  execute malicious content and establish
-      persistence, Palo Alto Network''s antivirus signatures is able to detect malicious
-      content found in Mach object files (Mach-O). These are used by the adversary
-      to load and execute malicious dynamic libraries after the binary is executed.
-
-
-      This technique was scored as significant based on Palo Alto Network''s advanced
-      threat detection technology which constantly updates to detect against variations
-      of these cyber-attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1204.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Malicious File
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect malware found in portable
-      document formats (PDF).
-
-
-      Although there are ways an attacker could modify the signature and deliver a
-      malicious file, this technique was scored as significant based on  Palo Alto
-      Network''s advanced threat detection technology which constantly updates to
-      detect against the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1055.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Portable Executable Injection
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to escalate privileges and automatically
-      run on Windows systems, Palo Alto Network''s antivirus signatures is able to
-      detect malware found in portable executables (PE).
-
-
-      Although there are ways an attacker could avoid detection to deliver a malicious
-      PE file, this technique was scored as significant based on Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1221
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Template Injection
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect malware found in executables
-      and Microsoft Office file templates (e.g., DOC, DOCX, RTF, XLS, XLSX, PPT, PPTX).
-
-
-      Although there are ways an attacker could modify the known attack signature
-      to avoid detection, this technique was scored as significant based on  Palo
-      Alto Network''s advanced threat detection technology which constantly updates
-      to detect against the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1505.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Web Shell
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s threat signatures is able to detect programs that use an internet
-      connection to provide remote access to a compromised internal system.
-
-
-      Although there are multiple ways an attacker could establish unauthorized remote
-      access to a compromised system, this technique was scored as significant based
-      on Palo Alto Network''s advanced threat detection technology which constantly
-      updates to detect against variations of these cyber-attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1204.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Malicious Image
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect download attempts or traffic
-      generated from malicious programs designed to mine cryptocurrency without the
-      user''s knowledge.
-
-
-      Although there are ways an attacker could modify the attack to avoid detection,
-      this technique was scored as significant based on  Palo Alto Network''s advanced
-      threat detection technology which constantly updates to detect against the latest
-      known variations of these crypto-mining  attacks'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1048
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Exfiltration Over Alternative Protocol
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to compromise sensitive data, Palo Alto
-      Network''s spyware signatures is able to detect data exfiltration attempts over
-      command and control communications.
-
-
-      Although there are ways an attacker could still exfiltrate data from a compromised
-      system, this technique was scored as significant based on  Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1041
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Exfiltration Over C2 Channel
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to compromise sensitive data, Palo Alto
-      Network''s spyware signatures is able to detect data exfiltration attempts and
-      anomalies over known command and control communications.
-
-
-      Although there are ways an attacker could still exfiltrate data from a compromised
-      system, this technique was scored as significant based on  Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1567
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Exfiltration Over Web Service
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to compromise sensitive data, Palo Alto
-      Network''s spyware signatures is able to detect data exfiltration attempts over
-      command and control communications (e.g., WebShell).
-
-
-      Although there are ways an attacker could exfiltrate data from a compromised
-      system, this technique was scored as significant based on  Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1567.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Exfiltration to Cloud Storage
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to compromise sensitive data, Palo Alto
-      Network''s spyware signatures is able to detect data exfiltration attempts over
-      command and control communications (e.g., WebShell).
-
-
-      Although there are multiple ways an attacker could exfiltrate data from a compromised
-      system, this technique was scored as significant based on  Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1020
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Automated Exfiltration
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to compromise sensitive data, Palo Alto
-      Network''s spyware signatures is able to detect data exfiltration attempts over
-      command and control communications.
-
-
-      Although there are ways an attacker could still exfiltrate data from a compromised
-      system, this technique was scored as significant based on  Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1110
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Brute Force
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to gain access to a system, Palo Alto
-      Network''s vulnerability signature is able to detect multiple repetitive occurrences
-      of a condition in a particular time that could indicate a brute force attack
-      (e.g., failed logins).
-
-
-      Although there are ways an attacker could brute force a system while avoiding
-      detection, this technique was scored as significant based on Palo Alto Network''s
-      advanced threat detection technology which constantly updates to detect against
-      the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1499
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Endpoint Denial of Service
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to affect availability and deprive legitimate
-      user access, Palo Alto Network''s vulnerability signatures are able to detect
-      denial-of-service (DoS) attacks that attempt to render a target system unavailable
-      by flooding the resources with traffic.
-
-
-      This technique was scored as significant based on  Palo Alto Network''s advanced
-      threat detection technology which constantly updates to detect against a variety
-      of denial-of-service attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1499.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Application Exhaustion Flood
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to affect availability and deprive legitimate
-      user access, Palo Alto Network''s vulnerability signatures are able to detect
-      denial-of-service (DoS) attacks that attempt to crash a target system by flooding
-      it with application traffic.
-
-
-      This was scored as minimal because there are other ways adversaries could
-
-
-      This technique was scored as significant based on  Palo Alto Network''s advanced
-      threat detection technology which constantly updates to detect against variations
-      of these cyber-attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Exploit Public-Facing Application
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to take advantage of software weaknesses
-      in web applications, Palo Alto Network''s vulnerability signatures are able
-      to detect SQL-injection attacks that attempt to read or modify a system database
-      using common web hacking techniques (e.g., OWASP top 10).
-
-
-      Although there are ways an attacker could leverage web application weaknesses
-      to affect the sensitive data and databases, this technique was scored as significant
-      based on Palo Alto Network''s advanced threat detection technology which constantly
-      updates to detect against the latest known variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1566.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Spearphishing Link
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to gain access to a system, Palo Alto
-      Network''s vulnerability signatures are able to detect when a user attempts
-      to connect to a malicious site with a phishing kit landing page.
-
-
-      Although there are other ways an adversary could attempt a phishing attack,
-      this technique was scored as significant based on Palo Alto Network''s advanced
-      threat detection technology which constantly updates to detect against variations
-      of these cyber-attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1137.006
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Add-ins
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect malware found in executables
-      and Microsoft Office add-ins.
-
-
-      Although there are ways an attacker could deliver a malicious file, this technique
-      was scored as significant based on Palo Alto Network''s advanced threat detection
-      technology which constantly updates to detect against the latest known variations
-      of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s notable\
-      \ detection accuracy, mappable threat coverage, and time-related factors (e.g.,\
-      \ real-time).\nThe cyber-attacks mapped are considered a subset of the most\
-      \ notable threat detection available for Cloud IDS, but a thorough mapping to\
-      \ all of Palo Alto Network's advanced threat detection technologies wasn't possible\
-      \ due to constant updates, 3rd party vendor's extensive documentation, and new\
-      \ threat signatures."
+    comments: ''
     id: T1137.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Cloud IDS
+      - Intrusion Detection Service (IDS)
+      - Palo Alto Network's Threat Signatures
+      - Analytics
+    mapping-target: Cloud IDS
     name: Office Template Macros
     references:
     - https://cloud.google.com/intrusion-detection-system
     - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
-    related-score: false
-    score-category: Detect
-    score-comment: 'Often used by adversaries to establish persistence, Palo Alto
-      Network''s antivirus signatures is able to detect malware found in executables
-      and Microsoft Office templates
-
-
-      Although there are ways an attacker could deliver a malicious template, this
-      technique was scored as significant based on Palo Alto Network''s advanced threat
-      detection technology which constantly updates to detect against the latest known
-      variations of these attacks.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Cloud IDS
     - Intrusion Detection Service (IDS)
     - Palo Alto Network's Threat Signatures
     - Analytics
-    value: Cloud IDS
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/16/2022
-    last-update: 04/16/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

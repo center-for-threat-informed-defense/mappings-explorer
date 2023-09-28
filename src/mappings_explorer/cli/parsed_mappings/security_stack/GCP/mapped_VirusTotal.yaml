@@ -1,181 +1,165 @@
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s high\
-      \ threat protection coverage to specific ATT&CK (sub-)techniques and temporal\
-      \ factors (e.g., real-time)."
+    comments: ''
     id: T1566
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Antivirus
+      - Antimalware
+      - Malware
+    mapping-target: Virus Total
     name: Phishing
     references:
     - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
     - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
     - https://assets.virustotal.com/vt-360-outcomes.pdf
-    related-score: false
-    score-category: Protect
-    score-comment: 'VirusTotal, now part of Google Cloud, provides threat context
-      and reputation data to help analyze suspicious files, URLs, domains, and IP
-      addresses to detect cybersecurity threats.  This control can help mitigate adversaries
-      that try to send malware via emails using malicious links or attachments. The
-      malware-scanner service scans the uploaded document for malware.
-
-      If the document is infected, the service moves it to a quarantined bucket; otherwise
-      the document is moved into another bucket that holds uninfected scanned documents.'
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Antivirus
     - Antimalware
     - Malware
-    value: Virus Total
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/29/2022
-    last-update: 04/29/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s high\
-      \ threat protection coverage to specific ATT&CK (sub-)techniques and temporal\
-      \ factors (e.g., real-time)."
+    comments: ''
     id: T1566.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Antivirus
+      - Antimalware
+      - Malware
+    mapping-target: Virus Total
     name: Spearphishing Attachment
     references:
     - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
     - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
     - https://assets.virustotal.com/vt-360-outcomes.pdf
-    related-score: false
-    score-category: Protect
-    score-comment: 'VirusTotal, now part of Google Cloud, provides threat context
-      and reputation data to help analyze suspicious files, URLs, domains, and IP
-      addresses to detect cybersecurity threats. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Antivirus
     - Antimalware
     - Malware
-    value: Virus Total
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/29/2022
-    last-update: 04/29/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s high\
-      \ threat protection coverage to specific ATT&CK (sub-)techniques and temporal\
-      \ factors (e.g., real-time)."
+    comments: ''
     id: T1059
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Antivirus
+      - Antimalware
+      - Malware
+    mapping-target: Virus Total
     name: Command and Scripting Interpreter
     references:
     - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
     - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
     - https://assets.virustotal.com/vt-360-outcomes.pdf
-    related-score: false
-    score-category: Protect
-    score-comment: 'VirusTotal, now part of Google Cloud, provides threat context
-      and reputation data to help analyze suspicious files, URLs, domains, and IP
-      addresses to detect cybersecurity threats. '
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Antivirus
     - Antimalware
     - Malware
-    value: Virus Total
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/29/2022
-    last-update: 04/29/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s high\
-      \ threat protection coverage to specific ATT&CK (sub-)techniques and temporal\
-      \ factors (e.g., real-time)."
+    comments: ''
     id: T1598.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Antivirus
+      - Antimalware
+      - Malware
+    mapping-target: Virus Total
     name: Spearphishing Link
     references:
     - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
     - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
     - https://assets.virustotal.com/vt-360-outcomes.pdf
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries may send spearphishing messages with a malicious link
-      to elicit sensitive information that can be used during targeting. VirusTotal
-      Graph is a visualization tool built on top of the VirusTotal data set. It analyzes
-      the relationship between files, URLs, domains, IP addresses, and other items
-      encountered.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Antivirus
     - Antimalware
     - Malware
-    value: Virus Total
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/29/2022
-    last-update: 04/29/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as significant due to the control\u2019s high\
-      \ threat protection coverage to specific ATT&CK (sub-)techniques and temporal\
-      \ factors (e.g., real-time)."
+    comments: ''
     id: T1566.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Antivirus
+      - Antimalware
+      - Malware
+    mapping-target: Virus Total
     name: Spearphishing Link
     references:
     - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
     - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
     - https://assets.virustotal.com/vt-360-outcomes.pdf
-    related-score: false
-    score-category: Protect
-    score-comment: VirusTotal, now part of Google Cloud, provides threat context and
-      reputation data to help analyze suspicious files, URLs, domains, and IP addresses
-      to detect cybersecurity threats.  This control can help mitigate adversaries
-      sending malware through spearphishing emails. The malware-scanner service scans
-      the uploaded document for malware. If the document is infected, the service
-      moves it to a quarantined bucket; otherwise the document is moved into another
-      bucket that holds uninfected scanned documents.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Antivirus
     - Antimalware
     - Malware
-    value: Virus Total
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/29/2022
-    last-update: 04/29/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

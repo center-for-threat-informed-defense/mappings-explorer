@@ -57,21 +57,25 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
+    domains = ["enterprise", "mobile", "ics"]
+    domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
+
     attack_object_id_to_name = {}
-    for domain_data in [enterprise_attack_data, mobile_attack_data, ics_attack_data]:
+    for idx, domain_data in enumerate(domain_data):
+        domain = domains[idx]
         for attack_object in domain_data["objects"]:
             if not domain_data["type"] == "relationship":
                 # skip objects without IDs
@@ -90,7 +94,7 @@ def load_attack_json():
                 ) and attack_object.get("name"):
                     attack_object_id_to_name[
                         attack_object["external_references"][0]["external_id"]
-                    ] = attack_object["name"]
+                    ] = {"name": attack_object["name"], "domain": domain}
 
     return attack_object_id_to_name
 
@@ -191,10 +195,17 @@ def parse_veris_mappings():
         # checking if it is a file
         if os.path.isfile(file):
             veris_mappings = read_json_file(file)
-            parsed_mappings = configure_veris_mappings(veris_mappings)
 
-            veris_version_folder = "1.3.7" if "1_3_7" in filename else "1.3.5"
-            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version_folder}/mapped_{filename[0 : filename.index('.')]}"
+            veris_version = "1.3.7" if "1_3_7" in filename else "1.3.5"
+            domain = (
+                "enterprise"
+                if veris_version == "1.3.5"
+                else filename[filename.rindex("-") + 1 : filename.index(".")]
+            )
+
+            parsed_mappings = configure_veris_mappings(veris_mappings, domain)
+
+            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version}/mapped_{filename[0 : filename.index('.')]}"
 
             # write parsed mappings to yaml file
             parsed_mappings_yaml = yaml.dump(parsed_mappings)

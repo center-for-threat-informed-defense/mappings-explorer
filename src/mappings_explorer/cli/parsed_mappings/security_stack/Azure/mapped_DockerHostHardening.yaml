@@ -1,213 +1,217 @@
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1525
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Implant Container Image
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: false
-    score-category: Detect
-    score-comment: This control may alert on Docker containers that are misconfigured
-      or do not conform to CIS Docker Benchmarks. This may result in detection of
-      container images implanted within Linux VMs with specific vulnerabilities or
-      misconfigurations for malicious purposes.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1548
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Abuse Elevation Control Mechanism
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: true
-    score-category: Protect
-    score-comment: This control is only relevant for Linux endpoints containing Docker
-      containers.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Exploitation for Privilege Escalation
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control may provide recommendations on how to reduce the
-      surface area and mechanisms by which an attacker could escalate privileges. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1040
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Network Sniffing
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control may recommend usage of TLS to encrypt communication
-      between the Docker daemon and clients. This can prevent possible leakage of
-      sensitive information through network sniffing. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1083
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: File and Directory Discovery
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control may provide recommendations to ensure sensitive host
-      system directories are not mounted in the container. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1021
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Remote Services
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: true
-    score-category: Protect
-    score-comment: null
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: All scores are capped at Partial since this control provides recommendations
-      rather than applying/enforcing the recommended actions.
+    comments: ''
     id: T1005
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Azure Security Center
+      - Containers
+      - Linux
+    mapping-target: Docker Host Hardening
     name: Data from Local System
     references:
     - https://docs.microsoft.com/en-us/azure/security-center/harden-docker-hosts
-    related-score: false
-    score-category: Protect
-    score-comment: This control may provide recommendations that limit the ability
-      of an attacker to gain access to a host from a container, preventing the attacker
-      from discovering and compromising local system data.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Azure Security Center
     - Containers
     - Linux
-    value: Docker Host Hardening
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/02/2021
-    last-update: 04/02/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

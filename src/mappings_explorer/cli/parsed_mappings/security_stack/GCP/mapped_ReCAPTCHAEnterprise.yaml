@@ -1,109 +1,87 @@
 - attack-object:
     comments: ''
     id: T1078.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Multi-Factor Authentication
+      - Identity
+    mapping-target: ReCAPTCHA Enterprise
     name: Cloud Accounts
     references:
     - https://cloud.google.com/recaptcha-enterprise
-    related-score: false
-    score-category: Protect
-    score-comment: 'ReCAPTCHA Enterprise allows users to configure Multifactor Authentication
-      (MFA) to verify user''s identity by sending a verification code by email or
-      SMS (known as an MFA challenge). When ReCAPTCHA Enterprise assesses that user
-      activity to exceeds a predetermined threshold (by the developer), it can trigger
-      an MFA challenge to verify the user. This increases the likelihood that a compromised
-      account will be prevented from impacting the system.
-
-
-      Since ReCAPTCHA Enterprise does not require a MFA challenge for all user activity,
-      it has been given a rating of Partial.
-
-      '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Multi-Factor Authentication
     - Identity
-    value: ReCAPTCHA Enterprise
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/17/2022
-    last-update: 04/17/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1110.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Significant
+      tags:
+      - Multi-Factor Authentication
+      - Identity
+    mapping-target: ReCAPTCHA Enterprise
     name: Credential Stuffing
     references:
     - https://cloud.google.com/recaptcha-enterprise
-    related-score: false
-    score-category: Detect
-    score-comment: 'Password Checkup extension for Chrome displays a warning whenever
-      a user signs in to a site using one of over 4 billion usernames and passwords
-      that Google knows to be unsafe due to a third-party data breach. With reCAPTCHA
-      Enterprise, you can identify credential stuffing attacks by utilizing Password
-      Checkup to detect password leaks and breached credentials. Developers can factor
-      this information into their score calculation for score-based site keys to help
-      identify suspicious activity and take appropriate action.
-
-      '
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Multi-Factor Authentication
     - Identity
-    value: ReCAPTCHA Enterprise
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/17/2022
-    last-update: 04/17/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1136.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Multi-Factor Authentication
+      - Identity
+    mapping-target: ReCAPTCHA Enterprise
     name: Cloud Account
     references:
     - https://cloud.google.com/recaptcha-enterprise
-    related-score: false
-    score-category: Protect
-    score-comment: 'ReCAPTCHA Enterprise can implement a number of mitigations to
-      prevent the automated creation of multiple accounts such as adding checkbox
-      challenges on pages where end users need to enter their credentials and assessing
-      user activity for potential misuses on all pages where accounts are created.
-
-
-      Since this control doesn''t prevent the manual creation of accounts, it has
-      been given a rating of Partial.
-
-      '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Multi-Factor Authentication
     - Identity
-    value: ReCAPTCHA Enterprise
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/17/2022
-    last-update: 04/17/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

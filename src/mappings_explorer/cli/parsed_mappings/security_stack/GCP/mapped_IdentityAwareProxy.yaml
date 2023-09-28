@@ -1,225 +1,203 @@
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1550.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Application Access Token
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Protect
-    score-comment: 'This control may mitigate or prevent stolen application access
-      tokens from occurring. '
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1528
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Steal Application Access Token
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Protect
-    score-comment: This control may mitigate application access token theft if the
-      application is configured to retrieve temporary security credentials using an
-      IAM role.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1528
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Steal Application Access Token
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Detect
-    score-comment: Control can detect potentially malicious applications
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1098.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Additional Cloud Credentials
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Detect
-    score-comment: Adversaries may add adversary-controlled credentials to a cloud
-      account to maintain persistent access to victim accounts and instances within
-      the environment. IAP lets you enforce access control policies for applications
-      and resources. This control may help mitigate against adversaries gaining access
-      through cloud account by the configuration of access controls and firewalls,
-      allowing limited access to systems.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Valid Accounts
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Protect
-    score-comment: IAP applies the relevant IAM policy to check if the user is authorized
-      to access the requested resource. If the user has the IAP-secured Web App User
-      role on the Cloud console project where the resource exists, they're authorized
-      to access the application. This control can mitigate against adversaries that
-      try to obtain credentials of accounts, including cloud accounts.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1078.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Cloud Accounts
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Protect
-    score-comment: 'Protects access to applications hosted within cloud and other
-      premises. '
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: "This mapping was scored as Partial due the control's low to medium\
-      \ threat protection fidelity from specific (sub-)techniques found in MITRE\u2019\
-      s ATT&CK framework."
+    comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Credentials
+    mapping-target: Identity Aware Proxy
     name: Exploit Public-Facing Application
     references:
     - https://cloud.google.com/iap
-    related-score: false
-    score-category: Protect
-    score-comment: 'When an application or resource is protected by IAP, it can only
-      be accessed through the proxy by principals, also known as users, who have the
-      correct Identity and Access Management (IAM) role. IAP secures authentication
-      and authorization of all requests to App Engine, Cloud Load Balancing (HTTPS),
-      or internal HTTP load balancing.
-
-
-      With adversaries that may try to attempt malicious activity via applications,
-      the application Firewalls may be used to limit exposure of applications to prevent
-      exploit traffic from reaching the application.'
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Credentials
-    value: Identity Aware Proxy
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/08/2022
-    last-update: 03/08/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

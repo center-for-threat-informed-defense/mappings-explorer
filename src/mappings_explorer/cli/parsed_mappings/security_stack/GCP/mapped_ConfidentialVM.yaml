@@ -1,29 +1,27 @@
 - attack-object:
     comments: ''
     id: T1565.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Encryption
+    mapping-target: Confidential VM and Compute Engine
     name: Runtime Data Manipulation
     references:
     - https://cloud.google.com/compute/confidential-vm/docs/about-cvm#security_and_privacy_features
-    related-score: false
-    score-category: Protect
-    score-comment: Main memory encryption is performed using dedicated hardware within
-      the memory controllers. Each controller includes a high-performance Advanced
-      Encryption Standard (AES) engine. The AES engine encrypts data as it is written
-      to DRAM or shared between sockets, and decrypts it when data is read.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Encryption
-    value: Confidential VM and Compute Engine
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

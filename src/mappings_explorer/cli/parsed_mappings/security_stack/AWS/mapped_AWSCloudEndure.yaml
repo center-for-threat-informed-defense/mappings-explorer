@@ -1,214 +1,182 @@
 - attack-object:
     comments: ''
     id: T1190
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Exploit Public-Facing Application
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: false
-    score-category: Respond
-    score-comment: AWS CloudEndure Disaster Recovery enables the replication and recovery
-      of servers into AWS Cloud. In the event that a public-facing application or
-      server is compromised, AWS CloudEndure can be used to provision an instance
-      of the server from a previous point in time within minutes. As a result, this
-      mapping is given a score of Significant.
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1485
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Data Destruction
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: false
-    score-category: Respond
-    score-comment: AWS CloudEndure Disaster Recovery enables the replication and recovery
-      of servers into AWS Cloud. In the event that data on servers is destroyed, AWS
-      CloudEndure can be used to provision an instance of the server from a previous
-      point in time within minutes. As a result, this mapping is given a score of
-      Significant.
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1486
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Data Encrypted for Impact
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: false
-    score-category: Respond
-    score-comment: 'AWS CloudEndure Disaster Recovery enables the replication and
-      recovery of servers into AWS Cloud. In the event that data on servers is encrypted
-      (e.g., ransomware), AWS CloudEndure can be used to provision an instance of
-      the server from a previous point in time within minutes. As a result, this mapping
-      is given a score of Significant.
-
-      '
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1565
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Minimal
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Data Manipulation
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: true
-    score-category: Respond
-    score-comment: 'AWS CloudEndure Disaster Recovery enables the replication and
-      recovery of servers into AWS Cloud. In the event that data on servers is manipulated,
-      AWS CloudEndure can be used to provision an instance of the server from a previous
-      point in time within minutes. This mapping is given a score of Minimal because
-      it only supports a subset (1 of 3) of the sub-techniques.
-
-      '
-    score-value: Minimal
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1491
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Defacement
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: true
-    score-category: Respond
-    score-comment: AWS CloudEndure Disaster Recovery enables the replication and recovery
-      of servers into AWS Cloud. In the event that servers are defaced, AWS CloudEndure
-      can be used to provision an instance of the server from a previous point in
-      time within minutes. This mapping is given a score of Significant because it
-      supports all of the sub-techniques (2 of 2).
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1561
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Disk Wipe
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: true
-    score-category: Respond
-    score-comment: AWS CloudEndure Disaster Recovery enables the replication and recovery
-      of servers into AWS Cloud. In the event that server disks are wiped, AWS CloudEndure
-      can be used to provision an instance of the server from a previous point in
-      time within minutes. This mapping is given a score of Significant because it
-      supports all of the sub-techniques (2 of 2).
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1490
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Respond
+      score-value: Significant
+      tags: []
+    mapping-target: AWS CloudEndure Disaster Recovery
     name: Inhibit System Recovery
     references:
     - https://aws.amazon.com/cloudendure-disaster-recovery/
     - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
-    related-score: false
-    score-category: Respond
-    score-comment: AWS CloudEndure Disaster Recovery enables the replication and recovery
-      of servers into AWS Cloud. In the event that servers are modified to disrupt
-      recovery, AWS CloudEndure can be used to provision an instance of the server
-      from a previous point in time within minutes. As a result, this mapping is given
-      a score of Significant.
-    score-value: Significant
-    secondary-property: ''
     tags: []
-    value: AWS CloudEndure Disaster Recovery
   metadata:
     attack-version: 9
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 06/21/2021
-    last-update: 06/21/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: AWS
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: AWS
-    platform-version: ''
+    technology-domain: enterprise

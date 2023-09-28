@@ -1,165 +1,145 @@
 - attack-object:
-    comments: The temporal score for this control on most of the techniques and subtechnique
-      is minimal, since it does not provide specific analytics itself (though can
-      be used to provide data to other analytics after the fact. "The event-related
-      data is collected near real time from the analytic and audit logs provided by
-      enhanced DNS logging and diagnostics in Windows Server 2012 R2.".  Inventory-related
-      data is uploaded every 48 hours.
+    comments: ''
     id: T1071
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - DNS
+      - Network
+    mapping-target: Azure DNS Analytics
     name: Application Layer Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics
-    related-score: true
-    score-category: Detect
-    score-comment: This control can be used forensically to identify clients that
-      communicated with identified C2 hosts via DNS.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - DNS
     - Network
-    value: Azure DNS Analytics
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2021
-    last-update: 03/25/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: The temporal score for this control on most of the techniques and subtechnique
-      is minimal, since it does not provide specific analytics itself (though can
-      be used to provide data to other analytics after the fact. "The event-related
-      data is collected near real time from the analytic and audit logs provided by
-      enhanced DNS logging and diagnostics in Windows Server 2012 R2.".  Inventory-related
-      data is uploaded every 48 hours.
+    comments: ''
     id: T1568
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - DNS
+      - Network
+    mapping-target: Azure DNS Analytics
     name: Dynamic Resolution
     references:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics
-    related-score: true
-    score-category: Detect
-    score-comment: This control can be used for after-the-fact analysis of potential
-      fast-flux DNS C2
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - DNS
     - Network
-    value: Azure DNS Analytics
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2021
-    last-update: 03/25/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: The temporal score for this control on most of the techniques and subtechnique
-      is minimal, since it does not provide specific analytics itself (though can
-      be used to provide data to other analytics after the fact. "The event-related
-      data is collected near real time from the analytic and audit logs provided by
-      enhanced DNS logging and diagnostics in Windows Server 2012 R2.".  Inventory-related
-      data is uploaded every 48 hours.
+    comments: ''
     id: T1048
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - DNS
+      - Network
+    mapping-target: Azure DNS Analytics
     name: Exfiltration Over Alternative Protocol
     references:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics
-    related-score: true
-    score-category: Detect
-    score-comment: This control can identify anomalous / high talker DNS clients,
-      possibly related to exfil via DNS
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - DNS
     - Network
-    value: Azure DNS Analytics
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2021
-    last-update: 03/25/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: The temporal score for this control on most of the techniques and subtechnique
-      is minimal, since it does not provide specific analytics itself (though can
-      be used to provide data to other analytics after the fact. "The event-related
-      data is collected near real time from the analytic and audit logs provided by
-      enhanced DNS logging and diagnostics in Windows Server 2012 R2.".  Inventory-related
-      data is uploaded every 48 hours.
+    comments: ''
     id: T1041
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - DNS
+      - Network
+    mapping-target: Azure DNS Analytics
     name: Exfiltration Over C2 Channel
     references:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics
-    related-score: false
-    score-category: Detect
-    score-comment: This control can potentially be used to forensically identify exfiltration
-      via a DNS-based C2 channel.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - DNS
     - Network
-    value: Azure DNS Analytics
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2021
-    last-update: 03/25/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: The temporal score for this control on most of the techniques and subtechnique
-      is minimal, since it does not provide specific analytics itself (though can
-      be used to provide data to other analytics after the fact. "The event-related
-      data is collected near real time from the analytic and audit logs provided by
-      enhanced DNS logging and diagnostics in Windows Server 2012 R2.".  Inventory-related
-      data is uploaded every 48 hours.
+    comments: ''
     id: T1566
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - DNS
+      - Network
+    mapping-target: Azure DNS Analytics
     name: Phishing
     references:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/insights/dns-analytics
-    related-score: true
-    score-category: Detect
-    score-comment: This control can be used forensically to identify DNS queries to
-      known malicious sites, which may be evidence of phishing.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - DNS
     - Network
-    value: Azure DNS Analytics
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/25/2021
-    last-update: 03/25/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise

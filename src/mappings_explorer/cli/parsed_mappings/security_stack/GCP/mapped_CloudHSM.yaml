@@ -1,220 +1,203 @@
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1552
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Unsecured Credentials
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      leverage unsecured credentials found on compromised systems. Variations of this
-      technique are difficult to mitigate, so a partial score was granted for this
-      control's medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1553
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Subvert Trust Controls
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      undermine trusted controls and conduct nefarious activity or execute malicious
-      programs. Variations of this technique are difficult to mitigate, so a partial
-      score was granted for this control's medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1588.003
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Code Signing Certificates
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      compromise code signing certificates that can used during targeting to run compromised
-      code and other tampered executables. Variations of this technique are difficult
-      to mitigate, so a partial score was granted for this control's medium to high
-      coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1588.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Digital Certificates
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      compromise digital certificates that can used to encrypt data-in-transit or
-      tamper with the certificate owner's communications.  Variations of this technique
-      are difficult to mitigate, so a partial score was granted for this control's
-      medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1552.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Private Keys
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      compromise private key certificate files (e.g., .key, .pgp, .ppk, .p12). Variations
-      of this technique are difficult to mitigate, so a partial score was granted
-      for this control's medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1552.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Credentials In Files
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      leverage passwords and unsecure credentials found in files on compromised systems.Variations
-      of this technique are difficult to mitigate, so a partial score was granted
-      for this control's medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: This control provides a secure alternative to storing encryption keys
-      in the file system.
+    comments: ''
     id: T1588
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Encryption
+      - Data Security
+    mapping-target: Cloud Hardware Security Module (HSM)
     name: Obtain Capabilities
     references:
     - https://cloud.google.com/kms/docs/hsm
-    related-score: false
-    score-category: Protect
-    score-comment: Google Cloud's HSM may protect against adversary's attempts to
-      obtain capabilities by compromising code signing certificates that will be used
-      to run compromised code and other tampered executables. Variations of this technique
-      are difficult to mitigate, so a partial score was granted for this control's
-      medium to high coverage factor.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Encryption
     - Data Security
-    value: Cloud Hardware Security Module (HSM)
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 04/13/2022
-    last-update: 04/13/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

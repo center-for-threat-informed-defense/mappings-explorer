@@ -1,581 +1,594 @@
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1087.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Cloud Account
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: This control can be used to limit permissions to discover cloud
-      accounts in accordance with least privilege principles and thereby limits the
-      accounts that can be used for account discovery.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1580
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Cloud Infrastructure Discovery
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: IAM Recommender helps admins remove unwanted access to GCP resources
-      by using machine learning to make smart access control recommendations. With
-      Recommender, security teams can automatically detect overly permissive access
-      and rightsize them based on similar users in the organization and their access
-      patterns. This control may mitigate adversaries that try to enumerate users
-      access keys through VM or snapshots.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1530
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Data from Cloud Storage Object
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Recommender generates policy insights by comparing the permissions
-      that each principal used during the past 90 days with the total permissions
-      the principal has. This can be used to limit the permissions associated with
-      creating and modifying platform images or containers that adversaries may try
-      to access.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1530
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Data from Cloud Storage Object
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Detect
-    score-comment: Adversaries may attempt to implant cloud or container images with
-      malicious code to gain access to an environment. The IAM audit logs can be used
-      to receive data access and activity logs who has accessed to certain resources.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1538
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Cloud Service Dashboard
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: This control may limit the number of users that have privileges
-      to discover cloud infrastructure and may limit the discovery value of the dashboard
-      in the event of a compromised account.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1578
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Modify Cloud Compute Infrastructure
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: IAM Recommender helps admins remove unwanted access to GCP resources
-      by using machine learning to make smart access control recommendations. With
-      Recommender, security teams can automatically detect overly permissive access
-      and rightsize them based on similar users in the organization and their access
-      patterns. This control may mitigate adversaries that try to gain access to permissions
-      from modifying infrastructure components.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1548.002
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Bypass User Account Control
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries may bypass UAC mechanisms to elevate process privileges.
-      This control can be used to help enforce least privilege principals to ensure
-      that permission levels are properly managed. Along with this, Policy Analyzer
-      lets users know what principals have access to resources based on its corresponding
-      IAM allow policies.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1068
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Exploitation for Privilege Escalation
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: IAM Recommender helps admins remove unwanted access to GCP resources
-      by using machine learning to make smart access control recommendations. With
-      Recommender, security teams can automatically detect overly permissive access
-      and rightsize them based on similar users in the organization and their access
-      patterns. This control may mitigate adversaries that try to perform privilege
-      escalation via permission levels and software exploitation.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1562
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Impair Defenses
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries that try to disable cloud logging capabilities have
-      the advantage to limit the amount of the data that can be collected and can
-      possibly control not being detected. This control may be used to ensure that
-      permissions are in place to prevent adversaries from disabling or interfering
-      with security/logging services.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1078.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Cloud Accounts
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries may obtain and abuse credentials of a cloud account
-      by gaining access through means of Initial Access, Persistence, Privilege Escalation,
-      or Defense Evasion. IAM Recommender helps enforce least privilege principals
-      to ensure that permission levels are properly managed.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1078.004
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Cloud Accounts
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Detect
-    score-comment: null
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1562.008
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Detect
+      score-value: Minimal
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Disable Cloud Logs
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Detect
-    score-comment: Adversaries that try to disable cloud logging capabilities have
-      the advantage to limit the amount of the data that can be collected and can
-      possibly control not being detected. This control may be used to routinely check
-      role account permissions in IAM audit logs.
-    score-value: Minimal
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1212
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Exploitation for Credential Access
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: IAM Recommender helps admins remove unwanted access to GCP resources
-      by using machine learning to make smart access control recommendations. With
-      Recommender, security teams can automatically detect overly permissive access
-      and rightsize them based on similar users in the organization and their access
-      patterns. This control may mitigate adversaries that try to perform privilege
-      escalation via permission levels and software exploitation.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1078
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Valid Accounts
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries may obtain and abuse credentials of a cloud account
-      by gaining access through means of Initial Access, Persistence, Privilege Escalation,
-      or Defense Evasion. IAM Recommender helps enforce least privilege principals
-      to ensure that permission levels are properly managed.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1087
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Account Discovery
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: This control can be used to limit permissions to discover user
-      accounts in accordance with least privilege principles and thereby limits the
-      accounts that can be used for account discovery.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1098.001
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Additional Cloud Credentials
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Utilization and enforcement of MFA for user accounts to ensure
-      that IAM policies are implemented properly shall mitigate adversaries so that
-      they may not gain access to user accounts. Enforce the principle of least privilege
-      by ensuring that principals have only the permissions that they actually need.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1098
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: Account Manipulation
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Utilization and enforcement of MFA for user accounts to ensure
-      that IAM policies are implemented properly shall mitigate adversaries so that
-      they may not gain access to user accounts. Enforce the principle of least privilege
-      by ensuring that principals have only the permissions that they actually need.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
-    comments: 'Similar to Azure Role based access control and Azure policy '
+    comments: ''
     id: T1222
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: false
+      score-category: Protect
+      score-value: Partial
+      tags:
+      - Identity
+      - Role Based Access Control
+      - Access Management
+      - Credentials
+    mapping-target: Policy Intelligence
     name: File and Directory Permissions Modification
     references:
     - https://cloud.google.com/policy-intelligence
-    related-score: false
-    score-category: Protect
-    score-comment: Adversaries may modify file or directory permissions/attributes
-      to evade access control lists (ACLs) and access protected files. Enforcing the
-      principle of least privilege through IAM Recommender role recommendations help
-      admins identify and remove excess permissions from users' principals, improving
-      their resources' security configurations.
-    score-value: Partial
-    secondary-property: ''
     tags:
     - Identity
     - Role Based Access Control
     - Access Management
     - Credentials
-    value: Policy Intelligence
   metadata:
     attack-version: 10
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/02/2022
-    last-update: 03/02/2022
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: GCP
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: GCP
-    platform-version: ''
+    technology-domain: enterprise

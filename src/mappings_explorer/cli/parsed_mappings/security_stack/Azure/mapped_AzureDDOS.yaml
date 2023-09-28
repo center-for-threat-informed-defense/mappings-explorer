@@ -1,55 +1,58 @@
 - attack-object:
     comments: ''
     id: T1498
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure DDOS Protection Standard
     name: Network Denial of Service
     references:
     - https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview
-    related-score: true
-    score-category: Protect
-    score-comment: Designed to address multiple DDOS techniques including volumetric
-      attacks.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure DDOS Protection Standard
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/04/2021
-    last-update: 03/04/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
 - attack-object:
     comments: ''
     id: T1499
-    mapping-pattern: ''
+    mapping-description: ''
+    mapping-platform:
+      related-score: true
+      score-category: Protect
+      score-value: Significant
+      tags:
+      - Azure Security Center Recommendation
+      - Network
+    mapping-target: Azure DDOS Protection Standard
     name: Endpoint Denial of Service
     references:
     - https://docs.microsoft.com/en-us/azure/ddos-protection/ddos-protection-overview
-    related-score: true
-    score-category: Protect
-    score-comment: Protects against volumetric and protocol DOS, though not application.
-    score-value: Significant
-    secondary-property: ''
     tags:
     - Azure Security Center Recommendation
     - Network
-    value: Azure DDOS Protection Standard
   metadata:
     attack-version: 8.2
     author: ''
     contact: ctid@mitre-engenuity.org
     creation-date: 03/04/2021
-    last-update: 03/04/2021
-    mapping-type: scoring
-    mapping-verision: 1
+    last-update: ''
+    mapping-platform: Azure
+    mapping-platform-version: ''
+    mapping-version: 1
     organization: ''
-    platform: Azure
-    platform-version: ''
+    technology-domain: enterprise
