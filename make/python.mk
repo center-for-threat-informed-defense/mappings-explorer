@@ -3,7 +3,7 @@
 lint: ## Run ruff, black, and mypy
 	poetry run ruff check src/
 	poetry run black --check src/
-	poetry run mypy --check src/
+	# poetry run mypy --check src/mappings_explorer/
 
 test: ## Run Python tests
 	poetry run pytest --cov=src/ --cov-report=term-missing

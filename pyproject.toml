@@ -12,8 +12,14 @@ classifiers = [
 ]
 repository = "https://github.com/center-for-threat-informed-defense/mappings-explorer"
 
+[tool.poetry.scripts]
+mapex = "mappings_explorer.cli.cli:main"
+
 [tool.poetry.dependencies]
 python = "^3.9"
+pandas-stubs = "^2.0.3.230814"
+types-pyyaml = "^6.0.12.12"
+types-requests = "^2.31.0.6"
 
 [tool.poetry.group.dev.dependencies]
 bandit = "1.7.0"
@@ -22,6 +28,8 @@ pytest = "^7.1.2"
 pytest-cov = "4.1.0"
 safety = "1.10.3"
 mypy = "^1.2.0"
+pandas = "^2.1"
+openpyxl = "^3.1"
 ruff = "^0.0.289"
 
 [tool.black]
