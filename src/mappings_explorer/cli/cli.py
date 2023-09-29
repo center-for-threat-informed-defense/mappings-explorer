@@ -22,14 +22,8 @@ from mappings_explorer.cli.write_parsed_mappings import (
     write_parsed_mappings_yaml,
 )
 
-from mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
-from mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
-from mappings_explorer.cli.parse_security_stack_mappings import (
-    configure_security_stack_mappings,
-)
-from mappings_explorer.cli.parse_veris_mappings import configure_veris_mappings
-
 ROOT_DIR = os.path.abspath(os.curdir)
+PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/"
 
 
 def main():
@@ -113,9 +107,7 @@ def parse_cve_mappings():
     datareader = read_csv_file(cve_filepath)
     parsed_mappings = configure_cve_mappings(datareader, attack_object_id_to_name)
 
-    filepath = (
-        f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/cve/parsed_cve_mappings"
-    )
+    filepath = f"{PARSED_MAPPINGS_DIR}cve/parsed_cve_mappings"
 
     # write parsed mappings to yaml file
     write_parsed_mappings_yaml(parsed_mappings, filepath)
@@ -148,12 +140,12 @@ def parse_nist_mappings():
 
             # set up directories
             mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
-            attack_version_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/nist/{attack_version}/"
+            attack_version_path = f"{PARSED_MAPPINGS_DIR}nist/{attack_version}/"
             attack_version_path_exists = os.path.exists(attack_version_path)
             if not attack_version_path_exists:
                 os.makedirs(attack_version_path)
-
-            mappings_version_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/nist/{attack_version}/{mappings_version}/"
+            nist_dir = f"nist/{attack_version}/{mappings_version}/"
+            mappings_version_path = f"{PARSED_MAPPINGS_DIR}{nist_dir}"
             mappings_version_path_exists = os.path.exists(mappings_version_path)
             if not mappings_version_path_exists:
                 os.makedirs(mappings_version_path)
@@ -186,8 +178,8 @@ def parse_veris_mappings():
             )
 
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
-
-            filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version}/mapped_{filename[0 : filename.index('.')]}"
+            filename = filename[0 : filename.index(".")]
+            filepath = f"{PARSED_MAPPINGS_DIR}veris/{veris_version}/mapped_{filename}"
 
             # write parsed mappings to yaml file
             write_parsed_mappings_yaml(parsed_mappings, filepath)
@@ -210,7 +202,10 @@ def parse_security_stack_mappings():
             parsed_mappings = configure_security_stack_mappings(data)
 
             # define directory parsed data goes into
-            security_stack_folder_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/security_stack/{os.path.basename(os.path.normpath(subdir))}"
+            ssm_folder = os.path.basename(os.path.normpath(subdir))
+            security_stack_folder_path = (
+                f"{PARSED_MAPPINGS_DIR}security_stack/{ssm_folder}"
+            )
             security_stack_folder_path_exists = os.path.exists(
                 security_stack_folder_path
             )
