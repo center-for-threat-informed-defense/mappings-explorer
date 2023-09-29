@@ -5,6 +5,7 @@ def configure_security_stack_mappings(data):
         # associated with the technique
         related_score = True if technique.get("sub-techniques-scores") else False
 
+        comments = data.get("comments") or ""
         tags = data.get("tags") or []
         references = data.get("references") or []
 
@@ -25,7 +26,7 @@ def configure_security_stack_mappings(data):
                         "mapping-platform-version": "",
                     },
                     "attack-object": {
-                        "comments": "",
+                        "comments": comments,
                         "id": technique["id"],
                         "name": technique["name"],
                         "references": list(references),

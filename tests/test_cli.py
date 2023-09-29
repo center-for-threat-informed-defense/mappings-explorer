@@ -30,9 +30,8 @@ def test_nist_mappings_parser():
 
     # ACT
     dataframe = read_excel_file(filepath)
-    parsed_mappings = []
-    configure_nist_mappings(
-        dataframe, parsed_mappings, attack_version, mappings_version
+    parsed_mappings = configure_nist_mappings(
+        dataframe, attack_version, mappings_version
     )
     result = yaml.dump(parsed_mappings)
 
@@ -48,8 +47,7 @@ def test_security_stack_mappings():
 
     # ACT
     data = read_yaml(filepath)
-    parsed_mappings = []
-    configure_security_stack_mappings(data, parsed_mappings)
+    parsed_mappings = configure_security_stack_mappings(data)
     result = yaml.dump(parsed_mappings)
 
     # ASSERT
@@ -59,13 +57,15 @@ def test_security_stack_mappings():
 def test_veris_mappings():
     # ARRANGE
     filepath = os.path.join(os.path.dirname(__file__), "files/test_veris_mappings.json")
-    parsed_mappings = []
 
     # ACT
     veris_mappings = read_json_file(filepath)
-    configure_veris_mappings(veris_mappings, parsed_mappings)
+    domain = "enterprise"
+    parsed_mappings = configure_veris_mappings(veris_mappings, domain)
     result = yaml.dump(parsed_mappings)
-
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("RESULT", result)
+    print("EXPECTED", expected_veris_mapping)
     # ASSERT
     assert result == expected_veris_mapping
 
@@ -74,10 +74,10 @@ def test_cve_mappings():
     # ARRANGE
     filepath = os.path.join(os.path.dirname(__file__), "files/test_cve_mappings.csv")
     id_to_name_dict = {
-        "T1059": "Name for T1059",
-        "T1190": "Name for T1190",
-        "T1078": "Name for T1078",
-        "T1068": "Name for T1068",
+        "T1059": {"name": "Name for T1059", "domain": "enterprise"},
+        "T1190": {"name": "Name for T1190", "domain": "enterprise"},
+        "T1078": {"name": "Name for T1078", "domain": "enterprise"},
+        "T1068": {"name": "Name for T1068", "domain": "enterprise"},
     }
 
     # ACT
