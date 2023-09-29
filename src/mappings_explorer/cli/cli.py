@@ -152,10 +152,8 @@ def parse_nist_mappings():
                 dataframe, attack_version, mappings_version
             )
 
-            # write parsed mappings to yaml file
-            parsed_mappings_yaml = yaml.dump(parsed_mappings)
+            # set up directories
             mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
-
             attack_version_path = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/nist/{attack_version}/"
             attack_version_path_exists = os.path.exists(attack_version_path)
             if not attack_version_path_exists:
@@ -167,20 +165,12 @@ def parse_nist_mappings():
                 os.makedirs(mappings_version_path)
 
             filepath = f"{mappings_version_path}/{mapped_filename}"
-            result_yaml_file = open(
-                f"{filepath}.yaml",
-                "w",
-                encoding="UTF-8",
-            )
-            result_yaml_file.write(parsed_mappings_yaml)
+
+            # write parsed mappings to yaml file
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
 
             # write parsed mappings to json file
-            result_json_file = open(
-                f"{filepath}.json",
-                "w",
-                encoding="UTF-8",
-            )
-            json.dump(parsed_mappings, fp=result_json_file)
+            write_parsed_mappings_json(parsed_mappings, filepath)
 
 
 def read_excel_file(filepath):
@@ -208,21 +198,10 @@ def parse_veris_mappings():
             filepath = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/veris/{veris_version}/mapped_{filename[0 : filename.index('.')]}"
 
             # write parsed mappings to yaml file
-            parsed_mappings_yaml = yaml.dump(parsed_mappings)
-            result_file_yaml = open(
-                f"{filepath}.yaml",
-                "w",
-                encoding="UTF-8",
-            )
-            result_file_yaml.write(parsed_mappings_yaml)
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
 
             # write parsed mappings to json file
-            result_json_file = open(
-                f"{filepath}.json",
-                "w",
-                encoding="UTF-8",
-            )
-            json.dump(parsed_mappings, fp=result_json_file)
+            write_parsed_mappings_json(parsed_mappings, filepath)
 
 
 def read_json_file(filepath):
@@ -253,23 +232,31 @@ def parse_security_stack_mappings():
             )
 
             # write parsed data to a csv file
-            parsed_mappings_yaml = yaml.dump(parsed_mappings)
-            result_file_yaml = open(
-                f"{filepath}.yaml",
-                "w",
-                encoding="UTF-8",
-            )
-            result_file_yaml.write(parsed_mappings_yaml)
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
 
             # write parsed data to a json file
-            result_file_json = open(
-                f"{filepath}.json",
-                "w",
-                encoding="UTF-8",
-            )
-            json.dump(parsed_mappings, fp=result_file_json)
+            write_parsed_mappings_json(parsed_mappings, filepath)
 
 
 def read_yaml(filepath):
     with open(filepath, encoding="UTF-8") as file:
         return yaml.safe_load(file)
+
+
+def write_parsed_mappings_yaml(parsed_mappings, filepath):
+    parsed_mappings_yaml = yaml.dump(parsed_mappings)
+    result_yaml_file = open(
+        f"{filepath}.yaml",
+        "w",
+        encoding="UTF-8",
+    )
+    result_yaml_file.write(parsed_mappings_yaml)
+
+
+def write_parsed_mappings_json(parsed_mappings, filepath):
+    result_json_file = open(
+        f"{filepath}.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(parsed_mappings, fp=result_json_file)
