@@ -7,6 +7,8 @@ from src.mappings_explorer.cli.cli import (
     configure_nist_mappings,
     configure_security_stack_mappings,
     configure_veris_mappings,
+)
+from src.mappings_explorer.cli.read_files import (
     read_csv_file,
     read_excel_file,
     read_json_file,
