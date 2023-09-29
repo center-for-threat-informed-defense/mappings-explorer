@@ -1,11 +1,8 @@
 import argparse
-import csv
 import json
 import os
 
-import pandas as pd
 import requests
-import yaml
 
 from mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
 from mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
@@ -13,6 +10,17 @@ from mappings_explorer.cli.parse_security_stack_mappings import (
     configure_security_stack_mappings,
 )
 from mappings_explorer.cli.parse_veris_mappings import configure_veris_mappings
+from mappings_explorer.cli.read_files import (
+    read_csv_file,
+    read_excel_file,
+    read_json_file,
+    read_yaml,
+)
+from mappings_explorer.cli.write_parsed_mappings import (
+    write_parsed_mappings_csv,
+    write_parsed_mappings_json,
+    write_parsed_mappings_yaml,
+)
 
 from mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
 from mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
@@ -119,12 +127,6 @@ def parse_cve_mappings():
     write_parsed_mappings_csv(parsed_mappings, filepath)
 
 
-def read_csv_file(filepath):
-    cve_mappings = open(filepath, "r", encoding="UTF-8")
-    datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
-    return datareader
-
-
 def parse_nist_mappings():
     # read in tsv files
     directory = f"{ROOT_DIR}/mappings/NIST_800-53"
@@ -168,11 +170,6 @@ def parse_nist_mappings():
             write_parsed_mappings_csv(parsed_mappings, filepath)
 
 
-def read_excel_file(filepath):
-    df = pd.read_excel(filepath)
-    return df
-
-
 def parse_veris_mappings():
     directory = f"{ROOT_DIR}/mappings/Veris"
     for filename in os.listdir(directory):
@@ -200,12 +197,6 @@ def parse_veris_mappings():
 
             # write parsed mappings to csv file
             write_parsed_mappings_csv(parsed_mappings, filepath)
-
-
-def read_json_file(filepath):
-    with open(filepath, encoding="UTF-8") as user_file:
-        veris_mappings = user_file.read()
-        return json.loads(veris_mappings)
 
 
 def parse_security_stack_mappings():
@@ -237,65 +228,3 @@ def parse_security_stack_mappings():
 
             # write parsed mappings to csv file
             write_parsed_mappings_csv(parsed_mappings, filepath)
-
-
-def read_yaml(filepath):
-    with open(filepath, encoding="UTF-8") as file:
-        return yaml.safe_load(file)
-
-
-def write_parsed_mappings_yaml(parsed_mappings, filepath):
-    parsed_mappings_yaml = yaml.dump(parsed_mappings)
-    result_yaml_file = open(
-        f"{filepath}.yaml",
-        "w",
-        encoding="UTF-8",
-    )
-    result_yaml_file.write(parsed_mappings_yaml)
-
-
-def write_parsed_mappings_json(parsed_mappings, filepath):
-    result_json_file = open(
-        f"{filepath}.json",
-        "w",
-        encoding="UTF-8",
-    )
-    json.dump(parsed_mappings, fp=result_json_file)
-
-
-def write_parsed_mappings_csv(parsed_mappings, filepath):
-    metatdata_objects = []
-    attack_objects = []
-    mapping_platform_objects = []
-    for index, mapping in enumerate(parsed_mappings):
-        # metadata object
-        metadata_object = mapping["metadata"]
-        metadata_object["key"] = index
-        metatdata_objects.append(metadata_object)
-
-        # attack object
-        attack_object = mapping["attack-object"]
-        attack_object["metadata-key"] = index
-        attack_object["key"] = index
-        # mapping platform will be its own table and will not be
-        # part of attack_object
-        exclude_keys = ["mapping-platform"]
-        attack_object = {
-            k: attack_object[k]
-            for k in set(list(attack_object.keys())) - set(exclude_keys)
-        }
-        attack_objects.append(attack_object)
-
-        # mapping platform object
-        mapping_platform_object = mapping["attack-object"]["mapping-platform"]
-        mapping_platform_object["attack-object-key"] = index
-        mapping_platform_objects.append(mapping_platform_object)
-
-    metadata_df = pd.DataFrame(metatdata_objects)
-    metadata_df.to_csv(f"{filepath}_metadata.csv")
-
-    attack_object_df = pd.DataFrame(attack_objects)
-    attack_object_df.to_csv(f"{filepath}_attack-objects.csv")
-
-    mapping_platform_df = pd.DataFrame(mapping_platform_objects)
-    mapping_platform_df.to_csv(f"{filepath}_mapping-platforms.csv")
