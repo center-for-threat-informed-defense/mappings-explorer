@@ -63,9 +63,7 @@ def test_veris_mappings():
     domain = "enterprise"
     parsed_mappings = configure_veris_mappings(veris_mappings, domain)
     result = yaml.dump(parsed_mappings)
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("RESULT", result)
-    print("EXPECTED", expected_veris_mapping)
+
     # ASSERT
     assert result == expected_veris_mapping
 
