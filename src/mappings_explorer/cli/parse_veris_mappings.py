@@ -31,8 +31,8 @@ def configure_veris_mappings(veris_mappings, domain):
                         "mapping-description": "",
                         "mapping-target": veris_object,
                         "mapping-platform": {
-                            "relationship-type": "",
-                            "date-delivered": "",
+                            "relationship-type": "related-to",
+                            "veris-path": veris_object,
                         },
                     },
                 }
