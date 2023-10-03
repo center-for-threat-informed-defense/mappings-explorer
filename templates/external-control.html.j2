@@ -1,0 +1,73 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+   <section id="header-container" class="header-container">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <h1><span class="highlight">{{control}}</span> MAPPINGS</h1>
+          {% for paragraph in description %}
+            <p>
+              {{- paragraph -}}
+            </p>
+          {% endfor %}
+          <div class="section-details">
+            <p>
+              <span>Total Mappings: <strong>300</strong></span>
+              <span>ATT&CK Versions: <strong>{{ attackVersion|join(', ') }}</strong></span>
+              <span>ATT&CK Domain: <strong>{{ domain|join(', ')|capitalize() }}</strong></span>
+            </p>
+          </div>
+        </div>
+        <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
+          <h6>Download Mapping Artifacts:</h6>
+          <div class="downloads">
+            <p><a href="#"><span><img src="../templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> YAML</a></p>
+            <p><a href="#"><span><img src="../templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> CSV</a></p>
+            <p><a href="#"><span><img src="../templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> STIX Bundles</a></p>
+            <p><a href="#"><span><img src="../templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> Navigator Layers</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="version-select" class="version-select">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <h2>CHOOSE YOUR VERSIONS</h2>
+          <div class="row">
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>NIST Version</p>
+              <select name="nist-version" id="nist-version" class="form-control">
+                {% for v in version %}
+                <option value={v}>{{v}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>ATT&CK Version</p>
+              <input name="name" type="text" class="form-control" placeholder="Your Name*">
+            </div>
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>ATT&CK Domain</p>
+              <input name="name" type="text" class="form-control" placeholder="Your Name*">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mapping-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>CONTROL FAMILIES</h2>
+          {% block table %}
+            {% include "_table.html.j2"%}
+          {% endblock table %}
+      </div>
+    </div>
+  </section>
+  {% endblock content %}
