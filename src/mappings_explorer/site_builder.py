@@ -8,9 +8,8 @@ def main():
     TEMPLATE_FILE = "landing.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    template.stream(
-        title="Mappings Explorer"
-    ).dump('./output/index.html')
+    template.stream(title="Mappings Explorer").dump("./output/index.html")
+
 
 if __name__ == "__main__":
     main()
