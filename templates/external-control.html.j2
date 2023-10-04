@@ -34,9 +34,9 @@
   <section id="version-select" class="version-select">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
-        <div class="col-lg-8 col-md-10 col-sm-12">
+        <div class="col-12">
           <h2>CHOOSE YOUR VERSIONS</h2>
-          <div class="row">
+          <div class="row col-12" style="display: flex;">
             <div class="col-sm-4 col-md-3 form-group">
               <p>NIST Version</p>
               <select name="nist-version" id="nist-version" class="form-control">
@@ -47,11 +47,22 @@
             </div>
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Version</p>
-              <input name="name" type="text" class="form-control" placeholder="Your Name*">
+              <select name="attack-version" id="attack-version" class="form-control">
+                {% for v in attackVersion %}
+                <option value={v}>{{v}}</option>
+                {% endfor %}
+              </select>
             </div>
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Domain</p>
-              <input name="name" type="text" class="form-control" placeholder="Your Name*">
+              <select name="domain" id="attack-domain" class="form-control">
+                {% for d in domain %}
+                <option value={d}>{{d|capitalize }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-sm-4 col-md-3 form-group" style="margin-top: 28px;">
+            <a href="#about" class="btn-pill">See Mappings</a>
             </div>
           </div>
         </div>
@@ -70,4 +81,4 @@
       </div>
     </div>
   </section>
-  {% endblock content %}
+{% endblock content %}

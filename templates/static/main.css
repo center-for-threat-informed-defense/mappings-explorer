@@ -845,6 +845,43 @@
     font-weight: 700;
     margin-bottom: 20px;
   }
+  .version-select .form-control {
+    padding: 0.8rem 1rem;
+    font-weight: 700;
+    font-size: 18px;
+    /** for the dropdown indicator */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    box-shadow: 2px 2px 2px #bdbdbd;
+  }
+  .version-select p{
+    margin-bottom: 4px;
+    font-size: 18px;
+    margin-left: 4px;
+  }
+  .version-select .btn-pill {
+    font-family: var(--font-default);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: flex;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: white;
+    background: var(--color-secondary);
+    display: flex;
+    width: max-content;
+    margin-top: auto !important;
+    text-transform: uppercase;
+  }
+
+  .version-select .btn-pill:hover {
+    background: #5C6FC6;
+  }
   /**
   # Mapping Table Section
   **/
@@ -858,7 +895,7 @@
   .mapping-table .table-outer {
     background-color: white;
     padding:40px;
-    box-shadow: 2px 2px 10px #909090;
+    box-shadow: 2px 2px 4px #bdbdbd;
     border-radius: 5px;
   }
   .mapping-table .table-outer input{
