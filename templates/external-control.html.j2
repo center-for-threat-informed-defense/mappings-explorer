@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
-
 {% block content %}
+{% include "_banner.html.j2" %}
    <section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -14,8 +14,8 @@
           <div class="section-details">
             <p>
               <span>Total Mappings: <strong>300</strong></span>
-              <span>ATT&CK Versions: <strong>{{ attackVersion|join(', ') }}</strong></span>
-              <span>ATT&CK Domain: <strong>{{ domain|join(', ')|capitalize() }}</strong></span>
+              <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
+              <span>ATT&CK Domain: <strong>{{ domains|join(', ')|capitalize() }}</strong></span>
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@
             <div class="col-sm-4 col-md-3 form-group">
               <p>NIST Version</p>
               <select name="nist-version" id="nist-version" class="form-control">
-                {% for v in version %}
+                {% for v in versions %}
                 <option value={v}>{{v}}</option>
                 {% endfor %}
               </select>
@@ -48,7 +48,7 @@
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Version</p>
               <select name="attack-version" id="attack-version" class="form-control">
-                {% for v in attackVersion %}
+                {% for v in attackVersions %}
                 <option value={v}>{{v}}</option>
                 {% endfor %}
               </select>
@@ -56,7 +56,7 @@
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Domain</p>
               <select name="domain" id="attack-domain" class="form-control">
-                {% for d in domain %}
+                {% for d in domains %}
                 <option value={d}>{{d|capitalize }}</option>
                 {% endfor %}
               </select>
@@ -81,4 +81,20 @@
       </div>
     </div>
   </section>
+
+          {#<p>{{nist_version}}</p>
+          <p id="demo"> </p>#}
+<script>
+var url = window.location.search;
+function getParamsFromUrl(url) {
+  url.split("&").forEach(function(part) {
+    var item = part.split("=");
+    if (item[0] == "nist_version") {
+      nist_version = item[1];
+    }
+  })
+  document.getElementById("demo").innerHTML = "default "+ nist_version;
+
+}
+</script>
 {% endblock content %}

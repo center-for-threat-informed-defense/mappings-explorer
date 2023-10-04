@@ -70,7 +70,7 @@
   --------------------------------------------------------------*/
   section {
     overflow: hidden;
-    padding: 80px 0;
+    padding: 40px 0;
   }
 
   .section-header {
@@ -813,7 +813,6 @@
   */
   .header-container {
     padding-top: 200px;
-    padding-bottom: 0;
   }
 
   @media (min-width: 768px) {
@@ -839,6 +838,11 @@
   /**
   # Version Select Section
   **/
+  .version-select section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   .version-select h2{
     text-transform: uppercase;
     font-family: var(--font-default);
@@ -2363,3 +2367,16 @@
   .bootstrap-table .search.btn-group {
     float: left !important;
   }
+
+div.banner  {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--color-primary);
+  text-align: center;
+  display: block;
+  position: fixed;
+  top: 84px;
+}
+.banner p {
+  margin-bottom: 0;
+}

@@ -5,9 +5,12 @@ class ExternalControl:
     id = ""
     label = ""
     description = []
-    version = []
-    attackVersion = []
-    attackDomain = []
+    version = ""
+    versions = []
+    attackVersion = ""
+    attackVersions = []
+    attackDomain = ""
+    attackDomains = []
     tableHeaders = []
 
 
@@ -21,13 +24,18 @@ def main():
         "The NIST 800-53 is a cybersecurity standard and compliance framework developed by the National Institute of Standards in Technology. It’s a continuously updated framework that tries to flexibly define standards, controls, and assessments based on risk, cost-effectiveness, and capabilities. Currently, the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.",
         "The NIST 800-53 framework is designed to provide a foundation of guiding elements, strategies, systems, and controls, that can agnostically support any organization’s cybersecurity needs and priorities. By establishing a framework available to all, it fosters communication and allows organizations to speak using a shared language. Lastly, because it doesn’t specifically support or suggest specific tools, companies, or vendors (intentionally so), it’s designed to be used as new technologies, systems, environments, and organizational changes arise, shifting cybersecurity needs.",
     ]
-    nist.version = ["rev4", "rev5"]
-    nist.attackVersion = [
-        "8.2",
-        "9.0",
+    nist.versions = ["rev5", "rev4"]
+    nist.version = nist.versions[0]
+    nist.attackVersions = [
         "10.1",
+        "9.0",
+        "8.2",
     ]
-    nist.attackDomain = ["enterprise"]
+    nist.attackVersion = nist.attackVersions[0]
+
+    nist.attackDomains = ["enterprise"]
+    nist.attackDomain = nist.attackDomains[0]
+
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
 
     veris = ExternalControl()
@@ -61,8 +69,11 @@ def main():
         control=nist.label,
         description=nist.description,
         version=nist.version,
+        versions=nist.versions,
         attackVersion=nist.attackVersion,
+        attackVersions=nist.attackVersions,
         domain=nist.attackDomain,
+        domains=nist.attackDomains,
         tableHeaders=nist.tableHeaders,
     ).dump("./output/nist-landing.html")
     print("Created nist landing")
