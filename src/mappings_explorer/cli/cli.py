@@ -14,7 +14,7 @@ from mappings_explorer.cli.read_files import (
     read_csv_file,
     read_excel_file,
     read_json_file,
-    read_yaml,
+    read_yaml_file,
 )
 from mappings_explorer.cli.write_parsed_mappings import (
     write_parsed_mappings_csv,
@@ -193,27 +193,25 @@ def parse_veris_mappings():
 
 def parse_security_stack_mappings():
     rootdir = f"{ROOT_DIR}/mappings/SecurityStack"
-
     # read in all files in SecurityStack directory
-    for subdir, _, files in os.walk(rootdir):
-        for file in files:
-            filepath = os.path.join(subdir, file)
-            data = read_yaml(filepath)
-            parsed_mappings = configure_security_stack_mappings(data)
+    for _, directories, _ in os.walk(rootdir):
+        for directory in directories:
+            parsed_mappings = []
+            for file in os.listdir(f"{rootdir}/{directory}"):
+                filepath = f"{rootdir}/{directory}/{file}"
+                data = read_yaml_file(filepath)
+                configure_security_stack_mappings(data, parsed_mappings)
 
             # define directory parsed data goes into
-            ssm_folder = os.path.basename(os.path.normpath(subdir))
             security_stack_folder_path = (
-                f"{PARSED_MAPPINGS_DIR}security_stack/{ssm_folder}"
+                f"{PARSED_MAPPINGS_DIR}security_stack/{directory}"
             )
             security_stack_folder_path_exists = os.path.exists(
                 security_stack_folder_path
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
-            filepath = (
-                f"{security_stack_folder_path}/mapped_{file[0 : file.index('.')]}"
-            )
+            filepath = f"{security_stack_folder_path}/mapped_{directory}"
 
             # write parsed data to a csv file
             write_parsed_mappings_yaml(parsed_mappings, filepath)

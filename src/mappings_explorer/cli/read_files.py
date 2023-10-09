@@ -22,6 +22,6 @@ def read_json_file(filepath):
         return json.loads(veris_mappings)
 
 
-def read_yaml(filepath):
+def read_yaml_file(filepath):
     with open(filepath, encoding="UTF-8") as file:
         return yaml.safe_load(file)
