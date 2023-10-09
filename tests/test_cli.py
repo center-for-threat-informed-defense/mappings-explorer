@@ -12,7 +12,7 @@ from src.mappings_explorer.cli.read_files import (
     read_csv_file,
     read_excel_file,
     read_json_file,
-    read_yaml,
+    read_yaml_file,
 )
 from tests.expected_results import (
     expected_cve_mapping,
@@ -41,17 +41,21 @@ def test_nist_mappings_parser():
 
 def test_security_stack_mappings():
     # ARRANGE
-    filepath = os.path.join(
-        os.path.dirname(__file__), "files/test_security_stack_mappings.yaml"
-    )
+    root_filepath = os.path.join(os.path.dirname(__file__), "files/security_stack")
 
     # ACT
-    data = read_yaml(filepath)
-    parsed_mappings = configure_security_stack_mappings(data)
-    result = yaml.dump(parsed_mappings)
+    # read in all files in SecurityStack directory
+    for _, directories, _ in os.walk(root_filepath):
+        for directory in directories:
+            parsed_mappings = []
+            for file in os.listdir(f"{root_filepath}/{directory}"):
+                filepath = f"{root_filepath}/{directory}/{file}"
+                data = read_yaml_file(filepath)
+                configure_security_stack_mappings(data, parsed_mappings)
+        result = yaml.dump(parsed_mappings)
 
-    # ASSERT
-    assert result == expected_security_stack_mapping
+        # ASSERT
+        assert result == expected_security_stack_mapping
 
 
 def test_veris_mappings():
@@ -85,3 +89,15 @@ def test_cve_mappings():
 
     # ASSERT
     assert result == expected_cve_mapping
+
+
+# def test_parse_yaml_to_json():
+#     # ARRANGE
+#     yaml = expected_cve_mapping
+
+
+#     # ACT
+
+#     # ASSERT
+
+# def test_parse_yaml_to_csv():

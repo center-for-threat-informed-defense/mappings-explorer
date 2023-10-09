@@ -129,6 +129,72 @@ expected_security_stack_mapping = yaml.dump(
                 "tags": ["Identity"],
             },
         },
+        {
+            "metadata": {
+                "mapping-version": 1,
+                "attack-version": 9,
+                "creation-date": "05/27/2021",  # confirm that this value is correct
+                "last-update": "",  # confirm this value is correct
+                "author": "",
+                "contact": "ctid@mitre-engenuity.org",
+                "organization": "",
+                "mapping-platform": "AWS",
+                "mapping-platform-version": "",  # get correct value
+                "technology-domain": "enterprise",
+            },
+            "attack-object": {
+                "id": "T1078",
+                "name": "Valid Accounts",
+                "mapping-target": "Amazon Cognito",
+                "comments": "comment",
+                "references": [
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
+                ],
+                "mapping-platform": {
+                    "score-category": "Protect",
+                    "score-value": "Minimal",
+                    "related-score": True,
+                    "tags": ["Identity"],
+                },
+                "mapping-description": "",
+                "tags": ["Identity"],
+            },
+        },
+        {
+            "metadata": {
+                "mapping-version": 1,
+                "attack-version": 9,
+                "creation-date": "05/27/2021",  # confirm that this value is correct
+                "last-update": "",  # confirm this value is correct
+                "author": "",
+                "contact": "ctid@mitre-engenuity.org",
+                "organization": "",
+                "mapping-platform": "AWS",
+                "mapping-platform-version": "",  # get correct value
+                "technology-domain": "enterprise",
+            },
+            "attack-object": {
+                "id": "T1110",
+                "name": "Brute Force",
+                "mapping-target": "Amazon Cognito",
+                "comments": "comment",
+                "references": [
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
+                    "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
+                ],
+                "mapping-description": "",
+                "mapping-platform": {
+                    "score-category": "Protect",
+                    "score-value": "Significant",
+                    "related-score": True,
+                    "tags": ["Identity"],
+                },
+                "tags": ["Identity"],
+            },
+        },
     ]
 )
 
