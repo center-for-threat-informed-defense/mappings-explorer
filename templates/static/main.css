@@ -251,10 +251,25 @@
     background: #212c5f;
     font-family: var(--font-primary);
   }
+  div.banner  {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--color-primary);
+    text-align: center;
+    display: block;
+    position: fixed;
+    top: 84px;
+  }
+  .banner p {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 1200px) {
     .header {
       padding: 12px 0;
+    }
+    div.banner  {
+      top: 60px
     }
   }
 
@@ -2368,15 +2383,3 @@
     float: left !important;
   }
 
-div.banner  {
-  width: 100%;
-  padding: 8px;
-  background-color: var(--color-primary);
-  text-align: center;
-  display: block;
-  position: fixed;
-  top: 84px;
-}
-.banner p {
-  margin-bottom: 0;
-}
