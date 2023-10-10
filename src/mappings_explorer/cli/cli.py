@@ -179,7 +179,7 @@ def parse_veris_mappings():
 
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
             filename = filename[0 : filename.index(".")]
-            filepath = f"{PARSED_MAPPINGS_DIR}veris/{veris_version}/mapped_{filename}"
+            filepath = f"{PARSED_MAPPINGS_DIR}veris/{veris_version}/parsed_{filename}"
 
             # write parsed mappings to yaml file
             write_parsed_mappings_yaml(parsed_mappings, filepath)
@@ -211,7 +211,7 @@ def parse_security_stack_mappings():
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
-            filepath = f"{security_stack_folder_path}/mapped_{directory}"
+            filepath = f"{security_stack_folder_path}/parsed_{directory}"
 
             # write parsed data to a csv file
             write_parsed_mappings_yaml(parsed_mappings, filepath)

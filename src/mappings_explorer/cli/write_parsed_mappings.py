@@ -24,14 +24,14 @@ def write_parsed_mappings_json(parsed_mappings, filepath):
 
 
 def write_parsed_mappings_csv(parsed_mappings, filepath):
-    metatdata_objects = []
+    metadata_objects = []
     attack_objects = []
     mapping_platform_objects = []
     for index, mapping in enumerate(parsed_mappings):
         # metadata object
         metadata_object = mapping["metadata"]
         metadata_object["key"] = index
-        metatdata_objects.append(metadata_object)
+        metadata_objects.append(metadata_object)
 
         # attack object
         attack_object = mapping["attack-object"]
@@ -41,8 +41,7 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
         # part of attack_object
         exclude_keys = ["mapping-platform"]
         attack_object = {
-            k: attack_object[k]
-            for k in set(list(attack_object.keys())) - set(exclude_keys)
+            key: attack_object[key] for key in attack_object if key not in exclude_keys
         }
         attack_objects.append(attack_object)
 
@@ -51,8 +50,8 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
         mapping_platform_object["attack-object-key"] = index
         mapping_platform_objects.append(mapping_platform_object)
 
-    metadata_df = pd.DataFrame(metatdata_objects)
-    metadata_df.to_csv(f"{filepath}_metadata.csv")
+    metadata_df = pd.DataFrame(metadata_objects)
+    metadata_df.to_csv(f"{filepath}_metadata.csv", columns=metadata_objects[0].keys())
 
     attack_object_df = pd.DataFrame(attack_objects)
     attack_object_df.to_csv(f"{filepath}_attack-objects.csv")
