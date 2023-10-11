@@ -4,7 +4,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
         # associated with the technique
         related_score = True if technique.get("sub-techniques-scores") else False
 
-        comment = data.get("comments") or ""
+        comments = data.get("comments") or ""
         tags = data.get("tags") or []
         references = data.get("references") or []
 
@@ -12,34 +12,32 @@ def configure_security_stack_mappings(data, parsed_mappings):
             parsed_mappings.append(
                 {
                     "metadata": {
-                        "mapping-verision": data["version"],
+                        "mapping-version": data["version"],
                         "attack-version": data["ATT&CK version"],
-                        "creation-date": data[
-                            "creation date"
-                        ],  # confirm that this value is correct
-                        "last-update": data[
-                            "creation date"
-                        ],  # confirm this value is correct
+                        "technology-domain": "enterprise",
                         "author": "",
                         "contact": data["contact"],
+                        # confirm this value is correct
+                        "creation-date": data["creation date"],
+                        "last-update": "",
                         "organization": "",
-                        "platform": data["platform"],
-                        "platform-version": "",  # get correct value
-                        "mapping-type": "scoring",
+                        "mapping-platform": data["platform"],
+                        "mapping-platform-version": "",
                     },
                     "attack-object": {
+                        "comments": comments,
                         "id": technique["id"],
                         "name": technique["name"],
-                        "value": data["name"],
-                        "mapping-pattern": "",
-                        "secondary-property": "",
-                        "comments": comment,
                         "references": list(references),
-                        "score-category": technique_score["category"],
-                        "score-value": technique_score["value"],
-                        "score-comment": technique_score.get("comments"),
-                        "related-score": related_score,
                         "tags": list(tags),
+                        "mapping-description": "",
+                        "mapping-target": data["name"],
+                        "mapping-platform": {
+                            "score-category": technique_score["category"],
+                            "score-value": technique_score["value"],
+                            "related-score": related_score,
+                            "tags": list(tags),
+                        },
                     },
                 }
             )

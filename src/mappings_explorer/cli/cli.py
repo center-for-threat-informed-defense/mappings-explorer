@@ -1,11 +1,8 @@
 import argparse
-import csv
 import json
 import os
 
-import pandas as pd
 import requests
-import yaml
 
 from mappings_explorer.cli.parse_cve_mappings import configure_cve_mappings
 from mappings_explorer.cli.parse_nist_mappings import configure_nist_mappings
@@ -13,8 +10,20 @@ from mappings_explorer.cli.parse_security_stack_mappings import (
     configure_security_stack_mappings,
 )
 from mappings_explorer.cli.parse_veris_mappings import configure_veris_mappings
+from mappings_explorer.cli.read_files import (
+    read_csv_file,
+    read_excel_file,
+    read_json_file,
+    read_yaml_file,
+)
+from mappings_explorer.cli.write_parsed_mappings import (
+    write_parsed_mappings_csv,
+    write_parsed_mappings_json,
+    write_parsed_mappings_yaml,
+)
 
 ROOT_DIR = os.path.abspath(os.curdir)
+PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/src/mappings_explorer/cli/parsed_mappings/"
 
 
 def main():
@@ -63,8 +72,12 @@ def load_attack_json():
     response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
+    domains = ["enterprise", "mobile", "ics"]
+    domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
+
     attack_object_id_to_name = {}
-    for domain_data in [enterprise_attack_data, mobile_attack_data, ics_attack_data]:
+    for idx, domain_data in enumerate(domain_data):
+        domain = domains[idx]
         for attack_object in domain_data["objects"]:
             if not domain_data["type"] == "relationship":
                 # skip objects without IDs
@@ -83,7 +96,7 @@ def load_attack_json():
                 ) and attack_object.get("name"):
                     attack_object_id_to_name[
                         attack_object["external_references"][0]["external_id"]
-                    ] = attack_object["name"]
+                    ] = {"name": attack_object["name"], "domain": domain}
 
     return attack_object_id_to_name
 
@@ -93,20 +106,23 @@ def parse_cve_mappings():
     cve_filepath = f"{ROOT_DIR}/mappings/Att&ckToCveMappings.csv"
     datareader = read_csv_file(cve_filepath)
     parsed_mappings = configure_cve_mappings(datareader, attack_object_id_to_name)
-    print(yaml.dump(parsed_mappings))
 
+    filepath = f"{PARSED_MAPPINGS_DIR}cve/parsed_cve_mappings"
 
-def read_csv_file(filepath):
-    cve_mappings = open(filepath, "r", encoding="UTF-8")
-    datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
-    return datareader
+    # write parsed mappings to yaml file
+    write_parsed_mappings_yaml(parsed_mappings, filepath)
+
+    # write parsed mappings to json file
+    write_parsed_mappings_json(parsed_mappings, filepath)
+
+    # write parsed mappings to csv file
+    write_parsed_mappings_csv(parsed_mappings, filepath)
 
 
 def parse_nist_mappings():
     # read in tsv files
     directory = f"{ROOT_DIR}/mappings/NIST_800-53"
 
-    parsed_mappings = []
     # iterate through all nist mapping files in the directory
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
@@ -118,49 +134,90 @@ def parse_nist_mappings():
                 filename.rfind("-") + 1 : filename.index("mappings")
             ].replace("_", ".")
             mappings_version = filename[filename.index("r") : filename.index("r") + 2]
-            configure_nist_mappings(
-                dataframe, parsed_mappings, attack_version, mappings_version
+            parsed_mappings = configure_nist_mappings(
+                dataframe, attack_version, mappings_version
             )
 
-    print(yaml.dump(parsed_mappings))
+            # set up directories
+            mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
+            attack_version_path = f"{PARSED_MAPPINGS_DIR}nist/{attack_version}/"
+            attack_version_path_exists = os.path.exists(attack_version_path)
+            if not attack_version_path_exists:
+                os.makedirs(attack_version_path)
+            nist_dir = f"nist/{attack_version}/{mappings_version}/"
+            mappings_version_path = f"{PARSED_MAPPINGS_DIR}{nist_dir}"
+            mappings_version_path_exists = os.path.exists(mappings_version_path)
+            if not mappings_version_path_exists:
+                os.makedirs(mappings_version_path)
 
+            filepath = f"{mappings_version_path}/{mapped_filename}"
 
-def read_excel_file(filepath):
-    df = pd.read_excel(filepath)
-    return df
+            # write parsed mappings to yaml file
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
+
+            # write parsed mappings to json file
+            write_parsed_mappings_json(parsed_mappings, filepath)
+
+            # write parsed mappings to csv file
+            write_parsed_mappings_csv(parsed_mappings, filepath)
 
 
 def parse_veris_mappings():
     directory = f"{ROOT_DIR}/mappings/Veris"
-    parsed_mappings = []
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
         # checking if it is a file
         if os.path.isfile(file):
             veris_mappings = read_json_file(file)
-            configure_veris_mappings(veris_mappings, parsed_mappings)
-    print(yaml.dump(parsed_mappings))
 
+            veris_version = "1.3.7" if "1_3_7" in filename else "1.3.5"
+            domain = (
+                "enterprise"
+                if veris_version == "1.3.5"
+                else filename[filename.rindex("-") + 1 : filename.index(".")]
+            )
 
-def read_json_file(filepath):
-    with open(filepath, encoding="UTF-8") as user_file:
-        veris_mappings = user_file.read()
-        return json.loads(veris_mappings)
+            parsed_mappings = configure_veris_mappings(veris_mappings, domain)
+            filename = filename[0 : filename.index(".")]
+            filepath = f"{PARSED_MAPPINGS_DIR}veris/{veris_version}/parsed_{filename}"
+
+            # write parsed mappings to yaml file
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
+
+            # write parsed mappings to json file
+            write_parsed_mappings_json(parsed_mappings, filepath)
+
+            # write parsed mappings to csv file
+            write_parsed_mappings_csv(parsed_mappings, filepath)
 
 
 def parse_security_stack_mappings():
     rootdir = f"{ROOT_DIR}/mappings/SecurityStack"
-
     # read in all files in SecurityStack directory
-    parsed_mappings = []
-    for subdir, _, files in os.walk(rootdir):
-        for file in files:
-            filepath = os.path.join(subdir, file)
-            data = read_yaml(filepath)
-            configure_security_stack_mappings(data, parsed_mappings)
-    print(yaml.dump(parsed_mappings))
+    for _, directories, _ in os.walk(rootdir):
+        for directory in directories:
+            parsed_mappings = []
+            for file in os.listdir(f"{rootdir}/{directory}"):
+                filepath = f"{rootdir}/{directory}/{file}"
+                data = read_yaml_file(filepath)
+                configure_security_stack_mappings(data, parsed_mappings)
 
+            # define directory parsed data goes into
+            security_stack_folder_path = (
+                f"{PARSED_MAPPINGS_DIR}security_stack/{directory}"
+            )
+            security_stack_folder_path_exists = os.path.exists(
+                security_stack_folder_path
+            )
+            if not security_stack_folder_path_exists:
+                os.makedirs(security_stack_folder_path)
+            filepath = f"{security_stack_folder_path}/parsed_{directory}"
 
-def read_yaml(filepath):
-    with open(filepath, encoding="UTF-8") as file:
-        return yaml.safe_load(file)
+            # write parsed data to a csv file
+            write_parsed_mappings_yaml(parsed_mappings, filepath)
+
+            # write parsed data to a json file
+            write_parsed_mappings_json(parsed_mappings, filepath)
+
+            # write parsed mappings to csv file
+            write_parsed_mappings_csv(parsed_mappings, filepath)

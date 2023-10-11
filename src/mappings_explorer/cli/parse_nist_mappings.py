@@ -1,30 +1,36 @@
-def configure_nist_mappings(
-    dataframe, parsed_mappings, attack_version, mappings_version
-):
+def configure_nist_mappings(dataframe, attack_version, mappings_version):
+    parsed_mappings = []
     for _, row in dataframe.iterrows():
         parsed_mappings.append(
             {
                 "metadata": {
-                    "mapping-verision": mappings_version,
+                    "mapping-version": mappings_version,
                     "attack-version": attack_version,
-                    "creation-date": "",
-                    "last-update": "",
+                    "technology-domain": "enterprise",
                     "author": "",
                     "contact": "",
+                    # get correct value
+                    "creation-date": "",
+                    "last-update": "",
                     "organization": "",
-                    "platform": "NIST Security controls",
-                    "platform-version": "",  # get correct value
-                    "mapping-type": "association",
+                    "mapping-platform": "NIST Security controls",
+                    "mapping-platform-version": "",
                 },
                 "attack-object": {
+                    "comments": "",
                     "id": row["Technique ID"],
                     "name": row["Technique Name"],
-                    "value": row["Control ID"],
-                    "mapping-pattern": row["Mapping Type"],
-                    "secondary-property": "",
-                    "tags": [],
-                    "comments": "",
                     "references": [],
+                    "tags": [],
+                    "mapping-description": "",
+                    "mapping-target": row["Control ID"],
+                    "mapping-platform": {
+                        "name": "NIST Security controls",
+                        "control-name": row["Control Name"],
+                        "mapping-type": row["Mapping Type"],
+                    },
                 },
             }
         )
+
+    return parsed_mappings
