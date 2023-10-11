@@ -14,9 +14,7 @@ class ExternalControl:
     tableHeaders = []
 
 
-def main():
-    templateLoader = FileSystemLoader(searchpath="./templates")
-    templateEnv = Environment(loader=templateLoader)
+def loadProjects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
@@ -32,21 +30,77 @@ def main():
         "8.2",
     ]
     nist.attackVersion = nist.attackVersions[0]
-
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
-
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
-
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
     veris.description = [
         "The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of metrics designed to provide a common language for describing security incidents in a structured and repeatable manner. The overall goal is to lay a foundation from which we can constructively and cooperatively learn from our experiences to better measure and manage risk. "
     ]
-    veris.version = ["1.3.7", "1.3.5"]
-    veris.attackDomain = ["enterprise"]
-    veris.attackVersion = ["9.0", "12.0"]
+    veris.versions = ["1.3.7", "1.3.5"]
+    veris.version = veris.versions[0]
+    veris.attackDomains = ["enterprise"]
+    veris.attackDomain = veris.attackDomains[0]
+    veris.attackVersions = ["9.0", "12.0"]
+    veris.attackVersion = veris.attackVersions[0]
+    veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+
+    cve = ExternalControl()
+    cve.id = "cve"
+    cve.label = "CVE"
+    cve.description = [
+        "Common Vulnerabilities and Exposures (CVE) is a database of publicly available information security issues. CVE provides a convenient, reliable way for vendors, enterprises, academics, and all other interested parties to exchange information about cyber security issues. Sharing CVE details is beneficial to all organizations it allows organizations to set a baseline for evaluating the coverage of their security tools. CVE numbers allow organizations to see what each tool covers and how appropriate they are for your organization."
+    ]
+    cve.attackDomains = ["enterprise"]
+    cve.attackDomain = cve.attackDomains[0]
+    cve.attackVersions = ["9.0"]
+    cve.attackVersion = cve.attackVersions[0]
+    cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+
+    aws = ExternalControl()
+    aws.id = "aws"
+    aws.label = "AWS"
+    aws.description = [
+        "These mappings of the Amazon Web Services (AWS) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native AWS security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+    ]
+    aws.attackDomains = ["enterprise"]
+    aws.attackDomain = aws.attackDomains[0]
+    aws.attackVersions = ["9.0"]
+    aws.attackVersion = aws.attackVersions[0]
+    aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    azure = ExternalControl()
+    azure.id = "azure"
+    azure.label = "Azure"
+    azure.description = [
+        "These mappings of the Microsoft Azure Infrastructure as a Services (IaaS) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native Azure security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+    ]
+    azure.attackDomains = ["enterprise"]
+    azure.attackDomain = azure.attackDomains[0]
+    azure.attackVersions = ["8.2"]
+    azure.attackVersion = azure.attackVersions[0]
+    azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    gcp = ExternalControl()
+    gcp.id = "gcp"
+    gcp.label = "GCP"
+    gcp.description = [
+        "These mappings of the Google Cloud Platform (GCP) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native GCP security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+    ]
+    gcp.attackDomains = ["enterprise"]
+    gcp.attackDomain = gcp.attackDomains[0]
+    gcp.attackVersions = ["10.0"]
+    gcp.attackVersion = gcp.attackVersions[0]
+    gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+
+    projects = [nist, veris, cve, aws, azure, gcp]
+    return projects
+
+
+def main():
+    templateLoader = FileSystemLoader(searchpath="./templates")
+    templateEnv = Environment(loader=templateLoader)
+    projects = loadProjects()
 
     TEMPLATE_FILE = "landing.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
@@ -64,27 +118,20 @@ def main():
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    template.stream(
-        title="NIST Landing",
-        control=nist.label,
-        description=nist.description,
-        version=nist.version,
-        versions=nist.versions,
-        attackVersion=nist.attackVersion,
-        attackVersions=nist.attackVersions,
-        domain=nist.attackDomain,
-        domains=nist.attackDomains,
-        tableHeaders=nist.tableHeaders,
-    ).dump("./output/nist-landing.html")
-    print("Created nist landing")
-    template.stream(
-        title="VERIS Landing",
-        control=veris.label,
-        description=veris.description,
-        attackVersion=veris.attackVersion,
-        domain=veris.attackDomain,
-    ).dump("./output/veris-landing.html")
-    print("Created veris landing")
+    for project in projects:
+        template.stream(
+            title=project.label + " Landing",
+            control=project.label,
+            description=project.description,
+            version=project.version,
+            versions=project.versions,
+            attackVersion=project.attackVersion,
+            attackVersions=project.attackVersions,
+            domain=project.attackDomain,
+            domains=project.attackDomains,
+            tableHeaders=project.tableHeaders,
+        ).dump("./output/" + project.id + "-landing.html")
+        print("Created " + project.id + " landing")
 
 
 if __name__ == "__main__":
