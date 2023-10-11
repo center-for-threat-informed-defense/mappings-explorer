@@ -84,8 +84,10 @@ def get_techniques_dict(parsed_mappings):
 
 
 def create_layer(techniques_dict, parsed_mappings, mapping_type):
-    description = f"{mapping_type} heatmap overview of {mapping_type} \
-          mappings, scores are the number of associated entries"
+    description = (
+        f"{mapping_type} heatmap overview of {mapping_type} "
+        "mappings, scores are the number of associated entries"
+    )
 
     # this will change when there is only one metadata object per project
     mappings_metadata = parsed_mappings[0]["metadata"]
