@@ -60,9 +60,9 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
     mapping_platform_df.to_csv(f"{filepath}_mapping-platforms.csv")
 
 
-def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
+def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_type):
     techniques_dict = get_techniques_dict(parsed_mappings)
-    layer = create_layer(techniques_dict, parsed_mappings)
+    layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
     navigator_layer = open(
         f"{filepath}_navigator_layer.json",
         "w",
@@ -83,12 +83,12 @@ def get_techniques_dict(parsed_mappings):
     return techniques_dict
 
 
-def create_layer(techniques_dict, parsed_mappings):
-    description = "veris heatmap overview of veris mappings, scores are the number of associated entries"
+def create_layer(techniques_dict, parsed_mappings, mapping_type):
+    description = f"{mapping_type} heatmap overview of veris mappings, scores are the number of associated entries"
     mappings_metadata = parsed_mappings[0]["metadata"]
     gradient = ["#ffe766", "#ffaf66"]
     layer = {
-        "name": "overview",
+        "name": f"{mapping_type} overview",
         "versions": {
             "navigator": "4.8.0",
             "layer": "4.4",

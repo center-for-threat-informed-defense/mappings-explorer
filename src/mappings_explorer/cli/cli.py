@@ -60,17 +60,17 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
     domains = ["enterprise", "mobile", "ics"]
@@ -120,7 +120,7 @@ def parse_cve_mappings():
     write_parsed_mappings_csv(parsed_mappings, filepath)
 
     # write parsed mappings to navigator layer
-    write_parsed_mappings_navigator_layer(parsed_mappings, filepath)
+    write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "cve")
 
 
 def parse_nist_mappings():
@@ -166,7 +166,7 @@ def parse_nist_mappings():
             write_parsed_mappings_csv(parsed_mappings, filepath)
 
             # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(parsed_mappings, filepath)
+            write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "nist")
 
 
 def parse_veris_mappings():
@@ -198,7 +198,7 @@ def parse_veris_mappings():
             write_parsed_mappings_csv(parsed_mappings, filepath)
 
             # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(parsed_mappings, filepath)
+            write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "veris")
 
 
 def parse_security_stack_mappings():
@@ -233,4 +233,6 @@ def parse_security_stack_mappings():
             write_parsed_mappings_csv(parsed_mappings, filepath)
 
             # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(parsed_mappings, filepath)
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, filepath, "security stack"
+            )
