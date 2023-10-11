@@ -11,6 +11,8 @@
               {{- paragraph -}}
             </p>
           {% endfor %}
+          {#<p>{{nist_version}}</p>
+          <p id="demo">initial</p>#}
           <div class="section-details">
             <p>
               <span>Total Mappings: <strong>300</strong></span>
@@ -31,20 +33,23 @@
       </div>
     </div>
   </section>
+  {% if (attackVersions|length > 1 or domains|length > 1) %}
   <section id="version-select" class="version-select">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-12">
           <h2>CHOOSE YOUR VERSIONS</h2>
           <div class="row col-12" style="display: flex;">
+          {% if versions %}
             <div class="col-sm-4 col-md-3 form-group">
-              <p>NIST Version</p>
-              <select name="nist-version" id="nist-version" class="form-control">
+              <p>{{control}} Version</p>
+              <select name="control-version" id="control-version" class="form-control">
                 {% for v in versions %}
                 <option value={v}>{{v}}</option>
                 {% endfor %}
               </select>
             </div>
+            {% endif %}
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Version</p>
               <select name="attack-version" id="attack-version" class="form-control">
@@ -69,6 +74,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 
   <section id="mapping-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
@@ -82,19 +88,17 @@
     </div>
   </section>
 
-          {#<p>{{nist_version}}</p>
-          <p id="demo"> </p>#}
 <script>
 var url = window.location.search;
-function getParamsFromUrl(url) {
-  url.split("&").forEach(function(part) {
+  console.log("url", url)
+  let p = url.split("&")
+  p.forEach((part) => {
     var item = part.split("=");
     if (item[0] == "nist_version") {
       nist_version = item[1];
     }
   })
   document.getElementById("demo").innerHTML = "default "+ nist_version;
-
-}
+  console.log("nist", nist_version)
 </script>
 {% endblock content %}
