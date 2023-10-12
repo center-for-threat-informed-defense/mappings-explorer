@@ -18,6 +18,7 @@ from src.mappings_explorer.cli.read_files import (
 from src.mappings_explorer.cli.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_json,
+    write_parsed_mappings_navigator_layer,
     write_parsed_mappings_yaml,
 )
 from tests.expected_results.expected_results_json import (
@@ -25,6 +26,12 @@ from tests.expected_results.expected_results_json import (
     expected_nist_mapping_json,
     expected_security_stack_mapping_json,
     expected_veris_mapping_json,
+)
+from tests.expected_results.expected_results_navigator_layer import (
+    expected_cve_navigator_layer,
+    expected_nist_navigator_layer,
+    expected_security_stack_navigator_layer,
+    expected_veris_navigator_layer,
 )
 from tests.expected_results.expected_results_yaml import (
     expected_cve_mapping_yaml,
@@ -107,6 +114,21 @@ def test_nist_mappings_parser_csv(tmpdir):
     assert expected_attack_objects_file.read() == attack_objects_file.read()
     assert expected_mapping_platforms_file.read() == mapping_platforms_file.read()
     assert expected_metadata_file.read() == metadata_file.read()
+
+
+def test_nist_mappings_parser_navigator_layer(tmpdir):
+    # ARRANGE
+    filename = "nist_mappings"
+    filepath = f"{tmpdir}/{filename}"
+    parsed_mappings = nist_mappings_parser()
+
+    # ACT
+    write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "nist")
+    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
+    result = json.load(file)
+
+    # ASSERT
+    assert result == expected_nist_navigator_layer
 
 
 def security_stack_mappings_parser(filepath):
@@ -211,6 +233,33 @@ def test_security_stack_mappings_csv(tmpdir):
             assert expected_metadata_file.read() == metadata_file.read()
 
 
+def test_security_stack_mappings_navigator_layer(tmpdir):
+    # ARRANGE
+    root_filepath = os.path.join(os.path.dirname(__file__), "files/security_stack")
+
+    # ACT
+    for _, directories, _ in os.walk(root_filepath):
+        for directory in directories:
+            # get parsed data
+            filepath = f"{root_filepath}/{directory}"
+            parsed_mappings = security_stack_mappings_parser(filepath)
+
+            # write parsed data to file
+            filename = f"security_stack_{directory}_mappings"
+            tmpdir.mkdir(directory).join(filename)
+            output_filepath = f"{tmpdir}/{directory}/{filename}"
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, output_filepath, "security stack"
+            )
+            file = open(
+                f"{output_filepath}_navigator_layer.json", "r", encoding="UTF-8"
+            )
+            result = json.load(file)
+
+            # ASSERT
+            assert result == expected_security_stack_navigator_layer
+
+
 def veris_mappings_parser():
     filepath = os.path.join(os.path.dirname(__file__), "files/test_veris_mappings.json")
     veris_mappings = read_json_file(filepath)
@@ -281,6 +330,21 @@ def test_veris_mappings_parser_csv(tmpdir):
     assert expected_attack_objects_file.read() == attack_objects_file.read()
     assert expected_mapping_platforms_file.read() == mapping_platforms_file.read()
     assert expected_metadata_file.read() == metadata_file.read()
+
+
+def test_veris_mappings_navigator_layer(tmpdir):
+    # ARRANGE
+    parsed_mappings = veris_mappings_parser()
+    filename = "veris_mappings"
+    filepath = f"{tmpdir}/{filename}"
+
+    # ACT
+    write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "veris")
+    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
+    result = json.load(file)
+
+    # ASSERT
+    assert result == expected_veris_navigator_layer
 
 
 def cve_mappings_parser():
@@ -358,3 +422,18 @@ def test_cve_mappings_parser_csv(tmpdir):
     assert expected_attack_objects_file.read() == attack_objects_file.read()
     assert expected_mapping_platforms_file.read() == mapping_platforms_file.read()
     assert expected_metadata_file.read() == metadata_file.read()
+
+
+def test_cve_mappings_navigator_layer(tmpdir):
+    # ARRANGE
+    parsed_mappings = cve_mappings_parser()
+    filename = "cve_mappings"
+    filepath = f"{tmpdir}/{filename}"
+
+    # ACT
+    write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "cve")
+    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
+    result = yaml.safe_load(file)
+
+    # ASSERT
+    assert result == expected_cve_navigator_layer

@@ -58,3 +58,76 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
 
     mapping_platform_df = pd.DataFrame(mapping_platform_objects)
     mapping_platform_df.to_csv(f"{filepath}_mapping-platforms.csv")
+
+
+def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_type):
+    techniques_dict = get_techniques_dict(parsed_mappings)
+    layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
+    navigator_layer = open(
+        f"{filepath}_navigator_layer.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(layer, fp=navigator_layer)
+
+
+def get_techniques_dict(parsed_mappings):
+    techniques_dict = {}
+    for mapping in parsed_mappings:
+        tehchnique_id = mapping["attack-object"]["id"]
+        mapping_target = mapping["attack-object"]["mapping-target"]
+        if techniques_dict.get(tehchnique_id):
+            techniques_dict[tehchnique_id].append(mapping_target)
+        else:
+            techniques_dict[tehchnique_id] = [mapping_target]
+    return techniques_dict
+
+
+def create_layer(techniques_dict, parsed_mappings, mapping_type):
+    description = (
+        f"{mapping_type} heatmap overview of {mapping_type} "
+        "mappings, scores are the number of associated entries"
+    )
+
+    # this will change when there is only one metadata object per project
+    mappings_metadata = parsed_mappings[0]["metadata"]
+
+    gradient = ["#ffe766", "#ffaf66"]
+    layer = {
+        "name": f"{mapping_type} overview",
+        "versions": {
+            "navigator": "4.8.0",
+            "layer": "4.4",
+            "attack": mappings_metadata["attack-version"],
+        },
+        "sorting": 3,
+        "description": description,
+        "domain": f"{mappings_metadata['technology-domain']}-attack",
+        "techniques": [],
+        "gradient": {
+            "colors": gradient,
+        },
+    }
+    for technique in techniques_dict:
+        related_controls_string = ",".join(techniques_dict[technique])
+        layer["techniques"].append(
+            {
+                "techniqueID": technique,
+                "score": len(techniques_dict[technique]),
+                "comment": f"Related to {related_controls_string}",
+            }
+        )
+
+    layer["gradient"]["minValue"] = (
+        min(map(lambda t: t["score"], layer["techniques"]))
+        if len(layer["techniques"]) > 0
+        else 0
+    )
+
+    layer["gradient"]["maxValue"] = (
+        max(map(lambda t: t["score"], layer["techniques"]))
+        if len(layer["techniques"]) > 0
+        else 100
+    )
+
+    return layer

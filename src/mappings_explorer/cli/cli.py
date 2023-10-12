@@ -19,6 +19,7 @@ from mappings_explorer.cli.read_files import (
 from mappings_explorer.cli.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_json,
+    write_parsed_mappings_navigator_layer,
     write_parsed_mappings_yaml,
 )
 
@@ -118,6 +119,9 @@ def parse_cve_mappings():
     # write parsed mappings to csv file
     write_parsed_mappings_csv(parsed_mappings, filepath)
 
+    # write parsed mappings to navigator layer
+    write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "cve")
+
 
 def parse_nist_mappings():
     # read in tsv files
@@ -161,6 +165,9 @@ def parse_nist_mappings():
             # write parsed mappings to csv file
             write_parsed_mappings_csv(parsed_mappings, filepath)
 
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "nist")
+
 
 def parse_veris_mappings():
     directory = f"{ROOT_DIR}/mappings/Veris"
@@ -189,6 +196,9 @@ def parse_veris_mappings():
 
             # write parsed mappings to csv file
             write_parsed_mappings_csv(parsed_mappings, filepath)
+
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "veris")
 
 
 def parse_security_stack_mappings():
@@ -221,3 +231,8 @@ def parse_security_stack_mappings():
 
             # write parsed mappings to csv file
             write_parsed_mappings_csv(parsed_mappings, filepath)
+
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, filepath, "security stack"
+            )
