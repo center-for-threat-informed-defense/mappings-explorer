@@ -1,0 +1,4065 @@
+attack-objects:
+- attack-object-id: T1040
+  attack-object-name: Network Sniffing
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1565
+  attack-object-name: Data Manipulation
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1565
+  attack-object-name: Data Manipulation
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: true
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1557
+  attack-object-name: Man-in-the-Middle
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1486
+  attack-object-name: Data Encrypted for Impact
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1490
+  attack-object-name: Inhibit System Recovery
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1490
+  attack-object-name: Inhibit System Recovery
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1561
+  attack-object-name: Disk Wipe
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: true
+  score-category: Respond
+  score-value: Minimal
+  tags:
+  - Database
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Database
+- attack-object-id: T1529
+  attack-object-name: System Shutdown/Reboot
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1489
+  attack-object-name: Service Stop
+  capability-id: AWS RDS
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Database
+- attack-object-id: T1020
+  attack-object-name: Automated Exfiltration
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1040
+  attack-object-name: Network Sniffing
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1053
+  attack-object-name: Scheduled Task/Job
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1068
+  attack-object-name: Exploitation for Privilege Escalation
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1098
+  attack-object-name: Account Manipulation
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags: []
+- attack-object-id: T1119
+  attack-object-name: Automated Collection
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1136
+  attack-object-name: Create Account
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1203
+  attack-object-name: Exploitation for Client Execution
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1211
+  attack-object-name: Exploitation for Defense Evasion
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1212
+  attack-object-name: Exploitation for Credential Access
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1204
+  attack-object-name: User Execution
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1486
+  attack-object-name: Data Encrypted for Impact
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1491
+  attack-object-name: Defacement
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags: []
+- attack-object-id: T1496
+  attack-object-name: Resource Hijacking
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1498
+  attack-object-name: Network Denial of Service
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1499
+  attack-object-name: Endpoint Denial of Service
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1525
+  attack-object-name: Implant Internal Image
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags: []
+- attack-object-id: T1538
+  attack-object-name: Cloud Service Dashboard
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags: []
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1557
+  attack-object-name: Man-in-the-Middle
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1609
+  attack-object-name: Container Administration Command
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1610
+  attack-object-name: Deploy Container
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1611
+  attack-object-name: Escape to Host
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1613
+  attack-object-name: Container and Resource Discovery
+  capability-id: AWS Config
+  comments: 'Mappings are based on the set of AWS managed rules provided by AWS Config,
+    which are predefined rules that AWS Config uses to test for compliance with common
+    best practices.
+
+    AWS Config rules can be set to one of two types, "configuration changes" and "periodic",
+    which are evaluated upon configuration changes and at a user-defined period, respectively.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/config
+  - https://docs.aws.amazon.com/config/latest/developerguide
+  - https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS S3
+  comments: The S3 server access logging feature was not mapped because it was deemed
+    to be a data source that can be used with other detective controls rather than
+    a security control in of itself.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Storage
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS S3
+  comments: The S3 server access logging feature was not mapped because it was deemed
+    to be a data source that can be used with other detective controls rather than
+    a security control in of itself.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Storage
+- attack-object-id: T1595
+  attack-object-name: Active Scanning
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1189
+  attack-object-name: Drive-by Compromise
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1566
+  attack-object-name: Phishing
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1098
+  attack-object-name: Account Manipulation
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1580
+  attack-object-name: Cloud Infrastructure Discovery
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1526
+  attack-object-name: Cloud Service Discovery
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1071
+  attack-object-name: Application Layer Protocol
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1568
+  attack-object-name: Dynamic Resolution
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1571
+  attack-object-name: Non-Standard Port
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1090
+  attack-object-name: Proxy
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1020
+  attack-object-name: Automated Exfiltration
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1029
+  attack-object-name: Scheduled Transfer
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1041
+  attack-object-name: Exfiltration Over C2 Channel
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1048
+  attack-object-name: Exfiltration Over Alternative Protocol
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1567
+  attack-object-name: Exfiltration Over Web Service
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1531
+  attack-object-name: Account Access Removal
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1486
+  attack-object-name: Data Encrypted for Impact
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1565
+  attack-object-name: Data Manipulation
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1498
+  attack-object-name: Network Denial of Service
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1496
+  attack-object-name: Resource Hijacking
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1491
+  attack-object-name: Defacement
+  capability-id: Amazon GuardDuty
+  comments: "Scores for this service are capped at Partial due to limited coverage\
+    \ and accuracy information.\nThe temporal factor for this control is consistent:\
+    \ the first instance of a finding taking place is alerted within 5 minutes of\
+    \ the event occurring. After that any subsequent events can be customized to be\
+    \ reported at 15 minutes, 1 hour, or the default of 6 hours.\nThe following findings\
+    \ were not mappable:\n  Backdoor:EC2/Spambot\n  Impact:EC2/AbusedDomainRequest.Reputation\n\
+    \  InitialAccess:IAMUser/AnomalousBehavior"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#recon-ec2-portscan
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1498
+  attack-object-name: Network Denial of Service
+  capability-id: AWS Shield
+  comments: There is not much documentation that lends itself useful to scoring the
+    accuracy of this control although offerings such as Shield Advanced protection
+    groups and the AWS Shield Response Team (SRT) can be leveraged to improve the
+    accuracy of this control. The control states that DDOS attacks can be mitigated
+    in real time (temporal factor) and not increase cause latency for impacted services.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/shield/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc
+  - https://aws.amazon.com/shield/features/
+  related-score: true
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Denial of Service
+  - Network
+- attack-object-id: T1499
+  attack-object-name: Endpoint Denial of Service
+  capability-id: AWS Shield
+  comments: There is not much documentation that lends itself useful to scoring the
+    accuracy of this control although offerings such as Shield Advanced protection
+    groups and the AWS Shield Response Team (SRT) can be leveraged to improve the
+    accuracy of this control. The control states that DDOS attacks can be mitigated
+    in real time (temporal factor) and not increase cause latency for impacted services.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/shield/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc
+  - https://aws.amazon.com/shield/features/
+  related-score: true
+  score-category: Respond
+  score-value: Significant
+  tags:
+  - Denial of Service
+  - Network
+- attack-object-id: T1020
+  attack-object-name: Automated Exfiltration
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1040
+  attack-object-name: Network Sniffing
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1041
+  attack-object-name: Exfiltration Over C2 Channel
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1048
+  attack-object-name: Exfiltration Over Alternative Protocol
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1071
+  attack-object-name: Application Layer Protocol
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1095
+  attack-object-name: Non-Application Layer Protocol
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1496
+  attack-object-name: Resource Hijacking
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1557
+  attack-object-name: Man-in-the-Middle
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: AWS IoT Device Defender
+  comments: 'Mappings for AWS IoT Device Defender audit are based on the current set
+    of AWS IoT Device Defender audit checks that can be enabled. AWS IoT Device Defender''s
+    predefined mitigation actions are also included for those audit checks that support
+    them. Audit checks can be run as needed (on-demand audits) or scheduled to be
+    run periodically (scheduled audits), so temporal scoring factors are uniformly
+    high for this control, based on the assumption that checks are run (at minimum)
+    on a frequent basis. Audit check and mitigation names are identified in quotes
+    throughout this mapping.
+
+    Mappings for AWS IoT Device Defender detect are based on the current set of AWS
+    IoT Device Defender device-side and cloud-side detection metrics. Cloud-side detection
+    alarms are triggered when set thresholds are exceeded, and device-side detection
+    metrics are published on a chosen interval with a minimum value of 5 minutes,
+    so temporal scoring factors are uniformly high for this control, based on the
+    assumption that thresholds are set to sensible values that detect suspicious values
+    quickly and device-side metric publishing is not set to an unreasonably large
+    interval. Detect metric names are identified in quotes throughout this mapping.'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/iot-device-defender/
+  - https://docs.aws.amazon.com/iot-device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-mitigation-actions
+  - https://docs.aws.amazon.com/iot/latest/developerguide/dd-detect-security-use-cases
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-cloud-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/detect-device-side-metrics
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit
+  - https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect
+  related-score: true
+  score-category: Respond
+  score-value: Minimal
+  tags:
+  - Internet of Things
+  - IoT
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Organizations
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+  - https://aws.amazon.com/organizations/getting-started/best-practices/
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+- attack-object-id: T1087
+  attack-object-name: Account Discovery
+  capability-id: AWS Organizations
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+  - https://aws.amazon.com/organizations/getting-started/best-practices/
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Identity
+- attack-object-id: T1580
+  attack-object-name: Cloud Infrastructure Discovery
+  capability-id: AWS Organizations
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+  - https://aws.amazon.com/organizations/getting-started/best-practices/
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+- attack-object-id: T1538
+  attack-object-name: Cloud Service Dashboard
+  capability-id: AWS Organizations
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html
+  - https://aws.amazon.com/organizations/getting-started/best-practices/
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1486
+  attack-object-name: Data Encrypted for Impact
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1565
+  attack-object-name: Data Manipulation
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: true
+  score-category: Respond
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1491
+  attack-object-name: Defacement
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: true
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1561
+  attack-object-name: Disk Wipe
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: true
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1490
+  attack-object-name: Inhibit System Recovery
+  capability-id: AWS CloudEndure Disaster Recovery
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudendure-disaster-recovery/
+  - https://docs.cloudendure.com/#Configuring_and_Running_Disaster_Recovery/Configuring_and_Running_Disaster_Recovery.htm
+  related-score: false
+  score-category: Respond
+  score-value: Significant
+  tags: []
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: AWS Key Management Service
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/kms/
+  - https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Credentials
+- attack-object-id: T1588
+  attack-object-name: Obtain Capabilities
+  capability-id: AWS Key Management Service
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/kms/
+  - https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1189
+  attack-object-name: Drive-by Compromise
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1203
+  attack-object-name: Exploitation for Client Execution
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1068
+  attack-object-name: Exploitation for Privilege Escalation
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1211
+  attack-object-name: Exploitation for Defense Evasion
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1212
+  attack-object-name: Exploitation for Credential Access
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1133
+  attack-object-name: External Remote Services
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1021
+  attack-object-name: Remote Services
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1222
+  attack-object-name: File and Directory Permissions Modification
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1070
+  attack-object-name: Indicator Removal on Host
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1599
+  attack-object-name: Network Boundary Bridging
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1003
+  attack-object-name: OS Credential Dumping
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1053
+  attack-object-name: Scheduled Task/Job
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1489
+  attack-object-name: Service Stop
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1529
+  attack-object-name: System Shutdown/Reboot
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1548
+  attack-object-name: Abuse Elevation Control Mechanism
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1037
+  attack-object-name: Boot or Logon Initialization Scripts
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1543
+  attack-object-name: Create or Modify System Process
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1595
+  attack-object-name: Active Scanning
+  capability-id: Amazon Inspector
+  comments: The CIS Benchmarks assessment package is considered out of scope because
+    a separate project will be responsible for mapping CIS Benchmarks and ATT&CK.
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1590
+  attack-object-name: Gather Victim Network Information
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1595
+  attack-object-name: Active Scanning
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1133
+  attack-object-name: External Remote Services
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1205
+  attack-object-name: Traffic Signaling
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1018
+  attack-object-name: Remote System Discovery
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1008
+  attack-object-name: Fallback Channels
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1095
+  attack-object-name: Non-Application Layer Protocol
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1571
+  attack-object-name: Non-Standard Port
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1219
+  attack-object-name: Remote Access Software
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1048
+  attack-object-name: Exfiltration Over Alternative Protocol
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1040
+  attack-object-name: Network Sniffing
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1557
+  attack-object-name: Man-in-the-Middle
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1565
+  attack-object-name: Data Manipulation
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1199
+  attack-object-name: Trusted Relationship
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1602
+  attack-object-name: Data from Configuration Repository
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1542
+  attack-object-name: Pre-OS Boot
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1021
+  attack-object-name: Remote Services
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1072
+  attack-object-name: Software Deployment Tools
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1482
+  attack-object-name: Domain Trust Discovery
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1498
+  attack-object-name: Network Denial of Service
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1499
+  attack-object-name: Endpoint Denial of Service
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1570
+  attack-object-name: Lateral Tool Transfer
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1090
+  attack-object-name: Proxy
+  capability-id: Amazon Virtual Private Cloud
+  comments: 'The mappings contained in this file were based on Amazon''s "Security
+    in Amazon Virtual Private Cloud" documentation listed in the references section.
+    The following VPC components were assessed to produce this mapping: Security Groups,
+    Network Access Control Lists (NACLs), VPC Peering, VPC Endpoints, and Virtual
+    Private Network (VPN).'
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/vpc/latest/userguide/security.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: Amazon Cognito
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Identity
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: Amazon Cognito
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Identity
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1189
+  attack-object-name: Drive-by Compromise
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1203
+  attack-object-name: Exploitation for Client Execution
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1059
+  attack-object-name: Command and Scripting Interpreter
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1090
+  attack-object-name: Proxy
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1595
+  attack-object-name: Active Scanning
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1071
+  attack-object-name: Application Layer Protocol
+  capability-id: AWS Web Application Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/waf/
+  - https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-list.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1496
+  attack-object-name: Resource Hijacking
+  capability-id: AWS CloudWatch
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Metrics
+- attack-object-id: T1610
+  attack-object-name: Deploy Container
+  capability-id: AWS CloudWatch
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Metrics
+- attack-object-id: T1040
+  attack-object-name: Network Sniffing
+  capability-id: AWS CloudWatch
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Metrics
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1592
+  attack-object-name: Gather Victim Host Information
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1589
+  attack-object-name: Gather Victim Identity Information
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1590
+  attack-object-name: Gather Victim Network Information
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1591
+  attack-object-name: Gather Victim Org Information
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1580
+  attack-object-name: Cloud Infrastructure Discovery
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1190
+  attack-object-name: Exploit Public-Facing Application
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1203
+  attack-object-name: Exploitation for Client Execution
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1068
+  attack-object-name: Exploitation for Privilege Escalation
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1211
+  attack-object-name: Exploitation for Defense Evasion
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1212
+  attack-object-name: Exploitation for Credential Access
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1210
+  attack-object-name: Exploitation of Remote Services
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1531
+  attack-object-name: Account Access Removal
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1098
+  attack-object-name: Account Manipulation
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1562
+  attack-object-name: Impair Defenses
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags: []
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1485
+  attack-object-name: Data Destruction
+  capability-id: AWS Security Hub
+  comments: "Managed Insights: AWS Security Hub reports on collections of related\
+    \ findings which are known as managed insights. When possible, these managed insights\
+    \ are mapped to ATT&CK techniques (e.g., \"S3 buckets with public write or read\
+    \ permissions\"). It should be noted that not all managed insights have the level\
+    \ of detail to be able to map them to ATT&CK techniques and are not included in\
+    \ the mapping (e.g., \"EC2 instances involved in known Tactics, Techniques, and\
+    \ Procedures (TTPs)\"). \nAWS Config: AWS Security Hub supports reporting on findings\
+    \ from AWS Config (e.g., for CIS AWS Foundations Benchmark controls among others).\
+    \ Given that AWS Config is its own service, these findings will not be mapped\
+    \ to ATT&CK. The only controls that will be included in this mapping  are those\
+    \ for which Security Hub implements custom logic. It should also be noted that\
+    \ there will  be a future CTID project that maps specific CIS Benchmarks to ATT&CK\
+    \ techniques. \n"
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html
+  related-score: false
+  score-category: Detect
+  score-value: Minimal
+  tags: []
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: true
+  score-category: Detect
+  score-value: Partial
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1098
+  attack-object-name: Account Manipulation
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: true
+  score-category: Detect
+  score-value: Minimal
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1550
+  attack-object-name: Use Alternate Authentication Material
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1528
+  attack-object-name: Steal Application Access Token
+  capability-id: AWS Identity and Access Management
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/iam/index.html
+  related-score: false
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1555
+  attack-object-name: Credentials from Password Stores
+  capability-id: AWS Secrets Manager
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1212
+  attack-object-name: Exploitation for Credential Access
+  capability-id: AWS Secrets Manager
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1528
+  attack-object-name: Steal Application Access Token
+  capability-id: AWS Secrets Manager
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: AWS Secrets Manager
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
+  - https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1071
+  attack-object-name: Application Layer Protocol
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1530
+  attack-object-name: Data from Cloud Storage Object
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1499
+  attack-object-name: Endpoint Denial of Service
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1048
+  attack-object-name: Exfiltration Over Alternative Protocol
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1187
+  attack-object-name: Forced Authentication
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1498
+  attack-object-name: Network Denial of Service
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1095
+  attack-object-name: Non-Application Layer Protocol
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1572
+  attack-object-name: Protocol Tunneling
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1090
+  attack-object-name: Proxy
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1219
+  attack-object-name: Remote Access Software
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1021
+  attack-object-name: Remote Services
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1205
+  attack-object-name: Traffic Signaling
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1008
+  attack-object-name: Fallback Channels
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1104
+  attack-object-name: Multi-Stage Channels
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1046
+  attack-object-name: Network Service Scanning
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1595
+  attack-object-name: Active Scanning
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1571
+  attack-object-name: Non-Standard Port
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Network
+- attack-object-id: T1542
+  attack-object-name: Pre-OS Boot
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Network
+- attack-object-id: T1041
+  attack-object-name: Exfiltration Over C2 Channel
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1018
+  attack-object-name: Remote System Discovery
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1133
+  attack-object-name: External Remote Services
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: false
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1590
+  attack-object-name: Gather Victim Network Information
+  capability-id: AWS Network Firewall
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Network
+- attack-object-id: T1078
+  attack-object-name: Valid Accounts
+  capability-id: AWS Single Sign-On
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1133
+  attack-object-name: External Remote Services
+  capability-id: AWS Single Sign-On
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html
+  related-score: false
+  score-category: Protect
+  score-value: Significant
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1110
+  attack-object-name: Brute Force
+  capability-id: AWS Single Sign-On
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Identity
+  - Credentials
+- attack-object-id: T1552
+  attack-object-name: Unsecured Credentials
+  capability-id: AWS CloudHSM
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudhsm/
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/use-cases.html
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Minimal
+  tags:
+  - Credentials
+- attack-object-id: T1588
+  attack-object-name: Obtain Capabilities
+  capability-id: AWS CloudHSM
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudhsm/
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/use-cases.html
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+- attack-object-id: T1553
+  attack-object-name: Subvert Trust Controls
+  capability-id: AWS CloudHSM
+  comments: ''
+  mapping-description: ''
+  mapping-type: technique-scores
+  references:
+  - https://aws.amazon.com/cloudhsm/
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/use-cases.html
+  - https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html
+  related-score: true
+  score-category: Protect
+  score-value: Partial
+  tags:
+  - Credentials
+metadata:
+  attack-version: 9
+  author: ''
+  contact: ctid@mitre-engenuity.org
+  creation-date: 07/22/2021
+  last-update: ''
+  mapping-framework: AWS
+  mapping-framework-version: ''
+  mapping-version: 1
+  organization: ''
+  technology-domain: enterprise

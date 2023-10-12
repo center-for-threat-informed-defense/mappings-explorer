@@ -1,0 +1,1093 @@
+,comments,attack-object-id,attack-object-name,references,tags,mapping-description,capability-id,mapping-type,metadata_key
+0,,T1047,Windows Management Instrumentation,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+1,,T1047,Windows Management Instrumentation,[],[],,action.hacking.vector.Command shell,related-to,2
+2,,T1047,Windows Management Instrumentation,[],[],,action.malware.vector.Direct install,related-to,2
+3,,T1053,Scheduled Task/Job,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+4,,T1053,Scheduled Task/Job,[],[],,action.hacking.variety.Backdoor,related-to,2
+5,,T1053,Scheduled Task/Job,[],[],,action.hacking.vector.Backdoor,related-to,2
+6,,T1053.002,Scheduled Task/Job: At,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+7,,T1053.003,Scheduled Task/Job: Cron,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+8,,T1053.005,Scheduled Task/Job: Scheduled Task,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+9,,T1053.006,Scheduled Task/Job: Systemd Timers,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+10,,T1053.007,Scheduled Task/Job: Container Orchestration Job,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+11,,T1059,Command and Scripting Interpreter,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+12,,T1059,Command and Scripting Interpreter,[],[],,action.hacking.variety.OS commanding,related-to,2
+13,,T1059,Command and Scripting Interpreter,[],[],,action.hacking.vector.Command shell,related-to,2
+14,,T1059.001,Command and Scripting Interpreter: PowerShell,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+15,,T1059.001,Command and Scripting Interpreter: PowerShell,[],[],,action.hacking.vector.Command shell,related-to,2
+16,,T1059.002,Command and Scripting Interpreter: AppleScript,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+17,,T1059.002,Command and Scripting Interpreter: AppleScript,[],[],,action.hacking.variety.OS commanding,related-to,2
+18,,T1059.002,Command and Scripting Interpreter: AppleScript,[],[],,action.hacking.vector.Command shell,related-to,2
+19,,T1059.003,Command and Scripting Interpreter: Windows Command Shell,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+20,,T1059.003,Command and Scripting Interpreter: Windows Command Shell,[],[],,action.hacking.variety.OS commanding,related-to,2
+21,,T1059.003,Command and Scripting Interpreter: Windows Command Shell,[],[],,action.hacking.vector.Command shell,related-to,2
+22,,T1059.004,Command and Scripting Interpreter: Unix Shell,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+23,,T1059.004,Command and Scripting Interpreter: Unix Shell,[],[],,action.hacking.variety.OS commanding,related-to,2
+24,,T1059.004,Command and Scripting Interpreter: Unix Shell,[],[],,action.hacking.vector.Command shell,related-to,2
+25,,T1059.005,Command and Scripting Interpreter: Visual Basic,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+26,,T1059.005,Command and Scripting Interpreter: Visual Basic,[],[],,action.hacking.vector.Command shell,related-to,2
+27,,T1059.005,Command and Scripting Interpreter: Visual Basic,[],[],,action.malware.vector.Email attachment,related-to,2
+28,,T1059.006,Command and Scripting Interpreter: Python,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+29,,T1059.006,Command and Scripting Interpreter: Python,[],[],,action.hacking.vector.Command shell,related-to,2
+30,,T1059.007,Command and Scripting Interpreter: JavaScript,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+31,,T1059.007,Command and Scripting Interpreter: JavaScript,[],[],,action.hacking.vector.Command shell,related-to,2
+32,,T1059.007,Command and Scripting Interpreter: JavaScript,[],[],,action.malware.vector.Email attachment,related-to,2
+33,,T1059.008,Command and Scripting Interpreter: Network Device CLI,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+34,,T1059.008,Command and Scripting Interpreter: Network Device CLI,[],[],,action.hacking.vector.Command shell,related-to,2
+35,,T1072,Software Deployment Tools,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+36,,T1072,Software Deployment Tools,[],[],,action.malware.variety.Adminware,related-to,2
+37,,T1072,Software Deployment Tools,[],[],,action.malware.vector.Software update,related-to,2
+38,,T1072,Software Deployment Tools,[],[],,attribute.integrity.variety.Software installation,related-to,2
+39,,T1106,Native API,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+40,,T1112,Modify Registry,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+41,,T1127,Trusted Developer Utilities Proxy Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+42,,T1127,Trusted Developer Utilities Proxy Execution,[],[],,action.hacking.variety.Unknown,related-to,2
+43,,T1127.001,Tursted Developer Utilities Proxy Execution: MSBuild,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+44,,T1127.001,Tursted Developer Utilities Proxy Execution: MSBuild,[],[],,action.hacking.variety.Unknown,related-to,2
+45,,T1129,Shared Modules,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+46,,T1137,Office Application Startup,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+47,,T1137.001,Office Application Startup: Office Template Macros,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+48,,T1137.002,Office Application Startup: Office Test,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+49,,T1137.003,Office Application Startup: Outlook Forms,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+50,,T1137.004,Office Application Startup: Outlook Home Page,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+51,,T1137.005,Office Application Startup: Outlook Rules,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+52,,T1187,Forced Authentication,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+53,,T1187,Forced Authentication,[],[],,action.hacking.variety.MitM,related-to,2
+54,,T1187,Forced Authentication,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+55,,T1202,Indirect Command Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+56,,T1216,Signed Script Proxy Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+57,,T1216.001,Signed Script Proxy Execution: PubPrn,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+58,,T1218,Signed Binary Proxy Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+59,,T1218.001,Signed Binary Proxy Execution: Compiled HTML File,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+60,,T1218.002,Signed Binary Proxy Execution: Control Panel,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+61,,T1218.003,Signed Binary Proxy Execution: CMSTP,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+62,,T1218.004,Signed Binary Proxy Execution: InstallUtil,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+63,,T1218.005,Signed Binary Proxy Execution: Mshta,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+64,,T1218.007,Signed Binary Proxy Execution: Msiexec,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+65,,T1218.008,Signed Binary Proxy Execution: Odbcconf,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+66,,T1218.009,Signed Binary Proxy Execution: Regsvcs/Regasm,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+67,,T1218.010,Signed Binary Proxy Execution: Regsvr32,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+68,,T1218.011,Signed Binary Proxy Execution: Rundll32,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+69,,T1218.012,Signed Binary Proxy Execution: Verclsid,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+70,,T1218.013,System Binary Proxy Execution: Mavinject,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+71,,T1218.014,System Binary Proxy Execution: MMC,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+72,,T1220,XSL Script Processing,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+73,,T1505.001,Server Software Component: SQL Stored Procedures,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+74,,T1505.001,Server Software Component: SQL Stored Procedures,[],[],,action.malware.variety.Backdoor,related-to,2
+75,,T1505.001,Server Software Component: SQL Stored Procedures,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+76,,T1505.002,Server Software Component: Transport Agent,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+77,,T1505.002,Server Software Component: Transport Agent,[],[],,action.malware.variety.Backdoor,related-to,2
+78,,T1505.002,Server Software Component: Transport Agent,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+79,,T1529,System Shutdown/Reboot,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+80,,T1529,System Shutdown/Reboot,[],[],,attribute.availability.variety.Interruption,related-to,2
+81,,T1543,Create or Modify System Process,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+82,,T1543,Create or Modify System Process,[],[],,action.hacking.variety.Backdoor,related-to,2
+83,,T1543,Create or Modify System Process,[],[],,action.hacking.vector.Backdoor,related-to,2
+84,,T1543,Create or Modify System Process,[],[],,action.malware.variety.Backdoor,related-to,2
+85,,T1543,Create or Modify System Process,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+86,,T1543,Create or Modify System Process,[],[],,action.malware.variety.Rootkit,related-to,2
+87,,T1543,Create or Modify System Process,[],[],,attribute.integrity.variety.Software installation,related-to,2
+88,,T1543.001,Create or Modify System Process: Launch Agent,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+89,,T1543.001,Create or Modify System Process: Launch Agent,[],[],,attribute.integrity.variety.Software installation,related-to,2
+90,,T1543.002,Create or Modify System Process: Systemd Service,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+91,,T1543.002,Create or Modify System Process: Systemd Service,[],[],,attribute.integrity.variety.Software installation,related-to,2
+92,,T1543.003,Create or Modify System Process: Windows Service,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+93,,T1543.003,Create or Modify System Process: Windows Service,[],[],,action.malware.variety.RAT,related-to,2
+94,,T1543.003,Create or Modify System Process: Windows Service,[],[],,attribute.integrity.variety.Software installation,related-to,2
+95,,T1543.004,Create or Modify System Process: Launch Daemon,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+96,,T1543.004,Create or Modify System Process: Launch Daemon,[],[],,attribute.integrity.variety.Software installation,related-to,2
+97,,T1547,Boot or Logon Autostart Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+98,,T1547,Boot or Logon Autostart Execution,[],[],,action.hacking.variety.Backdoor,related-to,2
+99,,T1547,Boot or Logon Autostart Execution,[],[],,action.hacking.vector.Backdoor,related-to,2
+100,,T1547,Boot or Logon Autostart Execution,[],[],,action.malware.variety.Backdoor,related-to,2
+101,,T1547,Boot or Logon Autostart Execution,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+102,,T1547,Boot or Logon Autostart Execution,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+103,,T1548,Abuse Elevation Control Mechanism,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+104,,T1548.001,Abuse Elevation Control Mechanism: Setuid and Setgid,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+105,,T1548.002,Abuse Elevation Control Mechanism: Bypass User Account Control,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+106,,T1548.002,Abuse Elevation Control Mechanism: Bypass User Account Control,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+107,,T1548.002,Abuse Elevation Control Mechanism: Bypass User Account Control,[],[],,action.malware.variety.Exploit misconfig,related-to,2
+108,,T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+109,,T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+110,,T1548.003,Abuse Elevation Control Mechanism: Sudo and Sudo Caching,[],[],,action.malware.variety.Client-side attack,related-to,2
+111,,T1548.004,Abuse Elevation Control Mechanism: Elevated Execution with Prompt,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+112,,T1548.004,Abuse Elevation Control Mechanism: Elevated Execution with Prompt,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+113,,T1559,Inter-Process Communication,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+114,,T1559.001,Inter-Process Communication: Component Object Model,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+115,,T1559.002,Inter-Process Communication: Dynamic Data Exchange,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+116,,T1563,Remote Service Session Hijacking,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+117,,T1563,Remote Service Session Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+118,,T1563,Remote Service Session Hijacking,[],[],,action.malware.vector.Network propagation,related-to,2
+119,,T1563.001,Remote Service Session Hijacking: SSH Hijacking,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+120,,T1563.001,Remote Service Session Hijacking: SSH Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+121,,T1563.001,Remote Service Session Hijacking: SSH Hijacking,[],[],,action.malware.vector.Network propagation,related-to,2
+122,,T1563.002,Remote Service Session Hijacking: RDP Hijacking,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+123,,T1563.002,Remote Service Session Hijacking: RDP Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+124,,T1563.002,Remote Service Session Hijacking: RDP Hijacking,[],[],,action.malware.vector.Network propagation,related-to,2
+125,,T1564,Hide Artifacts,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+126,,T1564,Hide Artifacts,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+127,,T1564,Hide Artifacts,[],[],,action.malware.variety.Evade Defenses,related-to,2
+128,,T1564,Hide Artifacts,[],[],,action.social.variety.Evade Defenses,related-to,2
+129,,T1564.001,Hide Artifacts: Hidden Files and Directories,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+130,,T1564.001,Hide Artifacts: Hidden Files and Directories,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+131,,T1564.001,Hide Artifacts: Hidden Files and Directories,[],[],,action.malware.variety.Evade Defenses,related-to,2
+132,,T1564.001,Hide Artifacts: Hidden Files and Directories,[],[],,action.social.variety.Evade Defenses,related-to,2
+133,,T1564.002,Hide Artifacts: Hidden Users,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+134,,T1564.002,Hide Artifacts: Hidden Users,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+135,,T1564.002,Hide Artifacts: Hidden Users,[],[],,action.malware.variety.Evade Defenses,related-to,2
+136,,T1564.002,Hide Artifacts: Hidden Users,[],[],,action.social.variety.Evade Defenses,related-to,2
+137,,T1564.003,Hide Artifacts: Hidden Window,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+138,,T1564.003,Hide Artifacts: Hidden Window,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+139,,T1564.003,Hide Artifacts: Hidden Window,[],[],,action.malware.variety.Evade Defenses,related-to,2
+140,,T1564.003,Hide Artifacts: Hidden Window,[],[],,action.social.variety.Evade Defenses,related-to,2
+141,,T1564.004,Hide Artifacts: NTFS File Attributes,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+142,,T1564.004,Hide Artifacts: NTFS File Attributes,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+143,,T1564.004,Hide Artifacts: NTFS File Attributes,[],[],,action.malware.variety.Evade Defenses,related-to,2
+144,,T1564.004,Hide Artifacts: NTFS File Attributes,[],[],,action.social.variety.Evade Defenses,related-to,2
+145,,T1564.005,Hide Artifacts: Hidden File System,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+146,,T1564.005,Hide Artifacts: Hidden File System,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+147,,T1564.005,Hide Artifacts: Hidden File System,[],[],,action.malware.variety.Evade Defenses,related-to,2
+148,,T1564.005,Hide Artifacts: Hidden File System,[],[],,action.social.variety.Evade Defenses,related-to,2
+149,,T1564.006,Hide Artifacts: Run Virtual Instance,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+150,,T1564.006,Hide Artifacts: Run Virtual Instance,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+151,,T1564.006,Hide Artifacts: Run Virtual Instance,[],[],,action.malware.variety.Evade Defenses,related-to,2
+152,,T1564.006,Hide Artifacts: Run Virtual Instance,[],[],,action.social.variety.Evade Defenses,related-to,2
+153,,T1564.007,Hide Artifacts: VBA Stomping,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+154,,T1564.007,Hide Artifacts: VBA Stomping,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+155,,T1564.007,Hide Artifacts: VBA Stomping,[],[],,action.malware.variety.Evade Defenses,related-to,2
+156,,T1564.007,Hide Artifacts: VBA Stomping,[],[],,action.malware.variety.Trojan,related-to,2
+157,,T1564.007,Hide Artifacts: VBA Stomping,[],[],,action.social.variety.Evade Defenses,related-to,2
+158,,T1569,System Services,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+159,,T1569.001,System Services: Launchctl,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+160,,T1569.002,System Services: Service Execution,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+161,,T1569.002,System Services: Service Execution,[],[],,action.malware.vector.Direct install,related-to,2
+162,,T1578,Modify Cloud Computer Infrastructure,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+163,,T1578,Modify Cloud Computer Infrastructure,[],[],,action.hacking.vector.Hypervisor,related-to,2
+164,,T1578,Modify Cloud Computer Infrastructure,[],[],,action.hacking.vector.Inter-tenant,related-to,2
+165,,T1578.001,Modify Cloud Computer Infrastructure: Create Snapshot,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+166,,T1578.002,Modify Cloud Computer Infrastructure: Create Cloud Instance,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+167,,T1578.003,Modify Cloud Computer Infrastructure: Delete Cloud Instance,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+168,,T1578.004,Modify Cloud Computer Infrastructure: Revert Cloud Instance,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+169,,T1609,Container Administration Command,[],[],,action.hacking.variety.Abuse of functionality,related-to,2
+170,,T1098,Account Manipulation,[],[],,action.hacking.variety.Backdoor,related-to,2
+171,,T1098,Account Manipulation,[],[],,action.hacking.vector.Backdoor,related-to,2
+172,,T1098,Account Manipulation,[],[],,action.malware.variety.Backdoor,related-to,2
+173,,T1098,Account Manipulation,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+174,,T1098,Account Manipulation,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+175,,T1037,Boot or Logon Initialization Scripts,[],[],,action.hacking.variety.Backdoor,related-to,2
+176,,T1037,Boot or Logon Initialization Scripts,[],[],,action.hacking.vector.Backdoor,related-to,2
+177,,T1037,Boot or Logon Initialization Scripts,[],[],,action.malware.variety.Backdoor,related-to,2
+178,,T1037,Boot or Logon Initialization Scripts,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+179,,T1037,Boot or Logon Initialization Scripts,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+180,,T1554,Compromise Client Software Binary,[],[],,action.hacking.variety.Backdoor,related-to,2
+181,,T1554,Compromise Client Software Binary,[],[],,action.hacking.vector.Backdoor,related-to,2
+182,,T1554,Compromise Client Software Binary,[],[],,action.malware.variety.Adminware,related-to,2
+183,,T1554,Compromise Client Software Binary,[],[],,action.malware.variety.Backdoor,related-to,2
+184,,T1554,Compromise Client Software Binary,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+185,,T1554,Compromise Client Software Binary,[],[],,action.malware.variety.Trojan,related-to,2
+186,,T1136,Create Accounts,[],[],,action.hacking.variety.Backdoor,related-to,2
+187,,T1136,Create Accounts,[],[],,action.hacking.vector.Backdoor,related-to,2
+188,,T1136,Create Accounts,[],[],,action.malware.variety.Modify data,related-to,2
+189,,T1136,Create Accounts,[],[],,attribute.integrity.variety.Created account,related-to,2
+190,,T1546,Event Triggered Execution,[],[],,action.hacking.variety.Backdoor,related-to,2
+191,,T1546,Event Triggered Execution,[],[],,action.hacking.variety.XML injection,related-to,2
+192,,T1546,Event Triggered Execution,[],[],,action.hacking.vector.Backdoor,related-to,2
+193,,T1546,Event Triggered Execution,[],[],,action.malware.variety.Backdoor,related-to,2
+194,,T1546,Event Triggered Execution,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+195,,T1546,Event Triggered Execution,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+196,,T1133,External Remote Services,[],[],,action.hacking.variety.Backdoor,related-to,2
+197,,T1133,External Remote Services,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+198,,T1133,External Remote Services,[],[],,action.hacking.vector.3rd party desktop,related-to,2
+199,,T1133,External Remote Services,[],[],,action.hacking.vector.Backdoor,related-to,2
+200,,T1133,External Remote Services,[],[],,action.hacking.vector.Desktop sharing software,related-to,2
+201,,T1133,External Remote Services,[],[],,action.hacking.vector.VPN,related-to,2
+202,,T1133,External Remote Services,[],[],,action.malware.variety.Backdoor,related-to,2
+203,,T1133,External Remote Services,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+204,,T1133,External Remote Services,[],[],,action.malware.vector.Remote injection,related-to,2
+205,,T1133,External Remote Services,[],[],,action.malware.vector.Web application,related-to,2
+206,,T1525,Implant Internal Image,[],[],,action.hacking.variety.Backdoor,related-to,2
+207,,T1525,Implant Internal Image,[],[],,action.hacking.vector.Backdoor,related-to,2
+208,,T1525,Implant Internal Image,[],[],,action.malware.variety.Backdoor,related-to,2
+209,,T1525,Implant Internal Image,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+210,,T1525,Implant Internal Image,[],[],,action.malware.variety.RAT,related-to,2
+211,,T1525,Implant Internal Image,[],[],,action.malware.variety.Unknown,related-to,2
+212,,T1556,Modify Authentication Process,[],[],,action.hacking.variety.Backdoor,related-to,2
+213,,T1556,Modify Authentication Process,[],[],,action.hacking.vector.Backdoor,related-to,2
+214,,T1556,Modify Authentication Process,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+215,,T1556,Modify Authentication Process,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+216,,T1078,Valid Accounts,[],[],,action.hacking.variety.Backdoor,related-to,2
+217,,T1078,Valid Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+218,,T1078,Valid Accounts,[],[],,action.hacking.vector.Backdoor,related-to,2
+219,,T1110,Brute Force,[],[],,action.hacking.variety.Brute force,related-to,2
+220,,T1110,Brute Force,[],[],,action.malware.variety.Brute force,related-to,2
+221,,T1110.001,Brute Force: Password Guessing,[],[],,action.hacking.variety.Brute force,related-to,2
+222,,T1110.001,Brute Force: Password Guessing,[],[],,action.malware.variety.Brute force,related-to,2
+223,,T1110.002,Brute Force: Password Cracking,[],[],,action.hacking.variety.Brute force,related-to,2
+224,,T1110.002,Brute Force: Password Cracking,[],[],,action.hacking.variety.Offline cracking,related-to,2
+225,,T1110.002,Brute Force: Password Cracking,[],[],,action.malware.variety.Brute force,related-to,2
+226,,T1110.003,Brute Force: Password Spraying,[],[],,action.hacking.variety.Brute force,related-to,2
+227,,T1110.003,Brute Force: Password Spraying,[],[],,action.malware.variety.Brute force,related-to,2
+228,,T1110.004,Brute Force: Credential Stuffing,[],[],,action.hacking.variety.Brute force,related-to,2
+229,,T1110.004,Brute Force: Credential Stuffing,[],[],,action.malware.variety.Brute force,related-to,2
+230,,T1203,Exploitation for Client Execution,[],[],,action.hacking.variety.Buffer overflow,related-to,2
+231,,T1203,Exploitation for Client Execution,[],[],,action.hacking.variety.HTTP request smuggling,related-to,2
+232,,T1203,Exploitation for Client Execution,[],[],,action.hacking.variety.HTTP request splitting,related-to,2
+233,,T1203,Exploitation for Client Execution,[],[],,action.hacking.variety.HTTP response smuggling,related-to,2
+234,,T1203,Exploitation for Client Execution,[],[],,action.hacking.variety.HTTP response splitting,related-to,2
+235,,T1203,Exploitation for Client Execution,[],[],,action.malware.variety.Client-side attack,related-to,2
+236,,T1203,Exploitation for Client Execution,[],[],,action.malware.vector.Email attachment,related-to,2
+237,,T1557.002,Adversary-in-the-Middle: ARP Cache Poisoning,[],[],,action.hacking.variety.Cache poisoning,related-to,2
+238,,T1557.002,Adversary-in-the-Middle: ARP Cache Poisoning,[],[],,action.hacking.variety.MitM,related-to,2
+239,,T1557.002,Adversary-in-the-Middle: ARP Cache Poisoning,[],[],,action.malware.variety.MitM,related-to,2
+240,,T1600,Weaken Encryption,[],[],,action.hacking.variety.Cryptanalysis,related-to,2
+241,,T1600,Weaken Encryption,[],[],,action.malware.variety.Disable controls,related-to,2
+242,,T1562,Impair Defenses,[],[],,action.hacking.variety.Disable controls,related-to,2
+243,,T1562,Impair Defenses,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+244,,T1562,Impair Defenses,[],[],,action.malware.variety.Disable controls,related-to,2
+245,,T1562,Impair Defenses,[],[],,action.malware.variety.Evade Defenses,related-to,2
+246,,T1562,Impair Defenses,[],[],,action.malware.variety.Modify data,related-to,2
+247,,T1562,Impair Defenses,[],[],,action.social.variety.Evade Defenses,related-to,2
+248,,T1562.001,Disable or Modify Tools,[],[],,action.hacking.variety.Disable controls,related-to,2
+249,,T1562.001,Disable or Modify Tools,[],[],,action.malware.variety.Disable controls,related-to,2
+250,,T1562.002,Disable Windows Event Logging,[],[],,action.hacking.variety.Disable controls,related-to,2
+251,,T1562.002,Disable Windows Event Logging,[],[],,action.malware.variety.Disable controls,related-to,2
+252,,T1562.003,Impair Command History Logging,[],[],,action.hacking.variety.Disable controls,related-to,2
+253,,T1562.003,Impair Command History Logging,[],[],,action.malware.variety.Disable controls,related-to,2
+254,,T1562.004,Disable or Modify System Firewall,[],[],,action.hacking.variety.Disable controls,related-to,2
+255,,T1562.004,Disable or Modify System Firewall,[],[],,action.malware.variety.Disable controls,related-to,2
+256,,T1562.007,Disable or Modify Cloud Firewall,[],[],,action.hacking.variety.Disable controls,related-to,2
+257,,T1562.007,Disable or Modify Cloud Firewall,[],[],,action.malware.variety.Disable controls,related-to,2
+258,,T1562.008,Disable Cloud Logs,[],[],,action.hacking.variety.Disable controls,related-to,2
+259,,T1562.008,Disable Cloud Logs,[],[],,action.malware.variety.Disable controls,related-to,2
+260,,T1489,Service Stop,[],[],,action.hacking.variety.Disable controls,related-to,2
+261,,T1489,Service Stop,[],[],,action.malware.variety.DoS,related-to,2
+262,,T1489,Service Stop,[],[],,attribute.availability.variety.Interruption,related-to,2
+263,,T1498,Network Denial of Service,[],[],,action.hacking.variety.DoS,related-to,2
+264,,T1498,Network Denial of Service,[],[],,action.malware.variety.DoS,related-to,2
+265,,T1498,Network Denial of Service,[],[],,attribute.availability.variety.Degradation,related-to,2
+266,,T1498,Network Denial of Service,[],[],,attribute.availability.variety.Loss,related-to,2
+267,,T1498.001,Network Denial of Service: Direct Network Flood,[],[],,action.hacking.variety.DoS,related-to,2
+268,,T1498.001,Network Denial of Service: Direct Network Flood,[],[],,action.malware.variety.DoS,related-to,2
+269,,T1498.001,Network Denial of Service: Direct Network Flood,[],[],,attribute.availability.variety.Degradation,related-to,2
+270,,T1498.001,Network Denial of Service: Direct Network Flood,[],[],,attribute.availability.variety.Loss,related-to,2
+271,,T1498.002,Network Denial of Service: Reflection Amplification,[],[],,action.hacking.variety.DoS,related-to,2
+272,,T1498.002,Network Denial of Service: Reflection Amplification,[],[],,action.malware.variety.DoS,related-to,2
+273,,T1498.002,Network Denial of Service: Reflection Amplification,[],[],,attribute.availability.variety.Degradation,related-to,2
+274,,T1498.002,Network Denial of Service: Reflection Amplification,[],[],,attribute.availability.variety.Loss,related-to,2
+275,,T1499,Endpoint Denial of Service,[],[],,action.hacking.variety.DoS,related-to,2
+276,,T1499,Endpoint Denial of Service,[],[],,action.hacking.variety.Soap array abuse,related-to,2
+277,,T1499,Endpoint Denial of Service,[],[],,action.hacking.variety.XML external entities,related-to,2
+278,,T1499,Endpoint Denial of Service,[],[],,action.malware.variety.DoS,related-to,2
+279,,T1499,Endpoint Denial of Service,[],[],,attribute.availability.variety.Degradation,related-to,2
+280,,T1499,Endpoint Denial of Service,[],[],,attribute.availability.variety.Loss,related-to,2
+281,,T1499.001,Endpoint Denial of Service: OS Exhaustion Flood,[],[],,action.hacking.variety.DoS,related-to,2
+282,,T1499.001,Endpoint Denial of Service: OS Exhaustion Flood,[],[],,action.malware.variety.DoS,related-to,2
+283,,T1499.001,Endpoint Denial of Service: OS Exhaustion Flood,[],[],,attribute.availability.variety.Degradation,related-to,2
+284,,T1499.001,Endpoint Denial of Service: OS Exhaustion Flood,[],[],,attribute.availability.variety.Loss,related-to,2
+285,,T1499.002,Endpoint Denial of Service: Service Exhaustion Flood,[],[],,action.hacking.variety.DoS,related-to,2
+286,,T1499.002,Endpoint Denial of Service: Service Exhaustion Flood,[],[],,action.malware.variety.DoS,related-to,2
+287,,T1499.002,Endpoint Denial of Service: Service Exhaustion Flood,[],[],,attribute.availability.variety.Degradation,related-to,2
+288,,T1499.002,Endpoint Denial of Service: Service Exhaustion Flood,[],[],,attribute.availability.variety.Loss,related-to,2
+289,,T1499.003,Endpoint Denial of Service: Application Exhaustion Flood,[],[],,action.hacking.variety.DoS,related-to,2
+290,,T1499.003,Endpoint Denial of Service: Application Exhaustion Flood,[],[],,action.malware.variety.DoS,related-to,2
+291,,T1499.003,Endpoint Denial of Service: Application Exhaustion Flood,[],[],,attribute.availability.variety.Degradation,related-to,2
+292,,T1499.003,Endpoint Denial of Service: Application Exhaustion Flood,[],[],,attribute.availability.variety.Loss,related-to,2
+293,,T1499.004,Endpoint Denial of Service: Application or System Exploitation,[],[],,action.hacking.variety.DoS,related-to,2
+294,,T1499.004,Endpoint Denial of Service: Application or System Exploitation,[],[],,action.malware.variety.DoS,related-to,2
+295,,T1499.004,Endpoint Denial of Service: Application or System Exploitation,[],[],,attribute.availability.variety.Degradation,related-to,2
+296,,T1499.004,Endpoint Denial of Service: Application or System Exploitation,[],[],,attribute.availability.variety.Loss,related-to,2
+297,,T1583.005,Acquire Infrastructure: Botnet,[],[],,action.hacking.variety.DoS,related-to,2
+298,,T1583.005,Acquire Infrastructure: Botnet,[],[],,action.hacking.variety.Unknown,related-to,2
+299,,T1583.005,Acquire Infrastructure: Botnet,[],[],,value_chain.development.variety.Bot,related-to,2
+300,,T1584.005,Compromise Infrastructure: Botnet,[],[],,action.hacking.variety.DoS,related-to,2
+301,,T1584.005,Compromise Infrastructure: Botnet,[],[],,action.hacking.variety.Unknown,related-to,2
+302,,T1622,Debugger Evasion,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+303,,T1622,Debugger Evasion,[],[],,action.malware.variety.Evade Defenses,related-to,2
+304,,T1622,Debugger Evasion,[],[],,action.social.variety.Evade Defenses,related-to,2
+305,,T1211,Exploitation for Defense Evasion,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+306,,T1211,Exploitation for Defense Evasion,[],[],,action.malware.variety.Evade Defenses,related-to,2
+307,,T1211,Exploitation for Defense Evasion,[],[],,action.social.variety.Evade Defenses,related-to,2
+308,,T1036,Masquerading,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+309,,T1036,Masquerading,[],[],,action.malware.variety.Disable controls,related-to,2
+310,,T1036,Masquerading,[],[],,action.malware.variety.Evade Defenses,related-to,2
+311,,T1036,Masquerading,[],[],,action.malware.vector.Email attachment,related-to,2
+312,,T1036,Masquerading,[],[],,action.social.variety.Evade Defenses,related-to,2
+313,,T1014,Rootkit,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+314,,T1014,Rootkit,[],[],,action.malware.variety.Evade Defenses,related-to,2
+315,,T1014,Rootkit,[],[],,action.malware.variety.Rootkit,related-to,2
+316,,T1014,Rootkit,[],[],,action.social.variety.Evade Defenses,related-to,2
+317,,T1553,Subvert Trust Controls,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+318,,T1553,Subvert Trust Controls,[],[],,action.malware.variety.Disable controls,related-to,2
+319,,T1553,Subvert Trust Controls,[],[],,action.malware.variety.Evade Defenses,related-to,2
+320,,T1553,Subvert Trust Controls,[],[],,action.social.variety.Evade Defenses,related-to,2
+321,,T1001,Data Obfuscation,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+322,,T1001,Data Obfuscation,[],[],,action.malware.variety.Unknown,related-to,2
+323,,T1001.001,Data Obfuscation: Junk Data,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+324,,T1001.001,Data Obfuscation: Junk Data,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+325,,T1001.001,Data Obfuscation: Junk Data,[],[],,action.malware.variety.C2,related-to,2
+326,,T1001.001,Data Obfuscation: Junk Data,[],[],,action.malware.variety.Unknown,related-to,2
+327,,T1001.002,Data Obfuscation: Steganography,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+328,,T1001.002,Data Obfuscation: Steganography,[],[],,action.malware.variety.Unknown,related-to,2
+329,,T1001.003,Data Obfuscation: Protocol Impersonation,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+330,,T1001.003,Data Obfuscation: Protocol Impersonation,[],[],,action.malware.variety.Unknown,related-to,2
+331,,T1071,Application Layer Protocol,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+332,,T1071,Application Layer Protocol,[],[],,action.hacking.vector.Other network service,related-to,2
+333,,T1071,Application Layer Protocol,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+334,,T1071,Application Layer Protocol,[],[],,action.malware.variety.C2,related-to,2
+335,,T1071,Application Layer Protocol,[],[],,action.malware.variety.Unknown,related-to,2
+336,,T1132,Data Encoding,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+337,,T1132,Data Encoding,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+338,,T1132,Data Encoding,[],[],,action.malware.variety.C2,related-to,2
+339,,T1132.001,Data Encoding: Standard Encoding,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+340,,T1132.001,Data Encoding: Standard Encoding,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+341,,T1132.001,Data Encoding: Standard Encoding,[],[],,action.malware.variety.C2,related-to,2
+342,,T1132.002,Data Encoding: Non-Standard Encoding,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+343,,T1132.002,Data Encoding: Non-Standard Encoding,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+344,,T1132.002,Data Encoding: Non-Standard Encoding,[],[],,action.malware.variety.C2,related-to,2
+345,,T1568,Dynamic Resolution,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+346,,T1568,Dynamic Resolution,[],[],,action.hacking.vector.Other network service,related-to,2
+347,,T1568,Dynamic Resolution,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+348,,T1568,Dynamic Resolution,[],[],,action.malware.variety.C2,related-to,2
+349,,T1568,Dynamic Resolution,[],[],,action.malware.vector.Download by malware,related-to,2
+350,,T1568.001,Dynamic Resolution: Fast Flux DSN,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+351,,T1568.001,Dynamic Resolution: Fast Flux DSN,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+352,,T1568.001,Dynamic Resolution: Fast Flux DSN,[],[],,action.malware.variety.C2,related-to,2
+353,,T1568.002,Dynamic Resolution: Domain Generation Algorithms,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+354,,T1568.002,Dynamic Resolution: Domain Generation Algorithms,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+355,,T1568.002,Dynamic Resolution: Domain Generation Algorithms,[],[],,action.malware.variety.C2,related-to,2
+356,,T1568.003,Dynamic Resolution: DNS Calculation,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+357,,T1568.003,Dynamic Resolution: DNS Calculation,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+358,,T1568.003,Dynamic Resolution: DNS Calculation,[],[],,action.malware.variety.C2,related-to,2
+359,,T1573,Encrypted Channels,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+360,,T1573,Encrypted Channels,[],[],,action.hacking.vector.Other network service,related-to,2
+361,,T1573,Encrypted Channels,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+362,,T1573,Encrypted Channels,[],[],,action.malware.variety.C2,related-to,2
+363,,T1573.002,Encrypted Channels: Asymmetric Cryptography,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+364,,T1573.002,Encrypted Channels: Asymmetric Cryptography,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+365,,T1573.002,Encrypted Channels: Asymmetric Cryptography,[],[],,action.malware.variety.C2,related-to,2
+366,,T1573.001,Encrypted Channels: Symmetric Cryptography,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+367,,T1573.001,Encrypted Channels: Symmetric Cryptography,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+368,,T1573.001,Encrypted Channels: Symmetric Cryptography,[],[],,action.malware.variety.C2,related-to,2
+369,,T1008,Fallback Channels,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+370,,T1008,Fallback Channels,[],[],,action.hacking.vector.Other network service,related-to,2
+371,,T1008,Fallback Channels,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+372,,T1008,Fallback Channels,[],[],,action.malware.variety.C2,related-to,2
+373,,T1104,Multi-Stage Channels,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+374,,T1104,Multi-Stage Channels,[],[],,action.hacking.vector.Other network service,related-to,2
+375,,T1104,Multi-Stage Channels,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+376,,T1104,Multi-Stage Channels,[],[],,action.malware.variety.C2,related-to,2
+377,,T1572,Protocol Tunneling,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+378,,T1572,Protocol Tunneling,[],[],,action.hacking.vector.Other network service,related-to,2
+379,,T1572,Protocol Tunneling,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+380,,T1572,Protocol Tunneling,[],[],,action.malware.variety.C2,related-to,2
+381,,T1090,Proxy,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+382,,T1090,Proxy,[],[],,action.hacking.vector.Other network service,related-to,2
+383,,T1090,Proxy,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+384,,T1090,Proxy,[],[],,action.malware.variety.C2,related-to,2
+385,,T1205,Traffic Signaling,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+386,,T1205,Traffic Signaling,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+387,,T1205,Traffic Signaling,[],[],,action.malware.variety.C2,related-to,2
+388,,T1205.001,Traffic Signaling: Port Knocking,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+389,,T1205.001,Traffic Signaling: Port Knocking,[],[],,action.malware.variety.Backdoor,related-to,2
+390,,T1205.001,Traffic Signaling: Port Knocking,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+391,,T1205.001,Traffic Signaling: Port Knocking,[],[],,action.malware.variety.C2,related-to,2
+392,,T1205.002,Traffic Signaling: Socket Filters,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+393,,T1102,Web Service,[],[],,action.hacking.variety.Evade Defenses,related-to,2
+394,,T1102,Web Service,[],[],,action.hacking.vector.Other network service,related-to,2
+395,,T1102,Web Service,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+396,,T1102,Web Service,[],[],,action.malware.variety.C2,related-to,2
+397,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+398,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+399,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Format string attack,related-to,2
+400,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Fuzz testing,related-to,2
+401,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Insecure deserialization,related-to,2
+402,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.Integer overflows,related-to,2
+403,,T1068,Exploitation for Privilege Escalation,[],[],,action.hacking.variety.LDAP injection,related-to,2
+404,,T1068,Exploitation for Privilege Escalation,[],[],,action.malware.variety.Exploit misconfig,related-to,2
+405,,T1190,Exploit Public-Facing Application,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+406,,T1190,Exploit Public-Facing Application,[],[],,action.hacking.variety.SQLi,related-to,2
+407,,T1212,Exploitation for Credential Access,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+408,,T1212,Exploitation for Credential Access,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+409,,T1212,Exploitation for Credential Access,[],[],,action.hacking.variety.Session fixation,related-to,2
+410,,T1212,Exploitation for Credential Access,[],[],,action.malware.variety.Disable controls,related-to,2
+411,,T1212,Exploitation for Credential Access,[],[],,action.malware.variety.Password dumper,related-to,2
+412,,T1212,Exploitation for Credential Access,[],[],,action.malware.vector.Web application - drive-by,related-to,2
+413,,T1212,Exploitation for Credential Access,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+414,,T1558.004,Steal or Forge Kerberos Tickets: AS-REP Roasting,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+415,,T1558.004,Steal or Forge Kerberos Tickets: AS-REP Roasting,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+416,,T1558.004,Steal or Forge Kerberos Tickets: AS-REP Roasting,[],[],,action.malware.variety.Exploit misconfig,related-to,2
+417,,T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+418,,T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+419,,T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+420,,T1574.001,Hijack Execution Flow: DLL Search Order Hijacking,[],[],,action.hacking.variety.Unknown,related-to,2
+421,,T1574.002,Hijack Execution Flow: DLL Side-Loading,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+422,,T1574.002,Hijack Execution Flow: DLL Side-Loading,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+423,,T1574.002,Hijack Execution Flow: DLL Side-Loading,[],[],,action.hacking.variety.Hijack,related-to,2
+424,,T1574.002,Hijack Execution Flow: DLL Side-Loading,[],[],,action.hacking.variety.Unknown,related-to,2
+425,,T1574.005,Hijack Execution Flow: Executable Installer File Permissions Weakness,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+426,,T1574.005,Hijack Execution Flow: Executable Installer File Permissions Weakness,[],[],,action.hacking.variety.Hijack,related-to,2
+427,,T1574.005,Hijack Execution Flow: Executable Installer File Permissions Weakness,[],[],,action.hacking.variety.Unknown,related-to,2
+428,,T1574.010,Hijack Execution Flow: Services File Permissions Weakness,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+429,,T1574.011,Hijack Execution Flow: Services Registry Permissions Weakness,[],[],,action.hacking.variety.Exploit misconfig,related-to,2
+430,,T1574.004,Hijack Execution Flow: Dylib Hijacking,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+431,,T1574.004,Hijack Execution Flow: Dylib Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+432,,T1574.004,Hijack Execution Flow: Dylib Hijacking,[],[],,action.hacking.variety.Unknown,related-to,2
+433,,T1595.002,Active Scanning: Vulnerability Scanning,[],[],,action.hacking.variety.Exploit vuln,related-to,2
+434,,T1595.002,Active Scanning: Vulnerability Scanning,[],[],,action.malware.variety.Scan network,related-to,2
+435,,T1539,Steal Web Session Cookie,[],[],,action.hacking.variety.Forced browsing,related-to,2
+436,,T1539,Steal Web Session Cookie,[],[],,action.hacking.variety.MitM,related-to,2
+437,,T1539,Steal Web Session Cookie,[],[],,action.hacking.variety.Session replay,related-to,2
+438,,T1539,Steal Web Session Cookie,[],[],,action.malware.variety.Capture app data,related-to,2
+439,,T1583.003,Acquire Infrastructure: Virtual Private Server,[],[],,action.hacking.variety.Forced browsing,related-to,2
+440,,T1583.003,Acquire Infrastructure: Virtual Private Server,[],[],,action.hacking.variety.Unknown,related-to,2
+441,,T1583.004,Acquire Infrastructure: Server,[],[],,action.hacking.variety.Forced browsing,related-to,2
+442,,T1583.004,Acquire Infrastructure: Server,[],[],,action.hacking.variety.Unknown,related-to,2
+443,,T1583.006,Acquire Infrastructure: Web Services,[],[],,action.hacking.variety.Forced browsing,related-to,2
+444,,T1583.006,Acquire Infrastructure: Web Services,[],[],,action.hacking.variety.Unknown,related-to,2
+445,,T1583.006,Acquire Infrastructure: Web Services,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+446,,T1583.006,Acquire Infrastructure: Web Services,[],[],,action.malware.variety.C2,related-to,2
+447,,T1583.006,Acquire Infrastructure: Web Services,[],[],,value_chain.development.variety.Website,related-to,2
+448,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.HTTP request smuggling,related-to,2
+449,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.HTTP request splitting,related-to,2
+450,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.HTTP response smuggling,related-to,2
+451,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.HTTP response splitting,related-to,2
+452,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+453,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.MitM,related-to,2
+454,,T1185,Browser Session Hijacking,[],[],,action.hacking.variety.Session fixation,related-to,2
+455,,T1185,Browser Session Hijacking,[],[],,action.malware.variety.Capture app data,related-to,2
+456,,T1496,Resource Hijacking,[],[],,action.hacking.variety.Hijack,related-to,2
+457,,T1496,Resource Hijacking,[],[],,action.malware.variety.Click fraud,related-to,2
+458,,T1496,Resource Hijacking,[],[],,action.malware.variety.Click fraud and cryptocurrency mining,related-to,2
+459,,T1496,Resource Hijacking,[],[],,action.malware.variety.Cryptocurrency mining,related-to,2
+460,,T1496,Resource Hijacking,[],[],,attribute.availability.variety.Degradation,related-to,2
+461,,T1574,Hijack Execution Flow,[],[],,action.hacking.variety.Hijack,related-to,2
+462,,T1574,Hijack Execution Flow,[],[],,action.hacking.variety.Unknown,related-to,2
+463,,T1574,Hijack Execution Flow,[],[],,action.hacking.variety.XML injection,related-to,2
+464,,T1557,Man-in-the-Middle,[],[],,action.hacking.variety.MitM,related-to,2
+465,,T1557,Man-in-the-Middle,[],[],,action.hacking.variety.Routing detour,related-to,2
+466,,T1557,Man-in-the-Middle,[],[],,action.malware.variety.MitM,related-to,2
+467,,T1557,Man-in-the-Middle,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+468,,T1557.001,Man-in-the-Middle: LLMNR/NBT-NS Poisoning and Relay,[],[],,action.hacking.variety.MitM,related-to,2
+469,,T1557.001,Man-in-the-Middle: LLMNR/NBT-NS Poisoning and Relay,[],[],,action.malware.variety.MitM,related-to,2
+470,,T1027,Obfuscated Files or Information,[],[],,action.hacking.variety.Null byte injection,related-to,2
+471,,T1027,Obfuscated Files or Information,[],[],,action.malware.variety.Disable controls,related-to,2
+472,,T1550.002,Use Alternate Authentication Material: Pass the Hash,[],[],,action.hacking.variety.Pass-the-hash,related-to,2
+473,,T1550.002,Use Alternate Authentication Material: Pass the Hash,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+474,,T1550.002,Use Alternate Authentication Material: Pass the Hash,[],[],,action.malware.variety.Pass-the-hash,related-to,2
+475,,T1550.002,Use Alternate Authentication Material: Pass the Hash,[],[],,action.malware.variety.Password dumper,related-to,2
+476,,T1082,System Information Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+477,,T1082,System Information Discovery,[],[],,action.malware.variety.Profile host,related-to,2
+478,,T1033,System Owner/User Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+479,,T1033,System Owner/User Discovery,[],[],,action.malware.variety.Capture stored data,related-to,2
+480,,T1033,System Owner/User Discovery,[],[],,action.malware.variety.Profile host,related-to,2
+481,,T1007,System Service Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+482,,T1007,System Service Discovery,[],[],,action.malware.variety.Profile host,related-to,2
+483,,T1012,Query Registry,[],[],,action.hacking.variety.Profile host,related-to,2
+484,,T1012,Query Registry,[],[],,action.malware.variety.Profile host,related-to,2
+485,,T1083,File and Directory Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+486,,T1083,File and Directory Discovery,[],[],,action.malware.variety.Capture stored data,related-to,2
+487,,T1083,File and Directory Discovery,[],[],,action.malware.variety.Profile host,related-to,2
+488,,T1057,Process Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+489,,T1120,Peripheral Device Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+490,,T1124,System Time Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+491,,T1201,Password Policy Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+492,,T1119,Automated Collection,[],[],,action.hacking.variety.Profile host,related-to,2
+493,,T1119,Automated Collection,[],[],,action.hacking.variety.Scan network,related-to,2
+494,,T1119,Automated Collection,[],[],,action.malware.variety.Capture stored data,related-to,2
+495,,T1119,Automated Collection,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+496,,T1480,Execution Guardrails,[],[],,action.hacking.variety.Profile host,related-to,2
+497,,T1480,Execution Guardrails,[],[],,action.hacking.variety.Scan network,related-to,2
+498,,T1480.001,Execution Guardrails: Environmental Keying,[],[],,action.hacking.variety.Profile host,related-to,2
+499,,T1480.001,Execution Guardrails: Environmental Keying,[],[],,action.hacking.variety.Scan network,related-to,2
+500,,T1518,Software Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+501,,T1518.001,Software Discovery: Security Software Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+502,,T1087,Account Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+503,,T1087.001,Account Discovery: Local Account,[],[],,action.hacking.variety.Profile host,related-to,2
+504,,T1069,Permission Groups Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+505,,T1069.001,Permission Groups Discovery: Local Groups,[],[],,action.hacking.variety.Profile host,related-to,2
+506,,T1614,System Location Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+507,,T1614.001,System Location Discovery: System Language Discovery,[],[],,action.hacking.variety.Profile host,related-to,2
+508,,T1046,Network Service Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+509,,T1046,Network Service Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+510,,T1135,Network Share Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+511,,T1135,Network Share Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+512,,T1040, Network Sniffing,[],[],,action.hacking.variety.Scan network,related-to,2
+513,,T1040, Network Sniffing,[],[],,action.malware.variety.Packet sniffer,related-to,2
+514,,T1040, Network Sniffing,[],[],,action.malware.variety.Scan network,related-to,2
+515,,T1040, Network Sniffing,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+516,,T1018,Remote System Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+517,,T1018,Remote System Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+518,,T1049,System Network Connections Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+519,,T1049,System Network Connections Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+520,,T1589,Gather Victim Identity Information,[],[],,action.hacking.variety.Scan network,related-to,2
+521,,T1589.001,Gather Victim Identity Information: Credentials,[],[],,action.hacking.variety.Scan network,related-to,2
+522,,T1589.002,Gather Victim Identity Information: Email Addresses,[],[],,action.hacking.variety.Scan network,related-to,2
+523,,T1589.003,Gather Victim Identity Information: Employee Names,[],[],,action.hacking.variety.Scan network,related-to,2
+524,,T1590,Gather Victim Network Information,[],[],,action.hacking.variety.Scan network,related-to,2
+525,,T1590.001,Gather Victim Network Information: Domain Properties,[],[],,action.hacking.variety.Scan network,related-to,2
+526,,T1590.002,Gather Victim Network Information: DNS,[],[],,action.hacking.variety.Scan network,related-to,2
+527,,T1590.003,Gather Victim Network Information: Network Trust Dependencies,[],[],,action.hacking.variety.Scan network,related-to,2
+528,,T1590.004,Gather Victim Network Information: Network Topology,[],[],,action.hacking.variety.Scan network,related-to,2
+529,,T1590.005,Gather Victim Network Information: IP Addresses,[],[],,action.hacking.variety.Scan network,related-to,2
+530,,T1590.006,Gather Victim Network Information: Network Security Appliances,[],[],,action.hacking.variety.Scan network,related-to,2
+531,,T1592,Gather Victim Host Information,[],[],,action.hacking.variety.Scan network,related-to,2
+532,,T1592.001,Gather Victim Host Information: Hardware,[],[],,action.hacking.variety.Scan network,related-to,2
+533,,T1592.002,Gather Victim Host Information: Software,[],[],,action.hacking.variety.Scan network,related-to,2
+534,,T1592.003,Gather Victim Host Information: Firmware,[],[],,action.hacking.variety.Scan network,related-to,2
+535,,T1592.004,Gather Victim Host Information: Client Configurations,[],[],,action.hacking.variety.Scan network,related-to,2
+536,,T1613,Container and Resource Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+537,,T1602,Data from Configuration Repository,[],[],,action.hacking.variety.Scan network,related-to,2
+538,,T1602,Data from Configuration Repository,[],[],,action.malware.variety.Capture stored data,related-to,2
+539,,T1602,Data from Configuration Repository,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+540,,T1602.001,Data from Configuration Repository: SNMP (MIB Dump),[],[],,action.hacking.variety.Scan network,related-to,2
+541,,T1602.001,Data from Configuration Repository: SNMP (MIB Dump),[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+542,,T1602.002,Data from Configuration Repository: Network Device Configuration Dump,[],[],,action.hacking.variety.Scan network,related-to,2
+543,,T1602.002,Data from Configuration Repository: Network Device Configuration Dump,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+544,,T1526,Cloud Service Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+545,,T1580,Cloud Infrastructure Discovery,[],[],,action.hacking.variety.Scan network,related-to,2
+546,,T1606,Forge Web Credentials,[],[],,action.hacking.variety.Session prediction,related-to,2
+547,,T1606,Forge Web Credentials,[],[],,action.hacking.variety.Unknown,related-to,2
+548,,T1606.001,Forge Web Credentials: Web Cookies,[],[],,action.hacking.variety.Session prediction,related-to,2
+549,,T1606.001,Forge Web Credentials: Web Cookies,[],[],,action.hacking.variety.Unknown,related-to,2
+550,,T1550.004,Use Alternate Authentication Material:Web Session Cookie,[],[],,action.hacking.variety.Session replay,related-to,2
+551,,T1550.004,Use Alternate Authentication Material:Web Session Cookie,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+552,,T1021,Remote Services,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+553,,T1021,Remote Services,[],[],,action.malware.vector.Network propagation,related-to,2
+554,,T1021.001,Remote Services: Remote Desktop Protocol,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+555,,T1021.001,Remote Services: Remote Desktop Protocol,[],[],,action.hacking.vector.Desktop sharing software,related-to,2
+556,,T1021.002,Remote Services: SMB/Windows Admin Shares,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+557,,T1021.002,Remote Services: SMB/Windows Admin Shares,[],[],,action.hacking.vector.Command shell,related-to,2
+558,,T1021.003,Remote Services: Distributed Component Object Model,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+559,,T1021.003,Remote Services: Distributed Component Object Model,[],[],,action.hacking.vector.Command shell,related-to,2
+560,,T1021.004,Remote Services: SSH,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+561,,T1021.004,Remote Services: SSH,[],[],,action.hacking.vector.Command shell,related-to,2
+562,,T1021.005,Remote Services: VNC,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+563,,T1021.005,Remote Services: VNC,[],[],,action.hacking.vector.Desktop sharing software,related-to,2
+564,,T1021.006,Remote Services: Windows Remote Management,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+565,,T1021.006,Remote Services: Windows Remote Management,[],[],,action.hacking.vector.Command shell,related-to,2
+566,,T1078.001,Valid Accounts: Default Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+567,,T1078.002,Valid Accounts: Domain Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+568,,T1078.003,Valid Accounts: Local Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+569,,T1078.004,Valid Accounts: Cloud Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+570,,T1134,Access Token Manipulation,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+571,,T1134.001,Access Token Manipulation: Token Impersonation/Theft,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+572,,T1134.002,Access Token Manipulation: Create Process with Token,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+573,,T1134.003,Access Token Manipulation: Make and Impersonate Token,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+574,,T1134.004,Access Token Manipulation: Parent PID Spoofing,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+575,,T1134.005,Access Token Manipulation: SID-History Injection,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+576,,T1550,Use Alternate Authentication Material,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+577,,T1550,Use Alternate Authentication Material,[],[],,action.malware.variety.Pass-the-hash,related-to,2
+578,,T1550,Use Alternate Authentication Material,[],[],,action.malware.vector.Network propagation,related-to,2
+579,,T1550.001,Use Alternate Authentication Material: Application Access Token,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+580,,T1550.003,Use Alternate Authentication Material: Pass the Ticket,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+581,,T1558,Steal or Forge Kerberos Tickets,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+582,,T1558.001,Steal or Forge Kerberos Tickets: Golden Ticket,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+583,,T1558.002,Steal or Forge Kerberos Tickets: Silver Ticket,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+584,,T1558.003,Steal or Forge Kerberos Tickets: Kerberoasting,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+585,,T1586,Compromise Account,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+586,,T1586.001,Compromise Account: Social Media Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+587,,T1586.001,Compromise Account: Social Media Accounts,[],[],,action.social.variety.Phishing,related-to,2
+588,,T1586.001,Compromise Account: Social Media Accounts,[],[],,action.social.variety.Pretexting,related-to,2
+589,,T1586.002,Compromise Account: Email Accounts,[],[],,action.hacking.variety.Use of stolen creds,related-to,2
+590,,T1611,Escape to Host,[],[],,action.hacking.variety.Virtual machine escape,related-to,2
+591,,T1213,Data from Information Repository,[],[],,action.hacking.variety.XML external entities,related-to,2
+592,,T1213,Data from Information Repository,[],[],,action.malware.variety.Capture stored data,related-to,2
+593,,T1213,Data from Information Repository,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+594,,T1010,Application Window Discovery,[],[],,action.hacking.variety.XPath injection,related-to,2
+595,,T1010,Application Window Discovery,[],[],,action.malware.variety.Capture stored data,related-to,2
+596,,T1105,Ingress Tool Transfer,[],[],,action.hacking.variety.Unknown,related-to,2
+597,,T1105,Ingress Tool Transfer,[],[],,action.hacking.vector.Other network service,related-to,2
+598,,T1111,Two-Factor Authentication Interception,[],[],,action.hacking.variety.Unknown,related-to,2
+599,,T1583,Acquire Infrastructure,[],[],,action.hacking.variety.Unknown,related-to,2
+600,,T1583,Acquire Infrastructure,[],[],,action.malware.vector.Web application - download,related-to,2
+601,,T1583.001,Acquire Infrastructure: Domains,[],[],,action.hacking.variety.Unknown,related-to,2
+602,,T1583.001,Acquire Infrastructure: Domains,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+603,,T1583.001,Acquire Infrastructure: Domains,[],[],,action.malware.variety.C2,related-to,2
+604,,T1583.002,Acquire Infrastructure: DNS Server,[],[],,action.hacking.variety.Unknown,related-to,2
+605,,T1583.002,Acquire Infrastructure: DNS Server,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+606,,T1583.002,Acquire Infrastructure: DNS Server,[],[],,action.malware.variety.C2,related-to,2
+607,,T1584,Compromise Infrastructure,[],[],,action.hacking.variety.Unknown,related-to,2
+608,,T1584,Compromise Infrastructure,[],[],,action.malware.vector.Web application - download,related-to,2
+609,,T1584.001,Compromise Infrastructure: Domains,[],[],,action.hacking.variety.Unknown,related-to,2
+610,,T1584.001,Compromise Infrastructure: Domains,[],[],,action.social.variety.Pretexting,related-to,2
+611,,T1584.002,Compromise Infrastructure: DNS Server,[],[],,action.hacking.variety.Unknown,related-to,2
+612,,T1584.002,Compromise Infrastructure: DNS Server,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+613,,T1584.002,Compromise Infrastructure: DNS Server,[],[],,action.malware.variety.C2,related-to,2
+614,,T1584.003,Compromise Infrastructure: Virtual Private Server,[],[],,action.hacking.variety.Unknown,related-to,2
+615,,T1584.004,Compromise Infrastructure: Server,[],[],,action.hacking.variety.Unknown,related-to,2
+616,,T1584.006,Compromise Infrastructure: Web Services,[],[],,action.hacking.variety.Unknown,related-to,2
+617,,T1587,Develop Capabilities,[],[],,action.hacking.variety.Unknown,related-to,2
+618,,T1587,Develop Capabilities,[],[],,value_chain.development.variety.Unknown,related-to,2
+619,,T1587.001,Develop Capabilities: Malware,[],[],,action.hacking.variety.Unknown,related-to,2
+620,,T1587.001,Develop Capabilities: Malware,[],[],,action.malware.variety.Unknown,related-to,2
+621,,T1587.001,Develop Capabilities: Malware,[],[],,value_chain.development.variety.Bot,related-to,2
+622,,T1587.001,Develop Capabilities: Malware,[],[],,value_chain.development.variety.Payload,related-to,2
+623,,T1587.001,Develop Capabilities: Malware,[],[],,value_chain.development.variety.Ransomware,related-to,2
+624,,T1587.001,Develop Capabilities: Malware,[],[],,value_chain.development.variety.Trojan,related-to,2
+625,,T1587.002,Develop Capabilities: Code Signing Certificates,[],[],,action.hacking.variety.Unknown,related-to,2
+626,,T1587.002,Develop Capabilities: Code Signing Certificates,[],[],,value_chain.development.variety.Other,related-to,2
+627,,T1587.003,Develop Capabilities: Digital Certificates,[],[],,action.hacking.variety.Unknown,related-to,2
+628,,T1587.003,Develop Capabilities: Digital Certificates,[],[],,value_chain.development.variety.Other,related-to,2
+629,,T1587.004,Develop Capabilities: Exploits,[],[],,action.hacking.variety.Unknown,related-to,2
+630,,T1587.004,Develop Capabilities: Exploits,[],[],,action.malware.variety.Unknown,related-to,2
+631,,T1587.004,Develop Capabilities: Exploits,[],[],,value_chain.development.variety.Exploit,related-to,2
+632,,T1587.004,Develop Capabilities: Exploits,[],[],,value_chain.development.variety.Exploit Kits,related-to,2
+633,,T1588,Obtain Capabilities,[],[],,action.hacking.variety.Unknown,related-to,2
+634,,T1588,Obtain Capabilities,[],[],,value_chain.development.variety.Unknown,related-to,2
+635,,T1588.001,Obtain Capabilities: Malware,[],[],,action.hacking.variety.Unknown,related-to,2
+636,,T1588.001,Obtain Capabilities: Malware,[],[],,action.malware.variety.Unknown,related-to,2
+637,,T1588.001,Obtain Capabilities: Malware,[],[],,value_chain.development.variety.Bot,related-to,2
+638,,T1588.001,Obtain Capabilities: Malware,[],[],,value_chain.development.variety.Payload,related-to,2
+639,,T1588.001,Obtain Capabilities: Malware,[],[],,value_chain.development.variety.Ransomware,related-to,2
+640,,T1588.001,Obtain Capabilities: Malware,[],[],,value_chain.development.variety.Trojan,related-to,2
+641,,T1588.002,Obtain Capabilities: Tool,[],[],,action.hacking.variety.Unknown,related-to,2
+642,,T1588.003,Obtain Capabilities: Code Signing Certificates,[],[],,action.hacking.variety.Unknown,related-to,2
+643,,T1588.003,Obtain Capabilities: Code Signing Certificates,[],[],,value_chain.development.variety.Other,related-to,2
+644,,T1588.004,Obtain Capabilities: Digital Certificates,[],[],,action.hacking.variety.Unknown,related-to,2
+645,,T1588.004,Obtain Capabilities: Digital Certificates,[],[],,value_chain.development.variety.Other,related-to,2
+646,,T1588.005,Obtain Capabilities: Exploits,[],[],,action.hacking.variety.Unknown,related-to,2
+647,,T1588.005,Obtain Capabilities: Exploits,[],[],,action.malware.variety.Unknown,related-to,2
+648,,T1588.005,Obtain Capabilities: Exploits,[],[],,value_chain.development.variety.Exploit,related-to,2
+649,,T1588.005,Obtain Capabilities: Exploits,[],[],,value_chain.development.variety.Exploit Kits,related-to,2
+650,,T1588.006,Obtain Capabilities: Vulnerabilities,[],[],,action.hacking.variety.Unknown,related-to,2
+651,,T1588.006,Obtain Capabilities: Vulnerabilities,[],[],,action.malware.variety.Unknown,related-to,2
+652,,T1599,Network Boundry Bridging,[],[],,action.hacking.variety.Unknown,related-to,2
+653,,T1599.001,Network Boundry Bridging: Network Address Translation Traversal,[],[],,action.hacking.variety.Unknown,related-to,2
+654,,T1606.002,Forge Web Credentials: SAML Tokens,[],[],,action.hacking.variety.Unknown,related-to,2
+655,,T1531,Account Access Removal,[],[],,action.hacking.variety.Unknown,related-to,2
+656,,T1531,Account Access Removal,[],[],,attribute.availability.variety.Destruction,related-to,2
+657,,T1531,Account Access Removal,[],[],,attribute.availability.variety.Interruption,related-to,2
+658,,T1531,Account Access Removal,[],[],,attribute.integrity.variety.Unknown,related-to,2
+659,,T1219,Remote Access Software,[],[],,action.hacking.vector.Desktop sharing software,related-to,2
+660,,T1219,Remote Access Software,[],[],,action.malware.variety.Adminware,related-to,2
+661,,T1497,Virtualization/Sandbox Evasion,[],[],,action.hacking.vector.Hypervisor,related-to,2
+662,,T1497,Virtualization/Sandbox Evasion,[],[],,action.hacking.vector.Inter-tenant,related-to,2
+663,,T1497,Virtualization/Sandbox Evasion,[],[],,action.malware.variety.Disable controls,related-to,2
+664,,T1199,Trusted Relationship,[],[],,action.hacking.vector.Partner,related-to,2
+665,,T1199,Trusted Relationship,[],[],,action.malware.variety.Adware,related-to,2
+666,,T1199,Trusted Relationship,[],[],,action.malware.vector.Partner,related-to,2
+667,,T1199,Trusted Relationship,[],[],,action.social.vector.Partner,related-to,2
+668,,T1195,Supply Chain Compromise,[],[],,action.hacking.vector.Partner,related-to,2
+669,,T1195,Supply Chain Compromise,[],[],,action.malware.vector.Partner,related-to,2
+670,,T1195,Supply Chain Compromise,[],[],,action.malware.vector.Software update,related-to,2
+671,,T1195.001,Supply Chain Compromise: Compromise Software Dependencies and Development Tools,[],[],,action.hacking.vector.Partner,related-to,2
+672,,T1195.001,Supply Chain Compromise: Compromise Software Dependencies and Development Tools,[],[],,action.social.vector.Software,related-to,2
+673,,T1195.002,Supply Chain Compromise: Compromise Software Supply Chain,[],[],,action.hacking.vector.Partner,related-to,2
+674,,T1195.002,Supply Chain Compromise: Compromise Software Supply Chain,[],[],,action.social.vector.Software,related-to,2
+675,,T1195.003,Supply Chain Compromise: Compromise Hardware Supply Chain,[],[],,action.hacking.vector.Partner,related-to,2
+676,,T1195.003,Supply Chain Compromise: Compromise Hardware Supply Chain,[],[],,action.social.vector.Partner,related-to,2
+677,,T1200,Hardware Additions,[],[],,action.hacking.vector.Physical access,related-to,2
+678,,T1056.003,Input Capture: Web Portal Capture,[],[],,action.hacking.vector.Web application,related-to,2
+679,,T1056.003,Input Capture: Web Portal Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+680,,T1056.003,Input Capture: Web Portal Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+681,,T1095,Non-Application Layer Protocol,[],[],,action.hacking.vector.Other network service,related-to,2
+682,,T1095,Non-Application Layer Protocol,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+683,,T1095,Non-Application Layer Protocol,[],[],,action.malware.variety.C2,related-to,2
+684,,T1571,Non-Standard Port,[],[],,action.hacking.vector.Other network service,related-to,2
+685,,T1571,Non-Standard Port,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+686,,T1571,Non-Standard Port,[],[],,action.malware.variety.C2,related-to,2
+687,,T1505,Server Software Component,[],[],,action.malware.variety.Backdoor,related-to,2
+688,,T1505,Server Software Component,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+689,,T1505.003,Server Software Component: Web Shell,[],[],,action.malware.variety.Backdoor,related-to,2
+690,,T1505.003,Server Software Component: Web Shell,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+691,,T1071.001,Application Layer Protocol: Web Protocols,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+692,,T1071.001,Application Layer Protocol: Web Protocols,[],[],,action.malware.variety.C2,related-to,2
+693,,T1071.001,Application Layer Protocol: Web Protocols,[],[],,action.malware.variety.Unknown,related-to,2
+694,,T1071.002,Application Layer Protocol: File Transfer Protocol,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+695,,T1071.002,Application Layer Protocol: File Transfer Protocol,[],[],,action.malware.variety.C2,related-to,2
+696,,T1071.002,Application Layer Protocol: File Transfer Protocol,[],[],,action.malware.variety.Unknown,related-to,2
+697,,T1071.003,Application Layer Protocol: Mail Protocols,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+698,,T1071.003,Application Layer Protocol: Mail Protocols,[],[],,action.malware.variety.C2,related-to,2
+699,,T1071.003,Application Layer Protocol: Mail Protocols,[],[],,action.malware.variety.Unknown,related-to,2
+700,,T1071.004,Application Layer Protocol: DNS,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+701,,T1071.004,Application Layer Protocol: DNS,[],[],,action.malware.variety.C2,related-to,2
+702,,T1071.004,Application Layer Protocol: DNS,[],[],,action.malware.variety.Unknown,related-to,2
+703,,T1090.001,Proxy: Internal Proxy,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+704,,T1090.001,Proxy: Internal Proxy,[],[],,action.malware.variety.C2,related-to,2
+705,,T1090.002,Proxy: External Proxy,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+706,,T1090.002,Proxy: External Proxy,[],[],,action.malware.variety.C2,related-to,2
+707,,T1090.003,Proxy: Multi-hop Proxy,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+708,,T1090.003,Proxy: Multi-hop Proxy,[],[],,action.malware.variety.C2,related-to,2
+709,,T1090.004,Proxy: Domain Fronting,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+710,,T1090.004,Proxy: Domain Fronting,[],[],,action.malware.variety.C2,related-to,2
+711,,T1102.001,Web Service: Dead Drop Resolver,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+712,,T1102.001,Web Service: Dead Drop Resolver,[],[],,action.malware.variety.C2,related-to,2
+713,,T1102.002,Web Service: Bidirectional Communication,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+714,,T1102.002,Web Service: Bidirectional Communication,[],[],,action.malware.variety.C2,related-to,2
+715,,T1102.003,Web Service: One-Way Communication,[],[],,action.malware.variety.Backdoor or C2,related-to,2
+716,,T1102.003,Web Service: One-Way Communication,[],[],,action.malware.variety.C2,related-to,2
+717,,T1056,Input Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+718,,T1056,Input Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+719,,T1056.001,Input Capture: Keylogging,[],[],,action.malware.variety.Capture app data,related-to,2
+720,,T1056.001,Input Capture: Keylogging,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+721,,T1056.002,Input Capture: GUI Input Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+722,,T1056.002,Input Capture: GUI Input Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+723,,T1056.004,Input Capture: Credential API Hooking,[],[],,action.malware.variety.Capture app data,related-to,2
+724,,T1056.004,Input Capture: Credential API Hooking,[],[],,action.malware.variety.Password dumper,related-to,2
+725,,T1056.004,Input Capture: Credential API Hooking,[],[],,action.malware.variety.Spyware/Keylogger,related-to,2
+726,,T1056.004,Input Capture: Credential API Hooking,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+727,,T1113,Screen Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+728,,T1113,Screen Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+729,,T1114,Email Collection,[],[],,action.malware.variety.Capture app data,related-to,2
+730,,T1114,Email Collection,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+731,,T1114.001,Email Collection: Local Email Collection,[],[],,action.malware.variety.Capture app data,related-to,2
+732,,T1114.001,Email Collection: Local Email Collection,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+733,,T1114.002,Email Collection: Remote Email Collection,[],[],,action.malware.variety.Capture app data,related-to,2
+734,,T1114.002,Email Collection: Remote Email Collection,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+735,,T1114.003,Email Collection: Email Forwarding Rule,[],[],,action.malware.variety.Capture app data,related-to,2
+736,,T1114.003,Email Collection: Email Forwarding Rule,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+737,,T1114.003,Email Collection: Email Forwarding Rule,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+738,,T1123,Audio Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+739,,T1123,Audio Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+740,,T1125,Video Capture,[],[],,action.malware.variety.Capture app data,related-to,2
+741,,T1125,Video Capture,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+742,,T1176,Browser Extensions,[],[],,action.malware.variety.Capture app data,related-to,2
+743,,T1176,Browser Extensions,[],[],,action.malware.vector.Web application - drive-by,related-to,2
+744,,T1207,Rogue Domain Controller,[],[],,action.malware.variety.Capture app data,related-to,2
+745,,T1217,Browser Bookmark Discovery,[],[],,action.malware.variety.Capture app data,related-to,2
+746,,T1528,Steal Application Access Token,[],[],,action.malware.variety.Capture app data,related-to,2
+747,,T1003.002,OS Credential Dumping: Security Account Manager,[],[],,action.malware.variety.Capture stored data,related-to,2
+748,,T1003.002,OS Credential Dumping: Security Account Manager,[],[],,action.malware.variety.Password dumper,related-to,2
+749,,T1003.002,OS Credential Dumping: Security Account Manager,[],[],,action.malware.variety.RAM scraper,related-to,2
+750,,T1003.002,OS Credential Dumping: Security Account Manager,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+751,,T1003.003,OS Credential Dumping: NTDS,[],[],,action.malware.variety.Capture stored data,related-to,2
+752,,T1003.003,OS Credential Dumping: NTDS,[],[],,action.malware.variety.Password dumper,related-to,2
+753,,T1003.003,OS Credential Dumping: NTDS,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+754,,T1003.006,OS Credential Dumping: DCSync,[],[],,action.malware.variety.Capture stored data,related-to,2
+755,,T1003.006,OS Credential Dumping: DCSync,[],[],,action.malware.variety.Export data,related-to,2
+756,,T1003.006,OS Credential Dumping: DCSync,[],[],,action.malware.variety.Password dumper,related-to,2
+757,,T1003.006,OS Credential Dumping: DCSync,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+758,,T1003.008,OS Credential Dumping: /etc/passwd and /etc/shadow,[],[],,action.malware.variety.Capture stored data,related-to,2
+759,,T1003.008,OS Credential Dumping: /etc/passwd and /etc/shadow,[],[],,action.malware.variety.Password dumper,related-to,2
+760,,T1003.008,OS Credential Dumping: /etc/passwd and /etc/shadow,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+761,,T1005,Data from Local System,[],[],,action.malware.variety.Capture stored data,related-to,2
+762,,T1005,Data from Local System,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+763,,T1025,Data from Removable Media,[],[],,action.malware.variety.Capture stored data,related-to,2
+764,,T1025,Data from Removable Media,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+765,,T1039,Data from Network Shared Drive,[],[],,action.malware.variety.Capture stored data,related-to,2
+766,,T1039,Data from Network Shared Drive,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+767,,T1213.001,Data from Information Repositories: Confluence,[],[],,action.malware.variety.Capture stored data,related-to,2
+768,,T1213.001,Data from Information Repositories: Confluence,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+769,,T1213.002,Data from Information Repositories: Sharepoint,[],[],,action.malware.variety.Capture stored data,related-to,2
+770,,T1213.002,Data from Information Repositories: Sharepoint,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+771,,T1530,Data from Cloud Storage,[],[],,action.malware.variety.Capture stored data,related-to,2
+772,,T1530,Data from Cloud Storage,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+773,,T1221,Template Injection,[],[],,action.malware.variety.Client-side attack,related-to,2
+774,,T1070,Indicator Removal on Host,[],[],,action.malware.variety.Destroy data,related-to,2
+775,,T1070.001,Indicator Removal on Host: Clear Windows Event Logs,[],[],,action.malware.variety.Destroy data,related-to,2
+776,,T1070.001,Indicator Removal on Host: Clear Windows Event Logs,[],[],,attribute.integrity.variety.Log tampering,related-to,2
+777,,T1070.002,Indicator Removal on Host: Clear Linux or Mac System Logs,[],[],,action.malware.variety.Destroy data,related-to,2
+778,,T1070.002,Indicator Removal on Host: Clear Linux or Mac System Logs,[],[],,attribute.integrity.variety.Log tampering,related-to,2
+779,,T1070.003,Indicator Removal on Host: Clear Command History,[],[],,action.malware.variety.Destroy data,related-to,2
+780,,T1070.004,Indicator Removal on Host: File Deletion,[],[],,action.malware.variety.Destroy data,related-to,2
+781,,T1070.005,Indicator Removal on Host: Network Share Connection Removal,[],[],,action.malware.variety.Destroy data,related-to,2
+782,,T1070.006,Indicator Removal on Host: Timestomp,[],[],,action.malware.variety.Destroy data,related-to,2
+783,,T1485,Data Destruction,[],[],,action.malware.variety.Destroy data,related-to,2
+784,,T1485,Data Destruction,[],[],,attribute.availability.variety.Destruction,related-to,2
+785,,T1485,Data Destruction,[],[],,attribute.availability.variety.Interruption,related-to,2
+786,,T1495,Firmware Corruption,[],[],,action.malware.variety.Destroy data,related-to,2
+787,,T1495,Firmware Corruption,[],[],,attribute.availability.variety.Destruction,related-to,2
+788,,T1495,Firmware Corruption,[],[],,attribute.availability.variety.Interruption,related-to,2
+789,,T1495,Firmware Corruption,[],[],,attribute.availability.variety.Loss,related-to,2
+790,,T1561,Disk Wipe,[],[],,action.malware.variety.Destroy data,related-to,2
+791,,T1561,Disk Wipe,[],[],,attribute.availability.variety.Destruction,related-to,2
+792,,T1561,Disk Wipe,[],[],,attribute.availability.variety.Interruption,related-to,2
+793,,T1561,Disk Wipe,[],[],,attribute.availability.variety.Loss,related-to,2
+794,,T1561.001,Disk Wipe: Disk Content Wipe,[],[],,action.malware.variety.Destroy data,related-to,2
+795,,T1561.001,Disk Wipe: Disk Content Wipe,[],[],,attribute.availability.variety.Destruction,related-to,2
+796,,T1561.001,Disk Wipe: Disk Content Wipe,[],[],,attribute.availability.variety.Loss,related-to,2
+797,,T1561.002,Disk Wipe: Disk Structure Wipe,[],[],,action.malware.variety.Destroy data,related-to,2
+798,,T1561.002,Disk Wipe: Disk Structure Wipe,[],[],,attribute.availability.variety.Destruction,related-to,2
+799,,T1561.002,Disk Wipe: Disk Structure Wipe,[],[],,attribute.availability.variety.Interruption,related-to,2
+800,,T1561.002,Disk Wipe: Disk Structure Wipe,[],[],,attribute.availability.variety.Loss,related-to,2
+801,,T1006,Direct Volume Access,[],[],,action.malware.variety.Disable controls,related-to,2
+802,,T1027.001,Obfuscated Files or Information: Binary Padding,[],[],,action.malware.variety.Disable controls,related-to,2
+803,,T1027.002,Obfuscated Files or Information: Software Packaging,[],[],,action.malware.variety.Disable controls,related-to,2
+804,,T1027.003,Obfuscated Files or Information: Steganography,[],[],,action.malware.variety.Disable controls,related-to,2
+805,,T1027.004,Obfuscated Files or Information: Compile After Dilevery,[],[],,action.malware.variety.Disable controls,related-to,2
+806,,T1027.005,Obfuscated Files or Information: Indicator Removal from Tools,[],[],,action.malware.variety.Disable controls,related-to,2
+807,,T1036.001,Masquerading: Invalid Code Signature,[],[],,action.malware.variety.Disable controls,related-to,2
+808,,T1036.002,Masquerading: Right-to-Left Override,[],[],,action.malware.variety.Disable controls,related-to,2
+809,,T1036.002,Masquerading: Right-to-Left Override,[],[],,action.social.variety.Forgery,related-to,2
+810,,T1036.002,Masquerading: Right-to-Left Override,[],[],,action.social.variety.Phishing,related-to,2
+811,,T1036.003,Masquerading: Rename System Utilities,[],[],,action.malware.variety.Disable controls,related-to,2
+812,,T1036.003,Masquerading: Rename System Utilities,[],[],,action.malware.variety.Rootkit,related-to,2
+813,,T1036.004,Masquerading: Masquerade Task or Service,[],[],,action.malware.variety.Disable controls,related-to,2
+814,,T1036.005,Masquerading: Match Legitimate Name or Location,[],[],,action.malware.variety.Disable controls,related-to,2
+815,,T1036.006,Masquerading: Space after Filename,[],[],,action.malware.variety.Disable controls,related-to,2
+816,,T1222,File and Directory Permissions Modification,[],[],,action.malware.variety.Disable controls,related-to,2
+817,,T1222.001,File and Directory Permissions Modification: Windows File and Directory Permissions Modification,[],[],,action.malware.variety.Disable controls,related-to,2
+818,,T1222.002,File and Directory Permissions Modification: Linux and Mac File and Directory Permissions Modification,[],[],,action.malware.variety.Disable controls,related-to,2
+819,,T1490,Inhibit System Recovery,[],[],,action.malware.variety.Disable controls,related-to,2
+820,,T1490,Inhibit System Recovery,[],[],,action.malware.variety.Ransomware,related-to,2
+821,,T1490,Inhibit System Recovery,[],[],,attribute.availability.variety.Loss,related-to,2
+822,,T1497.001,Virtualization/Sandbox Evasion: System Checks,[],[],,action.malware.variety.Disable controls,related-to,2
+823,,T1497.002,Virtualization/Sandbox Evasion: User Activity Based Checks,[],[],,action.malware.variety.Disable controls,related-to,2
+824,,T1497.003,Virtualization/Sandbox Evasion: Time Based Evasion,[],[],,action.malware.variety.Disable controls,related-to,2
+825,,T1553.001,Subvert Trust Contols: Gatekeeper Bypass,[],[],,action.malware.variety.Disable controls,related-to,2
+826,,T1553.002,Subvert Trust Contols: Code Signing,[],[],,action.malware.variety.Disable controls,related-to,2
+827,,T1553.003,Subvert Trust Contols: SIP and Trust Provider Hijacking,[],[],,action.malware.variety.Disable controls,related-to,2
+828,,T1553.004,Subvert Trust Contols: Install Root Certificate,[],[],,action.malware.variety.Disable controls,related-to,2
+829,,T1553.005,Subvert Trust Contols: Mark-of-the-Web Bypass,[],[],,action.malware.variety.Disable controls,related-to,2
+830,,T1553.006,Subvert Trust Contols: Code Signing Policy Modification,[],[],,action.malware.variety.Disable controls,related-to,2
+831,,T1562.006,Impair Defenses: Indicator Blocking,[],[],,action.malware.variety.Disable controls,related-to,2
+832,,T1574.012,Hijack Execution Flow: COR_PROFILER,[],[],,action.malware.variety.Disable controls,related-to,2
+833,,T1600.001,Weaken Encryption: Reduce Key Space,[],[],,action.malware.variety.Disable controls,related-to,2
+834,,T1600.002,Weaken Encryption: Disable Crypto Hardware,[],[],,action.malware.variety.Disable controls,related-to,2
+835,,T1601,Modify System Image,[],[],,action.malware.variety.Disable controls,related-to,2
+836,,T1601,Modify System Image,[],[],,attribute.integrity.variety.Software installation,related-to,2
+837,,T1601.001,Modify System Image: Patch System Image,[],[],,action.malware.variety.Disable controls,related-to,2
+838,,T1601.001,Modify System Image: Patch System Image,[],[],,attribute.integrity.variety.Software installation,related-to,2
+839,,T1601.002,Modify System Image: Downgrade System Image,[],[],,action.malware.variety.Disable controls,related-to,2
+840,,T1610,Deploy Container,[],[],,action.malware.variety.Downloader,related-to,2
+841,,T1610,Deploy Container,[],[],,action.malware.variety.Unknown,related-to,2
+842,,T1204,User Execution,[],[],,action.malware.variety.Downloader,related-to,2
+843,,T1204,User Execution,[],[],,action.malware.variety.Unknown,related-to,2
+844,,T1204,User Execution,[],[],,action.social.variety.Phishing,related-to,2
+845,,T1204,User Execution,[],[],,action.social.vector.Email,related-to,2
+846,,T1204,User Execution,[],[],,action.social.vector.Social media,related-to,2
+847,,T1204.001,User Execution: Malicious Link,[],[],,action.malware.variety.Downloader,related-to,2
+848,,T1204.001,User Execution: Malicious Link,[],[],,action.malware.variety.Unknown,related-to,2
+849,,T1204.001,User Execution: Malicious Link,[],[],,action.malware.vector.Email link,related-to,2
+850,,T1204.001,User Execution: Malicious Link,[],[],,action.social.variety.Phishing,related-to,2
+851,,T1204.001,User Execution: Malicious Link,[],[],,action.social.vector.Email,related-to,2
+852,,T1204.001,User Execution: Malicious Link,[],[],,action.social.vector.Social media,related-to,2
+853,,T1204.002,User Execution: Malicious File,[],[],,action.malware.variety.Downloader,related-to,2
+854,,T1204.002,User Execution: Malicious File,[],[],,action.malware.variety.Unknown,related-to,2
+855,,T1204.002,User Execution: Malicious File,[],[],,action.malware.vector.Email attachment,related-to,2
+856,,T1204.002,User Execution: Malicious File,[],[],,action.social.variety.Phishing,related-to,2
+857,,T1204.002,User Execution: Malicious File,[],[],,action.social.vector.Email,related-to,2
+858,,T1204.002,User Execution: Malicious File,[],[],,action.social.vector.Social media,related-to,2
+859,,T1204.003,User Execution: Malicious Image,[],[],,action.malware.variety.Downloader,related-to,2
+860,,T1204.003,User Execution: Malicious Image,[],[],,action.malware.variety.Trojan,related-to,2
+861,,T1204.003,User Execution: Malicious Image,[],[],,action.malware.variety.Unknown,related-to,2
+862,,T1204.003,User Execution: Malicious Image,[],[],,action.social.variety.Phishing,related-to,2
+863,,T1204.003,User Execution: Malicious Image,[],[],,action.social.variety.Pretexting,related-to,2
+864,,T1204.003,User Execution: Malicious Image,[],[],,action.social.vector.Email,related-to,2
+865,,T1204.003,User Execution: Malicious Image,[],[],,action.social.vector.Social media,related-to,2
+866,,T1011,Exfiltration Over Other Network Medium,[],[],,action.malware.variety.Export data,related-to,2
+867,,T1011,Exfiltration Over Other Network Medium,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+868,,T1011.001,Exfiltration Over Other Network Medium: Exfiltration Over Bluetooth,[],[],,action.malware.variety.Export data,related-to,2
+869,,T1011.001,Exfiltration Over Other Network Medium: Exfiltration Over Bluetooth,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+870,,T1020,Automated Exfiltration,[],[],,action.malware.variety.Export data,related-to,2
+871,,T1020,Automated Exfiltration,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+872,,T1020.001,Automated Exfiltration: Traffic Duplication,[],[],,action.malware.variety.Export data,related-to,2
+873,,T1020.001,Automated Exfiltration: Traffic Duplication,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+874,,T1029,Scheduled Transfer,[],[],,action.malware.variety.Export data,related-to,2
+875,,T1029,Scheduled Transfer,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+876,,T1030,Data Transfer Size Limits,[],[],,action.malware.variety.Export data,related-to,2
+877,,T1030,Data Transfer Size Limits,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+878,,T1041,Exfiltration Over C2 Channels,[],[],,action.malware.variety.Export data,related-to,2
+879,,T1041,Exfiltration Over C2 Channels,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+880,,T1048,Exfiltration Over Alternative Protocol,[],[],,action.malware.variety.Export data,related-to,2
+881,,T1048,Exfiltration Over Alternative Protocol,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+882,,T1048.001,Exfiltration Over Alternative Protocol: Exfiltration Over Symmetric Encrypted Non-C2 Protocol,[],[],,action.malware.variety.Export data,related-to,2
+883,,T1048.001,Exfiltration Over Alternative Protocol: Exfiltration Over Symmetric Encrypted Non-C2 Protocol,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+884,,T1048.002,Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,[],[],,action.malware.variety.Export data,related-to,2
+885,,T1048.002,Exfiltration Over Alternative Protocol: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+886,,T1048.003,Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protcol,[],[],,action.malware.variety.Export data,related-to,2
+887,,T1048.003,Exfiltration Over Alternative Protocol: Exfiltration Over Unencrypted/Obfuscated Non-C2 Protcol,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+888,,T1052,Exfiltration Over Physical Medium,[],[],,action.malware.variety.Export data,related-to,2
+889,,T1052,Exfiltration Over Physical Medium,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+890,,T1052.001,Exfiltration Over Physical Medium: Exfiltration over USB,[],[],,action.malware.variety.Export data,related-to,2
+891,,T1052.001,Exfiltration Over Physical Medium: Exfiltration over USB,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+892,,T1074,Data Staged,[],[],,action.malware.variety.Export data,related-to,2
+893,,T1074.001,Data Staged: Local Data Staging,[],[],,action.malware.variety.Export data,related-to,2
+894,,T1074.002,Data Staged: Remote Data Staging,[],[],,action.malware.variety.Export data,related-to,2
+895,,T1197,BITS Jobs,[],[],,action.malware.variety.Export data,related-to,2
+896,,T1537,Transfer Data to Cloud Account,[],[],,action.malware.variety.Export data,related-to,2
+897,,T1537,Transfer Data to Cloud Account,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+898,,T1560,Archive Collected Data,[],[],,action.malware.variety.Export data,related-to,2
+899,,T1560.001,Archive Collected Data: Archive via Utility,[],[],,action.malware.variety.Export data,related-to,2
+900,,T1560.002,Archive Collected Data: Archive via Library,[],[],,action.malware.variety.Export data,related-to,2
+901,,T1560.003,Archive Collected Data: Archive via Custom Method,[],[],,action.malware.variety.Export data,related-to,2
+902,,T1567,Exfiltration Over Web Service,[],[],,action.malware.variety.Export data,related-to,2
+903,,T1567,Exfiltration Over Web Service,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+904,,T1567.001,Exfiltration Over Web Service: Exfiltration to Code Repository,[],[],,action.malware.variety.Export data,related-to,2
+905,,T1567.001,Exfiltration Over Web Service: Exfiltration to Code Repository,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+906,,T1567.002,Exfiltration Over Web Service: Exfiltration to Cloud Storage,[],[],,action.malware.variety.Export data,related-to,2
+907,,T1567.002,Exfiltration Over Web Service: Exfiltration to Cloud Storage,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+908,,T1003.007,OS Credential Dumping: Proc Filesystem,[],[],,action.malware.variety.In-memory,related-to,2
+909,,T1003.007,OS Credential Dumping: Proc Filesystem,[],[],,action.malware.variety.Password dumper,related-to,2
+910,,T1003.007,OS Credential Dumping: Proc Filesystem,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+911,,T1055,Process Injection,[],[],,action.malware.variety.In-memory,related-to,2
+912,,T1055.001,Process Injection: Dynamic-link Library Injection,[],[],,action.malware.variety.In-memory,related-to,2
+913,,T1055.002,Process Injection: Portable Executable Injection,[],[],,action.malware.variety.In-memory,related-to,2
+914,,T1055.003,Process Injection: Thread Execution Hijacking,[],[],,action.malware.variety.In-memory,related-to,2
+915,,T1055.004,Process Injection: Asynchronous Procedure Call,[],[],,action.malware.variety.In-memory,related-to,2
+916,,T1055.005,Process Injection: Thread Local Storage,[],[],,action.malware.variety.In-memory,related-to,2
+917,,T1055.008,Process Injection: Ptrace System Calls,[],[],,action.malware.variety.In-memory,related-to,2
+918,,T1055.009,Process Injection: Proc Memory,[],[],,action.malware.variety.In-memory,related-to,2
+919,,T1055.011,Process Injection: Extra Window Memory Injection,[],[],,action.malware.variety.In-memory,related-to,2
+920,,T1055.012,Process Injection: Process Hollowing,[],[],,action.malware.variety.In-memory,related-to,2
+921,,T1055.013,Process Injection: Process Doppelganging,[],[],,action.malware.variety.In-memory,related-to,2
+922,,T1055.014,Process Injection: VDSO Hijacking,[],[],,action.malware.variety.In-memory,related-to,2
+923,,T1115,Clipboard Data,[],[],,action.malware.variety.In-memory,related-to,2
+924,,T1115,Clipboard Data,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+925,,T1557.003,DHCP Spoofing,[],[],,action.malware.variety.MitM,related-to,2
+926,,T1003,OS Credential Dumping,[],[],,action.malware.variety.Password dumper,related-to,2
+927,,T1003,OS Credential Dumping,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+928,,T1003.001,OS Credential Dumping: LSASS Memory,[],[],,action.malware.variety.Password dumper,related-to,2
+929,,T1003.001,OS Credential Dumping: LSASS Memory,[],[],,action.malware.variety.RAM scraper,related-to,2
+930,,T1003.001,OS Credential Dumping: LSASS Memory,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+931,,T1003.004,OS Credential Dumping: LSA Secrets,[],[],,action.malware.variety.Password dumper,related-to,2
+932,,T1003.004,OS Credential Dumping: LSA Secrets,[],[],,action.malware.variety.RAM scraper,related-to,2
+933,,T1003.004,OS Credential Dumping: LSA Secrets,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+934,,T1003.005,OS Credential Dumping: Cached Domain Credentials,[],[],,action.malware.variety.Password dumper,related-to,2
+935,,T1003.005,OS Credential Dumping: Cached Domain Credentials,[],[],,action.malware.variety.RAM scraper,related-to,2
+936,,T1003.005,OS Credential Dumping: Cached Domain Credentials,[],[],,action.malware.vector.Email link,related-to,2
+937,,T1003.005,OS Credential Dumping: Cached Domain Credentials,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+938,,T1552.001,Unsecured Credentials: Credentials in Files,[],[],,action.malware.variety.Password dumper,related-to,2
+939,,T1552.001,Unsecured Credentials: Credentials in Files,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+940,,T1552.002,Unsecured Credentials: Credentials in Registry,[],[],,action.malware.variety.Password dumper,related-to,2
+941,,T1552.002,Unsecured Credentials: Credentials in Registry,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+942,,T1552.003,Unsecured Credentials: Bash History,[],[],,action.malware.variety.Password dumper,related-to,2
+943,,T1552.003,Unsecured Credentials: Bash History,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+944,,T1552.004,Unsecured Credentials: Private Keys,[],[],,action.malware.variety.Password dumper,related-to,2
+945,,T1552.004,Unsecured Credentials: Private Keys,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+946,,T1552.005,Unsecured Credentials: Cloud Instance Metadata API,[],[],,action.malware.variety.Password dumper,related-to,2
+947,,T1552.005,Unsecured Credentials: Cloud Instance Metadata API,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+948,,T1552.006,Unsecured Credentials: Group Policy Preferences,[],[],,action.malware.variety.Password dumper,related-to,2
+949,,T1552.006,Unsecured Credentials: Group Policy Preferences,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+950,,T1555,Credentials from Password Stores,[],[],,action.malware.variety.Password dumper,related-to,2
+951,,T1555,Credentials from Password Stores,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+952,,T1555.001,Credentials from Password Stores: Keychain,[],[],,action.malware.variety.Password dumper,related-to,2
+953,,T1555.001,Credentials from Password Stores: Keychain,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+954,,T1555.002,Credentials from Password Stores: Securityd Memory,[],[],,action.malware.variety.Password dumper,related-to,2
+955,,T1555.002,Credentials from Password Stores: Securityd Memory,[],[],,action.malware.variety.RAM scraper,related-to,2
+956,,T1555.002,Credentials from Password Stores: Securityd Memory,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+957,,T1555.003,Credentials from Password Stores: Credentials from Web Browser,[],[],,action.malware.variety.Password dumper,related-to,2
+958,,T1555.003,Credentials from Password Stores: Credentials from Web Browser,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+959,,T1555.004,Credentials from Password Stores: Windows Credential Manager,[],[],,action.malware.variety.Password dumper,related-to,2
+960,,T1555.004,Credentials from Password Stores: Windows Credential Manager,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+961,,T1555.005,Credentials from Password Stores: Password Managers,[],[],,action.malware.variety.Password dumper,related-to,2
+962,,T1555.005,Credentials from Password Stores: Password Managers,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+963,,T1486,Data Encrypted for Impact,[],[],,action.malware.variety.Ransomware,related-to,2
+964,,T1486,Data Encrypted for Impact,[],[],,attribute.availability.variety.Interruption,related-to,2
+965,,T1486,Data Encrypted for Impact,[],[],,attribute.availability.variety.Obscuration,related-to,2
+966,,T1542,Pre-OS Boot,[],[],,action.malware.variety.Rootkit,related-to,2
+967,,T1542.001,Pre-OS Boot: System Firmware,[],[],,action.malware.variety.Rootkit,related-to,2
+968,,T1542.002,Pre-OS Boot: Component Firmware,[],[],,action.malware.variety.Rootkit,related-to,2
+969,,T1542.003,Pre-OS Boot: Bootkit,[],[],,action.malware.variety.Rootkit,related-to,2
+970,,T1542.004,Pre-OS Boot: ROMMONkit,[],[],,action.malware.variety.Rootkit,related-to,2
+971,,T1542.005,Pre-OS Boot: TFTP Boot,[],[],,action.malware.variety.Rootkit,related-to,2
+972,,T1016,System Network Configuration Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+973,,T1016.001,System Network Configuration Discovery: Internet Connection Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+974,,T1482,Domain Trust Discovery,[],[],,action.malware.variety.Scan network,related-to,2
+975,,T1595,Active Scanning,[],[],,action.malware.variety.Scan network,related-to,2
+976,,T1595.001,Active Scanning: Scanning IP Blocks,[],[],,action.malware.variety.Scan network,related-to,2
+977,,T1080,Taint Shared Content,[],[],,action.malware.variety.Unknown,related-to,2
+978,,T1080,Taint Shared Content,[],[],,action.malware.variety.Worm,related-to,2
+979,,T1080,Taint Shared Content,[],[],,attribute.integrity.variety.Software installation,related-to,2
+980,,T1091,Replication Through Removable Media,[],[],,action.malware.variety.Worm,related-to,2
+981,,T1091,Replication Through Removable Media,[],[],,action.malware.vector.Removable media,related-to,2
+982,,T1091,Replication Through Removable Media,[],[],,action.social.vector.Removable media,related-to,2
+983,,T1140,Deobfuscate/Decode Files or Information,[],[],,action.malware.variety.Unknown,related-to,2
+984,,T1608,Stage Capabilities,[],[],,action.malware.variety.Unknown,related-to,2
+985,,T1608.001,Stage Capabilities: Upload Malware,[],[],,action.malware.variety.Unknown,related-to,2
+986,,T1608.002,Stage Capabilities: Upload Tools,[],[],,action.malware.variety.Unknown,related-to,2
+987,,T1608.003,Stage Capabilities: Install Digital Certificate,[],[],,action.malware.variety.Unknown,related-to,2
+988,,T1608.004,Stage Capabilities: Drive-by Target,[],[],,action.malware.variety.Unknown,related-to,2
+989,,T1608.005,Stage Capabilities: Link Target,[],[],,action.malware.variety.Unknown,related-to,2
+990,,T1612,Build Image on Host,[],[],,action.malware.variety.Unknown,related-to,2
+991,,T1566.001,Phishing: Spearphishing Attachment,[],[],,action.malware.vector.Email,related-to,2
+992,,T1566.001,Phishing: Spearphishing Attachment,[],[],,action.malware.vector.Email attachment,related-to,2
+993,,T1566.001,Phishing: Spearphishing Attachment,[],[],,action.social.variety.Phishing,related-to,2
+994,,T1566.001,Phishing: Spearphishing Attachment,[],[],,action.social.vector.Email,related-to,2
+995,,T1598.002,Phishing for Information: Spearphishing Attachment,[],[],,action.malware.vector.Email attachment,related-to,2
+996,,T1598.002,Phishing for Information: Spearphishing Attachment,[],[],,action.social.variety.Phishing,related-to,2
+997,,T1598.002,Phishing for Information: Spearphishing Attachment,[],[],,action.social.variety.Pretexting,related-to,2
+998,,T1556.002,Phishing: Spearphishing Link,[],[],,action.malware.vector.Email link,related-to,2
+999,,T1556.002,Phishing: Spearphishing Link,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1000,,T1556.002,Phishing: Spearphishing Link,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1001,,T1598.003,Phishing for Information: Spearphishing Link,[],[],,action.malware.vector.Email link,related-to,2
+1002,,T1598.003,Phishing for Information: Spearphishing Link,[],[],,action.social.variety.Phishing,related-to,2
+1003,,T1598.003,Phishing for Information: Spearphishing Link,[],[],,action.social.variety.Pretexting,related-to,2
+1004,,T1566,Phishing,[],[],,action.malware.vector.Instant messaging,related-to,2
+1005,,T1566,Phishing,[],[],,action.social.variety.Phishing,related-to,2
+1006,,T1566,Phishing,[],[],,action.social.vector.Email,related-to,2
+1007,,T1570,Lateral Tool Transfer,[],[],,action.malware.vector.Network propagation,related-to,2
+1008,,T1092,Communication Through Removable Media,[],[],,action.malware.vector.Removable media,related-to,2
+1009,,T1189,Drive-by Compromise,[],[],,action.malware.vector.Web application - drive-by,related-to,2
+1010,,T1189,Drive-by Compromise,[],[],,action.social.vector.Web application,related-to,2
+1011,,T1566.002,Phishing: Spearphishing Link,[],[],,action.social.variety.Phishing,related-to,2
+1012,,T1566.002,Phishing: Spearphishing Link,[],[],,action.social.vector.Email,related-to,2
+1013,,T1566.002,Phishing: Spearphishing Link,[],[],,action.social.vector.Web application,related-to,2
+1014,,T1566.003,Phishing: Spearphishing via Service,[],[],,action.social.variety.Phishing,related-to,2
+1015,,T1566.003,Phishing: Spearphishing via Service,[],[],,action.social.vector.Email,related-to,2
+1016,,T1598,Phishing for Information,[],[],,action.social.variety.Phishing,related-to,2
+1017,,T1598,Phishing for Information,[],[],,action.social.variety.Pretexting,related-to,2
+1018,,T1598.001,Phishing for Information: Spearphishing Service,[],[],,action.social.variety.Phishing,related-to,2
+1019,,T1598.001,Phishing for Information: Spearphishing Service,[],[],,action.social.variety.Pretexting,related-to,2
+1020,,T1534,Internal Spearphishing,[],[],,action.social.variety.Pretexting,related-to,2
+1021,,T1534,Internal Spearphishing,[],[],,attribute.integrity.variety.Misrepresentation,related-to,2
+1022,,T1585,Establish Accounts,[],[],,action.social.variety.Pretexting,related-to,2
+1023,,T1585,Establish Accounts,[],[],,value_chain.development.variety.Persona,related-to,2
+1024,,T1585.001,Establish Accounts: Social Media Accounts,[],[],,action.social.variety.Pretexting,related-to,2
+1025,,T1585.001,Establish Accounts: Social Media Accounts,[],[],,value_chain.development.variety.Persona,related-to,2
+1026,,T1585.002,Establish Accounts: Email Account,[],[],,action.social.variety.Pretexting,related-to,2
+1027,,T1585.002,Establish Accounts: Email Account,[],[],,value_chain.development.variety.Persona,related-to,2
+1028,,T1546.001,Event Triggered Execution: Change Default File Association,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1029,,T1546.002,Event Triggered Execution Screensaver,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1030,,T1546.003,Event Triggered Execution: Windows Management Instrumentation Event Subscription,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1031,,T1546.004,Event Triggered Execution: Unix Shell Configuration Modification,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1032,,T1546.005,Event Triggered Execution: Trap,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1033,,T1546.006,Event Triggered Execution: LC_LOAD_DYLIB Addition,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1034,,T1546.007,Event Triggered Execution: Netsh Helper DLL,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1035,,T1546.008,Event Triggered Execution: Accessibility Features,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1036,,T1546.009,Event Triggered Execution: AppCert DLLs,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1037,,T1546.010,Event Triggered Execution: AppInit DLLs,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1038,,T1546.011,Event Triggered Execution: Application Shimming,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1039,,T1546.012,Event Triggered Execution: Image File Execution Options Injection,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1040,,T1546.013,Event Triggered Execution: PowerShell Profile,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1041,,T1546.014,Event Triggered Execution: Emond,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1042,,T1546.015,Event Triggered Execution: Component Object Model Hijacking,[],[],,attribute.integrity.variety.Alter behavior,related-to,2
+1043,,T1136.001,Create Account: Local Account,[],[],,attribute.integrity.variety.Created account,related-to,2
+1044,,T1136.002,Create Account: Domain Account,[],[],,attribute.integrity.variety.Created account,related-to,2
+1045,,T1136.003,Create Account: Cloud Account,[],[],,attribute.integrity.variety.Created account,related-to,2
+1046,,T1491,Defacement,[],[],,attribute.availability.variety.Obscuration,related-to,2
+1047,,T1491,Defacement,[],[],,attribute.integrity.variety.Defacement,related-to,2
+1048,,T1491.001,Defacement: Internal Defacement,[],[],,attribute.availability.variety.Obscuration,related-to,2
+1049,,T1491.001,Defacement: Internal Defacement,[],[],,attribute.integrity.variety.Defacement,related-to,2
+1050,,T1491.002,Defacement: External Defacement,[],[],,attribute.availability.variety.Obscuration,related-to,2
+1051,,T1491.002,Defacement: External Defacement,[],[],,attribute.integrity.variety.Defacement,related-to,2
+1052,,T1037.001,Boot or Logon Initialization Scripts: Logon Script (Windows),[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1053,,T1037.002,Boot or Logon Initialization Scripts: Logon Script (Mac),[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1054,,T1037.003,Boot or Logon Initialization Scripts: Network Logon Script,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1055,,T1037.004,Boot or Logon Initialization Scripts: RC Scripts,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1056,,T1037.005,Boot or Logon Initialization Scripts: Startup Items,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1057,,T1484,Domain Policy Modification,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1058,,T1484.001,Domain Policy Modification: Group Policy Modification,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1059,,T1484.002,Domain Policy Modification: Domain Trust Modification,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1060,,T1547.001,Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1061,,T1547.002,Boot or Logon Autostart Execution: Authentication Package,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1062,,T1547.003,Boot or Logon Autostart Execution: Time Providers,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1063,,T1547.004,Boot or Logon Autostart Execution: Winlogon Helper DLL,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1064,,T1547.005,Boot or Logon Autostart Execution: Security Support Provider,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1065,,T1547.006,Boot or Logon Autostart Execution: Kernel Modules and Extensions,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1066,,T1547.007,Boot or Logon Autostart Execution: Re-opened Applications,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1067,,T1547.008,Boot or Logon Autostart Execution: LSASS Driver,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1068,,T1547.009,Boot or Logon Autostart Execution: Shortcut Modification,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1069,,T1547.010,Boot or Logon Autostart Execution: Port Monitors,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1070,,T1547.012,Boot or Logon Autostart Execution: Print Processors,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1071,,T1547.013,Boot or Logon Autostart Execution: XDG Autostart Entries,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1072,,T1556.001,Modify Authentication Process: Domain Controller Authentication,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1073,,T1556.001,Modify Authentication Process: Domain Controller Authentication,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1074,,T1556.003,Modify Authentication Process: Pluggable Authentication Modules,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1075,,T1556.003,Modify Authentication Process: Pluggable Authentication Modules,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1076,,T1556.004,Modify Authentication Process: Network Device Authentication,[],[],,attribute.integrity.variety.Modify configuration,related-to,2
+1077,,T1556.004,Modify Authentication Process: Network Device Authentication,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1078,,T1565,Data Manipulation,[],[],,attribute.integrity.variety.Modify data,related-to,2
+1079,,T1565.001,Data Manipulation: Stored Data Manipulation,[],[],,attribute.integrity.variety.Modify data,related-to,2
+1080,,T1565.002,Data Manipulation: Transmitted Data Manipulation,[],[],,attribute.integrity.variety.Modify data,related-to,2
+1081,,T1565.003,Data Manipulation: Runtime Data Manipulation,[],[],,attribute.integrity.variety.Modify data,related-to,2
+1082,,T1098.001,Account Manipulation: Additional Cloud Credentials,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1083,,T1098.002,Account Manipulation: Exchange Email Delegate Permissions,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1084,,T1098.003,Account Manipulation: Add Office 365 Global Administrator Role,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1085,,T1098.004,Account Manipulation: SSH Authorized Keys,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1086,,T1547.014,Boot or Logon Autostart Execution: Active Setup,[],[],,attribute.integrity.variety.Modify privileges,related-to,2
+1087,,T1535,Unused/Unsupported Cloud Regions,[],[],,attribute.integrity.variety.Repurpose,related-to,2
+1088,,T1546.016,Event Triggered Execution: Installer Packages,[],[],,attribute.integrity.variety.Software installation,related-to,2
+1089,,T1213.003,Code Repositories,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+1090,,T1552,Unsecured Credentials,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
+1091,,T1552.007,Unsecured Credentials: Container API,[],[],,"attribute.confidentiality."""".data_disclosure",related-to,2
