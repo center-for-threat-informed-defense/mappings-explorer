@@ -4,6 +4,7 @@ import os
 
 from mappings_explorer.cli.mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
+    write_parsed_mappings_navigator_layer,
     write_parsed_mappings_yaml,
 )
 
@@ -51,11 +52,17 @@ def write_parsed_cve_mappings():
     parsed_mappings_filepath = f"{PARSED_MAPPINGS_DIR}/cve/parsed_cve_mappings.json"
     output_filepath = f"{MAPEX_DIR}/cve_files/parsed_cve_mappings"
     parsed_mappings = read_json_file(parsed_mappings_filepath)
+
+    # write parsed mappings to a yaml file
     write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 
     # key that connects the metadata csv file and the attack objects csv file
     metadata_key = 0
+    # write parsed mappings to a csv file
     write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
+
+    # write parse mappings to navigator layer
+    write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath, "cve")
 
 
 def write_parsed_nist_mappings():
@@ -97,6 +104,11 @@ def write_parsed_nist_mappings():
             write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
             metadata_key += 1
 
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, output_filepath, "nist"
+            )
+
 
 def write_parsed_veris_mappings():
     veris_parsed_mappings_dir = f"{PARSED_MAPPINGS_DIR}/veris"
@@ -128,6 +140,11 @@ def write_parsed_veris_mappings():
             # write parsed mappings to csv
             write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
             metadata_key += 1
+
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, output_filepath, "veris"
+            )
 
 
 def write_parsed_security_stack_mappings():
@@ -162,3 +179,8 @@ def write_parsed_security_stack_mappings():
             # write parsed mappings to csv
             write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
             metadata_key += 1
+
+            # write parsed mappings to navigator layer
+            write_parsed_mappings_navigator_layer(
+                parsed_mappings, output_filepath, "security stack"
+            )
