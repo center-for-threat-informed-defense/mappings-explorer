@@ -104,8 +104,8 @@ def load_attack_json():
 def parse_cve_mappings():
     attack_object_id_to_name = load_attack_json()
     cve_filepath = f"{ROOT_DIR}/mappings/Att&ckToCveMappings.csv"
-    datareader = read_csv_file(cve_filepath)
-    parsed_mappings = configure_cve_mappings(datareader, attack_object_id_to_name)
+    df = read_csv_file(cve_filepath)
+    parsed_mappings = configure_cve_mappings(df, attack_object_id_to_name)
 
     filepath = f"{PARSED_MAPPINGS_DIR}cve/parsed_cve_mappings"
 
@@ -116,7 +116,9 @@ def parse_cve_mappings():
     write_parsed_mappings_json(parsed_mappings, filepath)
 
     # write parsed mappings to csv file
-    write_parsed_mappings_csv(parsed_mappings, filepath)
+    # metadata key connects the metadata csv file to the attack ojbects csv file
+    metadata_key = 0
+    write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
 
 
 def parse_nist_mappings():

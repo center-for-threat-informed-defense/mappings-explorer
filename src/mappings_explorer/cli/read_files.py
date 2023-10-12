@@ -1,4 +1,3 @@
-import csv
 import json
 
 import pandas as pd
@@ -6,9 +5,8 @@ import yaml
 
 
 def read_csv_file(filepath):
-    cve_mappings = open(filepath, "r", encoding="UTF-8")
-    datareader = csv.reader(cve_mappings, delimiter=",", quotechar='"')
-    return datareader
+    df = pd.read_csv(filepath)
+    return df
 
 
 def read_excel_file(filepath):

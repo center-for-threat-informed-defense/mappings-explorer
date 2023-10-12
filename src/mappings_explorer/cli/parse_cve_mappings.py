@@ -1,14 +1,38 @@
-def configure_cve_mappings(datareader, attack_id_to_name_dict):
-    # store the headers and then skip them
-    headers = next(datareader, None)
-
+def configure_cve_mappings(df, attack_id_to_name_dict):
     # put data in correct format with correct fields
-    result = []
-    for row in datareader:
-        for i in range(1, 4):
-            if row[i]:
+    result = {
+        "metadata": {
+            "mapping-version": "",
+            "attack-version": "9.0",
+            # this is an assumption that all cve mappings are enterprise
+            # this assumption is not currently true
+            # need to clarify how we will handle non-enterprise cve mappings
+            "technology-domain": "enterprise",
+            "author": "",
+            "contact": "",
+            # confirm creation-data value is correct
+            "creation-date": "02/03/21",
+            # confirm last-update value is correct
+            "last-update": "10/27/21",
+            "organization": "",
+            "mapping-framework": "CVE Vulnerability List",
+            "mapping-framework-version": "",
+        },
+        "attack-objects": [],
+    }
+
+    cve_mapping_types = [
+        "Primary Impact",
+        "Secondary Impact",
+        "Exploitation Technique",
+        "Uncategorized",
+    ]
+
+    for _, row in df.iterrows():
+        for mapping_type in cve_mapping_types:
+            if isinstance(row[mapping_type], str):
                 # split techniques and subtechniques into individual attack objects
-                mapped_attack_objects = row[i].split("; ")
+                mapped_attack_objects = row[mapping_type].split("; ")
                 for attack_object in mapped_attack_objects:
                     # technique id is not in the dictionary, set it to an empty string
                     # this can happen if the technique has been deprecated or revoked
@@ -18,38 +42,17 @@ def configure_cve_mappings(datareader, attack_id_to_name_dict):
                         attack_object.strip(), {}
                     )
                     name = attack_details.get("name", "")
-                    domain = attack_details.get("domain", "")
 
-                    result.append(
+                    result["attack-objects"].append(
                         {
-                            "metadata": {
-                                "mapping-version": "",
-                                "attack-version": "9.0",
-                                "technology-domain": domain,
-                                "author": "",
-                                "contact": "",
-                                # confirm creation-data value is correct
-                                "creation-date": "02/03/21",
-                                # confirm last-update value is correct
-                                "last-update": "10/27/21",
-                                "organization": "",
-                                "mapping-platform": "CVE Vulnerability List",
-                                "mapping-platform-version": "",
-                            },
-                            "attack-object": {
-                                "comments": "",
-                                "id": attack_object,
-                                "name": name,
-                                "references": [],
-                                "tags": [],
-                                "mapping-description": "",
-                                "mapping-target": row[0],
-                                "mapping-platform": {
-                                    "name": "CVE Vulnerability List",
-                                    "impact": headers[i],
-                                    "phase": row[5],
-                                },
-                            },
+                            "comments": "",
+                            "attack-object-id": attack_object,
+                            "attack-object-name": name,
+                            "references": [],
+                            "tags": [],
+                            "mapping-description": "",
+                            "capability-id": row["CVE ID"],
+                            "mapping-type": mapping_type,
                         }
                     )
 
