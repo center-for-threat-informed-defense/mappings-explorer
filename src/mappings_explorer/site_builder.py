@@ -1,5 +1,7 @@
 from jinja2 import Environment, FileSystemLoader
 
+from .template import PUBLIC_DIR, load_template
+
 
 class ExternalControl:
     id = ""
@@ -14,7 +16,7 @@ class ExternalControl:
     tableHeaders = []
 
 
-def loadProjects():
+def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
@@ -97,10 +99,32 @@ def loadProjects():
     return projects
 
 
+def build_external_landing(project: ExternalControl):
+    dir = PUBLIC_DIR / project.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+
+    template = load_template("external-control.html.j2")
+    stream = template.stream(
+        title=project.label + " Landing",
+        control=project.label,
+        description=project.description,
+        version=project.version,
+        versions=project.versions,
+        attackVersion=project.attackVersion,
+        attackVersions=project.attackVersions,
+        domain=project.attackDomain,
+        domains=project.attackDomains,
+        tableHeaders=project.tableHeaders,
+    )
+    stream.dump(str(output_path))
+    print("Created " + project.id + " landing")
+
+
 def main():
-    templateLoader = FileSystemLoader(searchpath="./templates")
+    templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader)
-    projects = loadProjects()
+    projects = load_projects()
 
     TEMPLATE_FILE = "landing.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
@@ -119,19 +143,20 @@ def main():
     template = templateEnv.get_template(TEMPLATE_FILE)
 
     for project in projects:
-        template.stream(
-            title=project.label + " Landing",
-            control=project.label,
-            description=project.description,
-            version=project.version,
-            versions=project.versions,
-            attackVersion=project.attackVersion,
-            attackVersions=project.attackVersions,
-            domain=project.attackDomain,
-            domains=project.attackDomains,
-            tableHeaders=project.tableHeaders,
-        ).dump("./output/" + project.id + "-landing.html")
-        print("Created " + project.id + " landing")
+        build_external_landing(project=project)
+        # template.stream(
+        #     title=project.label + " Landing",
+        #     control=project.label,
+        #     description=project.description,
+        #     version=project.version,
+        #     versions=project.versions,
+        #     attackVersion=project.attackVersion,
+        #     attackVersions=project.attackVersions,
+        #     domain=project.attackDomain,
+        #     domains=project.attackDomains,
+        #     tableHeaders=project.tableHeaders,
+        # ).dump("./output/" + project.id + "-landing.html")
+        # print("Created " + project.id + " landing")
 
 
 if __name__ == "__main__":
