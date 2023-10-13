@@ -96,7 +96,9 @@ def write_parsed_nist_mappings():
             if not nist_version_filepath_exists:
                 os.makedirs(nist_version_filepath)
 
-            output_filepath = f"{nist_files_output_dir}{attack_version_directory}/{nist_version_directory}/parsed_nist800-53-{nist_version_directory}-{attack_version_directory}_mappings"
+            version_dir = f"{attack_version_directory}/{nist_version_directory}"
+            output_directory = f"{nist_files_output_dir}{version_dir}"
+            output_filepath = f"{output_directory}/parsed_nist_mappings"
             # writ parsed mappings to yaml
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 
@@ -133,7 +135,8 @@ def write_parsed_veris_mappings():
             if not veris_version_filepath_exists:
                 os.makedirs(veris_version_filepath)
 
-            output_filepath = f"{veris_files_output_dir}{veris_version_directory}/parsed_veris_mappings"
+            output_dir = f"{veris_files_output_dir}{veris_version_directory}"
+            output_filepath = f"{output_dir}/parsed_veris_mappings"
             # writ parsed mappings to yaml
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 
