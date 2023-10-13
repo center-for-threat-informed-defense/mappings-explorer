@@ -20,10 +20,6 @@ def configure_security_stack_mappings(data, parsed_mappings):
         parsed_mappings["attack-objects"] = []
 
     for technique in data["techniques"]:
-        # related score is true if there are subtechnique scores
-        # associated with the technique
-        related_score = True if technique.get("sub-techniques-scores") else False
-
         comments = data.get("comments") or ""
         tags = data.get("tags") or []
         references = data.get("references") or []
@@ -41,6 +37,28 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "mapping-type": "technique-scores",
                     "score-category": technique_score["category"],
                     "score-value": technique_score["value"],
-                    "related-score": related_score,
+                    "related-score": "",
                 }
             )
+        if technique.get("sub-techniques-scores"):
+            for subtechnique_score in technique.get("sub-techniques-scores"):
+                for subtechnique in subtechnique_score["sub-techniques"]:
+                    for score in subtechnique_score["scores"]:
+                        subtechnique_comments = score.get("comments") or ""
+                        subtechnique_tags = score.get("tags") or []
+                        subtechniqe_references = score.get("references") or []
+                        parsed_mappings["attack-objects"].append(
+                            {
+                                "comments": subtechnique_comments,
+                                "attack-object-id": subtechnique["id"],
+                                "attack-object-name": subtechnique["name"],
+                                "references": subtechniqe_references,
+                                "tags": subtechnique_tags,
+                                "mapping-description": "",
+                                "capability-id": data["name"],
+                                "mapping-type": "technique-scores",
+                                "score-category": score["category"],
+                                "score-value": score["value"],
+                                "related-score": technique["id"],
+                            }
+                        )
