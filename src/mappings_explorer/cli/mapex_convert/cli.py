@@ -59,17 +59,17 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
     domains = ["enterprise", "mobile", "ics"]
