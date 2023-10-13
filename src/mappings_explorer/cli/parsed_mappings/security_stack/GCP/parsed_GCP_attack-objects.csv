@@ -1,0 +1,904 @@
+,comments,id,name,references,tags,mapping-description,mapping-target,metadata-key,key
+0,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1566,Phishing,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,0,0
+1,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1566.001,Spearphishing Attachment,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,1,1
+2,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1059,Command and Scripting Interpreter,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,2,2
+3,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1598.003,Spearphishing Link,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,3,3
+4,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1566.002,Spearphishing Link,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,4,4
+5,,T1565.003,Runtime Data Manipulation,['https://cloud.google.com/compute/confidential-vm/docs/about-cvm#security_and_privacy_features'],['Encryption'],,Confidential VM and Compute Engine,5,5
+6,This control provides a secure alternative to storing encryption keys in the file system.,T1552,Unsecured Credentials,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),6,6
+7,This control provides a secure alternative to storing encryption keys in the file system.,T1553,Subvert Trust Controls,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),7,7
+8,This control provides a secure alternative to storing encryption keys in the file system.,T1588.003,Code Signing Certificates,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),8,8
+9,This control provides a secure alternative to storing encryption keys in the file system.,T1588.004,Digital Certificates,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),9,9
+10,This control provides a secure alternative to storing encryption keys in the file system.,T1552.004,Private Keys,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),10,10
+11,This control provides a secure alternative to storing encryption keys in the file system.,T1552.001,Credentials In Files,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),11,11
+12,This control provides a secure alternative to storing encryption keys in the file system.,T1588,Obtain Capabilities,['https://cloud.google.com/kms/docs/hsm'],"['Encryption', 'Data Security']",,Cloud Hardware Security Module (HSM),12,12
+13,,T1040,Network Sniffing,['https://cloud.google.com/certificate-authority-service/docs'],"['Certificate Service', 'Network']",,Certificate Authority Service,13,13
+14,,T1098,Account Manipulation,['https://cloud.google.com/asset-inventory/docs/overview'],"['Credentials', 'Access Management']",,Cloud Asset Inventory,14,14
+15,,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/asset-inventory/docs/overview'],"['Credentials', 'Access Management']",,Cloud Asset Inventory,15,15
+16,,T1078,Valid Accounts,['https://cloud.google.com/asset-inventory/docs/overview'],"['Credentials', 'Access Management']",,Cloud Asset Inventory,16,16
+17,,T1078.004,Cloud Accounts,['https://cloud.google.com/asset-inventory/docs/overview'],"['Credentials', 'Access Management']",,Cloud Asset Inventory,17,17
+18,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1550.001,Application Access Token,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,18,18
+19,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1528,Steal Application Access Token,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,19,19
+20,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1528,Steal Application Access Token,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,20,20
+21,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,21,21
+22,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1078,Valid Accounts,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,22,22
+23,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1078.004,Cloud Accounts,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,23,23
+24,This mapping was scored as Partial due the control's low to medium threat protection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.,T1190,Exploit Public-Facing Application,['https://cloud.google.com/iap'],"['Identity', 'Credentials']",,Identity Aware Proxy,24,24
+25,This control may provide information about software vulnerabilities in the environment. ,T1190,Exploit Public-Facing Application,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,25,25
+26,This control may provide information about software vulnerabilities in the environment. ,T1068,Exploitation for Privilege Escalation,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,26,26
+27,This control may provide information about software vulnerabilities in the environment. ,T1203,Exploitation for Client Execution,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,27,27
+28,This control may provide information about software vulnerabilities in the environment. ,T1210,Exploitation of Remote Services,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,28,28
+29,This control may provide information about software vulnerabilities in the environment. ,T1525,Implant Internal Image,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,29,29
+30,This control may provide information about software vulnerabilities in the environment. ,T1610,Deploy Container,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,30,30
+31,This control may provide information about software vulnerabilities in the environment. ,T1072,Software Deployment Tools,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,31,31
+32,This control may provide information about software vulnerabilities in the environment. ,T1211,Exploitation for Defense Evasion,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,32,32
+33,This control may provide information about software vulnerabilities in the environment. ,T1212,Exploitation for Credential Access,"['https://cloud.google.com/container-analysis/docs/container-analysis', 'https://cloud.google.com/container-analysis/docs/container-scanning-overview']","['Containers', 'Vulnerability Analysis', 'OS Security']",,Artifact Registry,33,33
+34,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1613,Container and Resource Discovery,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,34,34
+35,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1611,Escape to Host,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,35,35
+36,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1611,Escape to Host,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,36,36
+37,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1610,Deploy Container,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,37,37
+38,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1053.007,Container Orchestration Job,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,38,38
+39,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1609,Container Administration Command,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,39,39
+40,This control provides information about security best practices and policies to apply when deploying Google Kubernetes Engine.,T1525,Implant Internal Image,"['https://cloud.google.com/kubernetes-engine/docs/concepts/access-control', 'https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks']","['Kubernetes', 'Containers']",,Google Kubernetes Engine,40,40
+41,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1137,Office Application Startup,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,41,41
+42,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1546.006,LC_LOAD_DYLIB Addition,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,42,42
+43,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1204.002,Malicious File,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,43,43
+44,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1055.002,Portable Executable Injection,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,44,44
+45,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1221,Template Injection,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,45,45
+46,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1505.003,Web Shell,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,46,46
+47,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1204.003,Malicious Image,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,47,47
+48,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1048,Exfiltration Over Alternative Protocol,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,48,48
+49,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1041,Exfiltration Over C2 Channel,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,49,49
+50,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1567,Exfiltration Over Web Service,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,50,50
+51,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1567.002,Exfiltration to Cloud Storage,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,51,51
+52,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1020,Automated Exfiltration,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,52,52
+53,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1110,Brute Force,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,53,53
+54,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1499,Endpoint Denial of Service,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,54,54
+55,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1499.003,Application Exhaustion Flood,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,55,55
+56,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1190,Exploit Public-Facing Application,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,56,56
+57,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1566.002,Spearphishing Link,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,57,57
+58,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1137.006,Add-ins,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,58,58
+59,"This mapping was scored as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+The cyber-attacks mapped are considered a subset of the most notable threat detection available for Cloud IDS, but a thorough mapping to all of Palo Alto Network's advanced threat detection technologies wasn't possible due to constant updates, 3rd party vendor's extensive documentation, and new threat signatures.",T1137.001,Office Template Macros,"['https://cloud.google.com/intrusion-detection-system', 'https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures']","['Cloud IDS', 'Intrusion Detection Service (IDS)', ""Palo Alto Network's Threat Signatures"", 'Analytics']",,Cloud IDS,59,59
+60,,T1580,Cloud Infrastructure Discovery,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,60,60
+61,,T1580,Cloud Infrastructure Discovery,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,61,61
+62,,T1562,Impair Defenses,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,62,62
+63,,T1562.007,Disable or Modify Cloud Firewall,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,63,63
+64,,T1562.007,Disable or Modify Cloud Firewall,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,64,64
+65,,T1562.008,Disable Cloud Logs,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,65,65
+66,,T1087,Account Discovery,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,66,66
+67,,T1087.004,Cloud Account,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,67,67
+68,,T1087.004,Cloud Account,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,68,68
+69,,T1613,Container and Resource Discovery,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,69,69
+70,,T1552.007,Container API,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,70,70
+71,,T1098,Account Manipulation,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,71,71
+72,,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,72,72
+73,,T1078,Valid Accounts,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,73,73
+74,,T1078.004,Cloud Accounts,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,74,74
+75,,T1562.001,Disable or Modify Tools,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,75,75
+76,,T1562.002,Disable Windows Event Logging,['https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy'],"['Identity', 'Access Management', 'Credentials', 'Network', 'Configuration Management']",,ResourceManager,76,76
+77,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1565,Data Manipulation,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,77,77
+78,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1040,Network Sniffing,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,78,78
+79,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1552,Unsecured Credentials,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,79,79
+80,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1110,Brute Force,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,80,80
+81,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1485,Data Destruction,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,81,81
+82,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1486,Data Encrypted for Impact,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,82,82
+83,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1491,Defacement,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,83,83
+84,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1561,Disk Wipe,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,84,84
+85,This mapping was scored as significant due to the control’s notable remediation capabilities.,T1490,Inhibit System Recovery,['https://www.actifio.com/solutions/cloud/google/'],['Storage'],,Actifio Go,85,85
+86,,T1098,Account Manipulation,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,86,86
+87,,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,87,87
+88,,T1110,Brute Force,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,88,88
+89,,T1110.001,Password Guessing,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,89,89
+90,,T1110.002,Password Cracking,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,90,90
+91,,T1078,Valid Accounts,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,91,91
+92,,T1078.004,Cloud Accounts,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,92,92
+93,,T1078.003,Local Accounts,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,93,93
+94,,T1110.003,Password Spraying,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,94,94
+95,,T1136,Create Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,95,95
+96,,T1136.003,Cloud Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,96,96
+97,,T1087,Account Discovery,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,97,97
+98,,T1087.004,Cloud Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,98,98
+99,,T1580,Cloud Infrastructure Discovery,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,99,99
+100,,T1528,Steal Application Access Token,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,100,100
+101,,T1550,Use Alternate Authentication Material,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,101,101
+102,,T1550.001,Application Access Token,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,102,102
+103,,T1562,Impair Defenses,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,103,103
+104,,T1562.008,Disable Cloud Logs,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,104,104
+105,,T1556,Modify Authentication Process,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,105,105
+106,,T1087.002,Domain Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,106,106
+107,,T1098.002,Exchange Email Delegate Permissions,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,107,107
+108,,T1098.003,Add Office 365 Global Administrator Role,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,108,108
+109,,T1098.004,SSH Authorized Keys,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,109,109
+110,,T1136.001,Local Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,110,110
+111,,T1136.002,Domain Account,['https://cloud.google.com/identity-platform/docs/concepts'],"['Identity', 'Multi-Factor Authentication', 'Passwords', 'Credentials', 'Access Management']",,IdentityPlatform,111,111
+112,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1552.007,Container API,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,112,112
+113,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1525,Implant Internal Image,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,113,113
+114,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1525,Implant Internal Image,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,114,114
+115,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1609,Container Administration Command,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,115,115
+116,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1610,Deploy Container,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,116,116
+117,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1613,Container and Resource Discovery,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,117,117
+118,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1611,Escape to Host,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,118,118
+119,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1078,Valid Accounts,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,119,119
+120,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1078.001,Default Accounts,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,120,120
+121,"Based on the medium detection coverage for the correlated cyber-attacks, most of the techniques and sub-techniques in this security solution were rated as partial.",T1078.004,Cloud Accounts,['https://cloud.google.com/anthos-config-management/ '],"['Configuration Management', 'Containers', 'Policy']",,AnthosConfigManagement,121,121
+122,,T1566,Phishing,['https://cloud.google.com/web-risk/docs/overview'],['Network'],,Web Risk,122,122
+123,,T1598,Phishing for Information,['https://cloud.google.com/web-risk/docs/overview'],['Network'],,Web Risk,123,123
+124,,T1204.001,Malicious Link,['https://cloud.google.com/web-risk/docs/overview'],['Network'],,Web Risk,124,124
+125,,T1598.003,Spearphishing Link,['https://cloud.google.com/web-risk/docs/overview'],['Network'],,Web Risk,125,125
+126,,T1498,Network Denial of Service,['https://cloud.google.com/cdn/docs/overview'],"['Containers', 'Kubernetes', 'Logging']",,Cloud CDN,126,126
+127,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1048,Exfiltration Over Alternative Protocol,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,127,127
+128,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1567,Exfiltration Over Web Service,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,128,128
+129,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1567.002,Exfiltration to Cloud Storage,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,129,129
+130,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1133,External Remote Services,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,130,130
+131,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1189,Drive-by Compromise,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,131,131
+132,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1566.001,Spearphishing Attachment,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,132,132
+133,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1566,Phishing,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,133,133
+134,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1566,Phishing,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,134,134
+135,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1071.001,Web Protocols,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,135,135
+136,"This solution was rated as significant due to the control’s high threat protection coverage and temporal factors (e.g., real-time, periodical).",T1530,Data from Cloud Storage Object,['https://cloud.google.com/beyondcorp-enterprise/docs/overview'],"['Access Control Policies', 'Data Loss Prevention']",,BeyondCorp Enterprise,136,136
+137,,T1110,Brute Force,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,137,137
+138,,T1110.003,Password Spraying,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,138,138
+139,,T1078,Valid Accounts,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,139,139
+140,,T1078.004,Cloud Accounts,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,140,140
+141,,T1110.001,Password Guessing,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,141,141
+142,,T1110.002,Password Cracking,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,142,142
+143,,T1110.004,Credential Stuffing,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,143,143
+144,,T1078.002,Domain Accounts,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,144,144
+145,,T1021.004,SSH,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,145,145
+146,,T1213.003,Code Repositories,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,146,146
+147,,T1213,Data from Information Repositories,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,147,147
+148,,T1133,External Remote Services,['https://cloud.google.com/identity'],"['Identity', 'Multi-Factor Authentication', 'Credentials']",,Cloud Identity,148,148
+149,,T1090,Proxy,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,149,149
+150,,T1190,Exploit Public-Facing Application,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,150,150
+151,,T1498,Network Denial of Service,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,151,151
+152,,T1499,Endpoint Denial of Service,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,152,152
+153,,T1018,Remote System Discovery,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,153,153
+154,,T1046,Network Service Scanning,['https://cloud.google.com/armor'],"['Network', 'Firewall']",,Cloud Armor,154,154
+155,,T1110,Brute Force,['https://support.google.com/a/answer/1734200?hl=en'],"['Identity', 'Patch Management']",,Endpoint Management,155,155
+156,,T1078,Valid Accounts,['https://support.google.com/a/answer/1734200?hl=en'],"['Identity', 'Patch Management']",,Endpoint Management,156,156
+157,,T1052.001,Exfiltration over USB,['https://support.google.com/a/answer/1734200?hl=en'],"['Identity', 'Patch Management']",,Endpoint Management,157,157
+158,,T1567.002,Exfiltration to Cloud Storage,['https://support.google.com/a/answer/1734200?hl=en'],"['Identity', 'Patch Management']",,Endpoint Management,158,158
+159,,T1040,Network Sniffing,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,159,159
+160,,T1557,Adversary-in-the-Middle,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,160,160
+161,,T1565,Data Manipulation,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,161,161
+162,,T1565.002,Transmitted Data Manipulation,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,162,162
+163,,T1557.002,ARP Cache Poisoning,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,163,163
+164,,T1133,External Remote Services,['https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview'],"['Network', 'Encryption']",,CloudVPN,164,164
+165,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552,Unsecured Credentials,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,165,165
+166,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552.005,Cloud Instance Metadata API,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,166,166
+167,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1588,Obtain Capabilities,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,167,167
+168,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1553,Subvert Trust Controls,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,168,168
+169,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1555,Credentials from Password Stores,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,169,169
+170,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1528,Steal Application Access Token,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,170,170
+171,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1588.003,Code Signing Certificates,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,171,171
+172,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1588.004,Digital Certificates,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,172,172
+173,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552.001,Credentials In Files,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,173,173
+174,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552.004,Private Keys,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,174,174
+175,,T1566,Phishing,['https://cloud.google.com/titan-security-key#section-3'],"['Multi-Factor Authentication', 'Identity']",,Titan Security Key,175,175
+176,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021.002,SMB/Windows Admin Shares,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,176,176
+177,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1037,Boot or Logon Initialization Scripts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,177,177
+178,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1053.005,Scheduled Task,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,178,178
+179,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.005,Mshta,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,179,179
+180,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.001,Launch Agent,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,180,180
+181,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.004,Launch Daemon,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,181,181
+182,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.001,Change Default File Association,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,182,182
+183,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1547.001,Registry Run Keys / Startup Folder,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,183,183
+184,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1547,Boot or Logon Autostart Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,184,184
+185,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546,Event Triggered Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,185,185
+186,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543,Create or Modify System Process,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,186,186
+187,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1548.002,Bypass User Account Control,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,187,187
+188,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1564.001,Hidden Files and Directories,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,188,188
+189,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1564,Hide Artifacts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,189,189
+190,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003.003,NTDS,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,190,190
+191,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1078,Valid Accounts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,191,191
+192,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1134.005,SID-History Injection,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,192,192
+193,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003,OS Credential Dumping,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,193,193
+194,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1548,Abuse Elevation Control Mechanism,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,194,194
+195,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1584.002,DNS Server,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,195,195
+196,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1562.004,Disable or Modify System Firewall,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,196,196
+197,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1098.001,Additional Cloud Credentials,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,197,197
+198,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1530,Data from Cloud Storage Object,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,198,198
+199,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.002,Clear Linux or Mac System Logs,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,199,199
+200,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1136.001,Local Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,200,200
+201,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1098,Account Manipulation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,201,201
+202,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1106,Native API,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,202,202
+203,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021.004,SSH,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,203,203
+204,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1578,Modify Cloud Compute Infrastructure,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,204,204
+205,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1052.001,Exfiltration over USB,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,205,205
+206,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1112,Modify Registry,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,206,206
+207,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021,Remote Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,207,207
+208,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1052,Exfiltration Over Physical Medium,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,208,208
+209,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1053,Scheduled Task/Job,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,209,209
+210,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070,Indicator Removal on Host,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,210,210
+211,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1134,Access Token Manipulation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,211,211
+212,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218,Signed Binary Proxy Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,212,212
+213,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1584,Compromise Infrastructure,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,213,213
+214,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056,Input Capture,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,214,214
+215,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056.003,Web Portal Capture,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,215,215
+216,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056.004,Credential API Hooking,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,216,216
+217,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1071.001,Web Protocols,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,217,217
+218,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1071,Application Layer Protocol,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,218,218
+219,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059,Command and Scripting Interpreter,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,219,219
+220,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.010,Regsvr32,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,220,220
+221,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059.003,Windows Command Shell,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,221,221
+222,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1082,System Information Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,222,222
+223,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.003,CMSTP,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,223,223
+224,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1018,Remote System Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,224,224
+225,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1552,Unsecured Credentials,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,225,225
+226,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1486,Data Encrypted for Impact,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,226,226
+227,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1204,User Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,227,227
+228,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1036.005,Match Legitimate Name or Location,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,228,228
+229,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1027.004,Compile After Delivery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,229,229
+230,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1127.001,MSBuild,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,230,230
+231,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1127,Trusted Developer Utilities Proxy Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,231,231
+232,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1190,Exploit Public-Facing Application,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,232,232
+233,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1068,Exploitation for Privilege Escalation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,233,233
+234,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1036,Masquerading,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,234,234
+235,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1055,Process Injection,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,235,235
+236,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1210,Exploitation of Remote Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,236,236
+237,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1037.003,Network Logon Script,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,237,237
+238,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1212,Exploitation for Credential Access,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,238,238
+239,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1505.003,Web Shell,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,239,239
+240,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059.007,JavaScript,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,240,240
+241,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1560,Archive Collected Data,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,241,241
+242,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1203,Exploitation for Client Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,242,242
+243,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1132,Data Encoding,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,243,243
+244,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1132.001,Standard Encoding,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,244,244
+245,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1195.002,Compromise Software Supply Chain,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,245,245
+246,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1195,Supply Chain Compromise,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,246,246
+247,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1072,Software Deployment Tools,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,247,247
+248,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.007,Netsh Helper DLL,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,248,248
+249,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1505,Server Software Component,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,249,249
+250,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1574.007,Path Interception by PATH Environment Variable,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,250,250
+251,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1574,Hijack Execution Flow,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,251,251
+252,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1087.004,Cloud Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,252,252
+253,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1087,Account Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,253,253
+254,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.004,File Deletion,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,254,254
+255,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1020,Automated Exfiltration,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,255,255
+256,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1041,Exfiltration Over C2 Channel,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,256,256
+257,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1011,Exfiltration Over Other Network Medium,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,257,257
+258,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1027,Obfuscated Files or Information,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,258,258
+259,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1484,Domain Policy Modification,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,259,259
+260,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1136,Create Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,260,260
+261,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.003,Windows Service,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,261,261
+262,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.006,Timestomp,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,262,262
+263,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003.001,LSASS Memory,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,263,263
+264,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1137.001,Office Template Macros,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,264,264
+265,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1137,Office Application Startup,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,265,265
+266,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1057,Process Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,266,266
+267,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1016,System Network Configuration Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,267,267
+268,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1049,System Network Connections Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,268,268
+269,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1033,System Owner/User Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,269,269
+270,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1588.002,Tool,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,270,270
+271,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1588,Obtain Capabilities,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,271,271
+272,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.001,Clear Windows Event Logs,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,272,272
+273,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1569.002,Service Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,273,273
+274,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1569,System Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,274,274
+275,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.008,Accessibility Features,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,275,275
+276,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1048,Exfiltration Over Alternative Protocol,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,276,276
+277,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1105,Ingress Tool Transfer,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,277,277
+278,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1495,Firmware Corruption,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,278,278
+279,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1497,Virtualization/Sandbox Evasion,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,279,279
+280,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1202,Indirect Command Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,280,280
+281,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+
+Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.003,Windows Management Instrumentation Event Subscription,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,281,281
+282,,T1199,Trusted Relationship,['https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview'],"['Auditing', 'Access Management']",,Access Transparency,282,282
+283,,T1530,Data from Cloud Storage Object,['https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview'],"['Auditing', 'Access Management']",,Access Transparency,283,283
+284,,T1542,Pre-OS Boot,['https://cloud.google.com/compute/shielded-vm/docs/shielded-vm'],['Vulnerability Management'],,Shielded VM,284,284
+285,,T1014,Rootkit,['https://cloud.google.com/compute/shielded-vm/docs/shielded-vm'],['Vulnerability Management'],,Shielded VM,285,285
+286,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1008,Fallback Channels,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,286,286
+287,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1018,Remote System Discovery,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,287,287
+288,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1021,Remote Services,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,288,288
+289,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1041,Exfiltration Over C2 Channel,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,289,289
+290,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1046,Network Service Scanning,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,290,290
+291,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1048,Exfiltration Over Alternative Protocol,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,291,291
+292,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1071,Application Layer Protocol,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,292,292
+293,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1090,Proxy,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,293,293
+294,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1095,Non-Application Layer Protocol,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,294,294
+295,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1104,Multi-Stage Channels,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,295,295
+296,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1133,External Remote Services,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,296,296
+297,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1187,Forced Authentication,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,297,297
+298,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1205,Traffic Signaling,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,298,298
+299,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1219,Remote Access Software,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,299,299
+300,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1498,Network Denial of Service,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,300,300
+301,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1499,Endpoint Denial of Service,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,301,301
+302,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1530,Data from Cloud Storage Object,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,302,302
+303,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1542,Pre-OS Boot,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,303,303
+304,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1571,Non-Standard Port,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,304,304
+305,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1572,Protocol Tunneling,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,305,305
+306,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1590,Gather Victim Network Information,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,306,306
+307,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1595,Active Scanning,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,307,307
+308,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1204.003,Malicious Image,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,308,308
+309,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1525,Implant Internal Image,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,309,309
+310,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1133,External Remote Services,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,310,310
+311,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1505.003,Web Shell,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,311,311
+312,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1105,Ingress Tool Transfer,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,312,312
+313,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1059.004,Unix Shell,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,313,313
+314,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1071.004,DNS,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,314,314
+315,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1110,Brute Force,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,315,315
+316,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1078.004,Cloud Accounts,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,316,316
+317,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562,Impair Defenses,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,317,317
+318,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1567,Exfiltration Over Web Service,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,318,318
+319,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1567.002,Exfiltration to Cloud Storage,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,319,319
+320,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1505.001,SQL Stored Procedures,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,320,320
+321,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1098.001,Additional Cloud Credentials,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,321,321
+322,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562.007,Disable or Modify Cloud Firewall,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,322,322
+323,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1589.001,Credentials,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,323,323
+324,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1496,Resource Hijacking,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,324,324
+325,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1213.003,Code Repositories,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,325,325
+326,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1040,Network Sniffing,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,326,326
+327,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1190,Exploit Public-Facing Application,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,327,327
+328,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1078.001,Default Accounts,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,328,328
+329,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1542,Pre-OS Boot,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,329,329
+330,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1542.003,Bootkit,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,330,330
+331,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1014,Rootkit,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,331,331
+332,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1070,Indicator Removal on Host,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,332,332
+333,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1484,Domain Policy Modification,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,333,333
+334,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1136.003,Cloud Account,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,334,334
+335,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562.008,Disable Cloud Logs,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,335,335
+336,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1578,Modify Cloud Compute Infrastructure,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,336,336
+337,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
+
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+
+To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
+
+Further automated response functionality can be extended in SCC to take actions against threats. A full list of automated actions can be found on GCP's GitHub.
+
+Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1530,Data from Cloud Storage Object,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,337,337
+338,There are other methods available for users to secure data with the use of client-side encryption and customer encryption-keys.,T1530,Data from Cloud Storage Object,"['https://cloud.google.com/storage/docs/encryption', 'https://cloud.google.com/storage']","['Storage', 'Data Security', 'Encryption', 'Credentials']",,Cloud Storage,338,338
+339,There are other methods available for users to secure data with the use of client-side encryption and customer encryption-keys.,T1565.001,Stored Data Manipulation,"['https://cloud.google.com/storage/docs/encryption', 'https://cloud.google.com/storage']","['Storage', 'Data Security', 'Encryption', 'Credentials']",,Cloud Storage,339,339
+340,There are other methods available for users to secure data with the use of client-side encryption and customer encryption-keys.,T1588.004,Digital Certificates,"['https://cloud.google.com/storage/docs/encryption', 'https://cloud.google.com/storage']","['Storage', 'Data Security', 'Encryption', 'Credentials']",,Cloud Storage,340,340
+341,There are other methods available for users to secure data with the use of client-side encryption and customer encryption-keys.,T1588.003,Code Signing Certificates,"['https://cloud.google.com/storage/docs/encryption', 'https://cloud.google.com/storage']","['Storage', 'Data Security', 'Encryption', 'Credentials']",,Cloud Storage,341,341
+342,,T1530,Data from Cloud Storage Object,['https://cloud.google.com/dlp/docs'],['Storage'],,Cloud Data Loss Prevention,342,342
+343,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1610,Deploy Container,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,343,343
+344,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1053.007,Container Orchestration Job,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,344,344
+345,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1612,Build Image on Host,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,345,345
+346,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1554,Compromise Client Software Binary,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,346,346
+347,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1525,Implant Internal Image,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,347,347
+348,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1036.001,Invalid Code Signature,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,348,348
+349,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1601,Modify System Image,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,349,349
+350,Binary authorization provides the capability to configure a policy that is enforced when an attempt is made to deploy a container image.,T1204.003,Malicious Image,"['https://cloud.google.com/binary-authorization/docs/overview', 'https://cloud.google.com/binary-authorization/docs/attestations']",['Binary Authorization'],,Binary Authorization,350,350
+351,,T1098,Account Manipulation,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,351,351
+352,,T1110,Brute Force,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,352,352
+353,,T1136,Create Account,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,353,353
+354,,T1530,Data from Cloud Storage Object,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,354,354
+355,,T1114,Email Collection,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,355,355
+356,,T1133,External Remote Services,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,356,356
+357,,T1556,Modify Authentication Process,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,357,357
+358,,T1021,Remote Services,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,358,358
+359,,T1078.002,Domain Accounts,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,359,359
+360,,T1078.004,Cloud Accounts,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,360,360
+361,,T1110.001,Password Guessing,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,361,361
+362,,T1110.002,Password Cracking,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,362,362
+363,,T1110.003,Password Spraying,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,363,363
+364,,T1110.004,Credential Stuffing,['https://landing.google.com/advancedprotection/'],"['Multi-Factor Authentication', 'Phishing']",,AdvancedProtectionProgram,364,364
+365,,T1528,Steal Application Access Token,['https://cloud.google.com/secret-manager/docs/overview'],['Data Security'],,Secret Manager,365,365
+366,,T1555,Credentials from Password Stores,['https://cloud.google.com/secret-manager/docs/overview'],['Data Security'],,Secret Manager,366,366
+367,,T1552,Unsecured Credentials,['https://cloud.google.com/secret-manager/docs/overview'],['Data Security'],,Secret Manager,367,367
+368,,T1040,Network Sniffing,['https://cloud.google.com/secret-manager/docs/overview'],['Data Security'],,Secret Manager,368,368
+369,,T1590,Gather Victim Network Information,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,369,369
+370,,T1590.004,Network Topology,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,370,370
+371,,T1590.005,IP Addresses,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,371,371
+372,,T1046,Network Service Scanning,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,372,372
+373,,T1135,Network Share Discovery,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,373,373
+374,,T1595,Active Scanning,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,374,374
+375,,T1595.001,Scanning IP Blocks,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,375,375
+376,,T1098,Account Manipulation,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,376,376
+377,,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,377,377
+378,,T1557,Adversary-in-the-Middle,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,378,378
+379,,T1602,Data from Configuration Repository,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,379,379
+380,,T1190,Exploit Public-Facing Application,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,380,380
+381,,T1552.007,Container API,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,381,381
+382,,T1018,Remote System Discovery,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,382,382
+383,,T1570,Lateral Tool Transfer,['https://cloud.google.com/vpc-service-controls/docs'],"['Network', 'Virtual Private Cloud']",,Virtual Private Cloud,383,383
+384,Similar to Azure Role based access control and Azure policy ,T1087.004,Cloud Account,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,384,384
+385,Similar to Azure Role based access control and Azure policy ,T1580,Cloud Infrastructure Discovery,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,385,385
+386,Similar to Azure Role based access control and Azure policy ,T1530,Data from Cloud Storage Object,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,386,386
+387,Similar to Azure Role based access control and Azure policy ,T1530,Data from Cloud Storage Object,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,387,387
+388,Similar to Azure Role based access control and Azure policy ,T1538,Cloud Service Dashboard,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,388,388
+389,Similar to Azure Role based access control and Azure policy ,T1578,Modify Cloud Compute Infrastructure,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,389,389
+390,Similar to Azure Role based access control and Azure policy ,T1548.002,Bypass User Account Control,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,390,390
+391,Similar to Azure Role based access control and Azure policy ,T1068,Exploitation for Privilege Escalation,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,391,391
+392,Similar to Azure Role based access control and Azure policy ,T1562,Impair Defenses,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,392,392
+393,Similar to Azure Role based access control and Azure policy ,T1078.004,Cloud Accounts,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,393,393
+394,Similar to Azure Role based access control and Azure policy ,T1078.004,Cloud Accounts,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,394,394
+395,Similar to Azure Role based access control and Azure policy ,T1562.008,Disable Cloud Logs,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,395,395
+396,Similar to Azure Role based access control and Azure policy ,T1212,Exploitation for Credential Access,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,396,396
+397,Similar to Azure Role based access control and Azure policy ,T1078,Valid Accounts,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,397,397
+398,Similar to Azure Role based access control and Azure policy ,T1087,Account Discovery,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,398,398
+399,Similar to Azure Role based access control and Azure policy ,T1098.001,Additional Cloud Credentials,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,399,399
+400,Similar to Azure Role based access control and Azure policy ,T1098,Account Manipulation,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,400,400
+401,Similar to Azure Role based access control and Azure policy ,T1222,File and Directory Permissions Modification,['https://cloud.google.com/policy-intelligence'],"['Identity', 'Role Based Access Control', 'Access Management', 'Credentials']",,Policy Intelligence,401,401
+402,,T1078.004,Cloud Accounts,['https://cloud.google.com/recaptcha-enterprise'],"['Multi-Factor Authentication', 'Identity']",,ReCAPTCHA Enterprise,402,402
+403,,T1110.004,Credential Stuffing,['https://cloud.google.com/recaptcha-enterprise'],"['Multi-Factor Authentication', 'Identity']",,ReCAPTCHA Enterprise,403,403
+404,,T1136.003,Cloud Account,['https://cloud.google.com/recaptcha-enterprise'],"['Multi-Factor Authentication', 'Identity']",,ReCAPTCHA Enterprise,404,404
+405,,T1078,Valid Accounts,['https://cloud.google.com/vpc-service-controls/docs/overview'],"['Virtual Private Cloud', 'Access Control Policies', 'Network']",,VPC Service Controls,405,405
+406,,T1537,Transfer Data to Cloud Account,['https://cloud.google.com/vpc-service-controls/docs/overview'],"['Virtual Private Cloud', 'Access Control Policies', 'Network']",,VPC Service Controls,406,406
+407,,T1530,Data from Cloud Storage Object,['https://cloud.google.com/vpc-service-controls/docs/overview'],"['Virtual Private Cloud', 'Access Control Policies', 'Network']",,VPC Service Controls,407,407
+408,,T1567,Exfiltration Over Web Service,['https://cloud.google.com/vpc-service-controls/docs/overview'],"['Virtual Private Cloud', 'Access Control Policies', 'Network']",,VPC Service Controls,408,408
+409,,T1619,Cloud Storage Object Discovery,['https://cloud.google.com/vpc-service-controls/docs/overview'],"['Virtual Private Cloud', 'Access Control Policies', 'Network']",,VPC Service Controls,409,409
+410,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1098,Account Manipulation,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,410,410
+411,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1098.001,Additional Cloud Credentials,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,411,411
+412,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1069,Permission Groups Discovery,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,412,412
+413,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1069.003,Cloud Groups,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,413,413
+414,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1078,Valid Accounts,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,414,414
+415,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1078,Valid Accounts,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,415,415
+416,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1078.004,Cloud Accounts,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,416,416
+417,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1087.004,Cloud Account,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,417,417
+418,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1087,Account Discovery,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,418,418
+419,"Similar to Azure AD for Managed Identities, Azure Role Based Access Control, AWS Identity and Access Management.",T1613,Container and Resource Discovery,['https://cloud.google.com/iam'],"['Identity', 'Credentials', 'Access Management', 'Multi-Factor Authentication', 'Role Based Access Control']",,Identity and Access Management,419,419
+420,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1068,Exploitation for Privilege Escalation,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,420,420
+421,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1190,Exploit Public-Facing Application,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,421,421
+422,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1203,Exploitation for Client Execution,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,422,422
+423,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1210,Exploitation of Remote Services,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,423,423
+424,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1211,Exploitation for Defense Evasion,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,424,424
+425,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1212,Exploitation for Credential Access,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,425,425
+426,This mapping was scored as Partial due to the medium threat protection coverage to specific (sub-) techniques of MITRE’s ATT&CK framework.,T1072,Software Deployment Tools,['https://cloud.google.com/compute/docs/vm-manager'],"['Patch Management', 'Vulnerability Management', 'Configuration Management', 'Credentials']",,VMManager,426,426
+427,Google Cloud's Artifact Registry is the recommended service for managing containers. Container Registry provides a subset of the features found in Artifact Registry and will only receive critical security fixes.,T1078,Valid Accounts,"['https://cloud.google.com/container-registry/docs/container-analysis', 'https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr']","['Containers', 'Vulnerability Analysis']",,Container Registry,427,427
+428,Google Cloud's Artifact Registry is the recommended service for managing containers. Container Registry provides a subset of the features found in Artifact Registry and will only receive critical security fixes.,T1068,Exploitation for Privilege Escalation,"['https://cloud.google.com/container-registry/docs/container-analysis', 'https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr']","['Containers', 'Vulnerability Analysis']",,Container Registry,428,428
+429,Google Cloud's Artifact Registry is the recommended service for managing containers. Container Registry provides a subset of the features found in Artifact Registry and will only receive critical security fixes.,T1525,Implant Internal Image,"['https://cloud.google.com/container-registry/docs/container-analysis', 'https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr']","['Containers', 'Vulnerability Analysis']",,Container Registry,429,429
+430,Google Cloud's Artifact Registry is the recommended service for managing containers. Container Registry provides a subset of the features found in Artifact Registry and will only receive critical security fixes.,T1610,Deploy Container,"['https://cloud.google.com/container-registry/docs/container-analysis', 'https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr']","['Containers', 'Vulnerability Analysis']",,Container Registry,430,430
+431,Google Cloud's Artifact Registry is the recommended service for managing containers. Container Registry provides a subset of the features found in Artifact Registry and will only receive critical security fixes.,T1212,Exploitation for Credential Access,"['https://cloud.google.com/container-registry/docs/container-analysis', 'https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr']","['Containers', 'Vulnerability Analysis']",,Container Registry,431,431
