@@ -1,3 +1,5 @@
+import argparse
+
 from jinja2 import Environment, FileSystemLoader
 
 from .template import PUBLIC_DIR, load_template
@@ -100,7 +102,9 @@ def load_projects():
 
 
 def build_external_landing(project: ExternalControl):
-    dir = PUBLIC_DIR / project.id
+    external_dir = PUBLIC_DIR / "external"
+    external_dir.mkdir(parents=True, exist_ok=True)
+    dir = external_dir / project.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
 
@@ -122,21 +126,30 @@ def build_external_landing(project: ExternalControl):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    environment_options = ["local", "dev"]
+    parser.add_argument("-e", "--env", choices=environment_options, default="local")
+    args = parser.parse_args()
+
+    url_prefix = "http://[::]:8000/" if args.env == "local" else "http://[::]:8000/"
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader)
     projects = load_projects()
 
-    TEMPLATE_FILE = "landing.html.j2"
-    template = templateEnv.get_template(TEMPLATE_FILE)
-    template.stream(title="Mappings Explorer").dump("./output/index.html")
+    output_path = PUBLIC_DIR / "index.html"
+    template = load_template("landing.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
+    )
+    stream.dump(str(output_path))
     print("Created site index")
 
-    TEMPLATE_FILE = "external-landing.html.j2"
-    template = templateEnv.get_template(TEMPLATE_FILE)
-
-    template.stream(title="External Mappings Home").dump(
-        "./output/external-landing.html"
-    )
+    dir = PUBLIC_DIR / "external"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("external-landing.html.j2")
+    stream = template.stream(title="External Mappings Home")
+    stream.dump(str(output_path))
     print("Created external mappings home")
 
     TEMPLATE_FILE = "external-control.html.j2"
@@ -144,19 +157,6 @@ def main():
 
     for project in projects:
         build_external_landing(project=project)
-        # template.stream(
-        #     title=project.label + " Landing",
-        #     control=project.label,
-        #     description=project.description,
-        #     version=project.version,
-        #     versions=project.versions,
-        #     attackVersion=project.attackVersion,
-        #     attackVersions=project.attackVersions,
-        #     domain=project.attackDomain,
-        #     domains=project.attackDomains,
-        #     tableHeaders=project.tableHeaders,
-        # ).dump("./output/" + project.id + "-landing.html")
-        # print("Created " + project.id + " landing")
 
 
 if __name__ == "__main__":
