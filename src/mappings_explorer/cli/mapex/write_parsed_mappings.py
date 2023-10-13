@@ -18,16 +18,16 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
     # create csv with metadata
     metadata_object = parsed_mappings["metadata"]
     metadata_object["key"] = metadata_key
-    metadata_object_df = pd.DataFrame(metadata_object, index=[0])
-    metadata_object_df.to_csv(f"{filepath}_metadata-objects.csv")
+    metadata_df = pd.DataFrame(metadata_object, index=[0])
+    metadata_df.to_csv(f"{filepath}_metadata.csv")
 
     # create csv with attack objects
     attack_objects = parsed_mappings["attack-objects"]
     for attack_object in attack_objects:
-        attack_object["metadata_key"] = metadata_key
+        attack_object["metadata-key"] = metadata_key
 
     attack_object_df = pd.DataFrame(attack_objects)
-    attack_object_df.to_csv(f"{filepath}_attack-objects.csv")
+    attack_object_df.to_csv(f"{filepath}_attack_objects.csv")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_type):
