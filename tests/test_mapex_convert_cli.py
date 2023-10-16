@@ -2,7 +2,7 @@ import json
 import os
 
 import yaml
-from mappings_explorer.cli.mapex_convert.cli import write_parsed_mappings_json
+from mapex_convert.cli import write_parsed_mappings_json
 
 from tests.expected_results.expected_results_json import (
     expected_cve_mapping_json,

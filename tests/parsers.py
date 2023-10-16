@@ -1,18 +1,18 @@
 import os
 
-from mappings_explorer.cli.mapex_convert.parse_cve_mappings import (
+from mapex_convert.parse_cve_mappings import (
     configure_cve_mappings,
 )
-from mappings_explorer.cli.mapex_convert.parse_nist_mappings import (
+from mapex_convert.parse_nist_mappings import (
     configure_nist_mappings,
 )
-from mappings_explorer.cli.mapex_convert.parse_security_stack_mappings import (
+from mapex_convert.parse_security_stack_mappings import (
     configure_security_stack_mappings,
 )
-from mappings_explorer.cli.mapex_convert.parse_veris_mappings import (
+from mapex_convert.parse_veris_mappings import (
     configure_veris_mappings,
 )
-from mappings_explorer.cli.mapex_convert.read_files import (
+from mapex_convert.read_files import (
     read_csv_file,
     read_excel_file,
     read_json_file,

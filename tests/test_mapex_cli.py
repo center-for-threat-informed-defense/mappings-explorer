@@ -2,7 +2,7 @@ import json
 import os
 
 import yaml
-from mappings_explorer.cli.mapex.write_parsed_mappings import (
+from mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_yaml,
