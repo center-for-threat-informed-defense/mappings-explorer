@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>VERIS Landing</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="/src/mappings_explorer/templates/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/src/mappings_explorer/templates/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="/src/mappings_explorer/templates/static/vendor/aos/aos.css" rel="stylesheet">
+        <link href="/src/mappings_explorer/templates/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="/src/mappings_explorer/templates/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <link href="/src/mappings_explorer/templates/static/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="/src/mappings_explorer/templates/static/main.css" rel="stylesheet">
+    </head>
+    <body class="page-index gray-bg">
+        <header class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/output" class="logo d-flex align-items-center">
+        <img src="/src/mappings_explorer/templates/static/img/CTID-brand.png" alt="">
+        <h1 class="d-flex align-items-center">MAPPINGS <span style="margin-left: 5px; color: #C2EAF6;"> Explorer</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/output" class="active">HOME</a></li>
+          <li class="dropdown"><a href="#"><span>ATT&CK OBJECTS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Tactics</a></li>
+              <li><a href="#">Techniques</a></li>
+              <li><a href="#">Data Sources/ Data Components</a></li>
+              <li><a href="#">Groups</a></li>
+              <li><a href="#">Search All ATT&CK Objects</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>MAPPING CONTROLS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="/output/external">External Mappings Home</a></li>
+              <li class="dropdown"><a href="/output/external/veris"><span>VERIS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">VERIS v1.3.5 to ATT&CK v9.0</a></li>
+                  <li><a href="#">VERIS v1.3.7 to ATT&CK v12.0</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="/output/external/nist"><span>NIST 800-53</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                    <li><a href="#">rev4 to ATT&CK v8.0</a></li>
+                    <li><a href="#">rev4 to ATT&CK v9.0</a></li>
+                    <li><a href="#">rev4 to ATT&CK v10.0</a></li>
+                    <li><a href="#">rev4 to ATT&CK v12.0</a></li>
+                    <li><a href="#">rev5 to ATT&CK v8.0</a></li>
+                    <li><a href="#">rev5 to ATT&CK v9.0</a></li>
+                    <li><a href="#">rev5 to ATT&CK v10.0</a></li>
+                    <li><a href="#">rev5 to ATT&CK v12.0</a></li>
+                </ul>
+              </li>
+              <li><a href="/output/external/cve">CVE</a></li>
+              <li><a href="/output/external/aws">Amazon Web Services (AWS)</a></li>
+              <li><a href="/output/external/gcp">Google Cloud Platform (GCP)</a></li>
+              <li><a href="/output/external/azure">Azure</a></li>
+
+
+            </ul>
+          </li>
+          <li style="padding: 10px;">
+            <div class="input-group rounded">
+              <input type="search" class="search-input form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+              <span class="input-group-text border-0 bg-primary" id="search-addon">
+                <img src="/src/mappings_explorer/templates/static/img/search-white.svg" alt="search" style="height: 20px;"/>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+        </header>
+        
+
+   <section id="header-container" class="header-container">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <h1><span class="highlight">VERIS</span> MAPPINGS</h1>
+          
+            <p>The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of metrics designed to provide a common language for describing security incidents in a structured and repeatable manner. The overall goal is to lay a foundation from which we can constructively and cooperatively learn from our experiences to better measure and manage risk. </p>
+          
+          
+          <div class="section-details">
+            <p>
+              <span>Total Mappings: <strong>300</strong></span>
+              <span>ATT&CK Versions: <strong>9.0, 12.0</strong></span>
+              <span>ATT&CK Domain: <strong>Enterprise</strong></span>
+            </p>
+          </div>
+        </div>
+        <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
+          <h6>Download Mapping Artifacts:</h6>
+          <div class="downloads">
+            <p><a href="#"><span><img src="/src/mappings_explorer/templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> YAML</a></p>
+            <p><a href="#"><span><img src="/src/mappings_explorer/templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> CSV</a></p>
+            <p><a href="#"><span><img src="/src/mappings_explorer/templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> STIX Bundles</a></p>
+            <p><a href="#"><span><img src="/src/mappings_explorer/templates/static/img/download.svg" alt="download" style="height: 20px;"/></span> Navigator Layers</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="version-select" class="version-select">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>CHOOSE YOUR VERSIONS</h2>
+          <div class="row col-12" style="display: flex;">
+          
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>VERIS Version</p>
+              <select name="control-version" id="control-version" class="form-control">
+                
+                <option value={v}>1.3.7</option>
+                
+                <option value={v}>1.3.5</option>
+                
+              </select>
+            </div>
+            
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>ATT&CK Version</p>
+              <select name="attack-version" id="attack-version" class="form-control">
+                
+                <option value={v}>9.0</option>
+                
+                <option value={v}>12.0</option>
+                
+              </select>
+            </div>
+            <div class="col-sm-4 col-md-3 form-group">
+              <p>ATT&CK Domain</p>
+              <select name="domain" id="attack-domain" class="form-control">
+                
+                <option value={d}>Enterprise</option>
+                
+              </select>
+            </div>
+            <div class="col-sm-4 col-md-3 form-group" style="margin-top: 28px;">
+            <a href="#about" class="btn-pill">See Mappings</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="mapping-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>CONTROL FAMILIES</h2>
+          
+            
+<div class="table-responsive table-outer">
+            <div class="form-outline mb-4">
+  <table class="table table-borderless table-hover table-responsive"
+    data-toggle="table"
+    data-search="true"
+    data-pagination="true"
+    data-show-multi-sort="true">
+  <thead>
+    <tr>
+        
+            <th id={header} data-sortable="true">ID</th>
+        
+            <th id={header} data-sortable="true">Control Family</th>
+        
+            <th id={header} data-sortable="true">Number of Controls</th>
+        
+            <th id={header} data-sortable="true">Description</th>
+        
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AC</td>
+      <td>Access Control</td>
+      <td>25</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+
+    </tr>
+    <tr>
+      <td>AT</td>
+      <td>Awareness and Training</td>
+      <td>4</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Audit and Accountability</td>
+      <td>16</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Security Assessment and Authorization</td>
+      <td>9</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  function customSort(sortName, sortOrder, data) {
+    var order = sortOrder === 'desc' ? -1 : 1
+    data.sort(function (a, b) {
+      var aa = +((a[sortName] + '').replace(/[^\d]/g, ''))
+      var bb = +((b[sortName] + '').replace(/[^\d]/g, ''))
+      if (aa < bb) {
+        return order * -1
+      }
+      if (aa > bb) {
+        return order
+      }
+      return 0
+    })
+  }
+</script>
+</div>
+        </div>
+
+          
+      </div>
+    </div>
+  </section>
+
+<script>
+var url = window.location.search;
+  console.log("url", url)
+  let p = url.split("&")
+  p.forEach((part) => {
+    var item = part.split("=");
+    if (item[0] == "nist_version") {
+      nist_version = item[1];
+    }
+  })
+  document.getElementById("demo").innerHTML = "default "+ nist_version;
+  console.log("nist", nist_version)
+</script>
+
+
+        <footer>
+              <!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 col-md-12 footer-info">
+            <a href="/output" class="logo d-flex align-items-center">
+              <span>MAPPINGS <span style="color: #C2EAF6"> EXPLORER</span></span>
+            </a>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+
+            <div class="d-flex mt-3 gap-4">
+              <img src="/src/mappings_explorer/templates/static/img/logo-horizontal-white.png" alt="center for threat informed defense logo" style="height: 20px; margin-top: 4px;"/>
+              <div class="social-links d-flex">
+                <a href="https://twitter.com/MITREengenuity" target="blank" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" target="blank" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://github.com/center-for-threat-informed-defense" target="blank" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" target="blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>MAPPING TYPES</h4>
+            <ul>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/nist">NIST 800-53</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/veris">VERIS</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/cve">CVE</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/gcp">Google Cloud Platform (GCP)</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/azure">Azure</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external/aws">Amazon Web Services (AWS)</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>ATT&CK OBJECTS</h4>
+            <ul>
+              <li><i class="bi bi-dash"></i> <a href="#">Techniques</a></li>
+              <li><i class="bi bi-dash"></i> <a href="#">Tactics</a></li>
+              <li><i class="bi bi-dash"></i> <a href="#">Data Sources/Components</a></li>
+              <li><i class="bi bi-dash"></i> <a href="#">Groups</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>OTHER LINKS</h4>
+            <ul>
+              <li><i class="bi bi-dash"></i> <a href="#">Search</a></li>
+              <li><i class="bi bi-dash"></i> <a href="/output/external">About External Mappings</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+        </footer>
+
+        <!-- Scripts -->
+        <script src="/src/mappings_explorer/templates/static/main.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/aos/aos.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="/src/mappings_explorer/templates/static/vendor/php-email-form/validate.js"></script>
+        <script>
+            $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            });
+        </script>
+        <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+
+    </body>
+</html>
