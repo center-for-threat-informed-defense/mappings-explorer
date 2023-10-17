@@ -23,8 +23,19 @@ def load_projects():
     nist.id = "nist"
     nist.label = "NIST 800-53"
     nist.description = [
-        "The NIST 800-53 is a cybersecurity standard and compliance framework developed by the National Institute of Standards in Technology. It’s a continuously updated framework that tries to flexibly define standards, controls, and assessments based on risk, cost-effectiveness, and capabilities. Currently, the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.",
-        "The NIST 800-53 framework is designed to provide a foundation of guiding elements, strategies, systems, and controls, that can agnostically support any organization’s cybersecurity needs and priorities. By establishing a framework available to all, it fosters communication and allows organizations to speak using a shared language. Lastly, because it doesn’t specifically support or suggest specific tools, companies, or vendors (intentionally so), it’s designed to be used as new technologies, systems, environments, and organizational changes arise, shifting cybersecurity needs.",
+        """The NIST 800-53 is a cybersecurity standard and compliance framework
+        developed by the National Institute of Standards in Technology. It’s a
+        continuously updated framework that tries to flexibly define standards, controls
+        , and assessments based on risk, cost-effectiveness, and capabilities. Currently
+        , the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.""",
+        """The NIST 800-53 framework is designed to provide a foundation of guiding
+         elements, strategies, systems, and controls, that can agnostically support any
+         organization’s cybersecurity needs and priorities. By establishing a framework
+         available to all, it fosters communication and allows organizations to speak
+         using a shared language. Lastly, because it doesn’t specifically support or
+         suggest specific tools, companies, or vendors (intentionally so), it’s designed
+         to be used as new technologies, systems, environments, and organizational
+         changes arise, shifting cybersecurity needs.""",
     ]
     nist.versions = ["rev5", "rev4"]
     nist.version = nist.versions[0]
@@ -41,7 +52,11 @@ def load_projects():
     veris.id = "veris"
     veris.label = "VERIS"
     veris.description = [
-        "The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of metrics designed to provide a common language for describing security incidents in a structured and repeatable manner. The overall goal is to lay a foundation from which we can constructively and cooperatively learn from our experiences to better measure and manage risk. "
+        """The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of
+         metrics designed to provide a common language for describing security incidents
+         in a structured and repeatable manner. The overall goal is to lay a foundation
+         from which we can constructively and cooperatively learn from our experiences
+         to better measure and manage risk. """
     ]
     veris.versions = ["1.3.7", "1.3.5"]
     veris.version = veris.versions[0]
@@ -55,7 +70,14 @@ def load_projects():
     cve.id = "cve"
     cve.label = "CVE"
     cve.description = [
-        "Common Vulnerabilities and Exposures (CVE) is a database of publicly available information security issues. CVE provides a convenient, reliable way for vendors, enterprises, academics, and all other interested parties to exchange information about cyber security issues. Sharing CVE details is beneficial to all organizations it allows organizations to set a baseline for evaluating the coverage of their security tools. CVE numbers allow organizations to see what each tool covers and how appropriate they are for your organization."
+        """Common Vulnerabilities and Exposures (CVE) is a database of publicly
+         available information security issues. CVE provides a convenient, reliable way
+         for vendors, enterprises, academics, and all other interested parties to
+         exchange information about cyber security issues. Sharing CVE details is
+         beneficial to all organizations it allows organizations to set a baseline for
+         evaluating the coverage of their security tools. CVE numbers allow
+         organizations to see what each tool covers and how appropriate they are
+         for your organization."""
     ]
     cve.attackDomains = ["enterprise"]
     cve.attackDomain = cve.attackDomains[0]
@@ -67,7 +89,13 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = [
-        "These mappings of the Amazon Web Services (AWS) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native AWS security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+        """These mappings of the Amazon Web Services (AWS) security controls to MITRE
+         ATT&CK® are designed to empower organizations with independent data on which
+         native AWS security controls are most useful in defending against the adversary
+         TTPs that they care about. These mappings are part of a collection of mappings
+         of native product security controls to ATT&CK based on a common methodology,
+         scoring rubric, data model, and tool set. This full set of resources is
+         available on the Center’s project page."""
     ]
     aws.attackDomains = ["enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -78,7 +106,13 @@ def load_projects():
     azure.id = "azure"
     azure.label = "Azure"
     azure.description = [
-        "These mappings of the Microsoft Azure Infrastructure as a Services (IaaS) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native Azure security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+        """These mappings of the Microsoft Azure Infrastructure as a Services (IaaS)
+         security controls to MITRE ATT&CK® are designed to empower organizations with
+         independent data on which native Azure security controls are most useful in
+         defending against the adversary TTPs that they care about. These mappings are
+         part of a collection of mappings of native product security controls to ATT&CK
+         based on a common methodology, scoring rubric, data model, and tool set. This
+         full set of resources is available on the Center’s project page."""
     ]
     azure.attackDomains = ["enterprise"]
     azure.attackDomain = azure.attackDomains[0]
@@ -89,7 +123,13 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = [
-        "These mappings of the Google Cloud Platform (GCP) security controls to MITRE ATT&CK® are designed to empower organizations with independent data on which native GCP security controls are most useful in defending against the adversary TTPs that they care about. These mappings are part of a collection of mappings of native product security controls to ATT&CK based on a common methodology, scoring rubric, data model, and tool set. This full set of resources is available on the Center’s project page."
+        """These mappings of the Google Cloud Platform (GCP) security controls to MITRE
+         ATT&CK® are designed to empower organizations with independent data on which
+         native GCP security controls are most useful in defending against the adversary
+         TTPs that they care about. These mappings are part of a collection of mappings
+         of native product security controls to ATT&CK based on a common methodology,
+         scoring rubric, data model, and tool set. This full set of resources is
+         available on the Center’s project page."""
     ]
     gcp.attackDomains = ["enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
