@@ -1,7 +1,6 @@
 import json
 import os
 
-import yaml
 from mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_navigator_layer,
@@ -30,14 +29,13 @@ from tests.parsers import (
 
 def test_write_nist_mappings_to_yaml(tmpdir):
     # ARRANGE
-    parsed_mappings = yaml.dump(nist_mappings_parser())
-    filename = "nist_mappings"
-    filepath = f"{tmpdir}/{filename}"
+    parsed_mappings = nist_mappings_parser()
+    filepath = f"{tmpdir}/nist"
 
     # ACT
     write_parsed_mappings_yaml(parsed_mappings, filepath)
-    file = open(f"{filepath}.yaml", "r", encoding="UTF-8")
-    result = yaml.safe_load(file)
+    file = open(f"{filepath}_attack-13.0.yaml", "r", encoding="UTF-8")
+    result = file.read()
 
     # ASSERT
     assert result == expected_nist_mapping_yaml
@@ -45,8 +43,7 @@ def test_write_nist_mappings_to_yaml(tmpdir):
 
 def test_nist_mappings_parser_csv(tmpdir):
     # ARRANGE
-    filename = "nist_mappings"
-    filepath = f"{tmpdir}/{filename}"
+    filepath = f"{tmpdir}/nist"
     parsed_mappings = nist_mappings_parser()
     veris_directory = "tests/expected_results/csv/nist"
     expected_attack_objects_file = open(
@@ -61,8 +58,13 @@ def test_nist_mappings_parser_csv(tmpdir):
 
     # ACT
     write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
-    attack_objects_file = open(f"{filepath}_attack_objects.csv", "r", encoding="UTF-8")
-    metadata_file = open(f"{filepath}_metadata.csv", "r", encoding="UTF-8")
+    version_str = get_filepath_version_str(parsed_mappings)
+    attack_objects_file = open(
+        f"{filepath}{version_str}_attack_objects.csv",
+        "r",
+        encoding="UTF-8",
+    )
+    metadata_file = open(f"{filepath}{version_str}_metadata.csv", "r", encoding="UTF-8")
 
     # ASSERT
     assert expected_attack_objects_file.read() == attack_objects_file.read()
@@ -71,13 +73,14 @@ def test_nist_mappings_parser_csv(tmpdir):
 
 def test_nist_mappings_parser_navigator_layer(tmpdir):
     # ARRANGE
-    filename = "nist_mappings"
+    filename = "nist"
     filepath = f"{tmpdir}/{filename}"
     parsed_mappings = nist_mappings_parser()
 
     # ACT
     write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "nist")
-    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
+    version_str = get_filepath_version_str(parsed_mappings)
+    file = open(f"{filepath}{version_str}_navigator_layer.json", "r", encoding="UTF-8")
     result = json.load(file)
 
     # ASSERT
@@ -93,15 +96,16 @@ def test_security_stack_mappings_yaml(tmpdir):
         for directory in directories:
             # get parsed ddata
             filepath = f"{root_filepath}/{directory}"
-            parsed_mappings = yaml.dump(security_stack_mappings_parser(filepath))
+            parsed_mappings = security_stack_mappings_parser(filepath)
 
             # write parsed data to file
-            filename = f"security_stack_{directory}_mappings"
+            filename = f"security_stack_{directory}"
             tmpdir.mkdir(directory).join(filename)
             output_filepath = f"{tmpdir}/{directory}/{filename}"
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-            file = open(f"{output_filepath}.yaml", "r", encoding="UTF-8")
-            result = yaml.safe_load(file)
+            version_str = get_filepath_version_str(parsed_mappings)
+            file = open(f"{output_filepath}{version_str}.yaml", "r", encoding="UTF-8")
+            result = file.read()
 
             # ASSERT
             assert result == expected_security_stack_mapping_yaml
@@ -135,10 +139,13 @@ def test_security_stack_mappings_csv(tmpdir):
             tmpdir.mkdir(directory).join(filename)
             write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
             metadata_key += 1
+            version_str = get_filepath_version_str(parsed_mappings)
             attack_objects_file = open(
-                f"{filepath}_attack_objects.csv", "r", encoding="UTF-8"
+                f"{filepath}{version_str}_attack_objects.csv", "r", encoding="UTF-8"
             )
-            metadata_file = open(f"{filepath}_metadata.csv", "r", encoding="UTF-8")
+            metadata_file = open(
+                f"{filepath}{version_str}_metadata.csv", "r", encoding="UTF-8"
+            )
 
             # ASSERT
             assert expected_attack_objects_file.read() == attack_objects_file.read()
@@ -163,8 +170,11 @@ def test_security_stack_mappings_navigator_layer(tmpdir):
             write_parsed_mappings_navigator_layer(
                 parsed_mappings, output_filepath, "security stack"
             )
+            version_str = get_filepath_version_str(parsed_mappings)
             file = open(
-                f"{output_filepath}_navigator_layer.json", "r", encoding="UTF-8"
+                f"{output_filepath}{version_str}_navigator_layer.json",
+                "r",
+                encoding="UTF-8",
             )
             result = json.load(file)
 
@@ -174,14 +184,15 @@ def test_security_stack_mappings_navigator_layer(tmpdir):
 
 def test_veris_mappings_yaml(tmpdir):
     # ARRANGE
-    parsed_mappings = yaml.dump(veris_mappings_parser())
+    parsed_mappings = veris_mappings_parser()
     filename = "veris_mappings"
     filepath = f"{tmpdir}/{filename}"
 
     # ACT
     write_parsed_mappings_yaml(parsed_mappings, filepath)
-    file = open(f"{filepath}.yaml", "r", encoding="UTF-8")
-    result = yaml.safe_load(file)
+    version_str = get_filepath_version_str(parsed_mappings)
+    file = open(f"{filepath}{version_str}.yaml", "r", encoding="UTF-8")
+    result = file.read()
 
     # ASSERT
     assert result == expected_veris_mapping_yaml
@@ -205,8 +216,11 @@ def test_veris_mappings_parser_csv(tmpdir):
     # ACT
     metadata_key = 0
     write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
-    attack_objects_file = open(f"{filepath}_attack_objects.csv", "r", encoding="UTF-8")
-    metadata_file = open(f"{filepath}_metadata.csv", "r", encoding="UTF-8")
+    version_str = get_filepath_version_str(parsed_mappings)
+    attack_objects_file = open(
+        f"{filepath}{version_str}_attack_objects.csv", "r", encoding="UTF-8"
+    )
+    metadata_file = open(f"{filepath}{version_str}_metadata.csv", "r", encoding="UTF-8")
 
     # ASSERT
     assert expected_attack_objects_file.read() == attack_objects_file.read()
@@ -216,12 +230,13 @@ def test_veris_mappings_parser_csv(tmpdir):
 def test_veris_mappings_navigator_layer(tmpdir):
     # ARRANGE
     parsed_mappings = veris_mappings_parser()
-    filename = "veris_mappings"
+    filename = "veris"
     filepath = f"{tmpdir}/{filename}"
 
     # ACT
     write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "veris")
-    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
+    version_str = get_filepath_version_str(parsed_mappings)
+    file = open(f"{filepath}{version_str}_navigator_layer.json", "r", encoding="UTF-8")
     result = json.load(file)
 
     # ASSERT
@@ -230,14 +245,15 @@ def test_veris_mappings_navigator_layer(tmpdir):
 
 def test_cve_mappings_yaml(tmpdir):
     # ARRANGE
-    parsed_mappings = yaml.dump(cve_mappings_parser())
-    filename = "cve_mappings"
+    parsed_mappings = cve_mappings_parser()
+    filename = "cve"
     filepath = f"{tmpdir}/{filename}"
 
     # ACT
     write_parsed_mappings_yaml(parsed_mappings, filepath)
-    file = open(f"{filepath}.yaml", "r", encoding="UTF-8")
-    result = yaml.safe_load(file)
+    version_str = get_filepath_version_str(parsed_mappings)
+    file = open(f"{filepath}{version_str}.yaml", "r", encoding="UTF-8")
+    result = file.read()
 
     # ASSERT
     assert result == expected_cve_mapping_yaml
@@ -245,7 +261,7 @@ def test_cve_mappings_yaml(tmpdir):
 
 def test_cve_mappings_parser_csv(tmpdir):
     # ARRANGE
-    filename = "cve_mappings"
+    filename = "cve"
     filepath = f"{tmpdir}/{filename}"
     parsed_mappings = cve_mappings_parser()
     cve_directory = "tests/expected_results/csv/cve"
@@ -261,8 +277,11 @@ def test_cve_mappings_parser_csv(tmpdir):
     # ACT
     metadata_key = 0
     write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
-    attack_objects_file = open(f"{filepath}_attack_objects.csv", "r", encoding="UTF-8")
-    metadata_file = open(f"{filepath}_metadata.csv", "r", encoding="UTF-8")
+    version_str = get_filepath_version_str(parsed_mappings)
+    attack_objects_file = open(
+        f"{filepath}{version_str}_attack_objects.csv", "r", encoding="UTF-8"
+    )
+    metadata_file = open(f"{filepath}{version_str}_metadata.csv", "r", encoding="UTF-8")
 
     # ASSERT
     assert expected_attack_objects_file.read() == attack_objects_file.read()
@@ -272,13 +291,24 @@ def test_cve_mappings_parser_csv(tmpdir):
 def test_cve_mappings_navigator_layer(tmpdir):
     # ARRANGE
     parsed_mappings = cve_mappings_parser()
-    filename = "cve_mappings"
+    filename = "cve"
     filepath = f"{tmpdir}/{filename}"
 
     # ACT
     write_parsed_mappings_navigator_layer(parsed_mappings, filepath, "cve")
-    file = open(f"{filepath}_navigator_layer.json", "r", encoding="UTF-8")
-    result = yaml.safe_load(file)
+    version_str = get_filepath_version_str(parsed_mappings)
+    file = open(f"{filepath}{version_str}_navigator_layer.json", "r", encoding="UTF-8")
+    result = json.load(file)
 
     # ASSERT
     assert result == expected_cve_navigator_layer
+
+
+def get_filepath_version_str(parsed_mappings):
+    attack_version = parsed_mappings["metadata"]["attack-version"]
+    mapping_framework_version = parsed_mappings["metadata"]["mapping-framework-version"]
+    mapping_framework_version_str = (
+        f"-{mapping_framework_version}" if mapping_framework_version else ""
+    )
+    version_str = f"{mapping_framework_version_str}_attack-{attack_version}"
+    return version_str
