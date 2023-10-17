@@ -2,16 +2,15 @@ import argparse
 import json
 import os
 
-from mappings_explorer.cli.mapex.write_parsed_mappings import (
+from mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_yaml,
 )
 
 ROOT_DIR = os.path.abspath(os.curdir)
-CLI_DIR = f"{ROOT_DIR}/src/mappings_explorer/cli"
-PARSED_MAPPINGS_DIR = f"{CLI_DIR}/parsed_mappings"
-MAPEX_DIR = f"{CLI_DIR}/mapex"
+PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/mappings"
+MAPEX_DIR = f"{ROOT_DIR}/src/mapex"
 
 
 def main():
@@ -49,8 +48,8 @@ def read_json_file(filepath):
 
 
 def write_parsed_cve_mappings():
-    parsed_mappings_filepath = f"{PARSED_MAPPINGS_DIR}/cve/parsed_cve_mappings.json"
-    output_filepath = f"{MAPEX_DIR}/cve_files/parsed_cve_mappings"
+    parsed_mappings_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve_attack-9.0.json"
+    output_filepath = f"{MAPEX_DIR}/cve_files/cve"
     parsed_mappings = read_json_file(parsed_mappings_filepath)
 
     # write parsed mappings to a yaml file
@@ -98,7 +97,7 @@ def write_parsed_nist_mappings():
 
             version_dir = f"{attack_version_directory}/{nist_version_directory}"
             output_directory = f"{nist_files_output_dir}{version_dir}"
-            output_filepath = f"{output_directory}/parsed_nist_mappings"
+            output_filepath = f"{output_directory}/nist"
             # writ parsed mappings to yaml
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 
@@ -136,7 +135,7 @@ def write_parsed_veris_mappings():
                 os.makedirs(veris_version_filepath)
 
             output_dir = f"{veris_files_output_dir}{veris_version_directory}"
-            output_filepath = f"{output_dir}/parsed_veris_mappings"
+            output_filepath = f"{output_dir}/veris"
             # writ parsed mappings to yaml
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 
@@ -173,9 +172,7 @@ def write_parsed_security_stack_mappings():
             if not security_stack_filepath_exists:
                 os.makedirs(security_stack_filepath)
 
-            output_filepath = (
-                f"{security_stack_filepath}/parsed_security_stack_mappings"
-            )
+            output_filepath = f"{security_stack_filepath}/{security_stack_type}"
             # writ parsed mappings to yaml
             write_parsed_mappings_yaml(parsed_mappings, output_filepath)
 

@@ -6,8 +6,11 @@ import yaml
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
+    mapping_version = parsed_mappings["metadata"]["mapping-framework-version"]
+    mapping_version_string = f"-{mapping_version}" if mapping_version else ""
+    attack_version = parsed_mappings["metadata"]["attack-version"]
     result_yaml_file = open(
-        f"{filepath}.yaml",
+        f"{filepath}{mapping_version_string}_attack-{attack_version}.yaml",
         "w",
         encoding="UTF-8",
     )
@@ -15,11 +18,19 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
 
 
 def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
+    # create filename
+    mapping_version = parsed_mappings["metadata"]["mapping-framework-version"]
+    mapping_version_string = f"-{mapping_version}" if mapping_version else ""
+    attack_version = parsed_mappings["metadata"]["attack-version"]
+    version_string = f"{mapping_version_string}_attack-{attack_version}"
+    attack_object_filename = f"{version_string}_attack_objects.csv"
+    metadata_filename = f"{version_string}_metadata.csv"
+
     # create csv with metadata
     metadata_object = parsed_mappings["metadata"]
     metadata_object["key"] = metadata_key
     metadata_df = pd.DataFrame(metadata_object, index=[0])
-    metadata_df.to_csv(f"{filepath}_metadata.csv")
+    metadata_df.to_csv(f"{filepath}{metadata_filename}_metadata.csv")
 
     # create csv with attack objects
     attack_objects = parsed_mappings["attack-objects"]
@@ -27,14 +38,18 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
         attack_object["metadata-key"] = metadata_key
 
     attack_object_df = pd.DataFrame(attack_objects)
-    attack_object_df.to_csv(f"{filepath}_attack_objects.csv")
+    attack_object_df.to_csv(f"{filepath}{attack_object_filename}.csv")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_type):
+    mapping_version = parsed_mappings["metadata"]["mapping-framework-version"]
+    mapping_version_string = f"-{mapping_version}" if mapping_version else ""
+    attack_version = parsed_mappings["metadata"]["attack-version"]
     techniques_dict = get_techniques_dict(parsed_mappings)
     layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
+    version_string = f"{mapping_version_string}_attack-{attack_version}"
     navigator_layer = open(
-        f"{filepath}_navigator_layer.json",
+        f"{filepath}{version_string}_navigator_layer.json",
         "w",
         encoding="UTF-8",
     )

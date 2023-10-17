@@ -23,7 +23,7 @@ from mapex_convert.read_files import (
 )
 
 ROOT_DIR = os.path.abspath(os.curdir)
-PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/parsed_mappings"
+PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/mappings"
 MAPPINGS_DIR = f"{ROOT_DIR}/src/mapex_convert/mappings"
 
 
@@ -114,7 +114,8 @@ def parse_cve_mappings():
     parsed_mappings = configure_cve_mappings(df, attack_object_id_to_name)
 
     # write parsed mappings to json file
-    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/parsed_cve_mappings"
+    attack_version = parsed_mappings["metadata"]["attack-version"]
+    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve_attack-{attack_version}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
 
@@ -140,7 +141,7 @@ def parse_nist_mappings():
             )
 
             # write parsed mappings to json file
-            mapped_filename = f"parsed_{filename[0: filename.index('.')]}"
+            mapped_filename = f"nist-800-{mappings_version}_attack-{attack_version}"
             attack_version_path = f"{PARSED_MAPPINGS_DIR}/nist/{attack_version}/"
             attack_version_path_exists = os.path.exists(attack_version_path)
             if not attack_version_path_exists:
@@ -172,14 +173,15 @@ def parse_veris_mappings():
                 else filename[filename.rindex("-") + 1 : filename.index(".")]
             )
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
+            attack_version = parsed_mappings["metadata"]["attack-version"]
 
             # write parsed mappings to a json file
             veris_version_path = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}"
             veris_version_path_exists = os.path.exists(veris_version_path)
             if not veris_version_path_exists:
                 os.makedirs(veris_version_path)
-            filename = filename[0 : filename.index(".")]
-            filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/parsed_{filename}"
+            filename = f"veris-{veris_version}_attack-{attack_version}"
+            filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/{filename}"
             write_parsed_mappings_json(parsed_mappings, filepath)
 
 
@@ -208,7 +210,9 @@ def parse_security_stack_mappings():
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
-            filepath = f"{security_stack_folder_path}/parsed_{directory}"
+            attack_version = parsed_mappings["metadata"]["attack-version"]
+            filename = f"{directory}_attack-{attack_version}"
+            filepath = f"{security_stack_folder_path}/{filename}"
 
             write_parsed_mappings_json(parsed_mappings, filepath)
 
