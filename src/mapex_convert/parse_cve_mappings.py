@@ -1,32 +1,32 @@
 def configure_cve_mappings(df, attack_id_to_name_dict):
-    # put data in correct format with correct fields
-    parsed_mappings = {
-        "metadata": {
-            "mapping-version": "",
-            "attack-version": "9.0",
-            # this is an assumption that all cve mappings are enterprise
-            # this assumption is not currently true
-            # need to clarify how we will handle non-enterprise cve mappings
-            "technology-domain": "enterprise",
-            "author": "",
-            "contact": "",
-            # confirm creation-data value is correct
-            "creation-date": "02/03/21",
-            # confirm last-update value is correct
-            "last-update": "10/27/21",
-            "organization": "",
-            "mapping-framework": "CVE Vulnerability List",
-            "mapping-framework-version": "",
-        },
-        "attack-objects": [],
-    }
-
     cve_mapping_types = [
         "Primary Impact",
         "Secondary Impact",
         "Exploitation Technique",
         "Uncategorized",
     ]
+    # put data in correct format with correct fields
+    parsed_mappings = {
+        "metadata": {
+            "mapping_version": "",
+            "attack_version": "9.0",
+            # this is an assumption that all cve mappings are enterprise
+            # this assumption is not currently true
+            # need to clarify how we will handle non-enterprise cve mappings
+            "technology_domain": "enterprise",
+            "author": "",
+            "contact": "",
+            # confirm creation-data value is correct
+            "creation_date": "02/03/2021",
+            # confirm last-update value is correct
+            "last_update": "10/27/2021",
+            "organization": "",
+            "mapping_framework": "cve",
+            "mapping_framework_version": "",
+            "mappings_types": cve_mapping_types,
+        },
+        "attack_objects": [],
+    }
 
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
@@ -43,16 +43,16 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                     )
                     name = attack_details.get("name", "")
 
-                    parsed_mappings["attack-objects"].append(
+                    parsed_mappings["attack_objects"].append(
                         {
                             "comments": "",
-                            "attack-object-id": attack_object,
-                            "attack-object-name": name,
+                            "attack_object_id": attack_object,
+                            "attack_object_name": name,
                             "references": [],
                             "tags": [],
-                            "mapping-description": "",
-                            "capability-id": row["CVE ID"],
-                            "mapping-type": mapping_type,
+                            "mapping_description": "",
+                            "capability_id": row["CVE ID"],
+                            "mapping_type": mapping_type,
                         }
                     )
 

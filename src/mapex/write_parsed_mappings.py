@@ -5,11 +5,11 @@ import yaml
 
 
 def get_filename_version_string(parsed_mappings):
-    mapping_framework_version = parsed_mappings["metadata"]["mapping-framework-version"]
+    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
     mapping_framework_version_string = (
         f"-{mapping_framework_version}" if mapping_framework_version else ""
     )
-    attack_version = parsed_mappings["metadata"]["attack-version"]
+    attack_version = parsed_mappings["metadata"]["attack_version"]
     return f"{mapping_framework_version_string}_attack-{attack_version}"
 
 
@@ -33,13 +33,14 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
     # create csv with metadata
     metadata_object = parsed_mappings["metadata"]
     metadata_object["key"] = metadata_key
+    metadata_object["mappings_types"] = ",".join(metadata_object["mappings_types"])
     metadata_df = pd.DataFrame(metadata_object, index=[0])
     metadata_df.to_csv(f"{filepath}{metadata_filename}.csv")
 
     # create csv with attack objects
-    attack_objects = parsed_mappings["attack-objects"]
+    attack_objects = parsed_mappings["attack_objects"]
     for attack_object in attack_objects:
-        attack_object["metadata-key"] = metadata_key
+        attack_object["metadata_key"] = metadata_key
 
     attack_object_df = pd.DataFrame(attack_objects)
     attack_object_df.to_csv(f"{filepath}{attack_object_filename}.csv")
@@ -59,9 +60,9 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_typ
 
 def get_techniques_dict(parsed_mappings):
     techniques_dict = {}
-    for mapping in parsed_mappings["attack-objects"]:
-        tehchnique_id = mapping["attack-object-id"]
-        capability_id = mapping["capability-id"]
+    for mapping in parsed_mappings["attack_objects"]:
+        tehchnique_id = mapping["attack_object_id"]
+        capability_id = mapping["capability_id"]
         if techniques_dict.get(tehchnique_id):
             techniques_dict[tehchnique_id].append(capability_id)
         else:
@@ -84,11 +85,11 @@ def create_layer(techniques_dict, parsed_mappings, mapping_type):
         "versions": {
             "navigator": "4.8.0",
             "layer": "4.4",
-            "attack": mappings_metadata["attack-version"],
+            "attack": mappings_metadata["attack_version"],
         },
         "sorting": 3,
         "description": description,
-        "domain": f"{mappings_metadata['technology-domain']}-attack",
+        "domain": f"{mappings_metadata['technology_domain']}-attack",
         "techniques": [],
         "gradient": {
             "colors": gradient,

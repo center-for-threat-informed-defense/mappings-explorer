@@ -3,6 +3,7 @@ import json
 import os
 
 import requests
+from jsonschema import validate
 from mapex_convert.parse_cve_mappings import (
     configure_cve_mappings,
 )
@@ -114,7 +115,7 @@ def parse_cve_mappings():
     parsed_mappings = configure_cve_mappings(df, attack_object_id_to_name)
 
     # write parsed mappings to json file
-    attack_version = parsed_mappings["metadata"]["attack-version"]
+    attack_version = parsed_mappings["metadata"]["attack_version"]
     output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve_attack-{attack_version}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
@@ -173,7 +174,7 @@ def parse_veris_mappings():
                 else filename[filename.rindex("-") + 1 : filename.index(".")]
             )
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
-            attack_version = parsed_mappings["metadata"]["attack-version"]
+            attack_version = parsed_mappings["metadata"]["attack_version"]
 
             # write parsed mappings to a json file
             veris_version_path = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}"
@@ -210,7 +211,7 @@ def parse_security_stack_mappings():
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
-            attack_version = parsed_mappings["metadata"]["attack-version"]
+            attack_version = parsed_mappings["metadata"]["attack_version"]
             filename = f"{directory}_attack-{attack_version}"
             filepath = f"{security_stack_folder_path}/{filename}"
 
@@ -223,4 +224,7 @@ def write_parsed_mappings_json(parsed_mappings, filepath):
         "w",
         encoding="UTF-8",
     )
+    schema_filepath = f"{ROOT_DIR}/schema/mapex-unified-data-schema.json"
+    schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
+    validate(instance=parsed_mappings, schema=schema)
     json.dump(parsed_mappings, fp=result_json_file)

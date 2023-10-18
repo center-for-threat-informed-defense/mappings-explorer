@@ -13,7 +13,7 @@ expected_nist_navigator_layer = {
 
 expected_security_stack_navigator_layer = {
     "name": "security stack overview",
-    "versions": {"navigator": "4.8.0", "layer": "4.4", "attack": 9},
+    "versions": {"navigator": "4.8.0", "layer": "4.4", "attack": "9"},
     "sorting": 3,
     "description": "security stack heatmap overview of security stack mappings, scores are the number of associated entries",
     "domain": "enterprise-attack",
