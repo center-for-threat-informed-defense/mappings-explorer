@@ -173,7 +173,7 @@ def main():
 
     url_prefix = "http://[::]:8000/" if args.env == "local" else "http://[::]:8000/"
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
-    templateEnv = Environment(loader=templateLoader)
+    templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
 
     output_path = PUBLIC_DIR / "index.html"
