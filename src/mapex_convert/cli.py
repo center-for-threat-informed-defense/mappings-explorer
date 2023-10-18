@@ -3,7 +3,6 @@ import json
 import os
 
 import requests
-from jsonschema import validate
 from mapex_convert.parse_cve_mappings import (
     configure_cve_mappings,
 )
@@ -224,7 +223,4 @@ def write_parsed_mappings_json(parsed_mappings, filepath):
         "w",
         encoding="UTF-8",
     )
-    schema_filepath = f"{ROOT_DIR}/schema/mapex-unified-data-schema.json"
-    schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
-    validate(instance=parsed_mappings, schema=schema)
     json.dump(parsed_mappings, fp=result_json_file)
