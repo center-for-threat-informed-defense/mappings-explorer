@@ -21,12 +21,37 @@ expected_security_stack_navigator_layer = {
         {
             "techniqueID": "T1078",
             "score": 2,
-            "comment": "Related to Amazon Cognito,Amazon Cognito",
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
+        },
+        {
+            "techniqueID": "T1078.004",
+            "score": 2,
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
         },
         {
             "techniqueID": "T1110",
             "score": 2,
-            "comment": "Related to Amazon Cognito,Amazon Cognito",
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
+        },
+        {
+            "techniqueID": "T1110.001",
+            "score": 2,
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
+        },
+        {
+            "techniqueID": "T1110.002",
+            "score": 2,
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
+        },
+        {
+            "techniqueID": "T1110.003",
+            "score": 2,
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
+        },
+        {
+            "techniqueID": "T1110.004",
+            "score": 2,
+            "comment": "Related to Amazon Cognito, Amazon Cognito",
         },
     ],
     "gradient": {"colors": ["#ffe766", "#ffaf66"], "minValue": 2, "maxValue": 2},
@@ -42,7 +67,7 @@ expected_veris_navigator_layer = {
         {
             "techniqueID": "T1047",
             "score": 2,
-            "comment": "Related to action.hacking.variety.Abuse of functionality,action.hacking.vector.Command shell",
+            "comment": "Related to action.hacking.variety.Abuse of functionality, action.hacking.vector.Command shell",
         },
         {
             "techniqueID": "T1053",

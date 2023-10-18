@@ -3,7 +3,11 @@ name = "mappings-explorer"
 version = "0.0.0"
 description = "A CLI to build the ATT&CK Mappings Explorer."
 authors = ["TODO <todo@mitre.org>"]
-packages = [{ include = "mappings_explorer", from="./src" }]
+packages = [
+             { include = "mappings_explorer", from="./src" },
+             { include = "mapex_convert", from="./src" },
+             { include = "mapex", from="./src" }
+           ]
 readme = "README.md"
 license = "Apache-2.0"
 classifiers = [
@@ -14,7 +18,8 @@ repository = "https://github.com/center-for-threat-informed-defense/mappings-exp
 
 [tool.poetry.scripts]
 build-mappings-explorer = "mappings_explorer.site_builder:main"
-mapex = "mappings_explorer.cli.cli:main"
+mapex = "mapex.cli:main"
+mapex-convert = "mapex_convert.cli:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
