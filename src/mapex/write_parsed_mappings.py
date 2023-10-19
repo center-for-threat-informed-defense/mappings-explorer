@@ -64,10 +64,47 @@ def get_techniques_dict(parsed_mappings):
     for mapping in parsed_mappings["attack_objects"]:
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
+
+        # add score metadata if it is a scoring mapping
+        score_metadata = (
+            "technique-scores" in parsed_mappings["metadata"]["mappings_types"]
+        )
+
+        if score_metadata:
+            # define metadata objects
+            metadata_control = {"name": "control", "value": mapping["capability_id"]}
+            metadata_score_category = {
+                "name": "category",
+                "value": mapping["score_category"],
+            }
+            metadata_score_value = {"name": "value", "value": mapping["score_value"]}
+            metadata_comment = {"name": "comment", "value": mapping["comments"]}
+            divider = {"divider": True}
+
         if techniques_dict.get(tehchnique_id):
-            techniques_dict[tehchnique_id].append(capability_id)
+            # add capability information to technique it is mapped to
+            techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
+            if score_metadata:
+                techniques_dict[tehchnique_id]["metadata"].extend(
+                    [
+                        metadata_control,
+                        metadata_score_category,
+                        metadata_score_value,
+                        metadata_comment,
+                        divider,
+                    ]
+                )
         else:
-            techniques_dict[tehchnique_id] = [capability_id]
+            # add capability information to technique it is mapped to
+            techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
+            if score_metadata:
+                techniques_dict[tehchnique_id]["metadata"] = [
+                    metadata_control,
+                    metadata_score_category,
+                    metadata_score_value,
+                    metadata_comment,
+                    divider,
+                ]
     return techniques_dict
 
 
@@ -97,12 +134,15 @@ def create_layer(techniques_dict, parsed_mappings, mapping_type):
         },
     }
     for technique in techniques_dict:
-        related_controls_string = ", ".join(techniques_dict[technique])
+        related_controls_string = ", ".join(
+            techniques_dict[technique]["capability_ids"]
+        )
         layer["techniques"].append(
             {
                 "techniqueID": technique,
-                "score": len(techniques_dict[technique]),
+                "score": len(techniques_dict[technique]["capability_ids"]),
                 "comment": f"Related to {related_controls_string}",
+                "metadata": techniques_dict[technique]["metadata"],
             }
         )
 
