@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 
+from jsonschema import validate
 from mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
     write_parsed_mappings_navigator_layer,
@@ -16,27 +17,34 @@ MAPEX_DIR = f"{ROOT_DIR}/src/mapex"
 def main():
     """Main entry point for `mapex` command line."""
     args = _parse_args()
-    if args.mappings == "cve":
-        write_parsed_cve_mappings()
-    elif args.mappings == "nist":
-        write_parsed_nist_mappings()
-    elif args.mappings == "veris":
-        write_parsed_veris_mappings()
-    elif args.mappings == "security-stack":
-        write_parsed_security_stack_mappings()
+    input_file = args.input_file
+    if args.command == "export":
+        output_file = args.output_file
+        file_type = args.file_type
+        if os.path.isfile(input_file):
+            metadata_key = 0
+            export_file(input_file, output_file, file_type, metadata_key)
+        else:
+            print("Input file must be a valid file")
+    elif args.command == "validate":
+        validate_file(input_file)
 
 
 def _parse_args():
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--mappings",
-        type=str,
-        required=True,
-        help="""Set of mappings to parse
-                        Options: cve, nist, veris, security-stack
-                        """,
+    subparsers = parser.add_subparsers(help="commands", dest="command")
+
+    export_parser = subparsers.add_parser("export")
+    export_parser.add_argument("input_file")
+    export_parser.add_argument("output_file")
+    export_parser.add_argument(
+        "--file-type", choices=["csv", "yaml", "navigator-layer"]
     )
+
+    validate_parser = subparsers.add_parser("validate")
+    validate_parser.add_argument("input_file")
+
     args: argparse.Namespace = parser.parse_args()
     return args
 
@@ -47,140 +55,26 @@ def read_json_file(filepath):
         return json.loads(mappings)
 
 
-def write_parsed_cve_mappings():
-    parsed_mappings_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve_attack-9.0.json"
-    output_filepath = f"{MAPEX_DIR}/cve_files/cve"
-    parsed_mappings = read_json_file(parsed_mappings_filepath)
-
-    # write parsed mappings to a yaml file
-    write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-
-    # key that connects the metadata csv file and the attack objects csv file
-    metadata_key = 0
-    # write parsed mappings to a csv file
-    write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
-
-    # write parse mappings to navigator layer
-    write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath, "cve")
-
-
-def write_parsed_nist_mappings():
-    nist_parsed_mappings_dir = f"{PARSED_MAPPINGS_DIR}/nist/"
-
-    # key that connects the metadata csv file and the attack objects csv file
-    metadata_key = 0
-    for subdir, _, files in os.walk(nist_parsed_mappings_dir):
-        for file in files:
-            # read parsed mappings
-            parsed_mappings_filepath = os.path.join(subdir, file)
-            parsed_mappings = read_json_file(parsed_mappings_filepath)
-
-            # create the proper directories
-            nist_files_output_dir = f"{MAPEX_DIR}/nist_files/"
-            directories = parsed_mappings_filepath.split("/")
-            nist_version_directory = directories[-2]
-            attack_version_directory = directories[-3]
-            attack_version_filepath = (
-                f"{nist_files_output_dir}{attack_version_directory}"
-            )
-            attack_version_filepath_exists = os.path.exists(attack_version_filepath)
-            if not attack_version_filepath_exists:
-                os.makedirs(attack_version_filepath)
-
-            nist_version_filepath = (
-                f"{attack_version_filepath}/{nist_version_directory}"
-            )
-            nist_version_filepath_exists = os.path.exists(nist_version_filepath)
-
-            if not nist_version_filepath_exists:
-                os.makedirs(nist_version_filepath)
-
-            version_dir = f"{attack_version_directory}/{nist_version_directory}"
-            output_directory = f"{nist_files_output_dir}{version_dir}"
-            output_filepath = f"{output_directory}/nist"
-            # writ parsed mappings to yaml
-            write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-
-            # write parsed mappings to csv
-            write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
-            metadata_key += 1
-
-            # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(
-                parsed_mappings, output_filepath, "nist"
-            )
+def export_file(input_file, output_file, file_type, metadata_key):
+    parsed_mappings = read_json_file(input_file)
+    if file_type is None:
+        write_parsed_mappings_yaml(parsed_mappings, output_file)
+        write_parsed_mappings_csv(parsed_mappings, output_file, metadata_key)
+        write_parsed_mappings_navigator_layer(parsed_mappings, output_file)
+    elif file_type == "yaml":
+        write_parsed_mappings_yaml(parsed_mappings, output_file)
+    elif file_type == "csv":
+        write_parsed_mappings_csv(parsed_mappings, output_file, metadata_key)
+    elif file_type == "navigator-layer":
+        write_parsed_mappings_navigator_layer(parsed_mappings, output_file)
+    else:
+        print("Please enter a correct filetype")
 
 
-def write_parsed_veris_mappings():
-    veris_parsed_mappings_dir = f"{PARSED_MAPPINGS_DIR}/veris"
-
-    metadata_key = 0
-
-    for subdir, _, files in os.walk(veris_parsed_mappings_dir):
-        for file in files:
-            # read parsed mappings
-            parsed_mappings_filepath = os.path.join(subdir, file)
-            parsed_mappings = read_json_file(parsed_mappings_filepath)
-
-            # create the proper directories
-            veris_files_output_dir = f"{MAPEX_DIR}/veris_files/"
-            directories = parsed_mappings_filepath.split("/")
-            veris_version_directory = directories[-2]
-            veris_version_filepath = (
-                f"{veris_files_output_dir}{veris_version_directory}"
-            )
-
-            veris_version_filepath_exists = os.path.exists(veris_version_filepath)
-            if not veris_version_filepath_exists:
-                os.makedirs(veris_version_filepath)
-
-            output_dir = f"{veris_files_output_dir}{veris_version_directory}"
-            output_filepath = f"{output_dir}/veris"
-            # writ parsed mappings to yaml
-            write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-
-            # write parsed mappings to csv
-            write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
-            metadata_key += 1
-
-            # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(
-                parsed_mappings, output_filepath, "veris"
-            )
-
-
-def write_parsed_security_stack_mappings():
-    security_stack_dir = f"{PARSED_MAPPINGS_DIR}/security_stack"
-
-    metadata_key = 0
-
-    for subdir, _, files in os.walk(security_stack_dir):
-        for file in files:
-            # read parsed mappings
-            parsed_mappings_filepath = os.path.join(subdir, file)
-            parsed_mappings = read_json_file(parsed_mappings_filepath)
-
-            # create the proper directories
-            security_stack_files_output_dir = f"{MAPEX_DIR}/security_stack_files/"
-            directories = parsed_mappings_filepath.split("/")
-            security_stack_type = directories[-2]
-            security_stack_filepath = (
-                f"{security_stack_files_output_dir}{security_stack_type}"
-            )
-
-            security_stack_filepath_exists = os.path.exists(security_stack_filepath)
-            if not security_stack_filepath_exists:
-                os.makedirs(security_stack_filepath)
-
-            output_filepath = f"{security_stack_filepath}/{security_stack_type}"
-            # writ parsed mappings to yaml
-            write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-
-            # write parsed mappings to csv
-            write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
-            metadata_key += 1
-
-            # write parsed mappings to navigator layer
-            write_parsed_mappings_navigator_layer(
-                parsed_mappings, output_filepath, "security stack"
-            )
+def validate_file(input_file):
+    parsed_mappings = read_json_file(input_file)
+    schema_filepath = f"{ROOT_DIR}/schema/mapex-unified-data-schema.json"
+    schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
+    validation_errors = validate(instance=parsed_mappings, schema=schema)
+    if validation_errors is None:
+        print("successfully vaidated")

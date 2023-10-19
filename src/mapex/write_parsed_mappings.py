@@ -46,9 +46,10 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
     attack_object_df.to_csv(f"{filepath}{attack_object_filename}.csv")
 
 
-def write_parsed_mappings_navigator_layer(parsed_mappings, filepath, mapping_type):
+def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
     filename_version_string = get_filename_version_string(parsed_mappings)
     techniques_dict = get_techniques_dict(parsed_mappings)
+    mapping_type = parsed_mappings["metadata"]["mapping_framework"]
     layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
     navigator_layer = open(
         f"{filepath}{filename_version_string}_navigator_layer.json",
