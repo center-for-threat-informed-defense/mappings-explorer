@@ -18,7 +18,7 @@
         },
         "technology_domain": {
           "description": "ATT&CK Technology Domain (Enterprise, Mobile, ICS).",
-          "type": "string",
+          "type": "array",
           "items": {
             "enum": ["enterprise", "mobile", "ics"]
           }
@@ -35,7 +35,7 @@
         },
         "mapping_framework": {
           "description": "The group of objects being mapped to ATT&CK.",
-          "type": "string",
+          "type": "array",
           "items": {
             "enum": ["veris", "nist_800_53", "cve", "aws", "gcp", "azure"]
           }
@@ -64,7 +64,7 @@
           "type": "string"
         },
         "mapping_types": {
-          "description": "The mappings file valid mapping types.",
+          "description": "The mappings types that are associated with each Framework.",
           "type": "array",
           "items": {
             "type": "object",
@@ -92,7 +92,7 @@
       ]
     },
     "mapping_object": {
-      "description": "The mappings between framework objects and ATT&CK objects.",
+      "description": "A single mapping between framework object and ATT&CK object.",
       "type": "array",
       "items": {
         "type": "object",
@@ -102,15 +102,15 @@
             "type": "string"
           },
           "attack_object_name": {
-            "description": "The name of the ATT&CK Object. (Serverless Execution)",
+            "description": "The name of the ATT&CK object. (Serverless Execution)",
             "type": "string"
           },
           "capability_id": {
             "description": "Unique identifier of the framework object being mapped.",
             "type": "string"
           },
-          "mapping_description": {
-            "description": "Name or description of Mapping Target",
+          "capability_description": {
+            "description": "Name or description of framework object",
             "type": "string"
           },
           "comments": {
@@ -156,7 +156,10 @@
           },
           "else": {}
         },
-        "required": ["mapping_type", "capability_id"]
+        "required": ["mapping_type", "capability_id"],
+        "dependentRequired": {
+          "mapping_type": ["valid_mapping_types"]
+        }
       }
     }
   }
