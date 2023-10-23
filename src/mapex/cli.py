@@ -77,4 +77,4 @@ def validate_file(input_file):
     schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
     validation_errors = validate(instance=parsed_mappings, schema=schema)
     if validation_errors is None:
-        print("successfully vaidated")
+        print("successfully validated")

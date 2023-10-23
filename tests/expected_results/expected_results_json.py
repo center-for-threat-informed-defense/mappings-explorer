@@ -313,10 +313,10 @@ expected_cve_mapping_json = {
         "mapping_framework": "cve",
         "mapping_framework_version": "",
         "mappings_types": [
-            "Primary Impact",
-            "Secondary Impact",
-            "Exploitation Technique",
-            "Uncategorized",
+            "primary_impact",
+            "secondary_impact",
+            "exploitation_technique",
+            "uncategorized",
         ],
     },
     "attack_objects": [
@@ -328,7 +328,7 @@ expected_cve_mapping_json = {
             "tags": [],
             "mapping_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "Primary Impact",
+            "mapping_type": "Primary_impact",
         },
         {
             "comments": "",
@@ -338,7 +338,7 @@ expected_cve_mapping_json = {
             "tags": [],
             "mapping_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "Exploitation Technique",
+            "mapping_type": "exploitation_technique",
         },
         {
             "comments": "",
@@ -348,7 +348,7 @@ expected_cve_mapping_json = {
             "tags": [],
             "mapping_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "Exploitation Technique",
+            "mapping_type": "exploitation_technique",
         },
         {
             "comments": "",
@@ -358,7 +358,7 @@ expected_cve_mapping_json = {
             "tags": [],
             "mapping_description": "",
             "capability_id": "CVE-2019-15976",
-            "mapping_type": "Primary Impact",
+            "mapping_type": "primary_impact",
         },
     ],
 }

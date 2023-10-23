@@ -1,9 +1,9 @@
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
-        "Primary Impact",
-        "Secondary Impact",
-        "Exploitation Technique",
-        "Uncategorized",
+        "primary_impact",
+        "secondary_impact",
+        "exploitation_technique",
+        "uncategorized",
     ]
     # put data in correct format with correct fields
     parsed_mappings = {

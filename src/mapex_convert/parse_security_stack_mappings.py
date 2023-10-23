@@ -1,16 +1,14 @@
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
     creation_date = data["creation date"]
-    month = creation_date[0 : creation_date.index("/")]
     day = creation_date[creation_date.index("/") + 1 : creation_date.rindex("/")]
     year = creation_date[creation_date.rindex("/") + 1 :]
 
-    if len(month) < 2:
-        month = "0" + month
-    if len(day) < 2:
-        day = "0" + day
-    if len(year) < 4:
-        year = "20" + year
+    month = creation_date[0 : creation_date.index("/")].rjust(2, "0")
+    day = creation_date[creation_date.index("/") + 1 : creation_date.rindex("/")].rjust(
+        2, "0"
+    )
+    year = creation_date[creation_date.rindex("/") + 1 :].rjust(4, "20")
 
     if len(list(parsed_mappings.keys())) == 0:
         parsed_mappings["metadata"] = {
