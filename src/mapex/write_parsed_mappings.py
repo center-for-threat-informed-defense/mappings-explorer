@@ -114,7 +114,6 @@ def create_layer(techniques_dict, parsed_mappings, mapping_type):
         "mappings, scores are the number of associated entries"
     )
 
-    # this will change when there is only one metadata object per project
     mappings_metadata = parsed_mappings["metadata"]
 
     gradient = ["#ffe766", "#ffaf66"]
@@ -142,7 +141,7 @@ def create_layer(techniques_dict, parsed_mappings, mapping_type):
                 "techniqueID": technique,
                 "score": len(techniques_dict[technique]["capability_ids"]),
                 "comment": f"Related to {related_controls_string}",
-                "metadata": techniques_dict[technique]["metadata"],
+                "metadata": techniques_dict[technique].get("metadata", []),
             }
         )
 

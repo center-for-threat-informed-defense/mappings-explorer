@@ -328,7 +328,7 @@ expected_cve_mapping_json = {
             "tags": [],
             "mapping_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "Primary_impact",
+            "mapping_type": "primary_impact",
         },
         {
             "comments": "",

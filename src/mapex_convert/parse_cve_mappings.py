@@ -1,10 +1,15 @@
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
-        "primary_impact",
-        "secondary_impact",
-        "exploitation_technique",
-        "uncategorized",
+        "Primary Impact",
+        "Secondary Impact",
+        "Exploitation Technique",
+        "Uncategorized",
     ]
+
+    formatted_cve_mapping_types = [
+        mapping_type.lower().replace(" ", "_") for mapping_type in cve_mapping_types
+    ]
+
     # put data in correct format with correct fields
     parsed_mappings = {
         "metadata": {
@@ -23,7 +28,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "organization": "",
             "mapping_framework": "cve",
             "mapping_framework_version": "",
-            "mappings_types": cve_mapping_types,
+            "mappings_types": formatted_cve_mapping_types,
         },
         "attack_objects": [],
     }
@@ -33,6 +38,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             if isinstance(row[mapping_type], str):
                 # split techniques and subtechniques into individual attack objects
                 mapped_attack_objects = row[mapping_type].split("; ")
+                mapping_type = mapping_type.lower().replace(" ", "_")
                 for attack_object in mapped_attack_objects:
                     # technique id is not in the dictionary, set it to an empty string
                     # this can happen if the technique has been deprecated or revoked
@@ -55,5 +61,4 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "mapping_type": mapping_type,
                         }
                     )
-
     return parsed_mappings

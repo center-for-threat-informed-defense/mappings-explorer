@@ -68,7 +68,7 @@ def test_write_mappings_to_csv(tmpdir):
     assert expected_metadata_file.read() == metadata_file.read()
 
 
-def test_nist_mappings_parser_navigator_layer(tmpdir):
+def test_write_mappings_to_navigator_layer(tmpdir):
     # ARRANGE
     root_dir = os.path.dirname(__file__)
     json_filepath = os.path.join(root_dir, "files/parsed_mappings.json")
@@ -84,8 +84,4 @@ def test_nist_mappings_parser_navigator_layer(tmpdir):
     result = json.load(file)
 
     # ASSERT
-    print("RESULT")
-    print(result)
-    print("EXPECTED")
-    print(expected_navigator_layer_results)
     assert result == expected_navigator_layer_results
