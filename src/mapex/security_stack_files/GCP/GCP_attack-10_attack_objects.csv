@@ -1,4 +1,4 @@
-,comments,attack_object_id,attack_object_name,references,tags,mapping_description,capability_id,mapping_type,score_category,score_value,related_score,metadata_key
+,comments,attack_object_id,attack_object_name,references,tags,capability_description,capability_id,mapping_type,score_category,score_value,related_score,metadata_key
 0,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1566,Phishing,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,technique-scores,Protect,Significant,,0
 1,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1566.001,Spearphishing Attachment,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,technique-scores,Protect,Partial,,0
 2,"This mapping was scored as significant due to the control’s high threat protection coverage to specific ATT&CK (sub-)techniques and temporal factors (e.g., real-time).",T1059,Command and Scripting Interpreter,"['https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage', 'https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information', 'https://assets.virustotal.com/vt-360-outcomes.pdf']","['Antivirus', 'Antimalware', 'Malware']",,Virus Total,technique-scores,Protect,Significant,,0
@@ -194,322 +194,322 @@ The cyber-attacks mapped are considered a subset of the most notable threat dete
 173,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552.001,Credentials In Files,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,technique-scores,Protect,Minimal,,0
 174,"Similar to AWS Key Management Service, AWS Cloud HSM, and Azure KeyVault.",T1552.004,Private Keys,['https://cloud.google.com/security-key-management'],['Credentials'],,Cloud Key Management,technique-scores,Protect,Minimal,,0
 175,,T1566,Phishing,['https://cloud.google.com/titan-security-key#section-3'],"['Multi-Factor Authentication', 'Identity']",,Titan Security Key,technique-scores,Protect,Significant,,0
-176,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+176,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021.002,SMB/Windows Admin Shares,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-177,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+177,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1037,Boot or Logon Initialization Scripts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-178,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+178,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1053.005,Scheduled Task,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-179,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+179,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.005,Mshta,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-180,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+180,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.001,Launch Agent,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-181,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+181,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.004,Launch Daemon,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-182,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+182,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.001,Change Default File Association,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-183,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+183,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1547.001,Registry Run Keys / Startup Folder,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-184,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+184,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1547,Boot or Logon Autostart Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-185,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+185,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546,Event Triggered Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-186,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+186,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543,Create or Modify System Process,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-187,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+187,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1548.002,Bypass User Account Control,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-188,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+188,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1564.001,Hidden Files and Directories,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-189,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+189,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1564,Hide Artifacts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-190,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+190,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003.003,NTDS,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-191,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+191,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1078,Valid Accounts,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-192,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+192,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1134.005,SID-History Injection,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-193,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+193,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003,OS Credential Dumping,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-194,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+194,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1548,Abuse Elevation Control Mechanism,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-195,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+195,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1584.002,DNS Server,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-196,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+196,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1562.004,Disable or Modify System Firewall,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-197,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+197,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1098.001,Additional Cloud Credentials,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-198,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+198,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1530,Data from Cloud Storage Object,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-199,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+199,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.002,Clear Linux or Mac System Logs,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-200,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+200,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1136.001,Local Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-201,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+201,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1098,Account Manipulation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-202,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+202,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1106,Native API,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-203,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+203,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021.004,SSH,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-204,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+204,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1578,Modify Cloud Compute Infrastructure,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-205,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+205,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1052.001,Exfiltration over USB,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-206,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+206,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1112,Modify Registry,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-207,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+207,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1021,Remote Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-208,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+208,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1052,Exfiltration Over Physical Medium,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-209,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+209,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1053,Scheduled Task/Job,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-210,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+210,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070,Indicator Removal on Host,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-211,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+211,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1134,Access Token Manipulation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-212,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+212,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218,Signed Binary Proxy Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-213,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+213,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1584,Compromise Infrastructure,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-214,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+214,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056,Input Capture,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-215,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+215,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056.003,Web Portal Capture,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-216,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+216,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1056.004,Credential API Hooking,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-217,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+217,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1071.001,Web Protocols,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-218,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+218,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1071,Application Layer Protocol,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-219,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+219,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059,Command and Scripting Interpreter,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-220,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+220,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.010,Regsvr32,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-221,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+221,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059.003,Windows Command Shell,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-222,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+222,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1082,System Information Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-223,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+223,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1218.003,CMSTP,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-224,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+224,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1018,Remote System Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-225,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+225,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1552,Unsecured Credentials,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-226,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+226,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1486,Data Encrypted for Impact,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-227,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+227,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1204,User Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-228,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+228,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1036.005,Match Legitimate Name or Location,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-229,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+229,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1027.004,Compile After Delivery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-230,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+230,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1127.001,MSBuild,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-231,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+231,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1127,Trusted Developer Utilities Proxy Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-232,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+232,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1190,Exploit Public-Facing Application,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-233,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+233,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1068,Exploitation for Privilege Escalation,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-234,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+234,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1036,Masquerading,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-235,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+235,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1055,Process Injection,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-236,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+236,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1210,Exploitation of Remote Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-237,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+237,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1037.003,Network Logon Script,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-238,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+238,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1212,Exploitation for Credential Access,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-239,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+239,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1505.003,Web Shell,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-240,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+240,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1059.007,JavaScript,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-241,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+241,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1560,Archive Collected Data,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-242,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+242,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1203,Exploitation for Client Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-243,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+243,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1132,Data Encoding,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-244,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+244,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1132.001,Standard Encoding,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-245,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+245,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1195.002,Compromise Software Supply Chain,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-246,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+246,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1195,Supply Chain Compromise,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-247,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+247,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1072,Software Deployment Tools,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-248,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+248,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.007,Netsh Helper DLL,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-249,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+249,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1505,Server Software Component,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-250,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+250,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1574.007,Path Interception by PATH Environment Variable,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-251,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+251,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1574,Hijack Execution Flow,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-252,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+252,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1087.004,Cloud Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-253,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+253,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1087,Account Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-254,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+254,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.004,File Deletion,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-255,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+255,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1020,Automated Exfiltration,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-256,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+256,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1041,Exfiltration Over C2 Channel,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-257,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+257,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1011,Exfiltration Over Other Network Medium,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-258,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+258,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1027,Obfuscated Files or Information,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-259,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+259,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1484,Domain Policy Modification,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-260,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+260,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1136,Create Account,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-261,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+261,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1543.003,Windows Service,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-262,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+262,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.006,Timestomp,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-263,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+263,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1003.001,LSASS Memory,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-264,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+264,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1137.001,Office Template Macros,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-265,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+265,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1137,Office Application Startup,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-266,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+266,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1057,Process Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-267,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+267,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1016,System Network Configuration Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-268,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+268,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1049,System Network Connections Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-269,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+269,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1033,System Owner/User Discovery,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-270,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+270,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1588.002,Tool,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-271,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+271,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1588,Obtain Capabilities,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-272,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+272,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1070.001,Clear Windows Event Logs,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-273,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+273,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1569.002,Service Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-274,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+274,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1569,System Services,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-275,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+275,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.008,Accessibility Features,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-276,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+276,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1048,Exfiltration Over Alternative Protocol,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-277,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+277,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1105,Ingress Tool Transfer,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-278,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+278,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1495,Firmware Corruption,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-279,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+279,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1497,Virtualization/Sandbox Evasion,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-280,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+280,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1202,Indirect Command Execution,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
-281,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework. 
+281,"This mapping is given a score of minimal due to low threat detection fidelity from specific (sub-)techniques found in MITRE’s ATT&CK framework.
 
 Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json, csv, xml, and syslog. ",T1546.003,Windows Management Instrumentation Event Subscription,"['https://cloud.google.com/chronicle/docs/overview', 'https://github.com/chronicle/detection-rules']","['SIEM', 'Chronicle', 'Threat Detection', 'Analytics']",,Chronicle,technique-scores,Detect,Minimal,,0
 282,,T1199,Trusted Relationship,['https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview'],"['Auditing', 'Access Management']",,Access Transparency,technique-scores,Detect,Minimal,,0
@@ -540,7 +540,7 @@ Chronicle is able to ingest and aggregate raw logs from multiple data formats, t
 307,"Documentation is segmented into 4 sections: VPC Firewall rules, Hierarchical firewall policies, Firewall insights, Firewall rules logging. These sections are listed under Firewall Insights and Virtual Private Cloud (VPC) rather than a generic Firewall documentation page. Its unclear if the data in these sections should correspond to the ""Firewalls"" control, or the parent control under which its documented.",T1595,Active Scanning,['https://cloud.google.com/firewalls'],"['Firewall', 'Logging', 'Network']",,Firewalls,technique-scores,Protect,Partial,,0
 308,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -549,7 +549,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1204.003,Malicious Image,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 309,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -558,7 +558,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1525,Implant Internal Image,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 310,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -567,7 +567,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1133,External Remote Services,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 311,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -576,7 +576,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1505.003,Web Shell,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 312,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -585,7 +585,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1105,Ingress Tool Transfer,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 313,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -594,7 +594,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1059.004,Unix Shell,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 314,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -603,7 +603,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1071.004,DNS,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 315,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -612,7 +612,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1110,Brute Force,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 316,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -621,7 +621,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1078.004,Cloud Accounts,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 317,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -630,7 +630,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562,Impair Defenses,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 318,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -639,7 +639,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1567,Exfiltration Over Web Service,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 319,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -648,7 +648,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1567.002,Exfiltration to Cloud Storage,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 320,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -657,7 +657,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1505.001,SQL Stored Procedures,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 321,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -666,7 +666,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1098.001,Additional Cloud Credentials,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 322,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -675,7 +675,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562.007,Disable or Modify Cloud Firewall,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 323,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -684,7 +684,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1589.001,Credentials,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Protect,Significant,,0
 324,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -693,7 +693,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1496,Resource Hijacking,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 325,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -702,7 +702,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1213.003,Code Repositories,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Protect,Significant,,0
 326,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -711,7 +711,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1040,Network Sniffing,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Protect,Minimal,,0
 327,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -720,7 +720,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1190,Exploit Public-Facing Application,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 328,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -729,7 +729,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1078.001,Default Accounts,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 329,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -738,7 +738,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1542,Pre-OS Boot,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 330,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -747,7 +747,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1542.003,Bootkit,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 331,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -756,7 +756,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1014,Rootkit,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 332,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -765,7 +765,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1070,Indicator Removal on Host,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 333,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -774,7 +774,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1484,Domain Policy Modification,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 334,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -783,7 +783,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1136.003,Cloud Account,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 335,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -792,7 +792,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1562.008,Disable Cloud Logs,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 336,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
@@ -801,7 +801,7 @@ Further automated response functionality can be extended in SCC to take actions 
 Reference: https://github.com/GoogleCloudPlatform/security-response-automation ",T1578,Modify Cloud Compute Infrastructure,"['https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview', 'https://github.com/GoogleCloudPlatform/security-analytics']","['Analytics', 'Security Command Center', 'Vulnerability Management']",,Security Command Center,technique-scores,Detect,Significant,,0
 337,"This mapping was rated as significant due to the control’s notable detection accuracy, mappable threat coverage, and time-related factors (e.g., real-time).
 
-SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+SCC also provides users with compliance mappings that scan environments against violations according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 To improve cyber-situational awareness and detection against various threats, SCC ingests logging data from multiple sources. Cloud Audit Admin Activity logs are always enabled by default and cannot be disabled. SCC Premium consumes logs automatically when activated. SSH Logs and syslog inform the brute force detector, and the set of network logs (VPC Flow/Cloud Firewall/Cloud NAT/Cloud DNS).
 
