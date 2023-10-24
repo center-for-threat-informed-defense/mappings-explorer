@@ -1,23 +1,36 @@
 def configure_security_stack_mappings(data, parsed_mappings):
+    # ensure creation date meets correct date format
+    creation_date = data["creation date"]
+
+    month = creation_date[0 : creation_date.index("/")].rjust(2, "0")
+    day = creation_date[creation_date.index("/") + 1 : creation_date.rindex("/")].rjust(
+        2, "0"
+    )
+
+    year = creation_date[creation_date.rindex("/") + 1 :]
+    if len(year) < 4:
+        year += 1
+
     if len(list(parsed_mappings.keys())) == 0:
         parsed_mappings["metadata"] = {
-            "mapping-version": data["version"],
-            "attack-version": data["ATT&CK version"],
+            "mapping_version": str(data["version"]),
+            "attack_version": str(data["ATT&CK version"]),
             # this is an assumption that all cve mappings are enterprise
             # this assumption is not currently true
             # need to clarify how we will handle non-enterprise cve mappings
-            "technology-domain": "enterprise",
+            "technology_domain": "enterprise",
             "author": "",
             "contact": data["contact"],
             # confirm creation-data value is correct
-            "creation-date": data["creation date"],
+            "creation_date": f"{month}/{day}/{year}",
             # confirm last-update value is correct
-            "last-update": "",
+            "last_update": f"{month}/{day}/{year}",
             "organization": "",
-            "mapping-framework": data["platform"],
-            "mapping-framework-version": "",
+            "mapping_framework": data["platform"].lower(),
+            "mapping_framework_version": "",
+            "mappings_types": ["technique-scores"],
         }
-        parsed_mappings["attack-objects"] = []
+        parsed_mappings["attack_objects"] = []
 
     for technique in data["techniques"]:
         comments = data.get("comments") or ""
@@ -25,19 +38,19 @@ def configure_security_stack_mappings(data, parsed_mappings):
         references = data.get("references") or []
 
         for technique_score in technique["technique-scores"]:
-            parsed_mappings["attack-objects"].append(
+            parsed_mappings["attack_objects"].append(
                 {
                     "comments": comments,
-                    "attack-object-id": technique["id"],
-                    "attack-object-name": technique["name"],
+                    "attack_object_id": technique["id"],
+                    "attack_object_name": technique["name"],
                     "references": list(references),
                     "tags": list(tags),
-                    "mapping-description": "",
-                    "capability-id": data["name"],
-                    "mapping-type": "technique-scores",
-                    "score-category": technique_score["category"],
-                    "score-value": technique_score["value"],
-                    "related-score": "",
+                    "capability_description": "",
+                    "capability_id": data["name"],
+                    "mapping_type": "technique-scores",
+                    "score_category": technique_score["category"],
+                    "score_value": technique_score["value"],
+                    "related_score": "",
                 }
             )
         if technique.get("sub-techniques-scores"):
@@ -47,18 +60,18 @@ def configure_security_stack_mappings(data, parsed_mappings):
                         subtechnique_comments = score.get("comments") or ""
                         subtechnique_tags = score.get("tags") or []
                         subtechniqe_references = score.get("references") or []
-                        parsed_mappings["attack-objects"].append(
+                        parsed_mappings["attack_objects"].append(
                             {
                                 "comments": subtechnique_comments,
-                                "attack-object-id": subtechnique["id"],
-                                "attack-object-name": subtechnique["name"],
+                                "attack_object_id": subtechnique["id"],
+                                "attack_object_name": subtechnique["name"],
                                 "references": subtechniqe_references,
                                 "tags": subtechnique_tags,
-                                "mapping-description": "",
-                                "capability-id": data["name"],
-                                "mapping-type": "technique-scores",
-                                "score-category": score["category"],
-                                "score-value": score["value"],
-                                "related-score": technique["id"],
+                                "capability_description": "",
+                                "capability_id": data["name"],
+                                "mapping_type": "technique-scores",
+                                "score_category": score["category"],
+                                "score_value": score["value"],
+                                "related_score": technique["id"],
                             }
                         )

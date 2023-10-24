@@ -68,7 +68,6 @@ def test_veris_mappings_json(tmpdir):
     result = json.load(file)
 
     # ASSERT
-    print("RESULT", result)
     assert result == expected_veris_mapping_json
 
 
