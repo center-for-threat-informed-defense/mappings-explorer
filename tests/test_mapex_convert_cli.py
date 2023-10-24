@@ -30,10 +30,6 @@ def test_nist_mappings_parser_json(tmpdir):
     result = json.load(file)
 
     # ASSERT
-    print("RESULT")
-    print(result)
-    print("EXPECTED")
-    print(expected_nist_mapping_json)
     assert result == expected_nist_mapping_json
 
 

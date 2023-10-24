@@ -30,7 +30,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_version):
                 "attack_object_name": row["Technique Name"],
                 "references": [],
                 "tags": [],
-                "mapping_description": "",
+                "capability_description": "",
                 "capability_id": row["Control ID"],
                 "mapping_type": row["Mapping Type"],
             }

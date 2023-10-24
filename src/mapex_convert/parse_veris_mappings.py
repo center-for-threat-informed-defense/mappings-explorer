@@ -31,7 +31,7 @@ def configure_veris_mappings(veris_mappings, domain):
                     "attack_object_name": mapped_attack_object["name"],
                     "references": [],
                     "tags": [],
-                    "mapping_description": "",
+                    "capability_description": "",
                     "capability_id": veris_object,
                     "mapping_type": "related-to",
                 }

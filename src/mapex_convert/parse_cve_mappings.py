@@ -56,7 +56,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "attack_object_name": name,
                             "references": [],
                             "tags": [],
-                            "mapping_description": "",
+                            "capability_description": "",
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type,
                         }
