@@ -3,7 +3,7 @@
 {#{% include "_banner.html.j2" %}#}
 
    <section id="header-container" class="header-container">
-    <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-up" id="my_view">
       <div class="row justify-content-left">
         <div class="col-lg-8 col-md-10 col-sm-12">
           <h1><span class="highlight">{{control}}</span> MAPPINGS</h1>
@@ -12,10 +12,6 @@
               {{- paragraph -}}
             </p>
           {% endfor %}
-          <div id="my_view">
-            {{" domain version: {{domain_version}}"}}
-            {{" attack version: {{attack_version}}"}}
-          </div>
           <div class="section-details">
             <p>
               <span>Total Mappings: <strong>300</strong></span>
@@ -48,7 +44,7 @@
               <p>{{control}} Version</p>
               <select name="control-version" id="control-version" class="form-control">
                 {% for v in versions %}
-                <option value={v}>{{v}}</option>
+                  <option>{{v}}</option>
                 {% endfor %}
               </select>
             </div>
@@ -57,7 +53,7 @@
               <p>ATT&CK Version</p>
               <select name="attack-version" id="attack-version" class="form-control">
                 {% for v in attackVersions %}
-                <option value={v}>{{v}}</option>
+                <option>{{v}}</option>
                 {% endfor %}
               </select>
             </div>
@@ -65,7 +61,7 @@
               <p>ATT&CK Domain</p>
               <select name="domain" id="attack-domain" class="form-control">
                 {% for d in domains %}
-                <option value={d}>{{ d|capitalize }}</option>
+                <option>{{ d|capitalize }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -105,6 +101,10 @@
   }
   console.log("nist", domainVersion);
   console.log("attack ", attackVersion);
+
+  document.getElementById("control-version").value = domainVersion;
+  document.getElementById("attack-version").value = attackVersion;
+
   var myModel = {
     domain_version: domainVersion,
     attack_version: attackVersion
