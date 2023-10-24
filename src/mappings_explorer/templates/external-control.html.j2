@@ -1,6 +1,7 @@
 {% extends "base.html.j2" %}
 {% block content %}
 {#{% include "_banner.html.j2" %}#}
+
    <section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -11,8 +12,10 @@
               {{- paragraph -}}
             </p>
           {% endfor %}
-          {#<p>{{nist_version}}</p>
-          <p id="demo">initial</p>#}
+          <div id="my_view">
+            {{" domain version: {{domain_version}}"}}
+            {{" attack version: {{attack_version}}"}}
+          </div>
           <div class="section-details">
             <p>
               <span>Total Mappings: <strong>300</strong></span>
@@ -89,16 +92,27 @@
   </section>
 
 <script>
-var url = window.location.search;
-  console.log("url", url)
-  let p = url.split("&")
-  p.forEach((part) => {
-    var item = part.split("=");
-    if (item[0] == "nist_version") {
-      nist_version = item[1];
-    }
-  })
-  document.getElementById("demo").innerHTML = "default "+ nist_version;
-  console.log("nist", nist_version)
+  let attackVersion = '';
+  let domainVersion = '';
+  let uri = window.location.search;
+
+  let params = new URLSearchParams(uri);
+  if(params.has("nist")) {
+    domainVersion = params.get("nist");
+  }
+  if(params.has("attack_version")) {
+    attackVersion = params.get("attack_version");
+  }
+  console.log("nist", domainVersion);
+  console.log("attack ", attackVersion);
+  var myModel = {
+    domain_version: domainVersion,
+    attack_version: attackVersion
+  };
+  var myViewModel = new Vue({
+    el: '#my_view',
+    data: myModel
+  });
 </script>
+
 {% endblock content %}
