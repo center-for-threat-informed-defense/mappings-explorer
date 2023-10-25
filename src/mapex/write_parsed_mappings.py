@@ -63,8 +63,8 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
 
 
 def write_parsed_mappings_stix(parsed_mappings, filepath):
-    technique_target_dict = load_attack_json()
-    bundle_uuid = uuid.uuid4()
+    # create bundle
+    bundle_uuid = str(uuid.uuid4())
     stix_bundle = {
         "type": "bundle",
         "id": f"bundle_{bundle_uuid}",
@@ -73,32 +73,19 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         "modified": datetime.now().isoformat(),
         "objects": [],
     }
+    technique_target_dict = load_attack_json()
+
     for mapping in parsed_mappings["attack_objects"]:
+        # create SDO for each capability
         if not any(
             stix_object.get("name") == mapping["capability_id"]
             for stix_object in stix_bundle["objects"]
         ):
-            vulnerability_uuid = uuid.uuid4()
-            relationship_uuid = uuid.uuid4()
-            stix_bundle["objects"].append(
-                {
-                    "type": "vulnerability",
-                    "id": f"vulnerability--{vulnerability_uuid}",
-                    "spec_version": "2.1",
-                    "created": datetime.now().isoformat(),
-                    "modified": datetime.now().isoformat(),
-                    "name": mapping["capability_id"],
-                    "description": mapping["capability_description"],
-                    "external_references": [
-                        {
-                            "url": f"https://nvd.nist.gov/vuln/detail/{mapping['capability_id']}",
-                            "source_name": "cve",
-                            "external_id": mapping["capability_id"],
-                        }
-                    ],
-                }
-            )
+            stix_object = get_stix_object(parsed_mappings, mapping)
+            stix_bundle["objects"].append(stix_object)
 
+        # add attack pattern SDO for each technique/subtechnique
+        relationship_uuid = str(uuid.uuid4())
         related_source_ref = [
             stix_object["id"]
             for stix_object in stix_bundle["objects"]
@@ -126,6 +113,61 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
+
+
+def get_stix_object(parsed_mappings, mapping):
+    mapping_framwork = parsed_mappings["metadata"]["mapping_framework"]
+    infrastructure_frameworks = ["nist_800_53", "aws", "gcp", "azure"]
+    if mapping_framwork == "cve":
+        return create_vulnerability_object(mapping)
+    elif mapping_framwork in infrastructure_frameworks:
+        return create_infrastructure_object(mapping)
+    elif mapping_framwork == "veris":
+        return create_attack_pattern_object(mapping)
+
+
+def create_vulnerability_object(mapping):
+    vulnerability_uuid = str(uuid.uuid4())
+    return {
+        "type": "vulnerability",
+        "id": f"vulnerability--{vulnerability_uuid}",
+        "spec_version": "2.1",
+        "created": datetime.now().isoformat(),
+        "modified": datetime.now().isoformat(),
+        "name": mapping["capability_id"],
+        "description": mapping["capability_description"],
+        "external_references": [
+            {
+                "url": f"https://nvd.nist.gov/vuln/detail/{mapping['capability_id']}",
+                "source_name": "cve",
+                "external_id": mapping["capability_id"],
+            }
+        ],
+    }
+
+
+def create_infrastructure_object(mapping):
+    infrastructure_uuid = str(uuid.uuid4())
+    return {
+        "type": "attack-pattern",
+        "spec_version": "2.1",
+        "id": infrastructure_uuid,
+        "name": mapping["capability_id"],
+        "created": datetime.now().isoformat(),
+        "modified": datetime.now().isoformat(),
+    }
+
+
+def create_attack_pattern_object(mapping):
+    attack_pattern_uuid = str(uuid.uuid4())
+    return {
+        "type": "attack-pattern",
+        "spec_version": "2.1",
+        "id": attack_pattern_uuid,
+        "name": mapping["capability_id"],
+        "created": datetime.now().isoformat(),
+        "modified": datetime.now().isoformat(),
+    }
 
 
 def load_attack_json():

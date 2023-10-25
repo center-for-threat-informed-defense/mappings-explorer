@@ -2,7 +2,6 @@ import argparse
 import json
 import os
 
-import requests
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
     write_parsed_mappings_csv,
@@ -26,6 +25,14 @@ def main():
         if os.path.isfile(input_file):
             metadata_key = 0
             export_file(input_file, output_file, file_type, metadata_key)
+        elif os.path.isdir(input_file):
+            for subdir, dirs, files in os.walk(input_file):
+                print("--------------")
+                print("subdir", subdir)
+                print("files", files)
+                print("dires", dirs)
+                print("----------------")
+
         else:
             print("Input file must be a valid file")
     elif args.command == "validate":
@@ -83,50 +90,3 @@ def validate_file(input_file):
     validation_errors = validate(instance=parsed_mappings, schema=schema)
     if validation_errors is None:
         print("successfully validated")
-
-
-def load_attack_json():
-    BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
-
-    # load enterprise attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
-    enterprise_attack_data = json.loads(response.text)
-
-    # load mobile attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
-    mobile_attack_data = json.loads(response.text)
-
-    # load ics attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
-    ics_attack_data = json.loads(response.text)
-
-    domains = ["enterprise", "mobile", "ics"]
-    domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
-
-    attack_object_id_to_name = {}
-    for idx, domain_data in enumerate(domain_data):
-        domain = domains[idx]
-        for attack_object in domain_data["objects"]:
-            if not domain_data["type"] == "relationship":
-                # skip objects without IDs
-                if not attack_object.get("external_references"):
-                    continue
-                # skip deprecated and revoked objects
-                # Note: False is the default value if the property is not present
-                if attack_object.get("revoked", False):
-                    continue
-                # Note: False is the default value if the property is not present
-                if attack_object.get("x_mitre_deprecated", False):
-                    continue
-                # map attackID to stixID
-                if attack_object["external_references"][0].get(
-                    "external_id"
-                ) and attack_object.get("name"):
-                    attack_object_id_to_name[
-                        attack_object["external_references"][0]["external_id"]
-                    ] = attack_object["target_ref"]
-
-    return attack_object_id_to_name
