@@ -36,13 +36,13 @@
   <section id="version-select" class="version-select">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
-        <div class="col-12">
+        <form class="col-12" onsubmit="handleSubmission(event)">
           <h2>CHOOSE YOUR VERSIONS</h2>
           <div class="row col-12" style="display: flex;">
           {% if versions %}
             <div class="col-sm-4 col-md-3 form-group">
               <p>{{control}} Version</p>
-              <select name="control-version" id="control-version" class="form-control">
+              <select name="control-version" id="control_version" class="form-control">
                 {% for v in versions %}
                   <option>{{v}}</option>
                 {% endfor %}
@@ -51,7 +51,7 @@
             {% endif %}
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Version</p>
-              <select name="attack-version" id="attack-version" class="form-control">
+              <select name="attack-version" id="attack_version" class="form-control">
                 {% for v in attackVersions %}
                 <option>{{v}}</option>
                 {% endfor %}
@@ -59,17 +59,17 @@
             </div>
             <div class="col-sm-4 col-md-3 form-group">
               <p>ATT&CK Domain</p>
-              <select name="domain" id="attack-domain" class="form-control">
+              <select name="domain" id="attack_domain" class="form-control">
                 {% for d in domains %}
                 <option>{{ d|capitalize }}</option>
                 {% endfor %}
               </select>
             </div>
             <div class="col-sm-4 col-md-3 form-group" style="margin-top: 28px;">
-            <a href="#about" class="btn-pill">See Mappings</a>
+              <button class="btn-pill" type="submit">See Mappings</button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
@@ -89,24 +89,29 @@
 
 <script>
   let attackVersion = '';
+  let controlVersion = '';
   let domainVersion = '';
   let uri = window.location.search;
 
   let params = new URLSearchParams(uri);
-  if(params.has("nist")) {
-    domainVersion = params.get("nist");
+  if (params.has("control-version")) {
+    controlVersion = params.get("control-version");
+    document.getElementById("control_version").value = controlVersion;
   }
-  if(params.has("attack_version")) {
-    attackVersion = params.get("attack_version");
+  if (params.has("attack-version")) {
+    attackVersion = params.get("attack-version");
+    document.getElementById("attack_version").value = attackVersion;
   }
-  console.log("nist", domainVersion);
+  if (params.has("domain")) {
+    domainVersion = params.get("domain");
+    document.getElementById("attack_domain").value = domainVersion;
+  }
+
+  console.log("nist", controlVersion);
   console.log("attack ", attackVersion);
 
-  document.getElementById("control-version").value = domainVersion;
-  document.getElementById("attack-version").value = attackVersion;
-
   var myModel = {
-    domain_version: domainVersion,
+    control_version: controlVersion,
     attack_version: attackVersion
   };
   var myViewModel = new Vue({
