@@ -65,8 +65,8 @@
                 {% endfor %}
               </select>
             </div>
-            <div class="col-sm-4 col-md-3 form-group" style="margin-top: 28px;">
-              <button class="btn-pill" type="submit">See Mappings</button>
+            <div class="col-sm-4 col-md-3 form-group" style="margin-top: 36px;">
+              <button class="btn-pill" style="border: none;" type="submit">See Mappings</button>
             </div>
           </div>
         </form>
@@ -107,12 +107,10 @@
     document.getElementById("attack_domain").value = domainVersion;
   }
 
-  console.log("nist", controlVersion);
-  console.log("attack ", attackVersion);
-
   var myModel = {
     control_version: controlVersion,
-    attack_version: attackVersion
+    attack_version: attackVersion,
+    attack_domain: domainVersion
   };
   var myViewModel = new Vue({
     el: '#my_view',

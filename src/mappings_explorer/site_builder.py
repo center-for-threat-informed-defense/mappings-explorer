@@ -62,7 +62,10 @@ def load_projects():
     veris.version = veris.versions[0]
     veris.attackDomains = ["enterprise"]
     veris.attackDomain = veris.attackDomains[0]
-    veris.attackVersions = ["9.0", "12.0"]
+    veris.attackVersions = [
+        "12.0",
+        "9.0",
+    ]
     veris.attackVersion = veris.attackVersions[0]
     veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
 
