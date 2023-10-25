@@ -1,6 +1,9 @@
 import json
+import uuid
+from datetime import datetime
 
 import pandas as pd
+import requests
 import yaml
 
 
@@ -57,6 +60,117 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(layer, fp=navigator_layer)
+
+
+def write_parsed_mappings_stix(parsed_mappings, filepath):
+    technique_target_dict = load_attack_json()
+    bundle_uuid = uuid.uuid4()
+    stix_bundle = {
+        "type": "bundle",
+        "id": f"bundle_{bundle_uuid}",
+        "spec_version": "2.1",
+        "created": datetime.now().isoformat(),
+        "modified": datetime.now().isoformat(),
+        "objects": [],
+    }
+    for mapping in parsed_mappings["attack_objects"]:
+        if not any(
+            stix_object.get("name") == mapping["capability_id"]
+            for stix_object in stix_bundle["objects"]
+        ):
+            vulnerability_uuid = uuid.uuid4()
+            relationship_uuid = uuid.uuid4()
+            stix_bundle["objects"].append(
+                {
+                    "type": "vulnerability",
+                    "id": f"vulnerability--{vulnerability_uuid}",
+                    "spec_version": "2.1",
+                    "created": datetime.now().isoformat(),
+                    "modified": datetime.now().isoformat(),
+                    "name": mapping["capability_id"],
+                    "description": mapping["capability_description"],
+                    "external_references": [
+                        {
+                            "url": f"https://nvd.nist.gov/vuln/detail/{mapping['capability_id']}",
+                            "source_name": "cve",
+                            "external_id": mapping["capability_id"],
+                        }
+                    ],
+                }
+            )
+
+        related_source_ref = [
+            stix_object["id"]
+            for stix_object in stix_bundle["objects"]
+            if stix_object.get("name") == mapping["capability_id"]
+        ][0]
+        stix_bundle["objects"].append(
+            {
+                "type": "relationship",
+                "id": f"relationship--{relationship_uuid}",
+                "spec_version": "2.1",
+                "created": datetime.now().isoformat(),
+                "modified": datetime.now().isoformat(),
+                "relationship_type": mapping["mapping_type"].replace("_", "-"),
+                "source_ref": related_source_ref,
+                "target_ref": technique_target_dict.get(
+                    mapping["attack_object_id"], ""
+                ),
+            },
+        )
+
+    filename_version_string = get_filename_version_string(parsed_mappings)
+    stix_file = open(
+        f"{filepath}{filename_version_string}_stix.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(stix_bundle, fp=stix_file)
+
+
+def load_attack_json():
+    BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
+
+    # load enterprise attack stix json to map technique ids to names
+    enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
+    response = requests.get(enterpise_attack_url)
+    enterprise_attack_data = json.loads(response.text)
+
+    # load mobile attack stix json to map technique ids to names
+    enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
+    response = requests.get(enterpise_attack_url)
+    mobile_attack_data = json.loads(response.text)
+
+    # load ics attack stix json to map technique ids to names
+    enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
+    response = requests.get(enterpise_attack_url)
+    ics_attack_data = json.loads(response.text)
+
+    domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
+
+    attack_object_id_to_name = {}
+    for domain in domain_data:
+        for attack_object in domain["objects"]:
+            if not domain["type"] == "relationship":
+                # skip objects without IDs
+                if not attack_object.get("external_references"):
+                    continue
+                # skip deprecated and revoked objects
+                # Note: False is the default value if the property is not present
+                if attack_object.get("revoked", False):
+                    continue
+                # Note: False is the default value if the property is not present
+                if attack_object.get("x_mitre_deprecated", False):
+                    continue
+                # map attackID to stixID
+                if attack_object["external_references"][0].get(
+                    "external_id"
+                ) and attack_object.get("name"):
+                    attack_object_id_to_name[
+                        attack_object["external_references"][0]["external_id"]
+                    ] = attack_object["id"]
+
+    return attack_object_id_to_name
 
 
 def get_techniques_dict(parsed_mappings):
