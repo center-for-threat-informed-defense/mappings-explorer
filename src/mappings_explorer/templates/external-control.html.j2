@@ -33,48 +33,10 @@
     </div>
   </section>
   {% if (attackVersions|length > 1 or domains|length > 1) %}
-  <section id="version-select" class="version-select">
-    <div class="container" data-aos="fade-up">
-      <div class="row justify-content-left">
-        <form class="col-12" onsubmit="handleSubmission(event)">
-          <h2>CHOOSE YOUR VERSIONS</h2>
-          <div class="row col-12" style="display: flex;">
-          {% if versions %}
-            <div class="col-sm-4 col-md-3 form-group">
-              <p>{{control}} Version</p>
-              <select name="control-version" id="control_version" class="form-control">
-                {% for v in versions %}
-                  <option>{{v}}</option>
-                {% endfor %}
-              </select>
-            </div>
-            {% endif %}
-            <div class="col-sm-4 col-md-3 form-group">
-              <p>ATT&CK Version</p>
-              <select name="attack-version" id="attack_version" class="form-control">
-                {% for v in attackVersions %}
-                <option>{{v}}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="col-sm-4 col-md-3 form-group">
-              <p>ATT&CK Domain</p>
-              <select name="domain" id="attack_domain" class="form-control">
-                {% for d in domains %}
-                <option>{{ d|capitalize }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="col-sm-4 col-md-3 form-group" style="margin-top: 36px;">
-              <button class="btn-pill" style="border: none;" type="submit">See Mappings</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+    {% block set_version %}
+      {% include "_set_versions.html.j2" %}
+    {% endblock set_version %}
   {% endif %}
-
   <section id="mapping-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -86,36 +48,4 @@
       </div>
     </div>
   </section>
-
-<script>
-  let attackVersion = '';
-  let controlVersion = '';
-  let domainVersion = '';
-  let uri = window.location.search;
-
-  let params = new URLSearchParams(uri);
-  if (params.has("control-version")) {
-    controlVersion = params.get("control-version");
-    document.getElementById("control_version").value = controlVersion;
-  }
-  if (params.has("attack-version")) {
-    attackVersion = params.get("attack-version");
-    document.getElementById("attack_version").value = attackVersion;
-  }
-  if (params.has("domain")) {
-    domainVersion = params.get("domain");
-    document.getElementById("attack_domain").value = domainVersion;
-  }
-
-  var myModel = {
-    control_version: controlVersion,
-    attack_version: attackVersion,
-    attack_domain: domainVersion
-  };
-  var myViewModel = new Vue({
-    el: '#my_view',
-    data: myModel
-  });
-</script>
-
 {% endblock content %}
