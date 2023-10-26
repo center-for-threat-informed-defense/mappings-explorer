@@ -40,6 +40,7 @@ def load_projects():
     nist.versions = ["rev5", "rev4"]
     nist.version = nist.versions[0]
     nist.attackVersions = [
+        "12.1",
         "10.1",
         "9.0",
         "8.2",
@@ -166,6 +167,26 @@ def build_external_landing(project: ExternalControl):
     )
     stream.dump(str(output_path))
     print("Created " + project.id + " landing")
+    if project.id == "nist":
+        build_external_control(project)
+
+
+def build_external_control(project: ExternalControl):
+    dir = PUBLIC_DIR / "external" / project.id / "control"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("external-group.html.j2")
+    stream = template.stream(
+        title=project.label + " Landing",
+        control=project.label,
+        description=project.description,
+        versions=project.versions,
+        attackVersions=project.attackVersions,
+        domains=project.attackDomains,
+        tableHeaders=project.tableHeaders,
+    )
+    stream.dump(str(output_path))
+    print("Created ac1")
 
 
 def main():
