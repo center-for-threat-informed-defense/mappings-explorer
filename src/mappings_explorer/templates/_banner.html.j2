@@ -1,7 +1,7 @@
     <div id="banner" class="banner">
         <p>You're currently viewing ATT&CK Version {{" {{attack_version}}"}}
             {{" {{attack_domain}}"}}
-            {% if versions %} and {{control}} {{"{{control_version}}"}}{%endif%}
+            {% if versions %} and {{control}} {{"{{control_version}}"}}{%-endif-%}
             . <a class="banner-link" href="../{{"?control-version={{control_version}}&attack-version={{attack_version}}&domain={{attack_domain}}"}}">Change versions here.</a>
         </p>
     </div>

@@ -259,6 +259,7 @@
     display: block;
     position: fixed;
     top: 84px;
+    z-index: 10000;
   }
   .banner p {
     margin-bottom: 0;
@@ -2383,3 +2384,50 @@
     float: left !important;
   }
 
+  .banner .banner-link {
+    text-decoration: underline !important;
+    color: var(--color-text);
+  }
+
+  .custom-badge {
+    width: max-content;
+    height: 28px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px #bdbdbd;
+  }
+
+  .custom-badge .white {
+    background-color: white;
+    color: var(--color-text);
+    border-radius:10px 0 0 10px ;
+    height: 100%;
+    padding: 8px;
+  }
+  .custom-badge .purple {
+    background-color: #6241C5 !important;
+    color: white;
+    height: 100%;
+    padding: 8px;
+    border-radius: 0  10px 10px 0;
+  }
+
+  .badge-section {
+    display: flex;
+    width: max-content;
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  .badge-section .icon-btn {
+    background-color: white;
+    color: var(--color-text);
+    border-radius: 10px;
+    padding: 8px;
+    height: min-content;
+    box-shadow: 2px 2px 4px #bdbdbd;
+  }
+
+  .bootstrap-table th, .bootstrap-table td {
+    color: var(--color-text);
+  }

@@ -1,0 +1,17 @@
+<div class="badge-section">
+    {% if versions %}
+    <div class="custom-badge">
+        <span class="white">{{control}}</span><span class="purple">{{"{{control_version}}"}}</span>
+    </div>
+    {% endif %}
+    <div class="custom-badge">
+        <span class="white">ATT&CK Version</span><span class="purple">{{"{{attack_version}}"}}</span>
+    </div>
+    <div class="custom-badge">
+        <span class="white">ATT&CK Domain</span><span class="purple">{{"{{attack_domain}}"}}</span>
+    </div>
+    <a class="icon-btn" href="../{{"?control-version={{control_version}}&attack-version={{attack_version}}&domain={{attack_domain}}"}}">
+        <img src="{{url_prefix}}/src/mappings_explorer/templates/static/img/gear.svg" alt="">
+         Change Versions
+    </a>
+</div>
