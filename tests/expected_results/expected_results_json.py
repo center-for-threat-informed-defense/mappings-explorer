@@ -82,7 +82,7 @@ expected_security_stack_mapping_json = {
             "related_score": "T1078",
         },
         {
-            "comments": "comment",
+            "comments": "technique score comment",
             "attack_object_id": "T1110",
             "attack_object_name": "Brute Force",
             "references": [
@@ -181,7 +181,7 @@ expected_security_stack_mapping_json = {
             "related_score": "T1078",
         },
         {
-            "comments": "comment",
+            "comments": "technique score comment",
             "attack_object_id": "T1110",
             "attack_object_name": "Brute Force",
             "references": [

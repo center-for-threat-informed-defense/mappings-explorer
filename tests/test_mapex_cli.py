@@ -6,12 +6,14 @@ from mapex.write_parsed_mappings import (
     get_filename_version_string,
     write_parsed_mappings_csv,
     write_parsed_mappings_navigator_layer,
+    write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
 )
 
 from tests.expected_results.expected_results_navigator_layer import (
     expected_navigator_layer_results,
 )
+from tests.expected_results.expected_results_stix import expected_stix_results
 from tests.expected_results.expected_results_yaml import expected_yaml_results
 
 
@@ -85,3 +87,29 @@ def test_write_mappings_to_navigator_layer(tmpdir):
 
     # ASSERT
     assert result == expected_navigator_layer_results
+
+
+def test_write_mappings_to_stix(tmpdir):
+    # ARRANGE
+    root_dir = os.path.dirname(__file__)
+    json_filepath = os.path.join(root_dir, "files/parsed_mappings.json")
+    parsed_mappings = read_json_file(json_filepath)
+    filepath = f"{tmpdir}"
+
+    # ACT
+    write_parsed_mappings_stix(parsed_mappings, filepath)
+    version_string = get_filename_version_string(parsed_mappings)
+    file = open(f"{filepath}{version_string}_stix.json", "r", encoding="UTF-8")
+    result = json.load(file)
+
+    # ASSERT
+    dict_fluid_values = ["created", "modified", "id", "source_ref"]
+
+    for value in dict_fluid_values:
+        if value in list(result.keys()):
+            result.pop(value)
+        for stix_object in result["objects"]:
+            if value in list(stix_object.keys()):
+                stix_object.pop(value)
+
+    assert result == expected_stix_results

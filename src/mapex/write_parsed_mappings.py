@@ -67,13 +67,13 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
     bundle_uuid = str(uuid.uuid4())
     stix_bundle = {
         "type": "bundle",
-        "id": f"bundle_{bundle_uuid}",
+        "id": f"bundle--{bundle_uuid}",
         "spec_version": "2.1",
         "created": datetime.now().isoformat(),
         "modified": datetime.now().isoformat(),
         "objects": [],
     }
-    technique_target_dict = load_attack_json()
+    technique_target_dict = load_attack_json(parsed_mappings)
 
     for mapping in parsed_mappings["attack_objects"]:
         # create SDO for each capability
@@ -151,7 +151,7 @@ def create_infrastructure_object(mapping):
     return {
         "type": "attack-pattern",
         "spec_version": "2.1",
-        "id": infrastructure_uuid,
+        "id": f"infrastructure--{infrastructure_uuid}",
         "name": mapping["capability_id"],
         "created": datetime.now().isoformat(),
         "modified": datetime.now().isoformat(),
@@ -163,28 +163,39 @@ def create_attack_pattern_object(mapping):
     return {
         "type": "attack-pattern",
         "spec_version": "2.1",
-        "id": attack_pattern_uuid,
+        "id": f"attack-pattern--{attack_pattern_uuid}",
         "name": mapping["capability_id"],
         "created": datetime.now().isoformat(),
         "modified": datetime.now().isoformat(),
     }
 
 
-def load_attack_json():
+def load_attack_json(parsed_mappings):
+    print("load attack")
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
 
     # load enterprise attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+
+    if "." not in attack_version:
+        attack_version = attack_version + ".0"
+
+    enterpise_attack_url = (
+        f"{BASE_URL}/enterprise-attack/enterprise-attack-{attack_version}.json"
+    )
+
     response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
+    enterpise_attack_url = (
+        f"{BASE_URL}/mobile-attack/mobile-attack-{attack_version}.json"
+    )
     response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
-    enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
+    enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-{attack_version}.json"
     response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
