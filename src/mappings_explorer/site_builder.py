@@ -1,5 +1,5 @@
-import shutil
 import os
+import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -200,7 +200,7 @@ def main():
 
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
-    
+
     for project in projects:
         build_external_landing(project=project)
 
