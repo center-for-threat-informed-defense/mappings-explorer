@@ -265,7 +265,7 @@
     margin-bottom: 0;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     .header {
       padding: 12px 0;
     }
@@ -358,7 +358,7 @@
       top: calc(100% + 30px);
       margin: 0;
       padding: 10px 0;
-      z-index: 99;
+      z-index: 10000000;
       opacity: 0;
       visibility: hidden;
       background: #fff;
@@ -584,6 +584,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 24px;
+    margin-top: 10px;
     font-family: var(--font-default);
   }
 
@@ -2431,3 +2432,24 @@
   .bootstrap-table th, .bootstrap-table td {
     color: var(--color-text);
   }
+
+  .back-btn {
+    color: var(--color-link);
+    padding-bottom: 30px !important;
+    font-family: var(--font-default);
+    padding: 8px;
+    height: min-content;
+  }
+  .back-btn img {
+    margin-right: 10px;
+    height: 18px;
+    margin-bottom: 1px;
+    /* margin: auto 0; */
+}
+  /* .back-btn:hover {
+    text-decoration: underline;
+  }
+.back-btn span {
+  margin: auto 0;
+
+} */

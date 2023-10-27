@@ -1,0 +1,6 @@
+{% macro back_button(prev_name)%}
+    <a class="back-btn" href={{"../{{prev_page}}"}}>
+        <img src="{{url_prefix}}/src/mappings_explorer/templates/static/img/back-arrow.svg" alt="">
+        <span>Back to {{control}} {{prev_name}}</span>
+    </a>
+{% endmacro %}
