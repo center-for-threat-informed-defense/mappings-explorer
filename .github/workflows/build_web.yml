@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: '19'
       - run: npm install -g staticrypt
-      - name: Download HTML docs
+      - name: Download Web Site
         uses: actions/download-artifact@v3
         with:
           name: mapex-web
@@ -67,7 +67,7 @@ jobs:
       - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
         run: test -d encrypted
       - name: Copy encrypted HTML files
-        run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/docs .
+        run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
       - name: Set the branch name
         run: mv output "$BRANCH_NAME"
       - name: Install Azure CLI
