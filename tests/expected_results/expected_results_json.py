@@ -1,392 +1,364 @@
-expected_nist_mapping_json = [
-    {
-        "metadata": {
-            "mapping-version": "1",
-            "attack-version": "13.0",
-            "creation-date": "",
-            "last-update": "",
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "NIST Security controls",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1137",
-            "name": "Office Application Startup",
-            "mapping-target": "AC-10",
-            "tags": [],
-            "comments": "",
-            "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "control-name": "Concurrent Session Control",
-                "mapping-type": "mitigates",
-                "name": "NIST Security controls",
-            },
-        },
+expected_nist_mapping_json = {
+    "metadata": {
+        "mapping_version": "1",
+        "attack_version": "13.0",
+        "technology_domain": "enterprise",
+        "author": "",
+        "contact": "",
+        "creation_date": "02/03/2021",
+        "last_update": "10/27/2021",
+        "organization": "",
+        "mapping_framework": "nist_800_53",
+        "mapping_framework_version": "",
+        "mappings_types": ["mitigates"],
     },
-    {
-        "metadata": {
-            "mapping-version": "1",
-            "attack-version": "13.0",
-            "creation-date": "",
-            "last-update": "",
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "NIST Security controls",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1137.002",
-            "name": "Office Test",
-            "mapping-target": "AC-10",
-            "tags": [],
+    "attack_objects": [
+        {
             "comments": "",
+            "attack_object_id": "T1137",
+            "attack_object_name": "Office Application Startup",
             "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "control-name": "Concurrent Session Control",
-                "mapping-type": "mitigates",
-                "name": "NIST Security controls",
-            },
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "AC-10",
+            "mapping_type": "mitigates",
         },
-    },
-]
+        {
+            "comments": "",
+            "attack_object_id": "T1137.002",
+            "attack_object_name": "Office Test",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "AC-10",
+            "mapping_type": "mitigates",
+        },
+    ],
+}
 
-expected_security_stack_mapping_json = [
-    {
-        "metadata": {
-            "mapping-version": 1,
-            "attack-version": 9,
-            "creation-date": "05/27/2021",  # confirm that this value is correct
-            "last-update": "",  # confirm this value is correct
-            "author": "",
-            "contact": "ctid@mitre-engenuity.org",
-            "organization": "",
-            "mapping-platform": "AWS",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1078",
-            "name": "Valid Accounts",
-            "mapping-target": "Amazon Cognito",
+expected_security_stack_mapping_json = {
+    "metadata": {
+        "mapping_version": "1",
+        "attack_version": "9",
+        "technology_domain": "enterprise",
+        "author": "",
+        "contact": "ctid@mitre-engenuity.org",
+        "creation_date": "05/27/2021",
+        "last_update": "05/27/2021",
+        "organization": "",
+        "mapping_framework": "aws",
+        "mapping_framework_version": "",
+        "mappings_types": ["technique-scores"],
+    },
+    "attack_objects": [
+        {
             "comments": "comment",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
             "references": [
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
             ],
-            "mapping-platform": {
-                "score-category": "Protect",
-                "score-value": "Minimal",
-                "related-score": True,
-                "tags": ["Identity"],
-            },
-            "mapping-description": "",
             "tags": ["Identity"],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Minimal",
+            "related_score": "",
         },
-    },
-    {
-        "metadata": {
-            "mapping-version": 1,
-            "attack-version": 9,
-            "creation-date": "05/27/2021",  # confirm that this value is correct
-            "last-update": "",  # confirm this value is correct
-            "author": "",
-            "contact": "ctid@mitre-engenuity.org",
-            "organization": "",
-            "mapping-platform": "AWS",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
+        {
+            "comments": "score comment",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Partial",
+            "related_score": "T1078",
         },
-        "attack-object": {
-            "id": "T1110",
-            "name": "Brute Force",
-            "mapping-target": "Amazon Cognito",
+        {
             "comments": "comment",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
             "references": [
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
             ],
-            "mapping-description": "",
-            "mapping-platform": {
-                "score-category": "Protect",
-                "score-value": "Significant",
-                "related-score": True,
-                "tags": ["Identity"],
-            },
             "tags": ["Identity"],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "",
         },
-    },
-    {
-        "metadata": {
-            "mapping-version": 1,
-            "attack-version": 9,
-            "creation-date": "05/27/2021",  # confirm that this value is correct
-            "last-update": "",  # confirm this value is correct
-            "author": "",
-            "contact": "ctid@mitre-engenuity.org",
-            "organization": "",
-            "mapping-platform": "AWS",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
         },
-        "attack-object": {
-            "id": "T1078",
-            "name": "Valid Accounts",
-            "mapping-target": "Amazon Cognito",
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
             "comments": "comment",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
             "references": [
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
             ],
-            "mapping-platform": {
-                "score-category": "Protect",
-                "score-value": "Minimal",
-                "related-score": True,
-                "tags": ["Identity"],
-            },
-            "mapping-description": "",
             "tags": ["Identity"],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Minimal",
+            "related_score": "",
         },
-    },
-    {
-        "metadata": {
-            "mapping-version": 1,
-            "attack-version": 9,
-            "creation-date": "05/27/2021",  # confirm that this value is correct
-            "last-update": "",  # confirm this value is correct
-            "author": "",
-            "contact": "ctid@mitre-engenuity.org",
-            "organization": "",
-            "mapping-platform": "AWS",
-            "mapping-platform-version": "",  # get correct value
-            "technology-domain": "enterprise",
+        {
+            "comments": "score comment",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Partial",
+            "related_score": "T1078",
         },
-        "attack-object": {
-            "id": "T1110",
-            "name": "Brute Force",
-            "mapping-target": "Amazon Cognito",
+        {
             "comments": "comment",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
             "references": [
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
                 "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html",
             ],
-            "mapping-description": "",
-            "mapping-platform": {
-                "score-category": "Protect",
-                "score-value": "Significant",
-                "related-score": True,
-                "tags": ["Identity"],
-            },
             "tags": ["Identity"],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "",
         },
-    },
-]
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+        {
+            "comments": "score-comment",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "Amazon Cognito",
+            "mapping_type": "technique-scores",
+            "score_category": "Protect",
+            "score_value": "Significant",
+            "related_score": "T1110",
+        },
+    ],
+}
 
-expected_veris_mapping_json = [
-    {
-        "metadata": {
-            "mapping-version": "1.9",
-            "attack-version": "9.0",
-            "creation-date": "",  # get correct value
-            "last-update": "",  # get correct value
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "VERIS Framework",
-            "mapping-platform-version": "1.3.5",
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1047",
-            "name": "Windows Management Instrumentation",
-            "mapping-target": "action.hacking.variety.Abuse of functionality",
-            "tags": [],
-            "comments": "",
-            "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "relationship-type": "related-to",
-                "veris-path": "action.hacking.variety.Abuse of functionality",
-            },
-        },
+expected_veris_mapping_json = {
+    "metadata": {
+        "mapping_version": "1.9",
+        "attack_version": "9.0",
+        "technology_domain": "enterprise",
+        "author": "",
+        "contact": "",
+        "creation_date": "02/03/2021",
+        "last_update": "10/27/2021",
+        "organization": "",
+        "mapping_framework": "veris",
+        "mapping_framework_version": "1.3.5",
+        "mappings_types": ["related-to"],
     },
-    {
-        "metadata": {
-            "mapping-version": "1.9",
-            "attack-version": "9.0",
-            "creation-date": "",  # get correct value
-            "last-update": "",  # get correct value
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "VERIS Framework",
-            "mapping-platform-version": "1.3.5",
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1047",
-            "name": "Windows Management Instrumentation",
-            "mapping-target": "action.hacking.vector.Command shell",
-            "tags": [],
+    "attack_objects": [
+        {
             "comments": "",
+            "attack_object_id": "T1047",
+            "attack_object_name": "Windows Management Instrumentation",
             "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "relationship-type": "related-to",
-                "veris-path": "action.hacking.vector.Command shell",
-            },
-        },
-    },
-    {
-        "metadata": {
-            "mapping-version": "1.9",
-            "attack-version": "9.0",
-            "creation-date": "",  # get correct value
-            "last-update": "",  # get correct value
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "VERIS Framework",
-            "mapping-platform-version": "1.3.5",
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1053",
-            "name": "Scheduled Task/Job",
-            "mapping-target": "action.hacking.variety.Abuse of functionality",
             "tags": [],
-            "comments": "",
-            "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "relationship-type": "related-to",
-                "veris-path": "action.hacking.variety.Abuse of functionality",
-            },
+            "capability_description": "",
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "mapping_type": "related-to",
         },
-    },
-]
+        {
+            "comments": "",
+            "attack_object_id": "T1047",
+            "attack_object_name": "Windows Management Instrumentation",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "action.hacking.vector.Command shell",
+            "mapping_type": "related-to",
+        },
+        {
+            "comments": "",
+            "attack_object_id": "T1053",
+            "attack_object_name": "Scheduled Task/Job",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "mapping_type": "related-to",
+        },
+    ],
+}
 
-expected_cve_mapping_json = [
-    {
-        "metadata": {
-            "mapping-version": "",  # confirm that this value is correct
-            "attack-version": "9.0",
-            "creation-date": "02/03/21",  # confirm this value is correct
-            "last-update": "10/27/21",  # confirm this value is correct
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "CVE Vulnerability List",
-            "mapping-platform-version": "",  # confirm this value is correct
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1059",
-            "name": "Name for T1059",
-            "mapping-target": "CVE-2019-15243",
-            "tags": [],
-            "comments": "",
-            "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "impact": "Primary Impact",
-                "name": "CVE Vulnerability List",
-                "phase": "Phase 2",
-            },
-        },
+expected_cve_mapping_json = {
+    "metadata": {
+        "mapping_version": "",
+        "attack_version": "9.0",
+        "technology_domain": "enterprise",
+        "author": "",
+        "contact": "",
+        "creation_date": "02/03/2021",
+        "last_update": "10/27/2021",
+        "organization": "",
+        "mapping_framework": "cve",
+        "mapping_framework_version": "",
+        "mappings_types": [
+            "primary_impact",
+            "secondary_impact",
+            "exploitation_technique",
+            "uncategorized",
+        ],
     },
-    {
-        "metadata": {
-            "mapping-version": "",  # confirm that this value is correct
-            "attack-version": "9.0",
-            "creation-date": "02/03/21",  # confirm this value is correct
-            "last-update": "10/27/21",  # confirm this value is correct
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "CVE Vulnerability List",
-            "mapping-platform-version": "",  # confirm this value is correct
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1190",
-            "name": "Name for T1190",
-            "mapping-target": "CVE-2019-15243",
-            "tags": [],
+    "attack_objects": [
+        {
             "comments": "",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Name for T1059",
             "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "impact": "Exploitation Technique",
-                "name": "CVE Vulnerability List",
-                "phase": "Phase 2",
-            },
-        },
-    },
-    {
-        "metadata": {
-            "mapping-version": "",  # confirm that this value is correct
-            "attack-version": "9.0",
-            "creation-date": "02/03/21",  # confirm this value is correct
-            "last-update": "10/27/21",  # confirm this value is correct
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "CVE Vulnerability List",
-            "mapping-platform-version": "",  # confirm this value is correct
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1078",
-            "name": "Name for T1078",
-            "mapping-target": "CVE-2019-15243",
             "tags": [],
+            "capability_description": "",
+            "capability_id": "CVE-2019-15243",
+            "mapping_type": "primary_impact",
+        },
+        {
             "comments": "",
+            "attack_object_id": "T1190",
+            "attack_object_name": "Name for T1190",
             "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "impact": "Exploitation Technique",
-                "name": "CVE Vulnerability List",
-                "phase": "Phase 2",
-            },
-        },
-    },
-    {
-        "metadata": {
-            "mapping-version": "",  # confirm that this value is correct
-            "attack-version": "9.0",
-            "creation-date": "02/03/21",  # confirm this value is correct
-            "last-update": "10/27/21",  # confirm this value is correct
-            "author": "",
-            "contact": "",
-            "organization": "",
-            "mapping-platform": "CVE Vulnerability List",
-            "mapping-platform-version": "",  # confirm this value is correct
-            "technology-domain": "enterprise",
-        },
-        "attack-object": {
-            "id": "T1068",
-            "name": "Name for T1068",
-            "mapping-target": "CVE-2019-15976",
             "tags": [],
-            "comments": "",
-            "references": [],
-            "mapping-description": "",
-            "mapping-platform": {
-                "impact": "Primary Impact",
-                "name": "CVE Vulnerability List",
-                "phase": "Phase 2",
-            },
+            "capability_description": "",
+            "capability_id": "CVE-2019-15243",
+            "mapping_type": "exploitation_technique",
         },
-    },
-]
+        {
+            "comments": "",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Name for T1078",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "CVE-2019-15243",
+            "mapping_type": "exploitation_technique",
+        },
+        {
+            "comments": "",
+            "attack_object_id": "T1068",
+            "attack_object_name": "Name for T1068",
+            "references": [],
+            "tags": [],
+            "capability_description": "",
+            "capability_id": "CVE-2019-15976",
+            "mapping_type": "primary_impact",
+        },
+    ],
+}

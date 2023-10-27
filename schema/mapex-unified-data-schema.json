@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ATT&CK Mappings Unified Schema",
+  "description": "Defines the data elements and properties of Mappings Explorer projects",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "description": "Properties that apply to all mappings in a project.",
+      "type": "object",
+      "properties": {
+        "mapping_version": {
+          "description": "The version of the mapping project.",
+          "type": "string"
+        },
+        "attack_version": {
+          "description": "The version of ATT&CK used to source the objects included in this mapping.",
+          "type": "string"
+        },
+        "technology_domain": {
+          "description": "ATT&CK Technology Domain (Enterprise, Mobile, ICS).",
+          "type": "string",
+          "items": {
+            "enum": ["enterprise", "mobile", "ics"]
+          }
+        },
+        "creation_date": {
+          "description": "Creation date of this mapping file. Format: (MM/DD/YYYY) 1/21/2021",
+          "type": "string",
+          "pattern": "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
+        },
+        "last_update": {
+          "description": "Last update date of this mapping file. Format: (MM/DD/YYYY) 1/21/2021",
+          "type": "string",
+          "pattern": "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
+        },
+        "mapping_framework": {
+          "description": "The group of objects being mapped to ATT&CK.",
+          "type": "string",
+          "items": {
+            "enum": ["veris", "nist_800_53", "cve", "aws", "gcp", "azure"]
+          }
+        },
+        "mapping_framework_version": {
+          "description": "The Mapping Framework's version.",
+          "type": "string"
+        },
+        "mapping_framework_version_scheme": {
+          "description": "How the Mapping Framework is versioned.",
+          "type": "array",
+          "items": {
+            "enum": ["framework", "date_accessed"]
+          }
+        },
+        "author": {
+          "description": "The author of this mapping file.",
+          "type": "string"
+        },
+        "contact": {
+          "description": "The email address of the author.",
+          "type": "string"
+        },
+        "organization": {
+          "description": "The organization associated with the author.",
+          "type": "string"
+        },
+        "mapping_types": {
+          "description": "The mappings types that are associated with each Framework.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The mapping type's identifier.",
+                "type": "string"
+              },
+              "description": {
+                "description": "A description of the mapping type.",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "mapping_version",
+        "attack_version",
+        "technology_domain",
+        "creation_date",
+        "mapping_framework",
+        "mapping_framework_version",
+        "mappings_types"
+      ]
+    },
+    "mapping_object": {
+      "description": "A single mapping between framework object and ATT&CK object.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attack_object_id": {
+            "description": "The unique identifier of the ATT&CK object being mapped. (T1648)",
+            "type": "string"
+          },
+          "attack_object_name": {
+            "description": "The name of the ATT&CK object. (Serverless Execution)",
+            "type": "string"
+          },
+          "capability_id": {
+            "description": "Unique identifier of the framework object being mapped.",
+            "type": "string"
+          },
+          "capability_description": {
+            "description": "Name or description of framework object",
+            "type": "string"
+          },
+          "comments": {
+            "description": "Used to document assumptions, circumstances, or other information regarding the mapping",
+            "type": "string"
+          },
+          "references": {
+            "description": "A list of links to documentation that provides additional detail in understanding the data contained in this mapping. (A link to the documentation for a security control.)",
+            "type": "string"
+          },
+          "mapping_type": {
+            "description": "Mapping type has framework-specific values. This property describes how the capability_id and attack_object_id are related.",
+            "type": "string"
+          },
+          "if": {
+            "properties": {
+              "mapping_type": {
+                "const": "technique_scores"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "score_category": {
+                "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
+                "type": "array",
+                "items": {
+                  "enum": ["protect", "detect", "respond"]
+                }
+              },
+              "score_value": {
+                "description": "The score. (e.g. Minimal, Partial, Significant)",
+                "type": "array",
+                "items": {
+                  "enum": ["minimal", "partial", "significant"]
+                }
+              },
+              "related_score": {
+                "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",
+                "type": "string"
+              }
+            }
+          },
+          "else": {}
+        },
+        "required": ["mapping_type", "capability_id"],
+        "dependentRequired": {
+          "mapping_type": ["valid_mapping_types"]
+        }
+      }
+    }
+  }
+}

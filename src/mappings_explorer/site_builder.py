@@ -1,4 +1,5 @@
 import shutil
+import os
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -175,6 +176,7 @@ def main():
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
+    os.mkdir("output")
 
     static_dir = PUBLIC_DIR / "static"
     print("Copying static resources: {}", static_dir)
@@ -198,7 +200,7 @@ def main():
 
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
-
+    
     for project in projects:
         build_external_landing(project=project)
 
