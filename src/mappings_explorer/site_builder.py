@@ -1,8 +1,8 @@
-import argparse
+import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
-from .template import PUBLIC_DIR, load_template
+from .template import PUBLIC_DIR, TEMPLATE_DIR, load_template
 
 
 class ExternalControl:
@@ -150,10 +150,12 @@ def build_external_landing(project: ExternalControl):
     dir = external_dir / project.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
+    url_prefix = "../.."
 
     template = load_template("external-control.html.j2")
     stream = template.stream(
         title=project.label + " Landing",
+        url_prefix=url_prefix,
         control=project.label,
         description=project.description,
         version=project.version,
@@ -169,15 +171,14 @@ def build_external_landing(project: ExternalControl):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    environment_options = ["local", "dev"]
-    parser.add_argument("-e", "--env", choices=environment_options, default="local")
-    args = parser.parse_args()
-
-    url_prefix = "http://[::]:8000/" if args.env == "local" else "http://[::]:8000/"
+    url_prefix = "."
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
+
+    static_dir = PUBLIC_DIR / "static"
+    print("Copying static resources: {}", static_dir)
+    shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
 
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
@@ -186,7 +187,7 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
-
+    url_prefix = ".."
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
