@@ -1,3 +1,5 @@
+import os
+
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -7,7 +9,7 @@ def main():
     templateEnv = Environment(loader=templateLoader, autoescape=True)
     TEMPLATE_FILE = "landing.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
-
+    os.mkdir("output")
     template.stream(title="Mappings Explorer").dump("./output/index.html")
 
 
