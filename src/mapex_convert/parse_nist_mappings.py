@@ -1,8 +1,8 @@
-def configure_nist_mappings(dataframe, attack_version, mapping_version):
+def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
     parsed_mappings = {
         "metadata": {
-            "mapping_version": mapping_version,
+            "mapping_version": "",
             "attack_version": attack_version,
             # this is an assumption that all cve mappings are enterprise
             # this assumption is not currently true
@@ -16,7 +16,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_version):
             "last_update": "10/27/2021",
             "organization": "",
             "mapping_framework": "nist_800_53",
-            "mapping_framework_version": "",
+            "mapping_framework_version": mapping_framework_version,
             "mappings_types": ["mitigates"],
         },
         "attack_objects": [],

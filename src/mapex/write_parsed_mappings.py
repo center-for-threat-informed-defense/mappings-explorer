@@ -7,20 +7,10 @@ import requests
 import yaml
 
 
-def get_filename_version_string(parsed_mappings):
-    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
-    mapping_framework_version_string = (
-        f"-{mapping_framework_version}" if mapping_framework_version else ""
-    )
-    attack_version = parsed_mappings["metadata"]["attack_version"]
-    return f"{mapping_framework_version_string}_attack-{attack_version}"
-
-
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
-    filename_version_string = get_filename_version_string(parsed_mappings)
     result_yaml_file = open(
-        f"{filepath}{filename_version_string}.yaml",
+        f"{filepath}.yaml",
         "w",
         encoding="UTF-8",
     )
@@ -29,16 +19,15 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
 
 def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
     # create filename
-    filename_version_string = get_filename_version_string(parsed_mappings)
-    attack_object_filename = f"{filename_version_string}_attack_objects"
-    metadata_filename = f"{filename_version_string}_metadata"
+    attack_object_filepath = f"{filepath}_attack_objects"
+    metadata_filepath = f"{filepath}_metadata"
 
     # create csv with metadata
     metadata_object = parsed_mappings["metadata"]
     metadata_object["key"] = metadata_key
     metadata_object["mappings_types"] = ",".join(metadata_object["mappings_types"])
     metadata_df = pd.DataFrame(metadata_object, index=[0])
-    metadata_df.to_csv(f"{filepath}{metadata_filename}.csv")
+    metadata_df.to_csv(f"{metadata_filepath}.csv")
 
     # create csv with attack objects
     attack_objects = parsed_mappings["attack_objects"]
@@ -46,16 +35,15 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
         attack_object["metadata_key"] = metadata_key
 
     attack_object_df = pd.DataFrame(attack_objects)
-    attack_object_df.to_csv(f"{filepath}{attack_object_filename}.csv")
+    attack_object_df.to_csv(f"{attack_object_filepath}.csv")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
-    filename_version_string = get_filename_version_string(parsed_mappings)
     techniques_dict = get_techniques_dict(parsed_mappings)
     mapping_type = parsed_mappings["metadata"]["mapping_framework"]
     layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
     navigator_layer = open(
-        f"{filepath}{filename_version_string}_navigator_layer.json",
+        f"{filepath}_navigator_layer.json",
         "w",
         encoding="UTF-8",
     )
@@ -106,9 +94,8 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             },
         )
 
-    filename_version_string = get_filename_version_string(parsed_mappings)
     stix_file = open(
-        f"{filepath}{filename_version_string}_stix.json",
+        f"{filepath}_stix.json",
         "w",
         encoding="UTF-8",
     )

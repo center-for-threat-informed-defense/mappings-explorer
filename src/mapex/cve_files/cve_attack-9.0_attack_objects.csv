@@ -1017,7 +1017,7 @@
 1015,,T1212,Exploitation for Credential Access,[],[],,CVE-2017-11368,uncategorized,0
 1016,,T1078,Valid Accounts,[],[],,CVE-2016-5645,uncategorized,0
 1017,,T1542.001,System Firmware,[],[],,CVE-2016-5645,uncategorized,0
-1018,,T1078.003.,,[],[],,CVE-2011-3172,uncategorized,0
+1018,,T1078.003,Local Accounts,[],[],,CVE-2011-3172,uncategorized,0
 1019,,T1083,File and Directory Discovery,[],[],,CVE-2013-0629,uncategorized,0
 1020,,T1078,Valid Accounts,[],[],,CVE-2013-0629,uncategorized,0
 1021,,T1083,File and Directory Discovery,[],[],,CVE-2016-3298,uncategorized,0
@@ -1044,7 +1044,7 @@
 1042,,T1114.001,Local Email Collection,[],[],,CVE-2020-9819,uncategorized,0
 1043,,T1565.001,Stored Data Manipulation,[],[],,CVE-2020-9819,uncategorized,0
 1044,,T1485,Data Destruction,[],[],,CVE-2020-9819,uncategorized,0
-1045,,T11190,,[],[],,CVE-2015-7912,uncategorized,0
+1045,,T1190,Exploit Public-Facing Application,[],[],,CVE-2015-7912,uncategorized,0
 1046,,T1059,Command and Scripting Interpreter,[],[],,CVE-2015-7912,uncategorized,0
 1047,,T1133,External Remote Services,[],[],,CVE-2015-7935,uncategorized,0
 1048,,T1005,Data from Local System,[],[],,CVE-2015-7935,uncategorized,0
@@ -1064,7 +1064,7 @@
 1062,,T1212,Exploitation for Credential Access,[],[],,CVE-2019-11510,uncategorized,0
 1063,,T1083,File and Directory Discovery,[],[],,CVE-2019-11510,uncategorized,0
 1064,,T1133,External Remote Services,[],[],,CVE-2018-7506,uncategorized,0
-1065,,T1552.004.,,[],[],,CVE-2018-7506,uncategorized,0
+1065,,T1552.004,Private Keys,[],[],,CVE-2018-7506,uncategorized,0
 1066,,T1134.001.,,[],[],,CVE-2015-1701,uncategorized,0
 1067,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2015-1701,uncategorized,0
 1068,,T1136,Create Account,[],[],,CVE-2013-6129,uncategorized,0
@@ -1152,7 +1152,7 @@
 1150,,T1059.007,JavaScript,[],[],,CVE-2020-11901,uncategorized,0
 1151,,T1189,Drive-by Compromise,[],[],,CVE-2016-7256,uncategorized,0
 1152,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-7256,uncategorized,0
-1153,,T1134.001.,,[],[],,CVE-2016-7256,uncategorized,0
+1153,,T1134.001,Token Impersonation/Theft,[],[],,CVE-2016-7256,uncategorized,0
 1154,,T1189,Drive-by Compromise,[],[],,CVE-2016-3714,uncategorized,0
 1155,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-3714,uncategorized,0
 1156,,T1204.001,Malicious Link,[],[],,CVE-2016-3714,uncategorized,0
@@ -1270,7 +1270,7 @@
 1268,,T1059,Command and Scripting Interpreter,[],[],,CVE-2014-6293,uncategorized,0
 1269,,T1190,Exploit Public-Facing Application,[],[],,CVE-2012-6498,uncategorized,0
 1270,,T1059,Command and Scripting Interpreter,[],[],,CVE-2012-6498,uncategorized,0
-1271,,T1505.003.,,[],[],,CVE-2012-6498,uncategorized,0
+1271,,T1505.003,Web Shell,[],[],,CVE-2012-6498,uncategorized,0
 1272,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-0295,uncategorized,0
 1273,,T1059.001,PowerShell,[],[],,CVE-2014-0295,uncategorized,0
 1274,,T1190,Exploit Public-Facing Application,[],[],,CVE-2016-9684,uncategorized,0
@@ -1360,347 +1360,348 @@
 1358,,T1213,Data from Information Repositories,[],[],,CVE-2012-3015,uncategorized,0
 1359,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-1761,uncategorized,0
 1360,,T1569,System Services,[],[],,CVE-2014-1761,uncategorized,0
-1361,,T1190. T1005,,[],[],,CVE-2013-4335,uncategorized,0
-1362,,T1565,Data Manipulation,[],[],,CVE-2013-4335,uncategorized,0
-1363,,T1499.004,Application or System Exploitation,[],[],,CVE-2013-4335,uncategorized,0
-1364,,T1200,Hardware Additions,[],[],,CVE-2019-9019,uncategorized,0
-1365,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9019,uncategorized,0
-1366,,T1202,Indirect Command Execution,[],[],,CVE-2013-3893,uncategorized,0
-1367,,T1059,Command and Scripting Interpreter,[],[],,CVE-2013-3893,uncategorized,0
-1368,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3893,uncategorized,0
-1369,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-9818,uncategorized,0
-1370,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1631,uncategorized,0
-1371,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1350,uncategorized,0
-1372,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-0938,uncategorized,0
-1373,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9791,uncategorized,0
-1374,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-1579,uncategorized,0
-1375,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-11932,uncategorized,0
-1376,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-0903,uncategorized,0
-1377,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-0803,uncategorized,0
-1378,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-8833,uncategorized,0
-1379,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-8589,uncategorized,0
-1380,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-7513,uncategorized,0
-1381,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20838,uncategorized,0
-1382,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-18956,uncategorized,0
-1383,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-10376,uncategorized,0
-1384,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-5613,uncategorized,0
-1385,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-2404,uncategorized,0
-1386,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-12824,uncategorized,0
-1387,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-9299,uncategorized,0
-1388,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-2208,uncategorized,0
-1389,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-3864,uncategorized,0
-1390,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-7169,uncategorized,0
-1391,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-5334,uncategorized,0
-1392,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-0593,uncategorized,0
-1393,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3897,uncategorized,0
-1394,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3163,uncategorized,0
-1395,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-2311,uncategorized,0
-1396,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-1856,uncategorized,0
-1397,,T1203,Exploitation for Client Execution,[],[],,CVE-2011-3192,uncategorized,0
-1398,,T1203,Exploitation for Client Execution,[],[],,CVE-2011-2005,uncategorized,0
-1399,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-4398,uncategorized,0
-1400,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2568,uncategorized,0
-1401,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2152,uncategorized,0
-1402,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-1297,uncategorized,0
-1403,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0842,uncategorized,0
-1404,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0480,uncategorized,0
-1405,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1800,uncategorized,0
-1406,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1671,uncategorized,0
-1407,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0824,uncategorized,0
-1408,,T1203,Exploitation for Client Execution,[],[],,CVE-2008-2992,uncategorized,0
-1409,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-5638,uncategorized,0
-1410,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2017-5638,uncategorized,0
-1411,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-1494,uncategorized,0
-1412,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2015-1494,uncategorized,0
-1413,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2015-1494,uncategorized,0
-1414,,T1497,Virtualization/Sandbox Evasion,[],[],,CVE-2015-1494,uncategorized,0
-1415,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-6819,uncategorized,0
-1416,,T1189,Drive-by Compromise,[],[],,CVE-2020-6819,uncategorized,0
-1417,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-10257,uncategorized,0
-1418,,T1189,Drive-by Compromise,[],[],,CVE-2020-10257,uncategorized,0
-1419,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-15919,uncategorized,0
-1420,,T1189,Drive-by Compromise,[],[],,CVE-2017-15919,uncategorized,0
-1421,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0222,uncategorized,0
-1422,,T1189,Drive-by Compromise,[],[],,CVE-2017-0222,uncategorized,0
-1423,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0149,uncategorized,0
-1424,,T1189,Drive-by Compromise,[],[],,CVE-2017-0149,uncategorized,0
-1425,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-9079,uncategorized,0
-1426,,T1189,Drive-by Compromise,[],[],,CVE-2016-9079,uncategorized,0
-1427,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-7189,uncategorized,0
-1428,,T1189,Drive-by Compromise,[],[],,CVE-2016-7189,uncategorized,0
-1429,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-3393,uncategorized,0
-1430,,T1189,Drive-by Compromise,[],[],,CVE-2016-3393,uncategorized,0
-1431,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-5123,uncategorized,0
-1432,,T1189,Drive-by Compromise,[],[],,CVE-2015-5123,uncategorized,0
-1433,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2502,uncategorized,0
-1434,,T1189,Drive-by Compromise,[],[],,CVE-2015-2502,uncategorized,0
-1435,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2419,uncategorized,0
-1436,,T1189,Drive-by Compromise,[],[],,CVE-2015-2419,uncategorized,0
-1437,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-6332,uncategorized,0
-1438,,T1189,Drive-by Compromise,[],[],,CVE-2014-6332,uncategorized,0
-1439,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-1815,uncategorized,0
-1440,,T1189,Drive-by Compromise,[],[],,CVE-2014-1815,uncategorized,0
-1441,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-2465,uncategorized,0
-1442,,T1189,Drive-by Compromise,[],[],,CVE-2013-2465,uncategorized,0
-1443,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-2423,uncategorized,0
-1444,,T1189,Drive-by Compromise,[],[],,CVE-2013-2423,uncategorized,0
-1445,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-3213,uncategorized,0
-1446,,T1189,Drive-by Compromise,[],[],,CVE-2012-3213,uncategorized,0
-1447,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3971,uncategorized,0
-1448,,T1189,Drive-by Compromise,[],[],,CVE-2010-3971,uncategorized,0
-1449,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1136,uncategorized,0
-1450,,T1189,Drive-by Compromise,[],[],,CVE-2009-1136,uncategorized,0
-1451,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-1776,uncategorized,0
-1452,,T1189,Drive-by Compromise,[],[],,CVE-2014-1776,uncategorized,0
-1453,,T1499,Endpoint Denial of Service,[],[],,CVE-2014-1776,uncategorized,0
-1454,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3918,uncategorized,0
-1455,,T1189,Drive-by Compromise,[],[],,CVE-2013-3918,uncategorized,0
-1456,,T1499,Endpoint Denial of Service,[],[],,CVE-2013-3918,uncategorized,0
-1457,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-2883,uncategorized,0
-1458,,T1190,Exploit Public-Facing Application,[],[],,CVE-2020-2883,uncategorized,0
-1459,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-0601,uncategorized,0
-1460,,T1190,Exploit Public-Facing Application,[],[],,CVE-2020-0601,uncategorized,0
-1461,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-10149,uncategorized,0
-1462,,T1190,Exploit Public-Facing Application,[],[],,CVE-2019-10149,uncategorized,0
-1463,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20062,uncategorized,0
-1464,,T1190,Exploit Public-Facing Application,[],[],,CVE-2018-20062,uncategorized,0
-1465,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-6366,uncategorized,0
-1466,,T1190,Exploit Public-Facing Application,[],[],,CVE-2016-6366,uncategorized,0
-1467,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-3396,uncategorized,0
-1468,,T1190,Exploit Public-Facing Application,[],[],,CVE-2019-3396,uncategorized,0
-1469,,T1083,File and Directory Discovery,[],[],,CVE-2019-3396,uncategorized,0
-1470,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20250,uncategorized,0
-1471,,T1204.002,Malicious File,[],[],,CVE-2018-20250,uncategorized,0
-1472,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8464,uncategorized,0
-1473,,T1204.002,Malicious File,[],[],,CVE-2017-8464,uncategorized,0
-1474,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11882,uncategorized,0
-1475,,T1204.002,Malicious File,[],[],,CVE-2017-11882,uncategorized,0
-1476,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11826,uncategorized,0
-1477,,T1204.002,Malicious File,[],[],,CVE-2017-11826,uncategorized,0
-1478,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0261,uncategorized,0
-1479,,T1204.002,Malicious File,[],[],,CVE-2017-0261,uncategorized,0
-1480,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-6585,uncategorized,0
-1481,,T1204.002,Malicious File,[],[],,CVE-2015-6585,uncategorized,0
-1482,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-1642,uncategorized,0
-1483,,T1204.002,Malicious File,[],[],,CVE-2015-1642,uncategorized,0
-1484,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-0096,uncategorized,0
-1485,,T1204.002,Malicious File,[],[],,CVE-2015-0096,uncategorized,0
-1486,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-7247,uncategorized,0
-1487,,T1204.002,Malicious File,[],[],,CVE-2014-7247,uncategorized,0
-1488,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-6352,uncategorized,0
-1489,,T1204.002,Malicious File,[],[],,CVE-2014-6352,uncategorized,0
-1490,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-1331,uncategorized,0
-1491,,T1204.002,Malicious File,[],[],,CVE-2013-1331,uncategorized,0
-1492,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-1424,uncategorized,0
-1493,,T1204.002,Malicious File,[],[],,CVE-2010-1424,uncategorized,0
-1494,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0840,uncategorized,0
-1495,,T1204.002,Malicious File,[],[],,CVE-2010-0840,uncategorized,0
-1496,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-4324,uncategorized,0
-1497,,T1204.002,Malicious File,[],[],,CVE-2009-4324,uncategorized,0
-1498,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0556,uncategorized,0
-1499,,T1204.002,Malicious File,[],[],,CVE-2009-0556,uncategorized,0
-1500,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13510,uncategorized,0
-1501,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-13510,uncategorized,0
-1502,,T1204.001.,,[],[],,CVE-2015-7925,uncategorized,0
-1503,,T1529,System Shutdown/Reboot,[],[],,CVE-2015-7925,uncategorized,0
-1504,,T1542.001,System Firmware,[],[],,CVE-2015-7925,uncategorized,0
-1505,, T1565.001,Stored Data Manipulation,[],[],,CVE-2015-7925,uncategorized,0
-1506,,T1204.002,Malicious File,[],[],,CVE-2019-13541,uncategorized,0
-1507,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13541,uncategorized,0
-1508,,T1204.002,Malicious File,[],[],,CVE-2019-13527,uncategorized,0
-1509,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13527,uncategorized,0
-1510,,T1204.002,Malicious File,[],[],,CVE-2017-8570,uncategorized,0
-1511,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8570,uncategorized,0
-1512,,T1204.002,Malicious File,[],[],,CVE-2017-0262,uncategorized,0
-1513,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0262,uncategorized,0
-1514,,T1204.002,Malicious File,[],[],,CVE-2016-7193,uncategorized,0
-1515,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-7193,uncategorized,0
-1516,,T1204.002,Malicious File,[],[],,CVE-2015-2509,uncategorized,0
-1517,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2509,uncategorized,0
-1518,,T1204.002,Malicious File,[],[],,CVE-2014-0810,uncategorized,0
-1519,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-0810,uncategorized,0
-1520,,T1204.002,Malicious File,[],[],,CVE-2013-3644,uncategorized,0
-1521,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3644,uncategorized,0
-1522,,T1204.002,Malicious File,[],[],,CVE-2010-3915,uncategorized,0
-1523,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3915,uncategorized,0
-1524,,T1204.002,Malicious File,[],[],,CVE-2010-3333,uncategorized,0
-1525,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3333,uncategorized,0
-1526,,T1204.002,Malicious File,[],[],,CVE-2010-2862,uncategorized,0
-1527,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2862,uncategorized,0
-1528,,T1204.002,Malicious File,[],[],,CVE-2010-0028,uncategorized,0
-1529,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0028,uncategorized,0
-1530,,T1204.002,Malicious File,[],[],,CVE-2009-3129,uncategorized,0
-1531,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-3129,uncategorized,0
-1532,,T1204.002,Malicious File,[],[],,CVE-2009-0927,uncategorized,0
-1533,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0927,uncategorized,0
-1534,,T1210,Exploitation of Remote Services,[],[],,CVE-2020-1206,uncategorized,0
-1535,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-8543,uncategorized,0
-1536,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-0176,uncategorized,0
-1537,,T1210,Exploitation of Remote Services,[],[],,CVE-2010-2729,uncategorized,0
-1538,,T1210,Exploitation of Remote Services,[],[],,CVE-2008-4250,uncategorized,0
-1539,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-14323,uncategorized,0
-1540,,T1046,Network Service Scanning,[],[],,CVE-2017-14323,uncategorized,0
-1541,,T1059,Command and Scripting Interpreter,[],[],,CVE-2017-14323,uncategorized,0
-1542,,T1210,Exploitation of Remote Services,[],[],,CVE-2014-0751,uncategorized,0
-1543,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-0751,uncategorized,0
-1544,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2014-0751,uncategorized,0
-1545,,T1005,Data from Local System,[],[],,CVE-2014-0751,uncategorized,0
-1546,,T1212,Exploitation for Credential Access,[],[],,CVE-2014-0751,uncategorized,0
-1547,,T1552,Unsecured Credentials,[],[],,CVE-2014-0751,uncategorized,0
-1548,,T1133,External Remote Services,[],[],,CVE-2014-0751,uncategorized,0
-1549,,T1210,Exploitation of Remote Services,[],[],,CVE-2018-8414,uncategorized,0
-1550,,T1190,Exploit Public-Facing Application,[],[],,CVE-2018-8414,uncategorized,0
-1551,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-8414,uncategorized,0
-1552,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2020-8468,uncategorized,0
-1553,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-6112,uncategorized,0
-1554,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2015-7755,uncategorized,0
-1555,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-0560,uncategorized,0
-1556,,T1036,Masquerading,[],[],,CVE-2018-0560,uncategorized,0
-1557,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-8337,uncategorized,0
-1558,,TT1565,,[],[],,CVE-2018-8337,uncategorized,0
-1559,,T1485,Data Destruction,[],[],,CVE-2018-8337,uncategorized,0
-1560,,T1212,Exploitation for Credential Access,[],[],,CVE-2018-20753,uncategorized,0
-1561,,T1212,Exploitation for Credential Access,[],[],,CVE-2018-13379,uncategorized,0
-1562,,T1212,Exploitation for Credential Access,[],[],,CVE-2016-6415,uncategorized,0
-1563,,T1404,Exploit OS Vulnerability,[],[],,CVE-2019-7287,uncategorized,0
-1564,,T1404,Exploit OS Vulnerability,[],[],,CVE-2015-1805,uncategorized,0
-1565,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2015-1805,uncategorized,0
-1566,,T1409,Access Stored Application Data,[],[],,CVE-2017-12817,uncategorized,0
-1567,,T1456,Drive-by Compromise,[],[],,CVE-2016-4655,uncategorized,0
-1568,,T1461,Lockscreen Bypass,[],[],,CVE-2017-0493,uncategorized,0
-1569,,T1533,Data from Local System,[],[],,CVE-2017-0493,uncategorized,0
-1570,,T1477,Exploit via Radio Interfaces,[],[],,CVE-2019-3568,uncategorized,0
-1571,,T1497,Virtualization/Sandbox Evasion,[],[],,CVE-2019-9081,uncategorized,0
-1572,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2019-9081,uncategorized,0
-1573,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9081,uncategorized,0
-1574,,T1499,Endpoint Denial of Service,[],[],,CVE-2019-11707,uncategorized,0
-1575,,T1499,Endpoint Denial of Service,[],[],,CVE-2017-14934,uncategorized,0
-1576,,T1499,Endpoint Denial of Service,[],[],,CVE-2009-2055,uncategorized,0
-1577,,T1499.003,Application Exhaustion Flood,[],[],,CVE-2017-16115,uncategorized,0
-1578,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-8648,uncategorized,0
-1579,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-14059,uncategorized,0
-1580,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12888,uncategorized,0
-1581,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12655,uncategorized,0
-1582,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11884,uncategorized,0
-1583,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11668,uncategorized,0
-1584,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-16302,uncategorized,0
-1585,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-11869,uncategorized,0
-1586,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-21091,uncategorized,0
-1587,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-15454,uncategorized,0
-1588,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-14679,uncategorized,0
-1589,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-9142,uncategorized,0
-1590,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-10910,uncategorized,0
-1591,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-10810,uncategorized,0
-1592,,T1499.004,Application or System Exploitation,[],[],,CVE-2011-1752,uncategorized,0
-1593,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12653,uncategorized,0
-1594,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-12653,uncategorized,0
-1595,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11608,uncategorized,0
-1596,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-11608,uncategorized,0
-1597,,T1499.004.,,[],[],,CVE-2020-12769,uncategorized,0
-1598,,T1499.004.,,[],[],,CVE-2013-4854,uncategorized,0
-1599,,T1505,Server Software Component,[],[],,CVE-2014-4148,uncategorized,0
-1600,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2014-4148,uncategorized,0
-1601,,T1136,Create Account,[],[],,CVE-2014-4148,uncategorized,0
-1602,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-4148,uncategorized,0
-1603,,T1505.003,Web Shell,[],[],,CVE-2016-3088,uncategorized,0
-1604,,T1190,Exploit Public-Facing Application,[],[],,CVE-2016-3088,uncategorized,0
-1605,,T1505.003,Web Shell,[],[],,CVE-2013-5576,uncategorized,0
-1606,,T1190,Exploit Public-Facing Application,[],[],,CVE-2013-5576,uncategorized,0
-1607,,T1518,Software Discovery,[],[],,CVE-2016-3351,uncategorized,0
-1608,,T1528,Steal Application Access Token,[],[],,CVE-2020-11651,uncategorized,0
-1609,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-11651,uncategorized,0
-1610,,T1059,Command and Scripting Interpreter,[],[],,CVE-2020-11651,uncategorized,0
-1611,,T1528,Steal Application Access Token,[],[],,CVE-2020-5300,uncategorized,0
-1612,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-5300,uncategorized,0
-1613,,T1528,Steal Application Access Token,[],[],,CVE-2013-5054,uncategorized,0
-1614,,T1212,Exploitation for Credential Access,[],[],,CVE-2013-5054,uncategorized,0
-1615,,T1548,Abuse Elevation Control Mechanism,[],[],,CVE-2013-7246,uncategorized,0
-1616,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2013-7246,uncategorized,0
-1617,,T1548,Abuse Elevation Control Mechanism,[],[],,CVE-2017-14486,uncategorized,0
-1618,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-14486,uncategorized,0
-1619,,T1548.002,Bypass User Account Control,[],[],,CVE-2013-5065,uncategorized,0
-1620,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2013-5065,uncategorized,0
-1621,,T1548.002,Bypass User Account Control,[],[],,CVE-2008-0655,uncategorized,0
-1622,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2008-0655,uncategorized,0
-1623,,T1550.002,Pass the Hash,[],[],,CVE-2010-5290,uncategorized,0
-1624,,T1552.001,Credentials In Files,[],[],,CVE-2010-5290,uncategorized,0
-1625,,T1552,Unsecured Credentials,[],[],,CVE-2020-4408,uncategorized,0
-1626,,T1552,Unsecured Credentials,[],[],,CVE-2019-13922,uncategorized,0
-1627,,T1552,Unsecured Credentials,[],[],,CVE-2018-7259,uncategorized,0
-1628,,T1040,Network Sniffing,[],[],,CVE-2018-7259,uncategorized,0
-1629,,T1552,Unsecured Credentials,[],[],,CVE-2018-18641,uncategorized,0
-1630,,T1528,Steal Application Access Token,[],[],,CVE-2018-18641,uncategorized,0
-1631,,T1552,Unsecured Credentials,[],[],,CVE-2017-14487,uncategorized,0
-1632,,T1566,Phishing,[],[],,CVE-2017-14487,uncategorized,0
-1633,,T1204,User Execution,[],[],,CVE-2017-14487,uncategorized,0
-1634,,T880,,[],[],,CVE-2017-14487,uncategorized,0
-1635,,T1553,Subvert Trust Controls,[],[],,CVE-2014-4077,uncategorized,0
-1636,,T1557,Man-in-the-Middle,[],[],,CVE-2014-4077,uncategorized,0
-1637,,T1553.002,Code Signing,[],[],,CVE-2014-4077,uncategorized,0
-1638,,T1557,Man-in-the-Middle,[],[],,CVE-2018-0622,uncategorized,0
-1639,,T1557,Man-in-the-Middle,[],[],,CVE-2015-7931,uncategorized,0
-1640,,T1557,Man-in-the-Middle,[],[],,CVE-2014-3566,uncategorized,0
-1641,,T1557,Man-in-the-Middle,[],[],,CVE-2018-16179,uncategorized,0
-1642,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-16179,uncategorized,0
-1643,,T1563,Remote Service Session Hijacking,[],[],,CVE-2019-12258,uncategorized,0
-1644,,T1565.003,Runtime Data Manipulation,[],[],,CVE-2018-10299,uncategorized,0
-1645,,T1566,Phishing,[],[],,CVE-2020-1020,uncategorized,0
-1646,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1020,uncategorized,0
-1647,,T1566,Phishing,[],[],,CVE-2017-8759,uncategorized,0
-1648,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8759,uncategorized,0
-1649,,T1566,Phishing,[],[],,CVE-2017-11847,uncategorized,0
-1650,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11847,uncategorized,0
-1651,,T1566,Phishing,[],[],,CVE-2013-3906,uncategorized,0
-1652,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3906,uncategorized,0
-1653,,T1566,Phishing,[],[],,CVE-2012-6467,uncategorized,0
-1654,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-6467,uncategorized,0
-1655,,T1566.001,Spearphishing Attachment,[],[],,CVE-2019-6340,uncategorized,0
-1656,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-6340,uncategorized,0
-1657,,T1574,Hijack Execution Flow,[],[],,CVE-2020-4100,uncategorized,0
-1658,,T1574,Hijack Execution Flow,[],[],,CVE-2020-0688,uncategorized,0
-1659,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-0688,uncategorized,0
-1660,,T1574,Hijack Execution Flow,[],[],,CVE-2019-0708,uncategorized,0
-1661,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2019-0708,uncategorized,0
-1662,,T1574.001,DLL Search Order Hijacking,[],[],,CVE-2018-10657,uncategorized,0
-1663,,T1574.001,DLL Search Order Hijacking,[],[],,CVE-2009-0238,uncategorized,0
-1664,,T1574.008,Path Interception by Search Order Hijacking,[],[],,CVE-2018-11049,uncategorized,0
-1665,,T1574.008,Path Interception by Search Order Hijacking,[],[],,CVE-2012-1854,uncategorized,0
-1666,,T1608,Stage Capabilities,[],[],,CVE-2019-0797,uncategorized,0
-1667,,T1608,Stage Capabilities,[],[],,CVE-2018-8453,uncategorized,0
-1668,,T1608,Stage Capabilities,[],[],,CVE-2018-8440,uncategorized,0
-1669,,T1608,Stage Capabilities,[],[],,CVE-2018-19320,uncategorized,0
-1670,,T1608,Stage Capabilities,[],[],,CVE-2016-7255,uncategorized,0
-1671,,T1608,Stage Capabilities,[],[],,CVE-2016-0728,uncategorized,0
-1672,,T1608,Stage Capabilities,[],[],,CVE-2016-0167,uncategorized,0
-1673,,T1608,Stage Capabilities,[],[],,CVE-2016-0165,uncategorized,0
-1674,,T1608,Stage Capabilities,[],[],,CVE-2015-6175,uncategorized,0
-1675,,T1608,Stage Capabilities,[],[],,CVE-2015-2546,uncategorized,0
-1676,,T1608,Stage Capabilities,[],[],,CVE-2014-4076,uncategorized,0
-1677,,T1608,Stage Capabilities,[],[],,CVE-2013-6282,uncategorized,0
-1678,,T1608,Stage Capabilities,[],[],,CVE-2013-3660,uncategorized,0
-1679,,T1608,Stage Capabilities,[],[],,CVE-2012-2319,uncategorized,0
-1680,,T1608,Stage Capabilities,[],[],,CVE-2011-1249,uncategorized,0
-1681,,T1608,Stage Capabilities,[],[],,CVE-2010-3081,uncategorized,0
-1682,,T1608,Stage Capabilities,[],[],,CVE-2010-0232,uncategorized,0
-1683,,T1608,Stage Capabilities,[],[],,CVE-2008-3431,uncategorized,0
-1684,,T1608,Stage Capabilities,[],[],,CVE-2010-3338,uncategorized,0
-1685,,T1053.005,Scheduled Task,[],[],,CVE-2010-3338,uncategorized,0
-1686,,T812,,[],[],,CVE-2018-14847,uncategorized,0
-1687,,T1078,Valid Accounts,[],[],,CVE-2018-14847,uncategorized,0
-1688,,T828,,[],[],,CVE-2018-18665,uncategorized,0
-1689,,T828,,[],[],,CVE-2018-18667,uncategorized,0
-1690,,T1565,Data Manipulation,[],[],,CVE-2018-18667,uncategorized,0
-1691,,T828,,[],[],,CVE-2018-17877,uncategorized,0
-1692,,T1565,Data Manipulation,[],[],,CVE-2018-17877,uncategorized,0
-1693,,T828,,[],[],,CVE-2018-19831,uncategorized,0
-1694,,T1565,Data Manipulation,[],[],,CVE-2018-19831,uncategorized,0
-1695,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2018-19831,uncategorized,0
-1696,,T828,,[],[],,CVE-2018-19830,uncategorized,0
-1697,,T1565,Data Manipulation,[],[],,CVE-2018-19830,uncategorized,0
-1698,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2018-19830,uncategorized,0
-1699,,T828,,[],[],,CVE-2018-19833,uncategorized,0
-1700,,T1565.001,Stored Data Manipulation,[],[],,CVE-2018-19833,uncategorized,0
-1701,,T855,,[],[],,CVE-2019-13533,uncategorized,0
-1702,,T842,,[],[],,CVE-2019-13533,uncategorized,0
-1703,,T873,,[],[],,CVE-2019-10980,uncategorized,0
-1704,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-10980,uncategorized,0
+1361,,T1190,Exploit Public-Facing Application,[],[],,CVE-2013-4335,uncategorized,0
+1362,,T1005,Data from Local System,[],[],,CVE-2013-4335,uncategorized,0
+1363,,T1565,Data Manipulation,[],[],,CVE-2013-4335,uncategorized,0
+1364,,T1499.004,Application or System Exploitation,[],[],,CVE-2013-4335,uncategorized,0
+1365,,T1200,Hardware Additions,[],[],,CVE-2019-9019,uncategorized,0
+1366,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9019,uncategorized,0
+1367,,T1202,Indirect Command Execution,[],[],,CVE-2013-3893,uncategorized,0
+1368,,T1059,Command and Scripting Interpreter,[],[],,CVE-2013-3893,uncategorized,0
+1369,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3893,uncategorized,0
+1370,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-9818,uncategorized,0
+1371,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1631,uncategorized,0
+1372,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1350,uncategorized,0
+1373,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-0938,uncategorized,0
+1374,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9791,uncategorized,0
+1375,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-1579,uncategorized,0
+1376,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-11932,uncategorized,0
+1377,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-0903,uncategorized,0
+1378,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-0803,uncategorized,0
+1379,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-8833,uncategorized,0
+1380,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-8589,uncategorized,0
+1381,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-7513,uncategorized,0
+1382,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20838,uncategorized,0
+1383,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-18956,uncategorized,0
+1384,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-10376,uncategorized,0
+1385,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-5613,uncategorized,0
+1386,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-2404,uncategorized,0
+1387,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-12824,uncategorized,0
+1388,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-9299,uncategorized,0
+1389,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-2208,uncategorized,0
+1390,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-3864,uncategorized,0
+1391,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-7169,uncategorized,0
+1392,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-5334,uncategorized,0
+1393,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-0593,uncategorized,0
+1394,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3897,uncategorized,0
+1395,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3163,uncategorized,0
+1396,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-2311,uncategorized,0
+1397,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-1856,uncategorized,0
+1398,,T1203,Exploitation for Client Execution,[],[],,CVE-2011-3192,uncategorized,0
+1399,,T1203,Exploitation for Client Execution,[],[],,CVE-2011-2005,uncategorized,0
+1400,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-4398,uncategorized,0
+1401,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2568,uncategorized,0
+1402,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2152,uncategorized,0
+1403,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-1297,uncategorized,0
+1404,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0842,uncategorized,0
+1405,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0480,uncategorized,0
+1406,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1800,uncategorized,0
+1407,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1671,uncategorized,0
+1408,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0824,uncategorized,0
+1409,,T1203,Exploitation for Client Execution,[],[],,CVE-2008-2992,uncategorized,0
+1410,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-5638,uncategorized,0
+1411,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2017-5638,uncategorized,0
+1412,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-1494,uncategorized,0
+1413,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2015-1494,uncategorized,0
+1414,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2015-1494,uncategorized,0
+1415,,T1497,Virtualization/Sandbox Evasion,[],[],,CVE-2015-1494,uncategorized,0
+1416,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-6819,uncategorized,0
+1417,,T1189,Drive-by Compromise,[],[],,CVE-2020-6819,uncategorized,0
+1418,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-10257,uncategorized,0
+1419,,T1189,Drive-by Compromise,[],[],,CVE-2020-10257,uncategorized,0
+1420,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-15919,uncategorized,0
+1421,,T1189,Drive-by Compromise,[],[],,CVE-2017-15919,uncategorized,0
+1422,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0222,uncategorized,0
+1423,,T1189,Drive-by Compromise,[],[],,CVE-2017-0222,uncategorized,0
+1424,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0149,uncategorized,0
+1425,,T1189,Drive-by Compromise,[],[],,CVE-2017-0149,uncategorized,0
+1426,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-9079,uncategorized,0
+1427,,T1189,Drive-by Compromise,[],[],,CVE-2016-9079,uncategorized,0
+1428,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-7189,uncategorized,0
+1429,,T1189,Drive-by Compromise,[],[],,CVE-2016-7189,uncategorized,0
+1430,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-3393,uncategorized,0
+1431,,T1189,Drive-by Compromise,[],[],,CVE-2016-3393,uncategorized,0
+1432,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-5123,uncategorized,0
+1433,,T1189,Drive-by Compromise,[],[],,CVE-2015-5123,uncategorized,0
+1434,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2502,uncategorized,0
+1435,,T1189,Drive-by Compromise,[],[],,CVE-2015-2502,uncategorized,0
+1436,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2419,uncategorized,0
+1437,,T1189,Drive-by Compromise,[],[],,CVE-2015-2419,uncategorized,0
+1438,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-6332,uncategorized,0
+1439,,T1189,Drive-by Compromise,[],[],,CVE-2014-6332,uncategorized,0
+1440,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-1815,uncategorized,0
+1441,,T1189,Drive-by Compromise,[],[],,CVE-2014-1815,uncategorized,0
+1442,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-2465,uncategorized,0
+1443,,T1189,Drive-by Compromise,[],[],,CVE-2013-2465,uncategorized,0
+1444,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-2423,uncategorized,0
+1445,,T1189,Drive-by Compromise,[],[],,CVE-2013-2423,uncategorized,0
+1446,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-3213,uncategorized,0
+1447,,T1189,Drive-by Compromise,[],[],,CVE-2012-3213,uncategorized,0
+1448,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3971,uncategorized,0
+1449,,T1189,Drive-by Compromise,[],[],,CVE-2010-3971,uncategorized,0
+1450,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-1136,uncategorized,0
+1451,,T1189,Drive-by Compromise,[],[],,CVE-2009-1136,uncategorized,0
+1452,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-1776,uncategorized,0
+1453,,T1189,Drive-by Compromise,[],[],,CVE-2014-1776,uncategorized,0
+1454,,T1499,Endpoint Denial of Service,[],[],,CVE-2014-1776,uncategorized,0
+1455,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3918,uncategorized,0
+1456,,T1189,Drive-by Compromise,[],[],,CVE-2013-3918,uncategorized,0
+1457,,T1499,Endpoint Denial of Service,[],[],,CVE-2013-3918,uncategorized,0
+1458,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-2883,uncategorized,0
+1459,,T1190,Exploit Public-Facing Application,[],[],,CVE-2020-2883,uncategorized,0
+1460,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-0601,uncategorized,0
+1461,,T1190,Exploit Public-Facing Application,[],[],,CVE-2020-0601,uncategorized,0
+1462,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-10149,uncategorized,0
+1463,,T1190,Exploit Public-Facing Application,[],[],,CVE-2019-10149,uncategorized,0
+1464,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20062,uncategorized,0
+1465,,T1190,Exploit Public-Facing Application,[],[],,CVE-2018-20062,uncategorized,0
+1466,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-6366,uncategorized,0
+1467,,T1190,Exploit Public-Facing Application,[],[],,CVE-2016-6366,uncategorized,0
+1468,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-3396,uncategorized,0
+1469,,T1190,Exploit Public-Facing Application,[],[],,CVE-2019-3396,uncategorized,0
+1470,,T1083,File and Directory Discovery,[],[],,CVE-2019-3396,uncategorized,0
+1471,,T1203,Exploitation for Client Execution,[],[],,CVE-2018-20250,uncategorized,0
+1472,,T1204.002,Malicious File,[],[],,CVE-2018-20250,uncategorized,0
+1473,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8464,uncategorized,0
+1474,,T1204.002,Malicious File,[],[],,CVE-2017-8464,uncategorized,0
+1475,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11882,uncategorized,0
+1476,,T1204.002,Malicious File,[],[],,CVE-2017-11882,uncategorized,0
+1477,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11826,uncategorized,0
+1478,,T1204.002,Malicious File,[],[],,CVE-2017-11826,uncategorized,0
+1479,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0261,uncategorized,0
+1480,,T1204.002,Malicious File,[],[],,CVE-2017-0261,uncategorized,0
+1481,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-6585,uncategorized,0
+1482,,T1204.002,Malicious File,[],[],,CVE-2015-6585,uncategorized,0
+1483,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-1642,uncategorized,0
+1484,,T1204.002,Malicious File,[],[],,CVE-2015-1642,uncategorized,0
+1485,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-0096,uncategorized,0
+1486,,T1204.002,Malicious File,[],[],,CVE-2015-0096,uncategorized,0
+1487,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-7247,uncategorized,0
+1488,,T1204.002,Malicious File,[],[],,CVE-2014-7247,uncategorized,0
+1489,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-6352,uncategorized,0
+1490,,T1204.002,Malicious File,[],[],,CVE-2014-6352,uncategorized,0
+1491,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-1331,uncategorized,0
+1492,,T1204.002,Malicious File,[],[],,CVE-2013-1331,uncategorized,0
+1493,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-1424,uncategorized,0
+1494,,T1204.002,Malicious File,[],[],,CVE-2010-1424,uncategorized,0
+1495,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0840,uncategorized,0
+1496,,T1204.002,Malicious File,[],[],,CVE-2010-0840,uncategorized,0
+1497,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-4324,uncategorized,0
+1498,,T1204.002,Malicious File,[],[],,CVE-2009-4324,uncategorized,0
+1499,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0556,uncategorized,0
+1500,,T1204.002,Malicious File,[],[],,CVE-2009-0556,uncategorized,0
+1501,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13510,uncategorized,0
+1502,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-13510,uncategorized,0
+1503,,T1204.001.,,[],[],,CVE-2015-7925,uncategorized,0
+1504,,T1529,System Shutdown/Reboot,[],[],,CVE-2015-7925,uncategorized,0
+1505,,T1542.001,System Firmware,[],[],,CVE-2015-7925,uncategorized,0
+1506,, T1565.001,Stored Data Manipulation,[],[],,CVE-2015-7925,uncategorized,0
+1507,,T1204.002,Malicious File,[],[],,CVE-2019-13541,uncategorized,0
+1508,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13541,uncategorized,0
+1509,,T1204.002,Malicious File,[],[],,CVE-2019-13527,uncategorized,0
+1510,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-13527,uncategorized,0
+1511,,T1204.002,Malicious File,[],[],,CVE-2017-8570,uncategorized,0
+1512,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8570,uncategorized,0
+1513,,T1204.002,Malicious File,[],[],,CVE-2017-0262,uncategorized,0
+1514,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-0262,uncategorized,0
+1515,,T1204.002,Malicious File,[],[],,CVE-2016-7193,uncategorized,0
+1516,,T1203,Exploitation for Client Execution,[],[],,CVE-2016-7193,uncategorized,0
+1517,,T1204.002,Malicious File,[],[],,CVE-2015-2509,uncategorized,0
+1518,,T1203,Exploitation for Client Execution,[],[],,CVE-2015-2509,uncategorized,0
+1519,,T1204.002,Malicious File,[],[],,CVE-2014-0810,uncategorized,0
+1520,,T1203,Exploitation for Client Execution,[],[],,CVE-2014-0810,uncategorized,0
+1521,,T1204.002,Malicious File,[],[],,CVE-2013-3644,uncategorized,0
+1522,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3644,uncategorized,0
+1523,,T1204.002,Malicious File,[],[],,CVE-2010-3915,uncategorized,0
+1524,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3915,uncategorized,0
+1525,,T1204.002,Malicious File,[],[],,CVE-2010-3333,uncategorized,0
+1526,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-3333,uncategorized,0
+1527,,T1204.002,Malicious File,[],[],,CVE-2010-2862,uncategorized,0
+1528,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-2862,uncategorized,0
+1529,,T1204.002,Malicious File,[],[],,CVE-2010-0028,uncategorized,0
+1530,,T1203,Exploitation for Client Execution,[],[],,CVE-2010-0028,uncategorized,0
+1531,,T1204.002,Malicious File,[],[],,CVE-2009-3129,uncategorized,0
+1532,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-3129,uncategorized,0
+1533,,T1204.002,Malicious File,[],[],,CVE-2009-0927,uncategorized,0
+1534,,T1203,Exploitation for Client Execution,[],[],,CVE-2009-0927,uncategorized,0
+1535,,T1210,Exploitation of Remote Services,[],[],,CVE-2020-1206,uncategorized,0
+1536,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-8543,uncategorized,0
+1537,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-0176,uncategorized,0
+1538,,T1210,Exploitation of Remote Services,[],[],,CVE-2010-2729,uncategorized,0
+1539,,T1210,Exploitation of Remote Services,[],[],,CVE-2008-4250,uncategorized,0
+1540,,T1210,Exploitation of Remote Services,[],[],,CVE-2017-14323,uncategorized,0
+1541,,T1046,Network Service Scanning,[],[],,CVE-2017-14323,uncategorized,0
+1542,,T1059,Command and Scripting Interpreter,[],[],,CVE-2017-14323,uncategorized,0
+1543,,T1210,Exploitation of Remote Services,[],[],,CVE-2014-0751,uncategorized,0
+1544,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-0751,uncategorized,0
+1545,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2014-0751,uncategorized,0
+1546,,T1005,Data from Local System,[],[],,CVE-2014-0751,uncategorized,0
+1547,,T1212,Exploitation for Credential Access,[],[],,CVE-2014-0751,uncategorized,0
+1548,,T1552,Unsecured Credentials,[],[],,CVE-2014-0751,uncategorized,0
+1549,,T1133,External Remote Services,[],[],,CVE-2014-0751,uncategorized,0
+1550,,T1210,Exploitation of Remote Services,[],[],,CVE-2018-8414,uncategorized,0
+1551,,T1190,Exploit Public-Facing Application,[],[],,CVE-2018-8414,uncategorized,0
+1552,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-8414,uncategorized,0
+1553,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2020-8468,uncategorized,0
+1554,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-6112,uncategorized,0
+1555,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2015-7755,uncategorized,0
+1556,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-0560,uncategorized,0
+1557,,T1036,Masquerading,[],[],,CVE-2018-0560,uncategorized,0
+1558,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-8337,uncategorized,0
+1559,,T1565,Data Manipulation,[],[],,CVE-2018-8337,uncategorized,0
+1560,,T1485,Data Destruction,[],[],,CVE-2018-8337,uncategorized,0
+1561,,T1212,Exploitation for Credential Access,[],[],,CVE-2018-20753,uncategorized,0
+1562,,T1212,Exploitation for Credential Access,[],[],,CVE-2018-13379,uncategorized,0
+1563,,T1212,Exploitation for Credential Access,[],[],,CVE-2016-6415,uncategorized,0
+1564,,T1404,Exploit OS Vulnerability,[],[],,CVE-2019-7287,uncategorized,0
+1565,,T1404,Exploit OS Vulnerability,[],[],,CVE-2015-1805,uncategorized,0
+1566,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2015-1805,uncategorized,0
+1567,,T1409,Access Stored Application Data,[],[],,CVE-2017-12817,uncategorized,0
+1568,,T1456,Drive-by Compromise,[],[],,CVE-2016-4655,uncategorized,0
+1569,,T1461,Lockscreen Bypass,[],[],,CVE-2017-0493,uncategorized,0
+1570,,T1533,Data from Local System,[],[],,CVE-2017-0493,uncategorized,0
+1571,,T1477,Exploit via Radio Interfaces,[],[],,CVE-2019-3568,uncategorized,0
+1572,,T1497,Virtualization/Sandbox Evasion,[],[],,CVE-2019-9081,uncategorized,0
+1573,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2019-9081,uncategorized,0
+1574,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-9081,uncategorized,0
+1575,,T1499,Endpoint Denial of Service,[],[],,CVE-2019-11707,uncategorized,0
+1576,,T1499,Endpoint Denial of Service,[],[],,CVE-2017-14934,uncategorized,0
+1577,,T1499,Endpoint Denial of Service,[],[],,CVE-2009-2055,uncategorized,0
+1578,,T1499.003,Application Exhaustion Flood,[],[],,CVE-2017-16115,uncategorized,0
+1579,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-8648,uncategorized,0
+1580,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-14059,uncategorized,0
+1581,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12888,uncategorized,0
+1582,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12655,uncategorized,0
+1583,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11884,uncategorized,0
+1584,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11668,uncategorized,0
+1585,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-16302,uncategorized,0
+1586,,T1499.004,Application or System Exploitation,[],[],,CVE-2019-11869,uncategorized,0
+1587,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-21091,uncategorized,0
+1588,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-15454,uncategorized,0
+1589,,T1499.004,Application or System Exploitation,[],[],,CVE-2018-14679,uncategorized,0
+1590,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-9142,uncategorized,0
+1591,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-10910,uncategorized,0
+1592,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-10810,uncategorized,0
+1593,,T1499.004,Application or System Exploitation,[],[],,CVE-2011-1752,uncategorized,0
+1594,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12653,uncategorized,0
+1595,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-12653,uncategorized,0
+1596,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-11608,uncategorized,0
+1597,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-11608,uncategorized,0
+1598,,T1499.004,Application or System Exploitation,[],[],,CVE-2020-12769,uncategorized,0
+1599,,T1499.004,Application or System Exploitation,[],[],,CVE-2013-4854,uncategorized,0
+1600,,T1505,Server Software Component,[],[],,CVE-2014-4148,uncategorized,0
+1601,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2014-4148,uncategorized,0
+1602,,T1136,Create Account,[],[],,CVE-2014-4148,uncategorized,0
+1603,,T1190,Exploit Public-Facing Application,[],[],,CVE-2014-4148,uncategorized,0
+1604,,T1505.003,Web Shell,[],[],,CVE-2016-3088,uncategorized,0
+1605,,T1190,Exploit Public-Facing Application,[],[],,CVE-2016-3088,uncategorized,0
+1606,,T1505.003,Web Shell,[],[],,CVE-2013-5576,uncategorized,0
+1607,,T1190,Exploit Public-Facing Application,[],[],,CVE-2013-5576,uncategorized,0
+1608,,T1518,Software Discovery,[],[],,CVE-2016-3351,uncategorized,0
+1609,,T1528,Steal Application Access Token,[],[],,CVE-2020-11651,uncategorized,0
+1610,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-11651,uncategorized,0
+1611,,T1059,Command and Scripting Interpreter,[],[],,CVE-2020-11651,uncategorized,0
+1612,,T1528,Steal Application Access Token,[],[],,CVE-2020-5300,uncategorized,0
+1613,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-5300,uncategorized,0
+1614,,T1528,Steal Application Access Token,[],[],,CVE-2013-5054,uncategorized,0
+1615,,T1212,Exploitation for Credential Access,[],[],,CVE-2013-5054,uncategorized,0
+1616,,T1548,Abuse Elevation Control Mechanism,[],[],,CVE-2013-7246,uncategorized,0
+1617,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2013-7246,uncategorized,0
+1618,,T1548,Abuse Elevation Control Mechanism,[],[],,CVE-2017-14486,uncategorized,0
+1619,,T1499.004,Application or System Exploitation,[],[],,CVE-2017-14486,uncategorized,0
+1620,,T1548.002,Bypass User Account Control,[],[],,CVE-2013-5065,uncategorized,0
+1621,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2013-5065,uncategorized,0
+1622,,T1548.002,Bypass User Account Control,[],[],,CVE-2008-0655,uncategorized,0
+1623,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2008-0655,uncategorized,0
+1624,,T1550.002,Pass the Hash,[],[],,CVE-2010-5290,uncategorized,0
+1625,,T1552.001,Credentials In Files,[],[],,CVE-2010-5290,uncategorized,0
+1626,,T1552,Unsecured Credentials,[],[],,CVE-2020-4408,uncategorized,0
+1627,,T1552,Unsecured Credentials,[],[],,CVE-2019-13922,uncategorized,0
+1628,,T1552,Unsecured Credentials,[],[],,CVE-2018-7259,uncategorized,0
+1629,,T1040,Network Sniffing,[],[],,CVE-2018-7259,uncategorized,0
+1630,,T1552,Unsecured Credentials,[],[],,CVE-2018-18641,uncategorized,0
+1631,,T1528,Steal Application Access Token,[],[],,CVE-2018-18641,uncategorized,0
+1632,,T1552,Unsecured Credentials,[],[],,CVE-2017-14487,uncategorized,0
+1633,,T1566,Phishing,[],[],,CVE-2017-14487,uncategorized,0
+1634,,T1204,User Execution,[],[],,CVE-2017-14487,uncategorized,0
+1635,,T0880,Loss of Safety,[],[],,CVE-2017-14487,uncategorized,0
+1636,,T1553,Subvert Trust Controls,[],[],,CVE-2014-4077,uncategorized,0
+1637,,T1557,Man-in-the-Middle,[],[],,CVE-2014-4077,uncategorized,0
+1638,,T1553.002,Code Signing,[],[],,CVE-2014-4077,uncategorized,0
+1639,,T1557,Man-in-the-Middle,[],[],,CVE-2018-0622,uncategorized,0
+1640,,T1557,Man-in-the-Middle,[],[],,CVE-2015-7931,uncategorized,0
+1641,,T1557,Man-in-the-Middle,[],[],,CVE-2014-3566,uncategorized,0
+1642,,T1557,Man-in-the-Middle,[],[],,CVE-2018-16179,uncategorized,0
+1643,,T1211,Exploitation for Defense Evasion,[],[],,CVE-2018-16179,uncategorized,0
+1644,,T1563,Remote Service Session Hijacking,[],[],,CVE-2019-12258,uncategorized,0
+1645,,T1565.003,Runtime Data Manipulation,[],[],,CVE-2018-10299,uncategorized,0
+1646,,T1566,Phishing,[],[],,CVE-2020-1020,uncategorized,0
+1647,,T1203,Exploitation for Client Execution,[],[],,CVE-2020-1020,uncategorized,0
+1648,,T1566,Phishing,[],[],,CVE-2017-8759,uncategorized,0
+1649,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-8759,uncategorized,0
+1650,,T1566,Phishing,[],[],,CVE-2017-11847,uncategorized,0
+1651,,T1203,Exploitation for Client Execution,[],[],,CVE-2017-11847,uncategorized,0
+1652,,T1566,Phishing,[],[],,CVE-2013-3906,uncategorized,0
+1653,,T1203,Exploitation for Client Execution,[],[],,CVE-2013-3906,uncategorized,0
+1654,,T1566,Phishing,[],[],,CVE-2012-6467,uncategorized,0
+1655,,T1203,Exploitation for Client Execution,[],[],,CVE-2012-6467,uncategorized,0
+1656,,T1566.001,Spearphishing Attachment,[],[],,CVE-2019-6340,uncategorized,0
+1657,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-6340,uncategorized,0
+1658,,T1574,Hijack Execution Flow,[],[],,CVE-2020-4100,uncategorized,0
+1659,,T1574,Hijack Execution Flow,[],[],,CVE-2020-0688,uncategorized,0
+1660,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2020-0688,uncategorized,0
+1661,,T1574,Hijack Execution Flow,[],[],,CVE-2019-0708,uncategorized,0
+1662,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2019-0708,uncategorized,0
+1663,,T1574.001,DLL Search Order Hijacking,[],[],,CVE-2018-10657,uncategorized,0
+1664,,T1574.001,DLL Search Order Hijacking,[],[],,CVE-2009-0238,uncategorized,0
+1665,,T1574.008,Path Interception by Search Order Hijacking,[],[],,CVE-2018-11049,uncategorized,0
+1666,,T1574.008,Path Interception by Search Order Hijacking,[],[],,CVE-2012-1854,uncategorized,0
+1667,,T1608,Stage Capabilities,[],[],,CVE-2019-0797,uncategorized,0
+1668,,T1608,Stage Capabilities,[],[],,CVE-2018-8453,uncategorized,0
+1669,,T1608,Stage Capabilities,[],[],,CVE-2018-8440,uncategorized,0
+1670,,T1608,Stage Capabilities,[],[],,CVE-2018-19320,uncategorized,0
+1671,,T1608,Stage Capabilities,[],[],,CVE-2016-7255,uncategorized,0
+1672,,T1608,Stage Capabilities,[],[],,CVE-2016-0728,uncategorized,0
+1673,,T1608,Stage Capabilities,[],[],,CVE-2016-0167,uncategorized,0
+1674,,T1608,Stage Capabilities,[],[],,CVE-2016-0165,uncategorized,0
+1675,,T1608,Stage Capabilities,[],[],,CVE-2015-6175,uncategorized,0
+1676,,T1608,Stage Capabilities,[],[],,CVE-2015-2546,uncategorized,0
+1677,,T1608,Stage Capabilities,[],[],,CVE-2014-4076,uncategorized,0
+1678,,T1608,Stage Capabilities,[],[],,CVE-2013-6282,uncategorized,0
+1679,,T1608,Stage Capabilities,[],[],,CVE-2013-3660,uncategorized,0
+1680,,T1608,Stage Capabilities,[],[],,CVE-2012-2319,uncategorized,0
+1681,,T1608,Stage Capabilities,[],[],,CVE-2011-1249,uncategorized,0
+1682,,T1608,Stage Capabilities,[],[],,CVE-2010-3081,uncategorized,0
+1683,,T1608,Stage Capabilities,[],[],,CVE-2010-0232,uncategorized,0
+1684,,T1608,Stage Capabilities,[],[],,CVE-2008-3431,uncategorized,0
+1685,,T1608,Stage Capabilities,[],[],,CVE-2010-3338,uncategorized,0
+1686,,T1053.005,Scheduled Task,[],[],,CVE-2010-3338,uncategorized,0
+1687,,T0812,Default Credentials,[],[],,CVE-2018-14847,uncategorized,0
+1688,,T1078,Valid Accounts,[],[],,CVE-2018-14847,uncategorized,0
+1689,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-18665,uncategorized,0
+1690,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-18667,uncategorized,0
+1691,,T1565,Data Manipulation,[],[],,CVE-2018-18667,uncategorized,0
+1692,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-17877,uncategorized,0
+1693,,T1565,Data Manipulation,[],[],,CVE-2018-17877,uncategorized,0
+1694,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-19831,uncategorized,0
+1695,,T1565,Data Manipulation,[],[],,CVE-2018-19831,uncategorized,0
+1696,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2018-19831,uncategorized,0
+1697,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-19830,uncategorized,0
+1698,,T1565,Data Manipulation,[],[],,CVE-2018-19830,uncategorized,0
+1699,,T1068,Exploitation for Privilege Escalation,[],[],,CVE-2018-19830,uncategorized,0
+1700,,T0828,Loss of Productivity and Revenue,[],[],,CVE-2018-19833,uncategorized,0
+1701,,T1565.001,Stored Data Manipulation,[],[],,CVE-2018-19833,uncategorized,0
+1702,,T0855,Unauthorized Command Message,[],[],,CVE-2019-13533,uncategorized,0
+1703,,T0842,Network Sniffing,[],[],,CVE-2019-13533,uncategorized,0
+1704,,T0873,Project File Infection,[],[],,CVE-2019-10980,uncategorized,0
+1705,,T1203,Exploitation for Client Execution,[],[],,CVE-2019-10980,uncategorized,0
