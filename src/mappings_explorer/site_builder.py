@@ -195,7 +195,7 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
-    url_prefix = "/"
+    url_prefix = ""
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
