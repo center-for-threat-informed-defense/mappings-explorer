@@ -200,7 +200,7 @@ def main():
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external-landing.html.j2")
-    stream = template.stream(title="External Mappings Home")
+    stream = template.stream(title="External Mappings Home", url_prefix=url_prefix)
     stream.dump(str(output_path))
     print("Created external mappings home")
 
