@@ -29,10 +29,13 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "mapping_framework": "cve",
             "mapping_framework_version": "",
             "mappings_types": formatted_cve_mapping_types,
+            "groups": [],
         },
         "attack_objects": [],
     }
 
+    groups = []
+    group_id = 0
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
             if isinstance(row[mapping_type], str):
@@ -40,6 +43,15 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                 mapped_attack_objects = row[mapping_type].split("; ")
                 mapping_type = mapping_type.lower().replace(" ", "_")
                 for attack_object in mapped_attack_objects:
+                    # figure out capability group
+                    capability_id = row["CVE ID"]
+                    capability_year = capability_id[
+                        capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
+                    ]
+                    if not any(group["name"] == capability_year for group in groups):
+                        groups.append({"id": group_id, "name": capability_year})
+                        group_id += 1
+
                     # technique id is not in the dictionary, set it to an empty string
                     # this can happen if the technique has been deprecated or revoked
                     # will likely change when we get concrete guidance on how to deal
@@ -48,6 +60,9 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         attack_object.strip(), {}
                     )
                     name = attack_details.get("name", "")
+                    group = list(
+                        filter(lambda group: group["name"] == capability_year, groups)
+                    )[0]["id"]
 
                     parsed_mappings["attack_objects"].append(
                         {
@@ -57,8 +72,10 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "references": [],
                             "tags": [],
                             "capability_description": "",
-                            "capability_id": row["CVE ID"],
+                            "capability_id": capability_id,
                             "mapping_type": mapping_type,
+                            "group": group,
                         }
                     )
+    parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings
