@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
         "Primary Impact",
@@ -35,7 +38,6 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
     }
 
     groups = []
-    group_id = 0
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
             if isinstance(row[mapping_type], str):
@@ -49,8 +51,8 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
                     ]
                     if not any(group["name"] == capability_year for group in groups):
+                        group_id = str(uuid.uuid4())
                         groups.append({"id": group_id, "name": capability_year})
-                        group_id += 1
 
                     # technique id is not in the dictionary, set it to an empty string
                     # this can happen if the technique has been deprecated or revoked

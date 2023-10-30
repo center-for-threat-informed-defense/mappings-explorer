@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
     parsed_mappings = {
@@ -24,13 +27,12 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
     }
 
     groups = []
-    group_id = 0
     for _, row in dataframe.iterrows():
         control_id = row["Control ID"]
 
         if not any(group["name"] == control_id for group in groups):
+            group_id = str(uuid.uuid4())
             groups.append({"id": group_id, "name": control_id})
-            group_id += 1
 
         group = list(filter(lambda group: group["name"] == control_id, groups))[0]["id"]
 
