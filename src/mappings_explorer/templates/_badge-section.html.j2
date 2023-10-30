@@ -1,17 +1,19 @@
-<div class="badge-section">
+<div class="badge-section col-lg-8 col-md-6" style="margin-right: 0;">
+    <button class="icon-btn"
+        <a href={{"../{{prev_page}}"}}>
+            <img src="{{url_prefix}}static/img/gear.svg" alt="">
+            Change Versions
+        </a>
+    </button>
     {% if versions %}
-    <div class="custom-badge">
-        <span class="white">{{control}}</span><span class="purple">{{"{{control_version}}"}}</span>
-    </div>
+        <button class="custom-badge" style="margin-left: auto;">
+            <span class="white">{{control}}</span><span class="purple">{{"{{control_version}}"}}</span>
+        </button>
     {% endif %}
-    <div class="custom-badge">
+    <button class="custom-badge">
         <span class="white">ATT&CK Version</span><span class="purple">{{"{{attack_version}}"}}</span>
-    </div>
-    <div class="custom-badge">
+    </button>
+    <button class="custom-badge">
         <span class="white">ATT&CK Domain</span><span class="purple">{{"{{attack_domain}}"}}</span>
-    </div>
-    <a class="icon-btn" href={{"../{{prev_page}}"}}>
-        <img src="{{url_prefix}}/src/mappings_explorer/templates/static/img/gear.svg" alt="">
-         Change Versions
-    </a>
+    </button>
 </div>

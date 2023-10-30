@@ -42,11 +42,15 @@
   <section id="mapping-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
-        <div class="col-12">
-            <div style="display:flex">
-                <h2 style="width: max-content">{{"{{group}}"}} Security Controls</h2>
-                {% include "_badge-section.html.j2" %}
+       <div class="row">
+            <div class="col-lg-4 col-md-12">
+            <h2 style="width: max-content">ATT&CK Technique Mappings</h2>
             </div>
+            <div class="col-lg-8 col-md-12" style="margin-left: auto;">
+            {% include "_badge-section.html.j2" %}
+            </div>
+        </div>
+        <div class="col-12">
             {% include "_table.html.j2"%}
       </div>
     </div>
