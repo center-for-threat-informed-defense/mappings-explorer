@@ -2,44 +2,18 @@
 <div class="form-outline mb-4">
   <table class="table table-borderless table-hover table-responsive"
     data-toggle="table"
+    data-url="{{url_prefix}}/data.json"
     data-search="true"
     data-pagination="true"
     data-show-multi-sort="true">
   <thead>
     <tr>
-        {% for header in tableHeaders %}
-            <th id={header} data-sortable="true">{{header}}</th>
-        {% endfor %}
+            <th id="attack-id" data-field="attack_object_id" data-sortable="true">ID</th>
+            <th id="attack-name" data-field="attack_object_name" data-sortable="true">Name</th>
+            <th id="mapping-category" data-field="mapping_type" data-sortable="true">Category</th>
+            <th id="object-id" data-field="capability_id" data-sortable="true">ID</th>
       </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>AC</td>
-      <td>Access Control</td>
-      <td>25</td>
-      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
-
-    </tr>
-    <tr>
-      <td>AT</td>
-      <td>Awareness and Training</td>
-      <td>4</td>
-      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
-
-    </tr>
-    <tr>
-      <td>AU</td>
-      <td>Audit and Accountability</td>
-      <td>16</td>
-      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
-    </tr>
-    <tr>
-      <td>CA</td>
-      <td>Security Assessment and Authorization</td>
-      <td>9</td>
-      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
-    </tr>
-  </tbody>
 </table>
 <script>
   function customSort(sortName, sortOrder, data) {
