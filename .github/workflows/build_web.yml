@@ -40,7 +40,7 @@ jobs:
         git config --local user.email "${{ github.actor }}@users.noreply.github.com"
         git commit -m "Export Download Artifacts"
     - name: Push changes  # push the output folder to your repo
-      run: git push
+      run: git push ${GITHUB_BASE_REF:-${GITHUB_REF#refs/heads/}}
     - name: Upload Web Site
       uses: actions/upload-artifact@v3
       with:
