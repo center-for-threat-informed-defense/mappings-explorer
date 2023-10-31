@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
@@ -25,11 +26,14 @@ def main():
 
         # ensure that output filepath is a valid directory
         # script will assign output filename based on input filename
-        if not os.path.isdir(output_file):
+        if os.path.isfile(output_file):
             print("Please enter valid directory for output files")
+            sys.exit(1)
+        elif not os.path.exists(output_file):
+            os.makedirs(output_file)
 
         # if input filepath is a file, export file
-        elif os.path.isfile(input_file):
+        if os.path.isfile(input_file):
             metadata_key = 0
             export_file(input_file, output_file, file_type, metadata_key)
 
