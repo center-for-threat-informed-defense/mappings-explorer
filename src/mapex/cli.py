@@ -25,8 +25,10 @@ def main():
         if os.path.isfile(input_file):
             metadata_key = 0
             export_file(input_file, output_file, file_type, metadata_key)
+            sys.exit(0)
         else:
             print("Input file must be a valid file")
+            sys.exit(1)
 
     elif args.command == "validate":
         if os.path.isfile(input_file):
