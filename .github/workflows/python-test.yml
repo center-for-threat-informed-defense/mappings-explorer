@@ -9,65 +9,66 @@ jobs:
   mappings_explorer_tests:
     runs-on: ubuntu-latest
     steps:
+      # Configure Environment
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Python
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
 
-    # Configure Environment
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Install Python
-      id: setup-python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
+      # Prepare Poetry
+      - name: Attempt Poetry install from cache
+        uses: actions/cache@v3
+        id: cached-poetry
+        with:
+          path: ./.poetry
+          key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::poetry
+      - name: Install Poetry
+        if: steps.cached-poetry.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .poetry
+          source ./.poetry/bin/activate
+          pip install poetry
+          deactivate
+          mkdir $PWD/.poetry/.bin
+          ln -s $PWD/.poetry/bin/poetry $PWD/.poetry/.bin/poetry
+      - name: Add Poetry to PATH
+        run: echo "$PWD/.poetry/.bin" >> $GITHUB_PATH
 
-    # Prepare Poetry
-    - name: Attempt Poetry install from cache
-      uses: actions/cache@v3
-      id: cached-poetry
-      with:
-        path: ./.poetry
-        key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::poetry
-    - name: Install Poetry
-      if: steps.cached-poetry.outputs.cache-hit != 'true'
-      run: |
-        python -m venv .poetry
-        source ./.poetry/bin/activate
-        pip install poetry
-        deactivate
-        mkdir $PWD/.poetry/.bin
-        ln -s $PWD/.poetry/bin/poetry $PWD/.poetry/.bin/poetry
-    - name: Add Poetry to PATH
-      run: echo "$PWD/.poetry/.bin" >> $GITHUB_PATH
+      # Prepare Virtual Environment
+      - name: Configure Poetry
+        run: poetry config virtualenvs.in-project true
+      - name: Load cached virtual environment
+        uses: actions/cache@v3
+        id: cached-dependencies
+        with:
+          path: ./.venv
+          key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::${{ hashFiles('./poetry.lock') }}
+      - name: Install dependencies
+        if: steps.cached-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+      - name: Install Mappings Explorer
+        run: poetry install --no-interaction --only-root
 
-    # Prepare Virtual Environment
-    - name: Configure Poetry
-      run: poetry config virtualenvs.in-project true
-    - name: Load cached virtual environment
-      uses: actions/cache@v3
-      id: cached-dependencies
-      with:
-        path: ./.venv
-        key: venv::${{ runner.os }}::${{ steps.setup-python.outputs.python-version }}::${{ hashFiles('./poetry.lock') }}
-    - name: Install dependencies
-      if: steps.cached-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root
-    - name: Install Mappings Explorer
-      run: poetry install --no-interaction --only-root
+      # Check Lint, Test, Security, Validate mappings
+      - name: Lint Mappings Explorer
+        run: poetry run make lint
+      - name: Test Mappings Explorer
+        run: poetry run make test-ci
+      - name: Run Bandit security check
+        run: poetry run bandit -r ./src -ll -ii
+      - name: Safety vulnerability check
+        run: |
+          poetry export -f requirements.txt | poetry run safety check --full-report --stdin
+      - name: Validate Mappings Files
+        run: poetry run mapex validate ${GITHUB_WORKSPACE}/mappings
 
-    # Check Lint, Test, Security
-    - name: Lint Mappings Explorer
-      run: poetry run make lint
-    - name: Test Mappings Explorer
-      run: poetry run make test-ci
-    - name: Run Bandit security check
-      run: poetry run bandit -r ./src -ll -ii
-    - name: Safety vulnerability check
-      run: |
-        poetry export -f requirements.txt | poetry run safety check --full-report --stdin
-
-    # Upload Test Coverage
-    - name: Upload coverage to CodeCov
-      uses: codecov/codecov-action@v3
-      with:
-        token: $\{\{ secrets.CODECOV_SECRET \}\}
-        files: ./coverage.xml
-        verbose: true
+      # Upload Test Coverage
+      - name: Upload coverage to CodeCov
+        uses: codecov/codecov-action@v3
+        with:
+          token: $\{\{ secrets.CODECOV_SECRET \}\}
+          files: ./coverage.xml
+          verbose: true
