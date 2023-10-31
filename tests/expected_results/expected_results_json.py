@@ -1,6 +1,6 @@
 expected_nist_mapping_json = {
     "metadata": {
-        "mapping_version": "1",
+        "mapping_version": "",
         "attack_version": "13.0",
         "technology_domain": "enterprise",
         "author": "",
@@ -9,7 +9,7 @@ expected_nist_mapping_json = {
         "last_update": "10/27/2021",
         "organization": "",
         "mapping_framework": "nist_800_53",
-        "mapping_framework_version": "",
+        "mapping_framework_version": "1",
         "mappings_types": ["mitigates"],
     },
     "attack_objects": [
@@ -82,7 +82,7 @@ expected_security_stack_mapping_json = {
             "related_score": "T1078",
         },
         {
-            "comments": "comment",
+            "comments": "technique score comment",
             "attack_object_id": "T1110",
             "attack_object_name": "Brute Force",
             "references": [
@@ -181,7 +181,7 @@ expected_security_stack_mapping_json = {
             "related_score": "T1078",
         },
         {
-            "comments": "comment",
+            "comments": "technique score comment",
             "attack_object_id": "T1110",
             "attack_object_name": "Brute Force",
             "references": [

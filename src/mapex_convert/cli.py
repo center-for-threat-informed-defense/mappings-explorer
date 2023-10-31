@@ -114,8 +114,8 @@ def parse_cve_mappings():
     parsed_mappings = configure_cve_mappings(df, attack_object_id_to_name)
 
     # write parsed mappings to json file
-    attack_version = parsed_mappings["metadata"]["attack_version"]
-    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve_attack-{attack_version}"
+    filename_version_string = get_filename_version_string(parsed_mappings)
+    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve{filename_version_string}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
 
@@ -135,18 +135,21 @@ def parse_nist_mappings():
             attack_version = filename[
                 filename.rfind("-") + 1 : filename.index("mappings")
             ].replace("_", ".")
-            mappings_version = filename[filename.index("r") : filename.index("r") + 2]
+            mapping_framework_version = filename[
+                filename.index("r") : filename.index("r") + 2
+            ]
             parsed_mappings = configure_nist_mappings(
-                dataframe, attack_version, mappings_version
+                dataframe, attack_version, mapping_framework_version
             )
 
             # write parsed mappings to json file
-            mapped_filename = f"nist-800-{mappings_version}_attack-{attack_version}"
+            filename_version_string = get_filename_version_string(parsed_mappings)
+            mapped_filename = f"nist-800{filename_version_string}"
             attack_version_path = f"{PARSED_MAPPINGS_DIR}/nist/{attack_version}/"
             attack_version_path_exists = os.path.exists(attack_version_path)
             if not attack_version_path_exists:
                 os.makedirs(attack_version_path)
-            nist_dir = f"nist/{attack_version}/{mappings_version}/"
+            nist_dir = f"nist/{attack_version}/{mapping_framework_version}/"
             mappings_version_path = f"{PARSED_MAPPINGS_DIR}/{nist_dir}"
             mappings_version_path_exists = os.path.exists(mappings_version_path)
             if not mappings_version_path_exists:
@@ -173,14 +176,14 @@ def parse_veris_mappings():
                 else filename[filename.rindex("-") + 1 : filename.index(".")]
             )
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
-            attack_version = parsed_mappings["metadata"]["attack_version"]
 
             # write parsed mappings to a json file
             veris_version_path = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}"
             veris_version_path_exists = os.path.exists(veris_version_path)
             if not veris_version_path_exists:
                 os.makedirs(veris_version_path)
-            filename = f"veris-{veris_version}_attack-{attack_version}"
+            filename_version_string = get_filename_version_string(parsed_mappings)
+            filename = f"veris-{filename_version_string}"
             filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/{filename}"
             write_parsed_mappings_json(parsed_mappings, filepath)
 
@@ -210,8 +213,8 @@ def parse_security_stack_mappings():
             )
             if not security_stack_folder_path_exists:
                 os.makedirs(security_stack_folder_path)
-            attack_version = parsed_mappings["metadata"]["attack_version"]
-            filename = f"{directory}_attack-{attack_version}"
+            filename_version_string = get_filename_version_string(parsed_mappings)
+            filename = f"{directory}{filename_version_string}"
             filepath = f"{security_stack_folder_path}/{filename}"
 
             write_parsed_mappings_json(parsed_mappings, filepath)
@@ -224,3 +227,12 @@ def write_parsed_mappings_json(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(parsed_mappings, fp=result_json_file)
+
+
+def get_filename_version_string(parsed_mappings):
+    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
+    mapping_framework_version_string = (
+        f"-{mapping_framework_version}" if mapping_framework_version else ""
+    )
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+    return f"{mapping_framework_version_string}_attack-{attack_version}"
