@@ -29,7 +29,12 @@ jobs:
     - name: Build Web Site
       run: poetry run build-mappings-explorer
     - name: Export Download Artifacts
-      run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
+      run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/src/mappings_explorer
+    - name: Upload Web Site
+      uses: actions/upload-artifact@v3
+      with:
+        name: mapex-web
+        path: output/
 
   # Delete this job for public release and clear GitHub secrets:
   azure_blob:
