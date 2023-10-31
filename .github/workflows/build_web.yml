@@ -30,6 +30,12 @@ jobs:
       run: poetry run build-mappings-explorer
     - name: Export Download Artifacts
       run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/src/mappings_explorer/output/data
+    - name: check for changes
+      run: git status
+    - name: stage changed files
+      run: git add .
+    - name: commit changed files
+      run: git commit -m "Export Download Artifacts"
     - name: Upload Web Site
       uses: actions/upload-artifact@v3
       with:
