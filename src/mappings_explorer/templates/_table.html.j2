@@ -1,0 +1,63 @@
+{% block table %}
+<div class="table-responsive table-outer">
+            <div class="form-outline mb-4">
+  <table class="table table-borderless table-hover table-responsive"
+    data-toggle="table"
+    data-search="true"
+    data-pagination="true"
+    data-show-multi-sort="true">
+  <thead>
+    <tr>
+        {% for header in tableHeaders %}
+            <th id={header} data-sortable="true">{{header}}</th>
+        {% endfor %}
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AC</td>
+      <td>Access Control</td>
+      <td>25</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+
+    </tr>
+    <tr>
+      <td>AT</td>
+      <td>Awareness and Training</td>
+      <td>4</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+
+    </tr>
+    <tr>
+      <td>AU</td>
+      <td>Audit and Accountability</td>
+      <td>16</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+    </tr>
+    <tr>
+      <td>CA</td>
+      <td>Security Assessment and Authorization</td>
+      <td>9</td>
+      <td>This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family.</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+  function customSort(sortName, sortOrder, data) {
+    var order = sortOrder === 'desc' ? -1 : 1
+    data.sort(function (a, b) {
+      var aa = +((a[sortName] + '').replace(/[^\d]/g, ''))
+      var bb = +((b[sortName] + '').replace(/[^\d]/g, ''))
+      if (aa < bb) {
+        return order * -1
+      }
+      if (aa > bb) {
+        return order
+      }
+      return 0
+    })
+  }
+</script>
+</div>
+        </div>
+{% endblock table %}
