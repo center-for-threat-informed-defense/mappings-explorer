@@ -211,7 +211,13 @@ def parse_security_stack_mappings():
             nested_filepath_directories = get_nested_filepath_directories(
                 parsed_mappings
             )
-            filepath = f"{PARSED_MAPPINGS_DIR}/{directory.lower()}/{nested_filepath_directories}"
+            filepath = (
+                PARSED_MAPPINGS_DIR
+                + "/"
+                + directory.lower()
+                + "/"
+                + nested_filepath_directories
+            )
             if not os.path.exists(filepath):
                 os.makedirs(filepath)
             filename_version_string = get_filename_version_string(parsed_mappings)
