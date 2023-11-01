@@ -1,5 +1,6 @@
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
+    mapping_framework_version = "rev" + mapping_framework_version[-1]
     parsed_mappings = {
         "metadata": {
             "mapping_version": "",

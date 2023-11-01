@@ -115,7 +115,11 @@ def parse_cve_mappings():
 
     # write parsed mappings to json file
     filename_version_string = get_filename_version_string(parsed_mappings)
-    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve{filename_version_string}"
+    nested_filepath_directories = get_nested_filepath_directories(parsed_mappings)
+    filepath = f"{PARSED_MAPPINGS_DIR}/cve/{nested_filepath_directories}"
+    if not os.path.exists(filepath):
+        os.makedirs(filepath)
+    output_filepath = f"{filepath}/cve{filename_version_string}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
 
@@ -144,17 +148,14 @@ def parse_nist_mappings():
 
             # write parsed mappings to json file
             filename_version_string = get_filename_version_string(parsed_mappings)
-            mapped_filename = f"nist-800{filename_version_string}"
-            attack_version_path = f"{PARSED_MAPPINGS_DIR}/nist/{attack_version}/"
-            attack_version_path_exists = os.path.exists(attack_version_path)
-            if not attack_version_path_exists:
-                os.makedirs(attack_version_path)
-            nist_dir = f"nist/{attack_version}/{mapping_framework_version}/"
-            mappings_version_path = f"{PARSED_MAPPINGS_DIR}/{nist_dir}"
-            mappings_version_path_exists = os.path.exists(mappings_version_path)
-            if not mappings_version_path_exists:
-                os.makedirs(mappings_version_path)
-            filepath = f"{mappings_version_path}/{mapped_filename}"
+            mapped_filename = f"nist{filename_version_string}"
+            nested_filepath_directories = get_nested_filepath_directories(
+                parsed_mappings
+            )
+            filepath = f"{PARSED_MAPPINGS_DIR}/nist/{nested_filepath_directories}"
+            if not os.path.exists(filepath):
+                os.makedirs(filepath)
+            filepath = f"{filepath}/{mapped_filename}"
             write_parsed_mappings_json(parsed_mappings, filepath)
 
 
@@ -178,13 +179,15 @@ def parse_veris_mappings():
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
 
             # write parsed mappings to a json file
-            veris_version_path = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}"
-            veris_version_path_exists = os.path.exists(veris_version_path)
-            if not veris_version_path_exists:
-                os.makedirs(veris_version_path)
+            nested_filepath_directories = get_nested_filepath_directories(
+                parsed_mappings
+            )
+            filepath = f"{PARSED_MAPPINGS_DIR}/veris/{nested_filepath_directories}"
+            if not os.path.exists(filepath):
+                os.makedirs(filepath)
             filename_version_string = get_filename_version_string(parsed_mappings)
-            filename = f"veris-{filename_version_string}"
-            filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/{filename}"
+            filename = f"veris{filename_version_string}"
+            filepath = f"{filepath}/{filename}"
             write_parsed_mappings_json(parsed_mappings, filepath)
 
 
@@ -205,17 +208,15 @@ def parse_security_stack_mappings():
                 configure_security_stack_mappings(data, parsed_mappings)
 
             # write parsed data to json file
-            security_stack_folder_path = (
-                f"{PARSED_MAPPINGS_DIR}/security_stack/{directory}"
+            nested_filepath_directories = get_nested_filepath_directories(
+                parsed_mappings
             )
-            security_stack_folder_path_exists = os.path.exists(
-                security_stack_folder_path
-            )
-            if not security_stack_folder_path_exists:
-                os.makedirs(security_stack_folder_path)
+            filepath = f"{PARSED_MAPPINGS_DIR}/{directory.lower()}/{nested_filepath_directories}"
+            if not os.path.exists(filepath):
+                os.makedirs(filepath)
             filename_version_string = get_filename_version_string(parsed_mappings)
-            filename = f"{directory}{filename_version_string}"
-            filepath = f"{security_stack_folder_path}/{filename}"
+            filename = f"{directory.lower()}{filename_version_string}"
+            filepath = f"{filepath}/{filename}"
 
             write_parsed_mappings_json(parsed_mappings, filepath)
 
@@ -236,3 +237,11 @@ def get_filename_version_string(parsed_mappings):
     )
     attack_version = parsed_mappings["metadata"]["attack_version"]
     return f"{mapping_framework_version_string}_attack-{attack_version}"
+
+
+def get_nested_filepath_directories(parsed_mappings):
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
+    if mapping_framework_version:
+        return f"{attack_version}/{mapping_framework_version}"
+    return f"{attack_version}"

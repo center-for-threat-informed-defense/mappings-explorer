@@ -152,12 +152,12 @@ def build_external_landing(project: ExternalControl):
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     url_prefix = "../"
-
     template = load_template("external-control.html.j2")
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
+        control_id=project.id,
         description=project.description,
         version=project.version,
         versions=project.versions,

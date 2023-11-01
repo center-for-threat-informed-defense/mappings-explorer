@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "mapping_version": "r4",
-    "attack_version": "8.2",
+    "mapping_version": "",
+    "attack_version": "9.0",
     "technology_domain": "enterprise",
     "author": "",
     "contact": "",
@@ -9,7 +9,7 @@
     "last_update": "10/27/2021",
     "organization": "",
     "mapping_framework": "nist_800_53",
-    "mapping_framework_version": "",
+    "mapping_framework_version": "rev4",
     "mappings_types": ["mitigates"]
   },
   "attack_objects": [
@@ -825,6 +825,66 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.003",
+      "attack_object_name": "Time Providers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.004",
+      "attack_object_name": "Winlogon Helper DLL",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.009",
+      "attack_object_name": "Shortcut Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.011",
+      "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.012",
+      "attack_object_name": "Print Processors",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1550.001",
       "attack_object_name": "Application Access Token",
       "references": [],
@@ -845,8 +905,28 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.002",
+      "attack_object_name": "Credentials in Registry",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1552.004",
       "attack_object_name": "Private Keys",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -997,6 +1077,46 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -1765,6 +1885,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1055",
       "attack_object_name": "Process Injection",
       "references": [],
@@ -2306,7 +2436,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -2495,6 +2625,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -2597,6 +2737,36 @@
       "comments": "",
       "attack_object_id": "T1552.006",
       "attack_object_name": "Group Policy Preferences",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -2855,16 +3025,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-2",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -3035,6 +3195,56 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1020.001",
       "attack_object_name": "Traffic Duplication",
       "references": [],
@@ -3067,6 +3277,36 @@
       "comments": "",
       "attack_object_id": "T1021.004",
       "attack_object_name": "SSH",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -3525,6 +3765,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-21",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-21",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-21",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1213",
       "attack_object_name": "Data from Information Repositories",
       "references": [],
@@ -3551,6 +3821,66 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AC-21",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-22",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-22",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-22",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-23",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-23",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-23",
       "mapping_type": "mitigates"
     },
     {
@@ -3591,6 +3921,76 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AC-23",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-23",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-24",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-24",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-24",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-25",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.002",
+      "attack_object_name": "At (Windows)",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-25",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.005",
+      "attack_object_name": "Scheduled Task",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-25",
       "mapping_type": "mitigates"
     },
     {
@@ -3816,7 +4216,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -3967,6 +4367,16 @@
       "comments": "",
       "attack_object_id": "T1053.006",
       "attack_object_name": "Systemd Timers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -4826,7 +5236,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -4996,7 +5406,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -5077,6 +5487,16 @@
       "comments": "",
       "attack_object_id": "T1547.012",
       "attack_object_name": "Print Processors",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -5175,8 +5595,38 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1553.003",
       "attack_object_name": "SIP and Trust Provider Hijacking",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -5555,16 +6005,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-3",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -5757,6 +6197,56 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -6395,6 +6885,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -6675,6 +7175,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1557",
       "attack_object_name": "Man-in-the-Middle",
       "references": [],
@@ -6935,16 +7445,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-4",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -7117,6 +7617,16 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -7347,6 +7857,16 @@
       "comments": "",
       "attack_object_id": "T1053.006",
       "attack_object_name": "Systemd Timers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -7886,7 +8406,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -8075,6 +8595,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -8167,6 +8697,36 @@
       "comments": "",
       "attack_object_id": "T1552.006",
       "attack_object_name": "Group Policy Preferences",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -8415,16 +8975,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-5",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -8587,6 +9137,16 @@
       "comments": "",
       "attack_object_id": "T1601.002",
       "attack_object_name": "Downgrade System Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -8877,6 +9437,16 @@
       "comments": "",
       "attack_object_id": "T1053.006",
       "attack_object_name": "Systemd Timers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -9706,7 +10276,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -9876,7 +10446,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -9897,6 +10467,16 @@
       "comments": "",
       "attack_object_id": "T1546.013",
       "attack_object_name": "PowerShell Profile",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.003",
+      "attack_object_name": "Time Providers",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -9935,8 +10515,28 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.011",
+      "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1547.012",
       "attack_object_name": "Print Processors",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -10045,6 +10645,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1553",
       "attack_object_name": "Subvert Trust Controls",
       "references": [],
@@ -10057,6 +10667,16 @@
       "comments": "",
       "attack_object_id": "T1553.003",
       "attack_object_name": "SIP and Trust Provider Hijacking",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -10345,16 +10965,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-6",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -10527,6 +11137,56 @@
       "comments": "",
       "attack_object_id": "T1601.002",
       "attack_object_name": "Downgrade System Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "AC-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -10996,7 +11656,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -11605,6 +12265,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -11956,7 +12626,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -11987,6 +12657,16 @@
       "comments": "",
       "attack_object_id": "T1547.011",
       "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -12455,16 +13135,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CA-7",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -12725,6 +13395,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1210",
       "attack_object_name": "Exploitation of Remote Services",
       "references": [],
@@ -12846,7 +13526,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -12965,8 +13645,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
+      "attack_object_id": "T1550.001",
+      "attack_object_name": "Application Access Token",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13017,6 +13697,26 @@
       "comments": "",
       "attack_object_id": "T1552.006",
       "attack_object_name": "Group Policy Preferences",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13097,16 +13797,6 @@
       "comments": "",
       "attack_object_id": "T1574.001",
       "attack_object_name": "DLL Search Order Hijacking",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CA-8",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13227,6 +13917,16 @@
       "comments": "",
       "attack_object_id": "T1601.002",
       "attack_object_name": "Downgrade System Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13447,6 +14147,16 @@
       "comments": "",
       "attack_object_id": "T1543.004",
       "attack_object_name": "Launch Daemon",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-11",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13796,7 +14506,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -13956,7 +14666,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -14495,6 +15205,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1205",
+      "attack_object_name": "Traffic Signaling",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1210",
       "attack_object_name": "Exploitation of Remote Services",
       "references": [],
@@ -14627,6 +15357,16 @@
       "comments": "",
       "attack_object_id": "T1218.005",
       "attack_object_name": "Mshta",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1218.007",
+      "attack_object_name": "Msiexec",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -14796,7 +15536,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -14906,7 +15646,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -14995,6 +15735,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -15027,16 +15777,6 @@
       "comments": "",
       "attack_object_id": "T1548.004",
       "attack_object_name": "Elevated Execution with Prompt",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CM-2",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -15135,8 +15875,48 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1554",
       "attack_object_name": "Compromise Client Software Binary",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.004",
+      "attack_object_name": "Windows Credential Manager",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1556",
+      "attack_object_name": "Modify Authentication Process",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -15435,6 +16215,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1566",
+      "attack_object_name": "Phishing",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.001",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.002",
+      "attack_object_name": "Spearphishing Link",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1569",
       "attack_object_name": "System Services",
       "references": [],
@@ -15535,16 +16345,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CM-2",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -15597,6 +16397,36 @@
       "comments": "",
       "attack_object_id": "T1574.010",
       "attack_object_name": "Services File Permissions Weakness",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598",
+      "attack_object_name": "Phishing for Information",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.002",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.003",
+      "attack_object_name": "Spearphishing Link",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -15847,6 +16677,36 @@
       "comments": "",
       "attack_object_id": "T1547.011",
       "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -16117,6 +16977,16 @@
       "comments": "",
       "attack_object_id": "T1053.006",
       "attack_object_name": "Systemd Timers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -16576,7 +17446,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -16795,6 +17665,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -16867,6 +17747,36 @@
       "comments": "",
       "attack_object_id": "T1552.002",
       "attack_object_name": "Credentials in Registry",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -17245,6 +18155,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1001",
       "attack_object_name": "Data Obfuscation",
       "references": [],
@@ -17576,7 +18496,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -17715,6 +18635,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1055",
       "attack_object_name": "Process Injection",
       "references": [],
@@ -17786,7 +18716,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -18535,6 +19465,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -18956,7 +19896,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -19116,7 +20056,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -19227,6 +20167,16 @@
       "comments": "",
       "attack_object_id": "T1547.011",
       "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -19395,6 +20345,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1553",
       "attack_object_name": "Subvert Trust Controls",
       "references": [],
@@ -19435,8 +20395,48 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1554",
       "attack_object_name": "Compromise Client Software Binary",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.004",
+      "attack_object_name": "Windows Credential Manager",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -19765,6 +20765,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1566",
+      "attack_object_name": "Phishing",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.001",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.002",
+      "attack_object_name": "Spearphishing Link",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1569",
       "attack_object_name": "System Services",
       "references": [],
@@ -19865,16 +20895,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CM-6",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -19887,6 +20907,16 @@
       "comments": "",
       "attack_object_id": "T1574.005",
       "attack_object_name": "Executable Installer File Permissions Weakness",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.006",
+      "attack_object_name": "Dynamic Linker Hijacking",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -19927,6 +20957,36 @@
       "comments": "",
       "attack_object_id": "T1574.010",
       "attack_object_name": "Services File Permissions Weakness",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598",
+      "attack_object_name": "Phishing for Information",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.002",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.003",
+      "attack_object_name": "Spearphishing Link",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -20007,6 +21067,56 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-6",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -20316,7 +21426,17 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1068",
+      "attack_object_name": "Exploitation for Privilege Escalation",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -20775,6 +21895,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -20907,6 +22037,16 @@
       "comments": "",
       "attack_object_id": "T1218.005",
       "attack_object_name": "Mshta",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1218.007",
+      "attack_object_name": "Msiexec",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -21096,7 +22236,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -21315,6 +22455,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1553",
       "attack_object_name": "Subvert Trust Controls",
       "references": [],
@@ -21347,6 +22497,36 @@
       "comments": "",
       "attack_object_id": "T1553.004",
       "attack_object_name": "Install Root Certificate",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.004",
+      "attack_object_name": "Windows Credential Manager",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -21656,7 +22836,7 @@
     {
       "comments": "",
       "attack_object_id": "T1574.006",
-      "attack_object_name": "LD_PRELOAD",
+      "attack_object_name": "Dynamic Linker Hijacking",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -21777,6 +22957,56 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -21946,7 +23176,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -22405,6 +23635,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "CM-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1557",
       "attack_object_name": "Man-in-the-Middle",
       "references": [],
@@ -22537,16 +23787,6 @@
       "comments": "",
       "attack_object_id": "T1574",
       "attack_object_name": "Hijack Execution Flow",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "CM-8",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -23555,6 +24795,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1055",
       "attack_object_name": "Process Injection",
       "references": [],
@@ -24066,7 +25316,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -24265,6 +25515,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -24297,6 +25557,16 @@
       "comments": "",
       "attack_object_id": "T1550",
       "attack_object_name": "Use Alternate Authentication Material",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1550.001",
+      "attack_object_name": "Application Access Token",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -24367,6 +25637,46 @@
       "comments": "",
       "attack_object_id": "T1552.006",
       "attack_object_name": "Group Policy Preferences",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -24755,6 +26065,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1530",
       "attack_object_name": "Data from Cloud Storage Object",
       "references": [],
@@ -25035,8 +26375,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
+      "attack_object_id": "T1550.001",
+      "attack_object_name": "Application Access Token",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -25605,6 +26945,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1555.004",
+      "attack_object_name": "Windows Credential Manager",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1556",
       "attack_object_name": "Modify Authentication Process",
       "references": [],
@@ -25925,6 +27285,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1601",
       "attack_object_name": "Modify System Image",
       "references": [],
@@ -25951,6 +27331,26 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "IA-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053",
+      "attack_object_name": "Scheduled Task/Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1053.007",
+      "attack_object_name": "Container Orchestration Job",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-8",
       "mapping_type": "mitigates"
     },
     {
@@ -26216,7 +27616,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -26285,6 +27685,66 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1566",
+      "attack_object_name": "Phishing",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.001",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.002",
+      "attack_object_name": "Spearphishing Link",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598",
+      "attack_object_name": "Phishing for Information",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.002",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.003",
+      "attack_object_name": "Spearphishing Link",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "IA-9",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1052",
       "attack_object_name": "Exfiltration Over Physical Medium",
       "references": [],
@@ -26331,26 +27791,6 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "MP-7",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1078",
-      "attack_object_name": "Valid Accounts",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "PL-8",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1482",
-      "attack_object_name": "Domain Trust Discovery",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "PL-8",
       "mapping_type": "mitigates"
     },
     {
@@ -26536,7 +27976,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -26687,6 +28127,16 @@
       "comments": "",
       "attack_object_id": "T1195.002",
       "attack_object_name": "Compromise Software Supply Chain",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "RA-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -26886,7 +28336,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27017,16 +28467,6 @@
       "comments": "",
       "attack_object_id": "T1548.003",
       "attack_object_name": "Sudo and Sudo Caching",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "RA-5",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27225,16 +28665,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "RA-5",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -27327,6 +28757,16 @@
       "comments": "",
       "attack_object_id": "T1578.003",
       "attack_object_name": "Delete Cloud Instance",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "RA-5",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27467,6 +28907,36 @@
       "comments": "",
       "attack_object_id": "T1542.005",
       "attack_object_name": "TFTP Boot",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-10",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-10",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-10",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27665,16 +29135,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SA-11",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1552",
       "attack_object_name": "Unsecured Credentials",
       "references": [],
@@ -27725,8 +29185,38 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-11",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-11",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1558.004",
       "attack_object_name": "AS-REP Roasting",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-11",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27765,6 +29255,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-11",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1059.002",
       "attack_object_name": "AppleScript",
       "references": [],
@@ -27775,8 +29275,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1078",
-      "attack_object_name": "Valid Accounts",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -27945,6 +29445,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-14",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-14",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1601",
       "attack_object_name": "Modify System Image",
       "references": [],
@@ -28025,16 +29545,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SA-15",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1552",
       "attack_object_name": "Unsecured Credentials",
       "references": [],
@@ -28095,6 +29605,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-15",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1078",
       "attack_object_name": "Valid Accounts",
       "references": [],
@@ -28127,6 +29647,16 @@
       "comments": "",
       "attack_object_id": "T1078.004",
       "attack_object_name": "Cloud Accounts",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-16",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -28187,6 +29717,16 @@
       "comments": "",
       "attack_object_id": "T1482",
       "attack_object_name": "Domain Trust Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-17",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -28305,6 +29845,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1078",
       "attack_object_name": "Valid Accounts",
       "references": [],
@@ -28347,6 +29897,16 @@
       "comments": "",
       "attack_object_id": "T1134.005",
       "attack_object_name": "SID-History Injection",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -28417,6 +29977,16 @@
       "comments": "",
       "attack_object_id": "T1482",
       "attack_object_name": "Domain Trust Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SA-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1574.002",
+      "attack_object_name": "DLL Side-Loading",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -28766,7 +30336,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -28905,6 +30475,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-18",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1068",
       "attack_object_name": "Exploitation for Privilege Escalation",
       "references": [],
@@ -28975,6 +30555,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1071",
       "attack_object_name": "Application Layer Protocol",
       "references": [],
@@ -29035,6 +30625,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1566",
+      "attack_object_name": "Phishing",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.001",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1566.002",
+      "attack_object_name": "Spearphishing Link",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1568",
       "attack_object_name": "Dynamic Resolution",
       "references": [],
@@ -29047,6 +30667,36 @@
       "comments": "",
       "attack_object_id": "T1568.002",
       "attack_object_name": "Domain Generation Algorithms",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598",
+      "attack_object_name": "Phishing for Information",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.002",
+      "attack_object_name": "Spearphishing Attachment",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-20",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1598.003",
+      "attack_object_name": "Spearphishing Link",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -29905,6 +31555,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1068",
       "attack_object_name": "Exploitation for Privilege Escalation",
       "references": [],
@@ -30105,6 +31765,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-34",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-34",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1601",
       "attack_object_name": "Modify System Image",
       "references": [],
@@ -30127,6 +31807,16 @@
       "comments": "",
       "attack_object_id": "T1601.002",
       "attack_object_name": "Downgrade System Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-34",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -30495,6 +32185,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-39",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1020.001",
       "attack_object_name": "Traffic Duplication",
       "references": [],
@@ -30807,6 +32507,16 @@
       "comments": "",
       "attack_object_id": "T1204.002",
       "attack_object_name": "Malicious File",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-44",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -31605,6 +33315,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -31867,6 +33587,16 @@
       "comments": "",
       "attack_object_id": "T1552.005",
       "attack_object_name": "Cloud Instance Metadata API",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -32245,6 +33975,56 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1040",
       "attack_object_name": "Network Sniffing",
       "references": [],
@@ -32287,6 +34067,16 @@
       "comments": "",
       "attack_object_id": "T1550.004",
       "attack_object_name": "Web Session Cookie",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SC-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1552.007",
+      "attack_object_name": "Container API",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -32506,7 +34296,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -33015,6 +34805,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-10",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1557",
       "attack_object_name": "Man-in-the-Middle",
       "references": [],
@@ -33106,7 +34906,7 @@
     {
       "comments": "",
       "attack_object_id": "T1574.006",
-      "attack_object_name": "LD_PRELOAD",
+      "attack_object_name": "Dynamic Linker Hijacking",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -33197,6 +34997,16 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-10",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -33965,6 +35775,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-16",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1027",
       "attack_object_name": "Obfuscated Files or Information",
       "references": [],
@@ -34285,6 +36105,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1210",
       "attack_object_name": "Exploitation of Remote Services",
       "references": [],
@@ -34336,7 +36166,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -34475,6 +36305,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553",
+      "attack_object_name": "Subvert Trust Controls",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1559",
       "attack_object_name": "Inter-Process Communication",
       "references": [],
@@ -34557,6 +36417,16 @@
       "comments": "",
       "attack_object_id": "T1601.002",
       "attack_object_name": "Downgrade System Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-2",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -34836,7 +36706,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -35106,7 +36976,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -35515,6 +37385,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1210",
       "attack_object_name": "Exploitation of Remote Services",
       "references": [],
@@ -35636,7 +37516,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -35686,7 +37566,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -35767,6 +37647,16 @@
       "comments": "",
       "attack_object_id": "T1547.008",
       "attack_object_name": "LSASS Driver",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -36175,16 +38065,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SI-3",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -36287,6 +38167,16 @@
       "comments": "",
       "attack_object_id": "T1602.002",
       "attack_object_name": "Network Device Configuration Dump",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-3",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -36585,6 +38475,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1036.001",
+      "attack_object_name": "Invalid Code Signature",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1036.003",
       "attack_object_name": "Rename System Utilities",
       "references": [],
@@ -36636,7 +38536,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -36965,6 +38865,36 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1059.002",
+      "attack_object_name": "AppleScript",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1059.003",
+      "attack_object_name": "Windows Command Shell",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1059.004",
+      "attack_object_name": "Unix Shell",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1059.005",
       "attack_object_name": "Visual Basic",
       "references": [],
@@ -36986,7 +38916,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -37725,6 +39655,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1205",
       "attack_object_name": "Traffic Signaling",
       "references": [],
@@ -38156,7 +40096,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -38266,7 +40206,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -38335,6 +40275,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.004",
+      "attack_object_name": "Winlogon Helper DLL",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1547.005",
       "attack_object_name": "Security Support Provider",
       "references": [],
@@ -38375,8 +40325,38 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.009",
+      "attack_object_name": "Shortcut Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1547.011",
       "attack_object_name": "Plist Modification",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.012",
+      "attack_object_name": "Print Processors",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -38427,16 +40407,6 @@
       "comments": "",
       "attack_object_id": "T1548.004",
       "attack_object_name": "Elevated Execution with Prompt",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SI-4",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
-      "attack_object_id": "T1550",
-      "attack_object_name": "Use Alternate Authentication Material",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -38575,6 +40545,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1555",
       "attack_object_name": "Credentials from Password Stores",
       "references": [],
@@ -38597,6 +40577,26 @@
       "comments": "",
       "attack_object_id": "T1555.002",
       "attack_object_name": "Securityd Memory",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.004",
+      "attack_object_name": "Windows Credential Manager",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1555.005",
+      "attack_object_name": "Password Managers",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -39135,16 +41135,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SI-4",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -39365,6 +41355,46 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1610",
+      "attack_object_name": "Deploy Container",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1612",
+      "attack_object_name": "Build Image on Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1613",
+      "attack_object_name": "Container and Resource Discovery",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-4",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1068",
       "attack_object_name": "Exploitation for Privilege Escalation",
       "references": [],
@@ -39516,7 +41546,7 @@
     {
       "comments": "",
       "attack_object_id": "T1037.004",
-      "attack_object_name": "Rc.common",
+      "attack_object_name": "RC Scripts",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -39636,7 +41666,7 @@
     {
       "comments": "",
       "attack_object_id": "T1059.007",
-      "attack_object_name": "JavaScript/JScript",
+      "attack_object_name": "JavaScript",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -39937,6 +41967,16 @@
       "comments": "",
       "attack_object_id": "T1204.002",
       "attack_object_name": "Malicious File",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -40296,7 +42336,7 @@
     {
       "comments": "",
       "attack_object_id": "T1525",
-      "attack_object_name": "Implant Container Image",
+      "attack_object_name": "Implant Internal Image",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -40406,7 +42446,7 @@
     {
       "comments": "",
       "attack_object_id": "T1546.004",
-      "attack_object_name": ".bash_profile and .bashrc",
+      "attack_object_name": "Unix Shell Configuration Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -40535,6 +42575,16 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1547.013",
+      "attack_object_name": "XDG Autostart Entries",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1548",
       "attack_object_name": "Abuse Elevation Control Mechanism",
       "references": [],
@@ -40617,6 +42667,26 @@
       "comments": "",
       "attack_object_id": "T1553.003",
       "attack_object_name": "SIP and Trust Provider Hijacking",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.005",
+      "attack_object_name": "Mark-of-the-Web Bypass",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1553.006",
+      "attack_object_name": "Code Signing Policy Modification",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -40935,16 +43005,6 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1574.002",
-      "attack_object_name": "DLL Side-Loading",
-      "references": [],
-      "tags": [],
-      "capability_description": "",
-      "capability_id": "SI-7",
-      "mapping_type": "mitigates"
-    },
-    {
-      "comments": "",
       "attack_object_id": "T1574.004",
       "attack_object_name": "Dylib Hijacking",
       "references": [],
@@ -40956,7 +43016,7 @@
     {
       "comments": "",
       "attack_object_id": "T1574.006",
-      "attack_object_name": "LD_PRELOAD",
+      "attack_object_name": "Dynamic Linker Hijacking",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -41085,6 +43145,26 @@
     },
     {
       "comments": "",
+      "attack_object_id": "T1609",
+      "attack_object_name": "Container Administration Command",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1611",
+      "attack_object_name": "Escape to Host",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-7",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
       "attack_object_id": "T1204",
       "attack_object_name": "User Execution",
       "references": [],
@@ -41107,6 +43187,16 @@
       "comments": "",
       "attack_object_id": "T1204.002",
       "attack_object_name": "Malicious File",
+      "references": [],
+      "tags": [],
+      "capability_description": "",
+      "capability_id": "SI-8",
+      "mapping_type": "mitigates"
+    },
+    {
+      "comments": "",
+      "attack_object_id": "T1204.003",
+      "attack_object_name": "Malicious Image",
       "references": [],
       "tags": [],
       "capability_description": "",
