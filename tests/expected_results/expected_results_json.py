@@ -9,7 +9,7 @@ expected_nist_mapping_json = {
         "last_update": "10/27/2021",
         "organization": "",
         "mapping_framework": "nist_800_53",
-        "mapping_framework_version": "1",
+        "mapping_framework_version": "rev1",
         "mappings_types": ["mitigates"],
     },
     "attack_objects": [
@@ -39,7 +39,7 @@ expected_nist_mapping_json = {
 expected_security_stack_mapping_json = {
     "metadata": {
         "mapping_version": "1",
-        "attack_version": "9",
+        "attack_version": "9.0",
         "technology_domain": "enterprise",
         "author": "",
         "contact": "ctid@mitre-engenuity.org",
