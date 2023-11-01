@@ -16,7 +16,6 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     result_yaml_file.write(parsed_mappings_yaml)
-    print(f"succesfully wrote yaml file to {filepath}.yaml")
 
 
 def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
