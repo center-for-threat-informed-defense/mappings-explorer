@@ -106,7 +106,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
-    print(f"succesfully wrote stix bundle to {stix_file}_stix.json")
+    print(f"succesfully wrote stix bundle to {filepath}_stix.json")
 
 
 def get_stix_object(parsed_mappings, mapping):
