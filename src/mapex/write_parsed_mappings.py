@@ -8,6 +8,7 @@ import yaml
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
+    print("PARSED MAPPINGS", parsed_mappings)
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
     result_yaml_file = open(
         f"{filepath}.yaml",
