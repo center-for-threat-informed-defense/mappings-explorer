@@ -15,6 +15,7 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     result_yaml_file.write(parsed_mappings_yaml)
+    print(f"succesfully wrote yaml file to {filepath}.yaml")
 
 
 def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
@@ -37,6 +38,9 @@ def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
     attack_object_df = pd.DataFrame(attack_objects)
     attack_object_df.to_csv(f"{attack_object_filepath}.csv")
 
+    print(f"succesfully wrote csv file to {attack_object_filepath}.csv")
+    print(f"succesfully wrote csv file to {metadata_filepath}.csv")
+
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
     techniques_dict = get_techniques_dict(parsed_mappings)
@@ -48,6 +52,8 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(layer, fp=navigator_layer)
+
+    print(f"succesfully wrote navigator layer to {filepath}_navigator_layer.json")
 
 
 def write_parsed_mappings_stix(parsed_mappings, filepath):
@@ -100,6 +106,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
+    print(f"succesfully wrote stix bundle to {stix_file}_stix.json")
 
 
 def get_stix_object(parsed_mappings, mapping):
