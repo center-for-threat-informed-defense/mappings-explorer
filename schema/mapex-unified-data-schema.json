@@ -4,6 +4,7 @@
   "description": "Defines the data elements and properties of Mappings Explorer projects",
   "type": "object",
   "properties": {
+    "additionalProperties": false,
     "metadata": {
       "description": "Properties that apply to all mappings in a project.",
       "type": "object",
@@ -68,9 +69,15 @@
           "type": "array",
           "items": {
             "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "name", "description"],
             "properties": {
               "id": {
                 "description": "The mapping type's identifier.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The mapping type's name.",
                 "type": "string"
               },
               "description": {
@@ -88,7 +95,7 @@
         "creation_date",
         "mapping_framework",
         "mapping_framework_version",
-        "mappings_types"
+        "mapping_types"
       ]
     },
     "mapping_object": {

@@ -158,7 +158,6 @@ def create_attack_pattern_object(mapping):
 
 
 def load_attack_json(parsed_mappings):
-    print("load attack")
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
 
     # load enterprise attack stix json to map technique ids to names

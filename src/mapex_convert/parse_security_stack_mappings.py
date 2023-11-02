@@ -14,6 +14,9 @@ def configure_security_stack_mappings(data, parsed_mappings):
     if len(year) < 4:
         year += 1
 
+    mapping_types = [
+        {"id": str(uuid.uuid4()), "name": "technique-scores", "description": ""}
+    ]
     if len(list(parsed_mappings.keys())) == 0:
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
@@ -31,9 +34,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "organization": "",
             "mapping_framework": data["platform"].lower(),
             "mapping_framework_version": "",
-            "mapping_types": [
-                {"id": str(uuid.uuid4()), "description": "technique-scores"}
-            ],
+            "mapping_types": mapping_types,
         }
         parsed_mappings["attack_objects"] = []
 
@@ -63,6 +64,13 @@ def configure_security_stack_mappings(data, parsed_mappings):
             for subtechnique_score in technique.get("sub-techniques-scores"):
                 for subtechnique in subtechnique_score["sub-techniques"]:
                     for score in subtechnique_score["scores"]:
+                        mapping_type_uuid = list(
+                            filter(
+                                lambda mapping_type_object: mapping_type_object["name"]
+                                == "technique-scores",
+                                mapping_types,
+                            )
+                        )[0]["id"]
                         subtechnique_comments = score.get("comments") or ""
                         subtechnique_tags = score.get("tags") or []
                         subtechniqe_references = score.get("references") or []
@@ -75,7 +83,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "tags": subtechnique_tags,
                                 "capability_description": "",
                                 "capability_id": data["name"],
-                                "mapping_type": "technique-scores",
+                                "mapping_type": mapping_type_uuid,
                                 "score_category": score["category"],
                                 "score_value": score["value"],
                                 "related_score": technique["id"],
