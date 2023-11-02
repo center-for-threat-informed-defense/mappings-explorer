@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
     creation_date = data["creation date"]
@@ -28,7 +31,9 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "organization": "",
             "mapping_framework": data["platform"].lower(),
             "mapping_framework_version": "",
-            "mappings_types": ["technique-scores"],
+            "mapping_types": [
+                {"id": str(uuid.uuid4()), "description": "technique-scores"}
+            ],
         }
         parsed_mappings["attack_objects"] = []
 

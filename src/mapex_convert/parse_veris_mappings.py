@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_veris_mappings(veris_mappings, domain):
     parsed_mappings = {
         "metadata": {
@@ -16,7 +19,7 @@ def configure_veris_mappings(veris_mappings, domain):
             "organization": "",
             "mapping_framework": "veris",
             "mapping_framework_version": veris_mappings["metadata"]["veris_version"],
-            "mappings_types": ["related-to"],
+            "mapping_types": [{"id": str(uuid.uuid4()), "description": "related-to"}],
         },
         "attack_objects": [],
     }

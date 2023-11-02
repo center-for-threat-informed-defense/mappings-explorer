@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
     parsed_mappings = {
@@ -17,7 +20,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "organization": "",
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
-            "mappings_types": ["mitigates"],
+            "mapping_types": [{"id": str(uuid.uuid4()), "description": "mitigates"}],
         },
         "attack_objects": [],
     }

@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
         "Primary Impact",
@@ -8,6 +11,11 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
 
     formatted_cve_mapping_types = [
         mapping_type.lower().replace(" ", "_") for mapping_type in cve_mapping_types
+    ]
+
+    cve_mapping_types_objects = [
+        {"id": str(uuid.uuid4()), "description": mapping_type}
+        for mapping_type in formatted_cve_mapping_types
     ]
 
     # put data in correct format with correct fields
@@ -28,7 +36,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "organization": "",
             "mapping_framework": "cve",
             "mapping_framework_version": "",
-            "mappings_types": formatted_cve_mapping_types,
+            "mapping_types": cve_mapping_types_objects,
         },
         "attack_objects": [],
     }

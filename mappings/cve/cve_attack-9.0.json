@@ -10,11 +10,23 @@
     "organization": "",
     "mapping_framework": "cve",
     "mapping_framework_version": "",
-    "mappings_types": [
-      "primary_impact",
-      "secondary_impact",
-      "exploitation_technique",
-      "uncategorized"
+    "mapping_types": [
+      {
+        "id": "7374af74-007d-4b16-9e4a-7f11ca61c7b9",
+        "description": "primary_impact"
+      },
+      {
+        "id": "4cefdb1a-ba87-43ec-a5de-d0af3a37907f",
+        "description": "secondary_impact"
+      },
+      {
+        "id": "eee00066-606b-442e-91f7-2ebb9ca4e0c9",
+        "description": "exploitation_technique"
+      },
+      {
+        "id": "909313fc-aab9-4329-abc2-93add47da83b",
+        "description": "uncategorized"
+      }
     ]
   },
   "attack_objects": [
@@ -4230,7 +4242,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1078",
+      "attack_object_id": "T1078 ",
       "attack_object_name": "Valid Accounts",
       "references": [],
       "tags": [],
@@ -4260,7 +4272,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1078",
+      "attack_object_id": "T1078 ",
       "attack_object_name": "Valid Accounts",
       "references": [],
       "tags": [],
@@ -4820,7 +4832,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1552",
+      "attack_object_id": "T1552 ",
       "attack_object_name": "Unsecured Credentials",
       "references": [],
       "tags": [],
@@ -4830,7 +4842,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1036",
+      "attack_object_id": "T1036 ",
       "attack_object_name": "Masquerading",
       "references": [],
       "tags": [],
@@ -4890,7 +4902,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1068",
+      "attack_object_id": "T1068 ",
       "attack_object_name": "Exploitation for Privilege Escalation",
       "references": [],
       "tags": [],
@@ -4970,7 +4982,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1478",
+      "attack_object_id": "T1478 ",
       "attack_object_name": "Install Insecure or Malicious Configuration",
       "references": [],
       "tags": [],
@@ -4980,7 +4992,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1005",
+      "attack_object_id": "T1005 ",
       "attack_object_name": "Data from Local System",
       "references": [],
       "tags": [],
@@ -5020,7 +5032,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1133",
+      "attack_object_id": "T1133 ",
       "attack_object_name": "External Remote Services",
       "references": [],
       "tags": [],
@@ -5050,7 +5062,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1190",
+      "attack_object_id": "T1190 ",
       "attack_object_name": "Exploit Public-Facing Application",
       "references": [],
       "tags": [],
@@ -5120,7 +5132,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1190",
+      "attack_object_id": "T1190 ",
       "attack_object_name": "Exploit Public-Facing Application",
       "references": [],
       "tags": [],
@@ -5420,7 +5432,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1059",
+      "attack_object_id": "T1059 ",
       "attack_object_name": "Command and Scripting Interpreter",
       "references": [],
       "tags": [],
@@ -7140,7 +7152,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1078",
+      "attack_object_id": "T1078 ",
       "attack_object_name": "Valid Accounts",
       "references": [],
       "tags": [],
@@ -7200,7 +7212,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1078",
+      "attack_object_id": "T1078 ",
       "attack_object_name": "Valid Accounts",
       "references": [],
       "tags": [],
@@ -9250,8 +9262,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1036",
-      "attack_object_name": "Masquerading",
+      "attack_object_id": "T1036.",
+      "attack_object_name": "",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -9780,7 +9792,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1565.001",
+      "attack_object_id": " T1565.001",
       "attack_object_name": "Stored Data Manipulation",
       "references": [],
       "tags": [],
@@ -10680,8 +10692,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1134.001",
-      "attack_object_name": "Token Impersonation/Theft",
+      "attack_object_id": "T1134.001.",
+      "attack_object_name": "",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -10810,7 +10822,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1480",
+      "attack_object_id": " T1480",
       "attack_object_name": "Execution Guardrails",
       "references": [],
       "tags": [],
@@ -15050,8 +15062,8 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1204.001",
-      "attack_object_name": "Malicious Link",
+      "attack_object_id": "T1204.001.",
+      "attack_object_name": "",
       "references": [],
       "tags": [],
       "capability_description": "",
@@ -15080,7 +15092,7 @@
     },
     {
       "comments": "",
-      "attack_object_id": "T1565.001",
+      "attack_object_id": " T1565.001",
       "attack_object_name": "Stored Data Manipulation",
       "references": [],
       "tags": [],
