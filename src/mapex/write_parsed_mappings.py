@@ -17,25 +17,31 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
     result_yaml_file.write(parsed_mappings_yaml)
 
 
-def write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key):
-    # create filename
-    attack_object_filepath = f"{filepath}_attack_objects"
-    metadata_filepath = f"{filepath}_metadata"
-
-    # create csv with metadata
-    metadata_object = parsed_mappings["metadata"]
-    metadata_object["key"] = metadata_key
-    metadata_object["mappings_types"] = ",".join(metadata_object["mappings_types"])
-    metadata_df = pd.DataFrame(metadata_object, index=[0])
-    metadata_df.to_csv(f"{metadata_filepath}.csv")
-
+def write_parsed_mappings_csv(parsed_mappings, filepath):
     # create csv with attack objects
     attack_objects = parsed_mappings["attack_objects"]
     for attack_object in attack_objects:
-        attack_object["metadata_key"] = metadata_key
+        # add metadata fields to attack object
+        for key, value in parsed_mappings["metadata"].items():
+            attack_object[key] = value
+
+        # get all mapping types
+        mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
+
+        # get mapping type name based on id
+        mapping_type_name = list(
+            filter(
+                lambda mapping_type_object: mapping_type_object["id"]
+                == attack_object["mapping_type"],
+                mapping_types_objects,
+            )
+        )[0]["name"]
+
+        # swap mapping_type id with mapping_type name
+        attack_object["mapping_type"] = mapping_type_name
 
     attack_object_df = pd.DataFrame(attack_objects)
-    attack_object_df.to_csv(f"{attack_object_filepath}.csv")
+    attack_object_df.to_csv(f"{filepath}.csv")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
@@ -79,6 +85,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             for stix_object in stix_bundle["objects"]
             if stix_object.get("name") == mapping["capability_id"]
         ][0]
+
         stix_bundle["objects"].append(
             {
                 "type": "relationship",
@@ -219,9 +226,10 @@ def get_techniques_dict(parsed_mappings):
         capability_id = mapping["capability_id"]
 
         # add score metadata if it is a scoring mapping
-        score_metadata = (
-            "technique-scores" in parsed_mappings["metadata"]["mappings_types"]
-        )
+        mapping_types_names = []
+        for mapping_type_object in parsed_mappings["metadata"]["mapping_types"]:
+            mapping_types_names.append(mapping_type_object["name"])
+        score_metadata = "technique-scores" in mapping_types_names
 
         if score_metadata:
             # define metadata objects

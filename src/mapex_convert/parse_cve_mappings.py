@@ -63,7 +63,6 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             cve_mapping_types_objects,
                         )
                     )[0]["id"]
-                    print("MAPPING TYPE UUID", mapping_type_uuid)
                     parsed_mappings["attack_objects"].append(
                         {
                             "comments": "",

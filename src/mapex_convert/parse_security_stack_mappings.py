@@ -14,10 +14,10 @@ def configure_security_stack_mappings(data, parsed_mappings):
     if len(year) < 4:
         year += 1
 
-    mapping_types = [
-        {"id": str(uuid.uuid4()), "name": "technique-scores", "description": ""}
-    ]
     if len(list(parsed_mappings.keys())) == 0:
+        mapping_types = [
+            {"id": str(uuid.uuid4()), "name": "technique-scores", "description": ""}
+        ]
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
             "attack_version": str(data["ATT&CK version"]),
@@ -38,6 +38,15 @@ def configure_security_stack_mappings(data, parsed_mappings):
         }
         parsed_mappings["attack_objects"] = []
 
+    # get mapping type id
+    mapping_type_uuid = list(
+        filter(
+            lambda mapping_type_object: mapping_type_object["name"]
+            == "technique-scores",
+            parsed_mappings["metadata"]["mapping_types"],
+        )
+    )[0]["id"]
+
     for technique in data["techniques"]:
         tags = data.get("tags") or []
         references = data.get("references") or []
@@ -54,7 +63,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "tags": list(tags),
                     "capability_description": "",
                     "capability_id": data["name"],
-                    "mapping_type": "technique-scores",
+                    "mapping_type": mapping_type_uuid,
                     "score_category": technique_score["category"],
                     "score_value": technique_score["value"],
                     "related_score": "",
@@ -64,13 +73,6 @@ def configure_security_stack_mappings(data, parsed_mappings):
             for subtechnique_score in technique.get("sub-techniques-scores"):
                 for subtechnique in subtechnique_score["sub-techniques"]:
                     for score in subtechnique_score["scores"]:
-                        mapping_type_uuid = list(
-                            filter(
-                                lambda mapping_type_object: mapping_type_object["name"]
-                                == "technique-scores",
-                                mapping_types,
-                            )
-                        )[0]["id"]
                         subtechnique_comments = score.get("comments") or ""
                         subtechnique_tags = score.get("tags") or []
                         subtechniqe_references = score.get("references") or []

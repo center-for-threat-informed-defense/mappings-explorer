@@ -27,7 +27,7 @@ def test_nist_mappings_parser_json(tmpdir):
     # ACT
     write_parsed_mappings_json(parsed_mappings, filepath)
     file = open(f"{filepath}.json", "r", encoding="UTF-8")
-    result = json.load(file)
+    result = pop_uuids(json.load(file))
 
     # ASSERT
     assert result == expected_nist_mapping_json
@@ -50,7 +50,7 @@ def test_security_stack_mappings_json(tmpdir):
             output_filepath = f"{tmpdir}/{directory}/{filename}"
             write_parsed_mappings_json(parsed_mappings, output_filepath)
             file = open(f"{output_filepath}.json", "r", encoding="UTF-8")
-            result = json.load(file)
+            result = pop_uuids(json.load(file))
 
             # ASSERT
             assert result == expected_security_stack_mapping_json
@@ -65,7 +65,7 @@ def test_veris_mappings_json(tmpdir):
     # ACT
     write_parsed_mappings_json(parsed_mappings, filepath)
     file = open(f"{filepath}.json", "r", encoding="UTF-8")
-    result = json.load(file)
+    result = pop_uuids(json.load(file))
 
     # ASSERT
     assert result == expected_veris_mapping_json
@@ -74,6 +74,7 @@ def test_veris_mappings_json(tmpdir):
 def test_cve_mappings_json(tmpdir):
     # ARRANGE
     parsed_mappings = cve_mappings_parser()
+    parsed_mappings = pop_uuids(parsed_mappings)
     filename = "cve_mappings"
     filepath = f"{tmpdir}/{filename}"
 
@@ -84,3 +85,11 @@ def test_cve_mappings_json(tmpdir):
 
     # ASSERT
     assert result == expected_cve_mapping_json
+
+
+def pop_uuids(result):
+    for mapping_type in result["metadata"]["mapping_types"]:
+        mapping_type.pop("id")
+        for attack_object in result["attack_objects"]:
+            attack_object.pop("mapping_type")
+    return result

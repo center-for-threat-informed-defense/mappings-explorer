@@ -10,7 +10,7 @@ expected_nist_mapping_json = {
         "organization": "",
         "mapping_framework": "nist_800_53",
         "mapping_framework_version": "1",
-        "mappings_types": ["mitigates"],
+        "mapping_types": [{"name": "mitigates", "description": ""}],
     },
     "attack_objects": [
         {
@@ -21,7 +21,6 @@ expected_nist_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "AC-10",
-            "mapping_type": "mitigates",
         },
         {
             "comments": "",
@@ -31,7 +30,6 @@ expected_nist_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "AC-10",
-            "mapping_type": "mitigates",
         },
     ],
 }
@@ -48,7 +46,7 @@ expected_security_stack_mapping_json = {
         "organization": "",
         "mapping_framework": "aws",
         "mapping_framework_version": "",
-        "mappings_types": ["technique-scores"],
+        "mapping_types": [{"name": "technique-scores", "description": ""}],
     },
     "attack_objects": [
         {
@@ -63,7 +61,6 @@ expected_security_stack_mapping_json = {
             "tags": ["Identity"],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Minimal",
             "related_score": "",
@@ -76,7 +73,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Partial",
             "related_score": "T1078",
@@ -93,7 +89,6 @@ expected_security_stack_mapping_json = {
             "tags": ["Identity"],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "",
@@ -106,7 +101,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -119,7 +113,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -132,7 +125,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -145,7 +137,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -162,7 +153,6 @@ expected_security_stack_mapping_json = {
             "tags": ["Identity"],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Minimal",
             "related_score": "",
@@ -175,7 +165,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Partial",
             "related_score": "T1078",
@@ -192,7 +181,6 @@ expected_security_stack_mapping_json = {
             "tags": ["Identity"],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "",
@@ -205,7 +193,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -218,7 +205,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -231,7 +217,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -244,7 +229,6 @@ expected_security_stack_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "Amazon Cognito",
-            "mapping_type": "technique-scores",
             "score_category": "Protect",
             "score_value": "Significant",
             "related_score": "T1110",
@@ -264,7 +248,7 @@ expected_veris_mapping_json = {
         "organization": "",
         "mapping_framework": "veris",
         "mapping_framework_version": "1.3.5",
-        "mappings_types": ["related-to"],
+        "mapping_types": [{"name": "related-to", "description": ""}],
     },
     "attack_objects": [
         {
@@ -275,7 +259,6 @@ expected_veris_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "action.hacking.variety.Abuse of functionality",
-            "mapping_type": "related-to",
         },
         {
             "comments": "",
@@ -285,7 +268,6 @@ expected_veris_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "action.hacking.vector.Command shell",
-            "mapping_type": "related-to",
         },
         {
             "comments": "",
@@ -295,7 +277,6 @@ expected_veris_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "action.hacking.variety.Abuse of functionality",
-            "mapping_type": "related-to",
         },
     ],
 }
@@ -312,11 +293,11 @@ expected_cve_mapping_json = {
         "organization": "",
         "mapping_framework": "cve",
         "mapping_framework_version": "",
-        "mappings_types": [
-            "primary_impact",
-            "secondary_impact",
-            "exploitation_technique",
-            "uncategorized",
+        "mapping_types": [
+            {"name": "primary_impact", "description": ""},
+            {"name": "secondary_impact", "description": ""},
+            {"name": "exploitation_technique", "description": ""},
+            {"name": "uncategorized", "description": ""},
         ],
     },
     "attack_objects": [
@@ -328,7 +309,6 @@ expected_cve_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "primary_impact",
         },
         {
             "comments": "",
@@ -338,7 +318,6 @@ expected_cve_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "exploitation_technique",
         },
         {
             "comments": "",
@@ -348,7 +327,6 @@ expected_cve_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "mapping_type": "exploitation_technique",
         },
         {
             "comments": "",
@@ -358,7 +336,6 @@ expected_cve_mapping_json = {
             "tags": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15976",
-            "mapping_type": "primary_impact",
         },
     ],
 }
