@@ -40,30 +40,27 @@ def test_write_mappings_to_csv(tmpdir):
     json_filepath = os.path.join(root_dir, "files/parsed_mappings.json")
     parsed_mappings = read_json_file(json_filepath)
     filepath = f"{tmpdir}/parsed_mappings"
-    expected_attack_objects_file = open(
-        f"{root_dir}/expected_results/expected_csv_results_attack_objects.csv",
+    expected_csv_file = open(
+        f"{root_dir}/expected_results/expected_csv_results.csv",
         "r",
         encoding="UTF-8",
     )
-    expected_metadata_file = open(
-        f"{root_dir}/expected_results/expected_csv_results_metadata.csv",
-        "r",
-        encoding="UTF-8",
-    )
-    metadata_key = 0
 
     # ACT
-    write_parsed_mappings_csv(parsed_mappings, filepath, metadata_key)
-    attack_objects_file = open(
-        f"{filepath}_attack_objects.csv",
+    write_parsed_mappings_csv(parsed_mappings, filepath)
+    csv_file = open(
+        f"{filepath}.csv",
         "r",
         encoding="UTF-8",
     )
-    metadata_file = open(f"{filepath}_metadata.csv", "r", encoding="UTF-8")
 
     # ASSERT
-    assert expected_attack_objects_file.read() == attack_objects_file.read()
-    assert expected_metadata_file.read() == metadata_file.read()
+    print("EXPECTED")
+    print(expected_csv_file.read())
+    print("")
+    print("RESULT")
+    print(csv_file.read())
+    assert expected_csv_file.read() == csv_file.read()
 
 
 def test_write_mappings_to_navigator_layer(tmpdir):
@@ -93,10 +90,9 @@ def test_write_mappings_to_stix(tmpdir):
     write_parsed_mappings_stix(parsed_mappings, filepath)
     file = open(f"{filepath}_stix.json", "r", encoding="UTF-8")
     result = json.load(file)
-
-    # ASSERT
     dict_fluid_values = ["created", "modified", "id", "source_ref"]
 
+    # pop values, such as uuids and created dates, that change on every run
     for value in dict_fluid_values:
         if value in list(result.keys()):
             result.pop(value)
@@ -104,4 +100,5 @@ def test_write_mappings_to_stix(tmpdir):
             if value in list(stix_object.keys()):
                 stix_object.pop(value)
 
+    # ASSERT
     assert result == expected_stix_results

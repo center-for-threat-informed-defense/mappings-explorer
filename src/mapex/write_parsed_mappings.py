@@ -22,8 +22,17 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
     attack_objects = parsed_mappings["attack_objects"]
     for attack_object in attack_objects:
         # add metadata fields to attack object
-        for key, value in parsed_mappings["metadata"].items():
-            attack_object[key] = value
+        columns_from_metadata = [
+            "organization",
+            "creation_date",
+            "last_update",
+            "attack_version",
+            "technology_domain",
+            "mapping_framework",
+            "mapping_framework_version",
+        ]
+        for column in columns_from_metadata:
+            attack_object[column] = parsed_mappings["metadata"][column]
 
         # get all mapping types
         mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]

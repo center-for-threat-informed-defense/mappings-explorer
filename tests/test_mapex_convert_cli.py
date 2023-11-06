@@ -74,6 +74,7 @@ def test_veris_mappings_json(tmpdir):
 def test_cve_mappings_json(tmpdir):
     # ARRANGE
     parsed_mappings = cve_mappings_parser()
+
     parsed_mappings = pop_uuids(parsed_mappings)
     filename = "cve_mappings"
     filepath = f"{tmpdir}/{filename}"
@@ -90,6 +91,6 @@ def test_cve_mappings_json(tmpdir):
 def pop_uuids(result):
     for mapping_type in result["metadata"]["mapping_types"]:
         mapping_type.pop("id")
-        for attack_object in result["attack_objects"]:
-            attack_object.pop("mapping_type")
+    for attack_object in result["attack_objects"]:
+        attack_object.pop("mapping_type")
     return result

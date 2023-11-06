@@ -19,7 +19,7 @@ expected_nist_mapping_json = {
             "attack_object_name": "Office Application Startup",
             "references": [],
             "tags": [],
-            "capability_description": "",
+            "capability_description": "Concurrent Session Control",
             "capability_id": "AC-10",
         },
         {
@@ -28,7 +28,7 @@ expected_nist_mapping_json = {
             "attack_object_name": "Office Test",
             "references": [],
             "tags": [],
-            "capability_description": "",
+            "capability_description": "Concurrent Session Control",
             "capability_id": "AC-10",
         },
     ],

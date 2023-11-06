@@ -10,7 +10,7 @@
     "organization": "",
     "mapping_framework": "nist_800_53",
     "mapping_framework_version": "1",
-    "mappings_types": [{ "name": "mitigates", "description": "" }]
+    "mapping_types": [{ "name": "mitigates", "description": "", "id": "1234" }]
   },
   "attack_objects": [
     {
@@ -19,8 +19,9 @@
       "attack_object_name": "Office Application Startup",
       "references": [],
       "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-10"
+      "capability_description": "Concurrent Session Control",
+      "capability_id": "AC-10",
+      "mapping_type": "1234"
     },
     {
       "comments": "",
@@ -28,8 +29,9 @@
       "attack_object_name": "Office Test",
       "references": [],
       "tags": [],
-      "capability_description": "",
-      "capability_id": "AC-10"
+      "capability_description": "Concurrent Session Control",
+      "capability_id": "AC-10",
+      "mapping_type": "1234"
     }
   ]
 }
