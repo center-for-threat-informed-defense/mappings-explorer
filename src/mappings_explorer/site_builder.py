@@ -145,13 +145,12 @@ def load_projects():
     return projects
 
 
-def build_external_landing(project: ExternalControl):
+def build_external_landing(project: ExternalControl, url_prefix: str):
     external_dir = PUBLIC_DIR / "external"
     external_dir.mkdir(parents=True, exist_ok=True)
     dir = external_dir / project.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    url_prefix = "../"
     template = load_template("external-control.html.j2")
     stream = template.stream(
         title=project.label + " Landing",
@@ -174,12 +173,13 @@ def build_external_landing(project: ExternalControl):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-e", "--env", default="")
+    parser.add_argument("--url-prefix", default="/")
     args = parser.parse_args()
 
     url = args.env
     print("url ", url)
 
-    url_prefix = "./"
+    url_prefix = args.url_prefix
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
@@ -195,7 +195,6 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
-    url_prefix = ""
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -208,7 +207,7 @@ def main():
     template = templateEnv.get_template(TEMPLATE_FILE)
 
     for project in projects:
-        build_external_landing(project=project)
+        build_external_landing(project=project, url_prefix=url_prefix)
 
 
 if __name__ == "__main__":
