@@ -259,6 +259,7 @@
     display: block;
     position: fixed;
     top: 84px;
+    z-index: 10 !important;
   }
   .banner p {
     margin-bottom: 0;
@@ -357,7 +358,7 @@
       top: calc(100% + 30px);
       margin: 0;
       padding: 10px 0;
-      z-index: 10000000;
+      z-index: 10000000 !important;
       opacity: 0;
       visibility: hidden;
       background: #fff;
@@ -436,7 +437,7 @@
       max-width: 400px;
       bottom: 0;
       transition: 0.3s;
-      z-index: 9997;
+      z-index: 9997 !important;
     }
 
     .navbar ul {
@@ -447,7 +448,7 @@
       background: #212c5ee3;
       overflow-y: auto;
       transition: 0.3s;
-      z-index: 9998;
+      z-index: 9998 !important;
     }
 
     .navbar a,
@@ -510,7 +511,7 @@
       position: fixed;
       right: 15px;
       top: 15px;
-      z-index: 9999;
+      z-index: 9999 !important;
     }
 
     .mobile-nav-active {
@@ -526,7 +527,7 @@
       position: fixed;
       inset: 0;
       background:#212c5e81;
-      z-index: 9996;
+      z-index: 9996 !important;
     }
   }
 
@@ -2456,3 +2457,32 @@
   margin: auto 0;
 
 } */
+
+.pagination > li > a
+{
+    background-color: white;
+    color: var(--color-secondary);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: var(--color-secondary) !Important;
+    border: solid 1px var(--color-secondary) !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: var(--color-secondary) !Important;
+    border: solid 1px var(--color-secondary);
+}
