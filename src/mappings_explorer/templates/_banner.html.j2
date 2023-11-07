@@ -1,0 +1,8 @@
+{% if attackVersion %}
+    <div id="banner" class="banner">
+        <p>You're currently viewing ATT&CK Version {{attackVersion}}
+            {% if domain %} {{domain|capitalize }} {%endif%}
+            {% if version %} and {{control}} {{version}}. {%endif%}
+        </p>
+    </div>
+{% endif %}

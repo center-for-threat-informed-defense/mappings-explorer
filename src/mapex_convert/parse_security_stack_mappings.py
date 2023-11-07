@@ -33,11 +33,12 @@ def configure_security_stack_mappings(data, parsed_mappings):
         parsed_mappings["attack_objects"] = []
 
     for technique in data["techniques"]:
-        comments = data.get("comments") or ""
         tags = data.get("tags") or []
         references = data.get("references") or []
 
         for technique_score in technique["technique-scores"]:
+            comments = technique_score.get("comments") or ""
+
             parsed_mappings["attack_objects"].append(
                 {
                     "comments": comments,
