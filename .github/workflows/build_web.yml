@@ -14,7 +14,8 @@ permissions:
 jobs:
   web_site:
     runs-on: ubuntu-latest
-
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
@@ -27,7 +28,7 @@ jobs:
     - name: Install dependencies
       run: poetry install
     - name: Build Web Site
-      run: poetry run build-mappings-explorer --url-prefix='https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/'
+      run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{BRANCH_NAME}}/'
     - name: Upload Web Site
       uses: actions/upload-artifact@v3
       with:
