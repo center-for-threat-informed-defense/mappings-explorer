@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
-        run: poetry run build-mappings-explorer --url-prefix "$BRANCH_NAME"
+        run: poetry run build-mappings-explorer --url-prefix ${GITHUB_WORKSPACE}/output/
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data/
       - name: Upload Web Site
