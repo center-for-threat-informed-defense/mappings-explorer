@@ -38,7 +38,7 @@
   --------------------------------------------------------------*/
   body {
     font-family: var(--font-default);
-    color: var(--color-default);
+    color: var(--color-text);
   }
 
   a {
@@ -255,6 +255,7 @@
     width: 100%;
     padding: 8px;
     background-color: var(--color-primary);
+    color: var(--color-text)!important;
     text-align: center;
     display: block;
     position: fixed;
@@ -2485,4 +2486,11 @@
 {
     background-color: var(--color-secondary) !Important;
     border: solid 1px var(--color-secondary);
+}
+
+td a, td {
+  color: var(--color-text) !important;
+}
+td a:hover {
+  text-decoration: underline;
 }

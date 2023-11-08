@@ -22,6 +22,32 @@ class ExternalControl:
     mappings = []
 
 
+def parse_groups(project):
+    filepath = PUBLIC_DIR / "data.json"
+    f = open(filepath, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    project.groups = metadata["groups"]
+    project.mappings = data["attack_objects"]
+    for group in project.groups:
+        # parse mappings such that each mapping is sorted by its group
+        filtered_mappings = [
+            m for m in project.mappings if (m["capability_id"] == group["name"])
+        ]
+        group["num_mappings"] = len(filtered_mappings)
+        group["mappings"] = filtered_mappings
+        # here's where I'll parse which capabilities are under a certain group
+        group["controls"] = []
+        group["num_controls"] = 0
+
+        print(
+            "found "
+            + f"{len(filtered_mappings)}"
+            + " mappings in group: "
+            + group["name"]
+        )
+
+
 def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
@@ -44,19 +70,20 @@ def load_projects():
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
         "12.1",
-        "10.1",
-        "9.0",
-        "8.2",
+        # "10.1",
+        # "9.0",
+        # "8.2",
     ]
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
-    filepath = PUBLIC_DIR / "data.json"
-    f = open(filepath, "r")
-    data = json.load(f)
-    metadata = data["metadata"]
-    nist.groups = metadata["groups"]
-    nist.mappings = data["attack_objects"]
+    parse_groups(nist)
+    # filepath = PUBLIC_DIR / "data.json"
+    # f = open(filepath, "r")
+    # data = json.load(f)
+    # metadata = data["metadata"]
+    # nist.groups = metadata["groups"]
+    # nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
@@ -154,7 +181,8 @@ def load_projects():
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
-    projects = [nist, veris, cve, aws, azure, gcp]
+    projects = [nist]
+    # projects = [nist, veris, cve, aws, azure, gcp]
     return projects
 
 
@@ -179,8 +207,8 @@ def build_external_landing(
     group_headers = [
         ("id", "ID"),
         ("name", "Control Family"),
-        ("mapping_type", "Number of Controls"),
-        ("capability_id", "Number of Mappings"),
+        ("num_controls", "Number of Controls"),
+        ("num_mappings", "Number of Mappings"),
     ]
 
     stream = template.stream(
@@ -273,7 +301,6 @@ def build_external_control(
     output_path = dir / "index.html"
     template = load_template("external-group.html.j2")
     prev_page = parent_dir
-    filtered_mappings = [m for m in mappings if (m["capability_id"] == group_name)]
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
@@ -290,11 +317,11 @@ def build_external_control(
         domain=project.attackDomain,
         domains=project.attackDomains,
         prev_page=prev_page,
-        mappings=filtered_mappings,
+        mappings=group["mappings"],
         headers=headers,
     )
     stream.dump(str(output_path))
-    print("Created group page " + group_id + " " + group_name)
+    print("          Created group page " + group_name)
 
 
 def main():
