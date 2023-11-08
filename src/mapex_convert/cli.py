@@ -183,7 +183,7 @@ def parse_veris_mappings():
             if not veris_version_path_exists:
                 os.makedirs(veris_version_path)
             filename_version_string = get_filename_version_string(parsed_mappings)
-            filename = f"veris-{filename_version_string}"
+            filename = f"veris{filename_version_string}"
             filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/{filename}"
             write_parsed_mappings_json(parsed_mappings, filepath)
 

@@ -1,4 +1,8 @@
+import uuid
+
+
 def configure_veris_mappings(veris_mappings, domain):
+    mapping_types = [{"id": str(uuid.uuid4()), "name": "related-to", "description": ""}]
     parsed_mappings = {
         "metadata": {
             "mapping_version": veris_mappings["metadata"]["mappings_version"],
@@ -16,7 +20,7 @@ def configure_veris_mappings(veris_mappings, domain):
             "organization": "",
             "mapping_framework": "veris",
             "mapping_framework_version": veris_mappings["metadata"]["veris_version"],
-            "mappings_types": ["related-to"],
+            "mapping_types": mapping_types,
         },
         "attack_objects": [],
     }
@@ -24,6 +28,13 @@ def configure_veris_mappings(veris_mappings, domain):
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
+            mapping_type_uuid = list(
+                filter(
+                    lambda mapping_type_object: mapping_type_object["name"]
+                    == "related-to",
+                    mapping_types,
+                )
+            )[0]["id"]
             parsed_mappings["attack_objects"].append(
                 {
                     "comments": "",
@@ -33,7 +44,7 @@ def configure_veris_mappings(veris_mappings, domain):
                     "tags": [],
                     "capability_description": "",
                     "capability_id": veris_object,
-                    "mapping_type": "related-to",
+                    "mapping_type": mapping_type_uuid,
                 }
             )
 

@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
     creation_date = data["creation date"]
@@ -12,6 +15,9 @@ def configure_security_stack_mappings(data, parsed_mappings):
         year += 1
 
     if len(list(parsed_mappings.keys())) == 0:
+        mapping_types = [
+            {"id": str(uuid.uuid4()), "name": "technique-scores", "description": ""}
+        ]
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
             "attack_version": str(data["ATT&CK version"]),
@@ -28,9 +34,18 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "organization": "",
             "mapping_framework": data["platform"].lower(),
             "mapping_framework_version": "",
-            "mappings_types": ["technique-scores"],
+            "mapping_types": mapping_types,
         }
         parsed_mappings["attack_objects"] = []
+
+    # get mapping type id
+    mapping_type_uuid = list(
+        filter(
+            lambda mapping_type_object: mapping_type_object["name"]
+            == "technique-scores",
+            parsed_mappings["metadata"]["mapping_types"],
+        )
+    )[0]["id"]
 
     for technique in data["techniques"]:
         tags = data.get("tags") or []
@@ -48,7 +63,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "tags": list(tags),
                     "capability_description": "",
                     "capability_id": data["name"],
-                    "mapping_type": "technique-scores",
+                    "mapping_type": mapping_type_uuid,
                     "score_category": technique_score["category"],
                     "score_value": technique_score["value"],
                     "related_score": "",
@@ -70,7 +85,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "tags": subtechnique_tags,
                                 "capability_description": "",
                                 "capability_id": data["name"],
-                                "mapping_type": "technique-scores",
+                                "mapping_type": mapping_type_uuid,
                                 "score_category": score["category"],
                                 "score_value": score["value"],
                                 "related_score": technique["id"],

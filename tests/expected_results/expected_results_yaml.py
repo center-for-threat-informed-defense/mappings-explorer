@@ -1,7 +1,10 @@
+import json
+import os
+
 import yaml
 
-from tests.expected_results.expected_results_json import (
-    expected_nist_mapping_json,
-)
-
-expected_yaml_results = yaml.dump(expected_nist_mapping_json)
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+parsed_mappings_json_filepath = os.path.join(root_dir, "files/parsed_mappings.json")
+with open(parsed_mappings_json_filepath, encoding="UTF-8") as user_file:
+    mappings = user_file.read()
+    expected_yaml_results = yaml.dump(json.loads(mappings))
