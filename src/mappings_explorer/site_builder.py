@@ -24,6 +24,32 @@ class ExternalControl:
     mappings = []
 
 
+def parse_groups(project):
+    filepath = PUBLIC_DIR / "data.json"
+    f = open(filepath, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    project.groups = metadata["groups"]
+    project.mappings = data["attack_objects"]
+    for group in project.groups:
+        # parse mappings such that each mapping is sorted by its group
+        filtered_mappings = [
+            m for m in project.mappings if (m["capability_id"] == group["name"])
+        ]
+        group["num_mappings"] = len(filtered_mappings)
+        group["mappings"] = filtered_mappings
+        # here's where I'll parse which capabilities are under a certain group
+        group["controls"] = []
+        group["num_controls"] = 0
+
+        print(
+            "found "
+            + f"{len(filtered_mappings)}"
+            + " mappings in group: "
+            + group["name"]
+        )
+
+
 def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
@@ -63,12 +89,13 @@ def load_projects():
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
-    filepath = PUBLIC_DIR / "data.json"
-    f = open(filepath, "r")
-    data = json.load(f)
-    metadata = data["metadata"]
-    nist.groups = metadata["groups"]
-    nist.mappings = data["attack_objects"]
+    parse_groups(nist)
+    # filepath = PUBLIC_DIR / "data.json"
+    # f = open(filepath, "r")
+    # data = json.load(f)
+    # metadata = data["metadata"]
+    # nist.groups = metadata["groups"]
+    # nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
