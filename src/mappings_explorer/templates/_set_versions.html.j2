@@ -45,9 +45,9 @@
   let uri = window.location.pathname;
   let params = uri.split("/").filter(n => n);
 
-  controlVersion = params[params.length -1];
+  controlVersion = params[params.length -1].split("-")[1];
   document.getElementById("control_version").value = controlVersion;
-  attackVersion = params[params.length -2];
+  attackVersion = params[params.length -2].split("-")[1];
   document.getElementById("attack_version").value = attackVersion;
 
   function handleSubmission(event) {
@@ -56,7 +56,7 @@
     let uri = window.location.pathname;
     let newControl = document.getElementById("control_version").value
     let newAttack = document.getElementById("attack_version").value
-    let newUrl = "../../" + newAttack + "/" + newControl
+    let newUrl = "../../attack-" + newAttack + "/" + params[params.length-3] + "-" + newControl
     window.location = newUrl
   }
 </script>

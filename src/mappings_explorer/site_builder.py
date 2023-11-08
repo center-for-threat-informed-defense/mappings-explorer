@@ -92,6 +92,7 @@ def load_projects():
     ]
     cve.attackDomains = ["enterprise"]
     cve.attackDomain = cve.attackDomains[0]
+    cve.versions = ["10.27.21"]
     cve.attackVersions = ["9.0"]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
@@ -111,6 +112,7 @@ def load_projects():
     aws.attackDomains = ["enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
+    aws.versions = ["07.22.21"]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
@@ -129,6 +131,7 @@ def load_projects():
     azure.attackDomains = ["enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
+    azure.versions = ["03.04.21"]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
@@ -147,6 +150,7 @@ def load_projects():
     gcp.attackDomains = ["enterprise"]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
+    gcp.versions = ["05.11.21"]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
@@ -226,7 +230,8 @@ def build_external_pages(projects, url_prefix):
         dir.mkdir(parents=True, exist_ok=True)
 
         for attack_version in project.attackVersions:
-            attack_dir = dir / attack_version
+            a = "attack-" + attack_version
+            attack_dir = dir / a
             attack_dir.mkdir(parents=True, exist_ok=True)
             if not project.versions:
                 build_external_landing(
@@ -238,7 +243,8 @@ def build_external_pages(projects, url_prefix):
                     mappings=project.mappings,
                 )
             for project_version in project.versions:
-                project_dir = attack_dir / project_version
+                p = project.id + "-" + project_version
+                project_dir = attack_dir / p
                 project_dir.mkdir(parents=True, exist_ok=True)
                 build_external_landing(
                     project=project,
