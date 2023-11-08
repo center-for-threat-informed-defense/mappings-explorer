@@ -63,6 +63,12 @@ def load_projects():
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    filepath = PUBLIC_DIR / "data.json"
+    f = open(filepath, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    nist.groups = metadata["groups"]
+    nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
