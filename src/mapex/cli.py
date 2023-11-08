@@ -24,14 +24,8 @@ def main():
         output_file = args.output_file
         file_type = args.file_type
 
-        # ensure that output filepath is a valid directory
-        # script will assign output filename based on input filename
-        if not os.path.isdir(output_file):
-            print("Please enter valid directory for output files")
-            sys.exit(1)
-
         # if input filepath is a file, export file
-        elif os.path.isfile(input_file):
+        if os.path.isfile(input_file):
             export_file(input_file, output_file, file_type)
 
         # if input filepath is a directory, walk through nested directories until file
@@ -51,7 +45,7 @@ def main():
                         output_filepath = f"{output_file}{nested_dirs}"
                         export_file(input_filepath, output_filepath, file_type)
         else:
-            print("Input file must be a valid file")
+            print("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
