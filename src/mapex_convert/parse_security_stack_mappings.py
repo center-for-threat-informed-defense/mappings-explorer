@@ -48,7 +48,6 @@ def configure_security_stack_mappings(data, parsed_mappings):
         )
     )[0]["id"]
 
-    groups = []
     for technique in data["techniques"]:
         tags = data.get("tags") or []
         references = data.get("references") or []
@@ -58,13 +57,21 @@ def configure_security_stack_mappings(data, parsed_mappings):
 
             # get group uuid
             capability_id = data["name"]
-            if not any(group["name"] == capability_id for group in groups):
+            if not any(
+                group["name"] == capability_id
+                for group in parsed_mappings["metadata"]["groups"]
+            ):
                 group_id = str(uuid.uuid4())
-                groups.append({"id": group_id, "name": capability_id})
+                parsed_mappings["metadata"]["groups"].append(
+                    {"id": group_id, "name": capability_id}
+                )
 
-            group = list(filter(lambda group: group["name"] == capability_id, groups))[
-                0
-            ]["id"]
+            group = list(
+                filter(
+                    lambda group: group["name"] == capability_id,
+                    parsed_mappings["metadata"]["groups"],
+                )
+            )[0]["id"]
 
             parsed_mappings["attack_objects"].append(
                 {
@@ -106,6 +113,3 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "group": group,
                             }
                         )
-    if len(groups) > 0:
-        for group in groups:
-            parsed_mappings["metadata"]["groups"].append(group)
