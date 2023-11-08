@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import sys
 
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
@@ -22,16 +23,10 @@ def main():
     if args.command == "export":
         output_file = args.output_file
         file_type = args.file_type
-
-        # ensure that output filepath is a valid directory
-        # script will assign output filename based on input filename
-        if not os.path.isdir(output_file):
-            print("Please enter valid directory for output files")
-
-        # if input filepath is a file, export file
-        elif os.path.isfile(input_file):
+        if os.path.isfile(input_file):
             metadata_key = 0
             export_file(input_file, output_file, file_type, metadata_key)
+            sys.exit(0)
 
         # if input filepath is a directory, walk through nested directories until file
         # is found. Output files will go into the output filepath given within the
@@ -55,8 +50,24 @@ def main():
                         )
         else:
             print("Input file must be a valid file")
+            sys.exit(1)
+
     elif args.command == "validate":
-        validate_file(input_file)
+        if os.path.isfile(input_file):
+            validation_errors = validate_file(input_file)
+            if validation_errors is not None:
+                sys.exit(1)
+
+        elif os.path.isdir(input_file):
+            for dirpath, _, filenames in os.walk(input_file):
+                for file in filenames:
+                    input_filepath = f"{dirpath}/{file}"
+                    validation_errors = validate_file(input_filepath)
+                    if validation_errors is not None:
+                        sys.exit(1)
+
+        print("succesfully validated")
+        sys.exit(0)
 
 
 def _parse_args():
@@ -116,6 +127,4 @@ def validate_file(input_file):
     parsed_mappings = read_json_file(input_file)
     schema_filepath = f"{ROOT_DIR}/schema/mapex-unified-data-schema.json"
     schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
-    validation_errors = validate(instance=parsed_mappings, schema=schema)
-    if validation_errors is None:
-        print("successfully validated")
+    return validate(instance=parsed_mappings, schema=schema)
