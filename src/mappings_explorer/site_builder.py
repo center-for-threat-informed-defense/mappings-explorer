@@ -1,4 +1,5 @@
 import argparse
+import json
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
@@ -17,6 +18,8 @@ class ExternalControl:
     attackDomain = ""
     attackDomains = []
     tableHeaders = []
+    groups = []
+    mappings = []
 
 
 def load_projects():
@@ -48,6 +51,12 @@ def load_projects():
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    filepath = PUBLIC_DIR / "data.json"
+    f = open(filepath, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    nist.groups = metadata["groups"]
+    nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
@@ -66,6 +75,7 @@ def load_projects():
         "9.0",
     ]
     veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    veris.mappings = []
 
     cve = ExternalControl()
     cve.id = "cve"
@@ -84,6 +94,7 @@ def load_projects():
     cve.attackDomain = cve.attackDomains[0]
     cve.attackVersions = ["9.0"]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    cve.mappings = []
 
     aws = ExternalControl()
     aws.id = "aws"
@@ -101,6 +112,8 @@ def load_projects():
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    aws.mappings = []
+
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
@@ -117,6 +130,8 @@ def load_projects():
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    azure.mappings = []
+
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
@@ -133,15 +148,37 @@ def load_projects():
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    gcp.mappings = []
 
     projects = [nist, veris, cve, aws, azure, gcp]
     return projects
 
 
 def build_external_landing(
-    project: ExternalControl, url_prefix, project_version, attack_version, output_path
+    project: ExternalControl,
+    url_prefix,
+    project_version,
+    attack_version,
+    project_dir,
+    mappings,
 ):
+    output_path = project_dir / "index.html"
     template = load_template("external-control.html.j2")
+
+    headers = [
+        ("attack_object_id", "ATT&CK ID"),
+        ("attack_object_name", "ATT&CK Name"),
+        ("mapping_type", "Mapping Type"),
+        ("capability_id", "Capability ID"),
+        ("capability_description", "Capability Description"),
+    ]
+    group_headers = [
+        ("id", "ID"),
+        ("name", "Control Family"),
+        ("mapping_type", "Number of Controls"),
+        ("capability_id", "Number of Mappings"),
+    ]
+
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
@@ -154,6 +191,10 @@ def build_external_landing(
         domain=project.attackDomain,
         domains=project.attackDomains,
         tableHeaders=project.tableHeaders,
+        mappings=mappings,
+        headers=headers,
+        group_headers=group_headers,
+        groups=project.groups,
     )
     stream.dump(str(output_path))
     print(
@@ -164,8 +205,17 @@ def build_external_landing(
         + ", control version "
         + project_version
     )
-    # if project.id == "nist":
-    #     build_external_control(project)
+    for group in project.groups:
+        build_external_control(
+            project=project,
+            group=group,
+            url_prefix=url_prefix,
+            parent_dir=project_dir,
+            project_version=project_version,
+            attack_version=attack_version,
+            mappings=mappings,
+            headers=headers,
+        )
 
 
 def build_external_pages(projects, url_prefix):
@@ -179,45 +229,66 @@ def build_external_pages(projects, url_prefix):
             attack_dir = dir / attack_version
             attack_dir.mkdir(parents=True, exist_ok=True)
             if not project.versions:
-                output_path = attack_dir / "index.html"
                 build_external_landing(
                     project=project,
                     url_prefix=url_prefix,
                     attack_version=attack_version,
                     project_version="",
-                    output_path=output_path,
+                    project_dir=attack_dir,
+                    mappings=project.mappings,
                 )
             for project_version in project.versions:
                 project_dir = attack_dir / project_version
                 project_dir.mkdir(parents=True, exist_ok=True)
-                output_path = project_dir / "index.html"
                 build_external_landing(
                     project=project,
                     url_prefix=url_prefix,
                     attack_version=attack_version,
                     project_version=project_version,
-                    output_path=output_path,
+                    project_dir=project_dir,
+                    mappings=project.mappings,
                 )
 
 
-def build_external_control(project: ExternalControl):
-    url_prefix = "../../../"
-    dir = PUBLIC_DIR / "external" / project.id / "control"
+def build_external_control(
+    project: ExternalControl,
+    group,
+    url_prefix,
+    parent_dir,
+    project_version,
+    attack_version,
+    mappings,
+    headers,
+):
+    group_id = group["id"]
+    group_name = group["name"]
+    dir = parent_dir / group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external-group.html.j2")
+    prev_page = parent_dir
+    filtered_mappings = [m for m in mappings if (m["capability_id"] == group_name)]
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
+        group_id=group_id,
+        group_name=group_name,
+        project=project,
         description=project.description,
-        versions=project.versions,
-        attackVersions=project.attackVersions,
-        domains=project.attackDomains,
         tableHeaders=project.tableHeaders,
+        control_version=project_version,
+        versions=project.versions,
+        attack_version=attack_version,
+        attackVersions=project.attackVersions,
+        domain=project.attackDomain,
+        domains=project.attackDomains,
+        prev_page=prev_page,
+        mappings=filtered_mappings,
+        headers=headers,
     )
     stream.dump(str(output_path))
-    print("Created ac1")
+    print("Created group page " + group_id + " " + group_name)
 
 
 def main():

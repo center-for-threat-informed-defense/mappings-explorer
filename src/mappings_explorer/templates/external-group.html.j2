@@ -9,8 +9,8 @@
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            {{ macros.back_button("Control Families")}}
-          <h1 style="text-transform: uppercase;"> NIST 800-53 <span class="highlight">Access Control</span> Mappings</h1>
+            {{ macros.back_button("NIST Control Families")}}
+          <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ group_name }}</span> Mappings</h1>
           {% for paragraph in description %}
             <p>
               {{- paragraph -}}
@@ -32,13 +32,12 @@
             </div>
         </div>
         <div class="col-12">
-          {% block table %}
-            {% include "_table.html.j2"%}
-          {% endblock table %}
+            {{ macros.table(headers, mappings) }}
         </div>
       </div>
     </div>
   </section>
+  {#
   <section id="mapping-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -51,46 +50,11 @@
             </div>
         </div>
         <div class="col-12">
-            {% include "_table.html.j2"%}
+            {{ macros.table(headers, mappings) }}
       </div>
     </div>
   </section>
-{#<script>
-  let attackVersion = '';
-  let controlVersion = '';
-  let domainVersion = '';
-  let group = '';
-  let uri = window.location.search;
-
-  let params = new URLSearchParams(uri);
-  if (params.has("control-version")) {
-    controlVersion = params.get("control-version");
-  }
-  if (params.has("attack-version")) {
-    attackVersion = params.get("attack-version");
-  }
-  if (params.has("domain")) {
-    domainVersion = params.get("domain");
-  }
-  if (params.has("group")) {
-    group = params.get("group");
-  }
-  console.log("the group is: ", group)
-
-  let prev_page = "?control-version="+ controlVersion + "&attack-version=" + attackVersion +  "&domain=" + domainVersion;
-
-  var myModel = {
-    control_version: controlVersion,
-    attack_version: attackVersion,
-    attack_domain: domainVersion,
-    group: group,
-    prev_page: prev_page
-  };
-  var myViewModel = new Vue({
-    el: '#my_view',
-    data: myModel
-  });
-</script>#}
+  #}
 </div>
 {% endblock content %}
 
