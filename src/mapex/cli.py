@@ -23,16 +23,15 @@ def main():
     if args.command == "export":
         output_file = args.output_file
         file_type = args.file_type
+
+        # if input filepath is a file, export file
         if os.path.isfile(input_file):
-            metadata_key = 0
-            export_file(input_file, output_file, file_type, metadata_key)
-            sys.exit(0)
+            export_file(input_file, output_file, file_type)
 
         # if input filepath is a directory, walk through nested directories until file
         # is found. Output files will go into the output filepath given within the
         # nested directories it is in the input direcotry
         elif os.path.isdir(input_file):
-            metadata_key = 0
             for dirpath, dirnames, filenames in os.walk(input_file):
                 for dir_name in dirnames:
                     nested_dirs = dirpath.replace(input_file, "")
@@ -42,14 +41,11 @@ def main():
                 if len(filenames):
                     for file in filenames:
                         input_filepath = f"{dirpath}/{file}"
-                        metadata_key += 1
                         nested_dirs = dirpath.replace(input_file, "")
                         output_filepath = f"{output_file}{nested_dirs}"
-                        export_file(
-                            input_filepath, output_filepath, file_type, metadata_key
-                        )
+                        export_file(input_filepath, output_filepath, file_type)
         else:
-            print("Input file must be a valid file")
+            print("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
@@ -95,7 +91,7 @@ def read_json_file(filepath):
         return json.loads(mappings)
 
 
-def export_file(input_file, output_file, file_type, metadata_key):
+def export_file(input_file, output_file, file_type):
     # read input file
     parsed_mappings = read_json_file(input_file)
 
@@ -108,13 +104,13 @@ def export_file(input_file, output_file, file_type, metadata_key):
     # export mappings
     if file_type is None:
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)
-        write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
+        write_parsed_mappings_csv(parsed_mappings, output_filepath)
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
     elif file_type == "yaml":
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)
     elif file_type == "csv":
-        write_parsed_mappings_csv(parsed_mappings, output_filepath, metadata_key)
+        write_parsed_mappings_csv(parsed_mappings, output_filepath)
     elif file_type == "navigator-layer":
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
     elif file_type == "stix":

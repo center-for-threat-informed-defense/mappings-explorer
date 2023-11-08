@@ -1,5 +1,9 @@
+import uuid
+
+
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
+    mapping_types = [{"id": str(uuid.uuid4()), "name": "mitigates", "description": ""}]
     parsed_mappings = {
         "metadata": {
             "mapping_version": "",
@@ -17,12 +21,18 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "organization": "",
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
-            "mappings_types": ["mitigates"],
+            "mapping_types": mapping_types,
         },
         "attack_objects": [],
     }
 
     for _, row in dataframe.iterrows():
+        mapping_type_uuid = list(
+            filter(
+                lambda mapping_type_object: mapping_type_object["name"] == "mitigates",
+                mapping_types,
+            )
+        )[0]["id"]
         parsed_mappings["attack_objects"].append(
             {
                 "comments": "",
@@ -30,9 +40,9 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "attack_object_name": row["Technique Name"],
                 "references": [],
                 "tags": [],
-                "capability_description": "",
+                "capability_description": row["Control Name"],
                 "capability_id": row["Control ID"],
-                "mapping_type": row["Mapping Type"],
+                "mapping_type": mapping_type_uuid,
             }
         )
 

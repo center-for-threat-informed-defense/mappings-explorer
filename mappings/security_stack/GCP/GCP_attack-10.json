@@ -10,7 +10,13 @@
     "organization": "",
     "mapping_framework": "gcp",
     "mapping_framework_version": "",
-    "mappings_types": ["technique-scores"]
+    "mapping_types": [
+      {
+        "id": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
+        "name": "technique-scores",
+        "description": ""
+      }
+    ]
   },
   "attack_objects": [
     {
@@ -25,7 +31,7 @@
       "tags": ["Antivirus", "Antimalware", "Malware"],
       "capability_description": "",
       "capability_id": "Virus Total",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -42,7 +48,7 @@
       "tags": ["Antivirus", "Antimalware", "Malware"],
       "capability_description": "",
       "capability_id": "Virus Total",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -59,7 +65,7 @@
       "tags": ["Antivirus", "Antimalware", "Malware"],
       "capability_description": "",
       "capability_id": "Virus Total",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -76,7 +82,7 @@
       "tags": ["Antivirus", "Antimalware", "Malware"],
       "capability_description": "",
       "capability_id": "Virus Total",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -93,7 +99,7 @@
       "tags": ["Antivirus", "Antimalware", "Malware"],
       "capability_description": "",
       "capability_id": "Virus Total",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -108,7 +114,7 @@
       "tags": ["Encryption"],
       "capability_description": "",
       "capability_id": "Confidential VM and Compute Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -121,7 +127,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -134,7 +140,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -147,7 +153,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -160,7 +166,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -173,7 +179,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -186,7 +192,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -199,7 +205,7 @@
       "tags": ["Encryption", "Data Security"],
       "capability_description": "",
       "capability_id": "Cloud Hardware Security Module (HSM)",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -214,7 +220,7 @@
       "tags": ["Certificate Service", "Network"],
       "capability_description": "",
       "capability_id": "Certificate Authority Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -227,7 +233,7 @@
       "tags": ["Credentials", "Access Management"],
       "capability_description": "",
       "capability_id": "Cloud Asset Inventory",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -240,7 +246,7 @@
       "tags": ["Credentials", "Access Management"],
       "capability_description": "",
       "capability_id": "Cloud Asset Inventory",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -253,7 +259,7 @@
       "tags": ["Credentials", "Access Management"],
       "capability_description": "",
       "capability_id": "Cloud Asset Inventory",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -266,7 +272,7 @@
       "tags": ["Credentials", "Access Management"],
       "capability_description": "",
       "capability_id": "Cloud Asset Inventory",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -279,7 +285,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -292,7 +298,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -305,7 +311,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -318,7 +324,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -331,7 +337,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -344,7 +350,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -357,7 +363,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "Identity Aware Proxy",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -373,7 +379,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -389,7 +395,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -405,7 +411,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -421,7 +427,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -437,7 +443,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -453,7 +459,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -469,7 +475,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -485,7 +491,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -501,7 +507,7 @@
       "tags": ["Containers", "Vulnerability Analysis", "OS Security"],
       "capability_description": "",
       "capability_id": "Artifact Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -517,7 +523,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -533,7 +539,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -549,7 +555,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -565,7 +571,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -581,7 +587,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -597,7 +603,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -613,7 +619,7 @@
       "tags": ["Kubernetes", "Containers"],
       "capability_description": "",
       "capability_id": "Google Kubernetes Engine",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -634,7 +640,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -655,7 +661,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -676,7 +682,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -697,7 +703,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -718,7 +724,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -739,7 +745,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -760,7 +766,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -781,7 +787,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -802,7 +808,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -823,7 +829,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -844,7 +850,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -865,7 +871,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -886,7 +892,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -907,7 +913,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -928,7 +934,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -949,7 +955,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -970,7 +976,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -991,7 +997,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -1012,7 +1018,7 @@
       ],
       "capability_description": "",
       "capability_id": "Cloud IDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -1033,7 +1039,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1054,7 +1060,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1075,7 +1081,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1096,7 +1102,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1117,7 +1123,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1138,7 +1144,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1159,7 +1165,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1180,7 +1186,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1201,7 +1207,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1222,7 +1228,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1243,7 +1249,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1264,7 +1270,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1285,7 +1291,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1306,7 +1312,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1327,7 +1333,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1348,7 +1354,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1369,7 +1375,7 @@
       ],
       "capability_description": "",
       "capability_id": "ResourceManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1382,7 +1388,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1395,7 +1401,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1408,7 +1414,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1421,7 +1427,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1434,7 +1440,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1447,7 +1453,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1460,7 +1466,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1473,7 +1479,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1486,7 +1492,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Actifio Go",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -1507,7 +1513,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1528,7 +1534,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1549,7 +1555,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1570,7 +1576,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1591,7 +1597,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1612,7 +1618,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1633,7 +1639,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1654,7 +1660,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1675,7 +1681,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1696,7 +1702,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1717,7 +1723,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1738,7 +1744,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1759,7 +1765,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1780,7 +1786,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1801,7 +1807,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1822,7 +1828,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1843,7 +1849,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1864,7 +1870,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1885,7 +1891,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1906,7 +1912,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1927,7 +1933,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1948,7 +1954,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1969,7 +1975,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1990,7 +1996,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2011,7 +2017,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2032,7 +2038,7 @@
       ],
       "capability_description": "",
       "capability_id": "IdentityPlatform",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2045,7 +2051,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2058,7 +2064,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2071,7 +2077,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2084,7 +2090,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2097,7 +2103,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2110,7 +2116,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2123,7 +2129,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2136,7 +2142,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2149,7 +2155,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2162,7 +2168,7 @@
       "tags": ["Configuration Management", "Containers", "Policy"],
       "capability_description": "",
       "capability_id": "AnthosConfigManagement",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2175,7 +2181,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Web Risk",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2188,7 +2194,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Web Risk",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2201,7 +2207,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Web Risk",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2214,7 +2220,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Web Risk",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2227,7 +2233,7 @@
       "tags": ["Containers", "Kubernetes", "Logging"],
       "capability_description": "",
       "capability_id": "Cloud CDN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2242,7 +2248,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2257,7 +2263,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2272,7 +2278,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2287,7 +2293,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2302,7 +2308,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2317,7 +2323,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2332,7 +2338,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2347,7 +2353,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -2362,7 +2368,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -2377,7 +2383,7 @@
       "tags": ["Access Control Policies", "Data Loss Prevention"],
       "capability_description": "",
       "capability_id": "BeyondCorp Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2390,7 +2396,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2403,7 +2409,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2416,7 +2422,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2429,7 +2435,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2442,7 +2448,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2455,7 +2461,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2468,7 +2474,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2481,7 +2487,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2494,7 +2500,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2507,7 +2513,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2520,7 +2526,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2533,7 +2539,7 @@
       "tags": ["Identity", "Multi-Factor Authentication", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Identity",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2546,7 +2552,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2559,7 +2565,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2572,7 +2578,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2585,7 +2591,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2598,7 +2604,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2611,7 +2617,7 @@
       "tags": ["Network", "Firewall"],
       "capability_description": "",
       "capability_id": "Cloud Armor",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2624,7 +2630,7 @@
       "tags": ["Identity", "Patch Management"],
       "capability_description": "",
       "capability_id": "Endpoint Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2637,7 +2643,7 @@
       "tags": ["Identity", "Patch Management"],
       "capability_description": "",
       "capability_id": "Endpoint Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Respond",
       "score_value": "Partial",
       "related_score": ""
@@ -2650,7 +2656,7 @@
       "tags": ["Identity", "Patch Management"],
       "capability_description": "",
       "capability_id": "Endpoint Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2663,7 +2669,7 @@
       "tags": ["Identity", "Patch Management"],
       "capability_description": "",
       "capability_id": "Endpoint Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2678,7 +2684,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2693,7 +2699,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2708,7 +2714,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2723,7 +2729,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2738,7 +2744,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2753,7 +2759,7 @@
       "tags": ["Network", "Encryption"],
       "capability_description": "",
       "capability_id": "CloudVPN",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2766,7 +2772,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2779,7 +2785,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2792,7 +2798,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2805,7 +2811,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2818,7 +2824,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2831,7 +2837,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2844,7 +2850,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2857,7 +2863,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2870,7 +2876,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2883,7 +2889,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Key Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2896,7 +2902,7 @@
       "tags": ["Multi-Factor Authentication", "Identity"],
       "capability_description": "",
       "capability_id": "Titan Security Key",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -2912,7 +2918,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2928,7 +2934,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2944,7 +2950,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2960,7 +2966,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2976,7 +2982,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2992,7 +2998,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3008,7 +3014,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3024,7 +3030,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3040,7 +3046,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3056,7 +3062,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3072,7 +3078,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3088,7 +3094,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3104,7 +3110,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3120,7 +3126,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3136,7 +3142,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3152,7 +3158,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3168,7 +3174,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3184,7 +3190,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3200,7 +3206,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3216,7 +3222,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3232,7 +3238,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3248,7 +3254,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3264,7 +3270,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3280,7 +3286,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3296,7 +3302,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3312,7 +3318,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3328,7 +3334,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3344,7 +3350,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3360,7 +3366,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3376,7 +3382,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3392,7 +3398,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3408,7 +3414,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3424,7 +3430,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3440,7 +3446,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3456,7 +3462,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3472,7 +3478,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3488,7 +3494,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3504,7 +3510,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3520,7 +3526,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3536,7 +3542,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3552,7 +3558,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3568,7 +3574,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3584,7 +3590,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3600,7 +3606,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3616,7 +3622,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3632,7 +3638,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3648,7 +3654,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3664,7 +3670,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3680,7 +3686,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3696,7 +3702,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3712,7 +3718,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3728,7 +3734,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3744,7 +3750,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3760,7 +3766,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3776,7 +3782,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3792,7 +3798,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3808,7 +3814,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3824,7 +3830,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3840,7 +3846,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3856,7 +3862,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3872,7 +3878,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3888,7 +3894,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3904,7 +3910,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3920,7 +3926,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3936,7 +3942,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3952,7 +3958,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3968,7 +3974,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3984,7 +3990,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4000,7 +4006,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4016,7 +4022,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4032,7 +4038,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4048,7 +4054,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4064,7 +4070,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4080,7 +4086,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4096,7 +4102,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4112,7 +4118,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4128,7 +4134,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4144,7 +4150,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4160,7 +4166,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4176,7 +4182,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4192,7 +4198,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4208,7 +4214,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4224,7 +4230,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4240,7 +4246,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4256,7 +4262,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4272,7 +4278,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4288,7 +4294,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4304,7 +4310,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4320,7 +4326,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4336,7 +4342,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4352,7 +4358,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4368,7 +4374,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4384,7 +4390,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4400,7 +4406,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4416,7 +4422,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4432,7 +4438,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4448,7 +4454,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4464,7 +4470,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4480,7 +4486,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4496,7 +4502,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4512,7 +4518,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4528,7 +4534,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4544,7 +4550,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4560,7 +4566,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4576,7 +4582,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4592,7 +4598,7 @@
       "tags": ["SIEM", "Chronicle", "Threat Detection", "Analytics"],
       "capability_description": "",
       "capability_id": "Chronicle",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4607,7 +4613,7 @@
       "tags": ["Auditing", "Access Management"],
       "capability_description": "",
       "capability_id": "Access Transparency",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4622,7 +4628,7 @@
       "tags": ["Auditing", "Access Management"],
       "capability_description": "",
       "capability_id": "Access Transparency",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4637,7 +4643,7 @@
       "tags": ["Vulnerability Management"],
       "capability_description": "",
       "capability_id": "Shielded VM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4652,7 +4658,7 @@
       "tags": ["Vulnerability Management"],
       "capability_description": "",
       "capability_id": "Shielded VM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4665,7 +4671,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4678,7 +4684,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4691,7 +4697,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4704,7 +4710,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4717,7 +4723,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4730,7 +4736,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4743,7 +4749,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4756,7 +4762,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4769,7 +4775,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4782,7 +4788,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4795,7 +4801,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4808,7 +4814,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4821,7 +4827,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4834,7 +4840,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4847,7 +4853,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4860,7 +4866,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4873,7 +4879,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4886,7 +4892,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4899,7 +4905,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4912,7 +4918,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4925,7 +4931,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4938,7 +4944,7 @@
       "tags": ["Firewall", "Logging", "Network"],
       "capability_description": "",
       "capability_id": "Firewalls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4958,7 +4964,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -4978,7 +4984,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -4998,7 +5004,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5018,7 +5024,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5038,7 +5044,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5058,7 +5064,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5078,7 +5084,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5098,7 +5104,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5118,7 +5124,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5138,7 +5144,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5158,7 +5164,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5178,7 +5184,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5198,7 +5204,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5218,7 +5224,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5238,7 +5244,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5258,7 +5264,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5278,7 +5284,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5298,7 +5304,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5318,7 +5324,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5338,7 +5344,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5358,7 +5364,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5378,7 +5384,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5398,7 +5404,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5418,7 +5424,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5438,7 +5444,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5458,7 +5464,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5478,7 +5484,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5498,7 +5504,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5518,7 +5524,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -5538,7 +5544,7 @@
       ],
       "capability_description": "",
       "capability_id": "Security Command Center",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5554,7 +5560,7 @@
       "tags": ["Storage", "Data Security", "Encryption", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Storage",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5570,7 +5576,7 @@
       "tags": ["Storage", "Data Security", "Encryption", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Storage",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5586,7 +5592,7 @@
       "tags": ["Storage", "Data Security", "Encryption", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Storage",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5602,7 +5608,7 @@
       "tags": ["Storage", "Data Security", "Encryption", "Credentials"],
       "capability_description": "",
       "capability_id": "Cloud Storage",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5615,7 +5621,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "Cloud Data Loss Prevention",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5631,7 +5637,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5647,7 +5653,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5663,7 +5669,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5679,7 +5685,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5695,7 +5701,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5711,7 +5717,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5727,7 +5733,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5743,7 +5749,7 @@
       "tags": ["Binary Authorization"],
       "capability_description": "",
       "capability_id": "Binary Authorization",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5756,7 +5762,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5769,7 +5775,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5782,7 +5788,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5795,7 +5801,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5808,7 +5814,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5821,7 +5827,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5834,7 +5840,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5847,7 +5853,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5860,7 +5866,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5873,7 +5879,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5886,7 +5892,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5899,7 +5905,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5912,7 +5918,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5925,7 +5931,7 @@
       "tags": ["Multi-Factor Authentication", "Phishing"],
       "capability_description": "",
       "capability_id": "AdvancedProtectionProgram",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5938,7 +5944,7 @@
       "tags": ["Data Security"],
       "capability_description": "",
       "capability_id": "Secret Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5951,7 +5957,7 @@
       "tags": ["Data Security"],
       "capability_description": "",
       "capability_id": "Secret Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5964,7 +5970,7 @@
       "tags": ["Data Security"],
       "capability_description": "",
       "capability_id": "Secret Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5977,7 +5983,7 @@
       "tags": ["Data Security"],
       "capability_description": "",
       "capability_id": "Secret Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5990,7 +5996,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6003,7 +6009,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6016,7 +6022,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6029,7 +6035,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6042,7 +6048,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6055,7 +6061,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6068,7 +6074,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6081,7 +6087,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6094,7 +6100,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6107,7 +6113,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6120,7 +6126,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6133,7 +6139,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6146,7 +6152,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6159,7 +6165,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6172,7 +6178,7 @@
       "tags": ["Network", "Virtual Private Cloud"],
       "capability_description": "",
       "capability_id": "Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6190,7 +6196,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6208,7 +6214,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6226,7 +6232,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6244,7 +6250,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6262,7 +6268,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6280,7 +6286,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6298,7 +6304,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6316,7 +6322,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6334,7 +6340,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6352,7 +6358,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6370,7 +6376,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6388,7 +6394,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6406,7 +6412,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6424,7 +6430,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6442,7 +6448,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6460,7 +6466,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6478,7 +6484,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6496,7 +6502,7 @@
       ],
       "capability_description": "",
       "capability_id": "Policy Intelligence",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6509,7 +6515,7 @@
       "tags": ["Multi-Factor Authentication", "Identity"],
       "capability_description": "",
       "capability_id": "ReCAPTCHA Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6522,7 +6528,7 @@
       "tags": ["Multi-Factor Authentication", "Identity"],
       "capability_description": "",
       "capability_id": "ReCAPTCHA Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": ""
@@ -6535,7 +6541,7 @@
       "tags": ["Multi-Factor Authentication", "Identity"],
       "capability_description": "",
       "capability_id": "ReCAPTCHA Enterprise",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6550,7 +6556,7 @@
       "tags": ["Virtual Private Cloud", "Access Control Policies", "Network"],
       "capability_description": "",
       "capability_id": "VPC Service Controls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6565,7 +6571,7 @@
       "tags": ["Virtual Private Cloud", "Access Control Policies", "Network"],
       "capability_description": "",
       "capability_id": "VPC Service Controls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6580,7 +6586,7 @@
       "tags": ["Virtual Private Cloud", "Access Control Policies", "Network"],
       "capability_description": "",
       "capability_id": "VPC Service Controls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6595,7 +6601,7 @@
       "tags": ["Virtual Private Cloud", "Access Control Policies", "Network"],
       "capability_description": "",
       "capability_id": "VPC Service Controls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6610,7 +6616,7 @@
       "tags": ["Virtual Private Cloud", "Access Control Policies", "Network"],
       "capability_description": "",
       "capability_id": "VPC Service Controls",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6629,7 +6635,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6648,7 +6654,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6667,7 +6673,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6686,7 +6692,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6705,7 +6711,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6724,7 +6730,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -6743,7 +6749,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6762,7 +6768,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6781,7 +6787,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6800,7 +6806,7 @@
       ],
       "capability_description": "",
       "capability_id": "Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6818,7 +6824,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6836,7 +6842,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6854,7 +6860,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6872,7 +6878,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6890,7 +6896,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6908,7 +6914,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6926,7 +6932,7 @@
       ],
       "capability_description": "",
       "capability_id": "VMManager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6942,7 +6948,7 @@
       "tags": ["Containers", "Vulnerability Analysis"],
       "capability_description": "",
       "capability_id": "Container Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6958,7 +6964,7 @@
       "tags": ["Containers", "Vulnerability Analysis"],
       "capability_description": "",
       "capability_id": "Container Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6974,7 +6980,7 @@
       "tags": ["Containers", "Vulnerability Analysis"],
       "capability_description": "",
       "capability_id": "Container Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6990,7 +6996,7 @@
       "tags": ["Containers", "Vulnerability Analysis"],
       "capability_description": "",
       "capability_id": "Container Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -7006,7 +7012,7 @@
       "tags": ["Containers", "Vulnerability Analysis"],
       "capability_description": "",
       "capability_id": "Container Registry",
-      "mapping_type": "technique-scores",
+      "mapping_type": "3911ddf2-c396-445d-9c6b-8d71d6a00d04",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""

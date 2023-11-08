@@ -10,7 +10,13 @@
     "organization": "",
     "mapping_framework": "aws",
     "mapping_framework_version": "",
-    "mappings_types": ["technique-scores"]
+    "mapping_types": [
+      {
+        "id": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
+        "name": "technique-scores",
+        "description": ""
+      }
+    ]
   },
   "attack_objects": [
     {
@@ -23,7 +29,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -38,7 +44,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -53,7 +59,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -66,7 +72,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -79,7 +85,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -92,7 +98,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -105,7 +111,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -120,7 +126,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -135,7 +141,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -150,7 +156,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -165,7 +171,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -180,7 +186,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -195,7 +201,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -210,7 +216,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -225,7 +231,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -240,7 +246,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -255,7 +261,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -270,7 +276,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -285,7 +291,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Minimal",
       "related_score": ""
@@ -298,7 +304,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Minimal",
       "related_score": "T1561"
@@ -311,7 +317,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Minimal",
       "related_score": "T1561"
@@ -326,7 +332,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -341,7 +347,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -356,7 +362,7 @@
       "tags": ["Database"],
       "capability_description": "",
       "capability_id": "AWS RDS",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -373,7 +379,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -386,7 +392,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1020"
@@ -403,7 +409,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -420,7 +426,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -433,7 +439,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1053"
@@ -450,7 +456,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -467,7 +473,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -480,7 +486,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1078"
@@ -497,7 +503,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -510,7 +516,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1098"
@@ -527,7 +533,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -540,7 +546,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -553,7 +559,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -566,7 +572,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -579,7 +585,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -596,7 +602,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -613,7 +619,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -626,7 +632,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1136"
@@ -643,7 +649,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -660,7 +666,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -677,7 +683,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -694,7 +700,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -711,7 +717,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -728,7 +734,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -741,7 +747,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1204"
@@ -758,7 +764,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -775,7 +781,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -792,7 +798,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -805,7 +811,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1491"
@@ -818,7 +824,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1491"
@@ -835,7 +841,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -852,7 +858,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -865,7 +871,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1498"
@@ -878,7 +884,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1498"
@@ -895,7 +901,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -908,7 +914,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -921,7 +927,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -934,7 +940,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -947,7 +953,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -964,7 +970,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -981,7 +987,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -998,7 +1004,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1015,7 +1021,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1028,7 +1034,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -1041,7 +1047,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -1054,7 +1060,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -1071,7 +1077,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1088,7 +1094,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1101,7 +1107,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -1114,7 +1120,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1562"
@@ -1127,7 +1133,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1562"
@@ -1144,7 +1150,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1161,7 +1167,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1178,7 +1184,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1195,7 +1201,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Config",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -1210,7 +1216,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "AWS S3",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1225,7 +1231,7 @@
       "tags": ["Storage"],
       "capability_description": "",
       "capability_id": "AWS S3",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -1241,7 +1247,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1254,7 +1260,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -1267,7 +1273,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -1283,7 +1289,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1299,7 +1305,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1315,7 +1321,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1328,7 +1334,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1566"
@@ -1341,7 +1347,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1566"
@@ -1354,7 +1360,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1566"
@@ -1370,7 +1376,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1383,7 +1389,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -1396,7 +1402,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -1412,7 +1418,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1425,7 +1431,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1098"
@@ -1438,7 +1444,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1098"
@@ -1454,7 +1460,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1467,7 +1473,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -1480,7 +1486,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -1493,7 +1499,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -1509,7 +1515,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1522,7 +1528,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -1535,7 +1541,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -1548,7 +1554,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -1564,7 +1570,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1577,7 +1583,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -1590,7 +1596,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1552"
@@ -1606,7 +1612,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1622,7 +1628,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1638,7 +1644,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1654,7 +1660,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1670,7 +1676,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1683,7 +1689,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1071"
@@ -1696,7 +1702,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1071"
@@ -1709,7 +1715,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1071"
@@ -1722,7 +1728,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1071"
@@ -1738,7 +1744,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1751,7 +1757,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1568"
@@ -1767,7 +1773,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1783,7 +1789,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1796,7 +1802,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1090"
@@ -1809,7 +1815,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1090"
@@ -1822,7 +1828,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1090"
@@ -1838,7 +1844,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1854,7 +1860,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1870,7 +1876,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -1886,7 +1892,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1899,7 +1905,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -1915,7 +1921,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1928,7 +1934,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1567"
@@ -1941,7 +1947,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1567"
@@ -1957,7 +1963,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1973,7 +1979,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -1989,7 +1995,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2005,7 +2011,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2018,7 +2024,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1565"
@@ -2034,7 +2040,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2047,7 +2053,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1498"
@@ -2060,7 +2066,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1498"
@@ -2076,7 +2082,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2092,7 +2098,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2105,7 +2111,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1491"
@@ -2118,7 +2124,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon GuardDuty",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1491"
@@ -2134,7 +2140,7 @@
       "tags": ["Denial of Service", "Network"],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2147,7 +2153,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1498"
@@ -2160,7 +2166,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1498"
@@ -2176,7 +2182,7 @@
       "tags": ["Denial of Service", "Network"],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2189,7 +2195,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1499"
@@ -2202,7 +2208,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1499"
@@ -2215,7 +2221,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Shield",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1499"
@@ -2238,7 +2244,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2251,7 +2257,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1020"
@@ -2274,7 +2280,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2297,7 +2303,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2320,7 +2326,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2343,7 +2349,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2356,7 +2362,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -2369,7 +2375,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -2382,7 +2388,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -2405,7 +2411,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2428,7 +2434,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2451,7 +2457,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2464,7 +2470,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -2477,7 +2483,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -2500,7 +2506,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2523,7 +2529,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2546,7 +2552,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -2569,7 +2575,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2582,7 +2588,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -2605,7 +2611,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2628,7 +2634,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2651,7 +2657,7 @@
       "tags": ["Internet of Things", "IoT"],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Minimal",
       "related_score": ""
@@ -2664,7 +2670,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -2677,7 +2683,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS IoT Device Defender",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Partial",
       "related_score": "T1562"
@@ -2693,7 +2699,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2706,7 +2712,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1078"
@@ -2722,7 +2728,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2735,7 +2741,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1087"
@@ -2751,7 +2757,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2767,7 +2773,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "AWS Organizations",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -2783,7 +2789,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2799,7 +2805,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2815,7 +2821,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2831,7 +2837,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Minimal",
       "related_score": ""
@@ -2844,7 +2850,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -2860,7 +2866,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2873,7 +2879,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1491"
@@ -2886,7 +2892,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1491"
@@ -2902,7 +2908,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2915,7 +2921,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1561"
@@ -2928,7 +2934,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": "T1561"
@@ -2944,7 +2950,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudEndure Disaster Recovery",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Respond",
       "score_value": "Significant",
       "related_score": ""
@@ -2960,7 +2966,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -2973,7 +2979,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -2986,7 +2992,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1552"
@@ -3002,7 +3008,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3015,7 +3021,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1588"
@@ -3028,7 +3034,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Key Management Service",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1588"
@@ -3043,7 +3049,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3058,7 +3064,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3073,7 +3079,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3088,7 +3094,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3103,7 +3109,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3118,7 +3124,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3133,7 +3139,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3148,7 +3154,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3161,7 +3167,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -3174,7 +3180,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -3187,7 +3193,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -3200,7 +3206,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -3215,7 +3221,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3230,7 +3236,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3243,7 +3249,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1021"
@@ -3258,7 +3264,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3271,7 +3277,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1222"
@@ -3286,7 +3292,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3299,7 +3305,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1562"
@@ -3312,7 +3318,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1562"
@@ -3325,7 +3331,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1562"
@@ -3338,7 +3344,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1562"
@@ -3353,7 +3359,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3366,7 +3372,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1070"
@@ -3379,7 +3385,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1070"
@@ -3392,7 +3398,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1070"
@@ -3405,7 +3411,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1070"
@@ -3418,7 +3424,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1070"
@@ -3433,7 +3439,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3446,7 +3452,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1599"
@@ -3461,7 +3467,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3474,7 +3480,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1003"
@@ -3487,7 +3493,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1003"
@@ -3502,7 +3508,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3515,7 +3521,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1053"
@@ -3528,7 +3534,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1053"
@@ -3541,7 +3547,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1053"
@@ -3556,7 +3562,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3571,7 +3577,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3586,7 +3592,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3599,7 +3605,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1548"
@@ -3614,7 +3620,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3627,7 +3633,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1037"
@@ -3642,7 +3648,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -3655,7 +3661,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1543"
@@ -3670,7 +3676,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3685,7 +3691,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3698,7 +3704,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -3711,7 +3717,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Inspector",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -3726,7 +3732,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3739,7 +3745,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -3752,7 +3758,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -3765,7 +3771,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -3778,7 +3784,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -3793,7 +3799,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3806,7 +3812,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -3819,7 +3825,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -3834,7 +3840,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3849,7 +3855,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3862,7 +3868,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1205"
@@ -3877,7 +3883,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -3892,7 +3898,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3907,7 +3913,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3922,7 +3928,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3937,7 +3943,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -3952,7 +3958,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3967,7 +3973,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -3980,7 +3986,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -3993,7 +3999,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -4006,7 +4012,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -4021,7 +4027,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4036,7 +4042,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4049,7 +4055,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1557"
@@ -4062,7 +4068,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1557"
@@ -4077,7 +4083,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4090,7 +4096,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1565"
@@ -4105,7 +4111,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4120,7 +4126,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4133,7 +4139,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1602"
@@ -4146,7 +4152,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1602"
@@ -4161,7 +4167,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4174,7 +4180,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1542"
@@ -4189,7 +4195,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4204,7 +4210,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4217,7 +4223,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4230,7 +4236,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4243,7 +4249,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4256,7 +4262,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4269,7 +4275,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4282,7 +4288,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -4297,7 +4303,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4312,7 +4318,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4327,7 +4333,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4342,7 +4348,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4355,7 +4361,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -4368,7 +4374,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -4381,7 +4387,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1499"
@@ -4396,7 +4402,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4411,7 +4417,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4424,7 +4430,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -4437,7 +4443,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -4450,7 +4456,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Virtual Private Cloud",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -4467,7 +4473,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4480,7 +4486,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -4497,7 +4503,7 @@
       "tags": ["Identity"],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4510,7 +4516,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -4523,7 +4529,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -4536,7 +4542,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -4549,7 +4555,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "Amazon Cognito",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -4567,7 +4573,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4585,7 +4591,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4603,7 +4609,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4621,7 +4627,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4634,7 +4640,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1059"
@@ -4647,7 +4653,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1059"
@@ -4660,7 +4666,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1059"
@@ -4678,7 +4684,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4691,7 +4697,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -4704,7 +4710,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -4722,7 +4728,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4735,7 +4741,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -4748,7 +4754,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -4766,7 +4772,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -4784,7 +4790,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4797,7 +4803,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Web Application Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1071"
@@ -4812,7 +4818,7 @@
       "tags": ["Metrics"],
       "capability_description": "",
       "capability_id": "AWS CloudWatch",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -4827,7 +4833,7 @@
       "tags": ["Metrics"],
       "capability_description": "",
       "capability_id": "AWS CloudWatch",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -4842,7 +4848,7 @@
       "tags": ["Metrics"],
       "capability_description": "",
       "capability_id": "AWS CloudWatch",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -4857,7 +4863,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -4872,7 +4878,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4885,7 +4891,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1592"
@@ -4898,7 +4904,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1592"
@@ -4911,7 +4917,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1592"
@@ -4924,7 +4930,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1592"
@@ -4939,7 +4945,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -4952,7 +4958,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1589"
@@ -4965,7 +4971,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1589"
@@ -4978,7 +4984,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1589"
@@ -4993,7 +4999,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5006,7 +5012,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5019,7 +5025,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5032,7 +5038,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5045,7 +5051,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5058,7 +5064,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5071,7 +5077,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1590"
@@ -5086,7 +5092,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5099,7 +5105,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1591"
@@ -5112,7 +5118,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1591"
@@ -5125,7 +5131,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1591"
@@ -5138,7 +5144,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1591"
@@ -5153,7 +5159,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5168,7 +5174,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5181,7 +5187,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1078"
@@ -5196,7 +5202,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5211,7 +5217,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5226,7 +5232,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5241,7 +5247,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5256,7 +5262,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5271,7 +5277,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5286,7 +5292,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5301,7 +5307,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5314,7 +5320,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1098"
@@ -5329,7 +5335,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5342,7 +5348,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1562"
@@ -5355,7 +5361,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1562"
@@ -5368,7 +5374,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Significant",
       "related_score": "T1562"
@@ -5383,7 +5389,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5396,7 +5402,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -5409,7 +5415,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -5422,7 +5428,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1110"
@@ -5437,7 +5443,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Security Hub",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5450,7 +5456,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5463,7 +5469,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Partial",
       "related_score": ""
@@ -5476,7 +5482,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -5489,7 +5495,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1078"
@@ -5502,7 +5508,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5515,7 +5521,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Detect",
       "score_value": "Minimal",
       "related_score": "T1098"
@@ -5528,7 +5534,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5541,7 +5547,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1550"
@@ -5554,7 +5560,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5567,7 +5573,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -5580,7 +5586,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -5593,7 +5599,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -5606,7 +5612,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Identity and Access Management",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5622,7 +5628,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5638,7 +5644,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5654,7 +5660,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5670,7 +5676,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5683,7 +5689,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -5696,7 +5702,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -5709,7 +5715,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Secrets Manager",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -5724,7 +5730,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5737,7 +5743,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1071"
@@ -5750,7 +5756,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1071"
@@ -5763,7 +5769,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1071"
@@ -5776,7 +5782,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1071"
@@ -5791,7 +5797,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5806,7 +5812,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5819,7 +5825,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1499"
@@ -5832,7 +5838,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1499"
@@ -5845,7 +5851,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1499"
@@ -5860,7 +5866,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -5873,7 +5879,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -5886,7 +5892,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -5899,7 +5905,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1048"
@@ -5914,7 +5920,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5929,7 +5935,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -5942,7 +5948,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1498"
@@ -5955,7 +5961,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": "T1498"
@@ -5970,7 +5976,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -5985,7 +5991,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6000,7 +6006,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6013,7 +6019,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -6026,7 +6032,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1090"
@@ -6041,7 +6047,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6056,7 +6062,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6069,7 +6075,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -6082,7 +6088,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -6095,7 +6101,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -6108,7 +6114,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -6121,7 +6127,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1021"
@@ -6136,7 +6142,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6149,7 +6155,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1205"
@@ -6164,7 +6170,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6179,7 +6185,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6194,7 +6200,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6209,7 +6215,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6222,7 +6228,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -6235,7 +6241,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1595"
@@ -6250,7 +6256,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6265,7 +6271,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6278,7 +6284,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1542"
@@ -6293,7 +6299,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6308,7 +6314,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6323,7 +6329,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6338,7 +6344,7 @@
       "tags": ["Network"],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6351,7 +6357,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -6364,7 +6370,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -6377,7 +6383,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -6390,7 +6396,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Network Firewall",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1590"
@@ -6405,7 +6411,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6418,7 +6424,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -6431,7 +6437,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1078"
@@ -6446,7 +6452,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": ""
@@ -6461,7 +6467,7 @@
       "tags": ["Identity", "Credentials"],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6474,7 +6480,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -6487,7 +6493,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -6500,7 +6506,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS Single Sign-On",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1110"
@@ -6517,7 +6523,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Minimal",
       "related_score": ""
@@ -6530,7 +6536,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1552"
@@ -6543,7 +6549,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Significant",
       "related_score": "T1552"
@@ -6560,7 +6566,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6573,7 +6579,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1588"
@@ -6586,7 +6592,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1588"
@@ -6603,7 +6609,7 @@
       "tags": ["Credentials"],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": ""
@@ -6616,7 +6622,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1553"
@@ -6629,7 +6635,7 @@
       "tags": [],
       "capability_description": "",
       "capability_id": "AWS CloudHSM",
-      "mapping_type": "technique-scores",
+      "mapping_type": "f60475d9-88e8-4546-91aa-e19f263ba4c8",
       "score_category": "Protect",
       "score_value": "Partial",
       "related_score": "T1553"

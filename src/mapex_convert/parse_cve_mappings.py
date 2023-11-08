@@ -1,3 +1,6 @@
+import uuid
+
+
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
         "Primary Impact",
@@ -8,6 +11,11 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
 
     formatted_cve_mapping_types = [
         mapping_type.lower().replace(" ", "_") for mapping_type in cve_mapping_types
+    ]
+
+    cve_mapping_types_objects = [
+        {"id": str(uuid.uuid4()), "description": "", "name": mapping_type}
+        for mapping_type in formatted_cve_mapping_types
     ]
 
     # put data in correct format with correct fields
@@ -28,7 +36,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "organization": "",
             "mapping_framework": "cve",
             "mapping_framework_version": "",
-            "mappings_types": formatted_cve_mapping_types,
+            "mapping_types": cve_mapping_types_objects,
         },
         "attack_objects": [],
     }
@@ -48,7 +56,13 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         attack_object.strip(), {}
                     )
                     name = attack_details.get("name", "")
-
+                    mapping_type_uuid = list(
+                        filter(
+                            lambda mapping_type_object: mapping_type_object["name"]
+                            == mapping_type,
+                            cve_mapping_types_objects,
+                        )
+                    )[0]["id"]
                     parsed_mappings["attack_objects"].append(
                         {
                             "comments": "",
@@ -58,7 +72,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "tags": [],
                             "capability_description": "",
                             "capability_id": row["CVE ID"],
-                            "mapping_type": mapping_type,
+                            "mapping_type": mapping_type_uuid,
                         }
                     )
     return parsed_mappings
