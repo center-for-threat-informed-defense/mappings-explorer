@@ -1,7 +1,13 @@
+import os
 import uuid
+
+import pandas as pd
 
 
 def configure_veris_mappings(veris_mappings, domain):
+    mappings_framework_version = veris_mappings["metadata"]["veris_version"]
+    description_dict = create_description_dict(mappings_framework_version)
+
     mapping_types = [{"id": str(uuid.uuid4()), "name": "related-to", "description": ""}]
     parsed_mappings = {
         "metadata": {
@@ -19,11 +25,11 @@ def configure_veris_mappings(veris_mappings, domain):
             "last_update": "10/27/2021",
             "organization": "",
             "mapping_framework": "veris",
-            "mapping_framework_version": veris_mappings["metadata"]["veris_version"],
+            "mapping_framework_version": mappings_framework_version,
             "mapping_types": mapping_types,
             "groups": [],
         },
-        "attack_objects": [],
+        "mapping_objects": [],
     }
 
     groups = []
@@ -47,14 +53,13 @@ def configure_veris_mappings(veris_mappings, domain):
                 0
             ]["id"]
 
-            parsed_mappings["attack_objects"].append(
+            parsed_mappings["mapping_objects"].append(
                 {
                     "comments": "",
                     "attack_object_id": attack_object,
                     "attack_object_name": mapped_attack_object["name"],
                     "references": [],
-                    "tags": [],
-                    "capability_description": "",
+                    "capability_description": description_dict[veris_object],
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_uuid,
                     "group": group,
@@ -63,3 +68,22 @@ def configure_veris_mappings(veris_mappings, domain):
 
     parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings
+
+
+def create_description_dict(mappings_version):
+    ROOT_DIR = os.path.abspath(os.curdir)
+    enumerations_filepath = ROOT_DIR + "/src/mapex_convert/mappings/Veris/enumerations"
+    if mappings_version == "1.3.5":
+        filepath = f"{enumerations_filepath}/veris135-enumerations.csv"
+    elif mappings_version == "1.3.7":
+        filepath = f"{enumerations_filepath}/veris1_3_7-enumerations-groups.csv"
+
+    df = pd.read_csv(filepath)
+
+    description_dict = {}
+    df = df.fillna('""')
+    for _, row in df.iterrows():
+        path = f"{row['AXES']}.{row['CATEGORY']}.{row['SUB CATEGORY']}.{row['VALUE']}"
+        description_dict[path] = row["DESCRIPTION"]
+
+    return description_dict

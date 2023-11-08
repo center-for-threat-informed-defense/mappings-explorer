@@ -19,8 +19,8 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
 
 def write_parsed_mappings_csv(parsed_mappings, filepath):
     # create csv with attack objects
-    attack_objects = parsed_mappings["attack_objects"]
-    for attack_object in attack_objects:
+    mapping_objects = parsed_mappings["mapping_objects"]
+    for attack_object in mapping_objects:
         # add metadata fields to attack object
         columns_from_metadata = [
             "organization",
@@ -57,7 +57,7 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
         attack_object["mapping_type"] = mapping_type_name
         attack_object["group"] = group_name
 
-    attack_object_df = pd.DataFrame(attack_objects)
+    attack_object_df = pd.DataFrame(mapping_objects)
     attack_object_df.to_csv(f"{filepath}.csv")
 
 
@@ -86,7 +86,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
     }
     technique_target_dict = load_attack_json(parsed_mappings)
 
-    for mapping in parsed_mappings["attack_objects"]:
+    for mapping in parsed_mappings["mapping_objects"]:
         # create SDO for each capability
         if not any(
             stix_object.get("name") == mapping["capability_id"]
@@ -238,7 +238,7 @@ def load_attack_json(parsed_mappings):
 
 def get_techniques_dict(parsed_mappings):
     techniques_dict = {}
-    for mapping in parsed_mappings["attack_objects"]:
+    for mapping in parsed_mappings["mapping_objects"]:
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 

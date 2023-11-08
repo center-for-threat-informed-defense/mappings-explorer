@@ -24,7 +24,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "mapping_types": mapping_types,
             "groups": [],
         },
-        "attack_objects": [],
+        "mapping_objects": [],
     }
 
     groups = []
@@ -45,13 +45,12 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
 
         group = list(filter(lambda group: group["name"] == control_id, groups))[0]["id"]
 
-        parsed_mappings["attack_objects"].append(
+        parsed_mappings["mapping_objects"].append(
             {
                 "comments": "",
                 "attack_object_id": row["Technique ID"],
                 "attack_object_name": row["Technique Name"],
                 "references": [],
-                "tags": [],
                 "capability_description": row["Control Name"],
                 "capability_id": row["Control ID"],
                 "mapping_type": mapping_type_uuid,

@@ -68,6 +68,8 @@ def test_veris_mappings_json(tmpdir):
     result = pop_uuids(json.load(file))
 
     # ASSERT
+    print("result")
+    print(result)
     assert result == expected_veris_mapping_json
 
 
@@ -93,7 +95,7 @@ def pop_uuids(result):
         mapping_type.pop("id")
     for group in result["metadata"]["groups"]:
         group.pop("id")
-    for attack_object in result["attack_objects"]:
+    for attack_object in result["mapping_objects"]:
         attack_object.pop("mapping_type")
         attack_object.pop("group")
     return result

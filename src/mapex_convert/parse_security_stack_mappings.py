@@ -37,7 +37,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "mapping_types": mapping_types,
             "groups": [],
         }
-        parsed_mappings["attack_objects"] = []
+        parsed_mappings["mapping_objects"] = []
 
     # get mapping type id
     mapping_type_uuid = list(
@@ -49,7 +49,6 @@ def configure_security_stack_mappings(data, parsed_mappings):
     )[0]["id"]
 
     for technique in data["techniques"]:
-        tags = data.get("tags") or []
         references = data.get("references") or []
 
         for technique_score in technique["technique-scores"]:
@@ -73,13 +72,12 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 )
             )[0]["id"]
 
-            parsed_mappings["attack_objects"].append(
+            parsed_mappings["mapping_objects"].append(
                 {
                     "comments": comments,
                     "attack_object_id": technique["id"],
                     "attack_object_name": technique["name"],
                     "references": list(references),
-                    "tags": list(tags),
                     "capability_description": data["name"],
                     "capability_id": data["name"],
                     "mapping_type": mapping_type_uuid,
@@ -94,16 +92,14 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 for subtechnique in subtechnique_score["sub-techniques"]:
                     for score in subtechnique_score["scores"]:
                         subtechnique_comments = score.get("comments") or ""
-                        subtechnique_tags = score.get("tags") or []
                         subtechniqe_references = score.get("references") or []
 
-                        parsed_mappings["attack_objects"].append(
+                        parsed_mappings["mapping_objects"].append(
                             {
                                 "comments": subtechnique_comments,
                                 "attack_object_id": subtechnique["id"],
                                 "attack_object_name": subtechnique["name"],
                                 "references": subtechniqe_references,
-                                "tags": subtechnique_tags,
                                 "capability_description": data["name"],
                                 "capability_id": data["name"],
                                 "mapping_type": mapping_type_uuid,
