@@ -34,10 +34,8 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
         for column in columns_from_metadata:
             attack_object[column] = parsed_mappings["metadata"][column]
 
-        # get all mapping types
-        mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
-
         # get mapping type name based on id
+        mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
         mapping_type_name = list(
             filter(
                 lambda mapping_type_object: mapping_type_object["id"]
@@ -46,8 +44,18 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
             )
         )[0]["name"]
 
-        # swap mapping_type id with mapping_type name
+        # get group name based on id
+        group_objects = parsed_mappings["metadata"]["groups"]
+        group_name = list(
+            filter(
+                lambda group_object: group_object["id"] == attack_object["group"],
+                group_objects,
+            )
+        )[0]["name"]
+
+        # swap mapping_type id and group id with mapping_type name and group name
         attack_object["mapping_type"] = mapping_type_name
+        attack_object["group"] = group_name
 
     attack_object_df = pd.DataFrame(attack_objects)
     attack_object_df.to_csv(f"{filepath}.csv")

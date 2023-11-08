@@ -22,17 +22,29 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
             "mapping_types": mapping_types,
+            "groups": [],
         },
         "attack_objects": [],
     }
 
+    groups = []
     for _, row in dataframe.iterrows():
+        # get mapping type uuid
         mapping_type_uuid = list(
             filter(
                 lambda mapping_type_object: mapping_type_object["name"] == "mitigates",
                 mapping_types,
             )
         )[0]["id"]
+
+        # get group uuid
+        control_id = row["Control ID"]
+        if not any(group["name"] == control_id for group in groups):
+            group_id = str(uuid.uuid4())
+            groups.append({"id": group_id, "name": control_id})
+
+        group = list(filter(lambda group: group["name"] == control_id, groups))[0]["id"]
+
         parsed_mappings["attack_objects"].append(
             {
                 "comments": "",
@@ -43,7 +55,9 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "capability_description": row["Control Name"],
                 "capability_id": row["Control ID"],
                 "mapping_type": mapping_type_uuid,
+                "group": group,
             }
         )
 
+    parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings

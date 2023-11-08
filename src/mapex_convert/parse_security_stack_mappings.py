@@ -35,6 +35,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "mapping_framework": data["platform"].lower(),
             "mapping_framework_version": "",
             "mapping_types": mapping_types,
+            "groups": [],
         }
         parsed_mappings["attack_objects"] = []
 
@@ -47,12 +48,23 @@ def configure_security_stack_mappings(data, parsed_mappings):
         )
     )[0]["id"]
 
+    groups = []
     for technique in data["techniques"]:
         tags = data.get("tags") or []
         references = data.get("references") or []
 
         for technique_score in technique["technique-scores"]:
             comments = technique_score.get("comments") or ""
+
+            # get group uuid
+            capability_id = data["name"]
+            if not any(group["name"] == capability_id for group in groups):
+                group_id = str(uuid.uuid4())
+                groups.append({"id": group_id, "name": capability_id})
+
+            group = list(filter(lambda group: group["name"] == capability_id, groups))[
+                0
+            ]["id"]
 
             parsed_mappings["attack_objects"].append(
                 {
@@ -61,12 +73,13 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "attack_object_name": technique["name"],
                     "references": list(references),
                     "tags": list(tags),
-                    "capability_description": "",
+                    "capability_description": data["name"],
                     "capability_id": data["name"],
                     "mapping_type": mapping_type_uuid,
                     "score_category": technique_score["category"],
                     "score_value": technique_score["value"],
                     "related_score": "",
+                    "group": group,
                 }
             )
         if technique.get("sub-techniques-scores"):
@@ -76,6 +89,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                         subtechnique_comments = score.get("comments") or ""
                         subtechnique_tags = score.get("tags") or []
                         subtechniqe_references = score.get("references") or []
+
                         parsed_mappings["attack_objects"].append(
                             {
                                 "comments": subtechnique_comments,
@@ -83,11 +97,15 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "attack_object_name": subtechnique["name"],
                                 "references": subtechniqe_references,
                                 "tags": subtechnique_tags,
-                                "capability_description": "",
+                                "capability_description": data["name"],
                                 "capability_id": data["name"],
                                 "mapping_type": mapping_type_uuid,
                                 "score_category": score["category"],
                                 "score_value": score["value"],
                                 "related_score": technique["id"],
+                                "group": group,
                             }
                         )
+    if len(groups) > 0:
+        for group in groups:
+            parsed_mappings["metadata"]["groups"].append(group)

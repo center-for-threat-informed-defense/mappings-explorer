@@ -21,10 +21,12 @@ def configure_veris_mappings(veris_mappings, domain):
             "mapping_framework": "veris",
             "mapping_framework_version": veris_mappings["metadata"]["veris_version"],
             "mapping_types": mapping_types,
+            "groups": [],
         },
         "attack_objects": [],
     }
 
+    groups = []
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
@@ -35,6 +37,16 @@ def configure_veris_mappings(veris_mappings, domain):
                     mapping_types,
                 )
             )[0]["id"]
+
+            # get group uuid
+            if not any(group["name"] == veris_object for group in groups):
+                group_id = str(uuid.uuid4())
+                groups.append({"id": group_id, "name": veris_object})
+
+            group = list(filter(lambda group: group["name"] == veris_object, groups))[
+                0
+            ]["id"]
+
             parsed_mappings["attack_objects"].append(
                 {
                     "comments": "",
@@ -45,7 +57,9 @@ def configure_veris_mappings(veris_mappings, domain):
                     "capability_description": "",
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_uuid,
+                    "group": group,
                 }
             )
 
+    parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings

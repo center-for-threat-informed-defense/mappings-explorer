@@ -37,10 +37,12 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "mapping_framework": "cve",
             "mapping_framework_version": "",
             "mapping_types": cve_mapping_types_objects,
+            "groups": [],
         },
         "attack_objects": [],
     }
 
+    groups = []
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
             if isinstance(row[mapping_type], str):
@@ -56,6 +58,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         attack_object.strip(), {}
                     )
                     name = attack_details.get("name", "")
+
                     mapping_type_uuid = list(
                         filter(
                             lambda mapping_type_object: mapping_type_object["name"]
@@ -63,6 +66,19 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             cve_mapping_types_objects,
                         )
                     )[0]["id"]
+
+                    # figure out capability group
+                    capability_id = row["CVE ID"]
+                    capability_year = capability_id[
+                        capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
+                    ]
+                    if not any(group["name"] == capability_year for group in groups):
+                        group_id = str(uuid.uuid4())
+                        groups.append({"id": group_id, "name": capability_year})
+                    group = list(
+                        filter(lambda group: group["name"] == capability_year, groups)
+                    )[0]["id"]
+
                     parsed_mappings["attack_objects"].append(
                         {
                             "comments": "",
@@ -73,6 +89,9 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "capability_description": "",
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type_uuid,
+                            "group": group,
                         }
                     )
+
+    parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings
