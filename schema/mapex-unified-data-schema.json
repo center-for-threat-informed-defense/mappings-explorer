@@ -3,11 +3,12 @@
   "title": "ATT&CK Mappings Unified Schema",
   "description": "Defines the data elements and properties of Mappings Explorer projects",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
-    "additionalProperties": false,
     "metadata": {
       "description": "Properties that apply to all mappings in a project.",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "mapping_version": {
           "description": "The version of the mapping project.",
@@ -86,6 +87,25 @@
               }
             }
           }
+        },
+        "groups": {
+          "description": "The groups that the mappings can be organized in.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "name"],
+            "properties": {
+              "id": {
+                "description": "The group's identifier.",
+                "type": "string"
+              },
+              "name": {
+                "description": "The group's name.",
+                "type": "string"
+              }
+            }
+          }
         }
       },
       "required": [
@@ -95,14 +115,16 @@
         "creation_date",
         "mapping_framework",
         "mapping_framework_version",
-        "mapping_types"
+        "mapping_types",
+        "groups"
       ]
     },
-    "mapping_object": {
+    "mapping_objects": {
       "description": "A single mapping between framework object and ATT&CK object.",
       "type": "array",
       "items": {
         "type": "object",
+        "additionalProperties": false,
         "properties": {
           "attack_object_id": {
             "description": "The unique identifier of the ATT&CK object being mapped. (T1648)",
@@ -130,6 +152,10 @@
           },
           "mapping_type": {
             "description": "Mapping type has framework-specific values. This property describes how the capability_id and attack_object_id are related.",
+            "type": "string"
+          },
+          "group": {
+            "description": "This property describes which group this mapping falls into.",
             "type": "string"
           },
           "if": {
