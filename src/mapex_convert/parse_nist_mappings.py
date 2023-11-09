@@ -39,11 +39,14 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
 
         # get group uuid
         control_id = row["Control ID"]
-        if not any(group["name"] == control_id for group in groups):
-            group_id = str(uuid.uuid4())
-            groups.append({"id": group_id, "name": control_id})
+        control_family_id = control_id[0 : control_id.index("-")]
+        if not any(group["name"] == control_family_id for group in groups):
+            group_id = control_family_id
+            groups.append({"id": group_id, "name": control_family_id})
 
-        group = list(filter(lambda group: group["name"] == control_id, groups))[0]["id"]
+        group = list(filter(lambda group: group["name"] == control_family_id, groups))[
+            0
+        ]["id"]
 
         parsed_mappings["mapping_objects"].append(
             {

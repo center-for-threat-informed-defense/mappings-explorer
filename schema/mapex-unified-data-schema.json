@@ -148,7 +148,10 @@
           },
           "references": {
             "description": "A list of links to documentation that provides additional detail in understanding the data contained in this mapping. (A link to the documentation for a security control.)",
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "mapping_type": {
             "description": "Mapping type has framework-specific values. This property describes how the capability_id and attack_object_id are related.",

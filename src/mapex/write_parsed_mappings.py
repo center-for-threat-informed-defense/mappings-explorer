@@ -117,7 +117,6 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             },
         )
 
-    # print("STIX  BUNDLE", stix_bundle)
     stix_file = open(
         f"{filepath}_stix.json",
         "w",
@@ -185,7 +184,6 @@ def load_attack_json(parsed_mappings):
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
 
     # load enterprise attack stix json to map technique ids to names
-    print("PARSED MAPPINGS", parsed_mappings["metadata"])
     attack_version = parsed_mappings["metadata"]["attack_version"]
 
     if "." not in attack_version:
