@@ -11,7 +11,7 @@ expected_nist_mapping_json = {
         "mapping_framework": "nist_800_53",
         "mapping_framework_version": "1",
         "mapping_types": [{"name": "mitigates", "description": ""}],
-        "groups": [{"name": "AC-10"}],
+        "groups": [{"name": "AC"}],
     },
     "mapping_objects": [
         {
