@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+from pathlib import Path
 
 import requests
 from mapex_convert.parse_cve_mappings import (
@@ -22,9 +23,9 @@ from mapex_convert.read_files import (
     read_yaml_file,
 )
 
-ROOT_DIR = os.path.abspath(os.curdir)
-PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/mappings"
-MAPPINGS_DIR = f"{ROOT_DIR}/src/mapex_convert/mappings"
+ROOT_DIR = Path.cwd()
+PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
+MAPPINGS_DIR = ROOT_DIR / "src" / "mapex_convert" / "mappings"
 
 
 def main():
@@ -60,17 +61,17 @@ def load_attack_json():
 
     # load enterprise attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/enterprise-attack/enterprise-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/mobile-attack/mobile-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-9.0.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     ics_attack_data = json.loads(response.text)
 
     domains = ["enterprise", "mobile", "ics"]
@@ -107,7 +108,7 @@ def parse_cve_mappings():
     attack_object_id_to_name = load_attack_json()
 
     # read un-parsed mappings
-    cve_filepath = f"{MAPPINGS_DIR}/Att&ckToCveMappings.csv"
+    cve_filepath = MAPPINGS_DIR / "Att&ckToCveMappings.csv"
     df = read_csv_file(cve_filepath)
 
     # parse mappings
@@ -115,12 +116,12 @@ def parse_cve_mappings():
 
     # write parsed mappings to json file
     filename_version_string = get_filename_version_string(parsed_mappings)
-    output_filepath = f"{PARSED_MAPPINGS_DIR}/cve/cve{filename_version_string}"
+    output_filepath = PARSED_MAPPINGS_DIR / "cve" / f"cve{filename_version_string}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
 
 def parse_nist_mappings():
-    directory = f"{MAPPINGS_DIR}/NIST_800-53"
+    directory = MAPPINGS_DIR / "NIST_800-53"
 
     # iterate through all nist mapping files in the directory
     for filename in os.listdir(directory):
@@ -143,23 +144,24 @@ def parse_nist_mappings():
             )
 
             # write parsed mappings to json file
+
+            # get output filepath
             filename_version_string = get_filename_version_string(parsed_mappings)
             mapped_filename = f"nist-800{filename_version_string}"
-            attack_version_path = f"{PARSED_MAPPINGS_DIR}/nist/{attack_version}/"
-            attack_version_path_exists = os.path.exists(attack_version_path)
-            if not attack_version_path_exists:
-                os.makedirs(attack_version_path)
-            nist_dir = f"nist/{attack_version}/{mapping_framework_version}/"
-            mappings_version_path = f"{PARSED_MAPPINGS_DIR}/{nist_dir}"
-            mappings_version_path_exists = os.path.exists(mappings_version_path)
-            if not mappings_version_path_exists:
-                os.makedirs(mappings_version_path)
-            filepath = f"{mappings_version_path}/{mapped_filename}"
-            write_parsed_mappings_json(parsed_mappings, filepath)
+            output_filepath = (
+                PARSED_MAPPINGS_DIR
+                / "nist"
+                / attack_version
+                / mapping_framework_version
+            )
+            output_filepath.mkdir(parents=True, exist_ok=True)
+            write_parsed_mappings_json(
+                parsed_mappings, output_filepath / mapped_filename
+            )
 
 
 def parse_veris_mappings():
-    directory = f"{MAPPINGS_DIR}/Veris"
+    directory = MAPPINGS_DIR / "Veris"
 
     # iterate through mappings files
     for filename in os.listdir(directory):
@@ -178,25 +180,23 @@ def parse_veris_mappings():
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
 
             # write parsed mappings to a json file
-            veris_version_path = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}"
-            veris_version_path_exists = os.path.exists(veris_version_path)
-            if not veris_version_path_exists:
-                os.makedirs(veris_version_path)
+            output_filepath = PARSED_MAPPINGS_DIR / "veris" / veris_version
+            output_filepath.mkdir(parents=True, exist_ok=True)
             filename_version_string = get_filename_version_string(parsed_mappings)
             filename = f"veris{filename_version_string}"
-            filepath = f"{PARSED_MAPPINGS_DIR}/veris/{veris_version}/{filename}"
+            filepath = output_filepath / filename
             write_parsed_mappings_json(parsed_mappings, filepath)
 
 
 def parse_security_stack_mappings():
-    rootdir = f"{MAPPINGS_DIR}/SecurityStack"
+    rootdir = MAPPINGS_DIR / "SecurityStack"
 
     # iterate through mappings files
     for _, directories, _ in os.walk(rootdir):
         for directory in directories:
             parsed_mappings = {}
-            for file in os.listdir(f"{rootdir}/{directory}"):
-                filepath = f"{rootdir}/{directory}/{file}"
+            for file in os.listdir(rootdir / directory):
+                filepath = rootdir / directory / file
 
                 # read un-mapping filed
                 data = read_yaml_file(filepath)
@@ -206,16 +206,12 @@ def parse_security_stack_mappings():
 
             # write parsed data to json file
             security_stack_folder_path = (
-                f"{PARSED_MAPPINGS_DIR}/security_stack/{directory}"
+                PARSED_MAPPINGS_DIR / "security_stack" / directory
             )
-            security_stack_folder_path_exists = os.path.exists(
-                security_stack_folder_path
-            )
-            if not security_stack_folder_path_exists:
-                os.makedirs(security_stack_folder_path)
+            security_stack_folder_path.mkdir(parents=True, exist_ok=True)
             filename_version_string = get_filename_version_string(parsed_mappings)
             filename = f"{directory}{filename_version_string}"
-            filepath = f"{security_stack_folder_path}/{filename}"
+            filepath = security_stack_folder_path / filename
 
             write_parsed_mappings_json(parsed_mappings, filepath)
 
