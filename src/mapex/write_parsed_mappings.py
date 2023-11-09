@@ -85,7 +85,6 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         "objects": [],
     }
     technique_target_dict = load_attack_json(parsed_mappings)
-
     for mapping in parsed_mappings["mapping_objects"]:
         # create SDO for each capability
         if not any(
@@ -118,6 +117,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             },
         )
 
+    # print("STIX  BUNDLE", stix_bundle)
     stix_file = open(
         f"{filepath}_stix.json",
         "w",
@@ -185,6 +185,7 @@ def load_attack_json(parsed_mappings):
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
 
     # load enterprise attack stix json to map technique ids to names
+    print("PARSED MAPPINGS", parsed_mappings["metadata"])
     attack_version = parsed_mappings["metadata"]["attack_version"]
 
     if "." not in attack_version:
@@ -194,19 +195,19 @@ def load_attack_json(parsed_mappings):
         f"{BASE_URL}/enterprise-attack/enterprise-attack-{attack_version}.json"
     )
 
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = (
         f"{BASE_URL}/mobile-attack/mobile-attack-{attack_version}.json"
     )
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-{attack_version}.json"
-    response = requests.get(enterpise_attack_url, verify=False)
+    response = requests.get(enterpise_attack_url)
     ics_attack_data = json.loads(response.text)
 
     domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
