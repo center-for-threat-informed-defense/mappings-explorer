@@ -116,7 +116,9 @@ def parse_cve_mappings():
 
     # write parsed mappings to json file
     filename_version_string = get_filename_version_string(parsed_mappings)
-    output_filepath = PARSED_MAPPINGS_DIR / "cve" / f"cve{filename_version_string}"
+    output_filepath = PARSED_MAPPINGS_DIR / "cve"
+    output_filepath.mkdir(parents=True, exist_ok=True)
+    output_filepath = output_filepath / f"cve{filename_version_string}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
 
 
