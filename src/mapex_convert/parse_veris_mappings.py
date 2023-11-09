@@ -36,6 +36,9 @@ def configure_veris_mappings(veris_mappings, domain):
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
+            # if veris object is missing one of the sections, replace extra '.""'
+            veris_object = veris_object.replace('.""', "")
+
             mapping_type_uuid = list(
                 filter(
                     lambda mapping_type_object: mapping_type_object["name"]
@@ -81,9 +84,12 @@ def create_description_dict(mappings_version):
     df = pd.read_csv(filepath)
 
     description_dict = {}
-    df = df.fillna('""')
+    # if any of df cells have no value, fill with an empty string
+    df = df.fillna("")
     for _, row in df.iterrows():
         path = f"{row['AXES']}.{row['CATEGORY']}.{row['SUB CATEGORY']}.{row['VALUE']}"
+        # if any of the veris paths do not have all sections, remove the extra '.'
+        path = path.replace("..", ".")
         description_dict[path] = row["DESCRIPTION"]
 
     return description_dict
