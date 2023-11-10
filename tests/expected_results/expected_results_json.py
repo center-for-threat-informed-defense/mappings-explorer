@@ -45,7 +45,7 @@ expected_security_stack_mapping_json = {
         "organization": "",
         "mapping_framework": "aws",
         "mapping_framework_version": "",
-        "mapping_types": [{"name": "technique-scores", "description": ""}],
+        "mapping_types": [{"name": "technique_scores", "description": ""}],
         "groups": [{"name": "Amazon Cognito"}],
     },
     "mapping_objects": [
