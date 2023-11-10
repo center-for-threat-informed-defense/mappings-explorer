@@ -50,7 +50,7 @@ expected_security_stack_mapping_json = {
         "mapping_framework_version": "21.09.21",
         "mapping_framework_version_schema": "ACCESS_DATE",
         "mapping_types": [{"name": "technique_scores", "description": ""}],
-        "groups": [{"name": "Amazon Cognito", "id": "amazon_cognito"}],
+        "groups": [{"id": "amazon_cognito", "name": "Amazon Cognito"}],
     },
     "mapping_objects": [
         {
@@ -157,9 +157,9 @@ expected_security_stack_mapping_json = {
             "capability_description": "Amazon Cognito",
             "capability_id": "Amazon Cognito",
             "score_category": "protect",
-            "score_value": "Minimal",
-            "group": "amazon_cognito",
+            "score_value": "minimal",
             "related_score": "",
+            "group": "amazon_cognito",
         },
         {
             "comments": "score comment",
@@ -169,7 +169,7 @@ expected_security_stack_mapping_json = {
             "capability_description": "Amazon Cognito",
             "capability_id": "Amazon Cognito",
             "score_category": "protect",
-            "score_value": "Partial",
+            "score_value": "partial",
             "related_score": "T1078",
             "group": "amazon_cognito",
         },
