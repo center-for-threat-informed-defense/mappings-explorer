@@ -1,5 +1,27 @@
 import uuid
 
+control_family_lookup_dict = {
+    "AC": "Access Control",
+    "AU": "Audit and Accountability",
+    "AT": "Awareness and Training",
+    "CM": "Configuration Management",
+    "CP": "Contingency Planning",
+    "IA": "Identification and Authentication",
+    "IR": "Incident Response",
+    "MA": "Maintenance",
+    "MP": "Media Protection",
+    "PS": "Personnel Security",
+    "PE": "Physical and Environmental Protection",
+    "PL": "Planning",
+    "PM": "Program Management",
+    "RA": "Risk Assessment",
+    "CA": "Security Assessment and Authorization",
+    "SC": "System and Communications Protection",
+    "SI": "System and Information Integrity",
+    "SA": "System and Services Acquisition",
+    "SR": "Supply Chain Risk Management",
+}
+
 
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
@@ -37,16 +59,16 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             )
         )[0]["id"]
 
-        # get group uuid
+        # get group id and name
         control_id = row["Control ID"]
         control_family_id = control_id[0 : control_id.index("-")]
-        if not any(group["name"] == control_family_id for group in groups):
-            group_id = control_family_id
-            groups.append({"id": group_id, "name": control_family_id})
-
-        group = list(filter(lambda group: group["name"] == control_family_id, groups))[
-            0
-        ]["id"]
+        if not any(group["id"] == control_family_id for group in groups):
+            groups.append(
+                {
+                    "id": control_family_id,
+                    "name": control_family_lookup_dict.get(control_family_id, ""),
+                }
+            )
 
         parsed_mappings["mapping_objects"].append(
             {
@@ -57,7 +79,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "capability_description": row["Control Name"],
                 "capability_id": row["Control ID"],
                 "mapping_type": mapping_type_uuid,
-                "group": group,
+                "group": control_family_id,
             }
         )
 
