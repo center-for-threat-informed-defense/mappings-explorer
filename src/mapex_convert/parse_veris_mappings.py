@@ -47,14 +47,12 @@ def configure_veris_mappings(veris_mappings, domain):
                 )
             )[0]["id"]
 
-            # get group uuid
-            if not any(group["name"] == veris_object for group in groups):
-                group_id = str(uuid.uuid4())
-                groups.append({"id": group_id, "name": veris_object})
-
-            group = list(filter(lambda group: group["name"] == veris_object, groups))[
-                0
-            ]["id"]
+            # get group id and anme
+            veris_group = veris_object[
+                : veris_object.index(".", veris_object.index(".") + 1)
+            ]
+            if not any(group["id"] == veris_group for group in groups):
+                groups.append({"id": veris_group, "name": veris_group})
 
             parsed_mappings["mapping_objects"].append(
                 {
@@ -65,7 +63,7 @@ def configure_veris_mappings(veris_mappings, domain):
                     "capability_description": description_dict[veris_object],
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_uuid,
-                    "group": group,
+                    "group": veris_group,
                 }
             )
 
