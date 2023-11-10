@@ -22,9 +22,9 @@ def configure_veris_mappings(veris_mappings, domain):
             "author": "",
             "contact": "",
             # confirm creation-data value is correct
-            "creation_date": "08/26/2021",
+            "creation_date": creation_date,
             # confirm last-update value is correct
-            "last_update": "08/26/2021",
+            "last_update": creation_date,
             "organization": "",
             "mapping_framework": "veris",
             "mapping_framework_version": mappings_framework_version,
