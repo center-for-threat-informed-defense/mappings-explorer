@@ -21,9 +21,7 @@
         "technology_domain": {
           "description": "ATT&CK Technology Domain (Enterprise, Mobile, ICS).",
           "type": "string",
-          "items": {
-            "enum": ["enterprise", "mobile", "ics"]
-          }
+          "enum": ["enterprise", "mobile", "ics"]
         },
         "creation_date": {
           "description": "Creation date of this mapping file. Format: (MM/DD/YYYY) 1/21/2021",
@@ -38,9 +36,7 @@
         "mapping_framework": {
           "description": "The group of objects being mapped to ATT&CK.",
           "type": "string",
-          "items": {
-            "enum": ["veris", "nist_800_53", "cve", "aws", "gcp", "azure"]
-          }
+          "enum": ["veris", "nist_800_53", "cve", "aws", "gcp", "azure"]
         },
         "mapping_framework_version": {
           "description": "The Mapping Framework's version.",
@@ -49,9 +45,7 @@
         "mapping_framework_version_schema": {
           "description": "How the Mapping Framework is versioned.",
           "type": "string",
-          "items": {
-            "enum": ["FRAMEWORK_VERSION", "DATE_ACCESSED"]
-          }
+          "enum": ["FRAMEWORK_VERSION", "ACCESS_DATE"]
         },
         "author": {
           "description": "The author of this mapping file.",
@@ -164,16 +158,12 @@
           "score_category": {
             "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
             "type": "string",
-            "items": {
-              "enum": ["protect", "detect", "respond"]
-            }
+            "enum": ["protect", "detect", "respond"]
           },
           "score_value": {
             "description": "The score. (e.g. Minimal, Partial, Significant)",
             "type": "string",
-            "items": {
-              "enum": ["minimal", "partial", "significant"]
-            }
+            "enum": ["minimal", "partial", "significant"]
           },
           "related_score": {
             "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",

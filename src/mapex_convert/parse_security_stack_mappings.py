@@ -78,8 +78,8 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "capability_description": capability_name,
                     "capability_id": capability_name,
                     "mapping_type": mapping_type_uuid,
-                    "score_category": technique_score["category"],
-                    "score_value": technique_score["value"],
+                    "score_category": technique_score["category"].lower(),
+                    "score_value": technique_score["value"].lower(),
                     "related_score": "",
                     "group": capability_id,
                 }
@@ -100,8 +100,8 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "capability_description": capability_name,
                                 "capability_id": capability_name,
                                 "mapping_type": mapping_type_uuid,
-                                "score_category": score["category"],
-                                "score_value": score["value"],
+                                "score_category": score["category"].lower(),
+                                "score_value": score["value"].lower(),
                                 "related_score": technique["id"],
                                 "group": capability_id,
                             }
