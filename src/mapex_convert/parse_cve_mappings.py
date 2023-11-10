@@ -67,17 +67,16 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         )
                     )[0]["id"]
 
-                    # figure out capability group
+                    # groups
                     capability_id = row["CVE ID"]
                     capability_year = capability_id[
                         capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
                     ]
-                    if not any(group["name"] == capability_year for group in groups):
-                        group_id = str(uuid.uuid4())
-                        groups.append({"id": group_id, "name": capability_year})
-                    group = list(
-                        filter(lambda group: group["name"] == capability_year, groups)
-                    )[0]["id"]
+                    # if group doesn't exist yet, create it
+                    if not any(group["id"] == capability_year for group in groups):
+                        groups.append(
+                            {"id": capability_year, "name": f"{capability_year} CVEs"}
+                        )
 
                     parsed_mappings["mapping_objects"].append(
                         {
@@ -88,7 +87,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "capability_description": "",
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type_uuid,
-                            "group": group,
+                            "group": capability_year,
                         }
                     )
 
