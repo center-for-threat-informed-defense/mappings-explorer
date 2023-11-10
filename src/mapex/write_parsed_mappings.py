@@ -245,7 +245,7 @@ def get_techniques_dict(parsed_mappings):
         mapping_types_names = []
         for mapping_type_object in parsed_mappings["metadata"]["mapping_types"]:
             mapping_types_names.append(mapping_type_object["name"])
-        score_metadata = "technique-scores" in mapping_types_names
+        score_metadata = "technique_scores" in mapping_types_names
 
         if score_metadata:
             # define metadata objects

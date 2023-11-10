@@ -161,36 +161,24 @@
             "description": "This property describes which group this mapping falls into.",
             "type": "string"
           },
-          "if": {
-            "properties": {
-              "mapping_type": {
-                "const": "technique_scores"
-              }
+          "score_category": {
+            "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
+            "type": "string",
+            "items": {
+              "enum": ["protect", "detect", "respond"]
             }
           },
-          "then": {
-            "properties": {
-              "score_category": {
-                "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
-                "type": "array",
-                "items": {
-                  "enum": ["protect", "detect", "respond"]
-                }
-              },
-              "score_value": {
-                "description": "The score. (e.g. Minimal, Partial, Significant)",
-                "type": "array",
-                "items": {
-                  "enum": ["minimal", "partial", "significant"]
-                }
-              },
-              "related_score": {
-                "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",
-                "type": "string"
-              }
+          "score_value": {
+            "description": "The score. (e.g. Minimal, Partial, Significant)",
+            "type": "string",
+            "items": {
+              "enum": ["minimal", "partial", "significant"]
             }
           },
-          "else": {}
+          "related_score": {
+            "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",
+            "type": "string"
+          }
         },
         "required": ["mapping_type", "capability_id"]
       }

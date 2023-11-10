@@ -16,7 +16,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
 
     if len(list(parsed_mappings.keys())) == 0:
         mapping_types = [
-            {"id": str(uuid.uuid4()), "name": "technique-scores", "description": ""}
+            {"id": str(uuid.uuid4()), "name": "technique_scores", "description": ""}
         ]
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
@@ -43,7 +43,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
     mapping_type_uuid = list(
         filter(
             lambda mapping_type_object: mapping_type_object["name"]
-            == "technique-scores",
+            == "technique_scores",
             parsed_mappings["metadata"]["mapping_types"],
         )
     )[0]["id"]
