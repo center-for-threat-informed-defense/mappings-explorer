@@ -37,12 +37,13 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "author": "",
             "contact": "",
             # confirm creation-data value is correct
-            "creation_date": "02/03/2021",
+            "creation_date": "01/13/2022",
             # confirm last-update value is correct
-            "last_update": "10/27/2021",
+            "last_update": "01/13/2022",
             "organization": "",
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
+            "mapping_framework_version_schema": "FRAMEWORK_VERSION",
             "mapping_types": mapping_types,
             "groups": [],
         },

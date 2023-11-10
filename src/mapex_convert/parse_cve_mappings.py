@@ -30,12 +30,13 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "author": "",
             "contact": "",
             # confirm creation-data value is correct
-            "creation_date": "02/03/2021",
+            "creation_date": "10/21/2021",
             # confirm last-update value is correct
-            "last_update": "10/27/2021",
+            "last_update": "10/21/2021",
             "organization": "",
             "mapping_framework": "cve",
-            "mapping_framework_version": "",
+            "mapping_framework_version": "21.10.21",
+            "mapping_framework_version_schema": "ACCESS_DATE",
             "mapping_types": cve_mapping_types_objects,
             "groups": [],
         },

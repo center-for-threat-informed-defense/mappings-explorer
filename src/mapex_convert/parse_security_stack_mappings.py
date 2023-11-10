@@ -3,16 +3,19 @@ import uuid
 
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
-    creation_date = data["creation date"]
-
-    month = creation_date[0 : creation_date.index("/")].rjust(2, "0")
-    day = creation_date[creation_date.index("/") + 1 : creation_date.rindex("/")].rjust(
-        2, "0"
-    )
-
-    year = creation_date[creation_date.rindex("/") + 1 :]
-    if len(year) < 4:
-        year += 1
+    platform = data["platform"].lower()
+    if platform == "aws":
+        year = "2021"
+        month = "09"
+        day = "21"
+    elif platform == "azure":
+        year = "2021"
+        month = "06"
+        day = "29"
+    elif platform == "gcp":
+        year = "2022"
+        month = "06"
+        day = "28"
 
     if len(list(parsed_mappings.keys())) == 0:
         mapping_types = [
@@ -32,8 +35,9 @@ def configure_security_stack_mappings(data, parsed_mappings):
             # confirm last-update value is correct
             "last_update": f"{month}/{day}/{year}",
             "organization": "",
-            "mapping_framework": data["platform"].lower(),
-            "mapping_framework_version": "",
+            "mapping_framework": platform,
+            "mapping_framework_version": f"{year[-2:]}.{month}.{day}",
+            "mapping_framework_version_schema": "ACCESS_DATE",
             "mapping_types": mapping_types,
             "groups": [],
         }

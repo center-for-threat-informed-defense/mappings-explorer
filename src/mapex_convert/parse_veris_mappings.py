@@ -7,7 +7,9 @@ import pandas as pd
 def configure_veris_mappings(veris_mappings, domain):
     mappings_framework_version = veris_mappings["metadata"]["veris_version"]
     description_dict = create_description_dict(mappings_framework_version)
-
+    creation_date = (
+        "08/26/2021" if mappings_framework_version == "1.3.5" else "04/06/2023"
+    )
     mapping_types = [{"id": str(uuid.uuid4()), "name": "related-to", "description": ""}]
     parsed_mappings = {
         "metadata": {
@@ -20,12 +22,13 @@ def configure_veris_mappings(veris_mappings, domain):
             "author": "",
             "contact": "",
             # confirm creation-data value is correct
-            "creation_date": "02/03/2021",
+            "creation_date": "08/26/2021",
             # confirm last-update value is correct
-            "last_update": "10/27/2021",
+            "last_update": "08/26/2021",
             "organization": "",
             "mapping_framework": "veris",
             "mapping_framework_version": mappings_framework_version,
+            "mapping_framework_version_schema": "FRAMEWORK_VERSION",
             "mapping_types": mapping_types,
             "groups": [],
         },
@@ -50,7 +53,7 @@ def configure_veris_mappings(veris_mappings, domain):
             # get group id and anme
             veris_group = veris_object[
                 : veris_object.index(".", veris_object.index(".") + 1)
-            ]
+            ].replace(" ", "_")
             if not any(group["id"] == veris_group for group in groups):
                 groups.append({"id": veris_group, "name": veris_group})
 

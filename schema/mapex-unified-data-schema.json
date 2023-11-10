@@ -46,11 +46,11 @@
           "description": "The Mapping Framework's version.",
           "type": "string"
         },
-        "mapping_framework_version_scheme": {
+        "mapping_framework_version_schema": {
           "description": "How the Mapping Framework is versioned.",
-          "type": "array",
+          "type": "string",
           "items": {
-            "enum": ["framework", "date_accessed"]
+            "enum": ["FRAMEWORK_VERSION", "DATE_ACCESSED"]
           }
         },
         "author": {
