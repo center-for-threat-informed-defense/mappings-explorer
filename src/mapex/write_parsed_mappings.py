@@ -17,10 +17,10 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
     result_yaml_file.write(parsed_mappings_yaml)
 
 
-def write_parsed_mappings_csv(parsed_mappings, filepath):
+def create_df(parsed_mappings):
     # create csv with attack objects
     mapping_objects = parsed_mappings["mapping_objects"]
-    for attack_object in mapping_objects:
+    for mapping_object in mapping_objects:
         # add metadata fields to attack object
         columns_from_metadata = [
             "organization",
@@ -33,14 +33,14 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
             "mapping_framework_version_schema",
         ]
         for column in columns_from_metadata:
-            attack_object[column] = parsed_mappings["metadata"][column]
+            mapping_object[column] = parsed_mappings["metadata"][column]
 
         # get mapping type name based on id
         mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
         mapping_type_name = list(
             filter(
                 lambda mapping_type_object: mapping_type_object["id"]
-                == attack_object["mapping_type"],
+                == mapping_object["mapping_type"],
                 mapping_types_objects,
             )
         )[0]["name"]
@@ -49,17 +49,24 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
         group_objects = parsed_mappings["metadata"]["groups"]
         group_name = list(
             filter(
-                lambda group_object: group_object["id"] == attack_object["group"],
+                lambda group_object: group_object["id"] == mapping_object["group"],
                 group_objects,
             )
         )[0]["name"]
 
         # swap mapping_type id and group id with mapping_type name and group name
-        attack_object["mapping_type"] = mapping_type_name
-        attack_object["group"] = group_name
+        mapping_object["mapping_type"] = mapping_type_name
+        mapping_object["group"] = group_name
 
-    attack_object_df = pd.DataFrame(mapping_objects)
-    attack_object_df.to_csv(f"{filepath}.csv")
+    return pd.DataFrame(mapping_objects)
+
+
+def write_parsed_mappings_csv(df, filepath):
+    df.to_csv(f"{filepath}.csv")
+
+
+def write_parsed_mappings_excel(df, filepath):
+    df.to_excel(f"{filepath}.xlsx")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
