@@ -38,7 +38,8 @@
       {% include "_set_versions.html.j2" %}
     {% endblock set_version %}
   {% endif %}
-  <section id="mapping-table" class="mapping-table">
+  {% if groups %}
+  <section id="groups-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-12">
@@ -47,7 +48,8 @@
       </div>
     </div>
   </section>
-  <section id="mapping-table" class="mapping-table">
+  {% endif %}
+  <section id="all-mapping-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-12">

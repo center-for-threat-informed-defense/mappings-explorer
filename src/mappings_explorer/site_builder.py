@@ -1,10 +1,11 @@
 import argparse
 import json
+import os
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
-from .template import PUBLIC_DIR, TEMPLATE_DIR, load_template
+from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
 class ExternalControl:
@@ -22,13 +23,38 @@ class ExternalControl:
     mappings = []
 
 
-def parse_groups(project):
-    filepath = PUBLIC_DIR / "data.json"
-    f = open(filepath, "r")
+def replace_mapping_type(mapping, type_list):
+    for type in type_list:
+        if mapping["mapping_type"] == type["id"]:
+            return type["name"]
+
+
+def parse_groups(project, attack_version, project_version):
+    print("attack: ", attack_version + " and project version " + project_version)
+    filepath = PUBLIC_DIR / "data" / project.id
+    if len(project.versions) > 1 or len(project.attackVersions) > 1:
+        if project_version == "rev4":
+            project_version = "r4"
+        if project_version == "rev5":
+            project_version = "r5"
+        files = os.listdir(filepath / attack_version / project_version)
+        full_path = filepath / attack_version / project_version / files[0]
+        f = open(full_path, "r")
+        print("files " + str(files))
+    else:
+        files = os.listdir(filepath)
+        print("files " + str(files))
+        f = open(filepath / files, "r")
     data = json.load(f)
     metadata = data["metadata"]
-    project.groups = metadata["groups"]
+    project.groups = []
+    if metadata.get("groups"):
+        project.groups = metadata["groups"]
     project.mappings = data["attack_objects"]
+    for mapping in project.mappings:
+        mapping["mapping_type"] = replace_mapping_type(
+            mapping, metadata["mapping_types"]
+        )
     for group in project.groups:
         # parse mappings such that each mapping is sorted by its group
         filtered_mappings = [
@@ -39,7 +65,6 @@ def parse_groups(project):
         # here's where I'll parse which capabilities are under a certain group
         group["controls"] = []
         group["num_controls"] = 0
-
         print(
             "found "
             + f"{len(filtered_mappings)}"
@@ -70,20 +95,13 @@ def load_projects():
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
         "12.1",
-        # "10.1",
-        # "9.0",
-        # "8.2",
+        "10.1",
+        "9.0",
+        "8.2",
     ]
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
-    parse_groups(nist)
-    # filepath = PUBLIC_DIR / "data.json"
-    # f = open(filepath, "r")
-    # data = json.load(f)
-    # metadata = data["metadata"]
-    # nist.groups = metadata["groups"]
-    # nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
@@ -261,19 +279,15 @@ def build_external_pages(projects, url_prefix):
             a = "attack-" + attack_version
             attack_dir = dir / a
             attack_dir.mkdir(parents=True, exist_ok=True)
-            if not project.versions:
-                build_external_landing(
-                    project=project,
-                    url_prefix=url_prefix,
-                    attack_version=attack_version,
-                    project_version="",
-                    project_dir=attack_dir,
-                    mappings=project.mappings,
-                )
             for project_version in project.versions:
                 p = project.id + "-" + project_version
                 project_dir = attack_dir / p
                 project_dir.mkdir(parents=True, exist_ok=True)
+                parse_groups(
+                    project=project,
+                    attack_version=attack_version,
+                    project_version=project_version,
+                )
                 build_external_landing(
                     project=project,
                     url_prefix=url_prefix,
@@ -342,6 +356,10 @@ def main():
     static_dir = PUBLIC_DIR / "static"
     print("Copying static resources: {}", static_dir)
     shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
+
+    data_dir = PUBLIC_DIR / "data"
+    print("Copying parsed mappings to output directory: {}", data_dir)
+    shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
