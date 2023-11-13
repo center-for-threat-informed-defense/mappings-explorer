@@ -30,6 +30,7 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
             "technology_domain",
             "mapping_framework",
             "mapping_framework_version",
+            "mapping_framework_version_schema",
         ]
         for column in columns_from_metadata:
             attack_object[column] = parsed_mappings["metadata"][column]
