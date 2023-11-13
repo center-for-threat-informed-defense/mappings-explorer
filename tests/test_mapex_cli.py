@@ -55,11 +55,6 @@ def test_write_mappings_to_csv(tmpdir):
     )
 
     # ASSERT
-    print("EXPECTED")
-    print(expected_csv_file.read())
-    print("")
-    print("RESULT")
-    print(csv_file.read())
     assert expected_csv_file.read() == csv_file.read()
 
 
