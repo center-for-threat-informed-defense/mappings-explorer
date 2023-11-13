@@ -24,13 +24,38 @@ class ExternalControl:
     mappings = []
 
 
-def parse_groups(project):
-    filepath = PUBLIC_DIR / "data.json"
-    f = open(filepath, "r")
+def replace_mapping_type(mapping, type_list):
+    for type in type_list:
+        if mapping["mapping_type"] == type["id"]:
+            return type["name"]
+
+
+def parse_groups(project, attack_version, project_version):
+    print("attack: ", attack_version + " and project version " + project_version)
+    filepath = PUBLIC_DIR / "data" / project.id
+    if len(project.versions) > 1 or len(project.attackVersions) > 1:
+        if project_version == "rev4":
+            project_version = "r4"
+        if project_version == "rev5":
+            project_version = "r5"
+        files = os.listdir(filepath / attack_version / project_version)
+        full_path = filepath / attack_version / project_version / files[0]
+        f = open(full_path, "r")
+        print("files " + str(files))
+    else:
+        files = os.listdir(filepath)
+        print("files " + str(files))
+        f = open(filepath / files, "r")
     data = json.load(f)
     metadata = data["metadata"]
-    project.groups = metadata["groups"]
+    project.groups = []
+    if metadata.get("groups"):
+        project.groups = metadata["groups"]
     project.mappings = data["attack_objects"]
+    for mapping in project.mappings:
+        mapping["mapping_type"] = replace_mapping_type(
+            mapping, metadata["mapping_types"]
+        )
     for group in project.groups:
         # parse mappings such that each mapping is sorted by its group
         filtered_mappings = [
@@ -41,7 +66,6 @@ def parse_groups(project):
         # here's where I'll parse which capabilities are under a certain group
         group["controls"] = []
         group["num_controls"] = 0
-
         print(
             "found "
             + f"{len(filtered_mappings)}"
@@ -89,13 +113,6 @@ def load_projects():
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
-    parse_groups(nist)
-    # filepath = PUBLIC_DIR / "data.json"
-    # f = open(filepath, "r")
-    # data = json.load(f)
-    # metadata = data["metadata"]
-    # nist.groups = metadata["groups"]
-    # nist.mappings = data["attack_objects"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
