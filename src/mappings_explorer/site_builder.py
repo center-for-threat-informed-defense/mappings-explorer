@@ -41,11 +41,10 @@ def parse_groups(project, attack_version, project_version):
         files = os.listdir(filepath / attack_version / project_version)
         full_path = filepath / attack_version / project_version / files[0]
         f = open(full_path, "r")
-        print("files " + str(files))
     else:
         files = os.listdir(filepath)
-        print("files " + str(files))
-        f = open(filepath / files, "r")
+        full_path = filepath / files[0]
+        f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
