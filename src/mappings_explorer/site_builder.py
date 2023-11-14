@@ -241,10 +241,20 @@ def build_external_landing(
         ("capability_id", "Capability ID"),
         ("capability_description", "Capability Description"),
     ]
+    if project.id == "azure" or project.id == "aws" or project.id == "gcp":
+        headers = [
+            ("attack_object_id", "ATT&CK ID"),
+            ("attack_object_name", "ATT&CK Name"),
+            ("score_category", "Category"),
+            ("score_value", "Value"),
+            ("capability_id", "Capability ID"),
+            ("capability_description", "Capability Description"),
+        ]
+
     group_headers = [
         ("id", "ID"),
         ("name", "Control Family"),
-        ("num_controls", "Number of Controls"),
+        # ("num_controls", "Number of Controls"),
         ("num_mappings", "Number of Mappings"),
     ]
 
@@ -337,7 +347,7 @@ def build_external_control(
     template = load_template("external-group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=project.label + " Landing",
+        title=project.label + " " + group_name,
         url_prefix=url_prefix,
         control=project.label,
         group_id=group_id,

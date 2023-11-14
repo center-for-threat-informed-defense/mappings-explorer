@@ -1,4 +1,4 @@
-{% macro back_button(prev_name)%}
+{% macro back_button(control, prev_name)%}
     <a class="back-btn" href="../">
         <img src="{{url_prefix}}/static/img/back-arrow.svg" alt="">
         <span>Back to {{control}} {{prev_name}}</span>

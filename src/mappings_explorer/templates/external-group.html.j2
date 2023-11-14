@@ -9,7 +9,7 @@
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            {{ macros.back_button("NIST Control Families")}}
+            {{ macros.back_button(project.label, "Landing")}}
           <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ group_name }}</span> Mappings</h1>
           {% for paragraph in description %}
             <p>
