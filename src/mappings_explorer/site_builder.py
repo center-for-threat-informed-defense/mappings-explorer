@@ -18,6 +18,7 @@ class ExternalControl:
     attackVersions = []
     attackDomain = ""
     attackDomains = []
+    validVersions = []
     tableHeaders = []
     groups = []
     mappings = []
@@ -40,11 +41,10 @@ def parse_groups(project, attack_version, project_version):
         files = os.listdir(filepath / attack_version / project_version)
         full_path = filepath / attack_version / project_version / files[0]
         f = open(full_path, "r")
-        print("files " + str(files))
     else:
         files = os.listdir(filepath)
-        print("files " + str(files))
-        f = open(filepath / files, "r")
+        full_path = filepath / files[0]
+        f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
@@ -99,6 +99,16 @@ def load_projects():
         "9.0",
         "8.2",
     ]
+    nist.validVersions = [
+        ("rev4", "8.2"),
+        ("rev5", "8.2"),
+        ("rev4", "9.0"),
+        ("rev5", "9.0"),
+        ("rev4", "10.1"),
+        ("rev5", "10.1"),
+        ("rev4", "12.1"),
+        ("rev5", "12.1"),
+    ]
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
@@ -116,9 +126,10 @@ def load_projects():
     veris.attackDomains = ["enterprise"]
     veris.attackDomain = veris.attackDomains[0]
     veris.attackVersions = [
-        "12.0",
+        "12.1",
         "9.0",
     ]
+    veris.validVersions = [("1.3.5", "9.0"), ("1.3.7", "12.1")]
     veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris.mappings = []
 
@@ -139,6 +150,7 @@ def load_projects():
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.27.21"]
     cve.attackVersions = ["9.0"]
+    cve.validVersions = [("10.27.21", "9.0")]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
@@ -158,6 +170,7 @@ def load_projects():
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
     aws.versions = ["07.22.21"]
+    aws.validVersions = [("07.22.21", "9.0")]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
@@ -177,6 +190,7 @@ def load_projects():
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
     azure.versions = ["03.04.21"]
+    azure.validVersions = [("03.04.21", "8.2")]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
@@ -196,11 +210,18 @@ def load_projects():
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["05.11.21"]
+    gcp.validVersions = [("05.11.21", "10.1")]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
-    projects = [nist]
-    # projects = [nist, veris, cve, aws, azure, gcp]
+    projects = [
+        nist,
+        cve,
+        aws,
+        azure,
+        gcp,
+        veris,
+    ]
     return projects
 
 
@@ -275,27 +296,29 @@ def build_external_pages(projects, url_prefix):
         dir = external_dir / project.id
         dir.mkdir(parents=True, exist_ok=True)
 
-        for attack_version in project.attackVersions:
+        for validCombo in project.validVersions:
+            print("creating pages for version combo ", str(validCombo))
+            attack_version = validCombo[1]
+            project_version = validCombo[0]
             a = "attack-" + attack_version
             attack_dir = dir / a
             attack_dir.mkdir(parents=True, exist_ok=True)
-            for project_version in project.versions:
-                p = project.id + "-" + project_version
-                project_dir = attack_dir / p
-                project_dir.mkdir(parents=True, exist_ok=True)
-                parse_groups(
-                    project=project,
-                    attack_version=attack_version,
-                    project_version=project_version,
-                )
-                build_external_landing(
-                    project=project,
-                    url_prefix=url_prefix,
-                    attack_version=attack_version,
-                    project_version=project_version,
-                    project_dir=project_dir,
-                    mappings=project.mappings,
-                )
+            p = project.id + "-" + project_version
+            project_dir = attack_dir / p
+            project_dir.mkdir(parents=True, exist_ok=True)
+            parse_groups(
+                project=project,
+                attack_version=attack_version,
+                project_version=project_version,
+            )
+            build_external_landing(
+                project=project,
+                url_prefix=url_prefix,
+                attack_version=attack_version,
+                project_version=project_version,
+                project_dir=project_dir,
+                mappings=project.mappings,
+            )
 
 
 def build_external_control(
