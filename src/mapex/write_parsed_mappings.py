@@ -19,8 +19,8 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
 
 def write_parsed_mappings_csv(parsed_mappings, filepath):
     # create csv with attack objects
-    attack_objects = parsed_mappings["attack_objects"]
-    for attack_object in attack_objects:
+    mapping_objects = parsed_mappings["mapping_objects"]
+    for attack_object in mapping_objects:
         # add metadata fields to attack object
         columns_from_metadata = [
             "organization",
@@ -30,14 +30,13 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
             "technology_domain",
             "mapping_framework",
             "mapping_framework_version",
+            "mapping_framework_version_schema",
         ]
         for column in columns_from_metadata:
             attack_object[column] = parsed_mappings["metadata"][column]
 
-        # get all mapping types
-        mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
-
         # get mapping type name based on id
+        mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
         mapping_type_name = list(
             filter(
                 lambda mapping_type_object: mapping_type_object["id"]
@@ -46,10 +45,20 @@ def write_parsed_mappings_csv(parsed_mappings, filepath):
             )
         )[0]["name"]
 
-        # swap mapping_type id with mapping_type name
-        attack_object["mapping_type"] = mapping_type_name
+        # get group name based on id
+        group_objects = parsed_mappings["metadata"]["groups"]
+        group_name = list(
+            filter(
+                lambda group_object: group_object["id"] == attack_object["group"],
+                group_objects,
+            )
+        )[0]["name"]
 
-    attack_object_df = pd.DataFrame(attack_objects)
+        # swap mapping_type id and group id with mapping_type name and group name
+        attack_object["mapping_type"] = mapping_type_name
+        attack_object["group"] = group_name
+
+    attack_object_df = pd.DataFrame(mapping_objects)
     attack_object_df.to_csv(f"{filepath}.csv")
 
 
@@ -77,8 +86,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         "objects": [],
     }
     technique_target_dict = load_attack_json(parsed_mappings)
-
-    for mapping in parsed_mappings["attack_objects"]:
+    for mapping in parsed_mappings["mapping_objects"]:
         # create SDO for each capability
         if not any(
             stix_object.get("name") == mapping["capability_id"]
@@ -230,7 +238,7 @@ def load_attack_json(parsed_mappings):
 
 def get_techniques_dict(parsed_mappings):
     techniques_dict = {}
-    for mapping in parsed_mappings["attack_objects"]:
+    for mapping in parsed_mappings["mapping_objects"]:
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 
@@ -238,7 +246,7 @@ def get_techniques_dict(parsed_mappings):
         mapping_types_names = []
         for mapping_type_object in parsed_mappings["metadata"]["mapping_types"]:
             mapping_types_names.append(mapping_type_object["name"])
-        score_metadata = "technique-scores" in mapping_types_names
+        score_metadata = "technique_scores" in mapping_types_names
 
         if score_metadata:
             # define metadata objects

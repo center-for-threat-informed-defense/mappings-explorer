@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import sys
+from pathlib import Path
 
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
@@ -11,53 +12,50 @@ from mapex.write_parsed_mappings import (
     write_parsed_mappings_yaml,
 )
 
-ROOT_DIR = os.path.abspath(os.curdir)
-PARSED_MAPPINGS_DIR = f"{ROOT_DIR}/mappings"
-MAPEX_DIR = f"{ROOT_DIR}/src/mapex"
+ROOT_DIR = Path.cwd()
+PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
+MAPEX_DIR = ROOT_DIR / "src" / "mapex"
 
 
 def main():
     """Main entry point for `mapex` command line."""
     args = _parse_args()
-    input_file = args.input_file
+    input_file_str = args.input_file
+    input_file_path = Path(args.input_file)
     if args.command == "export":
-        output_file = args.output_file
+        output_file = Path(args.output_file)
         file_type = args.file_type
 
         # if input filepath is a file, export file
-        if os.path.isfile(input_file):
-            export_file(input_file, output_file, file_type)
+        if os.path.isfile(input_file_path):
+            export_file(input_file_path, output_file, file_type)
 
         # if input filepath is a directory, walk through nested directories until file
         # is found. Output files will go into the output filepath given within the
         # nested directories it is in the input direcotry
-        elif os.path.isdir(input_file):
-            for dirpath, dirnames, filenames in os.walk(input_file):
-                for dir_name in dirnames:
-                    nested_dirs = dirpath.replace(input_file, "")
-                    if not os.path.exists(f"{output_file}{nested_dirs}/{dir_name}"):
-                        os.makedirs(f"{output_file}{nested_dirs}/{dir_name}")
-
+        elif os.path.isdir(input_file_path):
+            for dirpath, _, filenames in os.walk(input_file_path):
                 if len(filenames):
                     for file in filenames:
-                        input_filepath = f"{dirpath}/{file}"
-                        nested_dirs = dirpath.replace(input_file, "")
-                        output_filepath = f"{output_file}{nested_dirs}"
+                        input_filepath = Path(dirpath) / file
+                        nested_dirs = dirpath.replace(input_file_str + "/", "")
+                        output_filepath = output_file / Path(nested_dirs)
+                        output_filepath.mkdir(parents=True, exist_ok=True)
                         export_file(input_filepath, output_filepath, file_type)
         else:
             print("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
-        if os.path.isfile(input_file):
-            validation_errors = validate_file(input_file)
+        if os.path.isfile(input_file_path):
+            validation_errors = validate_file(input_file_path)
             if validation_errors is not None:
                 sys.exit(1)
 
-        elif os.path.isdir(input_file):
-            for dirpath, _, filenames in os.walk(input_file):
+        elif os.path.isdir(input_file_path):
+            for dirpath, _, filenames in os.walk(input_file_path):
                 for file in filenames:
-                    input_filepath = f"{dirpath}/{file}"
+                    input_filepath = Path(dirpath) / file
                     validation_errors = validate_file(input_filepath)
                     if validation_errors is not None:
                         sys.exit(1)
@@ -96,10 +94,8 @@ def export_file(input_file, output_file, file_type):
     parsed_mappings = read_json_file(input_file)
 
     # assign output filename and filepath
-    filepath_parts = input_file.split("/")
-    input_filename = filepath_parts[-1]
-    output_filename = input_filename[0 : input_filename.rindex(".")]
-    output_filepath = f"{output_file}/{output_filename}"
+    output_filename = input_file.stem
+    output_filepath = output_file / output_filename
 
     # export mappings
     if file_type is None:
@@ -121,6 +117,6 @@ def export_file(input_file, output_file, file_type):
 
 def validate_file(input_file):
     parsed_mappings = read_json_file(input_file)
-    schema_filepath = f"{ROOT_DIR}/schema/mapex-unified-data-schema.json"
+    schema_filepath = ROOT_DIR / "schema" / "mapex-unified-data-schema.json"
     schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
     return validate(instance=parsed_mappings, schema=schema)

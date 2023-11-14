@@ -30,24 +30,27 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "author": "",
             "contact": "",
             # confirm creation-data value is correct
-            "creation_date": "02/03/2021",
+            "creation_date": "10/21/2021",
             # confirm last-update value is correct
-            "last_update": "10/27/2021",
+            "last_update": "10/21/2021",
             "organization": "",
             "mapping_framework": "cve",
-            "mapping_framework_version": "",
+            "mapping_framework_version": "21.10.21",
+            "mapping_framework_version_schema": "ACCESS_DATE",
             "mapping_types": cve_mapping_types_objects,
+            "groups": [],
         },
-        "attack_objects": [],
+        "mapping_objects": [],
     }
 
+    groups = []
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
             if isinstance(row[mapping_type], str):
                 # split techniques and subtechniques into individual attack objects
-                mapped_attack_objects = row[mapping_type].split("; ")
+                mapped_mapping_objects = row[mapping_type].split("; ")
                 mapping_type = mapping_type.lower().replace(" ", "_")
-                for attack_object in mapped_attack_objects:
+                for attack_object in mapped_mapping_objects:
                     # technique id is not in the dictionary, set it to an empty string
                     # this can happen if the technique has been deprecated or revoked
                     # will likely change when we get concrete guidance on how to deal
@@ -56,6 +59,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         attack_object.strip(), {}
                     )
                     name = attack_details.get("name", "")
+
                     mapping_type_uuid = list(
                         filter(
                             lambda mapping_type_object: mapping_type_object["name"]
@@ -63,16 +67,30 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             cve_mapping_types_objects,
                         )
                     )[0]["id"]
-                    parsed_mappings["attack_objects"].append(
+
+                    # groups
+                    capability_id = row["CVE ID"]
+                    capability_year = capability_id[
+                        capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
+                    ]
+                    # if group doesn't exist yet, create it
+                    if not any(group["id"] == capability_year for group in groups):
+                        groups.append(
+                            {"id": capability_year, "name": f"{capability_year} CVEs"}
+                        )
+
+                    parsed_mappings["mapping_objects"].append(
                         {
                             "comments": "",
                             "attack_object_id": attack_object,
                             "attack_object_name": name,
                             "references": [],
-                            "tags": [],
                             "capability_description": "",
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type_uuid,
+                            "group": capability_year,
                         }
                     )
+
+    parsed_mappings["metadata"]["groups"] = groups
     return parsed_mappings
