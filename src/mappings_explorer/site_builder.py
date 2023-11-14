@@ -50,16 +50,14 @@ def parse_groups(project, attack_version, project_version):
     project.groups = []
     if metadata.get("groups"):
         project.groups = metadata["groups"]
-    project.mappings = data["attack_objects"]
+    project.mappings = data["mapping_objects"]
     for mapping in project.mappings:
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
     for group in project.groups:
         # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [
-            m for m in project.mappings if (m["capability_id"] == group["name"])
-        ]
+        filtered_mappings = [m for m in project.mappings if (m["group"] == group["id"])]
         group["num_mappings"] = len(filtered_mappings)
         group["mappings"] = filtered_mappings
         # here's where I'll parse which capabilities are under a certain group
