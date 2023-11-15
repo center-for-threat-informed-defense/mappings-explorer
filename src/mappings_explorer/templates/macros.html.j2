@@ -1,4 +1,4 @@
-{% macro back_button(control, prev_name)%}
+{% macro back_button(control,prev_name)%}
     <a class="back-btn" href="../">
         <img src="{{url_prefix}}/static/img/back-arrow.svg" alt="">
         <span>Back to {{control}} {{prev_name}}</span>
@@ -25,7 +25,7 @@
       <tr>
         {% for id, label in headers %}
             {% if link %}
-                <td><a href={{mapping[link]}}>{{mapping[id]}}</a></td>
+                <td><a href="{{mapping[link]}}/">{{mapping[id]}}</a></td>
             {% endif %}
             {% if not link %}
                 <td>{{mapping[id]}}</td>

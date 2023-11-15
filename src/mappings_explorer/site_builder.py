@@ -24,53 +24,6 @@ class ExternalControl:
     mappings = []
 
 
-def replace_mapping_type(mapping, type_list):
-    for type in type_list:
-        if mapping["mapping_type"] == type["id"]:
-            return type["name"]
-
-
-def parse_groups(project, attack_version, project_version):
-    print("attack: ", attack_version + " and project version " + project_version)
-    filepath = PUBLIC_DIR / "data" / project.id
-    if len(project.versions) > 1 or len(project.attackVersions) > 1:
-        if project_version == "rev4":
-            project_version = "r4"
-        if project_version == "rev5":
-            project_version = "r5"
-        files = os.listdir(filepath / attack_version / project_version)
-        full_path = filepath / attack_version / project_version / files[0]
-        f = open(full_path, "r")
-    else:
-        files = os.listdir(filepath)
-        full_path = filepath / files[0]
-        f = open(full_path, "r")
-    data = json.load(f)
-    metadata = data["metadata"]
-    project.groups = []
-    if metadata.get("groups"):
-        project.groups = metadata["groups"]
-    project.mappings = data["mapping_objects"]
-    for mapping in project.mappings:
-        mapping["mapping_type"] = replace_mapping_type(
-            mapping, metadata["mapping_types"]
-        )
-    for group in project.groups:
-        # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [m for m in project.mappings if (m["group"] == group["id"])]
-        group["num_mappings"] = len(filtered_mappings)
-        group["mappings"] = filtered_mappings
-        # here's where I'll parse which capabilities are under a certain group
-        group["controls"] = []
-        group["num_controls"] = 0
-        print(
-            "found "
-            + f"{len(filtered_mappings)}"
-            + " mappings in group: "
-            + group["name"]
-        )
-
-
 def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
@@ -221,6 +174,53 @@ def load_projects():
         veris,
     ]
     return projects
+
+
+def replace_mapping_type(mapping, type_list):
+    for type in type_list:
+        if mapping["mapping_type"] == type["id"]:
+            return type["name"]
+
+
+def parse_groups(project, attack_version, project_version):
+    print("attack: ", attack_version + " and project version " + project_version)
+    filepath = PUBLIC_DIR / "data" / project.id
+    if len(project.versions) > 1 or len(project.attackVersions) > 1:
+        if project_version == "rev4":
+            project_version = "r4"
+        if project_version == "rev5":
+            project_version = "r5"
+        files = os.listdir(filepath / attack_version / project_version)
+        full_path = filepath / attack_version / project_version / files[0]
+        f = open(full_path, "r")
+    else:
+        files = os.listdir(filepath)
+        full_path = filepath / files[0]
+        f = open(full_path, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    project.groups = []
+    if metadata.get("groups"):
+        project.groups = metadata["groups"]
+    project.mappings = data["mapping_objects"]
+    for mapping in project.mappings:
+        mapping["mapping_type"] = replace_mapping_type(
+            mapping, metadata["mapping_types"]
+        )
+    for group in project.groups:
+        # parse mappings such that each mapping is sorted by its group
+        filtered_mappings = [m for m in project.mappings if (m["group"] == group["id"])]
+        group["num_mappings"] = len(filtered_mappings)
+        group["mappings"] = filtered_mappings
+        # here's where I'll parse which capabilities are under a certain group
+        group["controls"] = []
+        group["num_controls"] = 0
+        print(
+            "found "
+            + f"{len(filtered_mappings)}"
+            + " mappings in group: "
+            + group["name"]
+        )
 
 
 def build_external_landing(
