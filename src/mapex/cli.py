@@ -93,6 +93,13 @@ def export_file(input_file, output_file, file_type):
     # read input file
     parsed_mappings = read_json_file(input_file)
 
+    # validate contents of mapping file
+    validation_errors = validate_file(input_file)
+    if validation_errors is not None:
+        sys.exit(1)
+    # additional sanity checks
+    sanity_check_mappings(parsed_mappings)
+
     # assign output filename and filepath
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
@@ -120,3 +127,81 @@ def validate_file(input_file):
     schema_filepath = ROOT_DIR / "schema" / "mapex-unified-data-schema.json"
     schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
     return validate(instance=parsed_mappings, schema=schema)
+
+
+def sanity_check_mappings(parsed_mappings):
+    # get all group ids defined and group ids used
+    mapping_objects = parsed_mappings["mapping_objects"]
+    groups_used_in_mappings = set(
+        [mapping_object["group"] for mapping_object in mapping_objects]
+    )
+
+    metadata_group_ids = [
+        group["id"] for group in parsed_mappings["metadata"]["groups"]
+    ]
+
+    # warning if there is a group in metadata that is never used
+    all_groups_used = set(metadata_group_ids).issubset(groups_used_in_mappings)
+    extra_groups = set(metadata_group_ids).difference(groups_used_in_mappings)
+    if not all_groups_used:
+        print(
+            f"""WARNING: not all groups defined in the metadata are used in
+            mappings objects. Extra group id(s): {extra_groups}"""
+        )
+        # unused groups are eliminated in exported file
+        metadata_groups = parsed_mappings["metadata"]["groups"]
+        for group in extra_groups:
+            metadata_group = list(
+                filter(
+                    lambda group_object: group_object["id"] == group, metadata_groups
+                )
+            )[0]
+            parsed_mappings["metadata"]["groups"].remove(metadata_group)
+
+    # # error if any objects reference a group that is not defined in metadata
+    all_used_groups_defined = groups_used_in_mappings.issubset(metadata_group_ids)
+    missing_groups = groups_used_in_mappings.difference(metadata_group_ids)
+    if not all_used_groups_defined:
+        print(
+            f"""ERROR: not all groups used in mappings objects are defined in the
+            metadata. Missing group id(s): {missing_groups}"""
+        )
+        sys.exit(1)
+
+    # get all mapping type ids defined and mapping type ids used
+    mapping_objects = parsed_mappings["mapping_objects"]
+    mapping_types_used_in_mappings = set(
+        [mapping_object["mapping_type"] for mapping_object in mapping_objects]
+    )
+
+    metadata_mapping_type_ids = [
+        mapping_type["id"]
+        for mapping_type in parsed_mappings["metadata"]["mapping_types"]
+    ]
+
+    # warning if there is a group in metadata that is never used
+    all_mapping_types_used = set(metadata_mapping_type_ids).issubset(
+        mapping_types_used_in_mappings
+    )
+    extra_mapping_types = set(metadata_mapping_type_ids).difference(
+        mapping_types_used_in_mappings
+    )
+    if not all_mapping_types_used:
+        print(
+            f"""WARNING: not all mapping types defined in the metadata are used in
+            mappings objects. Extra mapping type id(s): {extra_mapping_types}"""
+        )
+
+    # error if any objects reference a group that is not defined in metadata
+    all_mapping_types_defined = mapping_types_used_in_mappings.issubset(
+        metadata_mapping_type_ids
+    )
+    missing_mapping_types = mapping_types_used_in_mappings.difference(
+        metadata_mapping_type_ids
+    )
+    if not all_mapping_types_defined:
+        print(
+            f"""ERROR: not all mapping types used in mappings objects are defined in
+            the metadata. Missing mapping type id(s): {missing_mapping_types}"""
+        )
+        sys.exit(1)
