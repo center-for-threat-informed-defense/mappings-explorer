@@ -66,7 +66,7 @@ def write_parsed_mappings_csv(df, filepath):
 
 
 def write_parsed_mappings_excel(df, filepath):
-    df.to_excel(f"{filepath}.xlsx")
+    df.to_excel(f"{filepath}.xlsx", index=False)
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
