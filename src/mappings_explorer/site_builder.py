@@ -99,9 +99,9 @@ def load_projects():
     ]
     cve.attackDomains = ["enterprise"]
     cve.attackDomain = cve.attackDomains[0]
-    cve.versions = ["10.27.21"]
+    cve.versions = ["21.10.21"]
     cve.attackVersions = ["9.0"]
-    cve.validVersions = [("10.27.21", "9.0")]
+    cve.validVersions = [("21.10.21", "9.0")]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
@@ -120,8 +120,8 @@ def load_projects():
     aws.attackDomains = ["enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
-    aws.versions = ["07.22.21"]
-    aws.validVersions = [("07.22.21", "9.0")]
+    aws.versions = ["21.09.21"]
+    aws.validVersions = [("21.09.21", "9.0")]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
@@ -140,8 +140,8 @@ def load_projects():
     azure.attackDomains = ["enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
-    azure.versions = ["03.04.21"]
-    azure.validVersions = [("03.04.21", "8.2")]
+    azure.versions = ["21.06.29"]
+    azure.validVersions = [("21.06.29", "8.2")]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
@@ -160,8 +160,8 @@ def load_projects():
     gcp.attackDomains = ["enterprise"]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
-    gcp.versions = ["05.11.21"]
-    gcp.validVersions = [("05.11.21", "10.1")]
+    gcp.versions = ["22.06.28"]
+    gcp.validVersions = [("22.06.28", "10.0")]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
@@ -185,18 +185,9 @@ def replace_mapping_type(mapping, type_list):
 def parse_groups(project, attack_version, project_version):
     print("attack: ", attack_version + " and project version " + project_version)
     filepath = PUBLIC_DIR / "data" / project.id
-    if len(project.versions) > 1 or len(project.attackVersions) > 1:
-        if project_version == "rev4":
-            project_version = "r4"
-        if project_version == "rev5":
-            project_version = "r5"
-        files = os.listdir(filepath / attack_version / project_version)
-        full_path = filepath / attack_version / project_version / files[0]
-        f = open(full_path, "r")
-    else:
-        files = os.listdir(filepath)
-        full_path = filepath / files[0]
-        f = open(full_path, "r")
+    files = os.listdir(filepath / attack_version / project_version)
+    full_path = filepath / attack_version / project_version / files[0]
+    f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
