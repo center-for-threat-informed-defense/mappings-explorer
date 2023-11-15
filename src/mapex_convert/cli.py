@@ -116,7 +116,8 @@ def parse_cve_mappings():
 
     # write parsed mappings to json file
     filename_version_string = get_filename_version_string(parsed_mappings)
-    output_filepath = PARSED_MAPPINGS_DIR / "cve"
+    nested_directories = get_nested_filepath_directories(parsed_mappings)
+    output_filepath = PARSED_MAPPINGS_DIR / "cve" / nested_directories
     output_filepath.mkdir(parents=True, exist_ok=True)
     output_filepath = output_filepath / f"cve{filename_version_string}"
     write_parsed_mappings_json(parsed_mappings, output_filepath)
@@ -149,13 +150,9 @@ def parse_nist_mappings():
 
             # get output filepath
             filename_version_string = get_filename_version_string(parsed_mappings)
-            mapped_filename = f"nist-800{filename_version_string}"
-            output_filepath = (
-                PARSED_MAPPINGS_DIR
-                / "nist"
-                / attack_version
-                / mapping_framework_version
-            )
+            nested_directories = get_nested_filepath_directories(parsed_mappings)
+            mapped_filename = f"nist_800_53{filename_version_string}"
+            output_filepath = PARSED_MAPPINGS_DIR / "nist_800_53" / nested_directories
             output_filepath.mkdir(parents=True, exist_ok=True)
             write_parsed_mappings_json(
                 parsed_mappings, output_filepath / mapped_filename
@@ -182,9 +179,10 @@ def parse_veris_mappings():
             parsed_mappings = configure_veris_mappings(veris_mappings, domain)
 
             # write parsed mappings to a json file
-            output_filepath = PARSED_MAPPINGS_DIR / "veris" / veris_version
-            output_filepath.mkdir(parents=True, exist_ok=True)
             filename_version_string = get_filename_version_string(parsed_mappings)
+            nested_directories = get_nested_filepath_directories(parsed_mappings)
+            output_filepath = PARSED_MAPPINGS_DIR / "veris" / nested_directories
+            output_filepath.mkdir(parents=True, exist_ok=True)
             filename = f"veris{filename_version_string}"
             filepath = output_filepath / filename
             write_parsed_mappings_json(parsed_mappings, filepath)
@@ -207,12 +205,13 @@ def parse_security_stack_mappings():
                 configure_security_stack_mappings(data, parsed_mappings)
 
             # write parsed data to json file
+            filename_version_string = get_filename_version_string(parsed_mappings)
+            nested_directories = get_nested_filepath_directories(parsed_mappings)
             security_stack_folder_path = (
-                PARSED_MAPPINGS_DIR / "security_stack" / directory
+                PARSED_MAPPINGS_DIR / directory.lower() / nested_directories
             )
             security_stack_folder_path.mkdir(parents=True, exist_ok=True)
-            filename_version_string = get_filename_version_string(parsed_mappings)
-            filename = f"{directory}{filename_version_string}"
+            filename = f"{directory.lower()}{filename_version_string}"
             filepath = security_stack_folder_path / filename
 
             write_parsed_mappings_json(parsed_mappings, filepath)
@@ -234,3 +233,12 @@ def get_filename_version_string(parsed_mappings):
     )
     attack_version = parsed_mappings["metadata"]["attack_version"]
     return f"{mapping_framework_version_string}_attack-{attack_version}"
+
+
+def get_nested_filepath_directories(parsed_mappings):
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+    framework = parsed_mappings["metadata"]["mapping_framework"]
+    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
+    if mapping_framework_version:
+        return f"attack-{attack_version}/{framework}-{mapping_framework_version}"
+    return f"{attack_version}"
