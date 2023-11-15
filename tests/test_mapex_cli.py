@@ -1,9 +1,12 @@
 import json
 import os
 
+import pandas as pd
 from mapex.cli import read_json_file
 from mapex.write_parsed_mappings import (
+    create_df,
     write_parsed_mappings_csv,
+    write_parsed_mappings_excel,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
@@ -47,7 +50,8 @@ def test_write_mappings_to_csv(tmpdir):
     )
 
     # ACT
-    write_parsed_mappings_csv(parsed_mappings, filepath)
+    df = create_df(parsed_mappings)
+    write_parsed_mappings_csv(df, filepath)
     csv_file = open(
         f"{filepath}.csv",
         "r",
@@ -56,6 +60,28 @@ def test_write_mappings_to_csv(tmpdir):
 
     # ASSERT
     assert expected_csv_file.read() == csv_file.read()
+
+
+def test_write_mappings_excel(tmpdir):
+    # ARRANGE
+    root_dir = os.path.dirname(__file__)
+    json_filepath = os.path.join(root_dir, "files/parsed_mappings.json")
+    parsed_mappings = read_json_file(json_filepath)
+    filepath = f"{tmpdir}/parsed_mappings"
+    expected_excel_file = pd.read_excel(
+        f"{root_dir}/expected_results/expected_excel_results.xlsx"
+    )
+
+    # ACT
+    df = create_df(parsed_mappings)
+    write_parsed_mappings_excel(df, filepath)
+    excel_file = pd.read_excel(io=f"{filepath}.xlsx")
+
+    print(expected_excel_file.to_string())
+    print(excel_file.to_string())
+
+    # ASSERT
+    assert expected_excel_file.to_string() == excel_file.to_string()
 
 
 def test_write_mappings_to_navigator_layer(tmpdir):
