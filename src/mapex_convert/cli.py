@@ -151,8 +151,8 @@ def parse_nist_mappings():
             # get output filepath
             filename_version_string = get_filename_version_string(parsed_mappings)
             nested_directories = get_nested_filepath_directories(parsed_mappings)
-            mapped_filename = f"nist-800{filename_version_string}"
-            output_filepath = PARSED_MAPPINGS_DIR / "nist" / nested_directories
+            mapped_filename = f"nist_800_53{filename_version_string}"
+            output_filepath = PARSED_MAPPINGS_DIR / "nist_800_53" / nested_directories
             output_filepath.mkdir(parents=True, exist_ok=True)
             write_parsed_mappings_json(
                 parsed_mappings, output_filepath / mapped_filename
@@ -237,7 +237,8 @@ def get_filename_version_string(parsed_mappings):
 
 def get_nested_filepath_directories(parsed_mappings):
     attack_version = parsed_mappings["metadata"]["attack_version"]
+    framework = parsed_mappings["metadata"]["mapping_framework"]
     mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
     if mapping_framework_version:
-        return f"attack-{attack_version}/framework-{mapping_framework_version}"
+        return f"attack-{attack_version}/{framework}-{mapping_framework_version}"
     return f"{attack_version}"
