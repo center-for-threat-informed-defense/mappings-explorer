@@ -17,13 +17,17 @@ def configure_security_stack_mappings(data, parsed_mappings):
         month = "06"
         day = "28"
 
+    attack_version = str(data["ATT&CK version"])
+    if attack_version.find(".") == -1:
+        attack_version = attack_version + ".0"
+
     if len(list(parsed_mappings.keys())) == 0:
         mapping_types = [
             {"id": str(uuid.uuid4()), "name": "technique_scores", "description": ""}
         ]
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
-            "attack_version": str(data["ATT&CK version"]),
+            "attack_version": attack_version,
             # this is an assumption that all cve mappings are enterprise
             # this assumption is not currently true
             # need to clarify how we will handle non-enterprise cve mappings

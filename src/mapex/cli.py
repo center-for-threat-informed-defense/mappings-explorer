@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -73,7 +74,7 @@ def _parse_args():
     export_parser.add_argument("input_file")
     export_parser.add_argument("output_file")
     export_parser.add_argument(
-        "--file-type", choices=["csv", "yaml", "navigator-layer", "stix"]
+        "--file-type", choices=["csv", "yaml", "navigator-layer", "stix", "json"]
     )
 
     validate_parser = subparsers.add_parser("validate")
@@ -87,6 +88,10 @@ def read_json_file(filepath):
     with open(filepath, encoding="UTF-8") as user_file:
         mappings = user_file.read()
         return json.loads(mappings)
+
+
+def copy_parsed_mappings(input_filepath, output_filepath):
+    shutil.copyfile(input_filepath, f"{output_filepath}.json")
 
 
 def export_file(input_file, output_file, file_type):
@@ -103,6 +108,7 @@ def export_file(input_file, output_file, file_type):
         write_parsed_mappings_csv(parsed_mappings, output_filepath)
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
+        copy_parsed_mappings(input_file, output_filepath)
     elif file_type == "yaml":
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)
     elif file_type == "csv":
@@ -111,6 +117,8 @@ def export_file(input_file, output_file, file_type):
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
     elif file_type == "stix":
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
+    elif file_type == "json":
+        copy_parsed_mappings(input_file, output_filepath)
     else:
         print("Please enter a correct filetype")
 
