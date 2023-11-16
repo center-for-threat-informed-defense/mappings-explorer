@@ -14,6 +14,7 @@ from mapex.write_parsed_mappings import (
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
 )
+from termcolor import colored
 
 ROOT_DIR = Path.cwd()
 PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
@@ -101,6 +102,13 @@ def export_file(input_file, output_file, file_type):
     # read input file
     parsed_mappings = read_json_file(input_file)
 
+    # validate contents of mapping file
+    validation_errors = validate_file(input_file)
+    if validation_errors is not None:
+        sys.exit(1)
+    # additional sanity checks
+    sanity_check_mappings(parsed_mappings)
+
     # assign output filename and filepath
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
@@ -137,3 +145,95 @@ def validate_file(input_file):
     schema_filepath = ROOT_DIR / "schema" / "mapex-unified-data-schema.json"
     schema = json.loads(open(schema_filepath, "r", encoding="UTF-8").read())
     return validate(instance=parsed_mappings, schema=schema)
+
+
+def sanity_check_mappings(parsed_mappings):
+    # get all group ids defined and group ids used
+    mapping_objects = parsed_mappings["mapping_objects"]
+    groups_used_in_mappings = set(
+        [mapping_object["group"] for mapping_object in mapping_objects]
+    )
+
+    metadata_group_ids = set(
+        [group["id"] for group in parsed_mappings["metadata"]["groups"]]
+    )
+
+    # warning if there is a group in metadata that is never used
+    all_groups_used = metadata_group_ids.issubset(groups_used_in_mappings)
+    extra_groups = metadata_group_ids.difference(groups_used_in_mappings)
+    if not all_groups_used:
+        print(
+            colored(
+                f"""WARNING: The following groups are not used
+            by the mapping objects: {extra_groups}""",
+                "yellow",
+            )
+        )
+        # unused groups are eliminated in exported file
+        metadata_groups = parsed_mappings["metadata"]["groups"]
+        for group in extra_groups:
+            metadata_group = list(
+                filter(
+                    lambda group_object: group_object["id"] == group, metadata_groups
+                )
+            )[0]
+            parsed_mappings["metadata"]["groups"].remove(metadata_group)
+
+    # # error if any objects reference a group that is not defined in metadata
+    all_used_groups_defined = groups_used_in_mappings.issubset(metadata_group_ids)
+    missing_groups = groups_used_in_mappings.difference(metadata_group_ids)
+    if not all_used_groups_defined:
+        print(
+            colored(
+                f"""ERROR: The following groups are referenced by mapping
+            objects but aren't defined in 'metadata': {missing_groups}""",
+                "red",
+            )
+        )
+        sys.exit(1)
+
+    # get all mapping type ids defined and mapping type ids used
+    mapping_objects = parsed_mappings["mapping_objects"]
+    mapping_types_used_in_mappings = set(
+        [mapping_object["mapping_type"] for mapping_object in mapping_objects]
+    )
+
+    metadata_mapping_type_ids = set(
+        [
+            mapping_type["id"]
+            for mapping_type in parsed_mappings["metadata"]["mapping_types"]
+        ]
+    )
+
+    # warning if there is a group in metadata that is never used
+    all_mapping_types_used = metadata_mapping_type_ids.issubset(
+        mapping_types_used_in_mappings
+    )
+    extra_mapping_types = metadata_mapping_type_ids.difference(
+        mapping_types_used_in_mappings
+    )
+    if not all_mapping_types_used:
+        print(
+            colored(
+                f"""WARNING: The following mapping types are not used
+                    by the mapping objects: {extra_mapping_types} """,
+                "yellow",
+            )
+        )
+
+    # error if any objects reference a group that is not defined in metadata
+    all_mapping_types_defined = mapping_types_used_in_mappings.issubset(
+        metadata_mapping_type_ids
+    )
+    missing_mapping_types = mapping_types_used_in_mappings.difference(
+        metadata_mapping_type_ids
+    )
+    if not all_mapping_types_defined:
+        print(
+            colored(
+                f"""ERROR: The following mapping types are referenced by mapping
+            objects but are not defined in 'metadata': {missing_mapping_types}""",
+                "red",
+            )
+        )
+        sys.exit(1)
