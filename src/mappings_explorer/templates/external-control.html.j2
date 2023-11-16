@@ -24,10 +24,30 @@
         <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
           <h6>Download Mapping Artifacts:</h6>
           <div class="downloads">
-            <p><a href="#"><span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span> YAML</a></p>
-            <p><a href="#"><span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span> CSV</a></p>
-            <p><a href="#"><span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span> STIX Bundles</a></p>
-            <p><a href="#"><span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span> Navigator Layers</a></p>
+            <p>
+              <a href="{{url_prefix}}data/{{control}}/attack-{{attack_version}}/{{control}}-{{control_version}}/{{control}}-{{control_version}}_attack-{{attack_version}}.yaml">
+                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                YAML
+              </a>
+            </p>
+            <p>
+              <a href="{{url_prefix}}data/{{control}}/attack-{{attack_version}}/{{control}}-{{control_version}}/{{control}}-{{control_version}}_attack-{{attack_version}}.csv">
+                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                CSV
+              </a>
+            </p>
+            <p>
+              <a href="{{url_prefix}}data/{{control}}/attack-{{attack_version}}/{{control}}-{{control_version}}/{{control}}-{{control_version}}_attack-{{attack_version}}.json">
+                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                STIX Bundles
+              </a>
+            </p>
+            <p>
+              <a href="{{url_prefix}}data/{{control}}/attack-{{attack_version}}/{{control}}-{{control_version}}/{{control}}-{{control_version}}_attack-{{attack_version}}.json">
+                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                Navigator Layers
+              </a>
+            </p>
           </div>
         </div>
       </div>
