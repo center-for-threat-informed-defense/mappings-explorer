@@ -17,23 +17,25 @@ jobs:
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
-    - name: Install Poetry
-      run: curl -sSL https://install.python-poetry.org/ | python -
-    - name: Add Poetry to PATH
-      run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
-    - name: Install dependencies
-      run: poetry install
-    - name: Build Web Site
-      run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
-    - name: Upload Web Site
-      uses: actions/upload-artifact@v3
-      with:
-        name: mapex-web
-        path: output/
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org/ | python -
+      - name: Add Poetry to PATH
+        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+      - name: Install dependencies
+        run: poetry install
+      - name: Build Web Site
+        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
+      - name: Export Download Artifacts
+        run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data/
+      - name: Upload Web Site
+        uses: actions/upload-artifact@v3
+        with:
+          name: mapex-web
+          path: output/
 
   # Delete this job for public release and clear GitHub secrets:
   azure_blob:
@@ -47,7 +49,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: '19'
+          node-version: "19"
       - run: npm install -g staticrypt
       - name: Download Web Site
         uses: actions/download-artifact@v3
@@ -80,13 +82,13 @@ jobs:
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
-            script: |
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
-              })
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
+            })
 
   # Uncomment for public release:
   # github_pages:
