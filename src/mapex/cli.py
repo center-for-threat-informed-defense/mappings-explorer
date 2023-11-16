@@ -11,6 +11,7 @@ from mapex.write_parsed_mappings import (
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
 )
+from termcolor import colored
 
 ROOT_DIR = Path.cwd()
 PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
@@ -136,17 +137,20 @@ def sanity_check_mappings(parsed_mappings):
         [mapping_object["group"] for mapping_object in mapping_objects]
     )
 
-    metadata_group_ids = [
-        group["id"] for group in parsed_mappings["metadata"]["groups"]
-    ]
+    metadata_group_ids = set(
+        [group["id"] for group in parsed_mappings["metadata"]["groups"]]
+    )
 
     # warning if there is a group in metadata that is never used
-    all_groups_used = set(metadata_group_ids).issubset(groups_used_in_mappings)
-    extra_groups = set(metadata_group_ids).difference(groups_used_in_mappings)
+    all_groups_used = metadata_group_ids.issubset(groups_used_in_mappings)
+    extra_groups = metadata_group_ids.difference(groups_used_in_mappings)
     if not all_groups_used:
         print(
-            f"""WARNING: not all groups defined in the metadata are used in
-            mappings objects. Extra group id(s): {extra_groups}"""
+            colored(
+                f"""WARNING: The following groups are not used
+            by the mapping objects: {extra_groups}""",
+                "yellow",
+            )
         )
         # unused groups are eliminated in exported file
         metadata_groups = parsed_mappings["metadata"]["groups"]
@@ -163,8 +167,11 @@ def sanity_check_mappings(parsed_mappings):
     missing_groups = groups_used_in_mappings.difference(metadata_group_ids)
     if not all_used_groups_defined:
         print(
-            f"""ERROR: not all groups used in mappings objects are defined in the
-            metadata. Missing group id(s): {missing_groups}"""
+            colored(
+                f"""ERROR: The following groups are referenced by mapping
+            objects but aren't defined in 'metadata': {missing_groups}""",
+                "red",
+            )
         )
         sys.exit(1)
 
@@ -174,22 +181,27 @@ def sanity_check_mappings(parsed_mappings):
         [mapping_object["mapping_type"] for mapping_object in mapping_objects]
     )
 
-    metadata_mapping_type_ids = [
-        mapping_type["id"]
-        for mapping_type in parsed_mappings["metadata"]["mapping_types"]
-    ]
+    metadata_mapping_type_ids = set(
+        [
+            mapping_type["id"]
+            for mapping_type in parsed_mappings["metadata"]["mapping_types"]
+        ]
+    )
 
     # warning if there is a group in metadata that is never used
-    all_mapping_types_used = set(metadata_mapping_type_ids).issubset(
+    all_mapping_types_used = metadata_mapping_type_ids.issubset(
         mapping_types_used_in_mappings
     )
-    extra_mapping_types = set(metadata_mapping_type_ids).difference(
+    extra_mapping_types = metadata_mapping_type_ids.difference(
         mapping_types_used_in_mappings
     )
     if not all_mapping_types_used:
         print(
-            f"""WARNING: not all mapping types defined in the metadata are used in
-            mappings objects. Extra mapping type id(s): {extra_mapping_types}"""
+            colored(
+                f"""WARNING: The following mapping types are not used
+                    by the mapping objects: {extra_mapping_types} """,
+                "yellow",
+            )
         )
 
     # error if any objects reference a group that is not defined in metadata
@@ -201,7 +213,10 @@ def sanity_check_mappings(parsed_mappings):
     )
     if not all_mapping_types_defined:
         print(
-            f"""ERROR: not all mapping types used in mappings objects are defined in
-            the metadata. Missing mapping type id(s): {missing_mapping_types}"""
+            colored(
+                f"""ERROR: The following mapping types are referenced by mapping
+            objects but are not defined in 'metadata': {missing_mapping_types}""",
+                "red",
+            )
         )
         sys.exit(1)
