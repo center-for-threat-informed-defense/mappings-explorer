@@ -1,6 +1,5 @@
 import argparse
 import json
-import os
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
@@ -188,14 +187,14 @@ def parse_groups(project, attack_version, project_version):
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
-    files = os.listdir(
-        filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
-    )
+    # files = os.listdir(
+    #     filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
+    # )
     full_path = (
         filepath
         / ("attack-" + attack_version)
         / (project_id + "-" + project_version)
-        / files[0]
+        / (project_id + "-" + project_version + "_attack-" + attack_version + ".json")
     )
     f = open(full_path, "r")
     data = json.load(f)
@@ -264,6 +263,7 @@ def build_external_landing(
         url_prefix=url_prefix,
         control=project.label,
         description=project.description,
+        project_id=project.id,
         project_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
@@ -354,6 +354,7 @@ def build_external_control(
         group_id=group_id,
         group_name=group_name,
         project=project,
+        project_id=project.id,
         description=project.description,
         tableHeaders=project.tableHeaders,
         control_version=project_version,
