@@ -30,7 +30,7 @@ jobs:
       - name: Build Web Site
         run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
       - name: Export Download Artifacts
-        run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/data
+        run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/data'
       - name: Upload Web Site
         uses: actions/upload-artifact@v3
         with:
