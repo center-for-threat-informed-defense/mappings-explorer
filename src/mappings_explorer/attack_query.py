@@ -13,7 +13,7 @@ def load_attack_json(attack_version, attack_domain):
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
     domain = attack_domain.lower()
     attack_url = f"{BASE_URL}/{domain}-attack/{domain}-attack-{attack_version}.json"
-    response = requests.get(attack_url, verify=False)
+    response = requests.get(attack_url)
     attack_data = json.loads(response.text)
     return attack_data
 
