@@ -37,13 +37,23 @@
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}_stix.json" onClick={downloadJSON}>
+              <a
+                onclick="downloadJSON(
+                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}_stix.json',
+                  '{{project_id}}-{{project_version}}_attack-{{attack_version}}_stix.json'
+                )"
+              >
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 STIX Bundles
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}_navigator_layer.json" onClick={downloadJSON}>
+              <a
+                onclick="downloadJSON(
+                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}_navigator_layer.json',
+                  '{{project_id}}-{{project_version}}_attack-{{attack_version}}_navigator_layer.json'
+                )"
+              >
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 Navigator Layers
               </a>
@@ -78,13 +88,22 @@
       </div>
     </div>
   </section>
-{% endblock content %}
 
 <script>
-  function downloadJSON(){
-    let json = JSON.stringify(yourJSON);
-    json = [json];
-    var blobForYou = new Blob(json, { type: "application/JSON" });
-    FileSaver.SaveAs(blobForYou);
+  function downloadJSON(file, filename){
+    fetch(file)
+      .then((response) => response.json())
+      .then((json) => {
+        json = JSON.stringify(json);
+        let blob = new Blob([json], {
+          type: 'application/json'
+        });
+        let link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+      });
   }
 </script>
+
+{% endblock content %}

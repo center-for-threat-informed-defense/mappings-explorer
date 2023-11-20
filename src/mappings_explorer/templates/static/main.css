@@ -45,11 +45,13 @@ a {
   color: var(--color-link);
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer !important;
 }
 
 a:hover {
   color: #82cbed;
   text-decoration: none;
+  cursor: pointer !important;
 }
 
 h1,
@@ -840,6 +842,17 @@ div.banner {
   }
   .header-container .download-artifacts .downloads p {
     line-height: normal;
+  }
+  .header-container .download-artifacts .downloads a {
+    color: var(--color-link) !important;
+    text-decoration: none !important;
+    transition: 0.3s !important;
+    cursor: pointer !important;
+  }
+  .header-container .download-artifacts .downloads a:hover {
+    cursor: pointer !important;
+    color: #82cbed !important;
+    text-decoration: none !important;
   }
 }
 
