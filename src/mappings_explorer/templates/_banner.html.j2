@@ -1,8 +1,8 @@
-{% if attackVersion %}
     <div id="banner" class="banner">
-        <p>You're currently viewing ATT&CK Version {{attackVersion}}
-            {% if domain %} {{domain|capitalize }} {%endif%}
-            {% if version %} and {{control}} {{version}}. {%endif%}
+        <p>You're currently viewing ATT&CK Version {{attack_version}}
+            {{attack_domain}}
+            {% if versions %} and {{control}} {{control_version}}{%-endif-%}.
+            <a class="banner-link" href="../">
+            Change versions here.</a>
         </p>
     </div>
-{% endif %}

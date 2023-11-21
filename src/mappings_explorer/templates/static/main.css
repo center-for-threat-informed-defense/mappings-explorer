@@ -38,7 +38,7 @@
   --------------------------------------------------------------*/
   body {
     font-family: var(--font-default);
-    color: var(--color-default);
+    color: var(--color-text);
   }
 
   a {
@@ -255,16 +255,18 @@
     width: 100%;
     padding: 8px;
     background-color: var(--color-primary);
+    color: var(--color-text)!important;
     text-align: center;
     display: block;
     position: fixed;
     top: 84px;
+    z-index: 10 !important;
   }
   .banner p {
     margin-bottom: 0;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     .header {
       padding: 12px 0;
     }
@@ -357,7 +359,7 @@
       top: calc(100% + 30px);
       margin: 0;
       padding: 10px 0;
-      z-index: 99;
+      z-index: 10000000 !important;
       opacity: 0;
       visibility: hidden;
       background: #fff;
@@ -436,7 +438,7 @@
       max-width: 400px;
       bottom: 0;
       transition: 0.3s;
-      z-index: 9997;
+      z-index: 9997 !important;
     }
 
     .navbar ul {
@@ -447,7 +449,7 @@
       background: #212c5ee3;
       overflow-y: auto;
       transition: 0.3s;
-      z-index: 9998;
+      z-index: 9998 !important;
     }
 
     .navbar a,
@@ -510,7 +512,7 @@
       position: fixed;
       right: 15px;
       top: 15px;
-      z-index: 9999;
+      z-index: 9999 !important;
     }
 
     .mobile-nav-active {
@@ -526,7 +528,7 @@
       position: fixed;
       inset: 0;
       background:#212c5e81;
-      z-index: 9996;
+      z-index: 9996 !important;
     }
   }
 
@@ -583,6 +585,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 24px;
+    margin-top: 10px;
     font-family: var(--font-default);
   }
 
@@ -2383,3 +2386,111 @@
     float: left !important;
   }
 
+  .banner .banner-link {
+    text-decoration: underline !important;
+    color: var(--color-text);
+  }
+
+  .custom-badge {
+    height: 35px;
+    width: auto;
+    margin: 5px 5px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    float: right;
+  }
+
+  .custom-badge .white {
+    background-color: white;
+    color: var(--color-text);
+    border-radius:10px 0 0 10px ;
+    height: 100%;
+    padding: 8px 10px;
+    box-shadow: 2px 2px 4px #bdbdbd;
+  }
+  .custom-badge .purple {
+    background-color: #6241C5 !important;
+    color: white;
+    height: 100%;
+    padding: 8px 10px;
+    border-radius: 0  10px 10px 0;
+    box-shadow: 2px 2px 4px #bdbdbd;
+  }
+
+  .badge-section {
+    width: auto;
+  }
+
+  .badge-section .icon-btn {
+    background-color: white;
+    color: var(--color-text);
+    border-radius: 10px;
+    height: 35px;
+    padding: auto;
+    box-shadow: 2px 2px 4px #bdbdbd;
+    margin: 5px 0px 5px 5px;
+    border: none;
+    float: right;
+  }
+
+  .bootstrap-table th, .bootstrap-table td {
+    color: var(--color-text);
+  }
+
+  .back-btn {
+    color: var(--color-link);
+    padding-bottom: 30px !important;
+    font-family: var(--font-default);
+    padding: 8px;
+    height: max-content;
+  }
+  .back-btn img {
+    margin-right: 10px;
+    height: 18px;
+    margin-bottom: 1px;
+}
+  /* .back-btn:hover {
+    text-decoration: underline;
+  }
+.back-btn span {
+  margin: auto 0;
+
+} */
+
+.pagination > li > a
+{
+    background-color: white;
+    color: var(--color-secondary);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: var(--color-secondary) !Important;
+    border: solid 1px var(--color-secondary) !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: var(--color-secondary) !Important;
+    border: solid 1px var(--color-secondary);
+}
+
+td a, td {
+  color: var(--color-text) !important;
+}
+td a:hover {
+  text-decoration: underline;
+}

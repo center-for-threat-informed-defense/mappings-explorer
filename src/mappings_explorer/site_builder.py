@@ -1,9 +1,11 @@
 import argparse
+import json
+import os
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
-from .template import PUBLIC_DIR, TEMPLATE_DIR, load_template
+from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
 class ExternalControl:
@@ -16,7 +18,10 @@ class ExternalControl:
     attackVersions = []
     attackDomain = ""
     attackDomains = []
+    validVersions = []
     tableHeaders = []
+    groups = []
+    mappings = []
 
 
 def load_projects():
@@ -39,13 +44,22 @@ def load_projects():
          changes arise, shifting cybersecurity needs.""",
     ]
     nist.versions = ["rev5", "rev4"]
-    nist.version = nist.versions[0]
     nist.attackVersions = [
+        "12.1",
         "10.1",
         "9.0",
         "8.2",
     ]
-    nist.attackVersion = nist.attackVersions[0]
+    nist.validVersions = [
+        ("rev4", "8.2"),
+        ("rev5", "8.2"),
+        ("rev4", "9.0"),
+        ("rev5", "9.0"),
+        ("rev4", "10.1"),
+        ("rev5", "10.1"),
+        ("rev4", "12.1"),
+        ("rev5", "12.1"),
+    ]
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
@@ -60,15 +74,15 @@ def load_projects():
          to better measure and manage risk. """
     ]
     veris.versions = ["1.3.7", "1.3.5"]
-    veris.version = veris.versions[0]
     veris.attackDomains = ["enterprise"]
     veris.attackDomain = veris.attackDomains[0]
     veris.attackVersions = [
-        "12.0",
+        "12.1",
         "9.0",
     ]
-    veris.attackVersion = veris.attackVersions[0]
+    veris.validVersions = [("1.3.5", "9.0"), ("1.3.7", "12.1")]
     veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    veris.mappings = []
 
     cve = ExternalControl()
     cve.id = "cve"
@@ -85,9 +99,11 @@ def load_projects():
     ]
     cve.attackDomains = ["enterprise"]
     cve.attackDomain = cve.attackDomains[0]
+    cve.versions = ["21.10.21"]
     cve.attackVersions = ["9.0"]
-    cve.attackVersion = cve.attackVersions[0]
+    cve.validVersions = [("21.10.21", "9.0")]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    cve.mappings = []
 
     aws = ExternalControl()
     aws.id = "aws"
@@ -104,8 +120,11 @@ def load_projects():
     aws.attackDomains = ["enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
-    aws.attackVersion = aws.attackVersions[0]
+    aws.versions = ["21.09.21"]
+    aws.validVersions = [("21.09.21", "9.0")]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    aws.mappings = []
+
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
@@ -121,8 +140,11 @@ def load_projects():
     azure.attackDomains = ["enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
-    azure.attackVersion = azure.attackVersions[0]
+    azure.versions = ["21.06.29"]
+    azure.validVersions = [("21.06.29", "8.2")]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    azure.mappings = []
+
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
@@ -136,50 +158,229 @@ def load_projects():
          available on the Center’s project page."""
     ]
     gcp.attackDomains = ["enterprise"]
-    gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
+    gcp.versions = ["22.06.28"]
+    gcp.validVersions = [("22.06.28", "10.0")]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
+    gcp.mappings = []
 
-    projects = [nist, veris, cve, aws, azure, gcp]
+    projects = [
+        nist,
+        cve,
+        aws,
+        azure,
+        gcp,
+        veris,
+    ]
     return projects
 
 
-def build_external_landing(project: ExternalControl):
-    external_dir = PUBLIC_DIR / "external"
-    external_dir.mkdir(parents=True, exist_ok=True)
-    dir = external_dir / project.id
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    url_prefix = "../"
+def replace_mapping_type(mapping, type_list):
+    for type in type_list:
+        if mapping["mapping_type"] == type["id"]:
+            return type["name"]
 
+
+def parse_groups(project, attack_version, project_version):
+    print("attack: ", attack_version + " and project version " + project_version)
+    project_id = project.id
+    if project_id == "nist":
+        project_id = "nist_800_53"
+    filepath = PUBLIC_DIR / "data" / project_id
+    files = os.listdir(
+        filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
+    )
+    full_path = (
+        filepath
+        / ("attack-" + attack_version)
+        / (project_id + "-" + project_version)
+        / files[0]
+    )
+    f = open(full_path, "r")
+    data = json.load(f)
+    metadata = data["metadata"]
+    project.groups = []
+    if metadata.get("groups"):
+        project.groups = metadata["groups"]
+    project.mappings = data["mapping_objects"]
+    for mapping in project.mappings:
+        mapping["mapping_type"] = replace_mapping_type(
+            mapping, metadata["mapping_types"]
+        )
+    for group in project.groups:
+        # parse mappings such that each mapping is sorted by its group
+        filtered_mappings = [m for m in project.mappings if (m["group"] == group["id"])]
+        group["num_mappings"] = len(filtered_mappings)
+        group["mappings"] = filtered_mappings
+        # here's where I'll parse which capabilities are under a certain group
+        group["controls"] = []
+        group["num_controls"] = 0
+        print(
+            "found "
+            + f"{len(filtered_mappings)}"
+            + " mappings in group: "
+            + group["name"]
+        )
+
+
+def build_external_landing(
+    project: ExternalControl,
+    url_prefix,
+    project_version,
+    attack_version,
+    project_dir,
+    mappings,
+):
+    output_path = project_dir / "index.html"
     template = load_template("external-control.html.j2")
+
+    headers = [
+        ("attack_object_id", "ATT&CK ID"),
+        ("attack_object_name", "ATT&CK Name"),
+        ("mapping_type", "Mapping Type"),
+        ("capability_id", "Capability ID"),
+        ("capability_description", "Capability Description"),
+    ]
+    if project.id == "azure" or project.id == "aws" or project.id == "gcp":
+        headers = [
+            ("attack_object_id", "ATT&CK ID"),
+            ("attack_object_name", "ATT&CK Name"),
+            ("score_category", "Category"),
+            ("score_value", "Value"),
+            ("capability_id", "Capability ID"),
+            ("capability_description", "Capability Description"),
+        ]
+
+    group_headers = [
+        ("id", "ID"),
+        ("name", "Control Family"),
+        # ("num_controls", "Number of Controls"),
+        ("num_mappings", "Number of Mappings"),
+    ]
+
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
         description=project.description,
-        version=project.version,
+        project_version=project_version,
         versions=project.versions,
-        attackVersion=project.attackVersion,
+        attack_version=attack_version,
         attackVersions=project.attackVersions,
         domain=project.attackDomain,
         domains=project.attackDomains,
         tableHeaders=project.tableHeaders,
+        mappings=mappings,
+        headers=headers,
+        group_headers=group_headers,
+        groups=project.groups,
     )
     stream.dump(str(output_path))
-    print("Created " + project.id + " landing")
+    print(
+        "Created "
+        + project.id
+        + " landing: ATT&CK Version "
+        + attack_version
+        + ", control version "
+        + project_version
+    )
+    for group in project.groups:
+        build_external_control(
+            project=project,
+            group=group,
+            url_prefix=url_prefix,
+            parent_dir=project_dir,
+            project_version=project_version,
+            attack_version=attack_version,
+            mappings=mappings,
+            headers=headers,
+        )
+
+
+def build_external_pages(projects, url_prefix):
+    for project in projects:
+        external_dir = PUBLIC_DIR / "external"
+        external_dir.mkdir(parents=True, exist_ok=True)
+        dir = external_dir / project.id
+        dir.mkdir(parents=True, exist_ok=True)
+
+        for validCombo in project.validVersions:
+            print("creating pages for version combo ", str(validCombo))
+            attack_version = validCombo[1]
+            project_version = validCombo[0]
+            a = "attack-" + attack_version
+            attack_dir = dir / a
+            attack_dir.mkdir(parents=True, exist_ok=True)
+            p = project.id + "-" + project_version
+            project_dir = attack_dir / p
+            project_dir.mkdir(parents=True, exist_ok=True)
+            parse_groups(
+                project=project,
+                attack_version=attack_version,
+                project_version=project_version,
+            )
+            build_external_landing(
+                project=project,
+                url_prefix=url_prefix,
+                attack_version=attack_version,
+                project_version=project_version,
+                project_dir=project_dir,
+                mappings=project.mappings,
+            )
+
+
+def build_external_control(
+    project: ExternalControl,
+    group,
+    url_prefix,
+    parent_dir,
+    project_version,
+    attack_version,
+    mappings,
+    headers,
+):
+    group_id = group["id"]
+    group_name = group["name"]
+    dir = parent_dir / group_id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("external-group.html.j2")
+    prev_page = parent_dir
+    stream = template.stream(
+        title=project.label + " " + group_name,
+        url_prefix=url_prefix,
+        control=project.label,
+        group_id=group_id,
+        group_name=group_name,
+        project=project,
+        description=project.description,
+        tableHeaders=project.tableHeaders,
+        control_version=project_version,
+        versions=project.versions,
+        attack_version=attack_version,
+        attackVersions=project.attackVersions,
+        domain=project.attackDomain,
+        domains=project.attackDomains,
+        prev_page=prev_page,
+        mappings=group["mappings"],
+        headers=headers,
+    )
+    stream.dump(str(output_path))
+    print("          Created group page " + group_name)
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-e", "--env", default="")
+    parser.add_argument(
+        "--url-prefix",
+        default="http://[::]:8000/",
+        help="A prefix to apply to generated (default: /public)",
+    )
     args = parser.parse_args()
 
-    url = args.env
-    print("url ", url)
-
-    url_prefix = "./"
+    url_prefix = args.url_prefix
+    print("url prefix: ", url_prefix)
     templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
     templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
@@ -188,6 +389,10 @@ def main():
     print("Copying static resources: {}", static_dir)
     shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
 
+    data_dir = PUBLIC_DIR / "data"
+    print("Copying parsed mappings to output directory: {}", data_dir)
+    shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
+
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
@@ -195,7 +400,6 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
-    url_prefix = ""
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -207,8 +411,7 @@ def main():
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    for project in projects:
-        build_external_landing(project=project)
+    build_external_pages(projects=projects, url_prefix=url_prefix)
 
 
 if __name__ == "__main__":

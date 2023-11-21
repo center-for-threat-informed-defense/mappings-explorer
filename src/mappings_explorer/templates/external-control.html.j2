@@ -1,3 +1,4 @@
+{% import "./macros.html.j2" as macros %}
 {% extends "base.html.j2" %}
 {% block content %}
 {#{% include "_banner.html.j2" %}#}
@@ -37,14 +38,23 @@
       {% include "_set_versions.html.j2" %}
     {% endblock set_version %}
   {% endif %}
-  <section id="mapping-table" class="mapping-table">
+  {% if groups %}
+  <section id="groups-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-12">
-          <h2>CONTROL FAMILIES</h2>
-          {% block table %}
-            {% include "_table.html.j2"%}
-          {% endblock table %}
+          <h2>Groups</h2>
+            {{ macros.table(group_headers, groups, "id") }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <section id="all-mapping-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>All Mappings</h2>
+            {{ macros.table(headers, mappings) }}
       </div>
     </div>
   </section>
