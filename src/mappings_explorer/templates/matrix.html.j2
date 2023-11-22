@@ -1,0 +1,442 @@
+{% extends "base.html.j2" %} {% block content %}
+<div id="matrix">
+  <Matrix
+    :url_prefix="'{{url_prefix}}'"
+    :all_attack_versions="{{all_attack_versions}}"
+    :all_attack_domains="{{attack_domains}}"
+  ></Matrix>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  const Matrix = {
+    template: `
+      <div>
+        <section id="header-container" class="matrix-header">
+          <div class="container" data-aos="fade-up">
+            <div class="row justify-content-left">
+              <div class="col-lg-8">
+                <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container" data-aos="fade-up">
+          <div class="row justify-content-left">
+            <form class="col-12 version-select">
+              <h2>CHOOSE YOUR VERSIONS</h2>
+              <div class="row col-12" style="display: flex;">
+                <div class="col-md-2 col-sm-4 form-group">
+                  <p>Att&ck Version</p>
+                  <select class="form-control" name="attack-versions" id="versions" v-model="selectedAttackVersion" @change="getAttackObjectDict">
+                    <option v-for="attackVersion in attackVersions" :value="attackVersion">
+                      [[ attackVersion ]]
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-4 form-group">
+                  <p>ATT&CK Domain</p>
+                  <select class="form-control" name="domains" id="domains" v-model="selectedDomain" @change="getAttackObjectDict">
+                    <option v-for="domain in attackDomains" :value="domain">
+                      [[ domain ]]
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-4 form-group" style="margin-top: 36px;">
+                  <button class="btn-pill" style="border: none;">SEE MAPPINGS </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <section id="matrix-table">
+          <div class="container" data-aos="fade-up">
+            <div class="row justify-content-left">
+              <div class="col-12">
+                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MATRIX</h2>
+                <div class="matrix-table">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button @click="allTechniquesOpen = true" class="toggle-subtechniques-btn">Show All Sub-Techniques</button>
+                      <button @click="allTechniquesOpen = false" class="toggle-subtechniques-btn">Hide All Sub-Techniques</button>
+                    </div>
+                  </div>
+                  <div class="overflow-scroll matrix-container">
+                    <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
+                      <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
+                        <div class="tactic-header">
+                          <a href="/" class="tactic-name">[[  tactic.name ]]</a>
+                          <br/>
+                          ([[ tactic.id ]])
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row row--no-x-margin row--no-padding flex-nowrap">
+                      <div class="col-md-1 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
+                        <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
+                          <div class="row row--no-x-margin row--no-padding">
+                            <div
+                              v-if="techniqueHovered.id === technique.id && techniqueHovered.parent === technique.parent && technique.score > 0"
+                              class="technique-tooltip align-self-center align-content-start"
+                            >
+                              <span><b>[[ technique.id ]]</b></span>
+                              [[ " " + technique.name ]]
+                              <hr class="header-row"/>
+                              <span>Mapped To:</span>
+                              <br/>
+                              <span>
+                                [[ getCapabilitiesMappedString(technique.capabilities_mapped) ]]
+                              </span>
+                            </div>
+                            <div
+                              :class="{
+                                'col-2 align-items-center col--less-x-padding d-flex': true,
+                                'subtechnique-toggle-col' : technique.subtechniques.length,
+                                'subtechnique-toggle-col--no-icon': !technique.subtechniques.length
+                              }"
+                            >
+                              <img
+                                v-if="technique.subtechniques.length && !technique.open"
+                                @click="handleClick(technique)"
+                                class="icon"
+                                src="{{url_prefix}}static/img/chevron-right.svg"
+                                alt=""
+                              />
+                              <img
+                                v-else-if="technique.subtechniques.length && technique.open"
+                                @click="handleClick(technique)"
+                                class="icon"
+                                src="{{url_prefix}}static/img/chevron-down.svg"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="col-10 col--no-x-padding"
+                              @mouseenter="techniqueHovered = technique"
+                              @mouseleave="techniqueHovered = ''"
+                            >
+                              <div
+                                class="technique-box"
+                                :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
+                              >
+                                <a href="/" @mouseenter="techniqueHovered = ''" @mouseleave="techniqueHovered = technique">
+                                  [[  technique.name  ]]
+                                </a>
+                                <br/>
+                                ( [[ technique.id ]] )
+                                <span class="subtechnique-amount" class="technique-score" v-if="technique.subtechniques.length">
+                                  ([[ technique.subtechniques.length ]])
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row row--no-x-margin row--no-padding">
+                            <div class="col-2 col--no-x-padding subtechniques-col">
+                              <svg fill="grey" v-if="technique.open" width="12px" height="20px"><path d="M0 0H12V12Z"/></svg>
+                            </div>
+                            <div
+                              class="col-10
+                              col--no-x-padding"
+                            >
+                              <div
+                                v-if="technique.open"
+                                v-for="subtechnique in technique.subtechniques"
+                                @mouseenter="techniqueHovered = subtechnique"
+                                @mouseleave="techniqueHovered = ''"
+                              >
+                                <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
+                                  <a href="/" @mouseenter="techniqueHovered = ''" @mouseleave="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                  <br/>
+                                  ( [[ subtechnique.id ]] )
+                                </div>
+                                <div
+                                  v-if="techniqueHovered.id === subtechnique.id && subtechnique.score > 0"
+                                  class="technique-tooltip align-self-center align-content-start"
+                                >
+                                  <span><b>[[ subtechnique.id ]]</b></span>
+                                  [[ " " + subtechnique.name ]]
+                                  <hr class="header-row"/>
+                                  <span>Mapped To:</span>
+                                  <br/>
+                                  <span>
+                                    [[ getCapabilitiesMappedString(subtechnique.capabilities_mapped) ]]
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  `,
+    delimiters: ["[[", "]]"],
+    data() {
+      return {
+        allTechniquesOpen: false,
+        tactics: [],
+        selectedTechnique: {},
+        selectedAttackVersion: "9.0",
+        attackObjectDict: {},
+        techniqueHovered: '',
+        selectedDomain: 'Enterprise',
+      };
+    },
+    props: {
+      url_prefix: String,
+      all_attack_versions: Array,
+      all_attack_domains: Object
+    },
+    computed: {
+      attackDomains(){
+        if(this.all_attack_domains){
+          return Object.keys(this.all_attack_domains).filter(domain => {
+            return this.all_attack_domains[domain].includes(this.selectedAttackVersion);
+          })
+        }
+        return []
+      },
+      attackVersions(){
+        if(this.all_attack_versions) {
+          return this.all_attack_domains[this.selectedDomain];
+        }
+      }
+    },
+    methods: {
+      getCapabilitiesMappedString(capabilitiesMapped){
+        return capabilitiesMapped.length > 10 ? capabilitiesMapped.slice(0,10).join(", ").concat("...") : capabilitiesMapped.join(", ")
+      },
+      getAttackObjectDict() {
+        attack_object_file = `${this.url_prefix}static/matrices/${this.selectedDomain.toLowerCase()}/${this.selectedAttackVersion}/${this.selectedDomain.toLowerCase()}-${this.selectedAttackVersion}_matrix_data.json`;
+        fetch(attack_object_file)
+          .then((response) => response.json())
+          .then((json) => {
+            this.attackObjectDict = json;
+            this.getTactics();
+          });
+      },
+      getTactics() {
+        let tactics = Object.values(this.attackObjectDict).filter((value) => {
+          return value.type === "tactic";
+        });
+        tactics = tactics.map((tactic) => {
+          tactic.techniques = Object.values(this.attackObjectDict).filter(
+            (value) => {
+              return (
+                value.type === "technique" &&
+                value.tactics.includes(tactic.short_name)
+              );
+            }
+          );
+          tactic.techniques = tactic.techniques.map((technique) => {
+            technique.open = false;
+            technique.parent = tactic.id;
+            technique.subtechniques = Object.values(
+              this.attackObjectDict
+            ).filter((value) => {
+              return (
+                value.type === "subtechnique" &&
+                value.technique === technique.id
+              );
+            });
+            technique.subtechniques.map((subtechnique) => {
+              subtechnique.parent = technique.id;
+              return { ...subtechnique };
+            });
+            return { ...technique };
+          });
+          return { ...tactic };
+        });
+        this.tactics = tactics;
+      },
+      handleClick(technique) {
+        technique.open = !technique.open;
+      },
+    },
+    watch: {
+      allTechniquesOpen(value) {
+        this.tactics.forEach((tactic) =>
+          tactic.techniques.forEach((technique) => {
+            technique.open = value;
+          })
+        );
+      },
+    },
+    mounted() {
+      this.getAttackObjectDict();
+    },
+  };
+
+  const app = new Vue({
+    el: "#matrix",
+    components: {
+      Matrix: Matrix,
+    },
+  });
+</script>
+
+<style>
+  #matrix {
+    margin-top: 100px;
+    margin-bottom: 20px;
+  }
+  #matrix h1 {
+    text-align: left !important;
+  }
+  #matrix div {
+    font-size: 12px !important;
+    overflow-wrap: break-word;
+  }
+  #matrix .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fc));
+  }
+  .matrix-header {
+    padding-top: 100px;
+  }
+  .tactic-row {
+    color: #212C5E !important;
+    margin-top: 5px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+  .tactic-box {
+    border-bottom: 1px solid #212C5E;
+  }
+  .row--no-x-margin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .row--no-padding {
+    padding: 0 !important;
+  }
+  .col--less-x-padding {
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+  }
+  .col--no-x-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .subtechnique-toggle-col {
+    padding: 0 !important;
+    background-color: grey !important;
+  }
+  .subtechnique-toggle-col--no-icon {
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+  .tactic-name {
+    font-weight: bold;
+    font-size: 14px !important;
+  }
+  .tactic-header {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .technique-box {
+    border-top: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+    padding: 5px;
+    color: black !important;
+  }
+  .subtechnique-box {
+    border-top: 0.5px solid lightgray;
+    border-bottom: 0.5px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid grey;
+    padding: 5px;
+    color: black !important;
+  }
+  .technique-box a {
+    color: black !important;
+  }
+  .technique-box a:hover {
+    color: #212C5E !important;
+    text-decoration: underline;
+  }
+  .subtechnique-box a {
+    color: black !important;
+  }
+   .subtechnique-box a:hover {
+    color: #212C5E !important;
+    text-decoration: underline;
+  }
+  .subtechnique-toggle {
+    background-color: grey !important;
+    height: 100% !important;
+  }
+  .technique-score {
+    font-size: 10px !important;
+  }
+  .matrix-header {
+    text-align: center;
+  }
+  .icon {
+    cursor: pointer;
+  }
+  .toggle-subtechniques-btn {
+    background-color: transparent;
+    color: #212C5E;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 6px;
+    border: 1px solid #212C5E;
+    font-size: 14px;
+    transition: 0.5s;
+    margin-right: 5px;
+  }
+  .toggle-subtechniques-btn:hover {
+    color: #005B94;
+    border: 1px solid #005B94;
+  }
+  .matrix-table {
+    background-color: white;
+    padding:40px;
+    box-shadow: 2px 2px 4px #bdbdbd;
+    border-radius: 5px;
+  }
+  .subtechnique-toggle {
+    background-color: grey;
+  }
+  .technique-tooltip {
+    position: absolute;
+    border-radius: 3px;
+    background-color: lightblue;
+    color: #212C5E;
+    padding: 8px;
+    width: 120px !important;
+    margin-left: -0.2%;
+    opacity: 0.9;
+    text-overflow: ellipsis !important;
+    box-shadow: 2px 2px 10px #ababab;
+  }
+  .header-row {
+    padding: 0 !important;
+    margin: 2px !important;
+    color: #212C5E;
+    opacity: 1;
+  }
+  .subtechniques-col {
+    border-right: 4px solid grey;
+  }
+  .matrix-container {
+    position: relative;
+  }
+
+</style>
+{% endblock content %}
