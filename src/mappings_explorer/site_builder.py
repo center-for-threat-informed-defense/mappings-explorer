@@ -305,7 +305,7 @@ def build_external_pages(projects, url_prefix):
         dir = external_dir / project.id
         dir.mkdir(parents=True, exist_ok=True)
 
-        for validCombo in project.validVersions:
+        for index, validCombo in enumerate(project.validVersions):
             print("creating pages for version combo ", str(validCombo))
             attack_version = validCombo[1]
             project_version = validCombo[0]
@@ -328,6 +328,13 @@ def build_external_pages(projects, url_prefix):
                 project_dir=project_dir,
                 mappings=project.mappings,
             )
+            # for the most up to date combo, copy the pages higher up the directory
+            if index == len(project.validVersions) - 1:
+                print(
+                    "copying the most recent version pair into main directory ",
+                    str(validCombo),
+                )
+                shutil.copytree(project_dir, dir, dirs_exist_ok=True)
 
 
 def build_external_control(
