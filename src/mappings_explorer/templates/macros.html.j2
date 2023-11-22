@@ -1,0 +1,56 @@
+{% macro back_button(control,prev_name, url_prefix)%}
+    <a class="back-btn" href="../">
+        <img src="{{url_prefix}}static/img/back-arrow.svg" alt="">
+        <span>Back to {{control}} {{prev_name}}</span>
+    </a>
+{% endmacro %}
+
+{% macro table(headers, mappings, link) %}
+<div class="table-responsive table-outer">
+<div class="form-outline mb-4">
+  <table class="table table-borderless table-hover table-responsive"
+    data-toggle="table"
+    data-search="true"
+    data-pagination="true"
+    data-show-multi-sort="true">
+  <thead>
+    <tr>
+        {% for id, label in headers %}
+            <th id={{id}} data-field={{id}} data-sortable="true">{{label}}</th>
+        {% endfor %}
+      </tr>
+  </thead>
+  <tbody>
+    {% for mapping in mappings %}
+      <tr>
+        {% for id, label in headers %}
+            {% if link %}
+                <td><a href="{{mapping[link]}}/">{{mapping[id]}}</a></td>
+            {% endif %}
+            {% if not link %}
+                <td>{{mapping[id]}}</td>
+            {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<script>
+  function customSort(sortName, sortOrder, data) {
+    var order = sortOrder === 'desc' ? -1 : 1
+    data.sort(function (a, b) {
+      var aa = +((a[sortName] + '').replace(/[^\d]/g, ''))
+      var bb = +((b[sortName] + '').replace(/[^\d]/g, ''))
+      if (aa < bb) {
+        return order * -1
+      }
+      if (aa > bb) {
+        return order
+      }
+      return 0
+    })
+  }
+</script>
+</div>
+</div>
+{% endmacro %}

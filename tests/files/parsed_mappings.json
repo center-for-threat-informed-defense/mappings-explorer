@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "mapping_version": "1",
+    "mapping_version": "",
     "attack_version": "13.0",
     "technology_domain": "enterprise",
     "author": "",
@@ -9,29 +9,31 @@
     "last_update": "10/27/2021",
     "organization": "",
     "mapping_framework": "nist_800_53",
-    "mapping_framework_version": "",
-    "mappings_types": ["mitigates"]
+    "mapping_framework_version": "1",
+    "mapping_types": [{ "name": "mitigates", "description": "", "id": "1234" }],
+    "groups": [{ "name": "group", "id": "5678" }],
+    "mapping_framework_version_schema": "FRAMEWORK_VERSION"
   },
-  "attack_objects": [
+  "mapping_objects": [
     {
       "comments": "",
       "attack_object_id": "T1137",
       "attack_object_name": "Office Application Startup",
       "references": [],
-      "tags": [],
-      "capability_description": "",
+      "capability_description": "Concurrent Session Control",
       "capability_id": "AC-10",
-      "mapping_type": "mitigates"
+      "mapping_type": "1234",
+      "group": "5678"
     },
     {
       "comments": "",
       "attack_object_id": "T1137.002",
       "attack_object_name": "Office Test",
       "references": [],
-      "tags": [],
-      "capability_description": "",
+      "capability_description": "Concurrent Session Control",
       "capability_id": "AC-10",
-      "mapping_type": "mitigates"
+      "mapping_type": "1234",
+      "group": "5678"
     }
   ]
 }
