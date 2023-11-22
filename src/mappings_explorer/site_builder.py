@@ -4,6 +4,8 @@ import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
+from mappings_explorer.attack_query import get_attack_data
+
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
@@ -385,6 +387,22 @@ def build_external_control(
     )
     stream.dump(str(output_path))
     print("          Created group page " + group_name)
+
+
+def build_matrix(url_prefix):
+    external_dir = PUBLIC_DIR / "external" / "matrix"
+    external_dir.mkdir(parents=True, exist_ok=True)
+    output_path = external_dir / "index.html"
+
+    template = load_template("matrix.html.j2")
+    attack_object_dict = get_attack_data("12.1", "enterprise")
+    stream = template.stream(
+        title="ATT&CK Matrix",
+        url_prefix=url_prefix,
+        attack_object_dict=attack_object_dict,
+    )
+    stream.dump(str(output_path))
+    print("Created matrix")
 
 
 def main():
