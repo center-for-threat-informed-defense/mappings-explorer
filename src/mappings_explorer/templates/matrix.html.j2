@@ -1,0 +1,176 @@
+{% extends "base.html.j2" %} {% block content %}
+<div id="matrix">
+  <Matrix :attack_object_dict="{{attack_object_dict}}"></Matrix>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  const Matrix = {
+    template: `
+      <div>
+        <h1 class="matrix-header">ATT&CK Matrix View</h1>
+        <button
+          @click="allTechniquesOpen = !allTechniquesOpen"
+          class="toggle-subtechniques-btn"
+        >
+          [[ allTechniquesOpen ? 'Hide all subtechniques' : 'Show all subtechniques' ]]
+        </button>
+        <div class="container">
+          <div v-for="tactic in tactics">
+            <div class="tactic-row">
+              <a href="/" class="tactic-name">[[  tactic.name ]]</a>
+              <div>[[ tactic.techniques.length ]] techniques</div>
+            </div>
+            <div v-for="technique in tactic.techniques">
+              <div class="technique-box">
+                <a href="/">[[  technique.name  ]]</a>
+                <img
+                  v-if="technique.subtechniques.length && !technique.open"
+                  @click="handleClick(technique)"
+                  class="chevron-icon"
+                  src="{{url_prefix}}static/img/chevron-right.svg"
+                  alt=""
+                />
+                <img
+                  v-else-if="technique.subtechniques.length && technique.open"
+                  @click="handleClick(technique)"
+                  class="chevron-icon"
+                  src="{{url_prefix}}static/img/chevron-down.svg"
+                  alt=""
+                />
+              </div>
+              <div v-if="technique.open" class="subtechnique-box" v-for="subtechnique in technique.subtechniques">
+                <a href="/">[[ subtechnique.name ]]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  `,
+    delimiters: ["[[", "]]"],
+    props: {
+      attack_object_dict: Array,
+    },
+    data() {
+      return {
+        allTechniquesOpen: false,
+        tactics: [],
+      };
+    },
+    methods: {
+      getTactics() {
+        let tactics = this.attack_object_dict.filter(
+          (attack_object) => attack_object.type === "tactic"
+        );
+        tactics = tactics.map((tactic) => {
+          tactic.techniques = this.attack_object_dict.filter(
+            (attack_object) => {
+              return (
+                attack_object.type === "technique" &&
+                attack_object.tactics.includes(tactic.short_name)
+              );
+            }
+          );
+          tactic.techniques = tactic.techniques.map((technique) => {
+            technique.open = false;
+            technique.subtechniques = this.attack_object_dict.filter(
+              (attack_object) => {
+                return (
+                  attack_object.type === "subtechnique" &&
+                  attack_object.technique === technique.id
+                );
+              }
+            );
+            return { ...technique };
+          });
+          return { ...tactic };
+        });
+        this.tactics = tactics;
+      },
+      handleClick(technique) {
+        technique.open = !technique.open;
+      },
+    },
+    watch: {
+      allTechniquesOpen(value) {
+        this.tactics.forEach((tactic) =>
+          tactic.techniques.forEach((technique) => {
+            technique.open = value;
+          })
+        );
+      },
+    },
+    mounted() {
+      this.getTactics();
+    },
+  };
+
+  const app = new Vue({
+    el: "#matrix",
+    components: {
+      Matrix: Matrix,
+    },
+  });
+</script>
+
+<style>
+  #matrix {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  #matrix div {
+    font-size: 12px !important;
+    overflow-wrap: break-word;
+  }
+  #matrix .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(20px, 1fc));
+  }
+  .tactic-row {
+    border-bottom: 1px solid black;
+    padding: 0.25rem !important;
+    min-height: 70px !important;
+    text-align: center;
+  }
+  .tactic-name {
+    font-weight: bold;
+    font-size: 14px !important;
+  }
+  .technique-box {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 0.25rem;
+  }
+  .subtechnique-box {
+    border-left: 5px solid rgb(194, 194, 194);
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 0.25rem;
+  }
+  .matrix-header {
+    text-align: center;
+  }
+  .chevron-icon {
+    cursor: pointer;
+  }
+  .toggle-subtechniques-btn {
+    background-color: #005b94;
+    color: white;
+    border-radius: 50px;
+    padding: 5px;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 6px 15px;
+    transition: 0.5s;
+  }
+  .toggle-subtechniques-btn:hover {
+    background: rgba(86, 184, 230, 0.8);
+  }
+</style>
+{% endblock content %}
