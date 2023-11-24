@@ -187,9 +187,6 @@ def parse_groups(project, attack_version, project_version):
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
-    # files = os.listdir(
-    #     filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
-    # )
     full_path = (
         filepath
         / ("attack-" + attack_version)
