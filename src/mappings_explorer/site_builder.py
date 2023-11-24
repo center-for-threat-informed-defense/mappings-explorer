@@ -410,10 +410,7 @@ def main():
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    template.stream(title="External Mappings Home").dump(
-        "./output/external-landing.html"
-    )
-    print("Created external mappings home")
+    build_external_pages(projects=projects, url_prefix=url_prefix)
 
 
 if __name__ == "__main__":
