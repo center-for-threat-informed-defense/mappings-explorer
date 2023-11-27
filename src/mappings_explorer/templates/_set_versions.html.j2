@@ -57,14 +57,13 @@
     event.preventDefault()
     let newControl = document.getElementById("control_version").value
     let newAttack = document.getElementById("attack_version").value
-    console.log("original params", params)
-    if (params.length > 2) {
+    if (params.length > 3) {
       params[params.length-1] = params[params.length-3] + "-" + newControl
       params[params.length-2] = "attack-" + newAttack
     }
     else {
       params.push("attack-" + newAttack)
-      params.push(params[1] + "-" + newControl)
+      params.push(params[params.length-1] + "-" + newControl)
     }
     let newUrl = params.join("/")
     window.location = "/" + newUrl + "/"
