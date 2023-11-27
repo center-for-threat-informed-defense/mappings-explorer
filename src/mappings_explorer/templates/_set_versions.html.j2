@@ -63,7 +63,7 @@
     }
     else {
       params.push("attack-" + newAttack)
-      params.push(params[params.length-1] + "-" + newControl)
+      params.push(params[params.length-2] + "-" + newControl)
     }
     let newUrl = params.join("/")
     window.location = "/" + newUrl + "/"
