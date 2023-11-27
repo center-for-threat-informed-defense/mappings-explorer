@@ -183,7 +183,6 @@ def replace_mapping_type(mapping, type_list):
 
 
 def parse_groups(project, attack_version, project_version):
-    print("attack: ", attack_version + " and project version " + project_version)
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -217,7 +216,7 @@ def parse_groups(project, attack_version, project_version):
         group["controls"] = []
         group["num_controls"] = 0
         print(
-            "found "
+            "     found "
             + f"{len(filtered_mappings)}"
             + " mappings in group: "
             + group["name"]
