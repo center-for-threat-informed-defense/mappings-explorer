@@ -1,6 +1,9 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="matrix">
-  <Matrix :attack_object_dict="{{attack_object_dict}}"></Matrix>
+  <Matrix
+    :url_prefix="'{{url_prefix}}'"
+    :attack_versions="{{all_attack_versions}}"
+  ></Matrix>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -10,6 +13,12 @@
     template: `
       <div>
         <h1 class="matrix-header">ATT&CK Matrix View</h1>
+        <select name="attack-versions" id="versions" v-model="selectedAttackVersion" @change="getAttackObjectDict">
+          <option v-for="attackVersion in attack_versions" :value="attackVersion">
+            [[ attackVersion ]]
+          </option>
+        </select>
+        <br/>
         <button
           @click="allTechniquesOpen = !allTechniquesOpen"
           class="toggle-subtechniques-btn"
@@ -20,28 +29,48 @@
           <div v-for="tactic in tactics">
             <div class="tactic-row">
               <a href="/" class="tactic-name">[[  tactic.name ]]</a>
+              <br/>
+              ([[ tactic.id ]])
               <div>[[ tactic.techniques.length ]] techniques</div>
             </div>
             <div v-for="technique in tactic.techniques">
-              <div class="technique-box">
-                <a href="/">[[  technique.name  ]]</a>
+              <div class="technique-box" :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''">
+                <a href="/" @mouseenter="techniqueHovered = technique" @mouseleave="techniqueHovered = ''">
+                  [[  technique.name  ]]
+                </a>
+                <br/>
+                ( [[ technique.id ]] )
                 <img
                   v-if="technique.subtechniques.length && !technique.open"
                   @click="handleClick(technique)"
-                  class="chevron-icon"
+                  class="icon"
                   src="{{url_prefix}}static/img/chevron-right.svg"
                   alt=""
                 />
                 <img
                   v-else-if="technique.subtechniques.length && technique.open"
                   @click="handleClick(technique)"
-                  class="chevron-icon"
+                  class="icon"
                   src="{{url_prefix}}static/img/chevron-down.svg"
                   alt=""
                 />
               </div>
-              <div v-if="technique.open" class="subtechnique-box" v-for="subtechnique in technique.subtechniques">
-                <a href="/">[[ subtechnique.name ]]</a>
+              <div class="technique-score-info" v-if="techniqueHovered.id === technique.id && technique.parent === techniqueHovered.parent && technique.score > 0" >
+                <b>Technique Score:</b> [[ technique.score ]]
+                <br/>
+                <b>Capabilities Mapped:</b> [[ technique.capabilities_mapped.join(", ") ]]
+              </div>
+              <div v-if="technique.open" v-for="subtechnique in technique.subtechniques">
+                <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
+                  <a href="/" @mouseenter="techniqueHovered = subtechnique" @mouseleave="techniqueHovered = ''">[[ subtechnique.name ]]</a>
+                  <br/>
+                  ( [[ subtechnique.id ]] )
+                </div>
+                <div class="technique-score-info" v-if="techniqueHovered.id === subtechnique.id && subtechnique.score > 0" >
+                  <b>subtechnique Score:</b> [[ subtechnique.score ]]
+                  <br/>
+                  <b>Capabilities Mapped:</b> [[ subtechnique.capabilities_mapped.join(", ") ]]
+                </div>
               </div>
             </div>
           </div>
@@ -49,43 +78,64 @@
       </div>
   `,
     delimiters: ["[[", "]]"],
-    props: {
-      attack_object_dict: Array,
-    },
     data() {
       return {
         allTechniquesOpen: false,
         tactics: [],
+        selectedTechnique: {},
+        selectedAttackVersion: "9.0",
+        attackObjectDict: {},
+        techniqueHovered: '',
       };
     },
+    props: {
+      url_prefix: String,
+      attack_versions: Array,
+    },
     methods: {
+      getAttackObjectDict() {
+        console.log(this.url_prefix);
+        attack_object_file = `${this.url_prefix}static/matrices/enterprise/${this.selectedAttackVersion}/enterprise-${this.selectedAttackVersion}_matrix_data.json`;
+        fetch(attack_object_file)
+          .then((response) => response.json())
+          .then((json) => {
+            this.attackObjectDict = json;
+            this.getTactics();
+          });
+      },
       getTactics() {
-        let tactics = this.attack_object_dict.filter(
-          (attack_object) => attack_object.type === "tactic"
-        );
+        let tactics = Object.values(this.attackObjectDict).filter((value) => {
+          return value.type === "tactic";
+        });
         tactics = tactics.map((tactic) => {
-          tactic.techniques = this.attack_object_dict.filter(
-            (attack_object) => {
+          tactic.techniques = Object.values(this.attackObjectDict).filter(
+            (value) => {
               return (
-                attack_object.type === "technique" &&
-                attack_object.tactics.includes(tactic.short_name)
+                value.type === "technique" &&
+                value.tactics.includes(tactic.short_name)
               );
             }
           );
           tactic.techniques = tactic.techniques.map((technique) => {
             technique.open = false;
-            technique.subtechniques = this.attack_object_dict.filter(
-              (attack_object) => {
-                return (
-                  attack_object.type === "subtechnique" &&
-                  attack_object.technique === technique.id
-                );
-              }
-            );
+            technique.parent = tactic.id;
+            technique.subtechniques = Object.values(
+              this.attackObjectDict
+            ).filter((value) => {
+              return (
+                value.type === "subtechnique" &&
+                value.technique === technique.id
+              );
+            });
+            technique.subtechniques.map((subtechnique) => {
+              subtechnique.parent = technique.id;
+              return { ...subtechnique };
+            });
             return { ...technique };
           });
           return { ...tactic };
         });
+        console.log(tactics);
         this.tactics = tactics;
       },
       handleClick(technique) {
@@ -102,7 +152,7 @@
       },
     },
     mounted() {
-      this.getTactics();
+      this.getAttackObjectDict();
     },
   };
 
@@ -133,7 +183,7 @@
   .tactic-row {
     border-bottom: 1px solid black;
     padding: 0.25rem !important;
-    min-height: 70px !important;
+    min-height: 100px !important;
     text-align: center;
   }
   .tactic-name {
@@ -155,7 +205,7 @@
   .matrix-header {
     text-align: center;
   }
-  .chevron-icon {
+  .icon {
     cursor: pointer;
   }
   .toggle-subtechniques-btn {
@@ -168,9 +218,15 @@
     letter-spacing: 1px;
     padding: 6px 15px;
     transition: 0.5s;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
   .toggle-subtechniques-btn:hover {
     background: rgba(86, 184, 230, 0.8);
+  }
+  .technique-score-info {
+    text-align: left;
+    border: 1px solid black;
   }
 </style>
 {% endblock content %}
