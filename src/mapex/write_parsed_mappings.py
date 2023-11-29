@@ -15,6 +15,7 @@ def write_parsed_mappings_yaml(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     result_yaml_file.write(parsed_mappings_yaml)
+    print(f"Successfully wrote mappings yaml file to {filepath}.yaml")
 
 
 def create_df(parsed_mappings):
@@ -63,10 +64,12 @@ def create_df(parsed_mappings):
 
 def write_parsed_mappings_csv(df, filepath):
     df.to_csv(f"{filepath}.csv")
+    print(f"Successfully wrote mappings csv file to {filepath}.csv")
 
 
 def write_parsed_mappings_excel(df, filepath):
     df.to_excel(f"{filepath}.xlsx", index=False)
+    print(f"Successfully wrote mappings excel file to {filepath}.xlsx")
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
@@ -79,6 +82,7 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(layer, fp=navigator_layer)
+    print(f"Successfully wrote mappings navigator layer file to {filepath}.json")
 
 
 def write_parsed_mappings_stix(parsed_mappings, filepath):
@@ -131,6 +135,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
+    print(f"Successfully wrote mappings stix file to {filepath}.json")
 
 
 def get_stix_object(parsed_mappings, mapping):
