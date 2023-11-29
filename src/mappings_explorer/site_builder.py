@@ -1,12 +1,10 @@
 import argparse
 import json
-import os
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
-from mappings_explorer.attack_query import get_attack_data
-
+from .attack_query import create_attack_jsons
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
@@ -190,9 +188,6 @@ def parse_groups(project, attack_version, project_version):
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
-    files = os.listdir(
-        filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
-    )
     full_path = (
         filepath
         / ("attack-" + attack_version)
@@ -377,12 +372,32 @@ def build_matrix(url_prefix):
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
 
+    all_attack_versions = [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        "13.0",
+        "13.1",
+        "14.0",
+        "14.1",
+    ]
+
+    json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
+    mappings_filepath = PUBLIC_DIR / "data"
+    create_attack_jsons(all_attack_versions, json_matrices_dir, mappings_filepath)
+
     template = load_template("matrix.html.j2")
-    attack_object_dict = get_attack_data("12.1", "enterprise")
     stream = template.stream(
         title="ATT&CK Matrix",
+        all_attack_versions=all_attack_versions,
         url_prefix=url_prefix,
-        attack_object_dict=attack_object_dict,
     )
     stream.dump(str(output_path))
     print("Created matrix")
