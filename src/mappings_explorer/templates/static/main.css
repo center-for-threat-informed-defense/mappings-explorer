@@ -2502,7 +2502,6 @@ td a:hover {
   position: relative;
   font-family: var(--font-default);
   font-size: 18px;
-  color: var(--color-text);
 }
 
 .custom-select select {
@@ -2564,4 +2563,8 @@ td a:hover {
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.select-items .invalid-option {
+  color: #A0A0A0;
 }
