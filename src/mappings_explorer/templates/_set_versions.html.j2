@@ -1,8 +1,8 @@
 {% block set_version %}
 <section id="version-select" class="version-select">
+<meta id="version-combos" data-versions="{{valid_versions}}"">
+
   <div class="container" data-aos="fade-up">
-
-
     <div class="row justify-content-left">
       <form class="col-12" onsubmit="handleSubmission(event)">
         <h2>CHOOSE YOUR VERSIONS</h2>
@@ -10,8 +10,8 @@
         {% if versions %}
           <div class="col-sm-4 col-md-3 form-group">
             <p>{{control}} Version</p>
-            <div class="custom-select">
-            <select name="control-version" id="control_version" >
+            <div class="custom-select" id="control_version">
+            <select name="control-version" id="control_version_select">
                 <option value="0">Select version:</option>
               {% for v in versions %}
                 <option>{{v}}</option>
@@ -22,8 +22,8 @@
           {% endif %}
           <div class="col-sm-4 col-md-3 form-group">
             <p>ATT&CK Version</p>
-            <div class="custom-select">
-            <select name="attack-version" id="attack_version">
+            <div class="custom-select" id="attack_version">
+            <select name="attack-version" id="attack_version_select">
               <option value="0">Select version:</option>
               {% for v in attackVersions %}
                 <option>{{v}}</option>
@@ -33,8 +33,8 @@
           </div>
           <div class="col-sm-4 col-md-3 form-group">
             <p>ATT&CK Domain</p>
-            <div class="custom-select">
-            <select name="domain" id="attack_domain">
+            <div class="custom-select" id="attack_domain">
+            <select name="domain" id="attack_domain_select">
               <option value="0">Select version:</option>
               {% for d in domains %}
                 <option>{{ d|capitalize }}</option>
@@ -51,42 +51,18 @@
   </div>
 </section>
 <script>
-  let attackVersion = '';
-  let controlVersion = '';
-  let uri = window.location.pathname;
-  let params = uri.split("/").filter(n => n);
 
-  controlVersion = params[params.length -1].split("-")[1];
-  if (controlVersion) {
-    document.getElementById("control_version").value = controlVersion;
-  } else {
-    document.getElementById("control_version").selectedIndex = "1";
-}
-  attackVersion = params[params.length -2].split("-")[1];
-  if (attackVersion) {
-    document.getElementById("attack_version").value = attackVersion;
-  } else {
-    document.getElementById("attack_version").selectedIndex = "1";
-}
-    document.getElementById("attack_domain").selectedIndex = "1";
 
-  function handleSubmission(event) {
-    event.preventDefault()
-    let newControl = document.getElementById("control_version").value
-    let newAttack = document.getElementById("attack_version").value
-    if (params.length > 3) {
-      params[params.length-1] = params[params.length-3] + "-" + newControl
-      params[params.length-2] = "attack-" + newAttack
-    }
-    else {
-      params.push("attack-" + newAttack)
-      params.push(params[params.length-2] + "-" + newControl)
-    }
-    let newUrl = params.join("/")
-    window.location = "/" + newUrl + "/"
-  }
-</script>
-<script>
+v = document.getElementById("version-combos")
+z = v.getAttribute('data-versions')
+x = z.replaceAll(`'`, ``).replaceAll(` `, ``)
+valid_versions = x.split("),(")
+
+for(var i=0; i < valid_versions.length; i++) {
+ valid_versions[i] = valid_versions[i].replaceAll("(", "").replaceAll(")", "").replaceAll("[", "").replaceAll("]", "").split(",")
+}
+console.log("The valid version combinations are: ", valid_versions )
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -108,6 +84,43 @@ for (i = 0; i < l; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
+      let control_version = document.getElementById("control_version_select").value;
+      let attack_version = document.getElementById("attack_version_select").value;
+      if (e.srcElement.parentNode.parentNode.id == "control_version") {
+        control_version = e.srcElement.innerHTML
+      } else if (e.srcElement.parentNode.parentNode.id == "attack_version") {
+        attack_version = e.srcElement.innerHTML
+      }
+      console.log("click on e ", e.srcElement.parentNode.parentNode)
+      if (e.srcElement.parentNode.parentNode.id != "attack_domain") {
+        version = e.srcElement.innerHTML
+        console.log("The control version is ", version)
+        attackOptions = [];
+        versionOptions = [];
+        for(var i=0; i < valid_versions.length; i++) {
+          let row = valid_versions[i];
+          for(var ii = 0; ii<row.length; ii++) {
+            let element = row[ii]
+            if(element == version) {
+              attackOptions.push(row[1])
+              versionOptions.push(row[0])
+            }
+          }
+        }
+  console.log("attack version options", attackOptions)
+  console.log("control version options", versionOptions)
+
+        //check if valid combination
+        if (isValidCombo(attack_version, control_version)) {
+          setAttackStates(attackOptions, false)
+          setVersionStates(versionOptions, false)
+        }
+        else {
+          setAttackStates(attackOptions, true)
+          setVersionStates(versionOptions, true)
+        }
+      }
+
         /*when an item is clicked, update the original select box,
         and the selected item:*/
         var y, i, k, s, h, sl, yl;
@@ -122,6 +135,19 @@ for (i = 0; i < l; i++) {
             yl = y.length;
             for (k = 0; k < yl; k++) {
               y[k].removeAttribute("class");
+            }
+            if (e.srcElement.parentNode.parentNode.id != "attack_domain") {
+              // now, set all the elements with invalid option tags if not a match
+              allOptions = this.parentNode.getElementsByTagName("div")
+              allOptionsLength = allOptions.length;
+              for (k = 0; k < allOptionsLength; k++) {
+                if (attackOptions.find((e) => { e.toLowerCase() === allOptions[k].innerHTML.toLowerCase()})) {
+//                allOptions[k].removeAttribute("class");
+                allOptions[k].setAttribute("class", "valid-option");
+                } else {
+                allOptions[k].setAttribute("class", "invalid-option");
+                }
+              }
             }
             this.setAttribute("class", "same-as-selected");
             break;
@@ -165,6 +191,108 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+function setAttackStates(validVersions, setValue) {
+  d = document.getElementById("attack_version");
+  options = d.getElementsByClassName("select-items")[0].children;
+  console.log("gf ", d, options, validVersions)
+  for (i = 0; i < options.length; i++) {
+    let match = false;
+    let clicked = false;
+    for (k = 0; k < validVersions.length; k++) {
+      if (validVersions[k] == options[i].innerHTML ) {
+        match = true;
+        break;
+      }
+    }
+    if (match) {
+      options[i].setAttribute("class", "valid-option");
+      if (!clicked && setValue) {
+        clicked = true;
+        options[i].click();
+      }
+    } else {
+      options[i].setAttribute("class", "invalid-option");
+    }
+  }
+}
+function setVersionStates(validVersions, setValue) {
+  d = document.getElementById("control_version");
+  options = d.getElementsByClassName("select-items")[0].children;
+  console.log("gf ", d, options, validVersions)
+  for (i = 0; i < options.length; i++) {
+    let match = false;
+    let clicked = false;
+    for (k = 0; k < validVersions.length; k++) {
+      if (validVersions[k] == options[i].innerHTML ) {
+        match = true;
+        break;
+      }
+    }
+    if (match) {
+      options[i].setAttribute("class", "valid-option");
+      if (!clicked && setValue) {
+        clicked = true;
+        options[i].click();
+      }
+    } else {
+      options[i].setAttribute("class", "invalid-option");
+    }
+  }
+}
+function isValidCombo(attack_version, control_version){
+    for (i = 0; i < valid_versions.length; i++) {
+      if (attack_version == valid_versions[i][1] && control_version == valid_versions[i][0]) {
+        return true;
+      }
+    }
+    return false;
+}
+function setValue(id, value){
+  d = document.getElementById(id);
+  options = d.getElementsByClassName("select-items")[0].children;
+  if (!value) {
+    options[0].click();
+  }
+  for (i = 0; i < options.length; i++) {
+    if (options[i].innerHTML.toLowerCase() == value.toLowerCase()) {
+      options[i].click();
+    }
+  }
+}
+let attackVersion = '';
+let controlVersion = '';
+let uri = window.location.pathname;
+let params = uri.split("/").filter(n => n);
+  setValue("attack_domain", "Enterprise")
+
+  controlVersion = params[params.length -1].split("-")[1];
+  if (controlVersion) {
+    setValue("control_version", controlVersion)
+  }
+  attackVersion = params[params.length -2].split("-")[1];
+  if (attackVersion) {
+    setValue("attack_version", attackVersion)
+  }
+  if(!attackVersion && !controlVersion) {
+    setValue("attack_version", "")
+  }
+
+  function handleSubmission(event) {
+    event.preventDefault()
+    let newControl = document.getElementById("control_version_select").value
+    let newAttack = document.getElementById("attack_version_select").value
+    if (params.length > 3) {
+      params[params.length-1] = params[params.length-3] + "-" + newControl
+      params[params.length-2] = "attack-" + newAttack
+    }
+    else {
+      params.push("attack-" + newAttack)
+      params.push(params[params.length-2] + "-" + newControl)
+    }
+    let newUrl = params.join("/")
+    window.location = "/" + newUrl + "/"
+  }
 </script>
 
 {% endblock set_version %}
