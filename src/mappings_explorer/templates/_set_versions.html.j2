@@ -83,6 +83,8 @@ for (i = 0; i < l; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
+console.log("click on  ", e.srcElement)
+
       // add our own handling of option states to the boilerplate click handling
       let control_version = document.getElementById("control_version_select").value;
       let attack_version = document.getElementById("attack_version_select").value;
@@ -178,13 +180,12 @@ function setAttackStates(validVersions, attack_version, control_version) {
     }
     if (match) {
       options[i].setAttribute("class", "valid-option");
-      if (!clicked && setValue) {
-        clicked = true;
-        options[i].click();
-      }
     } else {
       options[i].setAttribute("class", "invalid-option");
     }
+  }
+  if (setValue) {
+    options = d.getElementsByClassName("valid-option")[0].click();
   }
 }
 
@@ -205,13 +206,12 @@ function setVersionStates(validVersions, attack_version, control_version) {
     }
     if (match) {
       options[i].setAttribute("class", "valid-option");
-      if (!clicked && setValue) {
-        clicked = true;
-        options[i].click();
-      }
     } else {
       options[i].setAttribute("class", "invalid-option");
     }
+  }
+  if (setValue) {
+    options = d.getElementsByClassName("valid-option")[0].click();
   }
 }
 function isValidCombo(attack_version, control_version){
