@@ -7,6 +7,13 @@ from jinja2 import Environment, FileSystemLoader
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
+class Capability:
+    id = ""
+    label = ""
+    description = ""
+    mappings = []
+
+
 class ExternalControl:
     id = ""
     label = ""
@@ -21,6 +28,7 @@ class ExternalControl:
     tableHeaders = []
     groups = []
     mappings = []
+    capabilities = []
 
 
 def load_projects():
@@ -217,6 +225,23 @@ def parse_groups(project, attack_version, project_version):
             + " mappings in group: "
             + group["name"]
         )
+    project.capabilities = parseCapabilities(mappings=project.mappings)
+
+
+def parseCapabilities(mappings):
+    # allIds = mappings.values_list("capability_id", flat=True)
+    allIds = [m["capability_id"] for m in mappings]
+    capabilityIds = list(set(allIds))
+    capabilities = []
+    for id in capabilityIds:
+        c = Capability()
+        c.id = id
+        c.mappings = [m for m in mappings if (m["capability_id"] == id)]
+        print(
+            "for capability " + c.id + " munber of mappings is  " + str(len(c.mappings))
+        )
+        capabilities.append(c)
+    return capabilities
 
 
 def build_external_landing(
@@ -292,6 +317,16 @@ def build_external_landing(
             attack_version=attack_version,
             mappings=mappings,
             headers=headers,
+        )
+    for capability in project.capabilities:
+        build_external_capability(
+            project=project,
+            url_prefix=url_prefix,
+            parent_dir=project_dir,
+            project_version=project_version,
+            attack_version=attack_version,
+            headers=headers,
+            capability=capability,
         )
 
 
@@ -373,6 +408,43 @@ def build_external_control(
     )
     stream.dump(str(output_path))
     print("          Created group page " + group_name)
+
+
+def build_external_capability(
+    project: ExternalControl,
+    url_prefix,
+    parent_dir,
+    project_version,
+    attack_version,
+    headers,
+    capability,
+):
+    dir = parent_dir / capability.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("external-capability.html.j2")
+    prev_page = parent_dir
+    stream = template.stream(
+        title=project.label + " " + capability.id,
+        url_prefix=url_prefix,
+        control=project.label,
+        project=project,
+        project_id=project.id,
+        description=project.description,
+        tableHeaders=project.tableHeaders,
+        control_version=project_version,
+        versions=project.versions,
+        attack_version=attack_version,
+        attackVersions=project.attackVersions,
+        domain=project.attackDomain,
+        domains=project.attackDomains,
+        prev_page=prev_page,
+        mappings=capability.mappings,
+        headers=headers,
+        capability=capability,
+    )
+    stream.dump(str(output_path))
+    print("          Created capability page " + capability.id)
 
 
 def main():

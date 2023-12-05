@@ -23,7 +23,7 @@
   <tbody>
     {% for mapping in mappings %}
       <tr>
-        {% for id, label in headers %}
+        {%- for id, label in headers -%}
             {% if link %}
                 <td><a href="{{mapping[link]}}/">{{mapping[id]}}</a></td>
             {% endif %}
