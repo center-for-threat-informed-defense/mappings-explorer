@@ -6,7 +6,7 @@ import requests
 
 def get_attack_data(attack_version, attack_domain):
     attack_data = load_attack_json(attack_version, attack_domain)
-    attack_dict = build_attack_dict(attack_data)
+    attack_dict = build_attack_dict(attack_data, attack_domain.lower())
     return attack_dict
 
 
@@ -14,12 +14,14 @@ def load_attack_json(attack_version, attack_domain):
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
     domain = attack_domain.lower()
     attack_url = f"{BASE_URL}/{domain}-attack/{domain}-attack-{attack_version}.json"
-    response = requests.get(attack_url)
-    attack_data = json.loads(response.text)
-    return attack_data
+    response = requests.get(attack_url, verify=False)
+    if response.status_code != 404:
+        attack_data = json.loads(response.text)
+        return attack_data
+    return None
 
 
-def build_attack_dict(attack_data):
+def build_attack_dict(attack_data, attack_domain):
     attack_data_array = []
     for attack_object in attack_data["objects"]:
         # skip objects without IDs
@@ -50,8 +52,14 @@ def build_attack_dict(attack_data):
             if attack_object_type == "technique":
                 kill_chain_phases = attack_object.get("kill_chain_phases", [])
                 for phase in kill_chain_phases:
-                    if phase.get("kill_chain_name") == "mitre-attack":
-                        attack_object_parents.append(phase.get("phase_name"))
+                    kill_chain_name = (
+                        "mitre-attack"
+                        if attack_domain == "enterprise"
+                        else f"mitre-{attack_domain}-attack"
+                    )
+                    if phase.get("kill_chain_name") == kill_chain_name:
+                        if attack_domain.lower() != "enterprise":
+                            attack_object_parents.append(phase.get("phase_name"))
             attack_object_technique = (
                 attack_object_id[0 : attack_object_id.index(".")]
                 if attack_object_type == "subtechnique"
@@ -73,12 +81,20 @@ def build_attack_dict(attack_data):
     return attack_data_array
 
 
-def create_attack_jsons(all_attack_versions, output_filepath, mappings_filepath):
+def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
     attack_data_dict = {}
-    for attack_version in all_attack_versions:
-        attack_data = load_attack_json(attack_version, "enterprise")
-        formatted_attack_data = format_attack_data(attack_data)
-        attack_data_dict[attack_version] = formatted_attack_data
+    for attack_domain in list(attack_domains.keys()):
+        for attack_version in attack_domains[attack_domain]:
+            attack_data = load_attack_json(attack_version, attack_domain.lower())
+            if attack_data:
+                formatted_attack_data = format_attack_data(
+                    attack_data, attack_domain.lower()
+                )
+                if attack_version not in list(attack_data_dict.keys()):
+                    attack_data_dict[attack_version] = {}
+                attack_data_dict[attack_version][
+                    attack_domain.lower()
+                ] = formatted_attack_data
 
     for mappings_file in mappings_filepath.rglob("**/*.json"):
         if (
@@ -88,22 +104,28 @@ def create_attack_jsons(all_attack_versions, output_filepath, mappings_filepath)
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
             add_mappings_to_attack_data_dict(mappings, attack_data_dict)
 
-    for attack_version in all_attack_versions:
-        add_background_colors(attack_data_dict[attack_version])
-        filepath = (
-            output_filepath
-            / "enterprise"
-            / attack_version
-            / f"enterprise-{attack_version}_matrix_data.json"
-        )
-        filepath.parent.mkdir(parents=True, exist_ok=True)
+    for attack_domain in list(attack_domains.keys()):
+        for attack_version in attack_domains[attack_domain]:
+            add_background_colors(
+                attack_data_dict[attack_version][attack_domain.lower()]
+            )
+            filepath = (
+                output_filepath
+                / attack_domain.lower()
+                / attack_version
+                / f"{attack_domain.lower()}-{attack_version}_matrix_data.json"
+            )
+            filepath.parent.mkdir(parents=True, exist_ok=True)
 
-        json_file = open(
-            filepath,
-            "w",
-            encoding="UTF-8",
-        )
-        json.dump(attack_data_dict[attack_version], fp=json_file)
+            json_file = open(
+                filepath,
+                "w",
+                encoding="UTF-8",
+            )
+            json.dump(
+                attack_data_dict[attack_version][attack_domain.lower()],
+                fp=json_file,
+            )
 
 
 def add_background_colors(attack_version_data):
@@ -136,7 +158,9 @@ def add_background_colors(attack_version_data):
 
 
 def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
-    attack_data_version = attack_data_dict[mappings["metadata"]["attack_version"]]
+    attack_data_version = attack_data_dict[mappings["metadata"]["attack_version"]][
+        mappings["metadata"]["technology_domain"]
+    ]
     original_attack_data_version = deepcopy(attack_data_version)
 
     for mapping in mappings["mapping_objects"]:
@@ -165,7 +189,7 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
                 )
 
 
-def format_attack_data(attack_data):
+def format_attack_data(attack_data, attack_domain):
     attack_data_dict = {}
     for attack_object in attack_data["objects"]:
         # skip objects without IDs
@@ -193,8 +217,13 @@ def format_attack_data(attack_data):
             attack_object_parents = []
             if attack_object_type == "technique":
                 kill_chain_phases = attack_object.get("kill_chain_phases", [])
+                kill_chain_name = (
+                    "mitre-attack"
+                    if attack_domain == "enterprise"
+                    else f"mitre-{attack_domain}-attack"
+                )
                 for phase in kill_chain_phases:
-                    if phase.get("kill_chain_name") == "mitre-attack":
+                    if phase.get("kill_chain_name") == kill_chain_name:
                         attack_object_parents.append(phase.get("phase_name"))
             attack_object_technique = (
                 attack_object_id[0 : attack_object_id.index(".")]

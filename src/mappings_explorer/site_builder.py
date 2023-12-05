@@ -410,15 +410,64 @@ def build_matrix(url_prefix):
         "14.1",
     ]
 
+    attack_domains = {
+        "Enterprise": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+        "ICS": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+        "Mobile": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+    }
+
     json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
     mappings_filepath = PUBLIC_DIR / "data"
-    create_attack_jsons(all_attack_versions, json_matrices_dir, mappings_filepath)
+    create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
 
     template = load_template("matrix.html.j2")
     stream = template.stream(
         title="ATT&CK Matrix",
         all_attack_versions=all_attack_versions,
         url_prefix=url_prefix,
+        attack_domains=attack_domains,
     )
     stream.dump(str(output_path))
     print("Created matrix")
