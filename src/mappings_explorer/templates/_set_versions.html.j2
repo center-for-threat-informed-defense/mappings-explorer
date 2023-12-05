@@ -52,7 +52,7 @@
 </section>
 <script>
 
-
+/* parse the valid version combinations found in the meta tag */
 v = document.getElementById("version-combos")
 z = v.getAttribute('data-versions')
 x = z.replaceAll(`'`, ``).replaceAll(` `, ``)
@@ -61,7 +61,6 @@ valid_versions = x.split("),(")
 for(var i=0; i < valid_versions.length; i++) {
  valid_versions[i] = valid_versions[i].replaceAll("(", "").replaceAll(")", "").replaceAll("[", "").replaceAll("]", "").split(",")
 }
-console.log("The valid version combinations are: ", valid_versions )
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -84,6 +83,7 @@ for (i = 0; i < l; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
+      // add our own handling of option states to the boilerplate click handling
       let control_version = document.getElementById("control_version_select").value;
       let attack_version = document.getElementById("attack_version_select").value;
       if (e.srcElement.parentNode.parentNode.id == "control_version") {
@@ -91,36 +91,18 @@ for (i = 0; i < l; i++) {
       } else if (e.srcElement.parentNode.parentNode.id == "attack_version") {
         attack_version = e.srcElement.innerHTML
       }
-      console.log("click on e ", e.srcElement.parentNode.parentNode)
+      // see if the current selection combination is valid, and if not click on the first available valid combination
       if (e.srcElement.parentNode.parentNode.id != "attack_domain") {
-        version = e.srcElement.innerHTML
-        console.log("The control version is ", version)
         attackOptions = [];
         versionOptions = [];
-        for(var i=0; i < valid_versions.length; i++) {
-          let row = valid_versions[i];
-          for(var ii = 0; ii<row.length; ii++) {
-            let element = row[ii]
-            if(element == version) {
-              attackOptions.push(row[1])
-              versionOptions.push(row[0])
-            }
-          }
-        }
-  console.log("attack version options", attackOptions)
-  console.log("control version options", versionOptions)
-
-        //check if valid combination
-        if (isValidCombo(attack_version, control_version)) {
-          setAttackStates(attackOptions, false)
-          setVersionStates(versionOptions, false)
-        }
-        else {
-          setAttackStates(attackOptions, true)
-          setVersionStates(versionOptions, true)
+        if (e.srcElement.parentNode.parentNode.id == "attack_version") {
+          versionOptions = parseValidOptions(e.srcElement.innerHTML, "control_version", valid_versions)
+          setVersionStates(versionOptions, attack_version, control_version)
+        } else {
+          attackOptions = parseValidOptions(e.srcElement.innerHTML, "attack_version", valid_versions)
+          setAttackStates(attackOptions, attack_version, control_version)
         }
       }
-
         /*when an item is clicked, update the original select box,
         and the selected item:*/
         var y, i, k, s, h, sl, yl;
@@ -135,19 +117,6 @@ for (i = 0; i < l; i++) {
             yl = y.length;
             for (k = 0; k < yl; k++) {
               y[k].removeAttribute("class");
-            }
-            if (e.srcElement.parentNode.parentNode.id != "attack_domain") {
-              // now, set all the elements with invalid option tags if not a match
-              allOptions = this.parentNode.getElementsByTagName("div")
-              allOptionsLength = allOptions.length;
-              for (k = 0; k < allOptionsLength; k++) {
-                if (attackOptions.find((e) => { e.toLowerCase() === allOptions[k].innerHTML.toLowerCase()})) {
-//                allOptions[k].removeAttribute("class");
-                allOptions[k].setAttribute("class", "valid-option");
-                } else {
-                allOptions[k].setAttribute("class", "invalid-option");
-                }
-              }
             }
             this.setAttribute("class", "same-as-selected");
             break;
@@ -192,10 +161,12 @@ function closeAllSelect(elmnt) {
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
 
-function setAttackStates(validVersions, setValue) {
+/* set the states of the options in the attack version dropdown
+   and click one if not a valid version combo */
+function setAttackStates(validVersions, attack_version, control_version) {
+  setValue = !isValidCombo(attack_version, control_version)
   d = document.getElementById("attack_version");
   options = d.getElementsByClassName("select-items")[0].children;
-  console.log("gf ", d, options, validVersions)
   for (i = 0; i < options.length; i++) {
     let match = false;
     let clicked = false;
@@ -216,10 +187,13 @@ function setAttackStates(validVersions, setValue) {
     }
   }
 }
-function setVersionStates(validVersions, setValue) {
+
+/* set the states of the options in the control version dropdown
+   and click one if not a valid version combo */
+function setVersionStates(validVersions, attack_version, control_version) {
+  setValue = !isValidCombo(attack_version, control_version)
   d = document.getElementById("control_version");
   options = d.getElementsByClassName("select-items")[0].children;
-  console.log("gf ", d, options, validVersions)
   for (i = 0; i < options.length; i++) {
     let match = false;
     let clicked = false;
@@ -248,6 +222,38 @@ function isValidCombo(attack_version, control_version){
     }
     return false;
 }
+/* find what versions for attack or control are valid given a click on an element */
+function parseValidOptions(originalValue, returnValue, valid_versions) {
+  attackOptions = [];
+  versionOptions = [];
+  for(var i=0; i < valid_versions.length; i++) {
+    let row = valid_versions[i];
+    for(var ii = 0; ii<row.length; ii++) {
+      let element = row[ii]
+      if (element == originalValue) {
+        versionOptions.push(row[0])
+        attackOptions.push(row[1])
+      }
+    }
+  }
+  if (returnValue == "attack_version") { return attackOptions }
+  else { return versionOptions }
+}
+/* click on an item in the attack version dropdown */
+function setAttackValue(value){
+  d = document.getElementById("attack_version");
+  options = d.getElementsByClassName("select-items")[0].children;
+  if (!value) {
+    options[0].click();
+  }
+  for (i = 0; i < options.length; i++) {
+    if (options[i].innerHTML.toLowerCase() == value.toLowerCase()) {
+      options[i].click();
+      return;
+    }
+  }
+}
+/* click on an item in the control version dropdown */
 function setValue(id, value){
   d = document.getElementById(id);
   options = d.getElementsByClassName("select-items")[0].children;
@@ -257,42 +263,51 @@ function setValue(id, value){
   for (i = 0; i < options.length; i++) {
     if (options[i].innerHTML.toLowerCase() == value.toLowerCase()) {
       options[i].click();
+      return;
     }
   }
 }
-let attackVersion = '';
-let controlVersion = '';
-let uri = window.location.pathname;
-let params = uri.split("/").filter(n => n);
+/* on load, check if there are any versions specified in the url and set them accordingly
+   if no versions specified, click on first available attack value
+   and corresponding control will automatically get set */
+function parseParams() {
+  let attackVersion = '';
+  let controlVersion = '';
+  let uri = window.location.pathname;
+  let params = uri.split("/").filter(n => n);
   setValue("attack_domain", "Enterprise")
-
   controlVersion = params[params.length -1].split("-")[1];
   if (controlVersion) {
     setValue("control_version", controlVersion)
   }
   attackVersion = params[params.length -2].split("-")[1];
   if (attackVersion) {
-    setValue("attack_version", attackVersion)
+    setAttackValue(attackVersion)
   }
   if(!attackVersion && !controlVersion) {
-    setValue("attack_version", "")
+    setAttackValue("")
   }
+}
+/* handle click on see mappings button- route to the new version url */
+function handleSubmission(event) {
+  event.preventDefault()
+  let uri = window.location.pathname;
+  let params = uri.split("/").filter(n => n);
+  let newControl = document.getElementById("control_version_select").value
+  let newAttack = document.getElementById("attack_version_select").value
+  if (params.length > 3) {
+    params[params.length-1] = params[params.length-3] + "-" + newControl
+    params[params.length-2] = "attack-" + newAttack
+  }
+  else {
+    params.push("attack-" + newAttack)
+    params.push(params[params.length-2] + "-" + newControl)
+  }
+  let newUrl = params.join("/")
+  window.location = "/" + newUrl + "/"
+}
 
-  function handleSubmission(event) {
-    event.preventDefault()
-    let newControl = document.getElementById("control_version_select").value
-    let newAttack = document.getElementById("attack_version_select").value
-    if (params.length > 3) {
-      params[params.length-1] = params[params.length-3] + "-" + newControl
-      params[params.length-2] = "attack-" + newAttack
-    }
-    else {
-      params.push("attack-" + newAttack)
-      params.push(params[params.length-2] + "-" + newControl)
-    }
-    let newUrl = params.join("/")
-    window.location = "/" + newUrl + "/"
-  }
+window.onload = parseParams
 </script>
 
 {% endblock set_version %}
