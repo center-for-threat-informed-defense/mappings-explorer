@@ -1,6 +1,5 @@
 import argparse
 import json
-import os
 import shutil
 
 from jinja2 import Environment, FileSystemLoader
@@ -183,19 +182,15 @@ def replace_mapping_type(mapping, type_list):
 
 
 def parse_groups(project, attack_version, project_version):
-    print("attack: ", attack_version + " and project version " + project_version)
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
-    files = os.listdir(
-        filepath / ("attack-" + attack_version) / (project_id + "-" + project_version)
-    )
     full_path = (
         filepath
         / ("attack-" + attack_version)
         / (project_id + "-" + project_version)
-        / files[0]
+        / (project_id + "-" + project_version + "_attack-" + attack_version + ".json")
     )
     f = open(full_path, "r")
     data = json.load(f)
@@ -217,7 +212,7 @@ def parse_groups(project, attack_version, project_version):
         group["controls"] = []
         group["num_controls"] = 0
         print(
-            "found "
+            "     found "
             + f"{len(filtered_mappings)}"
             + " mappings in group: "
             + group["name"]
@@ -259,11 +254,13 @@ def build_external_landing(
         ("num_mappings", "Number of Mappings"),
     ]
 
+    project_id = project.id if project.id != "nist" else "nist_800_53"
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
         description=project.description,
+        project_id=project_id,
         project_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
@@ -305,7 +302,7 @@ def build_external_pages(projects, url_prefix):
         dir = external_dir / project.id
         dir.mkdir(parents=True, exist_ok=True)
 
-        for validCombo in project.validVersions:
+        for index, validCombo in enumerate(project.validVersions):
             print("creating pages for version combo ", str(validCombo))
             attack_version = validCombo[1]
             project_version = validCombo[0]
@@ -328,6 +325,13 @@ def build_external_pages(projects, url_prefix):
                 project_dir=project_dir,
                 mappings=project.mappings,
             )
+            # for the most up to date combo, copy the pages higher up the directory
+            if index == len(project.validVersions) - 1:
+                print(
+                    "copying the most recent version pair into main directory ",
+                    str(validCombo),
+                )
+                shutil.copytree(project_dir, dir, dirs_exist_ok=True)
 
 
 def build_external_control(
@@ -354,6 +358,7 @@ def build_external_control(
         group_id=group_id,
         group_name=group_name,
         project=project,
+        project_id=project.id,
         description=project.description,
         tableHeaders=project.tableHeaders,
         control_version=project_version,
