@@ -25,7 +25,6 @@ class ExternalControl:
     attackDomain = ""
     attackDomains = []
     validVersions = []
-    tableHeaders = []
     groups = []
     mappings = []
     capabilities = []
@@ -69,7 +68,6 @@ def load_projects():
     ]
     nist.attackDomains = ["enterprise"]
     nist.attackDomain = nist.attackDomains[0]
-    nist.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
@@ -88,7 +86,6 @@ def load_projects():
         "9.0",
     ]
     veris.validVersions = [("1.3.5", "9.0"), ("1.3.7", "12.1")]
-    veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris.mappings = []
 
     cve = ExternalControl()
@@ -109,7 +106,6 @@ def load_projects():
     cve.versions = ["21.10.21"]
     cve.attackVersions = ["9.0"]
     cve.validVersions = [("21.10.21", "9.0")]
-    cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
     aws = ExternalControl()
@@ -129,7 +125,6 @@ def load_projects():
     aws.attackVersions = ["9.0"]
     aws.versions = ["21.09.21"]
     aws.validVersions = [("21.09.21", "9.0")]
-    aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
     azure = ExternalControl()
@@ -149,7 +144,6 @@ def load_projects():
     azure.attackVersions = ["8.2"]
     azure.versions = ["21.06.29"]
     azure.validVersions = [("21.06.29", "8.2")]
-    azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
     gcp = ExternalControl()
@@ -169,7 +163,6 @@ def load_projects():
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["22.06.28"]
     gcp.validVersions = [("22.06.28", "10.0")]
-    gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
     projects = [
@@ -254,27 +247,49 @@ def build_external_landing(
 ):
     output_path = project_dir / "index.html"
     template = load_template("external-control.html.j2")
-
+    attack_prefix = url_prefix + "attack/" + "attack-" + attack_version + "/"
+    external_prefix = (
+        url_prefix
+        + "external/"
+        + project.id
+        + "/attack-"
+        + attack_version
+        + "/"
+        + project.id
+        + "-"
+        + project_version
+        + "/"
+    )
     headers = [
-        ("attack_object_id", "ATT&CK ID"),
-        ("attack_object_name", "ATT&CK Name"),
+        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ("mapping_type", "Mapping Type"),
-        ("capability_id", "Capability ID"),
-        ("capability_description", "Capability Description"),
+        ("capability_id", "Capability ID", "capability_id", external_prefix),
+        (
+            "capability_description",
+            "Capability Description",
+            "capability_id",
+            external_prefix,
+        ),
     ]
     if project.id == "azure" or project.id == "aws" or project.id == "gcp":
         headers = [
-            ("attack_object_id", "ATT&CK ID"),
-            ("attack_object_name", "ATT&CK Name"),
+            ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+            ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
             ("score_category", "Category"),
             ("score_value", "Value"),
-            ("capability_id", "Capability ID"),
-            ("capability_description", "Capability Description"),
+            ("capability_id", "Capability ID", "capability_id", external_prefix),
+            (
+                "capability_description",
+                "Capability Description",
+                "capability_id",
+                external_prefix,
+            ),
         ]
 
     group_headers = [
-        ("id", "ID"),
-        ("name", "Control Family"),
+        ("id", "ID", "id", external_prefix),
+        ("name", "Control Family", "id", external_prefix),
         # ("num_controls", "Number of Controls"),
         ("num_mappings", "Number of Mappings"),
     ]
@@ -292,7 +307,6 @@ def build_external_landing(
         attackVersions=project.attackVersions,
         domain=project.attackDomain,
         domains=project.attackDomains,
-        tableHeaders=project.tableHeaders,
         mappings=mappings,
         headers=headers,
         group_headers=group_headers,
@@ -315,7 +329,6 @@ def build_external_landing(
             parent_dir=project_dir,
             project_version=project_version,
             attack_version=attack_version,
-            mappings=mappings,
             headers=headers,
         )
     for capability in project.capabilities:
@@ -376,7 +389,6 @@ def build_external_control(
     parent_dir,
     project_version,
     attack_version,
-    mappings,
     headers,
 ):
     group_id = group["id"]
@@ -395,7 +407,6 @@ def build_external_control(
         project=project,
         project_id=project.id,
         description=project.description,
-        tableHeaders=project.tableHeaders,
         control_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
@@ -431,7 +442,6 @@ def build_external_capability(
         project=project,
         project_id=project.id,
         description=project.description,
-        tableHeaders=project.tableHeaders,
         control_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
