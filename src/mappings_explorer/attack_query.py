@@ -5,8 +5,21 @@ import requests
 
 
 def get_attack_data(attack_version, attack_domain):
+    """Creates dictionary of attack objects -- techniques and subtechniques --
+    and pertinent data about the attack objects
+
+    Args:
+        attack_version: The attack version that attack objects should be fetched from.
+        This must be a string with one decimal field (i.e. "9.0").
+        attack_domain: The attack domain that attack objects should be fetched from.
+        Must be ICS, Mobile, or Enterprise. Case does not matter
+
+    Returns:
+        A dict mapping an attack object to its id, name, url, and description
+
+    """
     attack_data = load_attack_json(attack_version, attack_domain)
-    attack_dict = build_attack_dict(attack_data, attack_domain.lower())
+    attack_dict = build_attack_dict(attack_data)
     return attack_dict
 
 
@@ -21,7 +34,7 @@ def load_attack_json(attack_version, attack_domain):
     return None
 
 
-def build_attack_dict(attack_data, attack_domain):
+def build_attack_dict(attack_data):
     attack_data_array = []
     for attack_object in attack_data["objects"]:
         # skip objects without IDs
@@ -40,41 +53,12 @@ def build_attack_dict(attack_data, attack_domain):
             attack_object_name = attack_object.get("name")
             attack_object_url = external_references[0].get("url")
             attack_object_description = attack_object.get("description")
-            attack_object_short_name = attack_object.get("x_mitre_shortname", "")
-            attack_object_type = (
-                "tactic"
-                if attack_object.get("type") == "x-mitre-tactic"
-                else "subtechnique"
-                if attack_object.get("x_mitre_is_subtechnique")
-                else "technique"
-            )
-            attack_object_parents = []
-            if attack_object_type == "technique":
-                kill_chain_phases = attack_object.get("kill_chain_phases", [])
-                for phase in kill_chain_phases:
-                    kill_chain_name = (
-                        "mitre-attack"
-                        if attack_domain == "enterprise"
-                        else f"mitre-{attack_domain}-attack"
-                    )
-                    if phase.get("kill_chain_name") == kill_chain_name:
-                        if attack_domain.lower() != "enterprise":
-                            attack_object_parents.append(phase.get("phase_name"))
-            attack_object_technique = (
-                attack_object_id[0 : attack_object_id.index(".")]
-                if attack_object_type == "subtechnique"
-                else ""
-            )
             attack_data_array.append(
                 {
                     "id": attack_object_id,
                     "name": attack_object_name,
                     "url": attack_object_url,
                     "description": attack_object_description,
-                    "type": attack_object_type,
-                    "tactics": attack_object_parents,
-                    "technique": attack_object_technique,
-                    "short_name": attack_object_short_name,
                 }
             )
 
@@ -82,6 +66,35 @@ def build_attack_dict(attack_data, attack_domain):
 
 
 def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
+    """Creates json files with attack objects and data needed for creating the attack
+    matrix
+
+    Args:
+        attack_domains: a dictionary of attack domains (ICS, Mobile, and Enterprise)
+        mapped to the attack versions that contain techniques and subtechniques for
+        that domain
+        output_filepath: the path to output the json files
+        mappings_filepath: filepath to mappings files, which are used to give the
+        techniques/subtechniques coverage data
+
+    Outputs:
+        A json file with attack objects mapped to the following:
+            name: name of the attack object,
+            type: type of the attack object, can be tactic, technique,
+                  or subtechnique
+            tactics: if the attack object is a technique, its tactic
+                    parent/parents)
+            technique: if the attack object is a subtechnique, its parent technique
+                "short_name": attack_object_short_name,
+                "capabilities_mapped": [],
+                "background_color": "",
+                "id": attack_object_id,
+
+        {b'Serak': ('Rigel VII', 'Preparer'),
+         b'Zim': ('Irk', 'Invader'),
+         b'Lrrr': ('Omicron Persei 8', 'Emperor')}
+
+    """
     attack_data_dict = {}
     for attack_domain in list(attack_domains.keys()):
         for attack_version in attack_domains[attack_domain]:
