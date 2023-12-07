@@ -280,7 +280,6 @@ def build_external_landing(
         domains=project.attackDomains,
         tableHeaders=project.tableHeaders,
         mappings=mappings,
-        project_id=project_id,
         headers=headers,
         group_headers=group_headers,
         groups=project.groups,
