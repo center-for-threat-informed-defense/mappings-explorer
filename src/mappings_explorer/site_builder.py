@@ -500,7 +500,6 @@ def main():
         title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
     )
     stream.dump(str(output_path))
-    build_external_pages(projects=projects, url_prefix=url_prefix)
     print("Created site index")
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
