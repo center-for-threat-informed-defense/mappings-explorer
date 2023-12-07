@@ -39,7 +39,7 @@ def load_attack_json(attack_version, attack_domain):
 
 @cache
 def fetch_url(url):
-    response = requests.get(url, verify=False)
+    response = requests.get(url)
     if response.status_code != 404:
         attack_data = json.loads(response.text)
         return attack_data
