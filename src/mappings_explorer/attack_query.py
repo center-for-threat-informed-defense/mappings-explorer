@@ -1,7 +1,11 @@
 import json
+import logging
 from copy import deepcopy
+from functools import cache
 
 import requests
+
+logging.basicConfig(level=logging.INFO)
 
 
 def get_attack_data(attack_version, attack_domain):
@@ -19,22 +23,31 @@ def get_attack_data(attack_version, attack_domain):
 
     """
     attack_data = load_attack_json(attack_version, attack_domain)
-    attack_dict = build_attack_dict(attack_data)
+    attack_dict = build_attack_dict(attack_data, attack_domain)
     return attack_dict
 
 
 def load_attack_json(attack_version, attack_domain):
+    logging.info(
+        f"Fetching attack data for {attack_domain} version {attack_version} ..."
+    )
     BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
     domain = attack_domain.lower()
     attack_url = f"{BASE_URL}/{domain}-attack/{domain}-attack-{attack_version}.json"
-    response = requests.get(attack_url, verify=False)
+    return fetch_url(attack_url)
+
+
+@cache
+def fetch_url(url):
+    response = requests.get(url, verify=False)
     if response.status_code != 404:
         attack_data = json.loads(response.text)
         return attack_data
     return None
 
 
-def build_attack_dict(attack_data):
+def build_attack_dict(attack_data, attack_domain):
+    attack_domain = attack_domain.lower()
     attack_data_array = []
     for attack_object in attack_data["objects"]:
         # skip objects without IDs
@@ -49,9 +62,10 @@ def build_attack_dict(attack_data):
             continue
         if attack_object.get("type") in ["x-mitre-tactic", "attack-pattern"]:
             external_references = attack_object.get("external_references")
-            attack_object_id = external_references[0].get("external_id")
+            external_reference = external_references[0]
+            attack_object_id = external_reference.get("external_id")
             attack_object_name = attack_object.get("name")
-            attack_object_url = external_references[0].get("url")
+            attack_object_url = external_reference.get("url")
             attack_object_description = attack_object.get("description")
             attack_data_array.append(
                 {
@@ -79,20 +93,17 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
 
     Outputs:
         A json file with attack objects mapped to the following:
+            id: id of the attack object,
             name: name of the attack object,
             type: type of the attack object, can be tactic, technique,
-                  or subtechnique
+            or subtechnique
             tactics: if the attack object is a technique, its tactic
-                    parent/parents)
+            parent/parents)
             technique: if the attack object is a subtechnique, its parent technique
-                "short_name": attack_object_short_name,
-                "capabilities_mapped": [],
-                "background_color": "",
-                "id": attack_object_id,
-
-        {b'Serak': ('Rigel VII', 'Preparer'),
-         b'Zim': ('Irk', 'Invader'),
-         b'Lrrr': ('Omicron Persei 8', 'Emperor')}
+            short_name: attack object short name,
+            capabilities_mapped: list of capabilities mapped to the attack object,
+            background_color: color that the matrix technique/subtechnique box should
+            be, based on the amount of capabilities mapped
 
     """
     attack_data_dict = {}
@@ -209,15 +220,14 @@ def format_attack_data(attack_data, attack_domain):
         if not attack_object.get("external_references"):
             continue
         # skip deprecated and revoked objects
-        # Note: False is the default value if the property is not present
         if attack_object.get("revoked", False):
             continue
-        # Note: False is the default value if the property is not present
         if attack_object.get("x_mitre_deprecated", False):
             continue
         if attack_object.get("type") in ["x-mitre-tactic", "attack-pattern"]:
             external_references = attack_object.get("external_references")
-            attack_object_id = external_references[0].get("external_id")
+            external_reference = external_references[0]
+            attack_object_id = external_reference.get("external_id")
             attack_object_name = attack_object.get("name")
             attack_object_short_name = attack_object.get("x_mitre_shortname", "")
             attack_object_type = (
@@ -228,15 +238,15 @@ def format_attack_data(attack_data, attack_domain):
                 else "technique"
             )
             attack_object_parents = []
+            source_name = (
+                "mitre-attack"
+                if attack_domain == "enterprise"
+                else f"mitre-{attack_domain}-attack"
+            )
             if attack_object_type == "technique":
                 kill_chain_phases = attack_object.get("kill_chain_phases", [])
-                kill_chain_name = (
-                    "mitre-attack"
-                    if attack_domain == "enterprise"
-                    else f"mitre-{attack_domain}-attack"
-                )
                 for phase in kill_chain_phases:
-                    if phase.get("kill_chain_name") == kill_chain_name:
+                    if phase.get("kill_chain_name") == source_name:
                         attack_object_parents.append(phase.get("phase_name"))
             attack_object_technique = (
                 attack_object_id[0 : attack_object_id.index(".")]
