@@ -22,9 +22,9 @@ def configure_security_stack_mappings(data, parsed_mappings):
         attack_version = attack_version + ".0"
 
     if len(list(parsed_mappings.keys())) == 0:
-        mapping_types = [
-            {"id": str(uuid.uuid4()), "name": "technique_scores", "description": ""}
-        ]
+        mapping_types = {
+            str(uuid.uuid4()): {"name": "technique_scores", "description": ""}
+        }
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
             "attack_version": attack_version,
@@ -40,21 +40,37 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "last_update": f"{month}/{day}/{year}",
             "organization": "",
             "mapping_framework": platform,
-            "mapping_framework_version": f"{year[-2:]}.{month}.{day}",
-            "mapping_framework_version_schema": "ACCESS_DATE",
+            "mapping_framework_version": f"{month}/{day}/{year}",
             "mapping_types": mapping_types,
-            "groups": [],
+            "groups": {},
         }
         parsed_mappings["mapping_objects"] = []
 
-    # get mapping type id
-    mapping_type_uuid = list(
-        filter(
-            lambda mapping_type_object: mapping_type_object["name"]
-            == "technique_scores",
-            parsed_mappings["metadata"]["mapping_types"],
+    mapping_type_uuid = [
+        mapping_type
+        for mapping_type in parsed_mappings["metadata"]["mapping_types"]
+        if parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
+        == "technique_scores"
+    ]
+    [0]
+
+    if len(data["techniques"]) == 0:
+        parsed_mappings["mapping_objects"].append(
+            {
+                "comments": "",
+                "attack_object_id": "",
+                "attack_object_name": "",
+                "references": [],
+                "capability_description": data["name"],
+                "capability_id": data["name"],
+                "mapping_type": "",
+                "score_category": "",
+                "score_value": "",
+                "related_score": "",
+                "group": "",
+                "status": "not_mappable",
+            }
         )
-    )[0]["id"]
 
     for technique in data["techniques"]:
         references = data.get("references") or []
@@ -65,13 +81,8 @@ def configure_security_stack_mappings(data, parsed_mappings):
             # get group uuid
             capability_name = data["name"]
             capability_id = capability_name.lower().replace(" ", "_")
-            if not any(
-                group["name"] == capability_name
-                for group in parsed_mappings["metadata"]["groups"]
-            ):
-                parsed_mappings["metadata"]["groups"].append(
-                    {"id": capability_id, "name": capability_name}
-                )
+            if capability_id not in list(parsed_mappings["metadata"]["groups"].keys()):
+                parsed_mappings["metadata"]["groups"][capability_id] = capability_name
 
             parsed_mappings["mapping_objects"].append(
                 {
@@ -86,6 +97,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "score_value": technique_score["value"].lower(),
                     "related_score": "",
                     "group": capability_id,
+                    "status": "complete",
                 }
             )
         if technique.get("sub-techniques-scores"):
@@ -108,5 +120,6 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "score_value": score["value"].lower(),
                                 "related_score": technique["id"],
                                 "group": capability_id,
+                                "status": "complete",
                             }
                         )

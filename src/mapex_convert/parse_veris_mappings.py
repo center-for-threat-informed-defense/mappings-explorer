@@ -10,7 +10,7 @@ def configure_veris_mappings(veris_mappings, domain):
     creation_date = (
         "08/26/2021" if mappings_framework_version == "1.3.5" else "04/06/2023"
     )
-    mapping_types = [{"id": str(uuid.uuid4()), "name": "related-to", "description": ""}]
+    mapping_types = {str(uuid.uuid4()): {"name": "related-to", "description": ""}}
     parsed_mappings = {
         "metadata": {
             "mapping_version": veris_mappings["metadata"]["mappings_version"],
@@ -28,34 +28,32 @@ def configure_veris_mappings(veris_mappings, domain):
             "organization": "",
             "mapping_framework": "veris",
             "mapping_framework_version": mappings_framework_version,
-            "mapping_framework_version_schema": "FRAMEWORK_VERSION",
             "mapping_types": mapping_types,
-            "groups": [],
+            "groups": {},
         },
         "mapping_objects": [],
     }
 
-    groups = []
+    groups = {}
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
             # if veris object is missing one of the sections, replace extra '.""'
             veris_object = veris_object.replace('.""', "")
 
-            mapping_type_uuid = list(
-                filter(
-                    lambda mapping_type_object: mapping_type_object["name"]
-                    == "related-to",
-                    mapping_types,
-                )
-            )[0]["id"]
+            mapping_type_uuid = [
+                mapping_type
+                for mapping_type in mapping_types
+                if mapping_types[mapping_type]["name"] == "related_to"
+            ]
+            [0]
 
             # get group id and anme
             veris_group = veris_object[
                 : veris_object.index(".", veris_object.index(".") + 1)
             ].replace(" ", "_")
-            if not any(group["id"] == veris_group for group in groups):
-                groups.append({"id": veris_group, "name": veris_group})
+            if veris_group not in list(groups.keys()):
+                groups[veris_group] = veris_group
 
             parsed_mappings["mapping_objects"].append(
                 {
@@ -67,6 +65,7 @@ def configure_veris_mappings(veris_mappings, domain):
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_uuid,
                     "group": veris_group,
+                    "status": "complete",
                 }
             )
 
