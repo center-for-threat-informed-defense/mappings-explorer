@@ -10,31 +10,23 @@
     "organization": "",
     "mapping_framework": "veris",
     "mapping_framework_version": "1.3.7",
-    "mapping_framework_version_schema": "FRAMEWORK_VERSION",
-    "mapping_types": [
-      {
-        "id": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+    "mapping_types": {
+      "917568ff-0a48-49a2-b011-6589cb12186a": {
         "name": "related-to",
         "description": ""
       }
-    ],
-    "groups": [
-      { "id": "action.hacking", "name": "action.hacking" },
-      { "id": "action.malware", "name": "action.malware" },
-      { "id": "attribute.availability", "name": "attribute.availability" },
-      { "id": "attribute.integrity", "name": "attribute.integrity" },
-      { "id": "value_chain.distribution", "name": "value_chain.distribution" },
-      {
-        "id": "attribute.confidentiality",
-        "name": "attribute.confidentiality"
-      },
-      { "id": "action.social", "name": "action.social" },
-      {
-        "id": "value_chain.non-distribution_services",
-        "name": "value_chain.non-distribution_services"
-      },
-      { "id": "value_chain.targeting", "name": "value_chain.targeting" }
-    ]
+    },
+    "groups": {
+      "action.hacking": "action.hacking",
+      "action.malware": "action.malware",
+      "attribute.availability": "attribute.availability",
+      "attribute.integrity": "attribute.integrity",
+      "value_chain.distribution": "value_chain.distribution",
+      "attribute.confidentiality": "attribute.confidentiality",
+      "action.social": "action.social",
+      "value_chain.non-distribution_services": "value_chain.non-distribution_services",
+      "value_chain.targeting": "value_chain.targeting"
+    }
   },
   "mapping_objects": [
     {
@@ -44,7 +36,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -55,7 +47,7 @@
       "references": [],
       "capability_description": "Exploit a misconfiguration (vs vuln or weakness)",
       "capability_id": "action.hacking.variety.Exploit misconfig",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -66,7 +58,7 @@
       "references": [],
       "capability_description": "Client-side or browser attack (e.g., redirection, XSS, MitB)",
       "capability_id": "action.malware.variety.Client-side attack",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -77,7 +69,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -88,7 +80,7 @@
       "references": [],
       "capability_description": "Client-side or browser attack (e.g., redirection, XSS, MitB)",
       "capability_id": "action.malware.variety.Client-side attack",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -99,7 +91,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -110,7 +102,7 @@
       "references": [],
       "capability_description": "Destruction",
       "capability_id": "attribute.availability.variety.Destruction",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -121,7 +113,7 @@
       "references": [],
       "capability_description": "Interruption",
       "capability_id": "attribute.availability.variety.Interruption",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -132,7 +124,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -143,7 +135,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -154,7 +146,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -165,7 +157,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -176,7 +168,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -187,7 +179,7 @@
       "references": [],
       "capability_description": "Malware which compromises a legitimate file rather than creating new filess",
       "capability_id": "action.malware.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -198,7 +190,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -209,7 +201,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -220,7 +212,7 @@
       "references": [],
       "capability_description": "Malware creates a remote control capability, but it's unclear if it's a backdoor for hacking or C2 for malware. Parent of 'C2' and 'Backdoor'.",
       "capability_id": "action.malware.variety.Backdoor or C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -231,7 +223,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -242,7 +234,7 @@
       "references": [],
       "capability_description": "Modified privileges or permissions",
       "capability_id": "attribute.integrity.variety.Modify privileges",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -253,7 +245,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -264,7 +256,7 @@
       "references": [],
       "capability_description": "Remote shell",
       "capability_id": "action.hacking.vector.Command shell",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -275,7 +267,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -286,7 +278,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -297,7 +289,7 @@
       "references": [],
       "capability_description": "Remote shell",
       "capability_id": "action.hacking.vector.Command shell",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -308,7 +300,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -319,7 +311,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -330,7 +322,7 @@
       "references": [],
       "capability_description": "Influence or alter human behavior",
       "capability_id": "attribute.integrity.variety.Alter behavior",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -341,7 +333,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -352,7 +344,7 @@
       "references": [],
       "capability_description": "Influence or alter human behavior",
       "capability_id": "attribute.integrity.variety.Alter behavior",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -363,7 +355,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -374,7 +366,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -385,7 +377,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -396,7 +388,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -407,7 +399,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -418,7 +410,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -429,7 +421,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -440,7 +432,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -451,7 +443,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -462,7 +454,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -473,7 +465,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -484,7 +476,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -495,7 +487,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -506,7 +498,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -517,7 +509,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -528,7 +520,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -539,7 +531,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -550,7 +542,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -561,7 +553,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -572,7 +564,7 @@
       "references": [],
       "capability_description": "Abuse of functionality.",
       "capability_id": "action.hacking.variety.Abuse of functionality",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -583,7 +575,7 @@
       "references": [],
       "capability_description": "Interruption",
       "capability_id": "attribute.availability.variety.Interruption",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -594,7 +586,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -605,7 +597,7 @@
       "references": [],
       "capability_description": "Hacking action that creates a backdoor for use.",
       "capability_id": "action.hacking.variety.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -616,7 +608,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -627,7 +619,7 @@
       "references": [],
       "capability_description": "Hacking action that creates a backdoor for use.",
       "capability_id": "action.hacking.variety.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -638,7 +630,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -649,7 +641,7 @@
       "references": [],
       "capability_description": "Hacking action that creates a backdoor for use.",
       "capability_id": "action.hacking.variety.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -660,7 +652,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -671,7 +663,7 @@
       "references": [],
       "capability_description": "Denial of service",
       "capability_id": "action.hacking.variety.DoS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -682,7 +674,7 @@
       "references": [],
       "capability_description": "DoS attack",
       "capability_id": "action.malware.variety.DoS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -693,7 +685,7 @@
       "references": [],
       "capability_description": "Performance degradation",
       "capability_id": "attribute.availability.variety.Degradation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -704,7 +696,7 @@
       "references": [],
       "capability_description": "Loss",
       "capability_id": "attribute.availability.variety.Loss",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -715,7 +707,7 @@
       "references": [],
       "capability_description": "Denial of service",
       "capability_id": "action.hacking.variety.DoS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -726,7 +718,7 @@
       "references": [],
       "capability_description": "DoS attack",
       "capability_id": "action.malware.variety.DoS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -737,7 +729,7 @@
       "references": [],
       "capability_description": "Performance degradation",
       "capability_id": "attribute.availability.variety.Degradation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -748,7 +740,7 @@
       "references": [],
       "capability_description": "Loss",
       "capability_id": "attribute.availability.variety.Loss",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -759,7 +751,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -770,7 +762,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -781,7 +773,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -792,7 +784,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -803,7 +795,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -814,7 +806,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -825,7 +817,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -836,7 +828,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -847,7 +839,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -858,7 +850,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -869,7 +861,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -880,7 +872,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -891,7 +883,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -902,7 +894,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -913,7 +905,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -924,7 +916,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -935,7 +927,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -946,7 +938,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -957,7 +949,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -968,7 +960,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -979,7 +971,7 @@
       "references": [],
       "capability_description": "Log tampering or modification",
       "capability_id": "attribute.integrity.variety.Log tampering",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -990,7 +982,7 @@
       "references": [],
       "capability_description": "Modified stored data or content",
       "capability_id": "attribute.integrity.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1001,7 +993,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1012,7 +1004,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1023,7 +1015,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1034,7 +1026,7 @@
       "references": [],
       "capability_description": "Conversion or obscuration (ransomware)",
       "capability_id": "attribute.availability.variety.Obscuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -1045,7 +1037,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1056,7 +1048,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1067,7 +1059,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1078,7 +1070,7 @@
       "references": [],
       "capability_description": "Conversion or obscuration (ransomware)",
       "capability_id": "attribute.availability.variety.Obscuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -1089,7 +1081,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1100,7 +1092,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1111,7 +1103,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1122,7 +1114,7 @@
       "references": [],
       "capability_description": "Conversion or obscuration (ransomware)",
       "capability_id": "attribute.availability.variety.Obscuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -1133,7 +1125,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.hacking.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1144,7 +1136,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1155,7 +1147,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1166,7 +1158,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1177,7 +1169,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1188,7 +1180,7 @@
       "references": [],
       "capability_description": "Exploit a misconfiguration (vs vuln or weakness)",
       "capability_id": "action.hacking.variety.Exploit misconfig",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1199,7 +1191,7 @@
       "references": [],
       "capability_description": "Exploit vulnerability in code (vs misconfig or weakness). This can be used with other hacking enumerations, (such as XSS when an XSS vuln exists.). Parent of many hacking varieties.",
       "capability_id": "action.hacking.variety.Exploit vuln",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1210,7 +1202,7 @@
       "references": [],
       "capability_description": "Fuzz testing. Child of 'Exploit vuln'.",
       "capability_id": "action.hacking.variety.Fuzz testing",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1221,7 +1213,7 @@
       "references": [],
       "capability_description": "Exploit a misconfiguration (vs vuln or weakness)",
       "capability_id": "action.hacking.variety.Exploit misconfig",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1232,7 +1224,7 @@
       "references": [],
       "capability_description": "Exploit vulnerability in code (vs misconfig or weakness). This can be used with other malware enumerations, (such as Remote injection when a Remote injection vuln exists.)",
       "capability_id": "action.malware.variety.Exploit vuln",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1243,7 +1235,7 @@
       "references": [],
       "capability_description": "To assume control over and steal functionality for an illicit purpose (e.g. Hijacking phone number intercept SMS verification codes)",
       "capability_id": "action.hacking.variety.Hijack",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1254,7 +1246,7 @@
       "references": [],
       "capability_description": "Unknown",
       "capability_id": "action.hacking.variety.Unknown",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1265,7 +1257,7 @@
       "references": [],
       "capability_description": "To assume control over and steal functionality for an illicit purpose (e.g. Hijacking phone number intercept SMS verification codes)",
       "capability_id": "action.hacking.variety.Hijack",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1276,7 +1268,7 @@
       "references": [],
       "capability_description": "Unknown",
       "capability_id": "action.hacking.variety.Unknown",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1287,7 +1279,7 @@
       "references": [],
       "capability_description": "To assume control over and steal functionality for an illicit purpose (e.g. Hijacking phone number intercept SMS verification codes)",
       "capability_id": "action.hacking.variety.Hijack",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1298,7 +1290,7 @@
       "references": [],
       "capability_description": "Use of stolen or default authentication credentials (including credential stuffing)",
       "capability_id": "action.hacking.variety.Use of stolen creds",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1309,7 +1301,7 @@
       "references": [],
       "capability_description": "Man-in-the-middle attack. Child of 'Exploit vuln'.",
       "capability_id": "action.malware.variety.MitM",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1320,7 +1312,7 @@
       "references": [],
       "capability_description": "Man-in-the-middle attack. Child of 'Exploit vuln'.",
       "capability_id": "action.hacking.variety.MitM",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1331,7 +1323,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1342,7 +1334,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1353,7 +1345,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1364,7 +1356,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1375,7 +1367,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the current host",
       "capability_id": "action.hacking.variety.Profile host",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1386,7 +1378,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the network",
       "capability_id": "action.hacking.variety.Scan network",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1397,7 +1389,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the network",
       "capability_id": "action.hacking.variety.Scan network",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1408,7 +1400,7 @@
       "references": [],
       "capability_description": "Enumerating the state of the network",
       "capability_id": "action.hacking.variety.Scan network",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1419,7 +1411,7 @@
       "references": [],
       "capability_description": "Other",
       "capability_id": "action.hacking.variety.Other",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1430,7 +1422,7 @@
       "references": [],
       "capability_description": "Other",
       "capability_id": "action.hacking.variety.Other",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1441,7 +1433,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1452,7 +1444,7 @@
       "references": [],
       "capability_description": "Malware creates a backdoor capability for hacking. Child of 'RAT' when combined with 'Trojan'. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1463,7 +1455,7 @@
       "references": [],
       "capability_description": "An application which appears legitimate but hides malicious functionality. Child of 'RAT' when combined with 'Backdoor'",
       "capability_id": "action.malware.variety.Trojan",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1474,7 +1466,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1485,7 +1477,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1496,7 +1488,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1507,7 +1499,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1518,7 +1510,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1529,7 +1521,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1540,7 +1532,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1551,7 +1543,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1562,7 +1554,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1573,7 +1565,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1584,7 +1576,7 @@
       "references": [],
       "capability_description": "Hacking actions taken through a backdoor.  C2 is only used by malware.",
       "capability_id": "action.hacking.vector.Backdoor",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1595,7 +1587,7 @@
       "references": [],
       "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
       "capability_id": "action.hacking.vector.Partner",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1606,7 +1598,7 @@
       "references": [],
       "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
       "capability_id": "action.hacking.vector.Partner",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1617,7 +1609,7 @@
       "references": [],
       "capability_description": "Software",
       "capability_id": "action.social.vector.Software",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1628,7 +1620,7 @@
       "references": [],
       "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
       "capability_id": "action.hacking.vector.Partner",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1639,7 +1631,7 @@
       "references": [],
       "capability_description": "Phone",
       "capability_id": "action.social.vector.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1650,7 +1642,7 @@
       "references": [],
       "capability_description": "Hardware tampering or physical alteration",
       "capability_id": "attribute.integrity.variety.Hardware tampering",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1661,7 +1653,7 @@
       "references": [],
       "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
       "capability_id": "action.hacking.vector.Partner",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1672,7 +1664,7 @@
       "references": [],
       "capability_description": "Software",
       "capability_id": "action.social.vector.Software",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1683,7 +1675,7 @@
       "references": [],
       "capability_description": "Network service that is not remote access or a web application.",
       "capability_id": "action.hacking.vector.Other network service",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.hacking",
       "status": "complete"
     },
@@ -1694,7 +1686,7 @@
       "references": [],
       "capability_description": "Malware which compromises a legitimate file rather than creating new filess",
       "capability_id": "action.malware.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1705,7 +1697,7 @@
       "references": [],
       "capability_description": "Modified stored data or content",
       "capability_id": "attribute.integrity.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1716,7 +1708,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1727,7 +1719,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1738,7 +1730,7 @@
       "references": [],
       "capability_description": "compromise of authenticity (e.g. masquerading as the legitimate owner of an account)",
       "capability_id": "attribute.integrity.variety.Misrepresentation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1749,7 +1741,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1760,7 +1752,7 @@
       "references": [],
       "capability_description": "A proxy service (either formally or informally hosted) is used by the actor to obscure their source",
       "capability_id": "value_chain.non-distribution services.variety.Proxy",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.non-distribution_services",
       "status": "complete"
     },
@@ -1771,7 +1763,7 @@
       "references": [],
       "capability_description": "Malware creates Command and Control capability for malware. Child of 'Backdoor or C2'.",
       "capability_id": "action.malware.variety.C2",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1782,7 +1774,7 @@
       "references": [],
       "capability_description": "Instant Messaging",
       "capability_id": "action.malware.vector.Instant messaging",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1793,7 +1785,7 @@
       "references": [],
       "capability_description": "Pretexting (dialogue leveraging invented scenario).  Unlike 'Phishing', does not transfer data. (A fraudulent transfer or changing a bank account on a business account is not really disclosing data.",
       "capability_id": "action.social.variety.Pretexting",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1804,7 +1796,7 @@
       "references": [],
       "capability_description": "SMS or texting",
       "capability_id": "action.social.vector.SMS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1815,7 +1807,7 @@
       "references": [],
       "capability_description": "compromise of authenticity (e.g. masquerading as the legitimate owner of an account)",
       "capability_id": "attribute.integrity.variety.Misrepresentation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -1826,7 +1818,7 @@
       "references": [],
       "capability_description": "Capture data from application or system process",
       "capability_id": "action.malware.variety.Capture app data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1837,7 +1829,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1848,7 +1840,7 @@
       "references": [],
       "capability_description": "Capture data from application or system process",
       "capability_id": "action.malware.variety.Capture app data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1859,7 +1851,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1870,7 +1862,7 @@
       "references": [],
       "capability_description": "Capture data from application or system process",
       "capability_id": "action.malware.variety.Capture app data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1881,7 +1873,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1892,7 +1884,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1903,7 +1895,7 @@
       "references": [],
       "capability_description": "Email",
       "capability_id": "action.social.vector.Email",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1914,7 +1906,7 @@
       "references": [],
       "capability_description": "SMS or texting",
       "capability_id": "action.social.vector.SMS",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -1925,7 +1917,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1936,7 +1928,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1947,7 +1939,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1958,7 +1950,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1969,7 +1961,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -1980,7 +1972,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -1991,7 +1983,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2002,7 +1994,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2013,7 +2005,7 @@
       "references": [],
       "capability_description": "Capture data stored on system disk",
       "capability_id": "action.malware.variety.Capture stored data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2024,7 +2016,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2035,7 +2027,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2046,7 +2038,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2057,7 +2049,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2068,7 +2060,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2079,7 +2071,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2090,7 +2082,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2101,7 +2093,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2112,7 +2104,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2123,7 +2115,7 @@
       "references": [],
       "capability_description": "Disable or interfere with security controls",
       "capability_id": "action.malware.variety.Disable controls",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2134,7 +2126,7 @@
       "references": [],
       "capability_description": "Modified configuration or services",
       "capability_id": "attribute.integrity.variety.Modify configuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2145,7 +2137,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2156,7 +2148,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2167,7 +2159,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2178,7 +2170,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2189,7 +2181,7 @@
       "references": [],
       "capability_description": "Modified stored data or content",
       "capability_id": "attribute.integrity.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2200,7 +2192,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2211,7 +2203,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2222,7 +2214,7 @@
       "references": [],
       "capability_description": "Destruction",
       "capability_id": "attribute.availability.variety.Destruction",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2233,7 +2225,7 @@
       "references": [],
       "capability_description": "Loss",
       "capability_id": "attribute.availability.variety.Loss",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2244,7 +2236,7 @@
       "references": [],
       "capability_description": "Modified stored data or content",
       "capability_id": "attribute.integrity.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2255,7 +2247,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2266,7 +2258,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2277,7 +2269,7 @@
       "references": [],
       "capability_description": "Modified stored data or content",
       "capability_id": "attribute.integrity.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2288,7 +2280,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.malware.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2299,7 +2291,7 @@
       "references": [],
       "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
       "capability_id": "action.social.variety.Evade Defenses",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2310,7 +2302,7 @@
       "references": [],
       "capability_description": "Export data to another site or system",
       "capability_id": "action.malware.variety.Export data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2321,7 +2313,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2332,7 +2324,7 @@
       "references": [],
       "capability_description": "Export data to another site or system",
       "capability_id": "action.malware.variety.Export data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2343,7 +2335,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2354,7 +2346,7 @@
       "references": [],
       "capability_description": "Export data to another site or system",
       "capability_id": "action.malware.variety.Export data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2365,7 +2357,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2376,7 +2368,7 @@
       "references": [],
       "capability_description": "(malware never stored to persistent storage)",
       "capability_id": "action.malware.variety.In-memory",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2387,7 +2379,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2398,7 +2390,7 @@
       "references": [],
       "capability_description": "Malware which compromises a legitimate file rather than creating new filess",
       "capability_id": "action.malware.variety.Modify data",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2409,7 +2401,7 @@
       "references": [],
       "capability_description": "Ransomware (encrypt or seize stored data)",
       "capability_id": "action.malware.variety.Ransomware",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2420,7 +2412,7 @@
       "references": [],
       "capability_description": "Interruption",
       "capability_id": "attribute.availability.variety.Interruption",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2431,7 +2423,7 @@
       "references": [],
       "capability_description": "Loss",
       "capability_id": "attribute.availability.variety.Loss",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2442,7 +2434,7 @@
       "references": [],
       "capability_description": "Conversion or obscuration (ransomware)",
       "capability_id": "attribute.availability.variety.Obscuration",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2453,7 +2445,7 @@
       "references": [],
       "capability_description": "Spyware, keylogger or form-grabber (capture user input or activity)",
       "capability_id": "action.malware.variety.Spyware/Keylogger",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2464,7 +2456,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2475,7 +2467,7 @@
       "references": [],
       "capability_description": "Worm (propagate to other systems or devices)",
       "capability_id": "action.malware.variety.Worm",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2486,7 +2478,7 @@
       "references": [],
       "capability_description": "Removable storage media or devices",
       "capability_id": "action.malware.vector.Removable media",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2497,7 +2489,7 @@
       "references": [],
       "capability_description": "Removable storage media",
       "capability_id": "action.social.vector.Removable media",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2508,7 +2500,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -2519,7 +2511,7 @@
       "references": [],
       "capability_description": "Included in automated software update",
       "capability_id": "action.malware.vector.Software update",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2530,7 +2522,7 @@
       "references": [],
       "capability_description": "Software installation or code modification",
       "capability_id": "attribute.integrity.variety.Software installation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2541,7 +2533,7 @@
       "references": [],
       "capability_description": "Web via auto-executed or \"drive-by\" infection. Child of 'Web application'.",
       "capability_id": "action.malware.vector.Web application - drive-by",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.malware",
       "status": "complete"
     },
@@ -2552,7 +2544,7 @@
       "references": [],
       "capability_description": "Web application",
       "capability_id": "action.social.vector.Web application",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2563,7 +2555,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -2574,7 +2566,7 @@
       "references": [],
       "capability_description": "In-person",
       "capability_id": "action.social.vector.In-person",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "action.social",
       "status": "complete"
     },
@@ -2585,7 +2577,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     },
@@ -2596,7 +2588,7 @@
       "references": [],
       "capability_description": "Interruption",
       "capability_id": "attribute.availability.variety.Interruption",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.availability",
       "status": "complete"
     },
@@ -2607,7 +2599,7 @@
       "references": [],
       "capability_description": "Influence or alter human behavior",
       "capability_id": "attribute.integrity.variety.Alter behavior",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2618,7 +2610,7 @@
       "references": [],
       "capability_description": "compromise of authenticity (e.g. masquerading as the legitimate owner of an account)",
       "capability_id": "attribute.integrity.variety.Misrepresentation",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.integrity",
       "status": "complete"
     },
@@ -2629,7 +2621,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2640,7 +2632,7 @@
       "references": [],
       "capability_description": "lost or stolen credentials, including credental stuffing, used to pick an organization as a target",
       "capability_id": "value_chain.targeting.variety.Lost or stolen credentials",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.targeting",
       "status": "complete"
     },
@@ -2651,7 +2643,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2662,7 +2654,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2673,7 +2665,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2684,7 +2676,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2695,7 +2687,7 @@
       "references": [],
       "capability_description": "",
       "capability_id": "attribute.confidentiality.data_disclosure",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "attribute.confidentiality",
       "status": "complete"
     },
@@ -2706,7 +2698,7 @@
       "references": [],
       "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
       "capability_id": "value_chain.distribution.variety.Phone",
-      "mapping_type": "d3daa470-2f61-4e54-8595-f08ae58cb31c",
+      "mapping_type": [],
       "group": "value_chain.distribution",
       "status": "complete"
     }

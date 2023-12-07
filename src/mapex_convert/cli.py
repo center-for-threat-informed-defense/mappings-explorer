@@ -183,6 +183,7 @@ def parse_veris_mappings():
             nested_directories = get_nested_filepath_directories(parsed_mappings)
             output_filepath = PARSED_MAPPINGS_DIR / "veris" / nested_directories
             output_filepath.mkdir(parents=True, exist_ok=True)
+            domain = parsed_mappings["metadata"]["technology_domain"]
             filename = f"veris{filename_version_string}"
             filepath = output_filepath / filename
             write_parsed_mappings_json(parsed_mappings, filepath)
@@ -227,18 +228,26 @@ def write_parsed_mappings_json(parsed_mappings, filepath):
 
 
 def get_filename_version_string(parsed_mappings):
-    mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
-    mapping_framework_version_string = (
-        f"-{mapping_framework_version}" if mapping_framework_version else ""
-    )
+    mapping_framework_version = parsed_mappings["metadata"][
+        "mapping_framework_version"
+    ].replace("/", ".")
+    attack_domain = parsed_mappings["metadata"]["technology_domain"]
     attack_version = parsed_mappings["metadata"]["attack_version"]
-    return f"{mapping_framework_version_string}_attack-{attack_version}"
+    return f"-{mapping_framework_version}_attack-{attack_version}-{attack_domain}"
 
 
 def get_nested_filepath_directories(parsed_mappings):
     attack_version = parsed_mappings["metadata"]["attack_version"]
     framework = parsed_mappings["metadata"]["mapping_framework"]
     mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
-    if mapping_framework_version:
-        return f"attack-{attack_version}/{framework}-{mapping_framework_version}"
-    return f"{attack_version}"
+    attack_domain = parsed_mappings["metadata"]["technology_domain"]
+    return (
+        "attack-"
+        + attack_version
+        + "/"
+        + framework
+        + "-"
+        + mapping_framework_version.replace("/", ".")
+        + "/"
+        + attack_domain
+    )
