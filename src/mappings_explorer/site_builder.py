@@ -254,13 +254,11 @@ def build_external_landing(
         ("num_mappings", "Number of Mappings"),
     ]
 
-    project_id = project.id if project.id != "nist" else "nist_800_53"
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
         description=project.description,
-        project_id=project_id,
         project_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
@@ -272,6 +270,7 @@ def build_external_landing(
         headers=headers,
         group_headers=group_headers,
         groups=project.groups,
+        valid_versions=project.validVersions,
     )
     stream.dump(str(output_path))
     print(
@@ -358,7 +357,6 @@ def build_external_control(
         group_id=group_id,
         group_name=group_name,
         project=project,
-        project_id=project.id,
         description=project.description,
         tableHeaders=project.tableHeaders,
         control_version=project_version,
