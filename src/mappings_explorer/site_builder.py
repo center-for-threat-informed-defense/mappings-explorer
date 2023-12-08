@@ -190,7 +190,17 @@ def parse_groups(project, attack_version, project_version):
         filepath
         / ("attack-" + attack_version)
         / (project_id + "-" + project_version)
-        / (project_id + "-" + project_version + "_attack-" + attack_version + ".json")
+        / project.attackDomain
+        / (
+            project_id
+            + "-"
+            + project_version
+            + "_attack-"
+            + attack_version
+            + "-"
+            + project.attackDomain
+            + ".json"
+        )
     )
     f = open(full_path, "r")
     data = json.load(f)

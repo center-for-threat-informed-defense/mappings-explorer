@@ -51,23 +51,24 @@ def configure_security_stack_mappings(data, parsed_mappings):
         for mapping_type in parsed_mappings["metadata"]["mapping_types"]
         if parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
         == "technique_scores"
-    ]
-    [0]
+    ][0]
 
     if len(data["techniques"]) == 0:
+        if data["name"] not in list(parsed_mappings["metadata"]["groups"].keys()):
+            parsed_mappings["metadata"]["groups"][data["name"]] = data["name"]
         parsed_mappings["mapping_objects"].append(
             {
-                "comments": "",
-                "attack_object_id": "",
-                "attack_object_name": "",
-                "references": [],
+                "comments": None,
+                "attack_object_id": None,
+                "attack_object_name": None,
+                "references": None,
                 "capability_description": data["name"],
                 "capability_id": data["name"],
-                "mapping_type": "",
-                "score_category": "",
-                "score_value": "",
-                "related_score": "",
-                "group": "",
+                "mapping_type": None,
+                "score_category": None,
+                "score_value": None,
+                "related_score": None,
+                "group": data["name"],
                 "status": "not_mappable",
             }
         )

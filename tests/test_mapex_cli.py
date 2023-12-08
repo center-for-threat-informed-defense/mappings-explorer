@@ -77,9 +77,6 @@ def test_write_mappings_excel(tmpdir):
     write_parsed_mappings_excel(df, filepath)
     excel_file = pd.read_excel(io=f"{filepath}.xlsx")
 
-    print(expected_excel_file.to_string())
-    print(excel_file.to_string())
-
     # ASSERT
     assert expected_excel_file.to_string() == excel_file.to_string()
 

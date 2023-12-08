@@ -31,29 +31,30 @@ def create_df(parsed_mappings):
             "technology_domain",
             "mapping_framework",
             "mapping_framework_version",
-            "mapping_framework_version_schema",
         ]
         for column in columns_from_metadata:
             mapping_object[column] = parsed_mappings["metadata"][column]
 
         # get mapping type name based on id
+        # account for None value of mapping_type in not_mappable items
         mapping_types_objects = parsed_mappings["metadata"]["mapping_types"]
-        mapping_type_name = list(
-            filter(
-                lambda mapping_type_object: mapping_type_object["id"]
-                == mapping_object["mapping_type"],
-                mapping_types_objects,
-            )
-        )[0]["name"]
+        mapping_type_name = (
+            [
+                mapping_types_objects[mapping_type]["name"]
+                for mapping_type in mapping_types_objects
+                if mapping_type == mapping_object["mapping_type"]
+            ][0]
+            if mapping_object["mapping_type"]
+            else None
+        )
 
         # get group name based on id
         group_objects = parsed_mappings["metadata"]["groups"]
-        group_name = list(
-            filter(
-                lambda group_object: group_object["id"] == mapping_object["group"],
-                group_objects,
-            )
-        )[0]["name"]
+        group_name = [
+            group_objects[group]
+            for group in group_objects
+            if group == mapping_object["group"]
+        ][0]
 
         # swap mapping_type id and group id with mapping_type name and group name
         mapping_object["mapping_type"] = mapping_type_name
@@ -114,6 +115,12 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             if stix_object.get("name") == mapping["capability_id"]
         ][0]
 
+        # account for None mapping_type on not_mappable items
+        mapping_type = (
+            mapping["mapping_type"].replace("_", "-")
+            if mapping["mapping_type"]
+            else None
+        )
         stix_bundle["objects"].append(
             {
                 "type": "relationship",
@@ -121,7 +128,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 "spec_version": "2.1",
                 "created": datetime.now().isoformat(),
                 "modified": datetime.now().isoformat(),
-                "relationship_type": mapping["mapping_type"].replace("_", "-"),
+                "relationship_type": mapping_type,
                 "source_ref": related_source_ref,
                 "target_ref": technique_target_dict.get(
                     mapping["attack_object_id"], ""
@@ -256,8 +263,10 @@ def get_techniques_dict(parsed_mappings):
 
         # add score metadata if it is a scoring mapping
         mapping_types_names = []
-        for mapping_type_object in parsed_mappings["metadata"]["mapping_types"]:
-            mapping_types_names.append(mapping_type_object["name"])
+        for mapping_type in parsed_mappings["metadata"]["mapping_types"]:
+            mapping_types_names.append(
+                parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
+            )
         score_metadata = "technique_scores" in mapping_types_names
 
         if score_metadata:

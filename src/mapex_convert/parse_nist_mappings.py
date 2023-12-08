@@ -57,8 +57,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             mapping_type
             for mapping_type in mapping_types
             if mapping_types[mapping_type]["name"] == "mitigates"
-        ]
-        [0]
+        ][0]
 
         # get group id and name
         control_id = row["Control ID"]

@@ -67,8 +67,8 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         for cve_mapping_type in cve_mapping_types_objects
                         if cve_mapping_types_objects[cve_mapping_type]["name"]
                         == mapping_type
-                    ]
-                    [0]
+                    ][0]
+                    print(mapping_type_uuid)
 
                     # groups
                     capability_id = row["CVE ID"]

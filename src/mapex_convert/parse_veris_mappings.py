@@ -44,9 +44,8 @@ def configure_veris_mappings(veris_mappings, domain):
             mapping_type_uuid = [
                 mapping_type
                 for mapping_type in mapping_types
-                if mapping_types[mapping_type]["name"] == "related_to"
-            ]
-            [0]
+                if mapping_types[mapping_type]["name"] == "related-to"
+            ][0]
 
             # get group id and anme
             veris_group = veris_object[

@@ -154,9 +154,7 @@ def sanity_check_mappings(parsed_mappings):
         [mapping_object["group"] for mapping_object in mapping_objects]
     )
 
-    metadata_group_ids = set(
-        [group["id"] for group in parsed_mappings["metadata"]["groups"]]
-    )
+    metadata_group_ids = set(list(parsed_mappings["metadata"]["groups"].keys()))
 
     # warning if there is a group in metadata that is never used
     all_groups_used = metadata_group_ids.issubset(groups_used_in_mappings)
@@ -199,10 +197,7 @@ def sanity_check_mappings(parsed_mappings):
     )
 
     metadata_mapping_type_ids = set(
-        [
-            mapping_type["id"]
-            for mapping_type in parsed_mappings["metadata"]["mapping_types"]
-        ]
+        list(parsed_mappings["metadata"]["mapping_types"].keys())
     )
 
     # warning if there is a group in metadata that is never used
@@ -228,7 +223,10 @@ def sanity_check_mappings(parsed_mappings):
     missing_mapping_types = mapping_types_used_in_mappings.difference(
         metadata_mapping_type_ids
     )
-    if not all_mapping_types_defined:
+
+    # do not show warning if the missing mapping type is 'None', which is the
+    # value of mapping_type in not_mappable items
+    if not all_mapping_types_defined and missing_mapping_types != set([None]):
         print(
             colored(
                 f"""ERROR: The following mapping types are referenced by mapping
