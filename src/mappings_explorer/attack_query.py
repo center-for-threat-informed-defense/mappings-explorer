@@ -28,6 +28,15 @@ def get_attack_data(attack_version, attack_domain):
 
 
 def load_attack_json(attack_version, attack_domain):
+    """Fetches data from STIX data
+
+    Args:
+        attack_version: The attack version that should be fetched
+        attack_domain: The attack domain that should be fetched
+
+    Returns:
+       STIX data that was fetched
+    """
     logging.info(
         f"Fetching attack data for {attack_domain} version {attack_version} ..."
     )
@@ -39,7 +48,7 @@ def load_attack_json(attack_version, attack_domain):
 
 @cache
 def fetch_url(url):
-    response = requests.get(url)
+    response = requests.get(url, verify=False)
     if response.status_code != 404:
         attack_data = json.loads(response.text)
         return attack_data
@@ -47,6 +56,19 @@ def fetch_url(url):
 
 
 def build_attack_dict(attack_data, attack_domain):
+    """Creates dictionary of attack objects -- techniques and subtechniques --
+    and pertinent data about the attack objects
+
+    Args:
+        attack_version: The attack version that attack objects should be fetched from.
+        This must be a string with one decimal field (i.e. "9.0").
+        attack_domain: The attack domain that attack objects should be fetched from.
+        Must be ICS, Mobile, or Enterprise. Case does not matter
+
+    Returns:
+        A dict mapping an attack object to its id, name, url, and description
+
+    """
     attack_domain = attack_domain.lower()
     attack_data_array = []
     for attack_object in attack_data["objects"]:
@@ -83,6 +105,16 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
     """Creates json files with attack objects and data needed for creating the attack
     matrix
 
+    Outputs a json file with attack objects mapped to the following:
+        id: id of the attack object,
+        name: name of the attack object,
+        type: type of the attack object, can be tactic, technique, or subtechnique
+        tactics: if the attack object is a technique, its tactic parent/parents)
+        technique: if the attack object is a subtechnique, its parent technique
+        short_name: attack object short name,
+        capabilities_mapped: list of capabilities mapped to the attack object,
+        background_color: color that the matrix technique/subtechnique box should
+        be, based on the amount of capabilities mapped
     Args:
         attack_domains: a dictionary of attack domains (ICS, Mobile, and Enterprise)
         mapped to the attack versions that contain techniques and subtechniques for
@@ -90,20 +122,6 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
         output_filepath: the path to output the json files
         mappings_filepath: filepath to mappings files, which are used to give the
         techniques/subtechniques coverage data
-
-    Outputs:
-        A json file with attack objects mapped to the following:
-            id: id of the attack object,
-            name: name of the attack object,
-            type: type of the attack object, can be tactic, technique,
-            or subtechnique
-            tactics: if the attack object is a technique, its tactic
-            parent/parents)
-            technique: if the attack object is a subtechnique, its parent technique
-            short_name: attack object short name,
-            capabilities_mapped: list of capabilities mapped to the attack object,
-            background_color: color that the matrix technique/subtechnique box should
-            be, based on the amount of capabilities mapped
 
     """
     attack_data_dict = {}
@@ -153,6 +171,16 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
 
 
 def add_background_colors(attack_version_data):
+    """Adds a background_color field to techniques and subtechniques
+
+    The background color is determined by the amount of capabilites the
+    technqiue/subtechnique is mapped to. The technique/subtechnique with the largest
+    amount of capabilities mapped will have an opacity of 1, and the rest of the
+    technqiues/subtechniques will have lower opacities.
+
+    Args:
+        attack_version_data: the dictionary that the background field should be added to
+    """
     max_score = 0
     min_score = 100000
     for attack_object in attack_version_data:
@@ -182,6 +210,17 @@ def add_background_colors(attack_version_data):
 
 
 def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
+    """Adds capabilites mapped to techniques/subtechniques
+
+    A list of capability ids from nist-800-53, veris, and security stack mappings that
+    are mapped to the specified technique/subtechnique is added to the
+    capabilites_mapped field. CVE capabilites are included as well, but only count once
+    toward each technique/subtechnique.
+
+    Args:
+        mappings: mappings that will be added to techniques/subtechniques
+        attack_data_dict: dictionary to add the mappings to
+    """
     attack_data_version = attack_data_dict[mappings["metadata"]["attack_version"]][
         mappings["metadata"]["technology_domain"]
     ]
@@ -214,6 +253,29 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
 
 
 def format_attack_data(attack_data, attack_domain):
+    """Creates dictionary of attack objects -- techniques and subtechniques --
+    and pertinent data about the attack objects
+
+    Args:
+        attack_data: the data fetched from STIX
+        attack_domain: the domain that the data is from. Must be ICS, Mobile,
+        or Enterprise. Case does not matter
+
+    Returns:
+        A dict mapping an attack object to the following fields:
+            name: name of the attack object,
+            type: whether the attack object is a technique, subtechnique, or tactic
+            tactics: if the attack object is a technique, the tactics that it is
+            included in,
+            technique: if the attack object is a subtechnique, its parent technique id
+            short_name: the short_name of the attack object
+            capabilities_mapped: the capabilites that are mapped to the attack object,
+            begins as an empty array
+            background_color: the background color of the technique/subtechnique,
+            determined by teh amount of capabilities mapped, begins as an empty string
+            id: id of the attack object,
+
+    """
     attack_data_dict = {}
     for attack_object in attack_data["objects"]:
         # skip objects without IDs
