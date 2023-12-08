@@ -1,10 +1,20 @@
 import argparse
 import json
+import os
 import shutil
+from pathlib import Path
 
+import requests
 from jinja2 import Environment, FileSystemLoader
+from mapex_convert.read_files import (
+    read_yaml_file,
+)
 
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
+
+ROOT_DIR = Path.cwd()
+PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
+MAPPINGS_DIR = ROOT_DIR / "src" / "mapex_convert" / "mappings"
 
 
 class Capability:
@@ -166,12 +176,12 @@ def load_projects():
     gcp.mappings = []
 
     projects = [
-        nist,
+        # nist,
         cve,
         aws,
         azure,
         gcp,
-        veris,
+        # veris,
     ]
     return projects
 
@@ -218,11 +228,41 @@ def parse_groups(project, attack_version, project_version):
             + " mappings in group: "
             + group["name"]
         )
-    project.capabilities = parseCapabilities(mappings=project.mappings)
+    project.capabilities = parse_capabilities(project)
+    #  set the descriptions for each project's capability list
+    if project.id == "cve":
+        get_cve_descriptions(project=project)
+    if project.id == "aws" or project.id == "gcp" or project.id == "azure":
+        get_security_stack_descriptions(project=project)
 
 
-def parseCapabilities(mappings):
-    # allIds = mappings.values_list("capability_id", flat=True)
+def get_security_stack_descriptions(project):
+    rootdir = MAPPINGS_DIR / "SecurityStack" / project.id
+    # iterate through mappings files
+    for file in os.listdir(rootdir):
+        data = read_yaml_file(rootdir / file)
+        name = data["name"]
+        description = data["description"]
+        for c in project.capabilities:
+            if c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_"):
+                c.description = description
+                c.label = data["name"]
+                break
+
+
+def get_cve_descriptions(project):
+    for c in project.capabilities:
+        try:
+            response = requests.get("https://cveawg.mitre.org/api/cve/" + id).json()
+            descriptions = response["containers"]["cna"]["descriptions"]
+            c.label = response["containers"]["cna"]["title"]
+            c.description = descriptions[0]["value"]
+        except Exception:
+            c.description = ""
+
+
+def parse_capabilities(project):
+    mappings = project.mappings
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
@@ -441,7 +481,7 @@ def build_external_capability(
         control=project.label,
         project=project,
         project_id=project.id,
-        description=project.description,
+        description=capability.description,
         control_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
