@@ -265,7 +265,6 @@ def build_external_landing(
         # ("num_controls", "Number of Controls"),
         ("num_mappings", "Number of Mappings"),
     ]
-    project_id = project.id if project.id != "nist" else "nist_800_53"
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
