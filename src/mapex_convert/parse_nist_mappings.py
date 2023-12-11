@@ -26,7 +26,7 @@ control_family_lookup_dict = {
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
     mapping_framework_version = "rev" + mapping_framework_version[-1]
-    mapping_types = [{"id": str(uuid.uuid4()), "name": "mitigates", "description": ""}]
+    mapping_types = {str(uuid.uuid4()): {"name": "mitigates", "description": ""}}
     parsed_mappings = {
         "metadata": {
             "mapping_version": "",
@@ -44,32 +44,27 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "organization": "",
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
-            "mapping_framework_version_schema": "FRAMEWORK_VERSION",
             "mapping_types": mapping_types,
-            "groups": [],
+            "groups": {},
         },
         "mapping_objects": [],
     }
 
-    groups = []
+    groups = {}
     for _, row in dataframe.iterrows():
         # get mapping type uuid
-        mapping_type_uuid = list(
-            filter(
-                lambda mapping_type_object: mapping_type_object["name"] == "mitigates",
-                mapping_types,
-            )
-        )[0]["id"]
+        mapping_type_uuid = [
+            mapping_type
+            for mapping_type in mapping_types
+            if mapping_types[mapping_type]["name"] == "mitigates"
+        ][0]
 
         # get group id and name
         control_id = row["Control ID"]
         control_family_id = control_id[0 : control_id.index("-")]
-        if not any(group["id"] == control_family_id for group in groups):
-            groups.append(
-                {
-                    "id": control_family_id,
-                    "name": control_family_lookup_dict.get(control_family_id, ""),
-                }
+        if control_family_id not in list(groups.keys()):
+            groups[control_family_id] = (
+                control_family_lookup_dict.get(control_family_id, ""),
             )
 
         parsed_mappings["mapping_objects"].append(
@@ -82,6 +77,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "capability_id": row["Control ID"],
                 "mapping_type": mapping_type_uuid,
                 "group": control_family_id,
+                "status": "complete",
             }
         )
 

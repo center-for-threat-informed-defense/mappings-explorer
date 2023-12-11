@@ -61,45 +61,28 @@
         },
         "mapping_types": {
           "description": "The mappings types that are associated with each Framework.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["id", "name", "description"],
-            "properties": {
-              "id": {
-                "description": "The mapping type's identifier.",
-                "type": "string"
+          "type": "object",
+          "patternProperties": {
+            "[a-z]+": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "description": "The mapping type's name.",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "A description of the mapping type.",
+                  "type": "string"
+                }
               },
-              "name": {
-                "description": "The mapping type's name.",
-                "type": "string"
-              },
-              "description": {
-                "description": "A description of the mapping type.",
-                "type": "string"
-              }
+              "additionalProperties": false,
+              "required": ["name", "description"]
             }
           }
         },
         "groups": {
           "description": "The groups that the mappings can be organized in.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["id", "name"],
-            "properties": {
-              "id": {
-                "description": "The group's identifier.",
-                "type": "string"
-              },
-              "name": {
-                "description": "The group's name.",
-                "type": "string"
-              }
-            }
-          }
+          "type": "object"
         }
       },
       "required": [
@@ -122,11 +105,11 @@
         "properties": {
           "attack_object_id": {
             "description": "The unique identifier of the ATT&CK object being mapped. (T1648)",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "attack_object_name": {
             "description": "The name of the ATT&CK object. (Serverless Execution)",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "capability_id": {
             "description": "Unique identifier of the framework object being mapped.",
@@ -138,36 +121,41 @@
           },
           "comments": {
             "description": "Used to document assumptions, circumstances, or other information regarding the mapping",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "references": {
             "description": "A list of links to documentation that provides additional detail in understanding the data contained in this mapping. (A link to the documentation for a security control.)",
-            "type": "array",
+            "type": ["array", "null"],
             "items": {
               "type": "string"
             }
           },
           "mapping_type": {
             "description": "Mapping type has framework-specific values. This property describes how the capability_id and attack_object_id are related.",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "group": {
             "description": "This property describes which group this mapping falls into.",
-            "type": "string"
+            "type": ["string", "null"]
+          },
+          "status": {
+            "description": "This property describes the status of the mapping, whether it is complete, in progress, or not mapable.",
+            "type": "string",
+            "enum": ["complete", "in_progress", "not_mappable"]
           },
           "score_category": {
             "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
-            "type": "string",
-            "enum": ["protect", "detect", "respond"]
+            "type": ["string", "null"],
+            "enum": ["protect", "detect", "respond", null]
           },
           "score_value": {
             "description": "The score. (e.g. Minimal, Partial, Significant)",
-            "type": "string",
-            "enum": ["minimal", "partial", "significant"]
+            "type": ["string", "null"],
+            "enum": ["minimal", "partial", "significant", null]
           },
           "related_score": {
             "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",
-            "type": "string"
+            "type": ["string", "null"]
           }
         },
         "required": ["mapping_type", "capability_id"]
