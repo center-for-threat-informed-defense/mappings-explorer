@@ -65,7 +65,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
         if control_family_id not in list(groups.keys()):
             groups[control_family_id] = (
                 control_family_lookup_dict.get(control_family_id, ""),
-            )
+            )[0]
 
         parsed_mappings["mapping_objects"].append(
             {
