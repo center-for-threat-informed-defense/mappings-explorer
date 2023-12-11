@@ -176,12 +176,12 @@ def load_projects():
     gcp.mappings = []
 
     projects = [
-        # nist,
+        nist,
         cve,
         aws,
         azure,
         gcp,
-        # veris,
+        veris,
     ]
     return projects
 
@@ -232,6 +232,8 @@ def parse_groups(project, attack_version, project_version):
     #  set the descriptions for each project's capability list
     if project.id == "cve":
         get_cve_descriptions(project=project)
+    if project.id == "nist":
+        get_nist_descriptions(project=project, version=project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
@@ -253,12 +255,36 @@ def get_security_stack_descriptions(project):
 def get_cve_descriptions(project):
     for c in project.capabilities:
         try:
-            response = requests.get("https://cveawg.mitre.org/api/cve/" + id).json()
+            response = requests.get("https://cveawg.mitre.org/api/cve/" + c.id).json()
             descriptions = response["containers"]["cna"]["descriptions"]
-            c.label = response["containers"]["cna"]["title"]
             c.description = descriptions[0]["value"]
         except Exception:
             c.description = ""
+
+
+def get_nist_descriptions(project, version):
+    rev5_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_5_1_1/element/"
+    rev4_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_4_0_0/element/"
+    link = ""
+    if version == "rev4":
+        link = rev4_link
+    else:
+        link = rev5_link
+
+    for c in project.capabilities:
+        try:
+            id = c.id
+            if len(id) < 5 and version != "rev4":
+                id = c.id[0:3] + "0" + c.id[3:4]
+            response = requests.get(link + id + "/graph").json()
+            elements = response["response"]["elements"]
+            element_array = elements[0]["elements"][0]["elements"]
+            for item in element_array:
+                if item["elementTypeIdentifier"] == "discussion":
+                    c.description = item["text"].replace("<p>", "").replace("</p>", "")
+                    break
+        except Exception as e:
+            print("exception ", e)
 
 
 def parse_capabilities(project):
@@ -271,7 +297,7 @@ def parse_capabilities(project):
         c.id = id
         c.mappings = [m for m in mappings if (m["capability_id"] == id)]
         print(
-            "for capability " + c.id + " munber of mappings is  " + str(len(c.mappings))
+            "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
         )
         capabilities.append(c)
     return capabilities
