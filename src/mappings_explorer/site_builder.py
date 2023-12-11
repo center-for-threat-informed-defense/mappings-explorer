@@ -9,10 +9,7 @@ from mapex_convert.read_files import (
     read_yaml_file,
 )
 
-from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
-
-PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
-MAPPINGS_DIR = ROOT_DIR / "src" / "mapex_convert" / "mappings"
+from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
 class Capability:
@@ -174,8 +171,8 @@ def load_projects():
     gcp.mappings = []
 
     projects = [
-        nist,
-        cve,
+        # nist,
+        # cve,
         aws,
         azure,
         gcp,
@@ -237,7 +234,12 @@ def parse_groups(project, attack_version, project_version):
 
 
 def get_security_stack_descriptions(project):
-    rootdir = MAPPINGS_DIR / "SecurityStack" / project.id
+    root = DATA_DIR / "SecurityStack"
+    data_dir = os.listdir(root)
+    for dir in data_dir:
+        if dir.lower() == project.id:
+            rootdir = root / dir
+
     # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
