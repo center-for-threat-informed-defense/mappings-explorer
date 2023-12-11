@@ -2,7 +2,6 @@ import argparse
 import json
 import os
 import shutil
-from pathlib import Path
 
 import requests
 from jinja2 import Environment, FileSystemLoader
@@ -12,7 +11,6 @@ from mapex_convert.read_files import (
 
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
-ROOT_DIR = Path.cwd()
 PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
 MAPPINGS_DIR = ROOT_DIR / "src" / "mapex_convert" / "mappings"
 
