@@ -171,8 +171,8 @@ def load_projects():
     gcp.mappings = []
 
     projects = [
-        # nist,
-        # cve,
+        nist,
+        cve,
         aws,
         azure,
         gcp,
