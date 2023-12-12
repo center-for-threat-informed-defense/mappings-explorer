@@ -13,10 +13,13 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
         mapping_type.lower().replace(" ", "_") for mapping_type in cve_mapping_types
     ]
 
-    cve_mapping_types_objects = [
-        {"id": str(uuid.uuid4()), "description": "", "name": mapping_type}
-        for mapping_type in formatted_cve_mapping_types
-    ]
+    cve_mapping_types_objects = {}
+
+    for mapping_type in formatted_cve_mapping_types:
+        cve_mapping_types_objects[str(uuid.uuid4())] = {
+            "description": "",
+            "name": mapping_type,
+        }
 
     # put data in correct format with correct fields
     parsed_mappings = {
@@ -35,15 +38,14 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
             "last_update": "10/21/2021",
             "organization": "",
             "mapping_framework": "cve",
-            "mapping_framework_version": "21.10.21",
-            "mapping_framework_version_schema": "ACCESS_DATE",
+            "mapping_framework_version": "10/21/2021",
             "mapping_types": cve_mapping_types_objects,
-            "groups": [],
+            "groups": {},
         },
         "mapping_objects": [],
     }
 
-    groups = []
+    groups = {}
     for _, row in df.iterrows():
         for mapping_type in cve_mapping_types:
             if isinstance(row[mapping_type], str):
@@ -60,13 +62,13 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                     )
                     name = attack_details.get("name", "")
 
-                    mapping_type_uuid = list(
-                        filter(
-                            lambda mapping_type_object: mapping_type_object["name"]
-                            == mapping_type,
-                            cve_mapping_types_objects,
-                        )
-                    )[0]["id"]
+                    mapping_type_uuid = [
+                        cve_mapping_type
+                        for cve_mapping_type in cve_mapping_types_objects
+                        if cve_mapping_types_objects[cve_mapping_type]["name"]
+                        == mapping_type
+                    ][0]
+                    print(mapping_type_uuid)
 
                     # groups
                     capability_id = row["CVE ID"]
@@ -74,10 +76,8 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
                     ]
                     # if group doesn't exist yet, create it
-                    if not any(group["id"] == capability_year for group in groups):
-                        groups.append(
-                            {"id": capability_year, "name": f"{capability_year} CVEs"}
-                        )
+                    if capability_year not in list(groups.keys()):
+                        groups[capability_year] = f"{capability_year} CVEs"
 
                     parsed_mappings["mapping_objects"].append(
                         {
@@ -89,6 +89,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type_uuid,
                             "group": capability_year,
+                            "status": "complete",
                         }
                     )
 

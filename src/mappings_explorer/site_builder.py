@@ -98,9 +98,9 @@ def load_projects():
     ]
     cve.attackDomains = ["enterprise"]
     cve.attackDomain = cve.attackDomains[0]
-    cve.versions = ["21.10.21"]
+    cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
-    cve.validVersions = [("21.10.21", "9.0")]
+    cve.validVersions = [("10.21.2021", "9.0")]
     cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
@@ -119,8 +119,8 @@ def load_projects():
     aws.attackDomains = ["enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
-    aws.versions = ["21.09.21"]
-    aws.validVersions = [("21.09.21", "9.0")]
+    aws.versions = ["09.21.2021"]
+    aws.validVersions = [("09.21.2021", "9.0")]
     aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
@@ -139,8 +139,8 @@ def load_projects():
     azure.attackDomains = ["enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
-    azure.versions = ["21.06.29"]
-    azure.validVersions = [("21.06.29", "8.2")]
+    azure.versions = ["06.29.2021"]
+    azure.validVersions = [("06.29.2021", "8.2")]
     azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
@@ -157,10 +157,11 @@ def load_projects():
          available on the Center’s project page."""
     ]
     gcp.attackDomains = ["enterprise"]
+    gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
-    gcp.versions = ["22.06.28"]
-    gcp.validVersions = [("22.06.28", "10.0")]
+    gcp.versions = ["06.28.2022"]
+    gcp.validVersions = [("06.28.2022", "10.0")]
     gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
@@ -176,9 +177,9 @@ def load_projects():
 
 
 def replace_mapping_type(mapping, type_list):
-    for type in type_list:
-        if mapping["mapping_type"] == type["id"]:
-            return type["name"]
+    for mapping_type in type_list:
+        if mapping["mapping_type"] == mapping_type:
+            return type_list[mapping_type]["name"]
 
 
 def parse_groups(project, attack_version, project_version):
@@ -186,36 +187,46 @@ def parse_groups(project, attack_version, project_version):
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
+    print("DOMAIN")
+    print(project.attackDomain)
     full_path = (
         filepath
         / ("attack-" + attack_version)
-        / (project_id + "-" + project_version)
-        / (project_id + "-" + project_version + "_attack-" + attack_version + ".json")
+        / (project_id + "-" + project_version.replace("/", "."))
+        / project.attackDomain
+        / (
+            project_id
+            + "-"
+            + project_version.replace("/", ".")
+            + "_attack-"
+            + attack_version
+            + "-"
+            + project.attackDomain
+            + ".json"
+        )
     )
     f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
-    if metadata.get("groups"):
-        project.groups = metadata["groups"]
     project.mappings = data["mapping_objects"]
     for mapping in project.mappings:
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-    for group in project.groups:
+    for group in metadata["groups"]:
+        project_group = {"id": group, "name": metadata["groups"][group]}
         # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [m for m in project.mappings if (m["group"] == group["id"])]
-        group["num_mappings"] = len(filtered_mappings)
-        group["mappings"] = filtered_mappings
+        filtered_mappings = [m for m in project.mappings if (m["group"] == group)]
+        project_group["num_mappings"] = len(filtered_mappings)
+        project_group["mappings"] = filtered_mappings
         # here's where I'll parse which capabilities are under a certain group
-        group["controls"] = []
-        group["num_controls"] = 0
+        project_group["controls"] = []
         print(
             "     found "
             + f"{len(filtered_mappings)}"
             + " mappings in group: "
-            + group["name"]
+            + project_group["name"]
         )
 
 
@@ -253,13 +264,16 @@ def build_external_landing(
         # ("num_controls", "Number of Controls"),
         ("num_mappings", "Number of Mappings"),
     ]
-
+    project_id = project.id
+    if project_id == "nist":
+        project_id = "nist_800_53"
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
         control=project.label,
         description=project.description,
-        project_version=project_version,
+        project_version=project_version.replace("/", "."),
+        project_id=project_id,
         versions=project.versions,
         attack_version=attack_version,
         attackVersions=project.attackVersions,
