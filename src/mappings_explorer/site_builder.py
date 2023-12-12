@@ -9,11 +9,18 @@ from mapex_convert.read_files import (
     read_yaml_file,
 )
 
-from .attack_query import create_attack_jsons
+from .attack_query import create_attack_jsons, get_attack_data
 from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
 class Capability:
+    id = ""
+    label = ""
+    description = ""
+    mappings = []
+
+
+class Technique:
     id = ""
     label = ""
     description = ""
@@ -534,6 +541,103 @@ def build_external_capability(
     print("          Created capability page " + capability.id)
 
 
+def parse_techniques(attack_version, attack_domain, projects):
+    techniques = []
+    attack_data = get_attack_data(attack_version, attack_domain)
+    for project in projects:
+        allIds = [m["attack_object_id"] for m in project.mappings]
+        attack_ids = list(set(allIds))
+        for id in attack_ids:
+            if id in [t.id for t in techniques]:
+                technique = [t for t in techniques if t.id == id][0]
+                technique.mappings.append(
+                    [m for m in project.mappings if (m["attack_object_id"] == id)]
+                )
+            else:
+                t = Technique()
+                t.id = id
+                dict_item = [t for t in attack_data if t.get("id") == id]
+                if len(dict_item) > 0:
+                    t.label = dict_item[0].get("name")
+                    t.description = dict_item[0].get("description")
+                t.mappings = [
+                    m for m in project.mappings if (m["attack_object_id"] == id)
+                ]
+                techniques.append(t)
+    return techniques
+
+
+def build_attack_pages(projects, url_prefix):
+    all_attack_versions = [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        # "13.0",
+        # "13.1",
+        # "14.0",
+        # "14.1",
+    ]
+    for attack_version in all_attack_versions:
+        attack_domain = "Enterprise"
+        all_techniques = parse_techniques(
+            attack_version=attack_version,
+            attack_domain=attack_domain,
+            projects=projects,
+        )
+        external_dir = (
+            PUBLIC_DIR
+            / "attack"
+            / ("attack-" + attack_version)
+            / ("domain-" + attack_domain)
+        )
+        external_dir.mkdir(parents=True, exist_ok=True)
+
+        for technique in all_techniques:
+            build_technique_page(
+                url_prefix=url_prefix,
+                parent_dir=external_dir,
+                attack_version=attack_version,
+                attack_domain=attack_domain,
+                technique=technique,
+            )
+
+
+def build_technique_page(
+    url_prefix, parent_dir, attack_version, attack_domain, technique
+):
+    headers = [
+        ("attack_object_id", "ATT&CK ID"),
+        ("attack_object_name", "ATT&CK Name"),
+        ("mapping_type", "Mapping Type"),
+        ("capability_id", "Capability ID"),
+        ("capability_description", "Capability Description"),
+    ]
+    dir = parent_dir / technique.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("technique.html.j2")
+    stream = template.stream(
+        title="ATT&CK Technique",
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        domain=attack_domain,
+        headers=headers,
+        technique=technique,
+        prev_page=prev_page,
+        mappings=technique.mappings,
+    )
+    stream.dump(str(output_path))
+    print("build page for technique ", technique.id, " at ", str(output_path))
+
+
 def build_matrix(url_prefix):
     external_dir = PUBLIC_DIR / "external" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
@@ -661,10 +765,11 @@ def main():
     template = templateEnv.get_template(TEMPLATE_FILE)
 
     build_external_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix)
-    template.stream(title="External Mappings Home").dump(
-        "./output/external-landing.html"
-    )
+    build_attack_pages(projects=projects, url_prefix=url_prefix)
+    # build_matrix(url_prefix)
+    # template.stream(title="External Mappings Home").dump(
+    #     "./output/external-landing.html"
+    # )
     print("Created external mappings home")
 
 
