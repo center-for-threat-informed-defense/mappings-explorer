@@ -89,8 +89,7 @@ def test_cve_mappings_json(tmpdir):
 
 
 def pop_uuids(result):
-    for mapping_type in result["metadata"]["mapping_types"]:
-        mapping_type.pop("id")
+    result["metadata"].pop("mapping_types")
     for attack_object in result["mapping_objects"]:
         attack_object.pop("mapping_type")
     return result
