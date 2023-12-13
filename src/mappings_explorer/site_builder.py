@@ -221,6 +221,8 @@ def parse_groups(project, attack_version, project_version):
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
+    if metadata.get("groups"):
+        project.groups = metadata["groups"]
     project.mappings = data["mapping_objects"]
     for mapping in project.mappings:
         mapping["mapping_type"] = replace_mapping_type(
@@ -229,7 +231,9 @@ def parse_groups(project, attack_version, project_version):
     for group in metadata["groups"]:
         project_group = {"id": group, "name": metadata["groups"][group]}
         # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [m for m in project.mappings if (m["group"] == group)]
+        filtered_mappings = [
+            m for m in project.mappings if (m["group"] == project_group["id"])
+        ]
         project_group["num_mappings"] = len(filtered_mappings)
         project_group["mappings"] = filtered_mappings
         # here's where I'll parse which capabilities are under a certain group
@@ -241,6 +245,14 @@ def parse_groups(project, attack_version, project_version):
             + project_group["name"]
         )
     project.capabilities = parse_capabilities(project)
+    project.mappings.append(
+        {
+            "attack_version": attack_version,
+            "project_version": project_version,
+            "attack_domain": "Enterprise",
+            "mappings": project.mappings,
+        }
+    )
     #  set the descriptions for each project's capability list
     if project.id == "cve":
         get_cve_descriptions(project=project)
@@ -545,25 +557,35 @@ def parse_techniques(attack_version, attack_domain, projects):
     techniques = []
     attack_data = get_attack_data(attack_version, attack_domain)
     for project in projects:
-        allIds = [m["attack_object_id"] for m in project.mappings]
-        attack_ids = list(set(allIds))
-        for id in attack_ids:
-            if id in [t.id for t in techniques]:
-                technique = [t for t in techniques if t.id == id][0]
-                technique.mappings.append(
-                    [m for m in project.mappings if (m["attack_object_id"] == id)]
-                )
-            else:
-                t = Technique()
-                t.id = id
-                dict_item = [t for t in attack_data if t.get("id") == id]
-                if len(dict_item) > 0:
-                    t.label = dict_item[0].get("name")
-                    t.description = dict_item[0].get("description")
-                t.mappings = [
-                    m for m in project.mappings if (m["attack_object_id"] == id)
-                ]
-                techniques.append(t)
+        mappings = []
+        print("adding mappings in project ", project.id)
+        m = [
+            m
+            for m in project.mappings
+            if float(m["attack_version"]) <= float(attack_version)
+        ]
+        if len(m) > 0:
+            m = m[len(m) - 1]
+            print("  version ", m["attack_version"])
+            mappings = m["mappings"]
+            allIds = [m["attack_object_id"] for m in mappings]
+            attack_ids = list(set(allIds))
+            for id in attack_ids:
+                if id in [t.id for t in techniques]:
+                    technique = [t for t in techniques if t.id == id][0]
+                    additional_mappings = [
+                        m for m in mappings if (m["attack_object_id"] == id)
+                    ]
+                    technique.mappings = technique.mappings + additional_mappings
+                else:
+                    t = Technique()
+                    t.id = id
+                    dict_item = [t for t in attack_data if t.get("id") == id]
+                    if len(dict_item) > 0:
+                        t.label = dict_item[0].get("name")
+                        t.description = dict_item[0].get("description")
+                    t.mappings = [m for m in mappings if (m["attack_object_id"] == id)]
+                    techniques.append(t)
     return techniques
 
 
@@ -607,6 +629,7 @@ def build_attack_pages(projects, url_prefix):
                 attack_domain=attack_domain,
                 technique=technique,
             )
+        print("built all technique pages")
 
 
 def build_technique_page(
@@ -616,6 +639,8 @@ def build_technique_page(
         ("attack_object_id", "ATT&CK ID"),
         ("attack_object_name", "ATT&CK Name"),
         ("mapping_type", "Mapping Type"),
+        ("score_category", "Category"),
+        ("score_value", "Value"),
         ("capability_id", "Capability ID"),
         ("capability_description", "Capability Description"),
     ]
@@ -635,7 +660,6 @@ def build_technique_page(
         mappings=technique.mappings,
     )
     stream.dump(str(output_path))
-    print("build page for technique ", technique.id, " at ", str(output_path))
 
 
 def build_matrix(url_prefix):
@@ -766,10 +790,10 @@ def main():
 
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
-    # build_matrix(url_prefix)
-    # template.stream(title="External Mappings Home").dump(
-    #     "./output/external-landing.html"
-    # )
+    build_matrix(url_prefix)
+    template.stream(title="External Mappings Home").dump(
+        "./output/external-landing.html"
+    )
     print("Created external mappings home")
 
 
