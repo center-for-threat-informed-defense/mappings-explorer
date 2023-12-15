@@ -278,14 +278,14 @@
       },
       setVersionsAccoringToQueryParams(){
         const url = new URL(window.location.href)
-        if(url.searchParams.has('attack-version')){
+        if(url.searchParams.has('attack-version') && this.attackVersions.includes(url.searchParams.get('attack-version'))){
           this.selectedAttackVersion = url.searchParams.get('attack-version');
         }
         else {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({path:newurl},'',newurl);
         }
-        if (url.searchParams.has('domain')){
+        if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())){
           this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
         }
         else {
