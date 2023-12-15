@@ -275,10 +275,42 @@
             technique.open = open;
           })
         );
+      },
+      setVersionsAccoringToQueryParams(){
+        const url = new URL(window.location.href)
+        if(url.searchParams.has('attack-version')){
+          this.selectedAttackVersion = url.searchParams.get('attack-version');
+        }
+        else {
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          window.history.pushState({path:newurl},'',newurl);
+        }
+        if (url.searchParams.has('domain')){
+          this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
+        }
+        else {
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          window.history.pushState({path:newurl},'',newurl);
+        }
       }
+    },
+    watch: {
+      selectedAttackVersion: {
+        handler(newValue){
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          window.history.pushState({path:newurl},'',newurl);
+        },
+      },
+       selectedDomain: {
+         handler(newValue) {
+           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+           window.history.pushState({path:newurl},'',newurl);
+         },
+      },
     },
     mounted() {
       this.getAttackObjectDict();
+      this.setVersionsAccoringToQueryParams();
     },
   };
 
