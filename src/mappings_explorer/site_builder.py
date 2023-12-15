@@ -653,7 +653,7 @@ def build_technique_page(
         title="ATT&CK Technique",
         url_prefix=url_prefix,
         attack_version=attack_version,
-        domain=attack_domain,
+        attack_domain=attack_domain,
         headers=headers,
         technique=technique,
         prev_page=prev_page,
