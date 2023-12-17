@@ -54,14 +54,15 @@
             <div class="row justify-content-left">
               <div class="col-12">
                 <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MATRIX</h2>
-                <div class="matrix-table">
+                <div class="matrix-table-container">
                   <div class="row">
                     <div class="col-md-12">
                       <button @click="toggleAllTechniques(true)" class="toggle-subtechniques-btn">Show All Sub-Techniques</button>
                       <button @click="toggleAllTechniques(false)" class="toggle-subtechniques-btn">Hide All Sub-Techniques</button>
                     </div>
                   </div>
-                  <div class="overflow-scroll">
+                  <div class="scroll-indicator-left" v-if="!scrolledCompletelyToLeft"></div>
+                  <div class="overflow-scroll" id="matrix-table-scrollable" @scroll="handleScroll">
                     <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
                       <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
                         <div class="tactic-header">
@@ -71,7 +72,6 @@
                         </div>
                       </div>
                     </div>
-                    <div class="scroll-indicator-left"></div>
                     <div class="row row--no-x-margin row--no-padding flex-nowrap">
                       <div class="col-md-1 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
                         <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
@@ -145,8 +145,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="scroll-indicator-right"></div>
                   </div>
+                  <div class="scroll-indicator-right" v-if="!scrolledCompletelyToRight"></div>
                 </div>
               </div>
             </div>
@@ -177,6 +177,8 @@
         attackObjectDict: {},
         techniqueHovered: "",
         selectedDomain: "Enterprise",
+        scrolledCompletelyToRight: false,
+        scrolledCompletelyToLeft: true,
       };
     },
     props: {
@@ -202,6 +204,14 @@
       },
     },
     methods: {
+      handleScroll(e){
+        const { offsetWidth, scrollWidth } = e.target;
+        let scrollableElement = document.getElementById("matrix-table-scrollable");
+        let scrollLeft = scrollableElement.scrollLeft;
+        let scrollRight = scrollableElement.scrollRight;
+        this.scrolledCompletelyToRight = (scrollLeft + offsetWidth) > (scrollWidth - 1);
+        this.scrolledCompletelyToLeft = scrollLeft === 0;
+      },
       getTooltipPosition() {
         let hoveredElement = document
           .getElementById(
@@ -442,7 +452,7 @@
     color: #005b94;
     border: 1px solid #005b94;
   }
-  .matrix-table {
+  .matrix-table-container {
     background-color: white;
     padding: 40px;
     box-shadow: 2px 2px 4px #bdbdbd;
@@ -476,6 +486,24 @@
   }
   .matrix-component {
     position: relative;
+  }
+  .scroll-indicator-right {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.001), white);
+    right: 35px;
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 50px;
+  }
+  .scroll-indicator-left {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.001), white);
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: 80px;
+    left: 35px;
   }
 </style>
 {% endblock content %}
