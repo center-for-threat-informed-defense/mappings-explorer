@@ -487,13 +487,9 @@ def build_external_pages(projects, url_prefix):
             project_version = validCombo[0]
             attack_domain = validCombo[2]
             a = "attack-" + attack_version
-            attack_dir = dir / a
-            attack_dir.mkdir(parents=True, exist_ok=True)
             p = project.id + "-" + project_version
-            project_dir = attack_dir / p
-            project_dir.mkdir(parents=True, exist_ok=True)
             d = "domain-" + attack_domain.lower()
-            domain_dir = project_dir / d
+            domain_dir = dir / a / p / d
             domain_dir.mkdir(parents=True, exist_ok=True)
             parse_groups(
                 project=project,
@@ -538,7 +534,7 @@ def build_external_group(
 ):
     group_id = group["id"]
     group_name = group["name"]
-    dir = parent_dir / group_id / attack_domain.lower()
+    dir = parent_dir / group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external-group.html.j2")
