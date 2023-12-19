@@ -4,6 +4,7 @@ import shutil
 
 from jinja2 import Environment, FileSystemLoader
 
+from .attack_query import create_attack_jsons
 from .template import PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
@@ -187,8 +188,6 @@ def parse_groups(project, attack_version, project_version):
     if project_id == "nist":
         project_id = "nist_800_53"
     filepath = PUBLIC_DIR / "data" / project_id
-    print("DOMAIN")
-    print(project.attackDomain)
     full_path = (
         filepath
         / ("attack-" + attack_version)
@@ -387,6 +386,91 @@ def build_external_control(
     print("          Created group page " + group_name)
 
 
+def build_matrix(url_prefix):
+    external_dir = PUBLIC_DIR / "external" / "matrix"
+    external_dir.mkdir(parents=True, exist_ok=True)
+    output_path = external_dir / "index.html"
+
+    all_attack_versions = [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        "13.0",
+        "13.1",
+        "14.0",
+        "14.1",
+    ]
+
+    attack_domains = {
+        "Enterprise": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+        "ICS": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+        "Mobile": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+        ],
+    }
+
+    json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
+    mappings_filepath = PUBLIC_DIR / "data"
+    create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
+
+    template = load_template("matrix.html.j2")
+    stream = template.stream(
+        title="ATT&CK Matrix",
+        all_attack_versions=all_attack_versions,
+        url_prefix=url_prefix,
+        attack_domains=attack_domains,
+    )
+    stream.dump(str(output_path))
+    print("Created matrix")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -429,6 +513,11 @@ def main():
     template = templateEnv.get_template(TEMPLATE_FILE)
 
     build_external_pages(projects=projects, url_prefix=url_prefix)
+    build_matrix(url_prefix)
+    template.stream(title="External Mappings Home").dump(
+        "./output/external-landing.html"
+    )
+    print("Created external mappings home")
 
 
 if __name__ == "__main__":
