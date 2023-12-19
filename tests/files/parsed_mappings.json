@@ -10,9 +10,8 @@
     "organization": "",
     "mapping_framework": "nist_800_53",
     "mapping_framework_version": "1",
-    "mapping_types": [{ "name": "mitigates", "description": "", "id": "1234" }],
-    "groups": [{ "name": "group", "id": "5678" }],
-    "mapping_framework_version_schema": "FRAMEWORK_VERSION"
+    "mapping_types": { "1234": { "name": "mitigates", "description": "" } },
+    "groups": { "5678": "group" }
   },
   "mapping_objects": [
     {
@@ -23,7 +22,8 @@
       "capability_description": "Concurrent Session Control",
       "capability_id": "AC-10",
       "mapping_type": "1234",
-      "group": "5678"
+      "group": "5678",
+      "status": "complete"
     },
     {
       "comments": "",
@@ -33,7 +33,8 @@
       "capability_description": "Concurrent Session Control",
       "capability_id": "AC-10",
       "mapping_type": "1234",
-      "group": "5678"
+      "group": "5678",
+      "status": "complete"
     }
   ]
 }
