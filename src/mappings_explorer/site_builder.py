@@ -494,7 +494,6 @@ def build_external_pages(projects, url_prefix):
             project_dir.mkdir(parents=True, exist_ok=True)
             d = "domain-" + attack_domain.lower()
             domain_dir = project_dir / d
-            print("DOMAIN DIRECTORY", domain_dir)
             domain_dir.mkdir(parents=True, exist_ok=True)
             parse_groups(
                 project=project,
