@@ -1,0 +1,12 @@
+<script src="{{url_prefix}}/static/lunr.min.js"></script>
+<script src="{{url_prefix}}/static/search.js"></script>
+
+<script>
+    initializeSearch("{{url_prefix}}/static/lunr-index.json").then(() => {
+        // TODO delete this testing code
+        console.log("query 'policy':", search("policy", 1));
+        console.log("query 'windows':", search("windows", 1));
+    });
+</script>
+
+TODO render the search UI here

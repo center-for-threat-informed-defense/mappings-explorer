@@ -5,6 +5,7 @@ import shutil
 
 import requests
 from jinja2 import Environment, FileSystemLoader
+from lunr import lunr
 from mapex_convert.read_files import (
     read_yaml_file,
 )
@@ -619,6 +620,63 @@ def build_matrix(url_prefix):
     print("Created matrix")
 
 
+def build_search_index(url_prefix):
+    """
+    Render the search page and also build the search index as a JSON file.
+
+    Args:
+        url_prefix - the site's URL prefix
+    """
+    print("Creating search page")
+    search_dir = PUBLIC_DIR / "search"
+    search_dir.mkdir(parents=True, exist_ok=True)
+    output_path = search_dir / "index.html"
+    template = load_template("search.html.j2")
+    stream = template.stream(url_prefix=url_prefix)
+    stream.dump(str(output_path))
+
+    print("Creating search index")
+    # TODO replace hard-coded pages with real pages.
+    pages = [
+        {
+            "url": "external/nist/attack-12.1/nist-rev5/AC-1/",
+            "id": "AC-1",
+            "name": "Policy and Procedures",
+        },
+        {
+            "url": "external/veris/attack-12.1/veris-1.3.7/action.hacking.variety.Abuse%20of%20functionality/",
+            "id": "ACTION.HACKING.VARIETY.ABUSE OF FUNCTIONALITY",
+            "name": "Abuse of functionality.",
+        },
+        {
+            "url": "attack/attack-12.1/T1047/",
+            "id": "T1047",
+            "name": "Windows Management Instrumentation",
+        },
+    ]
+    index = lunr(
+        ref="url",
+        # TODO figure out what fields we want to add and how to tradeoff against our
+        # index size budget of 1MB
+        fields=[
+            {"field_name": "id", "boost": 3},
+            {"field_name": "name", "boost": 2},
+            # {"field_name": "other_field_goes here", "boost": 1},
+        ],
+        documents=pages,
+    )
+    # TODO remove this next line which is just for debugging the index
+    print("policy", index.search("policy"))
+    pages = {p.pop("url"): p for p in pages}
+    index_path = PUBLIC_DIR / "static" / "lunr-index.json"
+    with index_path.open("w") as index_file:
+        lunr_index = {
+            "pages": pages,
+            "index": index.serialize(),
+        }
+        json.dump(lunr_index, index_file)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -666,6 +724,8 @@ def main():
         "./output/external-landing.html"
     )
     print("Created external mappings home")
+
+    build_search_index(url_prefix)
 
 
 if __name__ == "__main__":
