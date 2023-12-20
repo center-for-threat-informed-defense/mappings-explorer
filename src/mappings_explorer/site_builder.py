@@ -27,6 +27,13 @@ class Technique:
     mappings = []
 
 
+class Group:
+    id = ""
+    label = ""
+    num_mappings = ""
+    mappings = []
+
+
 class ExternalControl:
     id = ""
     label = ""
@@ -221,29 +228,27 @@ def parse_groups(project, attack_version, project_version):
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
-    if metadata.get("groups"):
-        project.groups = metadata["groups"]
+
     project.mappings = data["mapping_objects"]
     for mapping in project.mappings:
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-    for group in metadata["groups"]:
-        project_group = {"id": group, "name": metadata["groups"][group]}
-        # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [
-            m for m in project.mappings if (m["group"] == project_group["id"])
-        ]
-        project_group["num_mappings"] = len(filtered_mappings)
-        project_group["mappings"] = filtered_mappings
-        # here's where I'll parse which capabilities are under a certain group
-        project_group["controls"] = []
-        print(
-            "     found "
-            + f"{len(filtered_mappings)}"
-            + " mappings in group: "
-            + project_group["name"]
-        )
+    if metadata.get("groups"):
+        for i in metadata["groups"]:
+            g = Group()
+            g.id = i
+            g.label = metadata["groups"][i]
+            project.groups.append(g)
+            filtered_mappings = [m for m in project.mappings if (m["group"] == g.id)]
+            g.num_mappings = len(filtered_mappings)
+            g.mappings = filtered_mappings
+            print(
+                "     found "
+                + f"{len(filtered_mappings)}"
+                + " mappings in group: "
+                + g.label
+            )
     project.capabilities = parse_capabilities(project)
     project.mappings.append(
         {
@@ -384,8 +389,7 @@ def build_external_landing(
 
     group_headers = [
         ("id", "ID", "id", external_prefix),
-        ("name", "Control Family", "id", external_prefix),
-        # ("num_controls", "Number of Controls"),
+        ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
     ]
     project_id = project.id
@@ -488,19 +492,17 @@ def build_external_control(
     attack_version,
     headers,
 ):
-    group_id = group["id"]
-    group_name = group["name"]
-    dir = parent_dir / group_id
+    dir = parent_dir / group.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external-group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=project.label + " " + group_name,
+        title=project.label + " " + group.label,
         url_prefix=url_prefix,
         control=project.label,
-        group_id=group_id,
-        group_name=group_name,
+        group_id=group.id,
+        group_name=group.label,
         project=project,
         description=project.description,
         control_version=project_version,
@@ -510,11 +512,11 @@ def build_external_control(
         domain=project.attackDomain,
         domains=project.attackDomains,
         prev_page=prev_page,
-        mappings=group["mappings"],
+        mappings=group.mappings,
         headers=headers,
     )
     stream.dump(str(output_path))
-    print("          Created group page " + group_name)
+    print("          Created group page " + group.label)
 
 
 def build_external_capability(
