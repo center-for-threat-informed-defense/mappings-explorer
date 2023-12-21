@@ -460,16 +460,19 @@ def build_external_landing(
             project_version=project_version,
             attack_version=attack_version,
             headers=headers,
+            capability=capability,
+            attack_domain=attack_domain,
         )
     for capability in project.capabilities:
         build_external_capability(
             project=project,
             url_prefix=url_prefix,
-            parent_dir=project_dir,
+            parent_dir=domain_dir,
             project_version=project_version,
             attack_version=attack_version,
             headers=headers,
             capability=capability,
+            attack_domain=attack_domain,
         )
 
 
@@ -532,8 +535,7 @@ def build_external_group(
     headers,
     attack_domain,
 ):
-    group_id = group["id"]
-    group_name = group["name"]
+    group_id = group.id
     dir = parent_dir / group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -569,6 +571,7 @@ def build_external_capability(
     attack_version,
     headers,
     capability,
+    attack_domain,
 ):
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -705,7 +708,7 @@ def build_technique_page(
         mappings=technique.mappings,
     )
     stream.dump(str(output_path))
-    print("          Created group page " + group_name)
+    print("          Created technique page " + technique.id)
 
 
 def build_matrix(url_prefix):
