@@ -3,6 +3,7 @@ import json
 import os
 import shutil
 
+import requests
 from mapex_convert.read_files import (
     read_yaml_file,
 )
@@ -513,7 +514,7 @@ def build_external_pages(projects, url_prefix):
                 attack_version=attack_version,
                 project_version=project_version,
                 domain_dir=domain_dir,
-                mappings=project.mappings,
+                mappings=mappings,
                 attack_domain=attack_domain,
             )
             # for the most up to date combo, copy the pages higher up the directory
