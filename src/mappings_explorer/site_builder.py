@@ -620,6 +620,91 @@ def build_matrix(url_prefix):
     print("Created matrix")
 
 
+def getIndexPages():
+    """
+    Create an array of page dictionaries for search index
+
+    Returns an array of dictionaries with the search index's url, id, and name
+    Also returns an array of all mappings objects
+    """
+    mappings_filepath = PUBLIC_DIR / "data"
+    pages = []
+    all_mappings = []
+    for mappings_file in mappings_filepath.rglob("**/*.json"):
+        if (
+            "stix" not in mappings_file.name
+            and "navigator_layer" not in mappings_file.name
+        ):
+            mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
+            project = mappings["metadata"]["mapping_framework"]
+            if project == "nist_800_53":
+                project = "nist"
+            attack_version = mappings["metadata"]["attack_version"]
+            attack_domain = mappings["metadata"]["technology_domain"]
+            project_version = mappings["metadata"]["mapping_framework_version"]
+            mapping_url = (
+                "external/"
+                + project
+                + "/attack-"
+                + attack_version
+                + "/"
+                + project
+                + "-"
+                + project_version
+                + "/domain-"
+                + attack_domain
+            )
+            for mapping in mappings["mapping_objects"]:
+                mapping["mapping_type"] = replace_mapping_type(
+                    mapping, mappings["metadata"]["mapping_types"]
+                )
+                mapping_framework = mappings["metadata"]["mapping_framework"]
+                if mapping_framework == "nist_800_53":
+                    mapping["mapping_framework"] = "NIST 800-53"
+                elif mapping_framework == "veris":
+                    mapping["mapping_framework"] = "VERIS"
+                elif mapping_framework == "cve":
+                    mapping["mapping_framework"] = "CVE"
+                elif mapping_framework == "aws":
+                    mapping["mapping_framework"] = "Amazon Web Services (AWS)"
+                elif mapping_framework == "azure":
+                    mapping["mapping_framework"] = "Azure"
+                elif mapping_framework == "gcp":
+                    mapping["mapping_framework"] = "Google Cloud Platform (GCP)"
+                all_mappings.append(mapping)
+                group = mapping["group"]
+                group_url = f"{mapping_url}/{group}/"
+                if not any(page["url"] == group_url for page in pages):
+                    pages.append(
+                        {
+                            "url": group_url,
+                            "id": group,
+                            "name": mappings["metadata"]["groups"][group],
+                        }
+                    )
+                attack_object_id = mapping["attack_object_id"]
+                attack_object_url = f"{mapping_url}/{attack_object_id}"
+                if not any(page["url"] == attack_object_url for page in pages):
+                    pages.append(
+                        {
+                            "url": attack_object_url,
+                            "id": attack_object_id,
+                            "name": mapping["attack_object_name"],
+                        }
+                    )
+                capability_id = mapping["capability_id"]
+                capability_url = f"{mapping_url}/{capability_id}"
+                if not any(page["url"] == capability_url for page in pages):
+                    pages.append(
+                        {
+                            "url": capability_url,
+                            "id": capability_id,
+                            "name": mapping["capability_description"],
+                        }
+                    )
+    return pages, all_mappings
+
+
 def build_search_index(url_prefix):
     """
     Render the search page and also build the search index as a JSON file.
@@ -632,36 +717,28 @@ def build_search_index(url_prefix):
     search_dir.mkdir(parents=True, exist_ok=True)
     output_path = search_dir / "index.html"
     template = load_template("search.html.j2")
-    stream = template.stream(url_prefix=url_prefix)
-    stream.dump(str(output_path))
 
     print("Creating search index")
-    # TODO replace hard-coded pages with real pages.
-    pages = [
-        {
-            "url": "external/nist/attack-12.1/nist-rev5/AC-1/",
-            "id": "AC-1",
-            "name": "Policy and Procedures",
-        },
-        {
-            "url": "external/veris/attack-12.1/veris-1.3.7/action.hacking.variety.Abuse%20of%20functionality/",
-            "id": "ACTION.HACKING.VARIETY.ABUSE OF FUNCTIONALITY",
-            "name": "Abuse of functionality.",
-        },
-        {
-            "url": "attack/attack-12.1/T1047/",
-            "id": "T1047",
-            "name": "Windows Management Instrumentation",
-        },
+    pages, all_mappings = getIndexPages()
+    headers = [
+        ("attack_object_id", "ATT&CK ID", "attack_object_id"),
+        ("attack_object_name", "ATT&CK Name", "attack_object_id"),
+        ("mapping_type", "Mapping Type"),
+        ("capability_id", "Capability ID", "capability_id"),
+        ("capability_description", "Capability Description", "capability_id"),
     ]
+    stream = template.stream(
+        url_prefix=url_prefix, all_mappings=all_mappings, headers=headers
+    )
+    stream.dump(str(output_path))
+
     index = lunr(
         ref="url",
         # TODO figure out what fields we want to add and how to tradeoff against our
         # index size budget of 1MB
         fields=[
             {"field_name": "id", "boost": 3},
-            {"field_name": "name", "boost": 2},
-            # {"field_name": "other_field_goes here", "boost": 1},
+            # {"field_name": "name", "boost": 2},
         ],
         documents=pages,
     )
@@ -669,11 +746,11 @@ def build_search_index(url_prefix):
     print("policy", index.search("policy"))
     pages = {p.pop("url"): p for p in pages}
     index_path = PUBLIC_DIR / "static" / "lunr-index.json"
+    lunr_index = {
+        "pages": pages,
+        "index": index.serialize(),
+    }
     with index_path.open("w") as index_file:
-        lunr_index = {
-            "pages": pages,
-            "index": index.serialize(),
-        }
         json.dump(lunr_index, index_file)
 
 
@@ -718,11 +795,11 @@ def main():
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    build_external_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix)
-    template.stream(title="External Mappings Home").dump(
-        "./output/external-landing.html"
-    )
+    # build_external_pages(projects=projects, url_prefix=url_prefix)
+    # build_matrix(url_prefix)
+    # template.stream(title="External Mappings Home").dump(
+    #     "./output/external-landing.html"
+    # )
     print("Created external mappings home")
 
     build_search_index(url_prefix)

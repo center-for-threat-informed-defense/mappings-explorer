@@ -70,18 +70,18 @@ span.highlight {
 /*--------------------------------------------------------------
   # Sections & Section Header
   --------------------------------------------------------------*/
-  section {
-    overflow: hidden;
-    padding: 40px 0;
-  }
-  section.version-select {
-    overflow: visible;
-  }
+section {
+  overflow: hidden;
+  padding: 40px 0;
+}
+section.version-select {
+  overflow: visible;
+}
 
-  .section-header {
-    text-align: center;
-    padding-bottom: 30px;
-  }
+.section-header {
+  text-align: center;
+  padding-bottom: 30px;
+}
 
 .section-header {
   text-align: center;
@@ -308,6 +308,7 @@ div.banner {
 }
 .header .search-input {
   background: none !important;
+  color: white !important;
 }
 .header ::placeholder {
   color: white !important;
@@ -2530,11 +2531,11 @@ td a:hover {
 .select-selected {
   background-color: white;
   padding: 0.8rem 1rem;
-    font-weight: 700;
-    font-size: 18px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px #bdbdbd;
-  }
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #bdbdbd;
+}
 
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -2545,7 +2546,8 @@ td a:hover {
   width: 0;
   height: 0;
   border: 6px solid transparent;
-  border-color: var(--color-text) transparent transparent transparent;}
+  border-color: var(--color-text) transparent transparent transparent;
+}
 
 /*point the arrow upwards when the select box is open (active):*/
 .select-selected.select-arrow-active:after {
@@ -2554,7 +2556,8 @@ td a:hover {
 }
 
 /*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
   color: var(--color-text);
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -2580,10 +2583,11 @@ td a:hover {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 .select-items .invalid-option {
-  color: #A0A0A0;
+  color: #a0a0a0;
 }

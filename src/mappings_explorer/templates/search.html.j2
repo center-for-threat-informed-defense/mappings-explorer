@@ -1,12 +1,162 @@
-<script src="{{url_prefix}}/static/lunr.min.js"></script>
-<script src="{{url_prefix}}/static/search.js"></script>
+{% extends "base.html.j2" %} {% block content %}
+<div id="search">
+  <Search :all_mappings="{{all_mappings}}"></Search>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="{{url_prefix}}static/lunr.min.js"></script>
 
 <script>
-    initializeSearch("{{url_prefix}}/static/lunr-index.json").then(() => {
-        // TODO delete this testing code
-        console.log("query 'policy':", search("policy", 1));
-        console.log("query 'windows':", search("windows", 1));
-    });
-</script>
+  const Search = {
+    template: `
+      <div>
+        <section id="header-container" class="header-container">
+          <div class="container" data-aos="fade-up">
+            <h1 style="text-transform: uppercase">
+              <span class="highlight">Search Result</span> Mappings
+            </h1>
+          </div>
+        </section>
+        <section class="mapping-table">
+          <div class="container" data-aos="fade-up">
+            <div class="row justify-content-left">
+              <div class="table-responsive table-outer">
+                <div class="form-outline mb-4">
+                  <table class="table table-borderless table-hover table-responsive"
+                    data-toggle="table"
+                    data-search="true"
+                    data-pagination="true"
+                    data-show-multi-sort="true">
+                    <thead>
+                      <th :data-field="header.field" data-sortable="true" v-for="header in headers">[[header.name]]</th>
+                    </thead>
+                    <tbody>
+                      <tr v-for="mapping in filteredMappings">
+                        <td v-for="header in headers">
+                          [[ mapping[header.field] ]]
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  `,
+    delimiters: ["[[", "]]"],
+    data() {
+      return {
+        webPages: undefined,
+        index: undefined,
+        filteredMappings: [],
+        headers: [
+          {
+            field: "mapping_framework",
+            name: "Mapping Framework",
+          },
+          {
+            field: "attack_object_id",
+            name: "ATT&CK ID",
+          },
+          {
+            field: "attack_object_name",
+            name: "ATT&CK Name",
+          },
+          {
+            field: "mapping_type",
+            name: "Mapping Type",
+          },
+          {
+            field: "capability_id",
+            name: "Capability ID",
+          },
+          {
+            field: "capability_description",
+            name: "Capability Description",
+          },
+        ],
+      };
+    },
+    props: {
+      all_mappings: Array,
+    },
+    computed: {},
+    methods: {
+      /**
+       * Initialize the search index.
+       */
+      async initializeSearch(indexUrl) {
+        const indexResponse = await fetch(indexUrl);
+        const indexJson = await indexResponse.json();
+        this.webPages = indexJson["pages"];
+        this.index = lunr.Index.load(indexJson["index"]);
+        console.log("Search index is initialized.");
+      },
 
-TODO render the search UI here
+      /**
+       * Run a query on the search index and return the results.
+       */
+      searchIndex(query, page = 1) {
+        if (!this.index) {
+          console.error("Search index is not initialized.");
+          return;
+        }
+
+        const allResults = this.index.search(query);
+
+        // TODO paginate the results using `page` and `resultsPerPage`.
+        const startAt = 0;
+        const endAt = 10;
+        const results = allResults.slice(startAt, endAt);
+        for (const result of results) {
+          result.pageData = this.webPages[result.ref];
+        }
+
+        return {
+          query,
+          results: results,
+          totalCount: allResults.length,
+        };
+      },
+      searchMain() {
+        const url = new URL(window.location.href);
+        if (url.searchParams.has("search")) {
+          let search = url.searchParams.get("search");
+          this.initializeSearch(
+            `${window.location.origin}/static/lunr-index.json`
+          ).then(() => {
+            let results = this.searchIndex(search, 1);
+            let filteredMappings = [];
+            results.results.forEach((result) => {
+              filteredMappings.push(
+                this.all_mappings.filter((mapping) => {
+                  return (
+                    mapping.attack_object_id?.includes(result.pageData.id) ||
+                    mapping.group?.includes(result.pageData.id) ||
+                    mapping.capability_id?.includes(result.pageData.id)
+                  );
+                })
+              );
+            });
+            this.filteredMappings = filteredMappings.flat();
+          });
+        }
+      },
+    },
+    mounted() {
+      this.searchMain();
+    },
+  };
+
+  const app = new Vue({
+    el: "#search",
+    components: {
+      Search: Search,
+    },
+  });
+</script>
+<style>
+</style>
+{% endblock content %}
