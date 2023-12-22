@@ -26,6 +26,14 @@ class Technique:
     mappings = []
 
 
+class Tactic:
+    id = ""
+    label = ""
+    description = ""
+    techniques: []
+    mappings = []
+
+
 class Group:
     id = ""
     label = ""
@@ -464,17 +472,6 @@ def build_external_landing(
             capability=capability,
             attack_domain=attack_domain,
         )
-    for capability in project.capabilities:
-        build_external_capability(
-            project=project,
-            url_prefix=url_prefix,
-            parent_dir=domain_dir,
-            project_version=project_version,
-            attack_version=attack_version,
-            headers=headers,
-            capability=capability,
-            attack_domain=attack_domain,
-        )
 
 
 def build_external_pages(projects, url_prefix):
@@ -601,9 +598,8 @@ def build_external_capability(
     print("          Created capability page " + capability.id)
 
 
-def parse_techniques(attack_version, attack_domain, projects):
+def parse_techniques(attack_version, attack_domain, attack_data, projects):
     techniques = []
-    attack_data = get_attack_data(attack_version, attack_domain)
     for project in projects:
         mappings = []
         print("adding mappings in project ", project.id)
@@ -636,6 +632,18 @@ def parse_techniques(attack_version, attack_domain, projects):
     return techniques
 
 
+def parse_tactics(attack_version, attack_domain, attack_data, projects):
+    tactic_list = []
+    tactics = [t for t in attack_data if t.get("id")[:2] == "TA"]
+    for tactic in tactics:
+        ta = Tactic()
+        ta.id = tactic.get("id")
+        ta.description = tactic.get("description")
+        ta.label = tactic.get("name")
+        tactic_list.append(ta)
+    return tactic_list
+
+
 def build_attack_pages(projects, url_prefix):
     all_attack_versions = [
         "8.2",
@@ -655,9 +663,17 @@ def build_attack_pages(projects, url_prefix):
     ]
     for attack_version in all_attack_versions:
         attack_domain = "Enterprise"
+        attack_data = get_attack_data(attack_version, attack_domain)
         all_techniques = parse_techniques(
             attack_version=attack_version,
             attack_domain=attack_domain,
+            attack_data=attack_data,
+            projects=projects,
+        )
+        all_tactics = parse_tactics(
+            attack_version=attack_version,
+            attack_domain=attack_domain,
+            attack_data=attack_data,
             projects=projects,
         )
         external_dir = (
@@ -678,6 +694,16 @@ def build_attack_pages(projects, url_prefix):
                     technique=technique,
                 )
         print("built all technique pages")
+        for tactic in all_tactics:
+            if tactic.id:
+                build_tactic_page(
+                    url_prefix=url_prefix,
+                    parent_dir=external_dir,
+                    attack_version=attack_version,
+                    attack_domain=attack_domain,
+                    tactic=tactic,
+                )
+        print("built all tactic pages")
 
 
 def build_technique_page(
@@ -692,7 +718,6 @@ def build_technique_page(
         ("capability_id", "Capability ID"),
         ("capability_description", "Capability Description"),
     ]
-    # print("creating page for ", technique.id, " and parent dir ", parent_dir)
     dir = parent_dir / technique.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -710,6 +735,34 @@ def build_technique_page(
     )
     stream.dump(str(output_path))
     print("          Created technique page " + technique.id)
+
+
+def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):
+    # headers = [
+    #     ("attack_object_id", "ATT&CK ID"),
+    #     ("attack_object_name", "ATT&CK Name"),
+    #     ("mapping_type", "Mapping Type"),
+    #     ("score_category", "Category"),
+    #     ("score_value", "Value"),
+    #     ("capability_id", "Capability ID"),
+    #     ("capability_description", "Capability Description"),
+    # ]
+    dir = parent_dir / tactic.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("tactic.html.j2")
+    stream = template.stream(
+        title="ATT&CK Tactic",
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        # headers=headers,
+        tactic=tactic,
+        prev_page=prev_page,
+    )
+    stream.dump(str(output_path))
+    print("          Created tactic page " + tactic.id)
 
 
 def build_matrix(url_prefix):
