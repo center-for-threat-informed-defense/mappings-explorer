@@ -269,7 +269,9 @@ def parse_groups(project, attack_version, project_version, attack_domain):
                 + " mappings in group: "
                 + g.label
             )
-    project.capabilities = parse_capabilities(mappings)
+    project.capabilities = parse_capabilities(
+        mappings, project, project_version, attack_version
+    )
     project.mappings.append(
         {
             "attack_version": attack_version,
@@ -341,7 +343,7 @@ def get_nist_descriptions(project, version):
             print("exception ", e)
 
 
-def parse_capabilities(mappings):
+def parse_capabilities(mappings, project, project_version, attack_version):
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
@@ -349,6 +351,11 @@ def parse_capabilities(mappings):
         c = Capability()
         c.id = id
         c.mappings = [m for m in mappings if (m["capability_id"] == id)]
+        for mapping in c.mappings:
+            mapping["project"] = project.id
+            mapping["project_version"] = project_version
+            mapping["attack_version"] = attack_version
+
         print(
             "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
         )
@@ -743,14 +750,30 @@ def build_attack_pages(projects, url_prefix):
 def build_technique_page(
     url_prefix, parent_dir, attack_version, attack_domain, technique
 ):
+    attack_prefix = (
+        url_prefix
+        + "attack/"
+        + "attack-"
+        + attack_version
+        + "/domain-"
+        + attack_domain
+        + "/"
+    )
+    technique_headers = [
+        ("id", "Technique ID", "id", attack_prefix),
+        ("label", "Technique Name", "id", attack_prefix),
+        ("num_mappings", "Number of Mappings"),
+    ]
     headers = [
-        ("attack_object_id", "ATT&CK ID"),
-        ("attack_object_name", "ATT&CK Name"),
+        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ("mapping_type", "Mapping Type"),
-        ("score_category", "Category"),
-        ("score_value", "Value"),
-        ("capability_id", "Capability ID"),
-        ("capability_description", "Capability Description"),
+        ("capability_id", "Capability ID", "capability_id"),
+        (
+            "capability_description",
+            "Capability Description",
+            "capability_id",
+        ),
     ]
     dir = parent_dir / technique.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -758,17 +781,19 @@ def build_technique_page(
     prev_page = parent_dir
     template = load_template("technique.html.j2")
     stream = template.stream(
-        title="ATT&CK Technique",
+        title="ATT&CK Technique" + technique.id,
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
         headers=headers,
+        technique_headers=technique_headers,
         technique=technique,
         prev_page=prev_page,
         mappings=technique.mappings,
+        subtechniques=technique.subtechniques,
     )
     stream.dump(str(output_path))
-    print("          Created technique page " + technique.id)
+    # print("          Created technique page " + technique.id)
 
 
 def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):

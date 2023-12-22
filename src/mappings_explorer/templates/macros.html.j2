@@ -27,6 +27,9 @@
             {% if header[2] and header[3] %}
                 <td><a href="{{header[3]}}{{mapping[header[2]]}}/">{{mapping[header[0]]}}</a></td>
             {% endif %}
+            {% if header[2] and not header[3] %}
+                <td><a href="{{url_prefix}}/external/{{mapping["project"]}}/attack-{{mapping["attack_version"]}}/{{mapping["project"]}}-{{mapping["project_version"]}}/{{mapping[header[2]]}}/">{{mapping[header[0]]}}</a></td>
+            {% endif %}
             {% if not header[2] %}
                 <td>{{mapping[header[0]]}}</td>
             {% endif %}
