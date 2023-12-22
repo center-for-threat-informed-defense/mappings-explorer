@@ -8,7 +8,7 @@ from mapex_convert.read_files import (
     read_yaml_file,
 )
 
-from .attack_query import create_attack_jsons, get_attack_data
+from .attack_query import create_attack_jsons, get_attack_data, load_tactic_structure
 from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
@@ -24,13 +24,16 @@ class Technique:
     label = ""
     description = ""
     mappings = []
+    num_mappings = ""
+    subtechniques = []
+    num_subtechniques = 0
 
 
 class Tactic:
     id = ""
     label = ""
     description = ""
-    techniques: []
+    techniques = []
     mappings = []
 
 
@@ -620,6 +623,8 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
                         m for m in mappings if (m["attack_object_id"] == id)
                     ]
                     technique.mappings = technique.mappings + additional_mappings
+                    technique.num_mappings = len(technique.mappings)
+
                 else:
                     t = Technique()
                     t.id = id
@@ -628,11 +633,18 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
                         t.label = dict_item[0].get("name")
                         t.description = dict_item[0].get("description")
                     t.mappings = [m for m in mappings if (m["attack_object_id"] == id)]
+                    t.num_mappings = len(t.mappings)
                     techniques.append(t)
     return techniques
 
 
-def parse_tactics(attack_version, attack_domain, attack_data, projects):
+def parse_tactics(attack_version, attack_domain, attack_data, projects, techniques):
+    json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "tactics"
+    tactic_dict = load_tactic_structure(
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        output_filepath=json_matrices_dir,
+    )
     tactic_list = []
     tactics = [t for t in attack_data if t.get("id")[:2] == "TA"]
     for tactic in tactics:
@@ -640,7 +652,28 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects):
         ta.id = tactic.get("id")
         ta.description = tactic.get("description")
         ta.label = tactic.get("name")
+        ta.techniques = []
         tactic_list.append(ta)
+    for item in tactic_dict:
+        if tactic_dict[item].get("tactics"):
+            ta = [
+                ta
+                for ta in tactic_list
+                if ta.label.lower().replace(" ", "-")
+                in tactic_dict[item].get("tactics")
+            ]
+            if ta:
+                technique = [t for t in techniques if t.id == item]
+                if technique:
+                    ta[0].techniques.append(technique[0])
+        if tactic_dict[item].get("technique"):
+            technique_id = tactic_dict[item].get("technique")
+            supertechnique = [t for t in techniques if t.id == technique_id]
+            technique = [t for t in techniques if t.id == item]
+            if supertechnique and technique:
+                supertechnique[0].subtechniques.append(technique[0])
+                supertechnique[0].num_subtechniques += 1
+
     return tactic_list
 
 
@@ -675,6 +708,7 @@ def build_attack_pages(projects, url_prefix):
             attack_domain=attack_domain,
             attack_data=attack_data,
             projects=projects,
+            techniques=all_techniques,
         )
         external_dir = (
             PUBLIC_DIR
@@ -738,15 +772,21 @@ def build_technique_page(
 
 
 def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):
-    # headers = [
-    #     ("attack_object_id", "ATT&CK ID"),
-    #     ("attack_object_name", "ATT&CK Name"),
-    #     ("mapping_type", "Mapping Type"),
-    #     ("score_category", "Category"),
-    #     ("score_value", "Value"),
-    #     ("capability_id", "Capability ID"),
-    #     ("capability_description", "Capability Description"),
-    # ]
+    attack_prefix = (
+        url_prefix
+        + "attack/"
+        + "attack-"
+        + attack_version
+        + "/domain-"
+        + attack_domain
+        + "/"
+    )
+    headers = [
+        ("id", "Technique ID", "id", attack_prefix),
+        ("label", "Technique Name", "id", attack_prefix),
+        ("num_mappings", "Number of Mappings"),
+        ("num_subtechniques", "Number of Subtechniques"),
+    ]
     dir = parent_dir / tactic.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -757,7 +797,8 @@ def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tac
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
-        # headers=headers,
+        headers=headers,
+        mappings=tactic.techniques,
         tactic=tactic,
         prev_page=prev_page,
     )
@@ -889,8 +930,6 @@ def main():
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
     build_matrix(url_prefix)
-
-    print("Created external mappings home")
 
 
 if __name__ == "__main__":
