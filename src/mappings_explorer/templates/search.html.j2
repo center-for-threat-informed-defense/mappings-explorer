@@ -15,7 +15,7 @@
 <script>
   const Search = {
     template: `
-      <div v-if="filteredMappings.length">
+      <div>
         <section id="header-container" class="header-container">
           <div class="container" data-aos="fade-up">
             <h1 style="text-transform: uppercase">
@@ -100,25 +100,20 @@
       /**
        * Run a query on the search index and return the results.
        */
-      searchIndex(query, page = 1) {
+      searchIndex(query) {
         if (!this.index) {
           console.error("Search index is not initialized.");
           return;
         }
 
         const allResults = this.index.search(query);
-
-        // TODO paginate the results using `page` and `resultsPerPage`.
-        const startAt = 0;
-        const endAt = 10;
-        const results = allResults.slice(startAt, endAt);
-        for (const result of results) {
+        for (const result of allResults) {
           result.pageData = this.webPages[result.ref];
         }
 
         return {
           query,
-          results: results,
+          results: allResults,
           totalCount: allResults.length,
         };
       },
@@ -137,7 +132,8 @@
           this.initializeSearch(
             `${window.location.origin}/static/lunr-index.json`
           ).then(() => {
-            let results = this.searchIndex(search, 1);
+            let results = this.searchIndex(search);
+            console.log("RESULTS", results);
             let filteredMappings = [];
             results.results.forEach((result) => {
               filteredMappings.push(

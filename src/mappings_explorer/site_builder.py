@@ -659,6 +659,9 @@ def getIndexPages():
                     mapping, mappings["metadata"]["mapping_types"]
                 )
                 mapping_framework = mappings["metadata"]["mapping_framework"]
+                mapping["mapping_framework_id"] = (
+                    mapping_framework if mapping_framework != "nist_800_53" else "nist"
+                )
                 if mapping_framework == "nist_800_53":
                     mapping["mapping_framework"] = "NIST 800-53"
                 elif mapping_framework == "veris":
@@ -671,38 +674,43 @@ def getIndexPages():
                     mapping["mapping_framework"] = "Azure"
                 elif mapping_framework == "gcp":
                     mapping["mapping_framework"] = "Google Cloud Platform (GCP)"
+                mapping["domain"] = mappings["metadata"]["technology_domain"]
+                mapping["mapping_framework_version"] = mappings["metadata"][
+                    "mapping_framework_version"
+                ]
                 all_mappings.append(mapping)
                 group = mapping["group"]
-                group_url = f"{mapping_url}/{group}/"
-                if not any(page["url"] == group_url for page in pages):
+                if not any(page["id"] == group for page in pages):
                     pages.append(
                         {
-                            "url": group_url,
+                            "url": group,
                             "id": group,
                             "name": mappings["metadata"]["groups"][group],
                         }
                     )
                 attack_object_id = mapping["attack_object_id"]
-                attack_object_url = f"{mapping_url}/{attack_object_id}"
-                if not any(page["url"] == attack_object_url for page in pages):
+                if not any(page["id"] == attack_object_id for page in pages):
                     pages.append(
                         {
-                            "url": attack_object_url,
+                            "url": attack_object_id,
                             "id": attack_object_id,
                             "name": mapping["attack_object_name"],
                         }
                     )
                 capability_id = mapping["capability_id"]
-                capability_url = f"{mapping_url}/{capability_id}"
-                if not any(page["url"] == capability_url for page in pages):
+                if not any(page["id"] == capability_id for page in pages):
                     pages.append(
                         {
-                            "url": capability_url,
+                            "url": capability_id,
                             "id": capability_id,
                             "name": mapping["capability_description"],
                         }
                     )
-    return pages, all_mappings
+    all_mappigns_path = PUBLIC_DIR / "static" / "all_mappings.json"
+    with all_mappigns_path.open("w") as index_file:
+        json.dump(all_mappings, index_file)
+    print(pages)
+    return pages
 
 
 def build_search_index(url_prefix):
@@ -719,31 +727,18 @@ def build_search_index(url_prefix):
     template = load_template("search.html.j2")
 
     print("Creating search index")
-    pages, all_mappings = getIndexPages()
-    headers = [
-        ("attack_object_id", "ATT&CK ID", "attack_object_id"),
-        ("attack_object_name", "ATT&CK Name", "attack_object_id"),
-        ("mapping_type", "Mapping Type"),
-        ("capability_id", "Capability ID", "capability_id"),
-        ("capability_description", "Capability Description", "capability_id"),
-    ]
-    stream = template.stream(
-        url_prefix=url_prefix, all_mappings=all_mappings, headers=headers
-    )
+    pages = getIndexPages()
+    stream = template.stream(url_prefix=url_prefix)
     stream.dump(str(output_path))
 
     index = lunr(
         ref="url",
-        # TODO figure out what fields we want to add and how to tradeoff against our
-        # index size budget of 1MB
         fields=[
             {"field_name": "id", "boost": 3},
-            # {"field_name": "name", "boost": 2},
+            {"field_name": "name", "boost": 2},
         ],
         documents=pages,
     )
-    # TODO remove this next line which is just for debugging the index
-    print("policy", index.search("policy"))
     pages = {p.pop("url"): p for p in pages}
     index_path = PUBLIC_DIR / "static" / "lunr-index.json"
     lunr_index = {
