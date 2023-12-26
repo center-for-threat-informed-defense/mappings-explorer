@@ -790,11 +790,11 @@ def main():
     TEMPLATE_FILE = "external-control.html.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
 
-    # build_external_pages(projects=projects, url_prefix=url_prefix)
-    # build_matrix(url_prefix)
-    # template.stream(title="External Mappings Home").dump(
-    #     "./output/external-landing.html"
-    # )
+    build_external_pages(projects=projects, url_prefix=url_prefix)
+    build_matrix(url_prefix)
+    template.stream(title="External Mappings Home").dump(
+        "./output/external-landing.html"
+    )
     print("Created external mappings home")
 
     build_search_index(url_prefix)
