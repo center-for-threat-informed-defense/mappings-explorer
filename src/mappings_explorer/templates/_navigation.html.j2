@@ -55,14 +55,15 @@
         <div class="input-group rounded">
           <input
             type="search"
-            id="search-input"
+            id="nav-search-input"
             class="search-input form-control rounded"
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
+            onkeypress="navHandleKeypress(event)"
           />
           <span class="input-group-text border-0 bg-primary" id="search-addon">
-            <a onclick="searchWebsite()"
+            <a onclick="navSearchWebsite()" class="search-icon"
               ><img
                 src="{{url_prefix}}static/img/search-white.svg"
                 alt="search"
@@ -76,10 +77,15 @@
   <!-- .navbar -->
 </div>
 <script>
-  function searchWebsite() {
+  function navSearchWebsite() {
     window.location.href = `${window.location.origin}/search/?search=${
-      document.getElementById("search-input").value
-    }`;
+        document.getElementById("nav-search-input").value
+      }`;
+  }
+  function navHandleKeypress(event) {
+    if (event.key === "Enter") {
+      navSearchWebsite();
+    }
   }
 </script>
 

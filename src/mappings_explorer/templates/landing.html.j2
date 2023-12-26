@@ -32,9 +32,16 @@
           <h3>Search to Find Mappings</h3>
           <p>Search for an ATT&CK object or a framework object to find all mappings associated with it. </p>
           <div class="input-group rounded">
-            <input type="search" id="landing-search-input" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <input
+              type="search"
+              id="landing-search-input"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              onkeypress="landingHandleKeypress(event)"/>
             <span class="input-group-text border-0" id="search-addon">
-              <a onclick="searchWebsite()"
+              <a onclick="landingSearchWebsite()"
               ><img
                 src="{{url_prefix}}static/img/search.svg"
                 alt="search"
@@ -62,10 +69,15 @@
   </main><!-- End #main -->
 
   <script>
-    function searchWebsite() {
+    function landingSearchWebsite() {
       window.location.href = `${window.location.origin}/search/?search=${
         document.getElementById("landing-search-input").value
       }`;
+    }
+    function landingHandleKeypress(event) {
+      if (event.key === "Enter") {
+        landingSearchWebsite();
+      }
     }
   </script>
 {% endblock content %}
