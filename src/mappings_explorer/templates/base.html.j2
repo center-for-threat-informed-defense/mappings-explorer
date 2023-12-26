@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <title>{% block title %}{{ title }}{% endblock title %}</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
+        <link rel="shortcut icon" href="{{url_prefix}}static/img/favicon.png">
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +20,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
         <!-- Template Main CSS File -->
         <link href="{{url_prefix}}static/main.css" rel="stylesheet">
@@ -31,7 +28,7 @@
 
     </head>
     <body class="page-index gray-bg">
-        <header class="header d-flex align-items-center fixed-top">
+        <header class="header d-flex align-items-center fixed-top {% if transparent_header %}transparent-header{% endif %}">
             {% include "_navigation.html.j2"%}
         </header>
         {% block content %}
