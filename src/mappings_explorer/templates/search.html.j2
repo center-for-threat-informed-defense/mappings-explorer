@@ -128,7 +128,12 @@
         let allMappings = await this.getAllMappings();
         if (url.searchParams.has("search")) {
           let search = url.searchParams.get("search");
-          document.getElementById("search-input").value = search;
+          if (document.getElementById("search-input")) {
+            document.getElementById("search-input").value = search;
+          }
+          if (document.getElementById("landing-search-input")){
+            document.getElementById("landing-search-input").value = search;
+          }
           this.initializeSearch(
             `${window.location.origin}/static/lunr-index.json`
           ).then(() => {
