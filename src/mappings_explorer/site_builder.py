@@ -709,7 +709,6 @@ def getIndexPages():
     all_mappigns_path = PUBLIC_DIR / "static" / "all_mappings.json"
     with all_mappigns_path.open("w") as index_file:
         json.dump(all_mappings, index_file)
-    print(pages)
     return pages
 
 
