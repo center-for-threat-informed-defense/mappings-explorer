@@ -1,15 +1,21 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="search">
-  <Search :all_mappings="{{all_mappings}}"></Search>
+  <Search></Search>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="{{url_prefix}}static/lunr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table-vue.min.js"></script>
+
 
 <script>
   const Search = {
     template: `
-      <div>
+      <div v-if="filteredMappings.length">
         <section id="header-container" class="header-container">
           <div class="container" data-aos="fade-up">
             <h1 style="text-transform: uppercase">
@@ -22,22 +28,7 @@
             <div class="row justify-content-left">
               <div class="table-responsive table-outer">
                 <div class="form-outline mb-4">
-                  <table class="table table-borderless table-hover table-responsive"
-                    data-toggle="table"
-                    data-search="true"
-                    data-pagination="true"
-                    data-show-multi-sort="true">
-                    <thead>
-                      <th :data-field="header.field" data-sortable="true" v-for="header in headers">[[header.name]]</th>
-                    </thead>
-                    <tbody>
-                      <tr v-for="mapping in filteredMappings">
-                        <td v-for="header in headers">
-                          [[ mapping[header.field] ]]
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <bootstrap-table class="table-borderless" :columns="headers" :data="filteredMappings" :options="options"></bootstrap-table>
                 </div>
               </div>
             </div>
@@ -46,43 +37,54 @@
       </div>
   `,
     delimiters: ["[[", "]]"],
+    components: {
+      'BootstrapTable': BootstrapTable
+    },
     data() {
       return {
         webPages: undefined,
         index: undefined,
         filteredMappings: [],
+        options: {
+          search: true,
+          pagination: true,
+          sortable: true,
+        },
         headers: [
           {
             field: "mapping_framework",
-            name: "Mapping Framework",
+            title: "Mapping Framework",
+            sortable: true,
           },
           {
             field: "attack_object_id",
-            name: "ATT&CK ID",
+            title: "ATT&CK ID",
+            sortable: true,
           },
           {
             field: "attack_object_name",
-            name: "ATT&CK Name",
+            title: "ATT&CK Name",
+            sortable: true,
           },
           {
             field: "mapping_type",
-            name: "Mapping Type",
+            title: "Mapping Type",
+            sortable: true,
           },
           {
             field: "capability_id",
-            name: "Capability ID",
+            title: "Capability ID",
+            sortable: true,
           },
           {
             field: "capability_description",
-            name: "Capability Description",
+            title: "Capability Description",
+            sortable: true,
           },
         ],
+
       };
     },
-    props: {
-      all_mappings: Array,
-    },
-    computed: {},
     methods: {
       /**
        * Initialize the search index.
@@ -120,10 +122,18 @@
           totalCount: allResults.length,
         };
       },
-      searchMain() {
+      async getAllMappings(){
+        let allMappingsURL = `${window.location.origin}/static/all_mappings.json`;
+        const response = await fetch(allMappingsURL);
+        const responseJSON = await response.json();
+        return responseJSON;
+      },
+      async searchMain() {
         const url = new URL(window.location.href);
+        let allMappings = await this.getAllMappings();
         if (url.searchParams.has("search")) {
           let search = url.searchParams.get("search");
+          document.getElementById("search-input").value = search;
           this.initializeSearch(
             `${window.location.origin}/static/lunr-index.json`
           ).then(() => {
@@ -131,7 +141,7 @@
             let filteredMappings = [];
             results.results.forEach((result) => {
               filteredMappings.push(
-                this.all_mappings.filter((mapping) => {
+                allMappings.filter((mapping) => {
                   return (
                     mapping.attack_object_id?.includes(result.pageData.id) ||
                     mapping.group?.includes(result.pageData.id) ||
@@ -157,6 +167,5 @@
     },
   });
 </script>
-<style>
-</style>
+<style></style>
 {% endblock content %}
