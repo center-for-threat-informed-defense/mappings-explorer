@@ -133,7 +133,6 @@
             `${window.location.origin}/static/lunr-index.json`
           ).then(() => {
             let results = this.searchIndex(search);
-            console.log("RESULTS", results);
             let filteredMappings = [];
             results.results.forEach((result) => {
               filteredMappings.push(
