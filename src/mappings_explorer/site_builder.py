@@ -995,10 +995,9 @@ def main():
     stream.dump(str(output_path))
     print("Created methodology page")
 
-    # TODO
-    # build_external_pages(projects=projects, url_prefix=url_prefix)
-    # build_attack_pages(projects=projects, url_prefix=url_prefix)
-    # build_matrix(url_prefix)
+    build_external_pages(projects=projects, url_prefix=url_prefix)
+    build_attack_pages(projects=projects, url_prefix=url_prefix)
+    build_matrix(url_prefix)
 
     print("Done")
 
