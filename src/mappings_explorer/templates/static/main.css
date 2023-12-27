@@ -174,7 +174,7 @@ section.version-select {
   display: inline-block;
   padding-right: 10px;
   color: #fff;
-  content: "/";
+  content: "›";
 }
 
 /*--------------------------------------------------------------
@@ -818,6 +818,15 @@ div.banner {
   left: 0;
   top: -3px;
   color: var(--bs-heading-color);
+}
+
+/*--------------------------------------------------------------
+  # Use Cases
+  --------------------------------------------------------------*/
+
+section#target-audience button.accordion-button div,
+section#user-stories button.accordion-button div {
+  font-weight: 700;
 }
 
 /*--------------------------------------------------------------
