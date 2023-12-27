@@ -4,7 +4,6 @@ import os
 import shutil
 
 import requests
-from jinja2 import Environment, FileSystemLoader
 from lunr import lunr
 from mapex_convert.read_files import (
     read_yaml_file,
