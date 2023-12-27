@@ -1,16 +1,23 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="search">
-  <Search></Search>
+  <Search url_prefix="{{url_prefix}}"></Search>
 </div>
 
 <script src="{{url_prefix}}static/lunr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table-vue.min.js"></script>
-
 
 <script>
   const Search = {
@@ -38,7 +45,10 @@
   `,
     delimiters: ["[[", "]]"],
     components: {
-      'BootstrapTable': BootstrapTable
+      BootstrapTable: BootstrapTable,
+    },
+    props: {
+      url_prefix: String,
     },
     data() {
       return {
@@ -50,39 +60,6 @@
           pagination: true,
           sortable: true,
         },
-        headers: [
-          {
-            field: "mapping_framework",
-            title: "Mapping Framework",
-            sortable: true,
-          },
-          {
-            field: "attack_object_id",
-            title: "ATT&CK ID",
-            sortable: true,
-          },
-          {
-            field: "attack_object_name",
-            title: "ATT&CK Name",
-            sortable: true,
-          },
-          {
-            field: "mapping_type",
-            title: "Mapping Type",
-            sortable: true,
-          },
-          {
-            field: "capability_id",
-            title: "Capability ID",
-            sortable: true,
-          },
-          {
-            field: "capability_description",
-            title: "Capability Description",
-            sortable: true,
-          },
-        ],
-
       };
     },
     methods: {
@@ -117,7 +94,7 @@
           totalCount: allResults.length,
         };
       },
-      async getAllMappings(){
+      async getAllMappings() {
         let allMappingsURL = `${window.location.origin}/static/all_mappings.json`;
         const response = await fetch(allMappingsURL);
         const responseJSON = await response.json();
@@ -151,6 +128,64 @@
             this.filteredMappings = filteredMappings.flat();
           });
         }
+      },
+    },
+    computed: {
+      headers() {
+        let urlPrefix = this.url_prefix;
+        return [
+          {
+            field: "mapping_framework",
+            title: "Mapping Framework",
+            sortable: true,
+            formatter: function (value, row) {
+              let href = `${urlPrefix}external/${row.mapping_framework_id}/`;
+              return `<a href=${href} id="mapping-framework"> ${value} </a>`;
+            },
+          },
+          {
+            field: "attack_object_id",
+            title: "ATT&CK ID",
+            sortable: true,
+            formatter: function (value, row) {
+              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${value}/`;
+              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
+            },
+          },
+          {
+            field: "attack_object_name",
+            title: "ATT&CK Name",
+            sortable: true,
+            formatter: function (value, row) {
+              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${value}/`;
+              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
+            },
+          },
+          {
+            field: "mapping_type",
+            title: "Mapping Type",
+            sortable: true,
+          },
+          {
+            field: "capability_id",
+            title: "Capability ID",
+            sortable: true,
+            formatter: function (value, row) {
+              let capabilityId = row.capability_id.replace(" ", "%20");
+              let href = `${urlPrefix}attack/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${row.capability_id}/`;
+              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
+            },
+          },
+          {
+            field: "capability_description",
+            title: "Capability Description",
+            sortable: true,
+            formatter: function (value, row) {
+              let href = `${urlPrefix}attack/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${row.capability_id}/`;
+              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
+            },
+          },
+        ];
       },
     },
     mounted() {
