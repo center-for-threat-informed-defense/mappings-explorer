@@ -10,7 +10,7 @@ from mapex_convert.read_files import (
     read_yaml_file,
 )
 
-from .attack_query import create_attack_jsons
+from .attack_query import create_attack_jsons, get_attack_data
 from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
 
 
@@ -18,6 +18,20 @@ class Capability:
     id = ""
     label = ""
     description = ""
+    mappings = []
+
+
+class Technique:
+    id = ""
+    label = ""
+    description = ""
+    mappings = []
+
+
+class Group:
+    id = ""
+    label = ""
+    num_mappings = ""
     mappings = []
 
 
@@ -64,16 +78,16 @@ def load_projects():
         "8.2",
     ]
     nist.validVersions = [
-        ("rev4", "8.2"),
-        ("rev5", "8.2"),
-        ("rev4", "9.0"),
-        ("rev5", "9.0"),
-        ("rev4", "10.1"),
-        ("rev5", "10.1"),
-        ("rev4", "12.1"),
-        ("rev5", "12.1"),
+        ("rev4", "8.2", "Enterprise"),
+        ("rev5", "8.2", "Enterprise"),
+        ("rev4", "9.0", "Enterprise"),
+        ("rev5", "9.0", "Enterprise"),
+        ("rev4", "10.1", "Enterprise"),
+        ("rev5", "10.1", "Enterprise"),
+        ("rev4", "12.1", "Enterprise"),
+        ("rev5", "12.1", "Enterprise"),
     ]
-    nist.attackDomains = ["enterprise"]
+    nist.attackDomains = ["Enterprise"]
     nist.attackDomain = nist.attackDomains[0]
     veris = ExternalControl()
     veris.id = "veris"
@@ -86,13 +100,19 @@ def load_projects():
          to better measure and manage risk. """
     ]
     veris.versions = ["1.3.7", "1.3.5"]
-    veris.attackDomains = ["enterprise"]
+    veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
     veris.attackVersions = [
         "12.1",
         "9.0",
     ]
-    veris.validVersions = [("1.3.5", "9.0"), ("1.3.7", "12.1")]
+    veris.validVersions = [
+        ("1.3.5", "9.0", "Enterprise"),
+        ("1.3.7", "12.1", "Enterprise"),
+        ("1.3.7", "12.1", "ICS"),
+        ("1.3.7", "12.1", "Mobile"),
+    ]
+    veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris.mappings = []
 
     cve = ExternalControl()
@@ -108,11 +128,12 @@ def load_projects():
          organizations to see what each tool covers and how appropriate they are
          for your organization."""
     ]
-    cve.attackDomains = ["enterprise"]
+    cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
-    cve.validVersions = [("10.21.2021", "9.0")]
+    cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
+    cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
     aws = ExternalControl()
@@ -127,11 +148,12 @@ def load_projects():
          scoring rubric, data model, and tool set. This full set of resources is
          available on the Center’s project page."""
     ]
-    aws.attackDomains = ["enterprise"]
+    aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
     aws.versions = ["09.21.2021"]
-    aws.validVersions = [("09.21.2021", "9.0")]
+    aws.validVersions = [("09.21.2021", "9.0", "Enterprise")]
+    aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
     azure = ExternalControl()
@@ -146,11 +168,12 @@ def load_projects():
          based on a common methodology, scoring rubric, data model, and tool set. This
          full set of resources is available on the Center’s project page."""
     ]
-    azure.attackDomains = ["enterprise"]
+    azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
     azure.versions = ["06.29.2021"]
-    azure.validVersions = [("06.29.2021", "8.2")]
+    azure.validVersions = [("06.29.2021", "8.2", "Enterprise")]
+    azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
     gcp = ExternalControl()
@@ -165,12 +188,13 @@ def load_projects():
          scoring rubric, data model, and tool set. This full set of resources is
          available on the Center’s project page."""
     ]
-    gcp.attackDomains = ["enterprise"]
+    gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["06.28.2022"]
-    gcp.validVersions = [("06.28.2022", "10.0")]
+    gcp.validVersions = [("06.28.2022", "10.0", "Enterprise")]
+    gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
     projects = [
@@ -190,7 +214,7 @@ def replace_mapping_type(mapping, type_list):
             return type_list[mapping_type]["name"]
 
 
-def parse_groups(project, attack_version, project_version):
+def parse_groups(project, attack_version, project_version, attack_domain):
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -199,7 +223,7 @@ def parse_groups(project, attack_version, project_version):
         filepath
         / ("attack-" + attack_version)
         / (project_id + "-" + project_version.replace("/", "."))
-        / project.attackDomain
+        / attack_domain.lower()
         / (
             project_id
             + "-"
@@ -207,7 +231,7 @@ def parse_groups(project, attack_version, project_version):
             + "_attack-"
             + attack_version
             + "-"
-            + project.attackDomain
+            + attack_domain.lower()
             + ".json"
         )
     )
@@ -215,26 +239,36 @@ def parse_groups(project, attack_version, project_version):
     data = json.load(f)
     metadata = data["metadata"]
     project.groups = []
-    project.mappings = data["mapping_objects"]
-    for mapping in project.mappings:
+
+    mappings = data["mapping_objects"]
+    for mapping in mappings:
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-    for group in metadata["groups"]:
-        project_group = {"id": group, "name": metadata["groups"][group]}
-        # parse mappings such that each mapping is sorted by its group
-        filtered_mappings = [m for m in project.mappings if (m["group"] == group)]
-        project_group["num_mappings"] = len(filtered_mappings)
-        project_group["mappings"] = filtered_mappings
-        # here's where I'll parse which capabilities are under a certain group
-        project_group["controls"] = []
-        print(
-            "     found "
-            + f"{len(filtered_mappings)}"
-            + " mappings in group: "
-            + project_group["name"]
-        )
-    project.capabilities = parse_capabilities(project)
+    if metadata.get("groups"):
+        for i in metadata["groups"]:
+            g = Group()
+            g.id = i
+            g.label = metadata["groups"][i]
+            project.groups.append(g)
+            filtered_mappings = [m for m in mappings if (m["group"] == g.id)]
+            g.num_mappings = len(filtered_mappings)
+            g.mappings = filtered_mappings
+            print(
+                "     found "
+                + f"{len(filtered_mappings)}"
+                + " mappings in group: "
+                + g.label
+            )
+    project.capabilities = parse_capabilities(mappings)
+    project.mappings.append(
+        {
+            "attack_version": attack_version,
+            "project_version": project_version,
+            "attack_domain": "Enterprise",
+            "mappings": mappings,
+        }
+    )
     #  set the descriptions for each project's capability list
     if project.id == "cve":
         get_cve_descriptions(project=project)
@@ -298,8 +332,7 @@ def get_nist_descriptions(project, version):
             print("exception ", e)
 
 
-def parse_capabilities(project):
-    mappings = project.mappings
+def parse_capabilities(mappings):
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
@@ -319,12 +352,21 @@ def build_external_landing(
     url_prefix,
     project_version,
     attack_version,
-    project_dir,
+    domain_dir,
     mappings,
+    attack_domain,
 ):
-    output_path = project_dir / "index.html"
+    output_path = domain_dir / "index.html"
     template = load_template("external-control.html.j2")
-    attack_prefix = url_prefix + "attack/" + "attack-" + attack_version + "/"
+    attack_prefix = (
+        url_prefix
+        + "attack/"
+        + "attack-"
+        + attack_version
+        + "/domain-"
+        + attack_domain
+        + "/"
+    )
     external_prefix = (
         url_prefix
         + "external/"
@@ -366,8 +408,7 @@ def build_external_landing(
 
     group_headers = [
         ("id", "ID", "id", external_prefix),
-        ("name", "Control Family", "id", external_prefix),
-        # ("num_controls", "Number of Controls"),
+        ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
     ]
     project_id = project.id
@@ -383,7 +424,7 @@ def build_external_landing(
         versions=project.versions,
         attack_version=attack_version,
         attackVersions=project.attackVersions,
-        domain=project.attackDomain,
+        domain=attack_domain,
         domains=project.attackDomains,
         mappings=mappings,
         headers=headers,
@@ -399,26 +440,42 @@ def build_external_landing(
         + attack_version
         + ", control version "
         + project_version
+        + ", attack domain "
+        + attack_domain.lower()
     )
+
     for group in project.groups:
-        build_external_control(
+        build_external_group(
             project=project,
             group=group,
             url_prefix=url_prefix,
-            parent_dir=project_dir,
+            parent_dir=domain_dir,
             project_version=project_version,
             attack_version=attack_version,
             headers=headers,
+            attack_domain=attack_domain,
         )
     for capability in project.capabilities:
         build_external_capability(
             project=project,
             url_prefix=url_prefix,
-            parent_dir=project_dir,
+            parent_dir=domain_dir,
             project_version=project_version,
             attack_version=attack_version,
             headers=headers,
             capability=capability,
+            attack_domain=attack_domain,
+        )
+    for capability in project.capabilities:
+        build_external_capability(
+            project=project,
+            url_prefix=url_prefix,
+            parent_dir=domain_dir,
+            project_version=project_version,
+            attack_version=attack_version,
+            headers=headers,
+            capability=capability,
+            attack_domain=attack_domain,
         )
 
 
@@ -430,27 +487,37 @@ def build_external_pages(projects, url_prefix):
         dir.mkdir(parents=True, exist_ok=True)
 
         for index, validCombo in enumerate(project.validVersions):
+            attack_domain = "Enterprise"
             print("creating pages for version combo ", str(validCombo))
             attack_version = validCombo[1]
             project_version = validCombo[0]
+            attack_domain = validCombo[2]
             a = "attack-" + attack_version
-            attack_dir = dir / a
-            attack_dir.mkdir(parents=True, exist_ok=True)
             p = project.id + "-" + project_version
-            project_dir = attack_dir / p
-            project_dir.mkdir(parents=True, exist_ok=True)
+            d = "domain-" + attack_domain.lower()
+            domain_dir = dir / a / p / d
+            domain_dir.mkdir(parents=True, exist_ok=True)
             parse_groups(
                 project=project,
                 attack_version=attack_version,
                 project_version=project_version,
+                attack_domain=attack_domain,
             )
+            m = [
+                m
+                for m in project.mappings
+                if m["attack_version"] == attack_version
+                and m["project_version"] == project_version
+            ][0]
+            mappings = m["mappings"]
             build_external_landing(
                 project=project,
                 url_prefix=url_prefix,
                 attack_version=attack_version,
                 project_version=project_version,
-                project_dir=project_dir,
-                mappings=project.mappings,
+                domain_dir=domain_dir,
+                mappings=mappings,
+                attack_domain=attack_domain,
             )
             # for the most up to date combo, copy the pages higher up the directory
             if index == len(project.validVersions) - 1:
@@ -458,10 +525,10 @@ def build_external_pages(projects, url_prefix):
                     "copying the most recent version pair into main directory ",
                     str(validCombo),
                 )
-                shutil.copytree(project_dir, dir, dirs_exist_ok=True)
+                shutil.copytree(domain_dir, dir, dirs_exist_ok=True)
 
 
-def build_external_control(
+def build_external_group(
     project: ExternalControl,
     group,
     url_prefix,
@@ -469,34 +536,34 @@ def build_external_control(
     project_version,
     attack_version,
     headers,
+    attack_domain,
 ):
-    group_id = group["id"]
-    group_name = group["name"]
+    group_id = group.id
     dir = parent_dir / group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external-group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=project.label + " " + group_name,
+        title=project.label + " " + group.label,
         url_prefix=url_prefix,
         control=project.label,
-        group_id=group_id,
-        group_name=group_name,
+        group_id=group.id,
+        group_name=group.label,
         project=project,
         description=project.description,
         control_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
         attackVersions=project.attackVersions,
-        domain=project.attackDomain,
+        domain=attack_domain,
         domains=project.attackDomains,
         prev_page=prev_page,
-        mappings=group["mappings"],
+        mappings=group.mappings,
         headers=headers,
     )
     stream.dump(str(output_path))
-    print("          Created group page " + group_name)
+    print("          Created group page " + group.label)
 
 
 def build_external_capability(
@@ -507,6 +574,7 @@ def build_external_capability(
     attack_version,
     headers,
     capability,
+    attack_domain,
 ):
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -524,7 +592,7 @@ def build_external_capability(
         versions=project.versions,
         attack_version=attack_version,
         attackVersions=project.attackVersions,
-        domain=project.attackDomain,
+        domain=attack_domain,
         domains=project.attackDomains,
         prev_page=prev_page,
         mappings=capability.mappings,
@@ -533,6 +601,117 @@ def build_external_capability(
     )
     stream.dump(str(output_path))
     print("          Created capability page " + capability.id)
+
+
+def parse_techniques(attack_version, attack_domain, projects):
+    techniques = []
+    attack_data = get_attack_data(attack_version, attack_domain)
+    for project in projects:
+        mappings = []
+        print("adding mappings in project ", project.id)
+        m = [
+            m
+            for m in project.mappings
+            if float(m["attack_version"]) <= float(attack_version)
+        ]
+        if len(m) > 0:
+            m = m[len(m) - 1]
+            mappings = m["mappings"]
+            allIds = [m["attack_object_id"] for m in mappings]
+            attack_ids = list(set(allIds))
+            for id in attack_ids:
+                if id in [t.id for t in techniques]:
+                    technique = [t for t in techniques if t.id == id][0]
+                    additional_mappings = [
+                        m for m in mappings if (m["attack_object_id"] == id)
+                    ]
+                    technique.mappings = technique.mappings + additional_mappings
+                else:
+                    t = Technique()
+                    t.id = id
+                    dict_item = [t for t in attack_data if t.get("id") == id]
+                    if len(dict_item) > 0:
+                        t.label = dict_item[0].get("name")
+                        t.description = dict_item[0].get("description")
+                    t.mappings = [m for m in mappings if (m["attack_object_id"] == id)]
+                    techniques.append(t)
+    return techniques
+
+
+def build_attack_pages(projects, url_prefix):
+    all_attack_versions = [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        # "13.0",
+        # "13.1",
+        # "14.0",
+        # "14.1",
+    ]
+    for attack_version in all_attack_versions:
+        attack_domain = "Enterprise"
+        all_techniques = parse_techniques(
+            attack_version=attack_version,
+            attack_domain=attack_domain,
+            projects=projects,
+        )
+        external_dir = (
+            PUBLIC_DIR
+            / "attack"
+            / ("attack-" + attack_version)
+            / ("domain-" + attack_domain)
+        )
+        external_dir.mkdir(parents=True, exist_ok=True)
+
+        for technique in all_techniques:
+            if technique.id:
+                build_technique_page(
+                    url_prefix=url_prefix,
+                    parent_dir=external_dir,
+                    attack_version=attack_version,
+                    attack_domain=attack_domain,
+                    technique=technique,
+                )
+        print("built all technique pages")
+
+
+def build_technique_page(
+    url_prefix, parent_dir, attack_version, attack_domain, technique
+):
+    headers = [
+        ("attack_object_id", "ATT&CK ID"),
+        ("attack_object_name", "ATT&CK Name"),
+        ("mapping_type", "Mapping Type"),
+        ("score_category", "Category"),
+        ("score_value", "Value"),
+        ("capability_id", "Capability ID"),
+        ("capability_description", "Capability Description"),
+    ]
+    # print("creating page for ", technique.id, " and parent dir ", parent_dir)
+    dir = parent_dir / technique.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("technique.html.j2")
+    stream = template.stream(
+        title="ATT&CK Technique",
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        technique=technique,
+        prev_page=prev_page,
+        mappings=technique.mappings,
+    )
+    stream.dump(str(output_path))
+    print("          Created technique page " + technique.id)
 
 
 def build_matrix(url_prefix):
@@ -759,8 +938,6 @@ def main():
 
     url_prefix = args.url_prefix
     print("url prefix: ", url_prefix)
-    templateLoader = FileSystemLoader(searchpath="./src/mappings_explorer/templates")
-    templateEnv = Environment(loader=templateLoader, autoescape=True)
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
@@ -786,14 +963,10 @@ def main():
     stream.dump(str(output_path))
     print("Created external mappings home")
 
-    TEMPLATE_FILE = "external-control.html.j2"
-    template = templateEnv.get_template(TEMPLATE_FILE)
-
     build_external_pages(projects=projects, url_prefix=url_prefix)
+    build_attack_pages(projects=projects, url_prefix=url_prefix)
     build_matrix(url_prefix)
-    template.stream(title="External Mappings Home").dump(
-        "./output/external-landing.html"
-    )
+
     print("Created external mappings home")
 
     build_search_index(url_prefix)
