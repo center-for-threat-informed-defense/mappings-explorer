@@ -39,9 +39,9 @@
               placeholder="Search"
               aria-label="Search"
               aria-describedby="search-addon"
-              onkeypress="landingHandleKeypress(event)"/>
+              onkeypress="landingHandleKeypress(event, '{{url_prefix}}search/')"/>
             <span class="input-group-text border-0" id="search-addon">
-              <a onclick="landingSearchWebsite()"
+              <a onclick="landingSearchWebsite('{{url_prefix}}search/')"
               ><img
                 src="{{url_prefix}}static/img/search.svg"
                 alt="search"
@@ -69,14 +69,13 @@
   </main><!-- End #main -->
 
   <script>
-    function landingSearchWebsite() {
-      window.location.href = `${window.location.origin}/search/?search=${
-        document.getElementById("landing-search-input").value
+    function landingSearchWebsite(url) {
+      window.location.href = `${url}?search=${document.getElementById("landing-search-input").value
       }`;
     }
-    function landingHandleKeypress(event) {
+    function landingHandleKeypress(event, url) {
       if (event.key === "Enter") {
-        landingSearchWebsite();
+        landingSearchWebsite(url);
       }
     }
   </script>

@@ -818,21 +818,7 @@ def getIndexPages():
             project = mappings["metadata"]["mapping_framework"]
             if project == "nist_800_53":
                 project = "nist"
-            attack_version = mappings["metadata"]["attack_version"]
-            attack_domain = mappings["metadata"]["technology_domain"]
-            project_version = mappings["metadata"]["mapping_framework_version"]
-            mapping_url = (
-                "external/"
-                + project
-                + "/attack-"
-                + attack_version
-                + "/"
-                + project
-                + "-"
-                + project_version
-                + "/domain-"
-                + attack_domain
-            )
+
             for mapping in mappings["mapping_objects"]:
                 mapping["mapping_type"] = replace_mapping_type(
                     mapping, mappings["metadata"]["mapping_types"]
@@ -859,32 +845,32 @@ def getIndexPages():
                 ]
                 all_mappings.append(mapping)
                 group = mapping["group"]
-                if not any(page["id"] == group for page in pages):
-                    pages.append(
-                        {
-                            "url": group,
-                            "id": group,
-                            "name": mappings["metadata"]["groups"][group],
-                        }
-                    )
+                if group:
+                    if not any(page["id"] == group for page in pages):
+                        pages.append(
+                            {
+                                "id": group,
+                                "name": mappings["metadata"]["groups"][group],
+                            }
+                        )
                 attack_object_id = mapping["attack_object_id"]
-                if not any(page["id"] == attack_object_id for page in pages):
-                    pages.append(
-                        {
-                            "url": attack_object_id,
-                            "id": attack_object_id,
-                            "name": mapping["attack_object_name"],
-                        }
-                    )
+                if attack_object_id:
+                    if not any(page["id"] == attack_object_id for page in pages):
+                        pages.append(
+                            {
+                                "id": attack_object_id,
+                                "name": mapping["attack_object_name"],
+                            }
+                        )
                 capability_id = mapping["capability_id"]
-                if not any(page["id"] == capability_id for page in pages):
-                    pages.append(
-                        {
-                            "url": capability_id,
-                            "id": capability_id,
-                            "name": mapping["capability_description"],
-                        }
-                    )
+                if capability_id:
+                    if not any(page["id"] == capability_id for page in pages):
+                        pages.append(
+                            {
+                                "id": capability_id,
+                                "name": mapping["capability_description"],
+                            }
+                        )
     all_mappigns_path = PUBLIC_DIR / "static" / "all_mappings.json"
     with all_mappigns_path.open("w") as index_file:
         json.dump(all_mappings, index_file)
@@ -910,14 +896,14 @@ def build_search_index(url_prefix):
     stream.dump(str(output_path))
 
     index = lunr(
-        ref="url",
+        ref="id",
         fields=[
             {"field_name": "id", "boost": 3},
             {"field_name": "name", "boost": 2},
         ],
         documents=pages,
     )
-    pages = {p.pop("url"): p for p in pages}
+    pages = {p.pop("id"): p for p in pages}
     index_path = PUBLIC_DIR / "static" / "lunr-index.json"
     lunr_index = {
         "pages": pages,

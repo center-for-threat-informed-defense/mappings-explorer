@@ -60,10 +60,10 @@
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
-            onkeypress="navHandleKeypress(event)"
+            onkeypress="navHandleKeypress(event, '{{url_prefix}}search/')"
           />
           <span class="input-group-text border-0 bg-primary" id="search-addon">
-            <a onclick="navSearchWebsite()" class="search-icon"
+            <a onclick="navSearchWebsite('{{url_prefix}}search/')" class="search-icon"
               ><img
                 src="{{url_prefix}}static/img/search-white.svg"
                 alt="search"
@@ -77,14 +77,13 @@
   <!-- .navbar -->
 </div>
 <script>
-  function navSearchWebsite() {
-    window.location.href = `${window.location.origin}/search/?search=${
-        document.getElementById("nav-search-input").value
-      }`;
+  function navSearchWebsite(url) {
+    console.log("searching website");
+    window.location.href = `${url}?search=${document.getElementById("nav-search-input").value}`;
   }
-  function navHandleKeypress(event) {
+  function navHandleKeypress(event, url) {
     if (event.key === "Enter") {
-      navSearchWebsite();
+      navSearchWebsite(url);
     }
   }
 </script>

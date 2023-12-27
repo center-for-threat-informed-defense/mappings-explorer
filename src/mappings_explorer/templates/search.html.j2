@@ -138,9 +138,12 @@
               filteredMappings.push(
                 allMappings.filter((mapping) => {
                   return (
-                    mapping.attack_object_id?.includes(result.pageData.id) ||
-                    mapping.group?.includes(result.pageData.id) ||
-                    mapping.capability_id?.includes(result.pageData.id)
+                    mapping.attack_object_id?.includes(result.pageData.name) ||
+                    mapping.attack_object_id?.includes(result.ref) ||
+                    mapping.group?.includes(result.pageData.name) ||
+                    mapping.attack_object_id?.includes(result.ref) ||
+                    mapping.capability_id?.includes(result.pageData.name) ||
+                    mapping.attack_object_id?.includes(result.ref)
                   );
                 })
               );
