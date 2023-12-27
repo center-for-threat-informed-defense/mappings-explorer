@@ -665,7 +665,7 @@ def build_attack_pages(projects, url_prefix):
             PUBLIC_DIR
             / "attack"
             / ("attack-" + attack_version)
-            / ("domain-" + attack_domain)
+            / ("domain-" + attack_domain.lower())
         )
         external_dir.mkdir(parents=True, exist_ok=True)
 
@@ -822,6 +822,7 @@ def getIndexPages():
                 mapping["mapping_type"] = replace_mapping_type(
                     mapping, mappings["metadata"]["mapping_types"]
                 )
+                mapping["attack_version"] = mappings["metadata"]["attack_version"]
                 mapping_framework = mappings["metadata"]["mapping_framework"]
                 mapping["mapping_framework_id"] = (
                     mapping_framework if mapping_framework != "nist_800_53" else "nist"
@@ -841,7 +842,7 @@ def getIndexPages():
                 mapping["domain"] = mappings["metadata"]["technology_domain"]
                 mapping["mapping_framework_version"] = mappings["metadata"][
                     "mapping_framework_version"
-                ]
+                ].replace("/", ".")
                 all_mappings.append(mapping)
                 group = mapping["group"]
                 if group:

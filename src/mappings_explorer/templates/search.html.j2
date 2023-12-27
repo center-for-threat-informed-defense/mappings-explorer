@@ -95,7 +95,7 @@
         };
       },
       async getAllMappings() {
-        let allMappingsURL = `${window.location.origin}/static/all_mappings.json`;
+        let allMappingsURL = `${this.url_prefix}static/all_mappings.json`;
         const response = await fetch(allMappingsURL);
         const responseJSON = await response.json();
         return responseJSON;
@@ -107,7 +107,7 @@
           let search = url.searchParams.get("search");
           document.getElementById("nav-search-input").value = search;
           this.initializeSearch(
-            `${window.location.origin}/static/lunr-index.json`
+            `${this.url_prefix}static/lunr-index.json`
           ).then(() => {
             let results = this.searchIndex(search);
             let filteredMappings = [];
@@ -157,7 +157,7 @@
             title: "ATT&CK Name",
             sortable: true,
             formatter: function (value, row) {
-              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${value}/`;
+              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${row.attack_object_id}/`;
               return `<a href=${href} id="attack-object-id"> ${value} </a>`;
             },
           },
@@ -172,7 +172,7 @@
             sortable: true,
             formatter: function (value, row) {
               let capabilityId = row.capability_id.replace(" ", "%20");
-              let href = `${urlPrefix}attack/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${row.capability_id}/`;
+              let href = `${urlPrefix}external/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${capabilityId}/`;
               return `<a href=${href} id="attack-object-id"> ${value} </a>`;
             },
           },
@@ -181,7 +181,8 @@
             title: "Capability Description",
             sortable: true,
             formatter: function (value, row) {
-              let href = `${urlPrefix}attack/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${row.capability_id}/`;
+              let capabilityId = row.capability_id.replace(" ", "%20");
+              let href = `${urlPrefix}external/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${capabilityId}/`;
               return `<a href=${href} id="attack-object-id"> ${value} </a>`;
             },
           },
