@@ -29,7 +29,7 @@
             <form class="col-12 version-select">
               <h2>CHOOSE YOUR VERSIONS</h2>
               <div class="row col-12" style="display: flex;">
-                <div class="col-md-2 col-sm-4 form-group">
+                <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>ATT&CK Version</p>
                   <div class="form-control select" @click="attackSelectOpen = !attackSelectOpen">
                     <span class="selected-item">[[ selectedAttackVersion ]]</span>
@@ -39,16 +39,17 @@
                       :class="{
                         'dropdown-item': true,
                         'invalid-option': !attack_domain_versions_with_mappings[selectedDomain].includes(attackVersion),
+                        'selected-option': selectedAttackVersion === attackVersion
                       }"
                       v-for="attackVersion in attackVersions"
                       :key="attackVersion"
-                      @click="selectedAttackVersion = attackVersion; attackSelectOpen = false; getAttackObjectDict();"
+                      @click="selectedAttackVersion = attackVersion; getAttackObjectDict(); attackSelectOpen = false;"
                     >
                       <span class="dropdown-item-text">[[ attackVersion ]]</span>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-2 col-sm-4 form-group">
+                <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>ATT&CK Domain</p>
                   <div class="form-control select" @click="domainSelectOpen = !domainSelectOpen">
                     <span class="selected-item">[[ selectedDomain ]]</span>
@@ -58,10 +59,11 @@
                       :class="{
                         'dropdown-item': true,
                         'invalid-option': !attack_domain_versions_with_mappings[domain].includes(selectedAttackVersion),
+                        'selected-option': selectedDomain === domain
                       }"
                       v-for="domain in attackDomains"
                       :key="domain"
-                      @click="selectedDomain = domain; domainSelectOpen = false; getAttackObjectDict();"
+                      @click="selectedDomain = domain; getAttackObjectDict(); domainSelectOpen = false;"
                     >
                       <span class="dropdown-item-text">[[ domain ]]</span>
                     </div>
@@ -331,9 +333,9 @@
           window.history.pushState({path:newurl},'',newurl);
         }
       },
-      onPageClick() {
-        this.domainSelectOpen = false;
+      handleOutsideClick() {
         this.attackSelectOpen = false;
+        this.domainSelectOpen = false;
       }
     },
     watch: {
@@ -349,19 +351,8 @@
            window.history.pushState({path:newurl},'',newurl);
          },
       },
-      attackSelectOpen(value){
-        if(value){
-          this.domainSelectOpen = false;
-        }
-      },
-      domainSelectOpen(value){
-        if(value){
-          this.attackSelectOpen = false;
-        }
-      }
     },
     mounted() {
-      document.addEventListener('click', this.onPageClick())
       this.getAttackObjectDict();
       this.setVersionsAccoringToQueryParams();
     },
@@ -568,7 +559,7 @@
     border-top: 1px solid #dbdbd9;
   }
   .dropdown-item:hover {
-    background-color: lightgray;
+    background-color: #ededeb;
   }
   .dropdown-item-text {
     margin-left: 4px !important;
@@ -581,6 +572,9 @@
   }
   .selected-item {
     font-size: 1.25rem !important;
+  }
+  .selected-option {
+    background-color: #ededeb;
   }
 </style>
 {% endblock content %}
