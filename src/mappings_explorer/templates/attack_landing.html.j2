@@ -1,27 +1,14 @@
 {% import "./macros.html.j2" as macros %}
 {% extends "base.html.j2" %}
 {% block content %}
-{#{% include "_banner.html.j2" %}#}
 
-   <section id="header-container" class="header-container">
+<section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up" id="my_view">
       <div class="row justify-content-left">
         <div class="col-lg-8 col-md-10 col-sm-12">
-          <h1><span class="highlight">{{control}}</span> MAPPINGS</h1>
-          {% for paragraph in description %}
-            <p>
-              {{- paragraph -}}
-            </p>
-          {% endfor %}
-          <div class="section-details">
-            <p>
-              <span>Total Mappings: <strong>300</strong></span>
-              <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
-              <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
-            </p>
-          </div>
+          <h1>ATT&CK <span class="highlight">v{{attack_version}}</span> MAPPINGS</h1>
         </div>
-        <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
+       {# <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
           <h6>Download Mapping Artifacts:</h6>
           <div class="downloads">
             <p>
@@ -66,50 +53,24 @@
             </p>
           </div>
         </div>
-      </div>
+      </div>#}
     </div>
   </section>
+
   {% if (attackVersions|length > 1 or domains|length > 1) %}
     {% block set_version %}
       {% include "_set_versions.html.j2" %}
     {% endblock set_version %}
   {% endif %}
-  {% if groups %}
-  <section id="groups-table" class="mapping-table">
-    <div class="container" data-aos="fade-up">
-      <div class="row justify-content-left">
-        <div class="col-12">
-          <h2>Groups</h2>
-            {{ macros.table(group_headers, groups) }}
-      </div>
-    </div>
-  </section>
-  {% endif %}
-  <section id="all-mapping-table" class="mapping-table">
-    <div class="container" data-aos="fade-up">
-      <div class="row justify-content-left">
-        <div class="col-12">
-          <h2>All Mappings</h2>
-            {{ macros.table(headers, mappings) }}
-      </div>
-    </div>
-  </section>
 
-<script>
-  function downloadJSON(file, filename){
-    fetch(file)
-      .then((response) => response.json())
-      .then((json) => {
-        json = JSON.stringify(json);
-        let blob = new Blob([json], {
-          type: 'application/json'
-        });
-        let link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = filename;
-        link.click();
-      });
-  }
-</script>
+  <section id="all-tactic-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>{{attack_domain}} Tactics</h2>
+            {{ macros.table(headers, tactics) }}
+      </div>
+    </div>
+  </section>
 
 {% endblock content %}
