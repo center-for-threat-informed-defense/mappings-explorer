@@ -47,7 +47,7 @@ def load_attack_json(attack_version, attack_domain):
 
 @cache
 def fetch_url(url):
-    response = requests.get(url, verify=False)
+    response = requests.get(url)
     if response.status_code != 404:
         attack_data = json.loads(response.text)
         return attack_data
@@ -260,24 +260,6 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
                 mapping_frameworks[mapping_framework] += 1
             else:
                 mapping_frameworks[mapping_framework] = 1
-    # if mapping_framework == "cve":
-    #     for technique in attack_data_version:
-    #         current_capabilites_mapped = attack_data_version[technique][
-    #             "capabilities_mapped"
-    #         ]
-    #         original_capabilites_mapped = original_attack_data_version[technique][
-    #             "capabilities_mapped"
-    #         ]
-    #         amount_cves_mapped = len(current_capabilites_mapped) - len(
-    #             original_capabilites_mapped
-    #         )
-    #         attack_data_version[technique][
-    #             "capabilities_mapped"
-    #         ] = original_capabilites_mapped
-    #         if amount_cves_mapped > 0:
-    #             attack_data_version[technique]["capabilities_mapped"].append(
-    #                 f"+{amount_cves_mapped} CVEs"
-    #             )
 
 
 def format_attack_data(attack_data, attack_domain):
