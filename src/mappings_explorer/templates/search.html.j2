@@ -64,7 +64,11 @@
               </span>
               <ul class="pagination float-right">
                 <li class="pagination-item previous" v-if="pageNum > 1" @click="pageNum --">
-                  Previous
+                  <img
+                    class="icon"
+                    src="{{url_prefix}}static/img/chevron-left-purple.svg"
+                    alt="previous"
+                  />
                 </li>
                 <li
                   :class="{
@@ -79,7 +83,11 @@
                  [[ index ]]
                 </li>
                 <li class="pagination-item next" v-if="pageNum < amountOfPages" @click="pageNum++">
-                  Next
+                  <img
+                    class="icon"
+                    src="{{url_prefix}}static/img/chevron-right-purple.svg"
+                    alt="next"
+                  />
                 </li>
               </ul>
             </nav>
