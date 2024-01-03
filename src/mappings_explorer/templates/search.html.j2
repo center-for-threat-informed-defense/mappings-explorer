@@ -5,19 +5,6 @@
 
 <script src="{{url_prefix}}static/lunr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"
-></script>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous"
-></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table-vue.min.js"></script>
 
 <script>
   const Search = {
@@ -25,28 +12,82 @@
       <div>
         <section id="header-container" class="header-container">
           <div class="container" data-aos="fade-up">
-            <h1 style="text-transform: uppercase">
-              <span class="highlight">Search Result</span> Mappings
+            <h1 style="text-transform: uppercase" class="text-left">
+              <span class="highlight">Search</span> for Mappings
             </h1>
           </div>
         </section>
-        <section class="mapping-table">
+        <section>
           <div class="container" data-aos="fade-up">
-            <div class="row justify-content-left">
-              <div class="table-responsive table-outer">
-                <div class="form-outline mb-4">
-                  <bootstrap-table class="table-borderless" :columns="headers" :data="filteredMappings" :options="options"></bootstrap-table>
+            <h2>PAGES FOR "[[ search.toUpperCase() ]]"</h2>
+            <div
+              class="result-container"
+              v-for="result in displayedResultKeys"
+              :key="result"
+            >
+              <div v-if="results[result].pageData.type !== 'attack_object'">
+                <a class="result-title" :href="url_prefix + results[result].ref"> [[ results[result].pageData.name ]] </a>
+                <div class="result-subtext">
+                  <span>Page for [[ results[result].pageData.mapping_framework ]] [[ results[result].pageData.type ]] [[ results[result].pageData.name]]</span>
+                  <span class="float-right">
+                    ATT&CK Version: <b>[[ getStringFromUrl(results[result].ref, "attack-") ]]</b>
+                    ATT&CK Domain: <b>[[ getStringFromUrl(results[result].ref, "domain-") ]]</b>
+                  </span>
+                </div>
+              </div>
+              <div v-else>
+                <a class="result-title" :href="url_prefix + results[result].ref"> [[ results[result].pageData.id ]] [[ results[result].pageData.name ]]</a>
+                <div class="result-subtext">
+                  <span>
+                    Page for ATT&CK [[ results[result].pageData.id.includes('.') ? 'subtechnique' : 'technique' ]]
+                    [[ results[result].pageData.id ]] [[ results[result].pageData.name]]
+                  </span>
+                  <span class="float-right">
+                    ATT&CK Version: <b>[[ getStringFromUrl(results[result].ref, "attack-") ]]</b>
+                    ATT&CK Domain: <b>[[ getStringFromUrl(results[result].ref, "domain-") ]]</b>
+                  </span>
                 </div>
               </div>
             </div>
+            <nav>
+              <span>
+                Showing [[ parseInt(displayedResultKeys[0]) + 1 ]]  to [[ parseInt(displayedResultKeys[displayedResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] pages
+                <select v-model="itemsPerPage">
+                  <option
+                    v-for="item in itemPerPageOptions.filter(option => option <= resultsLength)"
+                    :value="item"
+                  >
+                    [[ item ]]
+                  </option>
+                </select>
+                items per page
+              </span>
+              <ul class="pagination float-right">
+                <li class="pagination-item previous" v-if="pageNum > 1" @click="pageNum --">
+                  Previous
+                </li>
+                <li
+                  :class="{
+                    'pagination-item': true,
+                    'previous': index === 1 && pageNum === 1,
+                    'next': index === amountOfPages && pageNum === index,
+                    'pagination-item--active': pageNum === index
+                  }"
+                  v-for="index in amountOfPages"
+                  @click="pageNum = index"
+                >
+                 [[ index ]]
+                </li>
+                <li class="pagination-item next" v-if="pageNum < amountOfPages" @click="pageNum++">
+                  Next
+                </li>
+              </ul>
+            </nav>
           </div>
         </section>
       </div>
   `,
     delimiters: ["[[", "]]"],
-    components: {
-      BootstrapTable: BootstrapTable,
-    },
     props: {
       url_prefix: String,
     },
@@ -54,15 +95,37 @@
       return {
         webPages: undefined,
         index: undefined,
-        filteredMappings: [],
-        options: {
-          search: true,
-          pagination: true,
-          sortable: true,
-        },
+        results: {},
+        search: "",
+        pageNum: 1,
+        itemsPerPage: 10,
+        itemPerPageOptions: [10, 25, 50, 100]
       };
     },
+    computed:{
+      displayedResultKeys(){
+        // get results that are on the current page
+        return Object.keys(this.results).filter(r => (r >= (this.pageNum - 1) * this.itemsPerPage) && (r <= (this.pageNum - 1) * this.itemsPerPage + this.itemsPerPage - 1));
+      },
+      resultsLength(){
+        return Object.keys(this.results).length;
+      },
+      amountOfPages(){
+        return Math.ceil(this.resultsLength / this.itemsPerPage);
+      }
+    },
     methods: {
+      getStringFromUrl(url, string) {
+        let returnStringAndOn = url.substring(url.indexOf(string) + string.length);
+        let returnString = returnStringAndOn.substring(0, returnStringAndOn.indexOf("/"));
+        if (returnString === "enterprise" || returnString === "mobile"){
+          return returnString.charAt(0).toUpperCase() + returnString.slice(1);
+        }
+        else if(returnString === 'ics'){
+          return "ICS";
+        }
+        return returnString
+      },
       /**
        * Initialize the search index.
        */
@@ -94,99 +157,19 @@
           totalCount: allResults.length,
         };
       },
-      async getAllMappings() {
-        let allMappingsURL = `${this.url_prefix}static/all_mappings.json`;
-        const response = await fetch(allMappingsURL);
-        const responseJSON = await response.json();
-        return responseJSON;
-      },
       async searchMain() {
         const url = new URL(window.location.href);
-        let allMappings = await this.getAllMappings();
         if (url.searchParams.get("search")) {
           let search = url.searchParams.get("search");
+          this.search = search;
           document.getElementById("nav-search-input").value = search;
           this.initializeSearch(
             `${this.url_prefix}static/lunr-index.json`
           ).then(() => {
             let results = this.searchIndex(search);
-            let filteredMappings = [];
-            results.results.forEach((result) => {
-              filteredMappings.push(
-                allMappings.filter((mapping) => {
-                  return (
-                    mapping.attack_object_id?.includes(result.pageData.name) ||
-                    mapping.attack_object_id?.includes(result.ref) ||
-                    mapping.group?.includes(result.pageData.name) ||
-                    mapping.attack_object_id?.includes(result.ref) ||
-                    mapping.capability_id?.includes(result.pageData.name) ||
-                    mapping.attack_object_id?.includes(result.ref)
-                  );
-                })
-              );
-            });
-            this.filteredMappings = filteredMappings.flat();
+            this.results = results.results;
           });
         }
-      },
-    },
-    computed: {
-      headers() {
-        let urlPrefix = this.url_prefix;
-        return [
-          {
-            field: "mapping_framework",
-            title: "Mapping Framework",
-            sortable: true,
-            formatter: function (value, row) {
-              let href = `${urlPrefix}external/${row.mapping_framework_id}/`;
-              return `<a href=${href} id="mapping-framework"> ${value} </a>`;
-            },
-          },
-          {
-            field: "attack_object_id",
-            title: "ATT&CK ID",
-            sortable: true,
-            formatter: function (value, row) {
-              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${value}/`;
-              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
-            },
-          },
-          {
-            field: "attack_object_name",
-            title: "ATT&CK Name",
-            sortable: true,
-            formatter: function (value, row) {
-              let href = `${urlPrefix}attack/attack-${row.attack_version}/domain-${row.domain}/${row.attack_object_id}/`;
-              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
-            },
-          },
-          {
-            field: "mapping_type",
-            title: "Mapping Type",
-            sortable: true,
-          },
-          {
-            field: "capability_id",
-            title: "Capability ID",
-            sortable: true,
-            formatter: function (value, row) {
-              let capabilityId = row.capability_id.replace(" ", "%20");
-              let href = `${urlPrefix}external/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${capabilityId}/`;
-              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
-            },
-          },
-          {
-            field: "capability_description",
-            title: "Capability Description",
-            sortable: true,
-            formatter: function (value, row) {
-              let capabilityId = row.capability_id.replace(" ", "%20");
-              let href = `${urlPrefix}external/${row.mapping_framework_id}/attack-${row.attack_version}/${row.mapping_framework_id}-${row.mapping_framework_version}/${capabilityId}/`;
-              return `<a href=${href} id="attack-object-id"> ${value} </a>`;
-            },
-          },
-        ];
       },
     },
     mounted() {
@@ -201,5 +184,54 @@
     },
   });
 </script>
-<style></style>
+<style>
+  .result-container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 2px 4px #bdbdbd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .result-subtext {
+    margin-left: 1rem;
+  }
+  .result-title {
+    font-size: 18px;
+  }
+  .pagination-item {
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    min-width: 40px;
+    text-align: center;
+    color: #6241c5;
+  }
+  .pagination-item--active {
+    background-color: #6241c5;
+    color: white;
+  }
+  .pagination-item:hover {
+    background-color: #dee2e6;
+    color: #495057;
+  }
+  .pagination-item--active:hover {
+    background-color: #6241c5;
+    color: white;
+  }
+  .next {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .previous {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid #dee2e6;
+  }
+  .float-right {
+    float: right;
+  }
+</style>
 {% endblock content %}

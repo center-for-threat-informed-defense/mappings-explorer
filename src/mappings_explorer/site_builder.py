@@ -807,73 +807,85 @@ def getIndexPages():
     """
     mappings_filepath = PUBLIC_DIR / "data"
     pages = []
-    all_mappings = []
     for mappings_file in mappings_filepath.rglob("**/*.json"):
         if (
             "stix" not in mappings_file.name
             and "navigator_layer" not in mappings_file.name
         ):
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
-            project = mappings["metadata"]["mapping_framework"]
-            if project == "nist_800_53":
-                project = "nist"
 
             for mapping in mappings["mapping_objects"]:
-                mapping["mapping_type"] = replace_mapping_type(
-                    mapping, mappings["metadata"]["mapping_types"]
+                group = mapping["group"]
+                mapping_framework = (
+                    mappings["metadata"]["mapping_framework"]
+                    if mappings["metadata"]["mapping_framework"] != "nist_800_53"
+                    else "nist"
                 )
-                mapping["attack_version"] = mappings["metadata"]["attack_version"]
-                mapping_framework = mappings["metadata"]["mapping_framework"]
-                mapping["mapping_framework_id"] = (
-                    mapping_framework if mapping_framework != "nist_800_53" else "nist"
-                )
-                if mapping_framework == "nist_800_53":
-                    mapping["mapping_framework"] = "NIST 800-53"
-                elif mapping_framework == "veris":
-                    mapping["mapping_framework"] = "VERIS"
-                elif mapping_framework == "cve":
-                    mapping["mapping_framework"] = "CVE"
-                elif mapping_framework == "aws":
-                    mapping["mapping_framework"] = "Amazon Web Services (AWS)"
-                elif mapping_framework == "azure":
-                    mapping["mapping_framework"] = "Azure"
-                elif mapping_framework == "gcp":
-                    mapping["mapping_framework"] = "Google Cloud Platform (GCP)"
-                mapping["domain"] = mappings["metadata"]["technology_domain"]
-                mapping["mapping_framework_version"] = mappings["metadata"][
+                attack_version = mappings["metadata"]["attack_version"]
+                domain = mappings["metadata"]["technology_domain"]
+                mapping_framework_version = mappings["metadata"][
                     "mapping_framework_version"
                 ].replace("/", ".")
-                all_mappings.append(mapping)
-                group = mapping["group"]
-                if group:
-                    if not any(page["id"] == group for page in pages):
-                        pages.append(
-                            {
-                                "id": group,
-                                "name": mappings["metadata"]["groups"][group],
-                            }
-                        )
+                mapping_framework_title = ""
+                if mapping_framework == "nist":
+                    mapping_framework_title = "NIST 800-53"
+                elif mapping_framework == "veris":
+                    mapping_framework_title = "Veris"
+                elif mapping_framework == "azure":
+                    mapping_framework_title = "Azure"
+                elif mapping_framework == "aws":
+                    mapping_framework_title = "AWS"
+                elif mapping_framework == "gcp":
+                    mapping_framework_title = "GCP"
+                elif mapping_framework == "cve":
+                    mapping_framework_title = "CVE"
                 attack_object_id = mapping["attack_object_id"]
                 if attack_object_id:
-                    if not any(page["id"] == attack_object_id for page in pages):
+                    attack_url = (
+                        "attack/attack-"
+                        + attack_version
+                        + "/domain-"
+                        + domain
+                        + "/"
+                        + attack_object_id
+                        + "/"
+                    )
+                    if not any(page["url"] == attack_url for page in pages):
                         pages.append(
                             {
+                                "url": attack_url,
                                 "id": attack_object_id,
                                 "name": mapping["attack_object_name"],
+                                "type": "attack_object",
+                                "mapping_framework": mapping_framework_title,
                             }
                         )
                 capability_id = mapping["capability_id"]
                 if capability_id:
-                    if not any(page["id"] == capability_id for page in pages):
+                    capability_url = (
+                        "external/"
+                        + mapping_framework
+                        + "/attack-"
+                        + attack_version
+                        + "/"
+                        + mapping_framework
+                        + "-"
+                        + mapping_framework_version
+                        + "/domain-"
+                        + domain
+                        + "/"
+                        + capability_id.replace(" ", "%20")
+                    )
+                    if not any(page["url"] == capability_url for page in pages):
                         pages.append(
                             {
+                                "url": capability_url,
                                 "id": capability_id,
                                 "name": mapping["capability_description"],
+                                "type": "control",
+                                "mapping_framework": mapping_framework_title,
                             }
                         )
-    all_mappigns_path = PUBLIC_DIR / "static" / "all_mappings.json"
-    with all_mappigns_path.open("w") as index_file:
-        json.dump(all_mappings, index_file)
     return pages
 
 
@@ -896,14 +908,14 @@ def build_search_index(url_prefix):
     stream.dump(str(output_path))
 
     index = lunr(
-        ref="id",
+        ref="url",
         fields=[
             {"field_name": "id", "boost": 3},
             {"field_name": "name", "boost": 2},
         ],
         documents=pages,
     )
-    pages = {p.pop("id"): p for p in pages}
+    pages = {p.pop("url"): p for p in pages}
     index_path = PUBLIC_DIR / "static" / "lunr-index.json"
     lunr_index = {
         "pages": pages,
