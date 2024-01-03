@@ -12,13 +12,34 @@
       <div>
         <section id="header-container" class="header-container">
           <div class="container" data-aos="fade-up">
-            <h1 style="text-transform: uppercase" class="text-left">
+            <h1 style="text-transform: uppercase" class="text-center">
               <span class="highlight">Search</span> for Mappings
             </h1>
           </div>
+          <div class="input-group search-bar rounded">
+            <span class="input-group-text transparent border-0" id="search-addon">
+              <a onclick="">
+              <img
+                :src="url_prefix + 'static/img/search.svg'"
+                alt="search"
+                style="height: 20px"
+            /></a>
+            </span>
+            <input
+              type="search"
+              id="search-page-search-input"
+              class="form-control transparent border-none search-bar-input rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              onkeypress=""
+              width="100"
+              v-model="search"
+            />
+          </div>
         </section>
         <section>
-          <div class="container" data-aos="fade-up">
+          <div class="container" data-aos="fade-up" v-if="resultsLength">
             <h2>PAGES FOR "[[ search.toUpperCase() ]]"</h2>
             <div
               class="result-container"
@@ -49,7 +70,7 @@
                 </div>
               </div>
             </div>
-            <nav>
+            <nav v-if="amountOfPages > 1">
               <span>
                 Showing [[ parseInt(displayedResultKeys[0]) + 1 ]]  to [[ parseInt(displayedResultKeys[displayedResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] pages
                 <select v-model="itemsPerPage">
@@ -91,6 +112,9 @@
                 </li>
               </ul>
             </nav>
+          </div>
+          <div class="container" data-aos="fade-up" v-else>
+            <h2>No Pages Match Search "[[ search ]]"</h2>
           </div>
         </section>
       </div>
@@ -180,6 +204,14 @@
         }
       },
     },
+    watch: {
+      search(){
+        let newurl = `${window.location.origin}${window.location.pathname}?search=${this.search}`
+        window.history.pushState({path:newurl},'',newurl);
+        document.getElementById("nav-search-input").value = this.search;
+        this.searchMain();
+      }
+    },
     mounted() {
       this.searchMain();
     },
@@ -240,6 +272,24 @@
   }
   .float-right {
     float: right;
+  }
+  .search-bar {
+    width: 50%;
+    margin: auto;
+    border: 1px solid #495057;
+  }
+  .border-none {
+    border: none;
+  }
+  .transparent {
+    background-color: transparent;
+  }
+  .search-bar-input:focus {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
   }
 </style>
 {% endblock content %}
