@@ -36,7 +36,7 @@ class Tactic:
     techniques = []
     num_techniques = ""
     mappings = []
-    num_mappings = ""
+    num_mappings = 0
 
 
 class Group:
@@ -60,6 +60,75 @@ class ExternalControl:
     groups = []
     mappings = []
     capabilities = []
+
+
+all_attack_versions = [
+    "8.2",
+    "9.0",
+    "10.0",
+    "10.1",
+    "11.0",
+    "11.1",
+    "11.2",
+    "11.3",
+    "12.0",
+    "12.1",
+    # "13.0",
+    # "13.1",
+    # "14.0",
+    # "14.1",
+]
+
+attack_domains = {
+    "Enterprise": [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        # "13.0",
+        # "13.1",
+        # "14.0",
+        # "14.1",
+    ],
+    "ICS": [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        # "13.0",
+        # "13.1",
+        # "14.0",
+        # "14.1",
+    ],
+    "Mobile": [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        # "13.0",
+        # "13.1",
+        # "14.0",
+        # "14.1",
+    ],
+}
 
 
 def load_projects():
@@ -641,6 +710,7 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
                     if len(dict_item) > 0:
                         t.label = dict_item[0].get("name")
                         t.description = dict_item[0].get("description")
+                    t.subtechniques = []
                     t.mappings = [m for m in mappings if (m["attack_object_id"] == id)]
                     t.num_mappings = len(t.mappings)
                     techniques.append(t)
@@ -664,6 +734,7 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
         ta.techniques = []
         tactic_list.append(ta)
     for item in tactic_dict:
+        # if the item has tactic listed, add it to that tactic's list of techniques
         if tactic_dict[item].get("tactics"):
             ta = [
                 ta
@@ -671,12 +742,13 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
                 if ta.label.lower().replace(" ", "-")
                 in tactic_dict[item].get("tactics")
             ]
-            if ta:
+            for tactic in ta:
                 technique = [t for t in techniques if t.id == item]
                 if technique:
-                    ta[0].techniques.append(technique[0])
-                    ta[0].num_techniques = len(ta[0].techniques)
-        if tactic_dict[item].get("technique"):
+                    tactic.techniques.append(technique[0])
+                    tactic.num_techniques = len(tactic.techniques)
+        # if the item is a subtechnique, find the supertechnique and add to subtechnique list
+        if tactic_dict[item].get("type") == "subtechnique":
             technique_id = tactic_dict[item].get("technique")
             supertechnique = [t for t in techniques if t.id == technique_id]
             technique = [t for t in techniques if t.id == item]
@@ -688,75 +760,51 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
 
 
 def build_attack_pages(projects, url_prefix):
-    all_attack_versions = [
-        "8.2",
-        "9.0",
-        "10.0",
-        "10.1",
-        "11.0",
-        "11.1",
-        "11.2",
-        "11.3",
-        "12.0",
-        "12.1",
-        # "13.0",
-        # "13.1",
-        # "14.0",
-        # "14.1",
-    ]
-    for attack_version in all_attack_versions:
-        attack_domain = "Enterprise"
-        attack_data = get_attack_data(attack_version, attack_domain)
-        all_techniques = parse_techniques(
-            attack_version=attack_version,
-            attack_domain=attack_domain,
-            attack_data=attack_data,
-            projects=projects,
-        )
-        all_tactics = parse_tactics(
-            attack_version=attack_version,
-            attack_domain=attack_domain,
-            attack_data=attack_data,
-            projects=projects,
-            techniques=all_techniques,
-        )
-        external_dir = (
-            PUBLIC_DIR
-            / "attack"
-            / ("attack-" + attack_version)
-            / ("domain-" + attack_domain)
-        )
-        external_dir.mkdir(parents=True, exist_ok=True)
+    # loop through all domain/version combinations
+    for attack_domain in list(attack_domains.keys()):
+        for attack_version in attack_domains[attack_domain]:
+            attack_data = get_attack_data(attack_version, attack_domain)
+            all_techniques = parse_techniques(
+                attack_version=attack_version,
+                attack_domain=attack_domain,
+                attack_data=attack_data,
+                projects=projects,
+            )
+            all_tactics = parse_tactics(
+                attack_version=attack_version,
+                attack_domain=attack_domain,
+                attack_data=attack_data,
+                projects=projects,
+                techniques=all_techniques,
+            )
+            external_dir = (
+                PUBLIC_DIR
+                / "attack"
+                / ("attack-" + attack_version)
+                / ("domain-" + attack_domain)
+            )
+            external_dir.mkdir(parents=True, exist_ok=True)
 
-        for technique in all_techniques:
-            if technique.id:
-                build_technique_page(
-                    url_prefix=url_prefix,
-                    parent_dir=external_dir,
-                    attack_version=attack_version,
-                    attack_domain=attack_domain,
-                    technique=technique,
-                )
-        print("built all technique pages")
-        for tactic in all_tactics:
-            if tactic.id:
-                build_tactic_page(
-                    url_prefix=url_prefix,
-                    parent_dir=external_dir,
-                    attack_version=attack_version,
-                    attack_domain=attack_domain,
-                    tactic=tactic,
-                )
-        print("built all tactic pages")
-    build_tactic_landing(
-        url_prefix=url_prefix,
-        parent_dir=external_dir,
-        attack_version=attack_version,
-        attack_domain=attack_domain,
-        tactics=all_tactics,
-        attackVersions=all_attack_versions,
-        attackDomains=["Enterprise"],
-    )
+            for technique in all_techniques:
+                if technique.id:
+                    build_technique_page(
+                        url_prefix=url_prefix,
+                        parent_dir=external_dir,
+                        attack_version=attack_version,
+                        attack_domain=attack_domain,
+                        technique=technique,
+                    )
+            print("built all technique pages")
+            for tactic in all_tactics:
+                if tactic.id:
+                    build_tactic_page(
+                        url_prefix=url_prefix,
+                        parent_dir=external_dir,
+                        attack_version=attack_version,
+                        attack_domain=attack_domain,
+                        tactic=tactic,
+                    )
+            print("built all tactic pages")
 
 
 def build_technique_page(
@@ -793,7 +841,7 @@ def build_technique_page(
     prev_page = parent_dir
     template = load_template("technique.html.j2")
     stream = template.stream(
-        title="ATT&CK Technique" + technique.id,
+        title="ATT&CK Technique " + technique.id,
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
