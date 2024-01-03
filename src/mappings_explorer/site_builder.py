@@ -117,11 +117,11 @@ attack_domains = {
         "9.0",
         "10.0",
         "10.1",
-        "11.0",
-        "11.1",
-        "11.2",
-        "11.3",
-        "12.0",
+        # "11.0",
+        # "11.1",
+        # "11.2",
+        # "11.3",
+        # "12.0",
         "12.1",
         # "13.0",
         # "13.1",
@@ -747,7 +747,7 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
                 if technique:
                     tactic.techniques.append(technique[0])
                     tactic.num_techniques = len(tactic.techniques)
-        # if the item is a subtechnique, find the supertechnique and add to subtechnique list
+        # if item is subtechnique, find the supertechnique add to subtechnique list
         if tactic_dict[item].get("type") == "subtechnique":
             technique_id = tactic_dict[item].get("technique")
             supertechnique = [t for t in techniques if t.id == technique_id]
@@ -878,7 +878,7 @@ def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tac
     prev_page = parent_dir
     template = load_template("tactic.html.j2")
     stream = template.stream(
-        title="ATT&CK Tactic",
+        title="ATT&CK Tactic " + tactic.id,
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
