@@ -4,6 +4,7 @@
     :url_prefix="'{{url_prefix}}'"
     :all_attack_versions="{{all_attack_versions}}"
     :all_attack_domains="{{attack_domains}}"
+    :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"
   ></Matrix>
 </div>
 
@@ -28,21 +29,45 @@
             <form class="col-12 version-select">
               <h2>CHOOSE YOUR VERSIONS</h2>
               <div class="row col-12" style="display: flex;">
-                <div class="col-md-2 col-sm-4 form-group">
-                  <p>Att&ck Version</p>
-                  <select class="form-control" name="attack-versions" id="versions" v-model="selectedAttackVersion" @change="getAttackObjectDict">
-                    <option v-for="attackVersion in attackVersions" :value="attackVersion">
-                      [[ attackVersion ]]
-                    </option>
-                  </select>
+                <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
+                  <p>ATT&CK Version</p>
+                  <div class="form-control select" @click="attackSelectOpen = !attackSelectOpen">
+                    <span class="selected-item">[[ selectedAttackVersion ]]</span>
+                  </div>
+                  <div v-if="attackSelectOpen" class="dropdown-items">
+                    <div
+                      :class="{
+                        'dropdown-item': true,
+                        'invalid-option': !attack_domain_versions_with_mappings[selectedDomain].includes(attackVersion),
+                        'selected-option': selectedAttackVersion === attackVersion
+                      }"
+                      v-for="attackVersion in attackVersions"
+                      :key="attackVersion"
+                      @click="selectedAttackVersion = attackVersion; getAttackObjectDict(); attackSelectOpen = false;"
+                    >
+                      <span class="dropdown-item-text">[[ attackVersion ]]</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-2 col-sm-4 form-group">
+                <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>ATT&CK Domain</p>
-                  <select class="form-control" name="domains" id="domains" v-model="selectedDomain" @change="getAttackObjectDict">
-                    <option v-for="domain in attackDomains" :value="domain">
-                      [[ domain ]]
-                    </option>
-                  </select>
+                  <div class="form-control select" @click="domainSelectOpen = !domainSelectOpen">
+                    <span class="selected-item">[[ selectedDomain ]]</span>
+                  </div>
+                  <div v-if="domainSelectOpen" class="dropdown-items">
+                    <div
+                      :class="{
+                        'dropdown-item': true,
+                        'invalid-option': !attack_domain_versions_with_mappings[domain].includes(selectedAttackVersion),
+                        'selected-option': selectedDomain === domain
+                      }"
+                      v-for="domain in attackDomains"
+                      :key="domain"
+                      @click="selectedDomain = domain; getAttackObjectDict(); domainSelectOpen = false;"
+                    >
+                      <span class="dropdown-item-text">[[ domain ]]</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
@@ -61,83 +86,85 @@
                       <button @click="toggleAllTechniques(false)" class="toggle-subtechniques-btn">Hide All Sub-Techniques</button>
                     </div>
                   </div>
-                  <div class="scroll-indicator-left" v-if="!scrolledCompletelyToLeft"></div>
-                  <div class="overflow-scroll" id="matrix-table-scrollable" @scroll="handleScroll">
-                    <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
-                      <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
-                        <div class="tactic-header">
-                          <a href="/" class="tactic-name">[[  tactic.name ]]</a>
-                          <br/>
-                          ([[ tactic.id ]])
+                  <div class="matrix-table-container-relative">
+                    <div class="scroll-indicator-left" v-if="!scrolledCompletelyToLeft"></div>
+                    <div class="overflow-scroll" id="matrix-table-scrollable" @scroll="handleScroll">
+                      <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
+                        <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
+                          <div class="tactic-header">
+                            <a href="/" class="tactic-name">[[  tactic.name ]]</a>
+                            <br/>
+                            ([[ tactic.id ]])
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row row--no-x-margin row--no-padding flex-nowrap">
-                      <div class="col-md-1 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
-                        <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
-                          <div class="row row--no-x-margin row--no-padding">
-                            <div
-                              :class="{
-                                'col-2 align-items-center col--less-x-padding d-flex': true,
-                                'subtechnique-toggle-col' : technique.subtechniques.length,
-                                'subtechnique-toggle-col--no-icon': !technique.subtechniques.length
-                              }"
-                            >
-                              <img
-                                v-if="technique.subtechniques.length && !technique.open"
-                                @click="handleClick(technique)"
-                                class="icon"
-                                src="{{url_prefix}}static/img/chevron-right.svg"
-                                alt=""
-                              />
-                              <img
-                                v-else-if="technique.subtechniques.length && technique.open"
-                                @click="handleClick(technique)"
-                                class="icon"
-                                src="{{url_prefix}}static/img/chevron-down.svg"
-                                alt=""
-                              />
-                            </div>
-                            <div
-                              class="col-10 col--no-x-padding"
-                              @mouseenter="techniqueHovered = technique"
-                              @mouseleave="techniqueHovered = ''"
-                              :id="technique.id + '_' + technique.parent + '_box'"
-                            >
+                      <div class="row row--no-x-margin row--no-padding flex-nowrap">
+                        <div class="col-md-1 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
+                          <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
+                            <div class="row row--no-x-margin row--no-padding">
                               <div
-                                class="technique-box"
-                                :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
+                                :class="{
+                                  'col-2 align-items-center col--less-x-padding d-flex': true,
+                                  'subtechnique-toggle-col' : technique.subtechniques.length,
+                                  'subtechnique-toggle-col--no-icon': !technique.subtechniques.length
+                                }"
                               >
-                                <a href="/" @mouseenter="techniqueHovered = technique">
-                                  [[  technique.name  ]]
-                                </a>
-                                <br/>
-                                ( [[ technique.id ]] )
-                                <span class="technique-score" v-if="technique.subtechniques.length">
-                                  ([[ technique.subtechniques.length ]])
-                                </span>
+                                <img
+                                  v-if="technique.subtechniques.length && !technique.open"
+                                  @click="handleClick(technique)"
+                                  class="icon"
+                                  src="{{url_prefix}}static/img/chevron-right.svg"
+                                  alt=""
+                                />
+                                <img
+                                  v-else-if="technique.subtechniques.length && technique.open"
+                                  @click="handleClick(technique)"
+                                  class="icon"
+                                  src="{{url_prefix}}static/img/chevron-down.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div
+                                class="col-10 col--no-x-padding"
+                                @mouseenter="techniqueHovered = technique"
+                                @mouseleave="techniqueHovered = ''"
+                                :id="technique.id + '_' + technique.parent + '_box'"
+                              >
+                                <div
+                                  class="technique-box"
+                                  :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
+                                >
+                                  <a href="/" @mouseenter="techniqueHovered = technique">
+                                    [[  technique.name  ]]
+                                  </a>
+                                  <br/>
+                                  ( [[ technique.id ]] )
+                                  <span class="technique-score" v-if="technique.subtechniques.length">
+                                    ([[ technique.subtechniques.length ]])
+                                  </span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="row row--no-x-margin row--no-padding">
-                            <div class="col-2 col--no-x-padding subtechniques-col">
-                              <svg fill="grey" v-if="technique.open && technique.subtechniques.length" width="12px" height="20px"><path d="M0 0H12V12Z"/></svg>
-                            </div>
-                            <div
-                              class="col-10
-                              col--no-x-padding"
-                            >
+                            <div class="row row--no-x-margin row--no-padding">
+                              <div class="col-2 col--no-x-padding subtechniques-col">
+                                <svg fill="grey" v-if="technique.open && technique.subtechniques.length" width="12px" height="20px"><path d="M0 0H12V12Z"/></svg>
+                              </div>
                               <div
-                                v-if="technique.open"
-                                v-for="subtechnique in technique.subtechniques"
-                                @mouseenter="techniqueHovered = subtechnique"
-                                @mouseleave="techniqueHovered = ''"
-                                :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
+                                class="col-10
+                                col--no-x-padding"
                               >
-                                <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
-                                  <a href="/" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
-                                  <br/>
-                                  ( [[ subtechnique.id ]] )
+                                <div
+                                  v-if="technique.open"
+                                  v-for="subtechnique in technique.subtechniques"
+                                  @mouseenter="techniqueHovered = subtechnique"
+                                  @mouseleave="techniqueHovered = ''"
+                                  :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
+                                >
+                                  <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
+                                    <a href="/" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                    <br/>
+                                    ( [[ subtechnique.id ]] )
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -145,8 +172,8 @@
                         </div>
                       </div>
                     </div>
+                    <div class="scroll-indicator-right" v-if="!scrolledCompletelyToRight"></div>
                   </div>
-                  <div class="scroll-indicator-right" v-if="!scrolledCompletelyToRight"></div>
                 </div>
               </div>
             </div>
@@ -179,12 +206,15 @@
         selectedDomain: "Enterprise",
         scrolledCompletelyToRight: false,
         scrolledCompletelyToLeft: true,
+        attackSelectOpen: false,
+        domainSelectOpen: false,
       };
     },
     props: {
       url_prefix: String,
       all_attack_versions: Array,
       all_attack_domains: Object,
+      attack_domain_versions_with_mappings: Object
     },
     computed: {
       attackDomains() {
@@ -302,6 +332,10 @@
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({path:newurl},'',newurl);
         }
+      },
+      handleOutsideClick() {
+        this.attackSelectOpen = false;
+        this.domainSelectOpen = false;
       }
     },
     watch: {
@@ -457,13 +491,17 @@
     padding: 40px;
     box-shadow: 2px 2px 4px #bdbdbd;
     border-radius: 5px;
+  }
+  .matrix-table-container-relative {
     position: relative;
+    z-index: 0;
   }
   .subtechnique-toggle {
     background-color: grey;
   }
   .technique-tooltip {
     position: absolute;
+    z-index: 999;
     border-radius: 3px;
     margin-left: -2.5%;
     margin-top: -2.5%;
@@ -486,15 +524,16 @@
   }
   .matrix-component {
     position: relative;
+    z-index: 0;
   }
   .scroll-indicator-right {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.001), white);
-    right: 35px;
+    right: 0;
     width: 100px;
     height: 100%;
     position: absolute;
     pointer-events: none;
-    top: 50px;
+    top: 0;
   }
   .scroll-indicator-left {
     background: linear-gradient(to left, rgba(255, 255, 255, 0.001), white);
@@ -502,8 +541,40 @@
     height: 100%;
     position: absolute;
     pointer-events: none;
-    top: 80px;
-    left: 35px;
+  }
+  .dropdown-items {
+    position: absolute;
+    background-color: white;
+    box-shadow: 2px 2px 2px #bdbdbd;
+    border-radius: 5px;
+    z-index: 999;
+    width: 150px;
+  }
+  .select {
+    width: 150px;
+    cursor: pointer;
+  }
+  .dropdown-item {
+    cursor: pointer;
+    border-top: 1px solid #dbdbd9;
+  }
+  .dropdown-item:hover {
+    background-color: #ededeb;
+  }
+  .dropdown-item-text {
+    margin-left: 4px !important;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+  }
+  .invalid-option {
+    color: #bdbdbd !important;
+  }
+  .selected-item {
+    font-size: 1.25rem !important;
+  }
+  .selected-option {
+    background-color: #ededeb;
   }
 </style>
 {% endblock content %}
