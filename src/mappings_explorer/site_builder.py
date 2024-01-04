@@ -352,10 +352,10 @@ def parse_groups(project, attack_version, project_version, attack_domain):
         }
     )
     #  set the descriptions for each project's capability list
-    # if project.id == "cve":
-    #     get_cve_descriptions(project=project)
-    # if project.id == "nist":
-    #     get_nist_descriptions(project=project, version=project_version)
+    if project.id == "cve":
+        get_cve_descriptions(project=project)
+    if project.id == "nist":
+        get_nist_descriptions(project=project, version=project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
