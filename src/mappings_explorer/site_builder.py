@@ -341,13 +341,13 @@ def parse_groups(project, attack_version, project_version, attack_domain):
                 + g.label
             )
     project.capabilities = parse_capabilities(
-        mappings, project, project_version, attack_version
+        mappings, project, project_version, attack_version, attack_domain
     )
     project.mappings.append(
         {
             "attack_version": attack_version,
             "project_version": project_version,
-            "attack_domain": "Enterprise",
+            "attack_domain": attack_domain,
             "mappings": mappings,
         }
     )
@@ -414,7 +414,9 @@ def get_nist_descriptions(project, version):
             print("exception ", e)
 
 
-def parse_capabilities(mappings, project, project_version, attack_version):
+def parse_capabilities(
+    mappings, project, project_version, attack_version, attack_domain
+):
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
@@ -426,6 +428,7 @@ def parse_capabilities(mappings, project, project_version, attack_version):
             mapping["project"] = project.id
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
+            mapping["attack_domain"] = attack_domain
 
         print(
             "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
