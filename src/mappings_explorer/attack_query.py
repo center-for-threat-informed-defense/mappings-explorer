@@ -68,6 +68,8 @@ def build_attack_dict(attack_data, attack_domain):
         A dict mapping an attack object to its id, name, url, and description
 
     """
+    if not attack_data:
+        return []
     attack_domain = attack_domain.lower()
     attack_data_array = []
     for attack_object in attack_data["objects"]:
@@ -339,7 +341,7 @@ def format_attack_data(attack_data, attack_domain):
     return attack_data_dict
 
 
-def load_tactic_structure(attack_version, attack_domain, output_filepath):
+def load_tactic_structure(attack_version, attack_domain):
     attack_data_dict = {}
     attack_data = load_attack_json(attack_version, attack_domain.lower())
     if attack_data:
@@ -347,21 +349,4 @@ def load_tactic_structure(attack_version, attack_domain, output_filepath):
         if attack_version not in list(attack_data_dict.keys()):
             attack_data_dict[attack_version] = {}
         attack_data_dict[attack_version][attack_domain.lower()] = formatted_attack_data
-        filepath = (
-            output_filepath
-            / attack_domain.lower()
-            / attack_version
-            / f"{attack_domain.lower()}-{attack_version}_tactic_data.json"
-        )
-        filepath.parent.mkdir(parents=True, exist_ok=True)
-
-        json_file = open(
-            filepath,
-            "w",
-            encoding="UTF-8",
-        )
-        json.dump(
-            attack_data_dict[attack_version][attack_domain.lower()],
-            fp=json_file,
-        )
     return attack_data_dict[attack_version][attack_domain.lower()]
