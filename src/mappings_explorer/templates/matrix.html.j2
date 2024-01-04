@@ -190,7 +190,7 @@
           <span>Mapped To:</span>
           <br/>
           <span>
-            [[ getCapabilitiesMappedString(techniqueHovered.capabilities_mapped) ]]
+            [[ techniqueHovered.score_text ]]
           </span>
         </div>
       </div>
@@ -251,11 +251,6 @@
         let xPosition = window.scrollX + hoveredElement?.x;
         let yPosition = window.scrollY + hoveredElement?.y;
         return `top:${yPosition - 100}px;left:${xPosition - 75}px;`;
-      },
-      getCapabilitiesMappedString(capabilitiesMapped) {
-        return capabilitiesMapped.length > 10
-          ? capabilitiesMapped.slice(0, 10).join(", ").concat("...")
-          : capabilitiesMapped.join(", ");
       },
       getAttackObjectDict() {
         attack_object_file = `${
