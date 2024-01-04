@@ -935,7 +935,7 @@ def build_tactic_landing(
     stream.dump(str(output_path))
 
 
-def build_matrix(url_prefix):
+def build_matrix(url_prefix, projects):
     external_dir = PUBLIC_DIR / "external" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
@@ -956,6 +956,21 @@ def build_matrix(url_prefix):
         "14.0",
         "14.1",
     ]
+
+    attack_domain_versions_with_mappings = {}
+    for project in projects:
+        for valid_version in project.validVersions:
+            if valid_version[2] not in attack_domain_versions_with_mappings:
+                attack_domain_versions_with_mappings[valid_version[2]] = [
+                    valid_version[1]
+                ]
+            elif (
+                valid_version[1]
+                not in attack_domain_versions_with_mappings[valid_version[2]]
+            ):
+                attack_domain_versions_with_mappings[valid_version[2]].append(
+                    valid_version[1]
+                )
 
     attack_domains = {
         "Enterprise": [
@@ -1015,6 +1030,7 @@ def build_matrix(url_prefix):
         all_attack_versions=all_attack_versions,
         url_prefix=url_prefix,
         attack_domains=attack_domains,
+        attack_domain_versions_with_mappings=attack_domain_versions_with_mappings,
     )
     stream.dump(str(output_path))
     print("Created matrix")
@@ -1058,7 +1074,7 @@ def main():
 
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix)
+    build_matrix(url_prefix, projects)
 
 
 if __name__ == "__main__":

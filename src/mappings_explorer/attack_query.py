@@ -1,6 +1,5 @@
 import json
 import logging
-from copy import deepcopy
 from functools import cache
 
 import requests
@@ -181,15 +180,39 @@ def add_background_colors(attack_version_data):
     Args:
         attack_version_data: the dictionary that the background field should be added to
     """
+    mapping_framework_id_to_name = {
+        "nist_800_53": "NIST 800-53",
+        "cve": "CVE",
+        "veris": "VERIS",
+        "aws": "AWS",
+        "gcp": "GCP",
+        "azure": "Azure",
+    }
     max_score = 0
     min_score = 100000
     for attack_object in attack_version_data:
-        score = len(attack_version_data[attack_object]["capabilities_mapped"])
+        score = 0
+        score_text = ""
+        mapping_frameworks = attack_version_data[attack_object]["mapping_frameworks"]
+        for mapping_framework in mapping_frameworks:
+            mapping_framework_name = mapping_framework_id_to_name[mapping_framework]
+            controls_mapped = mapping_frameworks[mapping_framework]
+            if score_text != "":
+                score_text += ", "
+            if mapping_framework == "cve":
+                score += 1
+                score_text += f"{controls_mapped} {mapping_framework_name}"
+            else:
+                score += mapping_frameworks[mapping_framework]
+                score_text += f"{controls_mapped} {mapping_framework_name}"
         attack_version_data[attack_object]["score"] = score
+        attack_version_data[attack_object]["score_text"] = score_text
+
         if score > max_score:
             max_score = score
         if score < min_score:
             min_score = score
+
     if max_score != 0:
         r = 255
         g = 180
@@ -224,32 +247,19 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
     attack_data_version = attack_data_dict[mappings["metadata"]["attack_version"]][
         mappings["metadata"]["technology_domain"]
     ]
-    original_attack_data_version = deepcopy(attack_data_version)
+    # original_attack_data_version = deepcopy(attack_data_version)
+    mapping_framework = mappings["metadata"]["mapping_framework"]
 
     for mapping in mappings["mapping_objects"]:
-        technique_id = mapping["attack_object_id"]
-        if attack_data_version.get(technique_id):
-            attack_data_version[technique_id]["capabilities_mapped"].append(
-                mapping["capability_id"]
-            )
-    if mappings["metadata"]["mapping_framework"] == "cve":
-        for technique in attack_data_version:
-            current_capabilites_mapped = attack_data_version[technique][
-                "capabilities_mapped"
+        attack_object_id = mapping["attack_object_id"]
+        if attack_data_version.get(attack_object_id):
+            mapping_frameworks = attack_data_version[attack_object_id][
+                "mapping_frameworks"
             ]
-            original_capabilites_mapped = original_attack_data_version[technique][
-                "capabilities_mapped"
-            ]
-            amount_cves_mapped = len(current_capabilites_mapped) - len(
-                original_capabilites_mapped
-            )
-            attack_data_version[technique][
-                "capabilities_mapped"
-            ] = original_capabilites_mapped
-            if amount_cves_mapped > 0:
-                attack_data_version[technique]["capabilities_mapped"].append(
-                    f"+{amount_cves_mapped} CVEs"
-                )
+            if mapping_framework in mapping_frameworks:
+                mapping_frameworks[mapping_framework] += 1
+            else:
+                mapping_frameworks[mapping_framework] = 1
 
 
 def format_attack_data(attack_data, attack_domain):
@@ -321,9 +331,9 @@ def format_attack_data(attack_data, attack_domain):
                 "tactics": attack_object_parents,
                 "technique": attack_object_technique,
                 "short_name": attack_object_short_name,
-                "capabilities_mapped": [],
                 "background_color": "",
                 "id": attack_object_id,
+                "mapping_frameworks": {},
             }
 
     return attack_data_dict
