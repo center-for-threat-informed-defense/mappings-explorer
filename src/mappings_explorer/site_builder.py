@@ -121,7 +121,7 @@ attack_domains = {
         # "11.1",
         # "11.2",
         # "11.3",
-        # "12.0",
+        "12.0",
         "12.1",
         # "13.0",
         # "13.1",
@@ -720,11 +720,9 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
 
 
 def parse_tactics(attack_version, attack_domain, attack_data, projects, techniques):
-    json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "tactics"
     tactic_dict = load_tactic_structure(
         attack_version=attack_version,
         attack_domain=attack_domain,
-        output_filepath=json_matrices_dir,
     )
     tactic_list = []
     tactics = [t for t in attack_data if t.get("id")[:2] == "TA"]
@@ -855,7 +853,6 @@ def build_technique_page(
         subtechniques=technique.subtechniques,
     )
     stream.dump(str(output_path))
-    # print("          Created technique page " + technique.id)
 
 
 def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):
