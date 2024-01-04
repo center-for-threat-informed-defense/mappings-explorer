@@ -352,10 +352,10 @@ def parse_groups(project, attack_version, project_version, attack_domain):
         }
     )
     #  set the descriptions for each project's capability list
-    if project.id == "cve":
-        get_cve_descriptions(project=project)
-    if project.id == "nist":
-        get_nist_descriptions(project=project, version=project_version)
+    # if project.id == "cve":
+    #     get_cve_descriptions(project=project)
+    # if project.id == "nist":
+    #     get_nist_descriptions(project=project, version=project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
@@ -460,6 +460,8 @@ def build_external_landing(
         + project.id
         + "/attack-"
         + attack_version
+        + "/domain-"
+        + attack_domain
         + "/"
         + project.id
         + "-"
@@ -569,9 +571,9 @@ def build_external_pages(projects, url_prefix):
             project_version = validCombo[0]
             attack_domain = validCombo[2]
             a = "attack-" + attack_version
-            p = project.id + "-" + project_version
             d = "domain-" + attack_domain.lower()
-            domain_dir = dir / a / p / d
+            p = project.id + "-" + project_version
+            domain_dir = dir / a / d / p
             domain_dir.mkdir(parents=True, exist_ok=True)
             parse_groups(
                 project=project,
@@ -687,7 +689,7 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
         m = [
             m
             for m in project.mappings
-            if float(m["attack_version"]) <= float(attack_version)
+            if float(m["attack_version"]) == float(attack_version)
         ]
         if len(m) > 0:
             m = m[len(m) - 1]
