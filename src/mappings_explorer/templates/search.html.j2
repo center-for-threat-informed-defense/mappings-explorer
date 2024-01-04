@@ -46,10 +46,10 @@
               v-for="result in displayedResultKeys"
               :key="result"
             >
-              <div v-if="results[result].pageData.type !== 'attack_object'">
+              <div v-if="results[result].ref.startsWith('external/')">
                 <a class="result-title" :href="url_prefix + results[result].ref"> [[ results[result].pageData.name ]] </a>
                 <div class="result-subtext">
-                  <span>Page for [[ results[result].pageData.mapping_framework ]] [[ results[result].pageData.type ]] [[ results[result].pageData.name]]</span>
+                  <span>Page for [[ getStringFromUrl(results[result].ref, 'external/') ]] control [[ results[result].pageData.name]]</span>
                   <span class="float-right">
                     ATT&CK Version: <b>[[ getStringFromUrl(results[result].ref, "attack-") ]]</b>
                     ATT&CK Domain: <b>[[ getStringFromUrl(results[result].ref, "domain-") ]]</b>
@@ -151,11 +151,14 @@
       getStringFromUrl(url, string) {
         let returnStringAndOn = url.substring(url.indexOf(string) + string.length);
         let returnString = returnStringAndOn.substring(0, returnStringAndOn.indexOf("/"));
-        if (returnString === "enterprise" || returnString === "mobile"){
+        if (returnString === "enterprise" || returnString === "mobile" || returnString === 'veris' || returnString === 'azure'){
           return returnString.charAt(0).toUpperCase() + returnString.slice(1);
         }
-        else if(returnString === 'ics'){
-          return "ICS";
+        else if(returnString === 'ics' || returnString === 'aws' || returnString === 'gcp' || returnString === 'cve'){
+          return returnString.toUpperCase();
+        }
+        else if (returnString === 'nist') {
+          return 'NIST 800-53';
         }
         return returnString
       },

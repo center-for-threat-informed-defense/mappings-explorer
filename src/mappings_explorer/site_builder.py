@@ -815,7 +815,6 @@ def getIndexPages():
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
 
             for mapping in mappings["mapping_objects"]:
-                group = mapping["group"]
                 mapping_framework = (
                     mappings["metadata"]["mapping_framework"]
                     if mappings["metadata"]["mapping_framework"] != "nist_800_53"
@@ -856,8 +855,6 @@ def getIndexPages():
                                 "url": attack_url,
                                 "id": attack_object_id,
                                 "name": mapping["attack_object_name"],
-                                "type": "attack_object",
-                                "mapping_framework": mapping_framework_title,
                             }
                         )
                 capability_id = mapping["capability_id"]
@@ -882,8 +879,6 @@ def getIndexPages():
                                 "url": capability_url,
                                 "id": capability_id,
                                 "name": mapping["capability_description"],
-                                "type": "control",
-                                "mapping_framework": mapping_framework_title,
                             }
                         )
     return pages
