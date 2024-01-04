@@ -18,12 +18,12 @@
           </div>
           <div class="input-group search-bar rounded">
             <span class="input-group-text transparent border-0" id="search-addon">
-              <a onclick="">
-              <img
-                :src="url_prefix + 'static/img/search.svg'"
-                alt="search"
-                style="height: 20px"
-            /></a>
+              <a onclick="handleSearch">
+                <img
+                  :src="url_prefix + 'static/img/search.svg'"
+                  alt="search"
+                  style="height: 20px"
+              /></a>
             </span>
             <input
               type="search"
@@ -32,9 +32,9 @@
               placeholder="Search"
               aria-label="Search"
               aria-describedby="search-addon"
-              onkeypress=""
               width="100"
-              v-model="search"
+              v-model="searchModel"
+              v-on:keyup.enter="handleKeypress($event)"
             />
           </div>
         </section>
@@ -128,6 +128,7 @@
         webPages: undefined,
         index: undefined,
         results: {},
+        searchModel: "",
         search: "",
         pageNum: 1,
         itemsPerPage: 10,
@@ -203,13 +204,17 @@
           });
         }
       },
-    },
-    watch: {
-      search(){
+      handleSearch(){
+        this.search = this.searchModel;
         let newurl = `${window.location.origin}${window.location.pathname}?search=${this.search}`
         window.history.pushState({path:newurl},'',newurl);
         document.getElementById("nav-search-input").value = this.search;
         this.searchMain();
+      },
+      handleKeypress(event){
+        if (event.key === "Enter") {
+          this.handleSearch();
+        }
       }
     },
     mounted() {
