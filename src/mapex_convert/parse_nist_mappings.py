@@ -73,7 +73,9 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             control_id = None
             control_family_id = None
 
-        status = row["Status"] if pd.notna(row["Status"]) else None
+        status = "complete"
+        if row.get("Status"):
+            status = row["Status"] if pd.notna(row["Status"]) else None
 
         capability_id = row["Control ID"] if pd.notna(row["Control ID"]) else None
         capability_name = row["Control Name"] if pd.notna(row["Control Name"]) else None
