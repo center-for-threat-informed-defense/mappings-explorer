@@ -824,7 +824,10 @@ div.banner {
   # Use Cases
   --------------------------------------------------------------*/
 
-section#target-audience button.accordion-button div,
+section#use-cases li {
+  padding: 5px 0px;
+}
+
 section#user-stories button.accordion-button div {
   font-weight: 700;
 }
@@ -2287,6 +2290,11 @@ section#user-stories button.accordion-button div {
 
 .footer .footer-content .footer-info {
   margin-top: 80px;
+}
+
+.footer .footer-content .footer-info p a {
+  color: white;
+  text-decoration: underline;
 }
 
 .footer .footer-content .footer-info .logo {

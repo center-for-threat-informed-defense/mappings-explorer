@@ -1,241 +1,93 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{url_prefix}}static/img/earth.jpg');">
-    <div class="container position-relative d-flex flex-column align-items-center">
-
-        <h2 style="text-transform: uppercase;"> About <span style="margin-left: 5px; color: #C2EAF6;">Mappings
-                Explorer</span></h2>
-        <ol>
-            <li><a href="{{url_prefix}}">Home</a></li>
-            <li>About</li>
-        </ol>
-
+<section id="header-container" class="header-container">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="text-center">MAPPINGS <span class="highlight">OVERVIEW</span></h1>
+        <p>
+            Mappings Explorer enables cyber defenders to understand how security
+            controls map onto the adversary behaviors catalogued in the MITRE ATT&CK®
+            knowledge base. The <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/">Center
+            for Threat-Informed Defense</a> created these open source mappings to serve as a bridge between
+            the threat-informed approach to cybersecurity and the traditional security controls perspective.
+        </p>
+      </div>
     </div>
-</div>
-
-<section id="about" class="about white-bg">
-    <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4" data-aos="fade-up">
-            <div class="col-lg-6 offset-lg-3">
-                <div class="content">
-                    <h3>Build a Threat-Informed Defense Mindset</h3>
-                    <p>
-                        Mappings Explorer enables cyber defenders to understand how security
-                        controls map onto the adversary behaviors catalogued in the MITRE ATT&CK®
-                        knowledge base.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check-circle-fill"></i> Focus your
-                            cyber defense on real, observed adversary behaviors in the wild.</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Understand
-                            how your implemented (or proposed) security controls defend against those behaviors.</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Establish
-                            traceability between controls and adversary behavior for purple teaming and threat hunting
-                            exercises.</li>
-                    </ul>
-                    <p>
-                        The <a
-                            href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/">Center
-                            for Threat-Informed Defense</a> created these open source mappings to serve as a bridge
-                        between
-                        the
-                        threat-informed approach to cybersecurity and the traditional security controls perspective.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </div>
+  </div>
 </section>
 
-<section id="services-cards" class="services-cards gray-bg">
-    <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-            <h2>What Is Mappings Explorer For?</h2>
-            <p>You can use Mappings Explorer for many different purposes.</p>
-        </div>
-
-        <div class="row gy-4">
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-item">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <div class="card-bg" style="background-image: url({{url_prefix}}static/img/antennae.jpg);">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-center">
-                            <div class="card-body">
-                                <h4 class="card-title">Align cyber defense to adversary behavior.</h4>
-                                <p>Explore how your current or promposed security controls can be used to detect,
-                                    prevent, mitigate, or respond to
-                                    specific adversary behaviors seen in the wild.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="card-item">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <div class="card-bg"
-                                style="background-image: url({{url_prefix}}static/img/mitre-building.jpg);"></div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-center">
-                            <div class="card-body">
-                                <h4 class="card-title">Expand the Vocabulary for Incident Response</h4>
-                                <p>The VERIS mappings connect the incident response terminology of the Verizon DBIR to
-                                    the adversary behavior in MITRE ATT&CK for a more complete analysis of any breach.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="card-item">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <div class="card-bg" style="background-image: url({{url_prefix}}static/img/wafers.jpg);">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-center">
-                            <div class="card-body">
-                                <h4 class="card-title">Assess Unpatched Vulnerabilities</h4>
-                                <p>The CVE mappings help understand how adversaries might exploit unpatched
-                                    vulnerabilities
-                                    and what the knock-on effects could be.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="card-item">
-                    <div class="row">
-                        <div class="col-xl-5">
-                            <div class="card-bg" style="background-image: url({{url_prefix}}static/img/screens.jpg);">
-                            </div>
-                        </div>
-                        <div class="col-xl-7 d-flex align-items-center">
-                            <div class="card-body">
-                                <h4 class="card-title">Evolve and Expand Cyber Defense</h4>
-                                <p>Visualize and assess deficiencies in cyber defense. Plan future policy and security
-                                    controls around real-world adversary behavior.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="services-list" class="services-list">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="section-header">
+        <h2>What is Mappings Explorer for?</h2>
+        <p>
+          You can use Mappings Explorer for many different purposes.
+        </p>
     </div>
-</section>
-
-<section id="services-list" class="services-list white-bg">
-    <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-            <h2>Who Should Use Mappings Explorer?</h2>
-            <p>Mappings Explorer is valuable to a broad range of cyber professionals.</p>
+    <div class="row gy-5">
+      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <h4 class="title">Align cyber defense to adversary behavior</h4>
+          <blockquote>
+            <p>Explore how your current or promposed security controls can be used to detect, prevent, mitigate, or respond to specific adversary behaviors seen in the wild.</p>
+          </blockquote>
+          <div class="section-details">
+            <p>
+                <span><strong>Placeholder</strong> text</span>
+            </p>
+            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/" class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
+          </div>
         </div>
+      </div>
 
-        <div class="row gy-5">
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #005B94;"></i></div>
-                <div>
-                    <h4 class="title">INCIDENT <span class="highlight">RESPONDER</span></h4>
-                    <p class="description">Responsible for response, management, and coordination, and remediation
-                        activities for cyber incidents such as malware infections, data theft, ransomware encryption,
-                        denial of service, and control systems intrusions.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #F56600;"></i></div>
-                <div>
-                    <h4 class="title">CHIEF INFORMATION <span class="highlight">SECURITY OFFICER</span></h4>
-                    <p class="description">Responsible for carrying out information security policies, procedures, and
-                        controls, and providing primary interface between senior managers and information system owners.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #1AA483;"></i></div>
-                <div>
-                    <h4 class="title">INFORMATION SYSTEM <span class="highlight">SECURITY OFFICER</span></h4>
-                    <p class="description">Responsibilities include ensuring the appropriate operational security
-                        posture is maintained for information systems or programs.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #BD0044;"></i></div>
-                <div>
-                    <h4 class="title">SECURITY OPERATIONS CENTER <span class="highlight">ANALYST</span></h4>
-                    <p class="description">Responsibilities include monitoring an organization’s networks and systems to
-                        detect threats and investigating potential security incidents.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #FEDB22;"></i></div>
-                <div>
-                    <h4 class="title">SECURITY <span class="highlight">ENGINEER</span></h4>
-                    <p class="description">Responsibilities include developing and implementing security controls and
-                        solutions to protect networks and systems from unauthorized access and attacks.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #005B94;"></i></div>
-                <div>
-                    <h4 class="title">VULNERABILITY <span class="highlight">RESEARCHER</span></h4>
-                    <p class="description">Responsibilities include identifying and studying security vulnerabilities in
-                        systems or software to identify weaknesses and improve security.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #1AA483;"></i></div>
-                <div>
-                    <h4 class="title">CYBER THREAT INTEL <span class="highlight">ANALYST</span></h4>
-                    <p class="description">Responsibilities include collecting data and information from various sources
-                        across the threat landscape to identify, assess, and recommend countermeasures for cyber
-                        threats.</p>
-                </div>
-            </div>
-
+      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <h4 class="title">Expand the Vocabulary for Incident Response</h4>
+          <blockquote>
+            <p>The VERIS mappings connect the incident response terminology of the Verizon DBIR to the adversary behavior in MITRE ATT&CK for a more complete analysis of any breach.</p>
+          </blockquote>
+          <div class="section-details">
+            <p>
+                <span><strong>Placeholder</strong> text</span>
+            </p>
+            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/" class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
+          </div>
         </div>
+      </div>
+      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <h4 class="title">Assess Unpatched Vulnerabilities</h4>
+          <blockquote>
+            <p>The CVE mappings help understand how adversaries might exploit unpatched vulnerabilities and what the knock-on effects could be.</p>
+          </blockquote>
+          <div class="section-details">
+            <p>
+                <span><strong>Placeholder</strong> text</span>
+            </p>
+            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/" class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
-<section id="dive-deep" class="about white-bg">
-    <div class="container col-lg-4 offset-lg-4" data-aos="fade-up">
-        <div class="section-header">
-            <h2>Read More…</h2>
-            <p>Dive deep into Mappings Explorer with the following links.</p>
+    <div class="row gy-5">
+      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+        <div>
+          <h4 class="title">Evolve and Expand Cyber Defense</h4>
+          <blockquote>
+            <p>Visualize and assess deficiencies in cyber defense. Plan future policy and security controls around real-world adversary behavior.</p>
+          </blockquote>
+          <div class="section-details">
+            <p>
+                <span><strong>Placeholder</strong> text</span>
+            </p>
+            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/" class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="content">
-            <ul>
-                <li><i class="bi bi-journal-text"></i> <a href="{{url_prefix}}about/methodology/">Methodology:</a>
-                    how
-                    the mappings are built from the ground up.
-                </li>
-                <li><i class="bi bi-journal-text"></i> <a href="{{url_prefix}}about/use-cases/">Use
-                        Cases:</a> How to use Mappings Explorer for a variety of use cases and cybersecurity roles.</li>
-
-            </ul>
-        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="call-to-action" class="call-to-action gray-bg">

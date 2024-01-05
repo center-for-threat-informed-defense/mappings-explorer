@@ -1,160 +1,87 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{url_prefix}}static/img/earth.jpg');">
-    <div class="container position-relative d-flex flex-column align-items-center">
-
-        <h2 style="text-transform: uppercase;"> Mappings <span style="margin-left: 5px; color: #C2EAF6;">Use
-                Cases</span></h2>
-        <ol>
-            <li><a href="{{url_prefix}}">Home</a></li>
-            <li><a href="{{url_prefix}}about/">About</a></li>
-            <li>Use Cases</li>
-        </ol>
-
+<section id="header-container" class="header-container">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1>MAPPINGS <span class="highlight">USE CASES</span></h1>
+        <p>Mappings Explorer is valuable to a broad range of cyber professionals.</p>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
-<section id="target-audience" class="white-bg">
-    <div class="container col-lg-6 offset-lg-3" data-aos="fade-up">
+<section id="services-list" class="services-list GRAY-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="row gy-5">
 
-        <div class="section-header">
-            <h2>Target Audience</h2>
-            <p>
-                The existing communities of Threat-Informed Defense and ATT&CK users
-                include many roles and responsibilities associated with organizational
-                risk management processes and security operations. These roles and
-                responsibilities include:
-            </p>
-        </div>
-        <div class="accordion accordion-flush" id="audience-accordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-1" aria-expanded="false" aria-controls="audience-body-1">
-                        <div>
-                            Incident Responder <span class="highlight">(IR)</span>
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-1" class="accordion-collapse collapse" aria-labelledby="audience-head-1"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include response, management, and coordination, and remediation activities for
-                        cyber
-                        incidents such as malware infections, data theft, ransomware encryption, denial of service, and
-                        control
-                        systems intrusions.
-                    </div>
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #005B94;"></i></div>
+                <div>
+                    <h4 class="title">INCIDENT RESPONDER <span class="highlight">(IR)</span></h4>
+                    <p class="description">Responsible for response, management, and coordination, and remediation
+                        activities for cyber incidents such as malware infections, data theft, ransomware encryption,
+                        denial of service, and control systems intrusions.</p>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-2" aria-expanded="false" aria-controls="audience-body-2">
-                        <div>
-                            Chief Information Security Officer <span class="highlight">(CISO)</span>
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-2" class="accordion-collapse collapse" aria-labelledby="audience-head-2"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include carrying out information security policies, procedures, and controls,
-                        and providing
-                        primary interface between senior managers and information system owners.
-                    </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #F56600;"></i></div>
+                <div>
+                    <h4 class="title">CHIEF INFORMATION SECURITY OFFICER <span class="highlight">(CISO)</span></h4>
+                    <p class="description">Responsible for carrying out information security policies, procedures, and
+                        controls, and providing primary interface between senior managers and information system owners.
+                    </p>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-3" aria-expanded="false" aria-controls="audience-body-3">
-                        <div>
-                            Information System Security Officer <span class="highlight">(ISSO)</span>
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-3" class="accordion-collapse collapse" aria-labelledby="audience-head-3"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include ensuring the appropriate operational security posture is maintained for
-                        information
-                        systems or programs.
-                    </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #1AA483;"></i></div>
+                <div>
+                    <h4 class="title">INFORMATION SYSTEM SECURITY OFFICER <span class="highlight">(ISSO)</span></h4>
+                    <p class="description">Responsibilities include ensuring the appropriate operational security
+                        posture is maintained for information systems or programs.</p>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-4">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-4" aria-expanded="false" aria-controls="audience-body-4">
-                        <div>
-                            Security Operations Center <span class="highlight">(SOC)</span> Analyst
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-4" class="accordion-collapse collapse" aria-labelledby="audience-head-4"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include monitoring an organization’s networks and systems to detect threats and
-                        investigating potential security incidents.
-                    </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #BD0044;"></i></div>
+                <div>
+                    <h4 class="title">SECURITY OPERATIONS CENTER ANALYST <span class="highlight">(SOC)</span></h4>
+                    <p class="description">Responsibilities include monitoring an organization’s networks and systems to
+                        detect threats and investigating potential security incidents.</p>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-5">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-5" aria-expanded="false" aria-controls="audience-body-5">
-                        <div>
-                            Security Engineer <span class="highlight">(SE)</span>
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-5" class="accordion-collapse collapse" aria-labelledby="audience-head-5"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                    </div>
-                    Responsibilities include developing and implementing security controls and solutions to protect
-                    networks and
-                    systems from unauthorized access and attacks.
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #FEDB22;"></i></div>
+                <div>
+                    <h4 class="title">SECURITY ENGINEER <span class="highlight">(SE)</span></h4>
+                    <p class="description">Responsibilities include developing and implementing security controls and
+                        solutions to protect networks and systems from unauthorized access and attacks.</p>
                 </div>
             </div>
-            <div lass="accordion-item">
-                <h2 class="accordion-header" id="audience-head-6">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-6" aria-expanded="false" aria-controls="audience-body-6">
-                        <div>
-                            Vulnerability Researcher <span class="highlight">(VR)</span>
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-6" class="accordion-collapse collapse" aria-labelledby="audience-head-6"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include identifying and studying security vulnerabilities in systems or
-                        software to
-                        identify weaknesses and improve security.
-                    </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #005B94;"></i></div>
+                <div>
+                    <h4 class="title">VULNERABILITY RESEARCHER <span class="highlight">(VR)</span></h4>
+                    <p class="description">Responsibilities include identifying and studying security vulnerabilities in
+                        systems or software to identify weaknesses and improve security.</p>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="audience-head-7">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#audience-body-7" aria-expanded="false" aria-controls="audience-body-7">
-                        <div>
-                            Cyber Threat Intelligence <span class="highlight">(CTI)</span> Analyst
-                        </div>
-                    </button>
-                </h2>
-                <div id="audience-body-7" class="accordion-collapse collapse" aria-labelledby="audience-head-7"
-                    data-bs-parent="#audience-accordion">
-                    <div class="accordion-body">
-                        Responsibilities include collecting data and information from various sources across the threat
-                        landscape to
-                        identify, assess, and recommend countermeasures for cyber threats.
-                    </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #1AA483;"></i></div>
+                <div>
+                    <h4 class="title">CYBER THREAT INTEL ANALYST <span class="highlight">(CTI)</span></h4>
+                    <p class="description">Responsibilities include collecting data and information from various sources
+                        across the threat landscape to identify, assess, and recommend countermeasures for cyber
+                        threats.</p>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -198,7 +125,7 @@
 </section>
 
 
-<section id="user-stories" class="white-bg">
+<section id="user-stories" class="gray-bg">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -455,7 +382,7 @@
                 <h2 class="accordion-header" id="stories-head-10">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#stories-body-10" aria-expanded="false" aria-controls="stories-body-10">
-                        <div><span class="highlight">As a Cyber Threat Intelligence (CTI) Analyst,</span> I want
+                        <div><span class="highlight">As a CTI Analyst,</span> I want
                             to
                             recommend countermeasures to address
                             changes in the threat landscape based on assessments of adversary behavior and potential

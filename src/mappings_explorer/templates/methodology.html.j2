@@ -1,24 +1,21 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{url_prefix}}static/img/earth.jpg');">
-    <div class="container position-relative d-flex flex-column align-items-center">
-
-        <h2 style="text-transform: uppercase;"> Mappings <span
-                style="margin-left: 5px; color: #C2EAF6;">Methodology</span></h2>
-        <ol>
-            <li><a href="{{url_prefix}}">Home</a></li>
-            <li><a href="{{url_prefix}}about/">About</a></li>
-            <li>Methodology</li>
-        </ol>
+<section id="header-container" class="header-container">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="text-center">MAPPINGS <span class="highlight">METHODOLOGY</span></h1>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
-<section id="services-cards" class="services-cards white-bg">
+<section id="services-cards" class="services-cards gray-bg">
     <div class="container col-lg-6 offset-lg-3" data-aos="fade-up">
 
         <div class="section-header">
-            <h2>Overview</h2>
+            <h2>Methodology Overview</h2>
         </div>
 
         <p>This page describes the methodology used to map security controls native to a technology platform to
@@ -73,7 +70,7 @@
     </div>
 </section>
 
-<section id="services-cards" class="services-cards white-bg">
+<section id="services-cards" class="services-cards gray-bg">
     <div class="container col-lg-6 offset-lg-3" data-aos="fade-up">
 
         <div class="section-header">
@@ -157,7 +154,7 @@
     </div>
 </section>
 
-<section id="services-cards" class="services-cards white-bg">
+<section id="services-cards" class="services-cards gray-bg">
     <div class="container col-lg-6 offset-lg-3" data-aos="fade-up">
 
         <div class="section-header">

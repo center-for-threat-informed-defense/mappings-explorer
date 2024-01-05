@@ -920,6 +920,44 @@ def build_search_index(url_prefix):
         zip_file.testzip()
 
 
+def build_about_pages(url_prefix: str):
+    """
+    Build the documentation pages, e.g. explaining what the site is for, who it's for, etc.
+
+    Args:
+        url_prefix: The prefix to put in front of any internal URLs.
+    """
+    dir = PUBLIC_DIR / "about"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("about.html.j2")
+    stream = template.stream(title="About Mappings Explorer", url_prefix=url_prefix)
+    stream.dump(str(output_path))
+    print("Created about page")
+
+    dir = PUBLIC_DIR / "about" / "use-cases"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("use_cases.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Use Cases",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created use cases page")
+
+    dir = PUBLIC_DIR / "about" / "methodology"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("methodology.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Methodology",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created methodology page")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -957,44 +995,7 @@ def main():
     stream.dump(str(output_path))
     print("Created external mappings home")
 
-    build_external_pages(projects=projects, url_prefix=url_prefix)
-    build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix, projects)
-
-    dir = PUBLIC_DIR / "about"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("about.html.j2")
-    stream = template.stream(
-        title="About Mappings Explorer", url_prefix=url_prefix, transparent_header=True
-    )
-    stream.dump(str(output_path))
-    print("Created about page")
-
-    dir = PUBLIC_DIR / "about" / "use-cases"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("use_cases.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Use Cases",
-        url_prefix=url_prefix,
-        transparent_header=True,
-    )
-    stream.dump(str(output_path))
-    print("Created use cases page")
-
-    dir = PUBLIC_DIR / "about" / "methodology"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("methodology.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Methodology",
-        url_prefix=url_prefix,
-        transparent_header=True,
-    )
-    stream.dump(str(output_path))
-    print("Created methodology page")
-
+    build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
     build_matrix(url_prefix)
