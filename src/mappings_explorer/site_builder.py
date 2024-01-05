@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import shutil
+import zipfile
 
 import requests
 from lunr import lunr
@@ -911,13 +912,25 @@ def build_search_index(url_prefix):
         documents=pages,
     )
     pages = {p.pop("url"): p for p in pages}
-    index_path = PUBLIC_DIR / "static" / "lunr-index.json"
+    index_path = PUBLIC_DIR / "static" / "lunr-index.zip"
     lunr_index = {
         "pages": pages,
         "index": index.serialize(),
     }
-    with index_path.open("w") as index_file:
-        json.dump(lunr_index, index_file)
+    # Use the `zipfile` module
+    # `compresslevel` was added in Python 3.7
+    with zipfile.ZipFile(
+        index_path,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as zip_file:
+        # Dump JSON data
+        dumped_JSON: str = json.dumps(lunr_index, ensure_ascii=False, indent=4)
+        # Write the JSON data into `data.json` *inside* the ZIP file
+        zip_file.writestr("lunr-index.json", data=dumped_JSON)
+        # Test integrity of compressed archive
+        zip_file.testzip()
 
 
 def main():

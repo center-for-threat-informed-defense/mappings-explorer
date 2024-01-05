@@ -5,6 +5,7 @@
 
 <script src="{{url_prefix}}static/lunr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 
 <script>
   const Search = {
@@ -40,7 +41,7 @@
         </section>
         <section>
           <div class="container" data-aos="fade-up" v-if="resultsLength">
-            <h2>PAGES FOR "[[ search.toUpperCase() ]]"</h2>
+            <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"</h2>
             <div
               class="result-container"
               v-for="result in displayedResultKeys"
@@ -114,7 +115,7 @@
             </nav>
           </div>
           <div class="container" data-aos="fade-up" v-else>
-            <h2>No Pages Match Search "[[ search ]]"</h2>
+            <h2>No Pages Match Search "[[ searchString ]]"</h2>
           </div>
         </section>
       </div>
@@ -129,7 +130,7 @@
         index: undefined,
         results: {},
         searchModel: "",
-        search: "",
+        searchString: "",
         pageNum: 1,
         itemsPerPage: 10,
         itemPerPageOptions: [10, 25, 50, 100]
@@ -162,16 +163,6 @@
         }
         return returnString
       },
-      /**
-       * Initialize the search index.
-       */
-      async initializeSearch(indexUrl) {
-        const indexResponse = await fetch(indexUrl);
-        const indexJson = await indexResponse.json();
-        this.webPages = indexJson["pages"];
-        this.index = lunr.Index.load(indexJson["index"]);
-        console.log("Search index is initialized.");
-      },
 
       /**
        * Run a query on the search index and return the results.
@@ -193,25 +184,39 @@
           totalCount: allResults.length,
         };
       },
+
+      /**
+       * Initialize the search index.
+       */
+      async initializeSearch(indexUrl) {
+        indexFile = await fetch(indexUrl);
+        fileBuffer = await indexFile.arrayBuffer();
+        let zip = new JSZip();
+        let loadedZip = await zip.loadAsync(fileBuffer);
+        for (const filename of Object.keys(loadedZip.files)) {
+          let indexData = await loadedZip.files[filename].async('string');
+          let indexJson = JSON.parse(indexData);
+          this.webPages = indexJson["pages"];
+          this.index = lunr.Index.load(indexJson["index"]);
+        }
+      },
+
       async searchMain() {
         const url = new URL(window.location.href);
         if (url.searchParams.get("search")) {
           let search = url.searchParams.get("search");
-          this.search = search;
+          this.searchString = search;
           document.getElementById("nav-search-input").value = search;
-          this.initializeSearch(
-            `${this.url_prefix}static/lunr-index.json`
-          ).then(() => {
-            let results = this.searchIndex(search);
-            this.results = results.results;
-          });
+          await this.initializeSearch(`${this.url_prefix}static/lunr-index.zip`);
+          let results = this.searchIndex(this.searchString);
+          this.results = results.results;
         }
       },
       handleSearch(){
-        this.search = this.searchModel;
-        let newurl = `${window.location.origin}${window.location.pathname}?search=${this.search}`
+        this.searchString = this.searchModel;
+        let newurl = `${window.location.origin}${window.location.pathname}?search=${this.searchString}`
         window.history.pushState({path:newurl},'',newurl);
-        document.getElementById("nav-search-input").value = this.search;
+        document.getElementById("nav-search-input").value = this.searchString;
         this.searchMain();
       },
       handleKeypress(event){
