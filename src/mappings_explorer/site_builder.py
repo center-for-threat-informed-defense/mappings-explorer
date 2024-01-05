@@ -893,48 +893,6 @@ def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tac
     print("          Created tactic page " + tactic.id)
 
 
-def build_tactic_landing(
-    url_prefix,
-    parent_dir,
-    attack_version,
-    attack_domain,
-    tactics,
-    attackVersions,
-    attackDomains,
-):
-    attack_prefix = (
-        url_prefix
-        + "attack/"
-        + "attack-"
-        + attack_version
-        + "/domain-"
-        + attack_domain
-        + "/"
-    )
-    headers = [
-        ("id", "Tactic ID", "id", attack_prefix),
-        ("label", "Tactic Name", "id", attack_prefix),
-        ("num_techniques", "Number of Techniques"),
-    ]
-    dir = parent_dir
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    prev_page = parent_dir
-    template = load_template("attack_landing.html.j2")
-    stream = template.stream(
-        title="ATT&CK Tactics",
-        url_prefix=url_prefix,
-        attack_version=attack_version,
-        attack_domain=attack_domain,
-        headers=headers,
-        prev_page=prev_page,
-        attackVersions=attackVersions,
-        tactics=tactics,
-        domains=attackDomains,
-    )
-    stream.dump(str(output_path))
-
-
 def build_matrix(url_prefix, projects):
     external_dir = PUBLIC_DIR / "external" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
