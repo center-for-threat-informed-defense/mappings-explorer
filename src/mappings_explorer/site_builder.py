@@ -826,19 +826,6 @@ def getIndexPages():
                 mapping_framework_version = mappings["metadata"][
                     "mapping_framework_version"
                 ].replace("/", ".")
-                mapping_framework_title = ""
-                if mapping_framework == "nist":
-                    mapping_framework_title = "NIST 800-53"
-                elif mapping_framework == "veris":
-                    mapping_framework_title = "Veris"
-                elif mapping_framework == "azure":
-                    mapping_framework_title = "Azure"
-                elif mapping_framework == "aws":
-                    mapping_framework_title = "AWS"
-                elif mapping_framework == "gcp":
-                    mapping_framework_title = "GCP"
-                elif mapping_framework == "cve":
-                    mapping_framework_title = "CVE"
                 attack_object_id = mapping["attack_object_id"]
                 if attack_object_id:
                     attack_url = (
