@@ -5,7 +5,7 @@
     </a>
 {% endmacro %}
 
-{% macro table(headers, mappings, link) %}
+{% macro table(headers, mappings) %}
 <div class="table-responsive table-outer">
 <div class="form-outline mb-4">
   <table class="table table-borderless table-hover table-responsive"
@@ -15,20 +15,20 @@
     data-show-multi-sort="true">
   <thead>
     <tr>
-        {% for id, label in headers %}
-            <th id={{id}} data-field={{id}} data-sortable="true">{{label}}</th>
+        {%- for header in headers -%}
+            <th id={{id}} data-field={{header[0]}} data-sortable="true">{{header[1]}}</th>
         {% endfor %}
       </tr>
   </thead>
   <tbody>
     {% for mapping in mappings %}
       <tr>
-        {% for id, label in headers %}
-            {% if link %}
-                <td><a href="{{mapping[link]}}/">{{mapping[id]}}</a></td>
+        {%- for header in headers -%}
+            {% if header[2] and header[3] %}
+                <td><a href="{{header[3]}}{{mapping[header[2]]}}/">{{mapping[header[0]]}}</a></td>
             {% endif %}
-            {% if not link %}
-                <td>{{mapping[id]}}</td>
+            {% if not header[2] %}
+                <td>{{mapping[header[0]]}}</td>
             {% endif %}
         {% endfor %}
       </tr>
