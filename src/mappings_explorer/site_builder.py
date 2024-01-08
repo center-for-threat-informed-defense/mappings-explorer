@@ -106,9 +106,9 @@ def load_projects():
     ]
     veris.validVersions = [
         ("1.3.5", "9.0", "Enterprise"),
-        ("1.3.7", "12.1", "Enterprise"),
         ("1.3.7", "12.1", "ICS"),
         ("1.3.7", "12.1", "Mobile"),
+        ("1.3.7", "12.1", "Enterprise"),
     ]
     veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris.mappings = []
