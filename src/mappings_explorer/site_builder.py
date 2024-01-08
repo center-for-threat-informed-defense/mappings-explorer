@@ -999,7 +999,7 @@ def main():
     build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix)
+    build_matrix(url_prefix, projects=projects)
 
     print("Done")
 
