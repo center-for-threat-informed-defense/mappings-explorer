@@ -828,15 +828,7 @@ def getIndexPages():
                 ].replace("/", ".")
                 attack_object_id = mapping["attack_object_id"]
                 if attack_object_id:
-                    attack_url = (
-                        "attack/attack-"
-                        + attack_version
-                        + "/domain-"
-                        + domain
-                        + "/"
-                        + attack_object_id
-                        + "/"
-                    )
+                    attack_url = f"attack/attack-{attack_version}/domain-{domain}/{attack_object_id}/"
                     if not any(page["url"] == attack_url for page in pages):
                         pages.append(
                             {
@@ -847,20 +839,13 @@ def getIndexPages():
                         )
                 capability_id = mapping["capability_id"]
                 if capability_id:
-                    capability_url = (
-                        "external/"
-                        + mapping_framework
-                        + "/attack-"
-                        + attack_version
-                        + "/"
-                        + mapping_framework
-                        + "-"
-                        + mapping_framework_version
-                        + "/domain-"
-                        + domain
-                        + "/"
-                        + capability_id.replace(" ", "%20")
+                    capability_id_replaced = capability_id.replace(" ", "%20")
+                    domain_url = f"domain-{domain}"
+                    mapping_framework_url = (
+                        f"{mapping_framework}-{mapping_framework_version}"
                     )
+                    attack_url = f"attack-{attack_version}"
+                    capability_url = f"external/{mapping_framework}/{attack_url}/{mapping_framework_url}/{domain_url}/{capability_id_replaced}"
                     if not any(page["url"] == capability_url for page in pages):
                         pages.append(
                             {
