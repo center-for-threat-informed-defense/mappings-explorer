@@ -803,8 +803,8 @@ def getIndexPages():
     """
     Create an array of page dictionaries for search index
 
-    Returns an array of dictionaries with the search index's url, id, and name
-    Also returns an array of all mappings objects
+    Returns:
+    an array of dictionaries with the search index's url, id, and name
     """
     mappings_filepath = PUBLIC_DIR / "data"
     pages = []
