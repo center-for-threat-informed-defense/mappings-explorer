@@ -922,7 +922,8 @@ def build_search_index(url_prefix):
 
 def build_about_pages(url_prefix: str):
     """
-    Build the documentation pages, e.g. explaining what the site is for, who it's for, etc.
+    Build the documentation pages, e.g. explaining what the site is for, who it's for,
+    etc.
 
     Args:
         url_prefix: The prefix to put in front of any internal URLs.
