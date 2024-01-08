@@ -4,7 +4,6 @@
 </div>
 
 <script src="{{url_prefix}}static/lunr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 
 <script>
@@ -207,7 +206,6 @@
           let search = url.searchParams.get("search");
           this.searchString = search;
           document.getElementById("nav-search-input").value = search;
-          await this.initializeSearch(`${this.url_prefix}static/lunr-index.zip`);
           let results = this.searchIndex(this.searchString);
           this.results = results.results;
         }
@@ -225,7 +223,8 @@
         }
       }
     },
-    mounted() {
+    async mounted() {
+      await this.initializeSearch(`${this.url_prefix}static/lunr-index.zip`);
       this.searchMain();
     },
   };
