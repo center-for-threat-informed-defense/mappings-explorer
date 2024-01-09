@@ -417,6 +417,19 @@ def get_nist_descriptions(project, version):
 def parse_capabilities(
     mappings, project, project_version, attack_version, attack_domain
 ):
+    """Create capability objects for each unique capability id found in list of mappings
+
+    Args:
+        mappings: list of mappings to build capability list from
+        project: project associated with list of mappings
+        project_version: version of project associated with list of mappings
+        attack_version: version of ATT&CK associated with list of mappings
+        attack_domain: domain of ATT&CK associated with list of mappings
+         (ex. Enterprise, mobile, or ics)
+
+    Returns:
+        List of capability objects
+    """
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
@@ -449,28 +462,11 @@ def build_external_landing(
     output_path = domain_dir / "index.html"
     template = load_template("external-control.html.j2")
     attack_prefix = (
-        url_prefix
-        + "attack/"
-        + "attack-"
-        + attack_version
-        + "/domain-"
-        + attack_domain
-        + "/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
     )
-    external_prefix = (
-        url_prefix
-        + "external/"
-        + project.id
-        + "/attack-"
-        + attack_version
-        + "/domain-"
-        + attack_domain
-        + "/"
-        + project.id
-        + "-"
-        + project_version
-        + "/"
-    )
+    external_prefix = f"""
+        {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain}/{project.id}-{project_version}/"""
+
     headers = [
         ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
         ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
@@ -568,14 +564,13 @@ def build_external_pages(projects, url_prefix):
         dir.mkdir(parents=True, exist_ok=True)
 
         for index, validCombo in enumerate(project.validVersions):
-            attack_domain = "Enterprise"
             print("creating pages for version combo ", str(validCombo))
             attack_version = validCombo[1]
             project_version = validCombo[0]
             attack_domain = validCombo[2]
-            a = "attack-" + attack_version
-            d = "domain-" + attack_domain.lower()
-            p = project.id + "-" + project_version
+            a = f"attack-{attack_version}"
+            d = f"domain-{attack_domain.lower()}"
+            p = f"{project.id}-{project_version}"
             domain_dir = dir / a / d / p
             domain_dir.mkdir(parents=True, exist_ok=True)
             parse_groups(
@@ -626,7 +621,7 @@ def build_external_group(
     template = load_template("external-group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=project.label + " " + group.label,
+        title=f"{project.label} {group.label}",
         url_prefix=url_prefix,
         control=project.label,
         group_id=group.id,
@@ -663,7 +658,7 @@ def build_external_capability(
     template = load_template("external-capability.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=project.label + " " + capability.id,
+        title=f"{project.label} {capability.id}",
         url_prefix=url_prefix,
         control=project.label,
         project=project,
@@ -685,6 +680,19 @@ def build_external_capability(
 
 
 def parse_techniques(attack_version, attack_domain, attack_data, projects):
+    """Create a list of technique objects for all ATT&CK techniques that have mappings
+      in a given version of ATT&CK
+
+    Args:
+        attack_version: version of ATT&CK to find technique objects for
+        attack_domain: domain of ATT&CK associated with list of mappings (ex. Enterprise
+        , mobile, or ics)
+        attack_data: ATT&CK data containing technique metadata to add to technique objs
+        projects: list of projects that contain mappings to sort through
+
+    Returns:
+        List of capability objects
+    """
     techniques = []
     for project in projects:
         mappings = []
@@ -723,6 +731,19 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
 
 
 def parse_tactics(attack_version, attack_domain, attack_data, projects, techniques):
+    """Create a list of tactic objects for all ATT&CK tactics in one version of ATT&CK
+
+    Args:
+        attack_version: version of ATT&CK to find tactic objects for
+        attack_domain: domain of ATT&CK to find tactic objects for (ex. Enterprise,
+        mobile, or ics)
+        attack_data: ATT&CK data containing tactic metadata to add to tactic objects
+        projects: list of projects that contain mappings to sort through
+        techniques: list of technique objects to be assigned to a given tactic
+
+    Returns:
+        List of capability objects
+    """
     tactic_dict = load_tactic_structure(
         attack_version=attack_version,
         attack_domain=attack_domain,
@@ -763,6 +784,13 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
 
 
 def build_attack_pages(projects, url_prefix):
+    """Parse ATT&CK data and build all pages for ATT&CK objects
+
+    Args:
+        projects: the list of projects and their mappings to parse into ATT&CK objects
+        url_prefix: the root url for the built site
+
+    """
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
         for attack_version in attack_domains[attack_domain]:
@@ -813,14 +841,18 @@ def build_attack_pages(projects, url_prefix):
 def build_technique_page(
     url_prefix, parent_dir, attack_version, attack_domain, technique
 ):
+    """Builds a technique page for a given technique
+
+    Args:
+        url_prefix: the root url for the built site
+        parent_dir: folder 1 level above where the technique page will be built
+        attack_version: version of ATT&CK for the page
+        attack_domain: ATT&CK domain for the page
+        technique: technique object that the page is being built for
+
+    """
     attack_prefix = (
-        url_prefix
-        + "attack/"
-        + "attack-"
-        + attack_version
-        + "/domain-"
-        + attack_domain
-        + "/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
     )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -844,7 +876,7 @@ def build_technique_page(
     prev_page = parent_dir
     template = load_template("technique.html.j2")
     stream = template.stream(
-        title="ATT&CK Technique " + technique.id,
+        title=f"ATT&CK Technique {technique.id}",
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
@@ -859,14 +891,18 @@ def build_technique_page(
 
 
 def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):
+    """Builds a tactic page for a given tactic
+
+    Args:
+        url_prefix: the root url for the built site
+        parent_dir: folder 1 level above where the tactic page will be built
+        attack_version: version of ATT&CK for the page
+        attack_domain: ATT&CK domain for the page
+        tactic: tactic object that the page is being built for
+
+    """
     attack_prefix = (
-        url_prefix
-        + "attack/"
-        + "attack-"
-        + attack_version
-        + "/domain-"
-        + attack_domain
-        + "/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
     )
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -880,7 +916,7 @@ def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tac
     prev_page = parent_dir
     template = load_template("tactic.html.j2")
     stream = template.stream(
-        title="ATT&CK Tactic " + tactic.id,
+        title=f"ATT&CK Tactic {tactic.id}",
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,

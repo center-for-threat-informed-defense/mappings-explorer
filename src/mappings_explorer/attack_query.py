@@ -284,7 +284,7 @@ def format_attack_data(attack_data, attack_domain):
             capabilities_mapped: the capabilites that are mapped to the attack object,
             begins as an empty array
             background_color: the background color of the technique/subtechnique,
-            determined by teh amount of capabilities mapped, begins as an empty string
+            determined by the amount of capabilities mapped, begins as an empty string
             id: id of the attack object,
 
     """
@@ -342,6 +342,26 @@ def format_attack_data(attack_data, attack_domain):
 
 
 def load_tactic_structure(attack_version, attack_domain):
+    """Creates dictionary of attack objects -- techniques and subtechniques --
+    and pertinent data about the attack objects
+
+    Args:
+        attack_data: the data fetched from STIX
+        attack_domain: the domain that the data is from. Must be ICS, Mobile,
+        or Enterprise. Case does not matter
+
+    Returns:
+        A dict mapping an attack object to the following fields:
+            name: name of the attack object,
+            type: whether the attack object is a technique, subtechnique, or tactic
+            tactics: if the attack object is a technique, the tactics that it is
+            included in,
+            technique: if the attack object is a subtechnique, its parent technique id
+            short_name: the short_name of the attack object
+            capabilities_mapped: the capabilites that are mapped to the attack object,
+            begins as an empty array
+            id: id of the attack object,
+    """
     attack_data_dict = {}
     attack_data = load_attack_json(attack_version, attack_domain.lower())
     if attack_data:
