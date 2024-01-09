@@ -471,7 +471,7 @@ def build_external_landing(
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
     )
     external_prefix = f"""
-        {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain}/{project.id}-{project_version}/"""
+        {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
 
     headers = [
         ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
