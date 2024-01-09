@@ -80,7 +80,7 @@
       <div class="row justify-content-left">
         <div class="col-12">
           <h2>Groups</h2>
-            {{ macros.table(group_headers, groups) }}
+            {{ macros.table(group_headers, groups, url_prefix) }}
       </div>
     </div>
   </section>
@@ -90,7 +90,7 @@
       <div class="row justify-content-left">
         <div class="col-12">
           <h2>All Mappings</h2>
-            {{ macros.table(headers, mappings) }}
+            {{ macros.table(headers, mappings, url_prefix) }}
       </div>
     </div>
   </section>
