@@ -2,8 +2,10 @@ import argparse
 import json
 import os
 import shutil
+import zipfile
 
 import requests
+from lunr import lunr
 from mapex_convert.read_files import (
     read_yaml_file,
 )
@@ -756,6 +758,7 @@ def parse_tactics(
     Returns:
         List of capability objects
     """
+
     tactic_dict = load_tactic_structure(
         attack_version=attack_version,
         attack_domain=attack_domain,
@@ -1052,6 +1055,120 @@ def build_matrix(url_prefix, projects):
     print("Created matrix")
 
 
+def getIndexPages():
+    """
+    Create an array of page dictionaries for search index
+
+    Returns:
+    an array of dictionaries with the search index's url, id, and name
+    """
+    mappings_filepath = PUBLIC_DIR / "data"
+    pages = []
+    for mappings_file in mappings_filepath.rglob("**/*.json"):
+        if (
+            "stix" not in mappings_file.name
+            and "navigator_layer" not in mappings_file.name
+        ):
+            mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
+
+            for mapping in mappings["mapping_objects"]:
+                mapping_framework = (
+                    mappings["metadata"]["mapping_framework"]
+                    if mappings["metadata"]["mapping_framework"] != "nist_800_53"
+                    else "nist"
+                )
+                attack_version = mappings["metadata"]["attack_version"]
+                domain = mappings["metadata"]["technology_domain"]
+                mapping_framework_version = mappings["metadata"][
+                    "mapping_framework_version"
+                ].replace("/", ".")
+                attack_object_id = mapping["attack_object_id"]
+                if attack_object_id:
+                    attack_portion = f"attack/attack-{attack_version}"
+                    domain_portion = f"/domain-{domain}/"
+                    attack_url = f"{attack_portion}{domain_portion}/{attack_object_id}/"
+                    if not any(page["url"] == attack_url for page in pages):
+                        pages.append(
+                            {
+                                "url": attack_url,
+                                "id": attack_object_id,
+                                "name": mapping["attack_object_name"],
+                            }
+                        )
+                capability_id = mapping["capability_id"]
+                if capability_id:
+                    capability_url = (
+                        "external/"
+                        + mapping_framework
+                        + "/attack-"
+                        + attack_version
+                        + "/"
+                        + mapping_framework
+                        + "-"
+                        + mapping_framework_version
+                        + "/domain-"
+                        + domain
+                        + "/"
+                        + capability_id.replace(" ", "%20")
+                    )
+                    if not any(page["url"] == capability_url for page in pages):
+                        pages.append(
+                            {
+                                "url": capability_url,
+                                "id": capability_id,
+                                "name": mapping["capability_description"],
+                            }
+                        )
+    return pages
+
+
+def build_search_index(url_prefix):
+    """
+    Render the search page and also build the search index as a JSON file.
+
+    Args:
+        url_prefix - the site's URL prefix
+    """
+    print("Creating search page")
+    search_dir = PUBLIC_DIR / "search"
+    search_dir.mkdir(parents=True, exist_ok=True)
+    output_path = search_dir / "index.html"
+    template = load_template("search.html.j2")
+
+    print("Creating search index")
+    pages = getIndexPages()
+    stream = template.stream(url_prefix=url_prefix)
+    stream.dump(str(output_path))
+
+    index = lunr(
+        ref="url",
+        fields=[
+            {"field_name": "id", "boost": 3},
+            {"field_name": "name", "boost": 2},
+        ],
+        documents=pages,
+    )
+    pages = {p.pop("url"): p for p in pages}
+    index_path = PUBLIC_DIR / "static" / "lunr-index.zip"
+    lunr_index = {
+        "pages": pages,
+        "index": index.serialize(),
+    }
+    # Use the `zipfile` module
+    with zipfile.ZipFile(
+        index_path,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as zip_file:
+        # Dump JSON data
+        dumped_JSON: str = json.dumps(lunr_index, ensure_ascii=False, indent=4)
+        # Write the JSON data into `lunr-index.json` *inside* the ZIP file
+        zip_file.writestr("lunr-index.json", data=dumped_JSON)
+        # Test integrity of compressed archive
+        zip_file.testzip()
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -1091,6 +1208,7 @@ def main():
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
     build_matrix(url_prefix, projects)
+    build_search_index(url_prefix)
 
 
 if __name__ == "__main__":
