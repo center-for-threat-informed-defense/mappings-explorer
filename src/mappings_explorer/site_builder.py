@@ -415,7 +415,11 @@ def get_nist_descriptions(project, version):
 
 
 def parse_capabilities(
-    mappings, project, project_version, attack_version, attack_domain
+    mappings: list,
+    project: ExternalControl,
+    project_version: str,
+    attack_version: str,
+    attack_domain: str,
 ):
     """Create capability objects for each unique capability id found in list of mappings
 
@@ -644,13 +648,13 @@ def build_external_group(
 
 def build_external_capability(
     project: ExternalControl,
-    url_prefix,
-    parent_dir,
-    project_version,
-    attack_version,
-    headers,
-    capability,
-    attack_domain,
+    url_prefix: str,
+    parent_dir: os.path,
+    project_version: str,
+    attack_version: str,
+    headers: list,
+    capability: Capability,
+    attack_domain: str,
 ):
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -679,7 +683,9 @@ def build_external_capability(
     print("          Created capability page " + capability.id)
 
 
-def parse_techniques(attack_version, attack_domain, attack_data, projects):
+def parse_techniques(
+    attack_version: str, attack_domain: str, attack_data: dict, projects: list
+):
     """Create a list of technique objects for all ATT&CK techniques that have mappings
       in a given version of ATT&CK
 
@@ -730,7 +736,13 @@ def parse_techniques(attack_version, attack_domain, attack_data, projects):
     return techniques
 
 
-def parse_tactics(attack_version, attack_domain, attack_data, projects, techniques):
+def parse_tactics(
+    attack_version: str,
+    attack_domain: str,
+    attack_data: dict,
+    projects: list,
+    techniques: list,
+):
     """Create a list of tactic objects for all ATT&CK tactics in one version of ATT&CK
 
     Args:
@@ -783,7 +795,7 @@ def parse_tactics(attack_version, attack_domain, attack_data, projects, techniqu
     return tactic_list
 
 
-def build_attack_pages(projects, url_prefix):
+def build_attack_pages(projects: list, url_prefix: str):
     """Parse ATT&CK data and build all pages for ATT&CK objects
 
     Args:
@@ -839,7 +851,11 @@ def build_attack_pages(projects, url_prefix):
 
 
 def build_technique_page(
-    url_prefix, parent_dir, attack_version, attack_domain, technique
+    url_prefix: str,
+    parent_dir: os.path,
+    attack_version: str,
+    attack_domain: str,
+    technique: Technique,
 ):
     """Builds a technique page for a given technique
 
@@ -890,7 +906,13 @@ def build_technique_page(
     stream.dump(str(output_path))
 
 
-def build_tactic_page(url_prefix, parent_dir, attack_version, attack_domain, tactic):
+def build_tactic_page(
+    url_prefix: str,
+    parent_dir: os.path,
+    attack_version: str,
+    attack_domain: str,
+    tactic: Tactic,
+):
     """Builds a tactic page for a given tactic
 
     Args:
