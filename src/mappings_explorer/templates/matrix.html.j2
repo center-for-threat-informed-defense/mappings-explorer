@@ -1,11 +1,8 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="matrix">
-  <Matrix
-    :url_prefix="'{{url_prefix}}'"
-    :all_attack_versions="{{all_attack_versions}}"
+  <Matrix :url_prefix="'{{url_prefix}}'" :all_attack_versions="{{all_attack_versions}}"
     :all_attack_domains="{{attack_domains}}"
-    :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"
-  ></Matrix>
+    :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"></Matrix>
 </div>
 
 <script>
@@ -198,7 +195,7 @@
       return {
         tactics: [],
         selectedTechnique: {},
-        selectedAttackVersion: "9.0",
+        selectedAttackVersion: "10.1",
         attackObjectDict: {},
         techniqueHovered: "",
         selectedDomain: "Enterprise",
@@ -232,7 +229,7 @@
       },
     },
     methods: {
-      handleScroll(e){
+      handleScroll(e) {
         const { offsetWidth, scrollWidth } = e.target;
         let scrollableElement = document.getElementById("matrix-table-scrollable");
         let scrollLeft = scrollableElement.scrollLeft;
@@ -251,13 +248,10 @@
         return `top:${yPosition - 100}px;left:${xPosition - 75}px;`;
       },
       getAttackObjectDict() {
-        attack_object_file = `${
-          this.url_prefix
-        }static/matrices/${this.selectedDomain.toLowerCase()}/${
-          this.selectedAttackVersion
-        }/${this.selectedDomain.toLowerCase()}-${
-          this.selectedAttackVersion
-        }_matrix_data.json`;
+        attack_object_file = `${this.url_prefix
+          }static/matrices/${this.selectedDomain.toLowerCase()}/${this.selectedAttackVersion
+          }/${this.selectedDomain.toLowerCase()}-${this.selectedAttackVersion
+          }_matrix_data.json`;
         fetch(attack_object_file)
           .then((response) => response.json())
           .then((json) => {
@@ -302,28 +296,28 @@
       handleClick(technique) {
         technique.open = !technique.open;
       },
-      toggleAllTechniques(open){
+      toggleAllTechniques(open) {
         this.tactics.forEach((tactic) =>
           tactic.techniques.forEach((technique) => {
             technique.open = open;
           })
         );
       },
-      setVersionsAccoringToQueryParams(){
+      setVersionsAccoringToQueryParams() {
         const url = new URL(window.location.href)
-        if(url.searchParams.has('attack-version') && this.attackVersions.includes(url.searchParams.get('attack-version'))){
+        if (url.searchParams.has('attack-version') && this.attackVersions.includes(url.searchParams.get('attack-version'))) {
           this.selectedAttackVersion = url.searchParams.get('attack-version');
         }
         else {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({path:newurl},'',newurl);
+          window.history.pushState({ path: newurl }, '', newurl);
         }
-        if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())){
+        if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())) {
           this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
         }
         else {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({path:newurl},'',newurl);
+          window.history.pushState({ path: newurl }, '', newurl);
         }
       },
       handleOutsideClick() {
@@ -333,16 +327,16 @@
     },
     watch: {
       selectedAttackVersion: {
-        handler(newValue){
+        handler(newValue) {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({path:newurl},'',newurl);
+          window.history.pushState({ path: newurl }, '', newurl);
         },
       },
-       selectedDomain: {
-         handler(newValue) {
-           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-           window.history.pushState({path:newurl},'',newurl);
-         },
+      selectedDomain: {
+        handler(newValue) {
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          window.history.pushState({ path: newurl }, '', newurl);
+        },
       },
     },
     mounted() {
@@ -364,63 +358,78 @@
     margin-top: 100px;
     margin-bottom: 20px;
   }
+
   #matrix h1 {
     text-align: left !important;
   }
+
   #matrix div {
     font-size: 12px !important;
     overflow-wrap: break-word;
   }
+
   #matrix .container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(20px, 1fc));
   }
+
   .matrix-header {
     padding-top: 100px;
   }
+
   .tactic-row {
     color: #212c5e !important;
     margin-top: 5px;
     align-items: flex-end;
     margin-bottom: 10px;
   }
+
   .tactic-box {
     border-bottom: 1px solid #212c5e;
   }
+
   .row--no-x-margin {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+
   .row--no-padding {
     padding: 0 !important;
   }
+
   .col--less-x-padding {
     padding-right: 4px !important;
     padding-left: 4px !important;
   }
+
   .col--no-x-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
   .subtechnique-toggle-col {
     padding: 0 !important;
     background-color: grey !important;
   }
+
   .subtechnique-toggle-col--no-icon {
     padding: 0 !important;
     background-color: transparent !important;
   }
+
   .tactic-name {
     font-weight: bold;
     font-size: 14px !important;
   }
+
   .tactic-header {
     margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
   }
+
   .technique-box {
     border-top: 0.5px solid grey;
     border-bottom: 0.5px solid grey;
@@ -429,6 +438,7 @@
     padding: 5px;
     color: black !important;
   }
+
   .subtechnique-box {
     border-top: 0.5px solid lightgray;
     border-bottom: 0.5px solid lightgray;
@@ -437,33 +447,42 @@
     padding: 5px;
     color: black !important;
   }
+
   .technique-box a {
     color: black !important;
   }
+
   .technique-box a:hover {
     color: #212c5e !important;
     text-decoration: underline;
   }
+
   .subtechnique-box a {
     color: black !important;
   }
+
   .subtechnique-box a:hover {
     color: #212c5e !important;
     text-decoration: underline;
   }
+
   .subtechnique-toggle {
     background-color: grey !important;
     height: 100% !important;
   }
+
   .technique-score {
     font-size: 10px !important;
   }
+
   .matrix-header {
     text-align: center;
   }
+
   .icon {
     cursor: pointer;
   }
+
   .toggle-subtechniques-btn {
     background-color: transparent;
     color: #212c5e;
@@ -475,23 +494,28 @@
     transition: 0.5s;
     margin-right: 5px;
   }
+
   .toggle-subtechniques-btn:hover {
     color: #005b94;
     border: 1px solid #005b94;
   }
+
   .matrix-table-container {
     background-color: white;
     padding: 40px;
     box-shadow: 2px 2px 4px #bdbdbd;
     border-radius: 5px;
   }
+
   .matrix-table-container-relative {
     position: relative;
     z-index: 0;
   }
+
   .subtechnique-toggle {
     background-color: grey;
   }
+
   .technique-tooltip {
     position: absolute;
     z-index: 999;
@@ -506,19 +530,23 @@
     text-overflow: ellipsis !important;
     box-shadow: 2px 2px 10px #ababab;
   }
+
   .header-row {
     padding: 0 !important;
     margin: 2px !important;
     color: #212c5e;
     opacity: 1;
   }
+
   .subtechniques-col {
     border-right: 4px solid grey;
   }
+
   .matrix-component {
     position: relative;
     z-index: 0;
   }
+
   .scroll-indicator-right {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.001), white);
     right: 0;
@@ -528,6 +556,7 @@
     pointer-events: none;
     top: 0;
   }
+
   .scroll-indicator-left {
     background: linear-gradient(to left, rgba(255, 255, 255, 0.001), white);
     width: 100px;
@@ -535,6 +564,7 @@
     position: absolute;
     pointer-events: none;
   }
+
   .dropdown-items {
     position: absolute;
     background-color: white;
@@ -543,29 +573,36 @@
     z-index: 999;
     width: 150px;
   }
+
   .select {
     width: 150px;
     cursor: pointer;
   }
+
   .dropdown-item {
     cursor: pointer;
     border-top: 1px solid #dbdbd9;
   }
+
   .dropdown-item:hover {
     background-color: #ededeb;
   }
+
   .dropdown-item-text {
     margin-left: 4px !important;
     padding: 0.375rem 0.75rem;
     font-size: 1rem !important;
     font-weight: 400 !important;
   }
+
   .invalid-option {
     color: #bdbdbd !important;
   }
+
   .selected-item {
     font-size: 1.25rem !important;
   }
+
   .selected-option {
     background-color: #ededeb;
   }
