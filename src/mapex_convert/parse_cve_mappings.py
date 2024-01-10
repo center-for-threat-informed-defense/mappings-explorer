@@ -16,7 +16,8 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types_objects = {}
 
     for mapping_type in formatted_cve_mapping_types:
-        cve_mapping_types_objects[str(uuid.uuid4())] = {
+        mapping_type_id = mapping_type.lower().replace(" ", "_")
+        cve_mapping_types_objects[mapping_type_id] = {
             "description": "",
             "name": mapping_type,
         }
@@ -62,13 +63,12 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                     )
                     name = attack_details.get("name", "")
 
-                    mapping_type_uuid = [
+                    mapping_type_id = [
                         cve_mapping_type
                         for cve_mapping_type in cve_mapping_types_objects
                         if cve_mapping_types_objects[cve_mapping_type]["name"]
                         == mapping_type
                     ][0]
-                    print(mapping_type_uuid)
 
                     # groups
                     capability_id = row["CVE ID"]
@@ -87,7 +87,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "references": [],
                             "capability_description": "",
                             "capability_id": row["CVE ID"],
-                            "mapping_type": mapping_type_uuid,
+                            "mapping_type": mapping_type_id,
                             "group": capability_year,
                             "status": "complete",
                         }
