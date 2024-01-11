@@ -222,13 +222,10 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = [
-        """These mappings of the Amazon Web Services (AWS) security controls to MITRE
-         ATT&CK® are designed to empower organizations with independent data on which
-         native AWS security controls are most useful in defending against the adversary
-         TTPs that they care about. These mappings are part of a collection of mappings
-         of native product security controls to ATT&CK based on a common methodology,
-         scoring rubric, data model, and tool set. This full set of resources is
-         available on the Center’s project page."""
+        """This project maps the security controls native to the Amazon Web Services
+        (AWS) platform to ATT&CK. AWS users can use these mappings to evaluate the
+        effectiveness of their native cloud security controls against an array of ATT&CK
+        techniques."""
     ]
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -242,13 +239,10 @@ def load_projects():
     azure.id = "azure"
     azure.label = "Azure"
     azure.description = [
-        """These mappings of the Microsoft Azure Infrastructure as a Services (IaaS)
-         security controls to MITRE ATT&CK® are designed to empower organizations with
-         independent data on which native Azure security controls are most useful in
-         defending against the adversary TTPs that they care about. These mappings are
-         part of a collection of mappings of native product security controls to ATT&CK
-         based on a common methodology, scoring rubric, data model, and tool set. This
-         full set of resources is available on the Center’s project page."""
+        """This project maps the security controls native to the Azure Infrastructure as
+        a Service (IaaS) platform to ATT&CK. With over 45 native Azure security
+        controls mapped, it provides a critical resource for organizations to assess
+        their Azure security control coverage against real-world threats."""
     ]
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
@@ -262,13 +256,10 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = [
-        """These mappings of the Google Cloud Platform (GCP) security controls to MITRE
-         ATT&CK® are designed to empower organizations with independent data on which
-         native GCP security controls are most useful in defending against the adversary
-         TTPs that they care about. These mappings are part of a collection of mappings
-         of native product security controls to ATT&CK based on a common methodology,
-         scoring rubric, data model, and tool set. This full set of resources is
-         available on the Center’s project page."""
+        """This project maps the security controls native to the Google Cloud Platform
+        platform (GCP) to ATT&CK. With 49 native GCP security controls mapped, it
+        provides a critical resource for organizations to assess their cloud security
+        control coverage against real-world threats."""
     ]
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
@@ -1169,6 +1160,45 @@ def build_search_index(url_prefix):
         zip_file.testzip()
 
 
+def build_about_pages(url_prefix: str):
+    """
+    Build the documentation pages, e.g. explaining what the site is for, who it's for,
+    etc.
+
+    Args:
+        url_prefix: The prefix to put in front of any internal URLs.
+    """
+    dir = PUBLIC_DIR / "about"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("about.html.j2")
+    stream = template.stream(title="About Mappings Explorer", url_prefix=url_prefix)
+    stream.dump(str(output_path))
+    print("Created about page")
+
+    dir = PUBLIC_DIR / "about" / "use-cases"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("use_cases.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Use Cases",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created use cases page")
+
+    dir = PUBLIC_DIR / "about" / "methodology"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("methodology.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Methodology",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created methodology page")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -1183,11 +1213,11 @@ def main():
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
-    print("Copying static resources: {}", static_dir)
+    print("Copying static resources:", static_dir)
     shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
 
     data_dir = PUBLIC_DIR / "data"
-    print("Copying parsed mappings to output directory: {}", data_dir)
+    print("Copying parsed mappings to output directory:", data_dir)
     shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
     output_path = PUBLIC_DIR / "index.html"
@@ -1197,6 +1227,7 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
+
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -1205,10 +1236,12 @@ def main():
     stream.dump(str(output_path))
     print("Created external mappings home")
 
+    build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix, projects)
+    build_matrix(url_prefix=url_prefix, projects=projects)
     build_search_index(url_prefix)
+    print("Done building site")
 
 
 if __name__ == "__main__":

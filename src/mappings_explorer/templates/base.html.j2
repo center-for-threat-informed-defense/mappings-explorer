@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>{% block title %}{{ title }}{% endblock title %}</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-        <!-- Vendor CSS Files -->
-        <link href="{{url_prefix}}static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{url_prefix}}static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="{{url_prefix}}static/vendor/aos/aos.css" rel="stylesheet">
-        <link href="{{url_prefix}}static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-        <link href="{{url_prefix}}static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-        <link href="{{url_prefix}}static/vendor/remixicon/remixicon.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
-        <!-- Template Main CSS File -->
-        <link href="{{url_prefix}}static/main.css" rel="stylesheet">
-        <!-- Vue -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}{{ title }}{% endblock title %}</title>
+    <link rel="shortcut icon" href="{{url_prefix}}static/img/favicon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
-    </head>
-    <body class="page-index gray-bg">
-        <header class="header d-flex align-items-center fixed-top">
-            {% include "_navigation.html.j2"%}
-        </header>
-        {% block content %}
-            <h1>Welcome to Mappings Explorer</h1>
-        {% endblock content %}
+    <!-- Vendor CSS Files -->
+    <link href="{{url_prefix}}static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url_prefix}}static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{url_prefix}}static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{url_prefix}}static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{url_prefix}}static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{url_prefix}}static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{{url_prefix}}static/main.css" rel="stylesheet">
+    {#
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>#}
 
-        <footer>
-            {% include "_footer.html.j2"%}
-        </footer>
+</head>
 
-        <!-- Scripts -->
-        <script src="{{url_prefix}}static/main.js"></script>
-        <script src="{{url_prefix}}static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="{{url_prefix}}static/vendor/aos/aos.js"></script>
-        <script src="{{url_prefix}}static/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="{{url_prefix}}static/vendor/swiper/swiper-bundle.min.js"></script>
-        <script src="{{url_prefix}}static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="{{url_prefix}}static/vendor/php-email-form/validate.js"></script>
-        <script>
-            $(document).ready(function(){
-            $("#myInput").on("keyup", function() {
+<body class="page-index gray-bg">
+    <header class="header d-flex align-items-center fixed-top">
+        {% include "_navigation.html.j2"%}
+    </header>
+    {% block content %}
+    <h1>Welcome to Mappings Explorer</h1>
+    {% endblock content %}
+
+    <footer>
+        {% include "_footer.html.j2"%}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{url_prefix}}static/main.js"></script>
+    <script src="{{url_prefix}}static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url_prefix}}static/vendor/aos/aos.js"></script>
+    <script src="{{url_prefix}}static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{url_prefix}}static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{url_prefix}}static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="{{url_prefix}}static/vendor/php-email-form/validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
-            });
-        </script>
-        <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+        });
+    </script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
 
-    </body>
+</body>
+
 </html>
-

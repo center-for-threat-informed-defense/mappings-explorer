@@ -1,8 +1,9 @@
 import json
 import logging
-from functools import cache
 
 import requests
+
+from .template import PUBLIC_DIR
 
 logging.basicConfig(level=logging.INFO)
 
@@ -36,16 +37,30 @@ def load_attack_json(attack_version, attack_domain):
     Returns:
        STIX data that was fetched
     """
-    logging.info(
-        f"Fetching attack data for {attack_domain} version {attack_version} ..."
-    )
-    BASE_URL = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
     domain = attack_domain.lower()
-    attack_url = f"{BASE_URL}/{domain}-attack/{domain}-attack-{attack_version}.json"
-    return fetch_url(attack_url)
+    cache_path = (
+        PUBLIC_DIR / "data" / "attack" / f"{domain}-attack-{attack_version}.json"
+    )
+    if cache_path.exists():
+        logging.info(
+            f"Loading cached ATT&CK data for {attack_domain}-{attack_version}…"
+        )
+        with cache_path.open() as cache_file:
+            attack_data = json.load(cache_file)
+    else:
+        logging.info(f"Downloading ATT&CK data for {attack_domain}-{attack_version}…")
+        BASE_URL = (
+            "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
+        )
+        attack_url = f"{BASE_URL}/{domain}-attack/{domain}-attack-{attack_version}.json"
+        attack_data = fetch_url(attack_url)
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with cache_path.open("w") as cache_file:
+            json.dump(attack_data, cache_file)
+
+    return attack_data
 
 
-@cache
 def fetch_url(url):
     response = requests.get(url)
     if response.status_code != 404:
@@ -59,10 +74,8 @@ def build_attack_dict(attack_data, attack_domain):
     and pertinent data about the attack objects
 
     Args:
-        attack_version: The attack version that attack objects should be fetched from.
-        This must be a string with one decimal field (i.e. "9.0").
-        attack_domain: The attack domain that attack objects should be fetched from.
-        Must be ICS, Mobile, or Enterprise. Case does not matter
+        attack_data: A dictionary containing ATT&CK data in STIX format.
+        attack_domain: The ATT&CK domain. Case does not matter
 
     Returns:
         A dict mapping an attack object to its id, name, url, and description
@@ -141,7 +154,8 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
 
     for mappings_file in mappings_filepath.rglob("**/*.json"):
         if (
-            "stix" not in mappings_file.name
+            mappings_file.parent.name != "attack"
+            and "stix" not in mappings_file.name
             and "navigator_layer" not in mappings_file.name
         ):
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
