@@ -1075,9 +1075,10 @@ def getIndexPages():
                 ].replace("/", ".")
                 attack_object_id = mapping["attack_object_id"]
                 if attack_object_id:
-                    attack_portion = f"attack/attack-{attack_version}"
-                    domain_portion = f"/domain-{domain}/"
-                    attack_url = f"{attack_portion}{domain_portion}/{attack_object_id}/"
+                    attack_url = (
+                        f"attack/attack-{attack_version}/domain-{domain}/"
+                        f"{attack_object_id}"
+                    )
                     if not any(page["url"] == attack_url for page in pages):
                         pages.append(
                             {
@@ -1089,18 +1090,9 @@ def getIndexPages():
                 capability_id = mapping["capability_id"]
                 if capability_id:
                     capability_url = (
-                        "external/"
-                        + mapping_framework
-                        + "/attack-"
-                        + attack_version
-                        + "/"
-                        + mapping_framework
-                        + "-"
-                        + mapping_framework_version
-                        + "/domain-"
-                        + domain
-                        + "/"
-                        + capability_id.replace(" ", "%20")
+                        f"external/{mapping_framework}/attack-{attack_version}"
+                        f"/{mapping_framework}-{mapping_framework_version}"
+                        f"/domain-{domain}/{capability_id.replace(' ', '%20')}"
                     )
                     if not any(page["url"] == capability_url for page in pages):
                         pages.append(
