@@ -1,5 +1,7 @@
 import uuid
 
+import pandas as pd
+
 control_family_lookup_dict = {
     "AC": "Access Control",
     "AU": "Audit and Accountability",
@@ -61,23 +63,39 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
 
         # get group id and name
         control_id = row["Control ID"]
-        control_family_id = control_id[0 : control_id.index("-")]
-        if control_family_id not in list(groups.keys()):
-            groups[control_family_id] = (
-                control_family_lookup_dict.get(control_family_id, ""),
-            )[0]
+        if pd.notna(control_id):
+            control_family_id = control_id[0 : control_id.index("-")]
+            if control_family_id not in list(groups.keys()):
+                groups[control_family_id] = (
+                    control_family_lookup_dict.get(control_family_id, ""),
+                )[0]
+        else:
+            control_id = None
+            control_family_id = None
+
+        status = "complete"
+        if row.get("Status"):
+            status = row["Status"] if pd.notna(row["Status"]) else None
+
+        capability_id = row["Control ID"] if pd.notna(row["Control ID"]) else None
+        capability_name = row["Control Name"] if pd.notna(row["Control Name"]) else None
+
+        technique_id = row["Technique ID"] if pd.notna(row["Technique ID"]) else None
+        technique_name = (
+            row["Technique Name"] if pd.notna(row["Technique Name"]) else None
+        )
 
         parsed_mappings["mapping_objects"].append(
             {
                 "comments": "",
-                "attack_object_id": row["Technique ID"],
-                "attack_object_name": row["Technique Name"],
+                "attack_object_id": technique_id,
+                "attack_object_name": technique_name,
                 "references": [],
-                "capability_description": row["Control Name"],
-                "capability_id": row["Control ID"],
+                "capability_description": capability_name,
+                "capability_id": capability_id,
                 "mapping_type": mapping_type_uuid,
                 "group": control_family_id,
-                "status": "complete",
+                "status": status,
             }
         )
 

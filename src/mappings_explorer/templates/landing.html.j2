@@ -8,13 +8,19 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-4">
-          <img data-aos="fade-up" src="{{url_prefix}}static/img/logo-horizontal-white.png" alt="center for threat informed defense logo" style="height: 20px; margin-bottom: 10px;"/>
+          <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
+            <img data-aos="fade-up" src="{{url_prefix}}static/img/logo-horizontal-white.png" alt="center for threat informed defense logo" style="height: 20px; margin-bottom: 10px;"/></a>
           <h2 data-aos="fade-up">Mappings <span style="color: #C2EAF6">Explorer</span></h2>
           <blockquote data-aos="fade-up" data-aos-delay="100">
-            <p>The website will include an overview of the mappings projects, explaining what the mappings are for, who the target audience is, what uses they support, etc. It will provide the methodology and other important information behind each mapping project. </p>
+            <p>
+              Mappings Explorer enables cyber defenders to understand how security controls
+              map onto the adversary behaviors catalogued in the MITRE ATT&CK® knowledge base.
+              These mappings form a bridge between the threat-informed approach to cybersecurity
+              and the traditional security controls perspective.
+            </p>
           </blockquote>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Get Started</a>
+            <a href="{{url_prefix}}about/" class="btn-get-started">Learn More</a>
           </div>
 
         </div>
@@ -29,12 +35,24 @@
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
-          <h3>Search to Find Mappings</h3>
-          <p>Search for an ATT&CK object or a framework object to find all mappings associated with it. </p>
+          <h3>Search All Mappings</h3>
+          <p>Search by any ATT&CK object or security control to get their associated mappings.</p>
           <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <input
+              type="search"
+              id="landing-search-input"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              onkeypress="landingHandleKeypress(event, '{{url_prefix}}search/')"/>
             <span class="input-group-text border-0" id="search-addon">
-              <img src="{{url_prefix}}static/img/search.svg" alt="search" style="height: 20px;"/>
+              <a onclick="landingSearchWebsite('{{url_prefix}}search/')"
+              ><img
+                src="{{url_prefix}}static/img/search.svg"
+                alt="search"
+                style="height: 20px"
+            /></a>
             </span>
           </div>
         </div>
@@ -55,4 +73,16 @@
     </section><!-- End Our Services Section -->
 
   </main><!-- End #main -->
+
+  <script>
+    function landingSearchWebsite(url) {
+      window.location.href = `${url}?search=${document.getElementById("landing-search-input").value
+      }`;
+    }
+    function landingHandleKeypress(event, url) {
+      if (event.key === "Enter") {
+        landingSearchWebsite(url);
+      }
+    }
+  </script>
 {% endblock content %}

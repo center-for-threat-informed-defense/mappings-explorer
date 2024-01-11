@@ -2,8 +2,10 @@ import argparse
 import json
 import os
 import shutil
+import zipfile
 
 import requests
+from lunr import lunr
 from mapex_convert.read_files import (
     read_yaml_file,
 )
@@ -138,13 +140,10 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = [
-        """These mappings of the Amazon Web Services (AWS) security controls to MITRE
-         ATT&CK® are designed to empower organizations with independent data on which
-         native AWS security controls are most useful in defending against the adversary
-         TTPs that they care about. These mappings are part of a collection of mappings
-         of native product security controls to ATT&CK based on a common methodology,
-         scoring rubric, data model, and tool set. This full set of resources is
-         available on the Center’s project page."""
+        """This project maps the security controls native to the Amazon Web Services
+        (AWS) platform to ATT&CK. AWS users can use these mappings to evaluate the
+        effectiveness of their native cloud security controls against an array of ATT&CK
+        techniques."""
     ]
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -158,13 +157,10 @@ def load_projects():
     azure.id = "azure"
     azure.label = "Azure"
     azure.description = [
-        """These mappings of the Microsoft Azure Infrastructure as a Services (IaaS)
-         security controls to MITRE ATT&CK® are designed to empower organizations with
-         independent data on which native Azure security controls are most useful in
-         defending against the adversary TTPs that they care about. These mappings are
-         part of a collection of mappings of native product security controls to ATT&CK
-         based on a common methodology, scoring rubric, data model, and tool set. This
-         full set of resources is available on the Center’s project page."""
+        """This project maps the security controls native to the Azure Infrastructure as
+        a Service (IaaS) platform to ATT&CK. With over 45 native Azure security
+        controls mapped, it provides a critical resource for organizations to assess
+        their Azure security control coverage against real-world threats."""
     ]
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
@@ -178,13 +174,10 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = [
-        """These mappings of the Google Cloud Platform (GCP) security controls to MITRE
-         ATT&CK® are designed to empower organizations with independent data on which
-         native GCP security controls are most useful in defending against the adversary
-         TTPs that they care about. These mappings are part of a collection of mappings
-         of native product security controls to ATT&CK based on a common methodology,
-         scoring rubric, data model, and tool set. This full set of resources is
-         available on the Center’s project page."""
+        """This project maps the security controls native to the Google Cloud Platform
+        platform (GCP) to ATT&CK. With 49 native GCP security controls mapped, it
+        provides a critical resource for organizations to assess their cloud security
+        control coverage against real-world threats."""
     ]
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
@@ -664,7 +657,7 @@ def build_attack_pages(projects, url_prefix):
             PUBLIC_DIR
             / "attack"
             / ("attack-" + attack_version)
-            / ("domain-" + attack_domain)
+            / ("domain-" + attack_domain.lower())
         )
         external_dir.mkdir(parents=True, exist_ok=True)
 
@@ -813,6 +806,159 @@ def build_matrix(url_prefix, projects):
     print("Created matrix")
 
 
+def getIndexPages():
+    """
+    Create an array of page dictionaries for search index
+
+    Returns:
+    an array of dictionaries with the search index's url, id, and name
+    """
+    mappings_filepath = PUBLIC_DIR / "data"
+    pages = []
+    for mappings_file in mappings_filepath.rglob("**/*.json"):
+        if (
+            "stix" not in mappings_file.name
+            and "navigator_layer" not in mappings_file.name
+        ):
+            mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
+
+            for mapping in mappings["mapping_objects"]:
+                mapping_framework = (
+                    mappings["metadata"]["mapping_framework"]
+                    if mappings["metadata"]["mapping_framework"] != "nist_800_53"
+                    else "nist"
+                )
+                attack_version = mappings["metadata"]["attack_version"]
+                domain = mappings["metadata"]["technology_domain"]
+                mapping_framework_version = mappings["metadata"][
+                    "mapping_framework_version"
+                ].replace("/", ".")
+                attack_object_id = mapping["attack_object_id"]
+                if attack_object_id:
+                    attack_portion = f"attack/attack-{attack_version}"
+                    domain_portion = f"/domain-{domain}/"
+                    attack_url = f"{attack_portion}{domain_portion}/{attack_object_id}/"
+                    if not any(page["url"] == attack_url for page in pages):
+                        pages.append(
+                            {
+                                "url": attack_url,
+                                "id": attack_object_id,
+                                "name": mapping["attack_object_name"],
+                            }
+                        )
+                capability_id = mapping["capability_id"]
+                if capability_id:
+                    capability_url = (
+                        "external/"
+                        + mapping_framework
+                        + "/attack-"
+                        + attack_version
+                        + "/"
+                        + mapping_framework
+                        + "-"
+                        + mapping_framework_version
+                        + "/domain-"
+                        + domain
+                        + "/"
+                        + capability_id.replace(" ", "%20")
+                    )
+                    if not any(page["url"] == capability_url for page in pages):
+                        pages.append(
+                            {
+                                "url": capability_url,
+                                "id": capability_id,
+                                "name": mapping["capability_description"],
+                            }
+                        )
+    return pages
+
+
+def build_search_index(url_prefix):
+    """
+    Render the search page and also build the search index as a JSON file.
+
+    Args:
+        url_prefix - the site's URL prefix
+    """
+    print("Creating search page")
+    search_dir = PUBLIC_DIR / "search"
+    search_dir.mkdir(parents=True, exist_ok=True)
+    output_path = search_dir / "index.html"
+    template = load_template("search.html.j2")
+
+    print("Creating search index")
+    pages = getIndexPages()
+    stream = template.stream(url_prefix=url_prefix)
+    stream.dump(str(output_path))
+
+    index = lunr(
+        ref="url",
+        fields=[
+            {"field_name": "id", "boost": 3},
+            {"field_name": "name", "boost": 2},
+        ],
+        documents=pages,
+    )
+    pages = {p.pop("url"): p for p in pages}
+    index_path = PUBLIC_DIR / "static" / "lunr-index.zip"
+    lunr_index = {
+        "pages": pages,
+        "index": index.serialize(),
+    }
+    # Use the `zipfile` module
+    with zipfile.ZipFile(
+        index_path,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as zip_file:
+        # Dump JSON data
+        dumped_JSON: str = json.dumps(lunr_index, ensure_ascii=False, indent=4)
+        # Write the JSON data into `lunr-index.json` *inside* the ZIP file
+        zip_file.writestr("lunr-index.json", data=dumped_JSON)
+        # Test integrity of compressed archive
+        zip_file.testzip()
+
+
+def build_about_pages(url_prefix: str):
+    """
+    Build the documentation pages, e.g. explaining what the site is for, who it's for,
+    etc.
+
+    Args:
+        url_prefix: The prefix to put in front of any internal URLs.
+    """
+    dir = PUBLIC_DIR / "about"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("about.html.j2")
+    stream = template.stream(title="About Mappings Explorer", url_prefix=url_prefix)
+    stream.dump(str(output_path))
+    print("Created about page")
+
+    dir = PUBLIC_DIR / "about" / "use-cases"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("use_cases.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Use Cases",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created use cases page")
+
+    dir = PUBLIC_DIR / "about" / "methodology"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("methodology.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Methodology",
+        url_prefix=url_prefix,
+    )
+    stream.dump(str(output_path))
+    print("Created methodology page")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -827,11 +973,11 @@ def main():
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
-    print("Copying static resources: {}", static_dir)
+    print("Copying static resources:", static_dir)
     shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
 
     data_dir = PUBLIC_DIR / "data"
-    print("Copying parsed mappings to output directory: {}", data_dir)
+    print("Copying parsed mappings to output directory:", data_dir)
     shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
     output_path = PUBLIC_DIR / "index.html"
@@ -841,6 +987,7 @@ def main():
     )
     stream.dump(str(output_path))
     print("Created site index")
+
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -849,11 +996,14 @@ def main():
     stream.dump(str(output_path))
     print("Created external mappings home")
 
+    build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)
     build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix, projects)
+    build_matrix(url_prefix, projects=projects)
 
-    print("Created external mappings home")
+    print("Done")
+
+    build_search_index(url_prefix)
 
 
 if __name__ == "__main__":
