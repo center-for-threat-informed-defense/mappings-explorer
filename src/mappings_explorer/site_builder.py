@@ -1056,8 +1056,12 @@ def getIndexPages():
     mappings_filepath = PUBLIC_DIR / "data"
     pages = []
     for mappings_file in mappings_filepath.rglob("**/*.json"):
+        project_name_in_filepath = (
+            "nist" or "veris" or "aws" or "azure" or "gcp" or "cve"
+        ) in str(mappings_file)
         if (
-            "stix" not in mappings_file.name
+            project_name_in_filepath
+            and "stix" not in mappings_file.name
             and "navigator_layer" not in mappings_file.name
         ):
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
