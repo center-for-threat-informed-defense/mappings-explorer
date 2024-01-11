@@ -207,6 +207,7 @@
         if (url.searchParams.get("search")) {
           let search = url.searchParams.get("search");
           this.searchString = search;
+          this.searchModel = search;
           document.getElementById("nav-search-input").value = search;
           let results = this.searchIndex(this.searchString);
           this.results = results.results;
