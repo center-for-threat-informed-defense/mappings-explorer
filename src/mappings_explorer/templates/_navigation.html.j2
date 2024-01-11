@@ -43,9 +43,17 @@
       </li>
       <li style="padding: 10px;">
         <div class="input-group rounded">
-          <input type="search" class="search-input form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <input
+            type="search"
+            id="nav-search-input"
+            class="search-input form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+            onkeypress="navHandleKeypress(event, '{{url_prefix}}search/')"
+          />
           <span class="input-group-text border-0 bg-primary" id="search-addon">
-            <img src="{{url_prefix}}static/img/search-white.svg" alt="search" style="height: 20px;"/>
+            <img src="{{url_prefix}}static/img/search-white.svg" alt="search" style="height: 20px;" onclick="navSearchWebsite('{{url_prefix}}search/')"/>
           </span>
         </div>
       </li>
