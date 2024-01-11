@@ -1,5 +1,3 @@
-import uuid
-
 import pandas as pd
 
 control_family_lookup_dict = {
@@ -54,7 +52,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
 
     groups = {}
     for _, row in dataframe.iterrows():
-        # get mapping type uuid
+        # get mapping type id
         mapping_type_id = [
             mapping_type
             for mapping_type in mapping_types

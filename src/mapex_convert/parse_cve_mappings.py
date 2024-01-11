@@ -1,6 +1,3 @@
-import uuid
-
-
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
         "Primary Impact",

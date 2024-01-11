@@ -1,6 +1,3 @@
-import uuid
-
-
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
     platform = data["platform"].lower()
@@ -79,7 +76,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
         for technique_score in technique["technique-scores"]:
             comments = technique_score.get("comments") or ""
 
-            # get group uuid
+            # get group id
             capability_name = data["name"]
             capability_id = capability_name.lower().replace(" ", "_")
             if capability_id not in list(parsed_mappings["metadata"]["groups"].keys()):
