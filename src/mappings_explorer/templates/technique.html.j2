@@ -11,7 +11,9 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           {{ macros.back_button("", "ATT&CK Landing", url_prefix)}}
           <h1 style="text-transform: uppercase;"> {{technique.id}} <span class="highlight">{{ technique.label }}</span> Mappings</h1>
-          <p>{{technique.description}}</p>
+          {%-markdown-%}
+            {{technique.description}}
+          {%-endmarkdown-%}
         </div>
       </div>
     </div>

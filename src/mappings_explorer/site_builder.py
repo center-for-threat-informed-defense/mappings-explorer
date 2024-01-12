@@ -317,7 +317,7 @@ def get_nist_descriptions(project, version):
             element_array = elements[0]["elements"][0]["elements"]
             for item in element_array:
                 if item["elementTypeIdentifier"] == "discussion":
-                    c.description = item["text"].replace("<p>", "").replace("</p>", "")
+                    c.description = item["text"]
                     break
         except Exception as e:
             print("exception ", e)
