@@ -35,8 +35,7 @@
         },
         "mapping_framework": {
           "description": "The group of objects being mapped to ATT&CK.",
-          "type": "string",
-          "enum": ["veris", "nist_800_53", "cve", "aws", "gcp", "azure"]
+          "type": "string"
         },
         "mapping_framework_version": {
           "description": "The Mapping Framework's version.",
@@ -49,15 +48,15 @@
         },
         "author": {
           "description": "The author of this mapping file.",
-          "type": "string"
+          "type": ["string", "null"]
         },
         "contact": {
           "description": "The email address of the author.",
-          "type": "string"
+          "type": ["string", "null"]
         },
         "organization": {
           "description": "The organization associated with the author.",
-          "type": "string"
+          "type": ["string", "null"]
         },
         "mapping_types": {
           "description": "The mappings types that are associated with each Framework.",
@@ -103,6 +102,18 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "author": {
+            "description": "The author of the mapping",
+            "type": ["string", "null"]
+          },
+          "author_contact": {
+            "description": "The author of the mapping's contact",
+            "type": ["string", "null"]
+          },
+          "author_organization": {
+            "description": "The author of the mapping's organization",
+            "type": ["string", "null"]
+          },
           "attack_object_id": {
             "description": "The unique identifier of the ATT&CK object being mapped. (T1648)",
             "type": ["string", "null"]
@@ -158,7 +169,7 @@
             "type": ["string", "null"]
           }
         },
-        "required": ["mapping_type", "capability_id"]
+        "required": ["mapping_type"]
       }
     }
   }

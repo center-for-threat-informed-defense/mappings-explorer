@@ -59,7 +59,7 @@ jobs:
       - env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
         run: >
-          staticrypt --remember 3 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
+          staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
             --password $STATICRYPT_PASS --short \
             --template-title "Mappings Explorer (branch: $BRANCH_NAME)" \
             --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \

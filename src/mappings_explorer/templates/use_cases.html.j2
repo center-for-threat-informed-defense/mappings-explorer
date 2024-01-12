@@ -1,0 +1,419 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section id="header-container" class="header-container">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h1>MAPPINGS <span class="highlight">USE CASES</span></h1>
+                <p>Mappings Explorer is valuable to a broad range of cyber professionals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services-list" class="services-list GRAY-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="row gy-5">
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #005B94;"></i></div>
+                <div>
+                    <h4 class="title">INCIDENT RESPONDER <span class="highlight">(IR)</span></h4>
+                    <p class="description">Responsible for response, management, and coordination, and remediation
+                        activities for cyber incidents such as malware infections, data theft, ransomware encryption,
+                        denial of service, and control systems intrusions.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #F56600;"></i></div>
+                <div>
+                    <h4 class="title">CHIEF INFORMATION SECURITY OFFICER <span class="highlight">(CISO)</span></h4>
+                    <p class="description">Responsible for carrying out information security policies, procedures, and
+                        controls, and providing primary interface between senior managers and information system owners.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #1AA483;"></i></div>
+                <div>
+                    <h4 class="title">INFORMATION SYSTEM SECURITY OFFICER <span class="highlight">(ISSO)</span></h4>
+                    <p class="description">Responsibilities include ensuring the appropriate operational security
+                        posture is maintained for information systems or programs.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #BD0044;"></i></div>
+                <div>
+                    <h4 class="title">SECURITY OPERATIONS CENTER ANALYST <span class="highlight">(SOC)</span></h4>
+                    <p class="description">Responsibilities include monitoring an organization’s networks and systems to
+                        detect threats and investigating potential security incidents.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge" style="color: #FEDB22;"></i></div>
+                <div>
+                    <h4 class="title">SECURITY ENGINEER <span class="highlight">(SE)</span></h4>
+                    <p class="description">Responsibilities include developing and implementing security controls and
+                        solutions to protect networks and systems from unauthorized access and attacks.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up"
+                data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #005B94;"></i></div>
+                <div>
+                    <h4 class="title">VULNERABILITY RESEARCHER <span class="highlight">(VR)</span></h4>
+                    <p class="description">Responsibilities include identifying and studying security vulnerabilities in
+                        systems or software to identify weaknesses and improve security.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 service-item d-flex aos-init" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="bi bi-person-badge-fill" style="color: #1AA483;"></i></div>
+                <div>
+                    <h4 class="title">CYBER THREAT INTEL ANALYST <span class="highlight">(CTI)</span></h4>
+                    <p class="description">Responsibilities include collecting data and information from various sources
+                        across the threat landscape to identify, assess, and recommend countermeasures for cyber
+                        threats.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="use-cases" class="gray-bg">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Usage</h2>
+            <p style="margin-bottom: 1em;">
+                The Mappings Explorer website enables the following essential abilities:
+            </p>
+            <ol style="text-align: left;">
+                <li>Understand and visualize security control and capability coverage for techniques of interest <span
+                        class="highlight">(SE,
+                        ISSO)</span>.</li>
+                <li>Assess how applying security controls and security capabilities can protect, detect, and respond to
+                    specific adversary behaviors of interest <span class="highlight">(SE, ISSO)</span></li>
+                <li>Expanded vocabulary for describing adversary behaviors in an incident to leverage ATT&CK’s full
+                    range of TTPs when describing adversary activities during a security event. <span
+                        class="highlight">(IR, ISSO)</span></li>
+                <li>Enhanced analysis of adversary behaviors through customized control selection for the protection
+                    from, detection of, and response to adversary activities and historical incident information. <span
+                        class="highlight">(CISO,
+                        ISSO, SOC, SE)</span></li>
+                <li>Enable alignment of policies/controls/governance with defenses against adversary behaviors;
+                    leveraging incident information and adversary behavior to provide a holistic view from detailed
+                    descriptions in ATT&CK. <span class="highlight">(CISO, SOC)</span></li>
+                <li>Streamline integration of threat-informed defense and incident reports into security operations. Use
+                    the ATT&CK framework to describe adversary behaviors that are known to be occurring or related to a
+                    specific incident, easily leveraging incident information to inform operations. <span
+                        class="highlight">(SOC).</span></li>
+                <li>Usage of the ATT&CK framework to describe the impact of unmitigated vulnerabilities when exploited
+                    and convey that information to others. <span class="highlight">(VR).</span></li>
+                <li>Determine the set of security controls that mitigate the techniques mapped to the group or software.
+                    <span class="highlight">(CISO, SOC)</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+
+<section id="user-stories" class="gray-bg">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>User Stories</h2>
+            <p>
+                This section describes user stories for the Mappings Explorer website based on the roles identified
+                above. These user stories are expressed as the who, what, and why, with a short exploration of how a
+                user story may be achieved. This is not meant to be a comprehensive list, but rather examples to
+                demonstrate how Mappings Explorer could be used.
+            </p>
+        </div>
+        <div class="accordion accordion-flush" id="stories-accordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-1" aria-expanded="false" aria-controls="stories-body-1">
+                        <div><span class="highlight">As an IR professional,</span> I want to ensure I have a
+                            complete
+                            picture of an active security
+                            incident.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-1" class="accordion-collapse collapse" aria-labelledby="stories-head-1"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Use Mappings Explorer as a joint framework to comprehensively describe security events at a
+                        flexible level. At a very low level, the ATT&CK mappings allow incident response
+                        professionals
+                        to understand the details of adversary activities, thus creating a fingerprint of the event.
+                        This fingerprint can provide an analysis of the attacker’s tactics, techniques, and
+                        procedures
+                        (TTPs), which can assist in real-time decision making and activating responsive
+                        functionality in
+                        existing tools. Additionally, such an analysis can assist responders in looking for
+                        additional
+                        TTP artifacts that may typically coexist with currently observed activity.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-2" aria-expanded="false" aria-controls="stories-body-2">
+                        <div><span class="highlight">As a CISO,</span> I want to understand gaps that exist in
+                            mitigation strategies to better assess
+                            enterprise risk.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-2" class="accordion-collapse collapse" aria-labelledby="stories-head-2"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Use the mapped security controls and capabilities to determine which mitigation strategies
+                        are
+                        most effective against techniques associated with adversarial activities, and which
+                        protective
+                        security controls or cyber solutions are needed to improve cyber defense. While individual
+                        mappings can assist in the prevention of attack recurrence based on similar TTPs, this
+                        collection of mappings can be used to guide strategic direction. The mappings repository
+                        provides a guide for an organization’s security program to use to be effective in the
+                        current
+                        threat landscape. Gaps in process or governance can then be addressed, and continuous
+                        monitoring
+                        activities can then be implemented or improved commensurate with the gaps and risks in
+                        security
+                        control coverage.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-3" aria-expanded="false" aria-controls="stories-body-3">
+                        <div><span class="highlight">As a CISO,</span> I want to understand risk associated with
+                            specific real-world threats and
+                            adversary
+                            techniques.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-3" class="accordion-collapse collapse" aria-labelledby="stories-head-3"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        The ATT&CK Navigator visualization of security capability mapping resources can be
+                        customized to
+                        give the user choice of contextual grouping (group, software, even tactic) and then used to
+                        identify security controls that provide protection from adversarial techniques associated
+                        with
+                        specific real-world threats and adversary behaviors. Determine which mitigation strategies
+                        are
+                        most effective, identify residual risks, and develop and implement compensating controls to
+                        improve cyber defense and protect from the most damaging attacks.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-4" aria-expanded="false" aria-controls="stories-body-4">
+                        <div><span class="highlight">As an ISSO,</span> I want to provide input to system
+                            developers
+                            regarding security
+                            requirements
+                            and security engineering practices to incorporate to defend against adversary
+                            activity.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-4" class="accordion-collapse collapse" aria-labelledby="stories-head-4"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        With control mappings implemented at a technique level, a mapping from a security control or
+                        capability to a technique conveys at least partial protection from, detection of, or
+                        response to
+                        the given technique. Alongside organizational controls the mappings provide an understanding
+                        of
+                        which security controls to consider selecting to protect systems against specific threats;
+                        and
+                        in turn support the SE, system developers, and information system owner’s selection and
+                        implementation of security controls that secure systems and mitigate cyber attacks.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-5" aria-expanded="false" aria-controls="stories-body-5">
+                        <div><span class="highlight">As an ISSO,</span> I want to assess risk by understanding
+                            security
+                            control coverage in
+                            mitigating
+                            techniques associated with adversarial behavior.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-5" class="accordion-collapse collapse" aria-labelledby="stories-head-5"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Following the mappings to the associated techniques can provide context for which security
+                        controls and capabilities provide mitigation or protection from those techniques. In the
+                        context
+                        of this website, mapped “coverage” of a set of techniques does not mean complete protection,
+                        but
+                        rather that the given controls provide some mitigation against the successful execution of
+                        the
+                        mapped techniques. The mappings support the CISO/ISSM in reviewing the adequacy of risk and
+                        gaps
+                        in overall threat defense; and identify which additional security controls are needed to
+                        mitigate cyber attacks.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-6" aria-expanded="false" aria-controls="stories-body-6">
+                        <div><span class="highlight">As a SOC analyst,</span> I want to understand gaps in cyber
+                            defense and entry points where
+                            attackers
+                            may exploit systems.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-6" class="accordion-collapse collapse" aria-labelledby="stories-head-6"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        The mappings provide an overview of existing cyber defensive coverage of categorized against
+                        adversarial behaviors. Gaps in security capability coverage and entry points can then be
+                        measured and assessed to determine what additional coverage is needed to mitigate threats.
+                        This
+                        in turn is used to inform the design, build, and implementation of appropriate cyber
+                        defenses
+                        for the organization’s systems and networks.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-7" aria-expanded="false" aria-controls="stories-body-7">
+                        <div><span class="highlight">As a SOC analyst,</span> I want to understand what security
+                            solutions are needed to improve cyber
+                            defense against a given group or software.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-7" class="accordion-collapse collapse" aria-labelledby="stories-head-7"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Gaps in cyber defense coverage and entry points can be visualized through the ATT&CK
+                        Navigator.
+                        View the set(s) of security capabilities mapped to techniques and then use “contextual
+                        grouping”
+                        to filter for the Groups or Software of interest. Analysts and defenders can better identify
+                        and
+                        understand protections available for common software usage or behaviors across multiple
+                        groups
+                        to map defenses more effectively. In addition, understanding how multiple groups use the
+                        same
+                        technique behavior allows analysts to focus on developing impactful defenses that span many
+                        types of threats and address adversaries’ evolving capabilities.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-8" aria-expanded="false" aria-controls="stories-body-8">
+                        <div><span class="highlight">As a SE,</span> I want to select and tailor capabilities and
+                            security controls to defend against
+                            specific threats and reduce residual risk to the organization. </div>
+                    </button>
+                </h2>
+                <div id="stories-body-8" class="accordion-collapse collapse" aria-labelledby="stories-head-8"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Mappings define a relationship between a security control or capability to a technique, and
+                        address how they offer protection from, detection of, or response to a given adversary
+                        behavior.
+                        Use the customizable searches to identify security controls and capabilities mapped to
+                        threats
+                        of interest, and what adversary behaviors can be mitigated by implementing those controls.
+                        Apply
+                        that information and work with the ISSO to understand residual risk in security control
+                        coverage to better align cyber defense to address adversary behaviors through the selection
+                        and
+                        tailoring of suitable controls for a given information system.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-9" aria-expanded="false" aria-controls="stories-body-9">
+                        <div><span class="highlight">As a VR,</span> I want to analyze the effects of unmitigated
+                            vulnerabilities and exploits, to
+                            convey
+                            impact and inform risk management.</div>
+                    </button>
+                </h2>
+                <div id="stories-body-9" class="accordion-collapse collapse" aria-labelledby="stories-head-9"
+                    data-bs-parent="#stories-accordion">
+                    <div class=" accordion-body">
+                        Compare the collection of security control and capability mappings with an organization’s
+                        vulnerability reports tied to adversary behaviors to identify unmitigated TTP artifacts and
+                        establish an understanding of the current threat landscape. Analyze and convey detailed
+                        threat
+                        and vulnerability information to develop playbooks for adversary emulation and defensive
+                        cyber
+                        operations teams. Use the common taxonomy of the ATT&CK framework and mapped security
+                        information as a tool to describe the effects of unmitigated vulnerabilities in terms of
+                        risks
+                        to the organization to inform risk mitigation decisions.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="stories-head-10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#stories-body-10" aria-expanded="false" aria-controls="stories-body-10">
+                        <div><span class="highlight">As a CTI Analyst,</span> I want
+                            to
+                            recommend countermeasures to address
+                            changes in the threat landscape based on assessments of adversary behavior and potential
+                            weaknesses. </div>
+                    </button>
+                </h2>
+                <div id="stories-body-10" class="accordion-collapse collapse" aria-labelledby="stories-head-10"
+                    data-bs-parent="#stories-accordion">
+                    <div class="accordion-body">
+                        Customizing control mappings to align with organizational security posture exposes gaps in
+                        protection, detection, or response to adversary behaviors, and represents an overall
+                        understanding of organizational security posture. Use the ATT&CK framework to understand
+                        what
+                        indicators and behaviors correspond to threat actors and groups to visualize and track
+                        changes
+                        in the threat landscape. Understand what adversary behaviors (ATT&CK techniques) are
+                        mitigated
+                        by reviewing the mapped security capabilities and sharing those findings and recommendations
+                        with security teams, towards implementing a customized set of security controls to
+                        counteract
+                        specific threats and address gaps in defensive coverage.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

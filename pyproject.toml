@@ -4,15 +4,15 @@ version = "0.1.0"
 description = "A CLI to build the ATT&CK Mappings Explorer."
 authors = ["TODO <todo@mitre.org>"]
 packages = [
-             { include = "mappings_explorer", from="./src" },
-             { include = "mapex_convert", from="./src" },
-             { include = "mapex", from="./src" }
-           ]
+  { include = "mappings_explorer", from = "./src" },
+  { include = "mapex_convert", from = "./src" },
+  { include = "mapex", from = "./src" },
+]
 readme = "README.md"
 license = "Apache-2.0"
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
 ]
 repository = "https://github.com/center-for-threat-informed-defense/mappings-explorer"
 
@@ -28,6 +28,7 @@ types-pyyaml = "^6.0.12.12"
 types-requests = "^2.31.0.6"
 jsonschema = "^4.19.1"
 termcolor = "^2.3.0"
+lunr = "^0.7.0.post1"
 
 [tool.poetry.group.dev.dependencies]
 bandit = "1.7.0"

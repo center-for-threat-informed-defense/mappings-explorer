@@ -1,44 +1,67 @@
-<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="{{url_prefix}}" class="logo d-flex align-items-center">
-        <img src="{{url_prefix}}static/img/CTID-brand.png" alt="">
-        <h1 class="d-flex align-items-center">MAPPINGS <span style="margin-left: 5px; color: #C2EAF6;"> Explorer</span></h1>
-      </a>
+{% block navigation %}
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+<div
+  class="container-fluid container-xl d-flex align-items-center justify-content-between"
+>
+  <a href="{{url_prefix}}" class="logo d-flex align-items-center">
+    <img src="{{url_prefix}}static/img/CTID-brand.png" alt="" />
+    <h1 class="d-flex align-items-center">
+      MAPPINGS <span style="margin-left: 5px; color: #c2eaf6"> Explorer</span>
+    </h1>
+  </a>
 
-      <nav id="navbar" class="navbar">
+  <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  <nav id="navbar" class="navbar">
+    <ul>
+      <li class="dropdown"><a href="#"><span>ABOUT</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-          <li><a href="{{url_prefix}}" class="active">HOME</a></li>
-          <li class="dropdown"><a href="#"><span>ATT&CK OBJECTS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Tactics</a></li>
-              <li><a href="#">Techniques</a></li>
-              <li><a href="#">Data Sources/ Data Components</a></li>
-              <li><a href="#">Groups</a></li>
-              <li><a href="#">Search All ATT&CK Objects</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>MAPPING CONTROLS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="{{url_prefix}}external">External Mappings Home</a></li>
-              <li><a href="{{url_prefix}}external/veris/">VERIS</a></li>
-              <li><a href="{{url_prefix}}external/nist/">NIST 800-53</a></li>
-              <li><a href="{{url_prefix}}external/cve/">CVE</a></li>
-              <li><a href="{{url_prefix}}external/aws/">Amazon Web Services (AWS)</a></li>
-              <li><a href="{{url_prefix}}external/gcp/">Google Cloud Platform (GCP)</a></li>
-              <li><a href="{{url_prefix}}external/azure/">Azure</a></li>
-            </ul>
-          </li>
-          <li style="padding: 10px;">
-            <div class="input-group rounded">
-              <input type="search" class="search-input form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-              <span class="input-group-text border-0 bg-primary" id="search-addon">
-                <img src="{{url_prefix}}static/img/search-white.svg" alt="search" style="height: 20px;"/>
-              </span>
-            </div>
-          </li>
+          <li><a href="{{url_prefix}}about/">Overview</a></li>
+          <li><a href="{{url_prefix}}about/methodology/">Methodology</a></li>
+          <li><a href="{{url_prefix}}about/use-cases/">Use Cases</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </li>
+      <li class="dropdown"><a href="#"><span>ATT&CK OBJECTS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+        <ul>
+          <li><a href="{{url_prefix}}external/matrix/">ATT&CK Matrix</a></li>
+          <li><a href="#">Tactics</a></li>
+          <li><a href="#">Techniques</a></li>
+          <li><a href="#">Groups</a></li>
+          <li><a href="#">Data Sources</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a href="#"><span>MAPPING CONTROLS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+        <ul>
+          <li><a href="{{url_prefix}}external">About Mappings</a></li>
+          <li><a href="{{url_prefix}}external/aws/">Amazon Web Services (AWS)</a></li>
+          <li><a href="{{url_prefix}}external/azure/">Azure</a></li>
+          <li><a href="{{url_prefix}}external/cve/">CVE</a></li>
+          <li><a href="{{url_prefix}}external/gcp/">Google Cloud Platform (GCP)</a></li>
+          <li><a href="{{url_prefix}}external/nist/">NIST 800-53</a></li>
+          <li><a href="{{url_prefix}}external/veris/">VERIS</a></li>
+        </ul>
+      </li>
+      <li style="padding: 10px;">
+        <div class="input-group rounded">
+          <input type="search" class="search-input form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <span class="input-group-text border-0 bg-primary" id="search-addon">
+            <img src="{{url_prefix}}static/img/search-white.svg" alt="search" style="height: 20px;"/>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<script>
+  function navSearchWebsite(url) {
+    console.log("searching website");
+    window.location.href = `${url}?search=${document.getElementById("nav-search-input").value}`;
+  }
+  function navHandleKeypress(event, url) {
+    if (event.key === "Enter") {
+      navSearchWebsite(url);
+    }
+  }
+</script>
 
-    </div>
+{% endblock navigation %}
