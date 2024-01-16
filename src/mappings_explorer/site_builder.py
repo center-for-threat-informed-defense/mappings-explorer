@@ -660,7 +660,13 @@ def build_attack_pages(projects, url_prefix):
             / ("domain-" + attack_domain.lower())
         )
         external_dir.mkdir(parents=True, exist_ok=True)
-
+        build_technique_landing_page(
+            url_prefix=url_prefix,
+            parent_dir=external_dir,
+            attack_version=attack_version,
+            attack_domain=attack_domain,
+            techniques=all_techniques,
+        )
         for technique in all_techniques:
             if technique.id:
                 build_technique_page(
@@ -705,8 +711,34 @@ def build_technique_page(
     print("          Created technique page " + technique.id)
 
 
+def build_technique_landing_page(
+    url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
+):
+    headers = [
+        ("id", "ATT&CK ID"),
+        ("label", "ATT&CK Name"),
+        ("num_mappings", "Number of Mappings"),
+    ]
+    dir = parent_dir / "techniques"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Techniques",
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=techniques,
+    )
+    stream.dump(str(output_path))
+    print("          Created technique landing page ")
+
+
 def build_matrix(url_prefix, projects):
-    external_dir = PUBLIC_DIR / "external" / "matrix"
+    external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
 
