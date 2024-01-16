@@ -2569,29 +2569,18 @@ td a:hover {
 
 .select-selected {
   background-color: white;
-  padding: 0.8rem 1rem;
+  padding: 12px 16px;
   font-weight: 700;
   font-size: 18px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #bdbdbd;
-}
-
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 20px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: var(--color-text) transparent transparent transparent;
-}
-
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent var(--color-text) transparent;
-  top: 10px;
+  /** for the dropdown indicator */
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  box-shadow: 2px 2px 2px #bdbdbd;
 }
 
 /*style the items (options), including the selected item:*/
@@ -2774,7 +2763,8 @@ td a:hover {
   }
 
   .toggle-subtechniques-btn:hover {
-    background-color: #5c6fc6;
+    background-color: var(--color-primary);
+    color: var(--color-text);
   }
 
   .matrix-table-container {
@@ -2803,9 +2793,10 @@ td a:hover {
     color: #212c5e;
     padding: 8px;
     width: 120px !important;
-    opacity: 0.9;
+    opacity: 0.95;
     text-overflow: ellipsis !important;
     box-shadow: 2px 2px 10px #ababab;
+    font-size: 12px;
   }
 
   .header-row {
