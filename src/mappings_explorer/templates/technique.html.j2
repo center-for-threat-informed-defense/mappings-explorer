@@ -16,22 +16,41 @@
       </div>
     </div>
   </section>
-  <section id="attack-table" class="mapping-table">
+  <section id="mappings-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="row">
             <div class="col-lg-4 col-md-12">
-            <h2 style="width: max-content">ATT&CK Technique Mappings</h2>
+            <h2 style="width: max-content">Mappings</h2>
             </div>
             <div class="col-lg-8 col-md-12" style="margin-left: auto;">
             {% include "_badge-section.html.j2" %}
             </div>
         </div>
         <div class="col-12">
-            {{ macros.table(headers, mappings) }}
+            {{ macros.table(headers, mappings, url_prefix) }}
         </div>
       </div>
     </div>
   </section>
+  {% if subtechniques %}
+  <section id="attack-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+            <h2 style="width: max-content">ATT&CK Subtechniques</h2>
+            </div>
+            <div class="col-lg-8 col-md-12" style="margin-left: auto;">
+            {% include "_badge-section.html.j2" %}
+            </div>
+        </div>
+        <div class="col-12">
+            {{ macros.table(technique_headers, subtechniques, url_prefix) }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
 </div>
 {% endblock content %}
