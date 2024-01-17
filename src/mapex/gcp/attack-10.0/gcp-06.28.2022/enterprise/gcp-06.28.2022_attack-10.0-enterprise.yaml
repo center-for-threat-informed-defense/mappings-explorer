@@ -10,7 +10,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1566
   attack_object_name: Phishing
   capability_description: Virus Total
@@ -24,7 +24,7 @@ mapping_objects:
     If the document is infected, the service moves it to a quarantined bucket; otherwise
     the document is moved into another bucket that holds uninfected scanned documents.'
   group: virus_total
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
   - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
@@ -41,7 +41,7 @@ mapping_objects:
     data to help analyze suspicious files, URLs, domains, and IP addresses to detect
     cybersecurity threats. '
   group: virus_total
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
   - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
@@ -58,7 +58,7 @@ mapping_objects:
     data to help analyze suspicious files, URLs, domains, and IP addresses to detect
     cybersecurity threats. '
   group: virus_total
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
   - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
@@ -76,7 +76,7 @@ mapping_objects:
     visualization tool built on top of the VirusTotal data set. It analyzes the relationship
     between files, URLs, domains, IP addresses, and other items encountered.
   group: virus_total
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
   - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
@@ -97,7 +97,7 @@ mapping_objects:
     bucket; otherwise the document is moved into another bucket that holds uninfected
     scanned documents.
   group: virus_total
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/architecture/automating-malware-scanning-for-documents-uploaded-to-cloud-storage
   - https://cloud.google.com/chronicle/docs/investigation/view-virustotal-information
@@ -117,7 +117,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: null
   attack_object_name: null
   capability_description: Deployment Manager
@@ -129,7 +129,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1565.003
   attack_object_name: Runtime Data Manipulation
   capability_description: Confidential VM and Compute Engine
@@ -139,7 +139,7 @@ mapping_objects:
     Standard (AES) engine. The AES engine encrypts data as it is written to DRAM or
     shared between sockets, and decrypts it when data is read.
   group: confidential_vm_and_compute_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/confidential-vm/docs/about-cvm#security_and_privacy_features
   related_score: ''
@@ -157,7 +157,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1552
   attack_object_name: Unsecured Credentials
   capability_description: Cloud Hardware Security Module (HSM)
@@ -167,7 +167,7 @@ mapping_objects:
     are difficult to mitigate, so a partial score was granted for this control's medium
     to high coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -183,7 +183,7 @@ mapping_objects:
     Variations of this technique are difficult to mitigate, so a partial score was
     granted for this control's medium to high coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -200,7 +200,7 @@ mapping_objects:
     mitigate, so a partial score was granted for this control's medium to high coverage
     factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -217,7 +217,7 @@ mapping_objects:
     to mitigate, so a partial score was granted for this control's medium to high
     coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -233,7 +233,7 @@ mapping_objects:
     technique are difficult to mitigate, so a partial score was granted for this control's
     medium to high coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -249,7 +249,7 @@ mapping_objects:
     of this technique are difficult to mitigate, so a partial score was granted for
     this control's medium to high coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -266,7 +266,7 @@ mapping_objects:
     are difficult to mitigate, so a partial score was granted for this control's medium
     to high coverage factor.
   group: cloud_hardware_security_module_(hsm)
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kms/docs/hsm
   related_score: ''
@@ -282,7 +282,7 @@ mapping_objects:
     control helps protect the issuing Certificate Authority with the use of Google's
     IAM and policy controls.
   group: certificate_authority_service
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/certificate-authority-service/docs
   related_score: ''
@@ -297,7 +297,7 @@ mapping_objects:
     to elevate privileges through manipulation of IAM or access policies. This monitoring
     can be fine tuned to specific assets, policies, and organizations.
   group: cloud_asset_inventory
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/asset-inventory/docs/overview
   related_score: ''
@@ -313,7 +313,7 @@ mapping_objects:
     of additional accounts. This monitoring can be fine tuned to specific assets,
     policies, and organizations.
   group: cloud_asset_inventory
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/asset-inventory/docs/overview
   related_score: ''
@@ -328,7 +328,7 @@ mapping_objects:
     to elevate privileges through manipulation of IAM or access policies. This monitoring
     can be fine tuned to specific assets, policies, and organizations.
   group: cloud_asset_inventory
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/asset-inventory/docs/overview
   related_score: ''
@@ -343,7 +343,7 @@ mapping_objects:
     to elevate privileges through manipulation of IAM or access policies. This monitoring
     can be fine tuned to specific assets, policies, and organizations.
   group: cloud_asset_inventory
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/asset-inventory/docs/overview
   related_score: ''
@@ -357,7 +357,7 @@ mapping_objects:
   comments: 'This control may mitigate or prevent stolen application access tokens
     from occurring. '
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -371,7 +371,7 @@ mapping_objects:
   comments: This control may mitigate application access token theft if the application
     is configured to retrieve temporary security credentials using an IAM role.
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -384,7 +384,7 @@ mapping_objects:
   capability_id: Identity Aware Proxy
   comments: Control can detect potentially malicious applications
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -402,7 +402,7 @@ mapping_objects:
     by the configuration of access controls and firewalls, allowing limited access
     to systems.
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -419,7 +419,7 @@ mapping_objects:
     to access the application. This control can mitigate against adversaries that
     try to obtain credentials of accounts, including cloud accounts.
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -432,7 +432,7 @@ mapping_objects:
   capability_id: Identity Aware Proxy
   comments: 'Protects access to applications hosted within cloud and other premises. '
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -454,7 +454,7 @@ mapping_objects:
     the application Firewalls may be used to limit exposure of applications to prevent
     exploit traffic from reaching the application.'
   group: identity_aware_proxy
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iap
   related_score: ''
@@ -471,7 +471,7 @@ mapping_objects:
     against exploitation and is not effective against zero day attacks, vulnerabilities
     with no available patch, and other end-of-life packages.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -487,7 +487,7 @@ mapping_objects:
     in various Linux OS packages (e.g., Debian, Ubuntu, Alpine, RHEL, CentOS, National
     Vulnerability Database)
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -505,7 +505,7 @@ mapping_objects:
     against exploitation and is not effective against zero day attacks, vulnerabilities
     with no available patch, and other end-of-life packages.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -523,7 +523,7 @@ mapping_objects:
     against exploitation and is not effective against zero day attacks, vulnerabilities
     with no available patch, and other end-of-life packages.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -539,7 +539,7 @@ mapping_objects:
     Docker containers. This information can be used to detect malicious implanted
     images in the environment. This control does not directly protect against exploitation.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -555,7 +555,7 @@ mapping_objects:
     Docker containers. This information can be used to detect malicious implanted
     images in the environment. This control does not directly protect against exploitation.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -570,7 +570,7 @@ mapping_objects:
   comments: Once this control is deployed, it can detect variations to store system
     packages and container images.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -586,7 +586,7 @@ mapping_objects:
     packages and images stored in the repository, which adversaries may target to
     establish persistence while evading cyber defenses.
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -603,7 +603,7 @@ mapping_objects:
     adversary-controlled code (e.g., Debian, Ubuntu, Alpine, RHEL, CentOS, National
     Vulnerability Database)
   group: artifact_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-analysis/docs/container-analysis
   - https://cloud.google.com/container-analysis/docs/container-scanning-overview
@@ -619,7 +619,7 @@ mapping_objects:
     the security of GKE clusters, including: Locked down firewall, read-only filesystem,
     limited user accounts, and disabled root login.'
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -635,7 +635,7 @@ mapping_objects:
     the security of GKE clusters, including: Read-only filesystem, limited user accounts,
     and disabled root login.'
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -652,7 +652,7 @@ mapping_objects:
     support a strong security posture. The Benchmark is tied to a specific Kubernetes
     release.
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -667,7 +667,7 @@ mapping_objects:
   comments: Kubernetes role-based access control (RBAC), uses granular permissions
     to control access to resources within projects and objects within Kubernetes clusters.
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -683,7 +683,7 @@ mapping_objects:
     [Center for Internet Security (CIS)]. This control may avoid privileged containers
     and running containers as root.
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -700,7 +700,7 @@ mapping_objects:
     With the right permissions, an adversary could escalate to remote code execution
     in the Kubernetes cluster.
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -715,7 +715,7 @@ mapping_objects:
   comments: After scanning for vulnerabilities, this control may alert personnel of
     tampered container images that could be running in a Kubernetes cluster.
   group: google_kubernetes_engine
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/kubernetes-engine/docs/concepts/access-control
   - https://cloud.google.com/kubernetes-engine/docs/concepts/cis-benchmarks#how_to_audit_benchmarks
@@ -734,7 +734,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1137
   attack_object_name: Office Application Startup
   capability_description: Cloud IDS
@@ -749,7 +749,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -771,7 +771,7 @@ mapping_objects:
     threat detection technology which constantly updates to detect against variations
     of these cyber-attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -793,7 +793,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -815,7 +815,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -837,7 +837,7 @@ mapping_objects:
     Network''s advanced threat detection technology which constantly updates to detect
     against the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -859,7 +859,7 @@ mapping_objects:
     on Palo Alto Network''s advanced threat detection technology which constantly
     updates to detect against variations of these cyber-attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -881,7 +881,7 @@ mapping_objects:
     threat detection technology which constantly updates to detect against the latest
     known variations of these crypto-mining  attacks'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -903,7 +903,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -925,7 +925,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -947,7 +947,7 @@ mapping_objects:
     threat detection technology which constantly updates to detect against the latest
     known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -969,7 +969,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -991,7 +991,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1014,7 +1014,7 @@ mapping_objects:
     advanced threat detection technology which constantly updates to detect against
     the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1036,7 +1036,7 @@ mapping_objects:
     threat detection technology which constantly updates to detect against a variety
     of denial-of-service attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1061,7 +1061,7 @@ mapping_objects:
     threat detection technology which constantly updates to detect against variations
     of these cyber-attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1084,7 +1084,7 @@ mapping_objects:
     based on Palo Alto Network''s advanced threat detection technology which constantly
     updates to detect against the latest known variations of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1106,7 +1106,7 @@ mapping_objects:
     detection technology which constantly updates to detect against variations of
     these cyber-attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1128,7 +1128,7 @@ mapping_objects:
     technology which constantly updates to detect against the latest known variations
     of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1150,7 +1150,7 @@ mapping_objects:
     technology which constantly updates to detect against the latest known variations
     of these attacks.'
   group: cloud_ids
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/intrusion-detection-system
   - https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/threat-prevention/threat-signatures
@@ -1169,7 +1169,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: null
   attack_object_name: null
   capability_description: Assured Workloads
@@ -1181,7 +1181,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1580
   attack_object_name: Cloud Infrastructure Discovery
   capability_description: ResourceManager
@@ -1193,7 +1193,7 @@ mapping_objects:
     try to discover resources by placing a limit on discovery of these resources with
     least privilege.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1208,7 +1208,7 @@ mapping_objects:
     permissions and roles that may detect compromised user attempts to discover infrastructure
     and resources.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1224,7 +1224,7 @@ mapping_objects:
     configuration of account policies to enable logging and IAM permissions and roles
     to determine your ability to access audit logs data in Google Cloud resources.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1243,7 +1243,7 @@ mapping_objects:
 
     '
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1259,7 +1259,7 @@ mapping_objects:
     configuration of account policies to enable logging and IAM permissions and roles
     to determine your ability to access audit logs data in Google Cloud resources.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1277,7 +1277,7 @@ mapping_objects:
 
     '
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1294,7 +1294,7 @@ mapping_objects:
     to ensure only the expected users have the ability to list IAM identities or otherwise
     discover cloud accounts.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1308,7 +1308,7 @@ mapping_objects:
   comments: This control may mitigate adversaries that attempt to get a listing of
     cloud accounts, such as use of calls to cloud APIs that perform account discovery.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1325,7 +1325,7 @@ mapping_objects:
     to ensure only the expected users have the ability to list IAM identities or otherwise
     discover cloud accounts.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1343,7 +1343,7 @@ mapping_objects:
     that may attempt to discover containers and other resources that are available
     within a containers environment.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1360,7 +1360,7 @@ mapping_objects:
     mitigate adversaries that gather credentials via APIs within a containers environment.
     Since this covers only one of the sub-techniques, it is given a Minimal scoring.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1376,7 +1376,7 @@ mapping_objects:
     access to other resources. This allows configuration of access controls and firewalls
     to limit access to critical systems and domain controllers.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1392,7 +1392,7 @@ mapping_objects:
     access to other resources. This allows configuration of access controls and firewalls
     to limit access to critical systems and domain controllers.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1409,7 +1409,7 @@ mapping_objects:
     to ensure only the expected users have the ability to list IAM identities or otherwise
     discover cloud accounts.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1426,7 +1426,7 @@ mapping_objects:
     to ensure only the expected users have the ability to list IAM identities or otherwise
     discover cloud accounts.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1442,7 +1442,7 @@ mapping_objects:
     access control and ensures proper user permissions are in place to prevent adversaries
     that try to modify and/or disable security tools.
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1460,7 +1460,7 @@ mapping_objects:
 
     '
   group: resourcemanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
   related_score: ''
@@ -1478,7 +1478,7 @@ mapping_objects:
     to respond to Data Manipulation since an organization could restore manipulated
     data back to the latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1498,7 +1498,7 @@ mapping_objects:
     is being backed up, which is a small amount of the time. In this case, it has
     been given a rating of Minimal.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1517,7 +1517,7 @@ mapping_objects:
     stored credentials. However, this does not provide protection for other credentials
     stored on non-Actifio components. This has resulted in a score of partial.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1534,7 +1534,7 @@ mapping_objects:
     However, this only provides protection for Actifio components, rather than all
     components for a system. This has resulted in a score of Partial.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1552,7 +1552,7 @@ mapping_objects:
     to respond to a Data Destruction event since an organization could easily restore
     lost data back to the latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1570,7 +1570,7 @@ mapping_objects:
     to respond to an adversary maliciously encrypting  system data since an organization
     could restore encrypted data back to the latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1588,7 +1588,7 @@ mapping_objects:
     to respond to Defacement since an organization could easily restore defaced images
     back to the latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1606,7 +1606,7 @@ mapping_objects:
     to respond to a Disk Wipe since an organization could restore wiped data back
     to the latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1625,7 +1625,7 @@ mapping_objects:
     and services since an organization could restore system and services back to the
     latest backup.
   group: actifio_go
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://www.actifio.com/solutions/cloud/google/
   related_score: ''
@@ -1641,7 +1641,7 @@ mapping_objects:
     intelligence for account protection. This will help mitigate adversaries from
     gaining access to permission levels.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1657,7 +1657,7 @@ mapping_objects:
     intelligence for account protection. This will help mitigate adversaries from
     gaining access to permission levels.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1673,7 +1673,7 @@ mapping_objects:
     protection against password compromises, requiring the adversary to complete an
     additional authentication method before their access is permitted.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1689,7 +1689,7 @@ mapping_objects:
     protection against password compromises, requiring the adversary to complete an
     additional authentication method before their access is permitted.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1705,7 +1705,7 @@ mapping_objects:
     protection against password compromises, requiring the adversary to complete an
     additional authentication method before their access is permitted.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1722,7 +1722,7 @@ mapping_objects:
     by requiring the adversary to complete an additional authentication process before
     access is permitted. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1739,7 +1739,7 @@ mapping_objects:
     by requiring the adversary to complete an additional authentication process before
     access is permitted. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1756,7 +1756,7 @@ mapping_objects:
     by requiring the adversary to complete an additional authentication process before
     access is permitted. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1772,7 +1772,7 @@ mapping_objects:
     protection against password compromises, requiring the adversary to complete an
     additional authentication method before their access is permitted.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1789,7 +1789,7 @@ mapping_objects:
     Cloud, on your own backend or on another platform; thereby, helping to mitigate
     adversaries from gaining access to systems.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1806,7 +1806,7 @@ mapping_objects:
     Cloud, on your own backend or on another platform; thereby, helping to mitigate
     adversaries from gaining access to systems.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1824,7 +1824,7 @@ mapping_objects:
     with least privilege and adversaries may be prevented from getting access to a
     listing of domain accounts.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1842,7 +1842,7 @@ mapping_objects:
     with least privilege and adversaries may be prevented from getting access to a
     listing of cloud accounts.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1859,7 +1859,7 @@ mapping_objects:
     Cloud. With this, permissions are limited to discover cloud accounts in accordance
     with least privilege.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1876,7 +1876,7 @@ mapping_objects:
     token theft if the application is configured to retrieve temporary security credentials
     using an IAM role.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1890,7 +1890,7 @@ mapping_objects:
   comments: ' This control may mitigate application access token theft if the application
     is  configured to retrieve temporary security credentials using an IAM role. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1904,7 +1904,7 @@ mapping_objects:
   comments: ' This control may mitigate application access token theft if the application
     is  configured to retrieve temporary security credentials using an IAM role. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1921,7 +1921,7 @@ mapping_objects:
     APIs. This control will ensure proper process and file permissions are in place
     to prevent adversaries from disabling or interfering with security/logging services.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1938,7 +1938,7 @@ mapping_objects:
     APIs. This control will ensure proper process and file permissions are in place
     to prevent adversaries from disabling or interfering with security/logging services.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1954,7 +1954,7 @@ mapping_objects:
     MFA can be used to restrict access to cloud resources and APIs and provide protection
     against an adversaries that try to access  user credentials. '
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1972,7 +1972,7 @@ mapping_objects:
     with least privilege and adversaries may be prevented from getting access to a
     listing of domain accounts.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -1988,7 +1988,7 @@ mapping_objects:
     intelligence for account protection. This will help mitigate adversaries from
     gaining access to permission levels.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -2004,7 +2004,7 @@ mapping_objects:
     intelligence for account protection. This will help mitigate adversaries from
     gaining access to permission levels.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -2020,7 +2020,7 @@ mapping_objects:
     intelligence for account protection. This will help mitigate adversaries from
     gaining access to permission levels via files.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -2037,7 +2037,7 @@ mapping_objects:
     Cloud, on your own backend or on another platform; thereby, helping to mitigate
     adversaries from gaining access to systems and accounts.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -2054,7 +2054,7 @@ mapping_objects:
     Cloud, on your own backend or on another platform; thereby, helping to mitigate
     adversaries from gaining access to systems.
   group: identityplatform
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity-platform/docs/concepts
   related_score: ''
@@ -2072,7 +2072,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1552.007
   attack_object_name: Container API
   capability_description: AnthosConfigManagement
@@ -2082,7 +2082,7 @@ mapping_objects:
     Config Management can manage configuration for any Kubernetes API, including policies
     for the Istio service mesh, resource quotas, and access control policies.
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2099,7 +2099,7 @@ mapping_objects:
     in cloud deployments to ensure that adversaries cannot implant malicious code
     to gain access to an environment. '
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2112,7 +2112,7 @@ mapping_objects:
   capability_id: AnthosConfigManagement
   comments: ''
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2129,7 +2129,7 @@ mapping_objects:
     containers. In hindsight this can ensure containers are not running as root by
     default. '
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2147,7 +2147,7 @@ mapping_objects:
     try to deploy new containers with malware or configurations policies that are
     not in compliance with security policies already defined. '
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2163,7 +2163,7 @@ mapping_objects:
     the network traffic inside clusters, denying direct remote access to internal
     systems through the use of network proxies, gateways, and firewalls
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2181,7 +2181,7 @@ mapping_objects:
     namespaces, the host network, and the host file system, which may enable adversaries
     to break out of containers and gain access to the underlying host.
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2197,7 +2197,7 @@ mapping_objects:
     Pods from using the root Linux user. Based on the medium detection coverage, this
     was scored as partial.
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2213,7 +2213,7 @@ mapping_objects:
     Pods from using the root Linux user. Based on the medium detection coverage, this
     sub-technique was scored as partial.
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2229,7 +2229,7 @@ mapping_objects:
     Pods from using the root Linux user. Based on the medium detection coverage, this
     sub-technique was scored as partial.
   group: anthosconfigmanagement
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - 'https://cloud.google.com/anthos-config-management/ '
   related_score: ''
@@ -2247,7 +2247,7 @@ mapping_objects:
     safe sites may be classified in error. This has resulted in an overall score of
     Partial.'
   group: web_risk
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/web-risk/docs/overview
   related_score: ''
@@ -2265,7 +2265,7 @@ mapping_objects:
     safe sites may be classified in error. This has resulted in an overall score of
     Partial.'
   group: web_risk
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/web-risk/docs/overview
   related_score: ''
@@ -2283,7 +2283,7 @@ mapping_objects:
     safe sites may be classified in error. This has resulted in an overall score of
     Partial.'
   group: web_risk
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/web-risk/docs/overview
   related_score: ''
@@ -2301,7 +2301,7 @@ mapping_objects:
     safe sites may be classified in error. This has resulted in an overall score of
     Partial.'
   group: web_risk
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/web-risk/docs/overview
   related_score: ''
@@ -2320,7 +2320,7 @@ mapping_objects:
     However, Cloud CDN doesn''t provide protection against DOS attacks for uncached
     content.'
   group: cloud_cdn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/cdn/docs/overview
   related_score: ''
@@ -2338,7 +2338,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1048
   attack_object_name: Exfiltration Over Alternative Protocol
   capability_description: BeyondCorp Enterprise
@@ -2351,7 +2351,7 @@ mapping_objects:
     dropped. An example includes a rule setting that is used to block files from being
     uploaded via Chrome browser.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2371,7 +2371,7 @@ mapping_objects:
     \ be used to detect and block sensitive data being uploaded to web services via\
     \ web browsers."
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2391,7 +2391,7 @@ mapping_objects:
     \ be used to detect and block sensitive data being uploaded to web services via\
     \ web browsers."
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2407,7 +2407,7 @@ mapping_objects:
     securing your resources at the network-level, access controls are instead applied
     to individual devices and users.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2423,7 +2423,7 @@ mapping_objects:
     is uploaded to Google Cloud for analysis. The Chrome Enterprise connectors must
     be enabled for DLP rules to integrate with Chrome.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2439,7 +2439,7 @@ mapping_objects:
     the date, message ID, subject hash, message body hash, username of the recipient,
     attachment hashes, and your primary domain name. This can be used to block senders.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2456,7 +2456,7 @@ mapping_objects:
     attachment hashes, and your primary domain name. As a result, this can be used
     to block senders.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2472,7 +2472,7 @@ mapping_objects:
     the date, message ID, subject hash, message body hash, username of the recipient,
     attachment hashes, and your primary domain name.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2491,7 +2491,7 @@ mapping_objects:
     policies can determine which pages identified through Chrome violates a rule,
     and end users are prevented from accessing the page.
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2513,7 +2513,7 @@ mapping_objects:
 
     '
   group: beyondcorp_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/beyondcorp-enterprise/docs/overview
   related_score: ''
@@ -2529,7 +2529,7 @@ mapping_objects:
     These recommendations are IAM best practices but must be explicitly implemented
     by a cloud administrator.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2545,7 +2545,7 @@ mapping_objects:
     These recommendations are IAM best practices but must be explicitly implemented
     by a cloud administrator.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2559,7 +2559,7 @@ mapping_objects:
   comments: This control can be used to mitigate malicious attacks of cloud accounts
     by implementing multi-factor authentication techniques or password policies.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2573,7 +2573,7 @@ mapping_objects:
   comments: This control can be used to mitigate malicious attacks of cloud accounts
     by implementing multi-factor authentication techniques or password policies.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2589,7 +2589,7 @@ mapping_objects:
     These recommendations are IAM best practices but must be explicitly implemented
     by a cloud administrator.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2605,7 +2605,7 @@ mapping_objects:
     These recommendations are IAM best practices but must be explicitly implemented
     by a cloud administrator.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2621,7 +2621,7 @@ mapping_objects:
     These recommendations are IAM best practices but must be explicitly implemented
     by a cloud administrator.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2635,7 +2635,7 @@ mapping_objects:
   comments: This control can be used to mitigate malicious attacks of domain accounts
     by implementing multi-factor authentication techniques or password policies.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2649,7 +2649,7 @@ mapping_objects:
   comments: This control can be used to detect adversaries that may try to use Valid
     Accounts to log into remote machines using Secure Shell (SSH).
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2664,7 +2664,7 @@ mapping_objects:
     adversaries and possibly hinder them from gaining access to a victim network or
     a private code repository.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2679,7 +2679,7 @@ mapping_objects:
     adversaries and possibly hinder them from gaining access to a victim network or
     a private code repository.
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2692,7 +2692,7 @@ mapping_objects:
   capability_id: Cloud Identity
   comments: ''
   group: cloud_identity
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/identity
   related_score: ''
@@ -2707,7 +2707,7 @@ mapping_objects:
     through the use of network allow and block lists. However this can be circumvented
     by other techniques.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2723,7 +2723,7 @@ mapping_objects:
     other Layer 7 attributes. Google Cloud Armor detects malicious requests and drops
     them at the edge of Google's infrastructure.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2739,7 +2739,7 @@ mapping_objects:
     at the Google Cloud edge, closest to the source of traffic. This prevents unwelcome
     traffic from consuming resources.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2755,7 +2755,7 @@ mapping_objects:
     at the Google Cloud edge, closest to the source of traffic. This prevents unwelcome
     traffic from consuming resources.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2770,7 +2770,7 @@ mapping_objects:
     can be effective for preventing external remote system discovery. Activity originating
     from inside the trusted network is not mitigated.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2785,7 +2785,7 @@ mapping_objects:
     can be effective for preventing external network service scanning. Network service
     scanning originating from inside the trusted network is not mitigated.
   group: cloud_armor
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/armor
   related_score: ''
@@ -2802,7 +2802,7 @@ mapping_objects:
     single sign on for Windows devices that can leverage two-factor authentication
     and login challenges.
   group: endpoint_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://support.google.com/a/answer/1734200?hl=en
   related_score: ''
@@ -2817,7 +2817,7 @@ mapping_objects:
     from accessing company networks or resources. This control also allows for deletion
     of any compromised accounts and data from compromised endpoints.
   group: endpoint_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://support.google.com/a/answer/1734200?hl=en
   related_score: ''
@@ -2831,7 +2831,7 @@ mapping_objects:
   comments: This control can prevent exfiltration over USB by disabling USB file transfers
     on enrolled Android devices.
   group: endpoint_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://support.google.com/a/answer/1734200?hl=en
   related_score: ''
@@ -2846,7 +2846,7 @@ mapping_objects:
     enrolled devices, preventing exfiltration of sensitive information from compromised
     endpoints to cloud storage.
   group: endpoint_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://support.google.com/a/answer/1734200?hl=en
   related_score: ''
@@ -2862,7 +2862,7 @@ mapping_objects:
     action protects users'' data as it travels over the internet. This control may
     prevent adversaries from sniffing network traffic. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2879,7 +2879,7 @@ mapping_objects:
     prevent adversaries from attempting to position themselves between two or more
     networks and modify traffic. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2893,7 +2893,7 @@ mapping_objects:
   comments: 'This control provides protection against data from being manipulated
     by adversaries through target applications by encrypting important information. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2909,7 +2909,7 @@ mapping_objects:
     Since this control only provides protection against data in transit, it received
     a partial score. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2926,7 +2926,7 @@ mapping_objects:
     prevent adversaries from attempting to position themselves between two or more
     networks and modify traffic. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2942,7 +2942,7 @@ mapping_objects:
     access mechanisms allow users to connect to internal enterprise network resources
     from external locations. '
   group: cloudvpn
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/network-connectivity/docs/vpn/concepts/overview
   related_score: ''
@@ -2955,7 +2955,7 @@ mapping_objects:
   capability_id: Cloud Key Management
   comments: ''
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -2970,7 +2970,7 @@ mapping_objects:
     sub-techniques and procedure examples resulting in a Minimal Coverage score and
     consequently an overall score of Minimal.'
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -2985,7 +2985,7 @@ mapping_objects:
     services and protects against stealing credentials, certificates, keys from the
     organization.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -2998,7 +2998,7 @@ mapping_objects:
   capability_id: Cloud Key Management
   comments: Protects against trust mechanisms and stealing of code signing certificates
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3013,7 +3013,7 @@ mapping_objects:
     services and protects against stealing credentials, certificates, keys from the
     organization.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3027,7 +3027,7 @@ mapping_objects:
   comments: Provides protection against attackers stealing application access tokens
     if they are stored within Cloud KMS.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3042,7 +3042,7 @@ mapping_objects:
     services and protects against stealing credentials, certificates, keys from the
     organization.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3057,7 +3057,7 @@ mapping_objects:
     services and protects against stealing credentials, certificates, keys from the
     organization.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3072,7 +3072,7 @@ mapping_objects:
     sub-techniques and procedure examples resulting in a Minimal Coverage score and
     consequently an overall score of Minimal.
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3087,7 +3087,7 @@ mapping_objects:
     sub-techniques and procedure examples resulting in a Minimal Coverage score and
     consequently an overall score of Minimal.'
   group: cloud_key_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-key-management
   related_score: ''
@@ -3104,7 +3104,7 @@ mapping_objects:
     for authentication to an illegitimate service or website as the key can not be
     transmitted from the hardware device to any other device.
   group: titan_security_key
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/titan-security-key#section-3
   related_score: ''
@@ -3125,7 +3125,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/possible_system_network_connections_discovery__sysmon_windows_logs.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3148,7 +3148,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1547_001_windows_registry_run_keys_startup_folder.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3164,7 +3164,7 @@ mapping_objects:
     \ the command line (e.g., \"schtasks /create\"). \n\nThis technique was scored\
     \ as minimal based on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1053_005_windows_creation_of_scheduled_task.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3189,7 +3189,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/windows/mshta_spwaned_by_svchost_as_seen_in_lethalhta__sysmon.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3207,7 +3207,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1543_001_macos_launch_agent.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3229,7 +3229,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1543_004_macos_launch_daemon.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3252,7 +3252,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1546_001_windows_change_default_file_association.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3278,7 +3278,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/suspicious_run_key_from_download.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3300,7 +3300,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1547_001_windows_registry_run_keys_startup_folder.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3322,7 +3322,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1546_001_windows_change_default_file_association.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3340,7 +3340,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_process_creation.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3363,7 +3363,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1564_001_macos_hidden_files_and_directories.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3387,7 +3387,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/hiding_files_with_attrib_exe.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3412,7 +3412,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/hiding_files_with_attrib_exe.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3434,7 +3434,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/tree/main/soc_prime_rules/threat_hunting/windows'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3450,7 +3450,7 @@ mapping_objects:
     \ IP ranges. \n\nThis technique was scored as minimal based on low or uncertain\
     \ detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/active_directory_security/security/remote_desktop_from_internet__via_audit.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3466,7 +3466,7 @@ mapping_objects:
     \ changes to SID-History. \n\nThis technique was scored as minimal based on low\
     \ or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/active_directory_security/windows/addition_of_sid_history_to_active_directory_object.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3495,7 +3495,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/antivirus/antivirus_password_dumper_detection.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3511,7 +3511,7 @@ mapping_objects:
     \ \nThis technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/gcp_cloudaudit/gcp_custom_role_changes.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3533,7 +3533,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/gcp_cloudaudit/gcp_dns_modification.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3549,7 +3549,7 @@ mapping_objects:
     \ Network Firewall rule changes. \n\nThis technique was scored as minimal based\
     \ on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/gcp_cloudaudit/gcp_firewall_rule_changes.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3571,7 +3571,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_gcs_iam_changes.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3588,7 +3588,7 @@ mapping_objects:
     \ \n\nThis technique was scored as minimal based on low or uncertain detection\
     \ coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_gcs_public_accessible.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3604,7 +3604,7 @@ mapping_objects:
     \ deletion of cloud audit logs. \n\nThis technique was scored as minimal based\
     \ on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_log_deletion.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3626,7 +3626,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/detects_local_user_creation.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3648,7 +3648,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_multifactor_authentication.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3664,7 +3664,7 @@ mapping_objects:
     \ the API (e.g., \"API keys created for a project\"). \n\nThis technique was scored\
     \ as minimal based on low or uncertain detection coverage factor.\n\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/gcp_cloudaudit/gcp_no_project_api_keys.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3687,7 +3687,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/tree/main/gcp_cloudaudit'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3709,7 +3709,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/gcp_cloudaudit/gcp_vpc_network_changes.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3733,7 +3733,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3755,7 +3755,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/info/command_line_regedit.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3777,7 +3777,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/tree/main/soc_prime_rules/threat_hunting/windows'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3802,7 +3802,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/usb_device_plugged.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3820,7 +3820,7 @@ mapping_objects:
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/a_scheduled_task_was_created.yaral\n\
     \nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/mitre_attack/T1053_005_windows_creation_of_scheduled_task.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3842,7 +3842,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_log_deletion.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3869,7 +3869,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3891,7 +3891,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/mavinject_process_injection.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3919,7 +3919,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3936,7 +3936,7 @@ mapping_objects:
     \ technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/cloud_security/proxy/the_gocgle_malicious_campaign.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3953,7 +3953,7 @@ mapping_objects:
     \ technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/cloud_security/proxy/the_gocgle_malicious_campaign.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3970,7 +3970,7 @@ mapping_objects:
     \ technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/cloud_security/proxy/the_gocgle_malicious_campaign.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -3993,7 +3993,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/dns/solarwinds_backdoor_c2_host_name_detected___via_dns.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4010,7 +4010,7 @@ mapping_objects:
     \ on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/tree/main/gcp_cloudaudit\n\
     \nhttps://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_vpc_network_changes.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4032,7 +4032,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_certutil_command.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4057,7 +4057,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/process_creation/fileless_attack_via_regsvr32_exe.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4082,7 +4082,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_certutil_command.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4105,7 +4105,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/detect_enumeration_via_wmi.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4128,7 +4128,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/cmstp_exe_execution_detector__sysmon_behavior.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4144,7 +4144,7 @@ mapping_objects:
     \ technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/process_creation/remote_system_discovery___ping_sweep.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4165,7 +4165,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/process_creation/t1214___credentials_in_registry.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4190,7 +4190,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/windows/formbook_malware__sysmon.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4207,7 +4207,7 @@ mapping_objects:
     \ based on low or uncertain detection coverage factor. \n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/proxy/microsoft_teams_phishing_email.yaral\n\
     \nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/detect_possible_execution_of_phishing_attachment.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4230,7 +4230,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/ioc_sigma/sysmon/detects_malware_acrord32_exe_execution_process.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4247,7 +4247,7 @@ mapping_objects:
     \ on low detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_powershell_parameter_substring.yaral\n\
     \nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/encoded_iex.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4270,7 +4270,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/mixed_other/security/possible_msbuild_abuse__via_cmdline.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4299,7 +4299,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/detection_of_winrs_usage.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4324,7 +4324,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/big_ip/possible_f5_big_ip_tmui_attack_cve_2020_5902_part_2.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4347,7 +4347,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/process_creation/cve_2020_1350_dns_remote_code_exploit__sigred___via_cmdline.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4370,7 +4370,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/process_creation/exploit_for_cve_2015_1641.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4393,7 +4393,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/mavinject_process_injection.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4409,7 +4409,7 @@ mapping_objects:
     \ IDs (e.g., anonymous users changing machine passwords). \n\nThis technique was\
     \ scored as minimal based on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/security/anonymous_user_changed_machine_password.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4430,7 +4430,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/logon_scripts__userinitmprlogonscript.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4453,7 +4453,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/webserver/cve_2018_13379_fortigate_ssl_vpn_arbitrary_file_reading.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4471,7 +4471,7 @@ mapping_objects:
     \ (`.*/config/keystore/.*\\.js.*).\n\nThis technique was scored as minimal based\
     \ on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/webserver/oracle_weblogic_exploit.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4493,7 +4493,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/proactive_exploit_detection/webserver/oracle_weblogic_exploit.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4520,7 +4520,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4545,7 +4545,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/proxy/exploit_framework_user_agent.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4577,7 +4577,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_powershell_parameter_substring.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4599,7 +4599,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_powershell_parameter_substring.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4624,7 +4624,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/security/unusual_solarwinds_child_process__via_cmdline.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4649,7 +4649,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/suspicious/unusual_location_svchost_write.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4667,7 +4667,7 @@ mapping_objects:
     \ function. \n\nThis technique was scored as minimal based on low or uncertain\
     \ detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/linux/possible_bind_or_reverse_shell_via_netcat__auditbeat_for_linux.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4690,7 +4690,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/possible_system_network_configuration_discovery__sysmon_windows_logs.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4712,7 +4712,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/detection_of_com_hijacking.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4732,7 +4732,7 @@ mapping_objects:
     This technique was scored as minimal based on low or uncertain detection coverage
     factor.'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4754,7 +4754,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/antivirus/detects_powershell_attack__via_av_ids.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4777,7 +4777,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/account_discovery_activity_detector__sysmon_behavior.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4800,7 +4800,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/account_discovery_activity_detector__sysmon_behavior.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4817,7 +4817,7 @@ mapping_objects:
     \ was scored as minimal based on low or uncertain detection coverage factor.\n\
     \nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/backup_catalog_deleted.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4840,7 +4840,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/main/soc_prime_rules/threat_hunting/windows/data_exfiltration_attempt_via_bitsadmin.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4869,7 +4869,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4895,7 +4895,7 @@ mapping_objects:
 
     '
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4921,7 +4921,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/ursnif_trojan_detection__cmd_obfuscation.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4938,7 +4938,7 @@ mapping_objects:
     \nThis technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/detect_windows_password_policy_changes.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4960,7 +4960,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/detects_local_user_creation.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -4978,7 +4978,7 @@ mapping_objects:
     ). \n\nThis technique was scored as minimal based on low or uncertain detection\
     \ coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/underminer_exploit_kit_delivers_malware.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5000,7 +5000,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/file_creation_time_changed_via_powershell.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5018,7 +5018,7 @@ mapping_objects:
     \ Windows machines (e.g., lsass\\.exe). \n\nThis technique was scored as minimal\
     \ based on low or uncertain detection coverage factor.\n\nhttps://github.com/chronicle/detection-rules/tree/main/soc_prime_rules/threat_hunting/windows"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5036,7 +5036,7 @@ mapping_objects:
     This technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/office_macro_starts_cmd.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5061,7 +5061,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/office_applications_suspicious_process_activity.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5087,7 +5087,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/sysmon/fake_zoom_installer_exe__devil_shadow_botnet.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5111,7 +5111,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/possible_system_network_configuration_discovery__sysmon_windows_logs.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5134,7 +5134,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/possible_system_network_connections_discovery__sysmon_windows_logs.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5158,7 +5158,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/possible_system_owner_user_discovery__sysmon_windows_logs.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5188,7 +5188,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/psexec_service_start.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5212,7 +5212,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/suspicious_psexec_execution.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5229,7 +5229,7 @@ mapping_objects:
     This technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/main/gcp_cloudaudit/gcp_log_deletion.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5247,7 +5247,7 @@ mapping_objects:
     \ technique was scored as minimal based on low or uncertain detection coverage\
     \ factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/smbexec_py_service_installation.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5265,7 +5265,7 @@ mapping_objects:
     \ coverage factor.\n\nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/suspicious_calculator_usage.yaral\n\
     \nhttps://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/abusing_attrib_exe_to_change_file_attributes.yaral"
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5288,7 +5288,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/sticky_key_like_backdoor_usage.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5311,7 +5311,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/suspicious_curl_usage.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5334,7 +5334,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/suspicious_curl_usage.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5357,7 +5357,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/suspicious_driver_load_from_temp.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5380,7 +5380,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/windows/usage_of_sysinternals_tools.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5404,7 +5404,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/lolbas_wsl_exe__via_cmdline.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5427,7 +5427,7 @@ mapping_objects:
 
     https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/wmi_spawning_windows_powershell.yaral'
   group: chronicle
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/chronicle/docs/overview
   - https://github.com/chronicle/detection-rules
@@ -5444,7 +5444,7 @@ mapping_objects:
     Google personnel who administer and allow customers to host their workloads on
     the cloud may be abused by insider threats or compromise of Google.
   group: access_transparency
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview
   related_score: ''
@@ -5458,7 +5458,7 @@ mapping_objects:
   comments: This control may expose and detect malicious access of data from cloud
     storage by compromised Google personnel accounts.
   group: access_transparency
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/cloud-provider-access-management/access-transparency/docs/overview
   related_score: ''
@@ -5474,7 +5474,7 @@ mapping_objects:
     of firmware, Measured Boot to establish a known good boot baseline, and Integrity
     Monitoring to measure subsequent boots to previously established baselines. '
   group: shielded_vm
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/shielded-vm/docs/shielded-vm
   related_score: ''
@@ -5489,7 +5489,7 @@ mapping_objects:
     of the boot process, such as malicious modification of the Master Boot Record
     or UEFI. This control does not mitigate rootkits that exist in the kernel or userland.
   group: shielded_vm
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/shielded-vm/docs/shielded-vm
   related_score: ''
@@ -5507,7 +5507,7 @@ mapping_objects:
     because it only protects against known fallback channels and not channels yet
     to be identified.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5524,7 +5524,7 @@ mapping_objects:
     mapping is given a score of Partial because it does not protect against discovering
     endpoints within the network and behind the firewall.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5543,7 +5543,7 @@ mapping_objects:
     of the sub-techniques (5 of 6), it cannot protect against an adversary using a
     trusted host that is permitted to use remote services as part of an attack.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5562,7 +5562,7 @@ mapping_objects:
     a score of Partial because the known-bad IP addresses and domains would need to
     be known in advance.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5580,7 +5580,7 @@ mapping_objects:
     because it only protects against network service scanning attacks that originate
     from outside the firewall and not from within network protected by the firewall.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5600,7 +5600,7 @@ mapping_objects:
     be known in advance and AWS Network Firewall wouldn't have deep packet inspection
     visibility into encrypted non-C2 protocols.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5616,7 +5616,7 @@ mapping_objects:
     be used to block malicious or unwanted traffic leveraging application layer protocols.
     Given this supports all sub-techniques, the mapping is given a score of Significant.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5635,7 +5635,7 @@ mapping_objects:
     only blocks known bad IP addresses and domains and does not protect against unknown
     ones.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5651,7 +5651,7 @@ mapping_objects:
     be used to block malicious or unwanted traffic leveraging non-application layer
     protocols. Given this, the mapping is given a score of Significant.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5669,7 +5669,7 @@ mapping_objects:
     Partial because it only protects against known channels and not channels yet to
     be identified.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5690,7 +5690,7 @@ mapping_objects:
     of legitimate external remote services (e.g., it cannot protect against an adversary
     using a trusted host that is permitted to use remote services as part of an attack).
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5708,7 +5708,7 @@ mapping_objects:
     is given a score of Significant because Google Cloud Firewalls can block this
     traffic or restrict where it can go to.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5727,7 +5727,7 @@ mapping_objects:
     to protect against traffic signaling among hosts within the network and behind
     the firewall.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5746,7 +5746,7 @@ mapping_objects:
     hosts, it cannot protect against an adversary using a trusted host that is permitted
     to use remote access software as part of an attack.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5764,7 +5764,7 @@ mapping_objects:
     is given a score of Minimal because often times it is necessary to block the traffic
     at an Internet Service Provider or Content Provider Network level.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5785,7 +5785,7 @@ mapping_objects:
     (3 of 4) and because the source of the attack would have to be known before rules
     could be put in place to protect against it.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5804,7 +5804,7 @@ mapping_objects:
     outside the virtual private cloud where Google Cloud Firewalls protect, the mapping
     is only given a score of Partial.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5822,7 +5822,7 @@ mapping_objects:
     (1 of 5) and don't do anything to protect against TFTP booting among hosts within
     the network and behind the firewall.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5839,7 +5839,7 @@ mapping_objects:
     and prevent adversaries from using non-standard ports. As a result, this mapping
     is given a score of Significant.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5857,7 +5857,7 @@ mapping_objects:
     because it only blocks known bad IP addresses and domains and does not protect
     against unknown ones.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5877,7 +5877,7 @@ mapping_objects:
     scanning that originate from outside the firewall, and it does not protect against
     phishing.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5896,7 +5896,7 @@ mapping_objects:
     active scanning attacks that originate from outside the firewall and not from
     within network protected by the firewall.
   group: firewalls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/firewalls
   related_score: ''
@@ -5911,7 +5911,7 @@ mapping_objects:
     was not part of the original container image. Because of the high threat detection
     coverage and near-real time temporal factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -5927,7 +5927,7 @@ mapping_objects:
     container image. Because of the high threat detection coverage and near-real time
     temporal factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -5944,7 +5944,7 @@ mapping_objects:
     bound to a remote socket. Because of the high threat detection coverage and near-real
     time temporal factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -5960,7 +5960,7 @@ mapping_objects:
     from a remote system (e.g., "web shell"). Because of the high threat detection
     coverage and near-real time temporal factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -5978,7 +5978,7 @@ mapping_objects:
     without binaries. Because of the high threat detection coverage provided by the
     ML model and near-real time temporal factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -5996,7 +5996,7 @@ mapping_objects:
     threat detection coverage provided by the ML model and near-real time temporal
     factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6012,7 +6012,7 @@ mapping_objects:
     indicate active Log4j vulnerable to remote code execution. Because of the near-real
     time temporal factor for detection this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6028,7 +6028,7 @@ mapping_objects:
     a host. Because of the near-real time temporal factor when detecting cyber-attacks
     this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6046,7 +6046,7 @@ mapping_objects:
     sensitive data. Because of the near-real time temporal factor to detect against
     this cyber-attack the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6064,7 +6064,7 @@ mapping_objects:
     of a target environment. Because of the near-real time temporal factor this control
     was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6082,7 +6082,7 @@ mapping_objects:
     to an external or public resource. Because of the near-real time temporal factor
     this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6100,7 +6100,7 @@ mapping_objects:
     or public resource. Because of the near-real time temporal factor this control
     was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6118,7 +6118,7 @@ mapping_objects:
     to an external resource. Because of the near-real time temporal factor this control
     was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6136,7 +6136,7 @@ mapping_objects:
     to maintain persistence. Because of the near-real time temporal factor to detect
     against this cyber-attack the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6154,7 +6154,7 @@ mapping_objects:
     near-real time temporal factor to detect against this cyber-attack the control
     was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6170,7 +6170,7 @@ mapping_objects:
     account password leak. Because of the near-real time temporal factor to detect
     against this cyber-attack the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6186,7 +6186,7 @@ mapping_objects:
     crypto-mining domains and IP addresses. Because of the near-real time temporal
     factor to detect against this cyber-attack the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6204,7 +6204,7 @@ mapping_objects:
     near-real time temporal factor to detect against this cyber-attack this was graded
     as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6223,7 +6223,7 @@ mapping_objects:
     and there is more information that could be gathered during a network sniffing
     attacks. '
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6242,7 +6242,7 @@ mapping_objects:
     instance or container. This technique was graded as significant due to the high
     detect coverage against varying forms of this attack.  '
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6259,7 +6259,7 @@ mapping_objects:
     defense evasion. This subtechnique was graded as significant due to the high detect
     coverage and near-real time temporal factor.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6276,7 +6276,7 @@ mapping_objects:
     This technique was graded as significant due to the high detect coverage and near
     real-time temporal factor.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6293,7 +6293,7 @@ mapping_objects:
     (e.g., bootkit). This technique was graded as significant due to the high detect
     coverage and near real-time temporal factor.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6310,7 +6310,7 @@ mapping_objects:
     (e.g., rootkit). This technique was graded as significant due to the real-time
     temporal factor.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6328,7 +6328,7 @@ mapping_objects:
     technique was graded as significant due to the high detect coverage and real-time
     temporal factor.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6346,7 +6346,7 @@ mapping_objects:
     or maintain persistence. Because of the temporal factor to detect this attack,
     the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6363,7 +6363,7 @@ mapping_objects:
     generated accounts used for initial access or to maintain persistence. Because
     of the temporal factor to detect this attack the control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6380,7 +6380,7 @@ mapping_objects:
     used to remove evidence and evade defenses. Because of the near-real time temporal
     factor this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6398,7 +6398,7 @@ mapping_objects:
     to remove evidence and evade defenses. Because of the near-real time temporal
     factor and high detection coverage this control was graded as significant.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6415,7 +6415,7 @@ mapping_objects:
     Because of the real time temporal factor when detecting access to secure storage
     objects this control was graded as partial.
   group: security_command_center
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview
   - https://github.com/GoogleCloudPlatform/security-analytics
@@ -6432,7 +6432,7 @@ mapping_objects:
     data from improperly secured cloud storage. This technique was rated as significant
     due to the high protect coverage factor.
   group: cloud_storage
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/storage/docs/encryption
   - https://cloud.google.com/storage
@@ -6449,7 +6449,7 @@ mapping_objects:
     customer data-at-rest. This technique was rated as significant due to the high
     protect coverage factor.
   group: cloud_storage
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/storage/docs/encryption
   - https://cloud.google.com/storage
@@ -6466,7 +6466,7 @@ mapping_objects:
     customer data-at-rest. This technique was rated as partial due to the medium to
     high protect coverage factor against variations of this attack.
   group: cloud_storage
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/storage/docs/encryption
   - https://cloud.google.com/storage
@@ -6483,7 +6483,7 @@ mapping_objects:
     customer data-at-rest. This technique was rated as partial due to the medium to
     high protect coverage factor against variations of this attack.
   group: cloud_storage
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/storage/docs/encryption
   - https://cloud.google.com/storage
@@ -6502,7 +6502,7 @@ mapping_objects:
     can scan new changes to data. This control is able to scan Google Cloud Storage,
     BigQuery tables, and Datastore. '
   group: cloud_data_loss_prevention
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/dlp/docs
   related_score: ''
@@ -6516,7 +6516,7 @@ mapping_objects:
   comments: Based on configured policies, Binary Authorization allows or blocks deployment
     of container images.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6532,7 +6532,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6548,7 +6548,7 @@ mapping_objects:
     key to generate the attestation report. At deploy time, the enforcer uses the
     attester's public key to verify the signature or will block this process.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6564,7 +6564,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6580,7 +6580,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6596,7 +6596,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6612,7 +6612,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6628,7 +6628,7 @@ mapping_objects:
     time, the enforcer uses the attester's public key to verify the signature in the
     attestation.
   group: binary_authorization
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/binary-authorization/docs/overview
   - https://cloud.google.com/binary-authorization/docs/attestations
@@ -6647,7 +6647,7 @@ mapping_objects:
   related_score: null
   score_category: null
   score_value: null
-  status: not_mappable
+  status: non_mappable
 - attack_object_id: T1098
   attack_object_name: Account Manipulation
   capability_description: AdvancedProtectionProgram
@@ -6656,7 +6656,7 @@ mapping_objects:
     authentication. This provides significant protection against unauthorized users
     from accessing and manipulating accounts to retain access.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6671,7 +6671,7 @@ mapping_objects:
     authentication. This provides significant protection against Brute Force techniques
     attempting to gain access to accounts.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6689,7 +6689,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6706,7 +6706,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6724,7 +6724,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6742,7 +6742,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6761,7 +6761,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6778,7 +6778,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6797,7 +6797,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6816,7 +6816,7 @@ mapping_objects:
 
     '
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6831,7 +6831,7 @@ mapping_objects:
     authentication. This provides significant protection against Brute Force techniques
     attempting to gain access to accounts.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6846,7 +6846,7 @@ mapping_objects:
     authentication. This provides significant protection against Brute Force techniques
     attempting to gain access to accounts.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6861,7 +6861,7 @@ mapping_objects:
     authentication. This provides significant protection against Brute Force techniques
     attempting to gain access to accounts.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6876,7 +6876,7 @@ mapping_objects:
     authentication. This provides significant protection against Brute Force techniques
     attempting to gain access to accounts.
   group: advancedprotectionprogram
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://landing.google.com/advancedprotection/
   related_score: ''
@@ -6893,7 +6893,7 @@ mapping_objects:
     with proper authorization. Applications may have to be modified to take advantage
     of Secret Manager and may not always be possible to utilize. '
   group: secret_manager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/secret-manager/docs/overview
   related_score: ''
@@ -6908,7 +6908,7 @@ mapping_objects:
     If an cloud user account, endpoint, or application is compromised, they may have
     limited access to passwords stored in Secret Manager.
   group: secret_manager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/secret-manager/docs/overview
   related_score: ''
@@ -6922,7 +6922,7 @@ mapping_objects:
   comments: 'This control provides a central, secure location for storage of credentials
     to reduce the possibility of attackers discovering unsecured credentials. '
   group: secret_manager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/secret-manager/docs/overview
   related_score: ''
@@ -6938,7 +6938,7 @@ mapping_objects:
     being transmitted in clear-text or by insecure encryption methods. Any communication
     between applications or endpoints after access to Secret Manager may not be secure.
   group: secret_manager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/secret-manager/docs/overview
   related_score: ''
@@ -6952,7 +6952,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning techniques
     used to gain further information about the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -6966,7 +6966,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning techniques
     used to gain further information about the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -6980,7 +6980,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning techniques
     used to gain further information about the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -6994,7 +6994,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning and
     lateral movement techniques used to exploit the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7008,7 +7008,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning and
     lateral movement techniques used to exploit the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7022,7 +7022,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning and
     lateral movement techniques used to exploit the target environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7036,7 +7036,7 @@ mapping_objects:
   comments: VPC security perimeters can limit the impact from active scanning on private
     networks and lateral movement techniques used to exploit target environments.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7050,7 +7050,7 @@ mapping_objects:
   comments: VPC further segments the environment by providing configurable granular
     access controls which help limit user communications to critical systems.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7065,7 +7065,7 @@ mapping_objects:
     access controls which help limit user permissions to communicate with critical
     systems.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7080,7 +7080,7 @@ mapping_objects:
     by creating virtual segmentation that limits the data and information broadcast
     on the network.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7094,7 +7094,7 @@ mapping_objects:
   comments: VPC security perimeters can isolate resources and limit the impact from
     lateral movement techniques used to access sensitive data.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7108,7 +7108,7 @@ mapping_objects:
   comments: VPC security perimeters can segment private resources to further reduce
     user access and operate in a logically separate hosting environment.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7123,7 +7123,7 @@ mapping_objects:
     based on user identity or organizational ingress/egress policies (e.g., instance,
     subnet).
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7137,7 +7137,7 @@ mapping_objects:
   comments: VPC security perimeters can segment private resources to deny traffic
     based on organizational policy.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7152,7 +7152,7 @@ mapping_objects:
     and egress traffic based on organizational policies. Because this tool does not
     prevent attacks from valid accounts or compromised machines, it was scored as  minimal.
   group: virtual_private_cloud
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs
   related_score: ''
@@ -7167,7 +7167,7 @@ mapping_objects:
     in accordance with least privilege principles and thereby limits the accounts
     that can be used for account discovery.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7185,7 +7185,7 @@ mapping_objects:
     control may mitigate adversaries that try to enumerate users access keys through
     VM or snapshots.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7201,7 +7201,7 @@ mapping_objects:
     has. This can be used to limit the permissions associated with creating and modifying
     platform images or containers that adversaries may try to access.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7216,7 +7216,7 @@ mapping_objects:
     code to gain access to an environment. The IAM audit logs can be used to receive
     data access and activity logs who has accessed to certain resources.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7231,7 +7231,7 @@ mapping_objects:
     cloud infrastructure and may limit the discovery value of the dashboard in the
     event of a compromised account.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7249,7 +7249,7 @@ mapping_objects:
     control may mitigate adversaries that try to gain access to permissions from modifying
     infrastructure components.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7266,7 +7266,7 @@ mapping_objects:
     users know what principals have access to resources based on its corresponding
     IAM allow policies.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7284,7 +7284,7 @@ mapping_objects:
     control may mitigate adversaries that try to perform privilege escalation via
     permission levels and software exploitation.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7301,7 +7301,7 @@ mapping_objects:
     place to prevent adversaries from disabling or interfering with security/logging
     services.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7317,7 +7317,7 @@ mapping_objects:
     Defense Evasion. IAM Recommender helps enforce least privilege principals to ensure
     that permission levels are properly managed.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7330,7 +7330,7 @@ mapping_objects:
   capability_id: Policy Intelligence
   comments: ''
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7346,7 +7346,7 @@ mapping_objects:
     not being detected. This control may be used to routinely check role account permissions
     in IAM audit logs.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7364,7 +7364,7 @@ mapping_objects:
     control may mitigate adversaries that try to perform privilege escalation via
     permission levels and software exploitation.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7380,7 +7380,7 @@ mapping_objects:
     Defense Evasion. IAM Recommender helps enforce least privilege principals to ensure
     that permission levels are properly managed.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7395,7 +7395,7 @@ mapping_objects:
     in accordance with least privilege principles and thereby limits the accounts
     that can be used for account discovery.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7411,7 +7411,7 @@ mapping_objects:
     not gain access to user accounts. Enforce the principle of least privilege by
     ensuring that principals have only the permissions that they actually need.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7427,7 +7427,7 @@ mapping_objects:
     not gain access to user accounts. Enforce the principle of least privilege by
     ensuring that principals have only the permissions that they actually need.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7444,7 +7444,7 @@ mapping_objects:
     and remove excess permissions from users' principals, improving their resources'
     security configurations.
   group: policy_intelligence
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/policy-intelligence
   related_score: ''
@@ -7468,7 +7468,7 @@ mapping_objects:
 
     '
   group: recaptcha_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/recaptcha-enterprise
   related_score: ''
@@ -7489,7 +7489,7 @@ mapping_objects:
 
     '
   group: recaptcha_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/recaptcha-enterprise
   related_score: ''
@@ -7511,7 +7511,7 @@ mapping_objects:
 
     '
   group: recaptcha_enterprise
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/recaptcha-enterprise
   related_score: ''
@@ -7528,7 +7528,7 @@ mapping_objects:
     networks also cannot be accessed by user accounts that are not within the VPC
     network perimeter.
   group: vpc_service_controls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs/overview
   related_score: ''
@@ -7543,7 +7543,7 @@ mapping_objects:
     accounts by limiting egress of data from accounts and services contained within
     the VPC network perimeter. '
   group: vpc_service_controls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs/overview
   related_score: ''
@@ -7558,7 +7558,7 @@ mapping_objects:
     limiting access to accounts and services contained within the VPC network perimeter
     that contains those cloud storage objects. '
   group: vpc_service_controls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs/overview
   related_score: ''
@@ -7574,7 +7574,7 @@ mapping_objects:
     cloud resource or service outside of the perimeter but may be moved to third party
     services or storage.
   group: vpc_service_controls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs/overview
   related_score: ''
@@ -7589,7 +7589,7 @@ mapping_objects:
     This control is not able to protect metadata, such as cloud storage bucket names
     but can protect against discovery of the contents of a storage bucket. '
   group: vpc_service_controls
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/vpc-service-controls/docs/overview
   related_score: ''
@@ -7605,7 +7605,7 @@ mapping_objects:
     to recommend smart access control permissions within an organization. This control
     can  help mitigate adversaries from gaining access to unwanted account.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7621,7 +7621,7 @@ mapping_objects:
     to recommend smart access control permissions within an organization. This control
     can  help mitigate adversaries from gaining access to unwanted account.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7638,7 +7638,7 @@ mapping_objects:
     are available in cloud accounts. Received a score of Minimal because it only covers
     one of the sub-techniques.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7655,7 +7655,7 @@ mapping_objects:
     are available in cloud accounts. Received a score of Minimal because it only covers
     one of the sub-techniques.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7672,7 +7672,7 @@ mapping_objects:
     by requiring the adversary to complete an additional authentication process before
     access is permitted.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7685,7 +7685,7 @@ mapping_objects:
   capability_id: Identity and Access Management
   comments: ''
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7703,7 +7703,7 @@ mapping_objects:
     by requiring the adversary to complete an additional authentication process before
     access is permitted.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7719,7 +7719,7 @@ mapping_objects:
     discovery. This control receives a minimal score since it only covers one of the
     few sub-techniques.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7737,7 +7737,7 @@ mapping_objects:
     use of cloud accounts and gaining access to them.  This control receives a minimal
     score since it only covers one of the few sub-techniques.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7755,7 +7755,7 @@ mapping_objects:
     that may attempt to discover resources including images and containers by controlling
     access to  images by granting permissions to the bucket for a registry.
   group: identity_and_access_management
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/iam
   related_score: ''
@@ -7772,7 +7772,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7789,7 +7789,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7806,7 +7806,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7823,7 +7823,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7840,7 +7840,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7857,7 +7857,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7874,7 +7874,7 @@ mapping_objects:
     vulnerabilities (including zero day vulnerabilities) this control has resulted
     in a score of Partial.
   group: vmmanager
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/compute/docs/vm-manager
   related_score: ''
@@ -7891,7 +7891,7 @@ mapping_objects:
     threat protection coverage and scan results being available 48 hours after completion,
     this control was scored as partial.
   group: container_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-registry/docs/container-analysis
   - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
@@ -7908,7 +7908,7 @@ mapping_objects:
     code. Due to the medium threat protection coverage and temporal factor, this control
     was scored as partial.
   group: container_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-registry/docs/container-analysis
   - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
@@ -7926,7 +7926,7 @@ mapping_objects:
     a malicious implanted images in the environment. Due to the medium threat detection
     coverage and temporal factor, the control was scored as partial.
   group: container_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-registry/docs/container-analysis
   - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
@@ -7944,7 +7944,7 @@ mapping_objects:
     medium threat detection coverage and temporal factor, the control was scored as
     partial.
   group: container_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-registry/docs/container-analysis
   - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
@@ -7962,7 +7962,7 @@ mapping_objects:
     Due to the medium threat detection coverage and temporal factor, the control was
     scored as partial.
   group: container_registry
-  mapping_type: 19017ce2-4a5d-4ba2-979e-aa4838253407
+  mapping_type: technique_scores
   references:
   - https://cloud.google.com/container-registry/docs/container-analysis
   - https://cloud.google.com/artifact-registry/docs/transition/transition-from-gcr
@@ -8029,7 +8029,7 @@ metadata:
   mapping_framework: gcp
   mapping_framework_version: 06/28/2022
   mapping_types:
-    19017ce2-4a5d-4ba2-979e-aa4838253407:
+    technique_scores:
       description: ''
       name: technique_scores
   mapping_version: '1'

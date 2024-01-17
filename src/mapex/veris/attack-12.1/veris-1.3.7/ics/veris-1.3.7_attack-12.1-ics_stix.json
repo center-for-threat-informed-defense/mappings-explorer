@@ -1,1 +1,2475 @@
-{"type": "bundle", "id": "bundle--88ad3843-542b-4e5a-bd18-ee1f8ebacd2d", "spec_version": "2.1", "created": "2023-12-08T14:32:10.895764", "modified": "2023-12-08T14:32:10.895772", "objects": [{"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "name": "action.hacking.variety.Abuse of functionality", "created": "2023-12-08T14:32:14.012947", "modified": "2023-12-08T14:32:14.012957"}, {"type": "relationship", "id": "relationship--22280a63-7298-4439-ac85-54ef3808b84f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.012973", "modified": "2023-12-08T14:32:14.012975", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "name": "action.hacking.variety.Evade Defenses", "created": "2023-12-08T14:32:14.012989", "modified": "2023-12-08T14:32:14.012991"}, {"type": "relationship", "id": "relationship--ebe2e3a4-6577-496c-a763-837cb7cacb0b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013001", "modified": "2023-12-08T14:32:14.013004", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "name": "attribute.availability.variety.Interruption", "created": "2023-12-08T14:32:14.013014", "modified": "2023-12-08T14:32:14.013016"}, {"type": "relationship", "id": "relationship--732bfff9-9dcf-4e50-a690-841a2c008955", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013026", "modified": "2023-12-08T14:32:14.013028", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--336eb4d9-4413-4540-8bfd-4c444943697f", "name": "attribute.integrity.variety.Hardware tampering", "created": "2023-12-08T14:32:14.013039", "modified": "2023-12-08T14:32:14.013041"}, {"type": "relationship", "id": "relationship--3e9877a5-e269-4494-91c2-5e2da5538fe4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013051", "modified": "2023-12-08T14:32:14.013053", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--336eb4d9-4413-4540-8bfd-4c444943697f", "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"}, {"type": "relationship", "id": "relationship--f5f3b1af-faa2-4ec4-b7bd-6a8973af3693", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013067", "modified": "2023-12-08T14:32:14.013069", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--e6c31185-8040-4267-83d3-b217b8a92f07"}, {"type": "relationship", "id": "relationship--b846600d-dcb2-4096-a8f5-396f995c85e8", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013081", "modified": "2023-12-08T14:32:14.013083", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--aa190498-29db-4193-b676-b14754186884", "name": "action.hacking.variety.DoS", "created": "2023-12-08T14:32:14.013094", "modified": "2023-12-08T14:32:14.013096"}, {"type": "relationship", "id": "relationship--b73d6a23-64de-44bf-8537-86e91287d544", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013106", "modified": "2023-12-08T14:32:14.013108", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--aa190498-29db-4193-b676-b14754186884", "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--43f8ffca-d61f-47f2-a515-09dd2cf3717c", "name": "action.malware.variety.DoS", "created": "2023-12-08T14:32:14.013119", "modified": "2023-12-08T14:32:14.013121"}, {"type": "relationship", "id": "relationship--8631db5c-a2e3-4977-bf5b-66c30bf7822f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013132", "modified": "2023-12-08T14:32:14.013134", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43f8ffca-d61f-47f2-a515-09dd2cf3717c", "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "name": "attribute.availability.variety.Loss", "created": "2023-12-08T14:32:14.013145", "modified": "2023-12-08T14:32:14.013147"}, {"type": "relationship", "id": "relationship--024a6845-f599-4a32-b9a7-6684b07e8ff6", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013158", "modified": "2023-12-08T14:32:14.013160", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"}, {"type": "relationship", "id": "relationship--7bb47c73-eaa7-4048-a573-737e1eb973e4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013173", "modified": "2023-12-08T14:32:14.013175", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--4d43478c-0090-42a0-a153-fbb37d4d59ef", "name": "action.malware.vector.Web application - drive-by", "created": "2023-12-08T14:32:14.013186", "modified": "2023-12-08T14:32:14.013189"}, {"type": "relationship", "id": "relationship--3d4e5845-876d-4cc0-be47-5a68be3ad3b6", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013199", "modified": "2023-12-08T14:32:14.013201", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--4d43478c-0090-42a0-a153-fbb37d4d59ef", "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "name": "action.social.variety.Other", "created": "2023-12-08T14:32:14.013213", "modified": "2023-12-08T14:32:14.013216"}, {"type": "relationship", "id": "relationship--5317579c-d33f-44ed-9d2b-0eb3b51977d0", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013227", "modified": "2023-12-08T14:32:14.013229", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--56d73a72-3bd5-4d7e-bbe7-2fe7016bee6c", "name": "action.social.vector.Web application", "created": "2023-12-08T14:32:14.013241", "modified": "2023-12-08T14:32:14.013243"}, {"type": "relationship", "id": "relationship--1b85b323-6e63-426d-adba-803adb9db5a1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013254", "modified": "2023-12-08T14:32:14.013256", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--56d73a72-3bd5-4d7e-bbe7-2fe7016bee6c", "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--1a57a9e6-c00e-44e4-aba2-a3e86b14a3f9", "name": "value_chain.distribution.variety.Website", "created": "2023-12-08T14:32:14.013269", "modified": "2023-12-08T14:32:14.013271"}, {"type": "relationship", "id": "relationship--f5bda11a-8439-47f4-8387-4f1d568fdd8a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013282", "modified": "2023-12-08T14:32:14.013284", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1a57a9e6-c00e-44e4-aba2-a3e86b14a3f9", "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"}, {"type": "relationship", "id": "relationship--4957d7ab-696a-42ce-a7ba-2117d4145d88", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013297", "modified": "2023-12-08T14:32:14.013299", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--5a2610f6-9fff-41e1-bc27-575ca20383d4"}, {"type": "relationship", "id": "relationship--b9629a48-0256-451f-bf91-73966d3431dc", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013313", "modified": "2023-12-08T14:32:14.013315", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--b0628bfc-5376-4a38-9182-f324501cb4cf"}, {"type": "relationship", "id": "relationship--d8da512e-94df-42a9-b020-85d047c021b1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013328", "modified": "2023-12-08T14:32:14.013330", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--ab390887-afc0-4715-826d-b1b167d522ae"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--dc1aefb3-8900-4c24-8439-1d7703313457", "name": "value_chain.targeting.variety.Weaknesses", "created": "2023-12-08T14:32:14.013344", "modified": "2023-12-08T14:32:14.013346"}, {"type": "relationship", "id": "relationship--c0823727-9573-4742-ab47-f348fee6006b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013358", "modified": "2023-12-08T14:32:14.013360", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dc1aefb3-8900-4c24-8439-1d7703313457", "target_ref": "attack-pattern--ab390887-afc0-4715-826d-b1b167d522ae"}, {"type": "relationship", "id": "relationship--5fabf1e7-16be-4cc4-a006-2a5da00051d7", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013373", "modified": "2023-12-08T14:32:14.013375", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--ead7bd34-186e-4c79-9a4d-b65bcce6ed9d"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--bc933208-410b-4a8c-906c-aa49c444fa9c", "name": "attribute.integrity.variety.Software installation", "created": "2023-12-08T14:32:14.013389", "modified": "2023-12-08T14:32:14.013391"}, {"type": "relationship", "id": "relationship--4f181de8-104f-4873-9d28-d506246f830f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013403", "modified": "2023-12-08T14:32:14.013405", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--bc933208-410b-4a8c-906c-aa49c444fa9c", "target_ref": "attack-pattern--ead7bd34-186e-4c79-9a4d-b65bcce6ed9d"}, {"type": "relationship", "id": "relationship--29764049-2f58-4a19-890a-5b6c992dc539", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013419", "modified": "2023-12-08T14:32:14.013421", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "name": "action.hacking.variety.Backdoor", "created": "2023-12-08T14:32:14.013436", "modified": "2023-12-08T14:32:14.013438"}, {"type": "relationship", "id": "relationship--f8547c16-ee64-4a63-a1c1-b399033fd65e", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013450", "modified": "2023-12-08T14:32:14.013452", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--87e221bb-a421-499b-a1a8-79ca447817ee", "name": "action.hacking.vector.Backdoor", "created": "2023-12-08T14:32:14.013467", "modified": "2023-12-08T14:32:14.013469"}, {"type": "relationship", "id": "relationship--33baf5b9-43a2-42d8-b719-6dac3ed287da", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013481", "modified": "2023-12-08T14:32:14.013483", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--87e221bb-a421-499b-a1a8-79ca447817ee", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--eeb359a0-9b64-4673-a40c-48d2eaead5c4", "name": "action.hacking.vector.Command shell", "created": "2023-12-08T14:32:14.013498", "modified": "2023-12-08T14:32:14.013500"}, {"type": "relationship", "id": "relationship--80e4fc4b-ad21-469b-88ba-5159f51c25dc", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013513", "modified": "2023-12-08T14:32:14.013515", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--eeb359a0-9b64-4673-a40c-48d2eaead5c4", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--ed4373db-d33b-43cf-a513-2963d78b747a", "name": "value_chain.targeting.variety.Misconfigurations", "created": "2023-12-08T14:32:14.013530", "modified": "2023-12-08T14:32:14.013532"}, {"type": "relationship", "id": "relationship--1aabaf58-084d-4c6b-ade9-c40144fda2cd", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013545", "modified": "2023-12-08T14:32:14.013547", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--ed4373db-d33b-43cf-a513-2963d78b747a", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "relationship", "id": "relationship--33590a4d-bfd9-4989-b764-3837cae849cf", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013566", "modified": "2023-12-08T14:32:14.013568", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dc1aefb3-8900-4c24-8439-1d7703313457", "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"}, {"type": "relationship", "id": "relationship--8708eb44-7d93-4765-9ad1-823de4da56f3", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013582", "modified": "2023-12-08T14:32:14.013584", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"}, {"type": "relationship", "id": "relationship--5e8ca710-7757-4def-bf28-ad8dd33010ef", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013603", "modified": "2023-12-08T14:32:14.013606", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--cf4dc7ad-d337-488b-8f44-94ae7e503eb0", "name": "value_chain.non-distribution services.variety.C2", "created": "2023-12-08T14:32:14.013621", "modified": "2023-12-08T14:32:14.013623"}, {"type": "relationship", "id": "relationship--785a12c9-a4a5-4a32-b492-f4f4f4f94a30", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013637", "modified": "2023-12-08T14:32:14.013639", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cf4dc7ad-d337-488b-8f44-94ae7e503eb0", "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"}, {"type": "relationship", "id": "relationship--258e7fcd-ea91-4b14-a888-1bc356e46332", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013654", "modified": "2023-12-08T14:32:14.013656", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"}, {"type": "relationship", "id": "relationship--f2533dbf-2bab-4315-ad17-e9a5791320e7", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013673", "modified": "2023-12-08T14:32:14.013676", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "name": "attribute.integrity.variety.Alter behavior", "created": "2023-12-08T14:32:14.013692", "modified": "2023-12-08T14:32:14.013694"}, {"type": "relationship", "id": "relationship--2a9364c4-ffa0-45f8-93f0-a2af0d1c6c3b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013708", "modified": "2023-12-08T14:32:14.013710", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"}, {"type": "relationship", "id": "relationship--370e0eb0-ff0f-4a4f-b22f-dcda3360ec30", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013726", "modified": "2023-12-08T14:32:14.013728", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1e9a13ba-ed11-4ce7-8549-6e327e10c466", "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"}, {"type": "relationship", "id": "relationship--7d2ecb8c-df18-4bfc-84c4-7a8a27cfc056", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013749", "modified": "2023-12-08T14:32:14.013751", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"}, {"type": "relationship", "id": "relationship--758d8d52-6e1c-4d2f-b165-89703f1ded23", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013772", "modified": "2023-12-08T14:32:14.013774", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--eeb359a0-9b64-4673-a40c-48d2eaead5c4", "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"}, {"type": "relationship", "id": "relationship--5e2dfc51-ce13-47fb-9c80-8b1dd4719b63", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013795", "modified": "2023-12-08T14:32:14.013797", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "relationship", "id": "relationship--e1e3c468-a553-4081-ba65-222a192220b4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013817", "modified": "2023-12-08T14:32:14.013819", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--87e221bb-a421-499b-a1a8-79ca447817ee", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--91903f36-5a9f-4907-b9ef-06baad33551a", "name": "action.malware.variety.Backdoor or C2", "created": "2023-12-08T14:32:14.013836", "modified": "2023-12-08T14:32:14.013838"}, {"type": "relationship", "id": "relationship--c0548d05-facd-4baa-bd87-ee7b9446c592", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013853", "modified": "2023-12-08T14:32:14.013855", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--91903f36-5a9f-4907-b9ef-06baad33551a", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "relationship", "id": "relationship--8ebecdc2-a2b5-4037-a3f3-b2a473421a87", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013874", "modified": "2023-12-08T14:32:14.013876", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "name": "action.social.vector.Other", "created": "2023-12-08T14:32:14.013894", "modified": "2023-12-08T14:32:14.013896"}, {"type": "relationship", "id": "relationship--702cb21f-50d3-4e2c-9cb5-d211a0863cd3", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013911", "modified": "2023-12-08T14:32:14.013913", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--32f61f4a-eca5-421d-923f-9575c0ed8711", "name": "value_chain.targeting.variety.Vulnerabilities", "created": "2023-12-08T14:32:14.013931", "modified": "2023-12-08T14:32:14.013933"}, {"type": "relationship", "id": "relationship--b70b64c7-8c34-47b5-b099-6b11f3b3ab44", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013948", "modified": "2023-12-08T14:32:14.013950", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--32f61f4a-eca5-421d-923f-9575c0ed8711", "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"}, {"type": "relationship", "id": "relationship--e3350acb-461c-4a6b-b252-2497a6ba682a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.013971", "modified": "2023-12-08T14:32:14.013973", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--6a78d6f2-ea47-4250-8741-01a87b388321", "name": "action.hacking.variety.Exploit misconfig", "created": "2023-12-08T14:32:14.013992", "modified": "2023-12-08T14:32:14.013994"}, {"type": "relationship", "id": "relationship--e0371272-2011-4518-a1e5-70472013e1ee", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014011", "modified": "2023-12-08T14:32:14.014013", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--6a78d6f2-ea47-4250-8741-01a87b388321", "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"}, {"type": "relationship", "id": "relationship--37680324-ba97-46e7-8539-4856304dd26c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014049", "modified": "2023-12-08T14:32:14.014051", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"}, {"type": "relationship", "id": "relationship--34f68be1-28af-43d6-9150-798f8b95143d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014075", "modified": "2023-12-08T14:32:14.014077", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"}, {"type": "relationship", "id": "relationship--6647c96c-48cd-4ad2-b3a0-6bcbd5807730", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014099", "modified": "2023-12-08T14:32:14.014101", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"}, {"type": "relationship", "id": "relationship--cad94999-c09d-499e-9b32-46d19113ecd2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014123", "modified": "2023-12-08T14:32:14.014125", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--87e221bb-a421-499b-a1a8-79ca447817ee", "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"}, {"type": "relationship", "id": "relationship--6b56b621-f929-4a5a-b6c8-a59317d1980d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014144", "modified": "2023-12-08T14:32:14.014146", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"}, {"type": "relationship", "id": "relationship--f14df484-87e8-4d40-a18e-3f92c0a206cb", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014171", "modified": "2023-12-08T14:32:14.014173", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--02a436e7-c642-46c8-8e90-6d743647d760", "name": "value_chain.distribution.variety.Compromised server", "created": "2023-12-08T14:32:14.014196", "modified": "2023-12-08T14:32:14.014198"}, {"type": "relationship", "id": "relationship--f88d4bf8-ea90-4b96-aa33-77be75952e69", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014214", "modified": "2023-12-08T14:32:14.014216", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--02a436e7-c642-46c8-8e90-6d743647d760", "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"}, {"type": "relationship", "id": "relationship--cc531cdc-704d-4939-b1d7-743f61572af6", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014238", "modified": "2023-12-08T14:32:14.014240", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--f54481ec-6ccd-4e81-b72f-9e478c4b77bd", "name": "attribute.availability.variety.Degradation", "created": "2023-12-08T14:32:14.014259", "modified": "2023-12-08T14:32:14.014261"}, {"type": "relationship", "id": "relationship--37b96c24-f0a8-4cd6-a267-a1ffaf84ce77", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014277", "modified": "2023-12-08T14:32:14.014279", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--f54481ec-6ccd-4e81-b72f-9e478c4b77bd", "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "name": "attribute.integrity.variety.Modify data", "created": "2023-12-08T14:32:14.014300", "modified": "2023-12-08T14:32:14.014302"}, {"type": "relationship", "id": "relationship--99d960b0-bf55-4e30-9738-6d5d4da182ea", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014318", "modified": "2023-12-08T14:32:14.014320", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"}, {"type": "relationship", "id": "relationship--eef755d8-32f9-4d81-a22e-56d2b2e26d14", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014342", "modified": "2023-12-08T14:32:14.014345", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--054c842f-4ad2-4ae0-97e4-405efeb09b8e", "target_ref": "attack-pattern--1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1"}, {"type": "relationship", "id": "relationship--f8b5e80e-eb6d-4333-a9df-825471b6754d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014372", "modified": "2023-12-08T14:32:14.014375", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--f54481ec-6ccd-4e81-b72f-9e478c4b77bd", "target_ref": "attack-pattern--1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--58560b7a-c1c6-4cc0-ac6b-a214801fbc4e", "name": "action.hacking.variety.Brute force", "created": "2023-12-08T14:32:14.014394", "modified": "2023-12-08T14:32:14.014396"}, {"type": "relationship", "id": "relationship--5fe3b594-e1cb-40ae-8fb6-6d60e7d23855", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014413", "modified": "2023-12-08T14:32:14.014415", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--58560b7a-c1c6-4cc0-ac6b-a214801fbc4e", "target_ref": "attack-pattern--8e7089d3-fba2-44f8-94a8-9a79c53920c4"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--5fb086dd-0f00-4b8d-a52d-1683aa08d777", "name": "action.hacking.variety.Disable controls", "created": "2023-12-08T14:32:14.014435", "modified": "2023-12-08T14:32:14.014437"}, {"type": "relationship", "id": "relationship--697c2712-a6b8-4989-9365-b8f92752024d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014455", "modified": "2023-12-08T14:32:14.014457", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5fb086dd-0f00-4b8d-a52d-1683aa08d777", "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "name": "action.social.variety.Evade Defenses", "created": "2023-12-08T14:32:14.014477", "modified": "2023-12-08T14:32:14.014480"}, {"type": "relationship", "id": "relationship--e8e56463-c1c2-4aca-b9bd-a2288ba1aa93", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014497", "modified": "2023-12-08T14:32:14.014499", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"}, {"type": "relationship", "id": "relationship--09e5b361-a099-4d61-ae89-8811d9e6bb7b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014524", "modified": "2023-12-08T14:32:14.014526", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"}, {"type": "relationship", "id": "relationship--be43312d-9b61-45b6-adbe-1b99be5ef29f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014546", "modified": "2023-12-08T14:32:14.014548", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--aa190498-29db-4193-b676-b14754186884", "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"}, {"type": "relationship", "id": "relationship--06b64529-2590-4f56-827a-b67ac8359b0f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014570", "modified": "2023-12-08T14:32:14.014572", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43f8ffca-d61f-47f2-a515-09dd2cf3717c", "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"}, {"type": "relationship", "id": "relationship--7a2a0808-99b1-4422-8dd1-8a36d8ff38aa", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014593", "modified": "2023-12-08T14:32:14.014595", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"}, {"type": "relationship", "id": "relationship--f3069c69-0ca2-4d57-986e-77522c2a0586", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014616", "modified": "2023-12-08T14:32:14.014618", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--aa190498-29db-4193-b676-b14754186884", "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"}, {"type": "relationship", "id": "relationship--72b98186-e8f3-4a1d-b5ad-b02bbd02dc5d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014639", "modified": "2023-12-08T14:32:14.014641", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43f8ffca-d61f-47f2-a515-09dd2cf3717c", "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"}, {"type": "relationship", "id": "relationship--b36f40d8-2705-4693-ae7e-065ead1caf79", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014664", "modified": "2023-12-08T14:32:14.014666", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"}, {"type": "relationship", "id": "relationship--2513f609-6cb6-4c24-a963-20bcfa97f146", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014687", "modified": "2023-12-08T14:32:14.014689", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--aa190498-29db-4193-b676-b14754186884", "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"}, {"type": "relationship", "id": "relationship--9e2403d9-0f87-4b51-9c3f-baac8f0b97b1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014710", "modified": "2023-12-08T14:32:14.014712", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43f8ffca-d61f-47f2-a515-09dd2cf3717c", "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"}, {"type": "relationship", "id": "relationship--5d0623cc-3d54-4d63-ab21-0c56b6a3ad4f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014733", "modified": "2023-12-08T14:32:14.014735", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"}, {"type": "relationship", "id": "relationship--1ceaad4d-3678-4114-804f-3132f3ab9d6b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014755", "modified": "2023-12-08T14:32:14.014758", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc"}, {"type": "relationship", "id": "relationship--5b7d619d-37ae-439a-a982-83a25160337d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014778", "modified": "2023-12-08T14:32:14.014780", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "target_ref": "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc"}, {"type": "relationship", "id": "relationship--e4a908df-2d09-4c28-bcc3-c731453e2b32", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014799", "modified": "2023-12-08T14:32:14.014801", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"}, {"type": "relationship", "id": "relationship--b3bce1b1-9517-4f14-ac6d-6e27c4179bb1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014822", "modified": "2023-12-08T14:32:14.014824", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"}, {"type": "relationship", "id": "relationship--01f4fc33-289a-4e46-b1c1-4a9d4a0793e9", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014850", "modified": "2023-12-08T14:32:14.014853", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"}, {"type": "relationship", "id": "relationship--6ee3e318-396c-41b8-a0b3-928c90b86ba8", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014873", "modified": "2023-12-08T14:32:14.014875", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"}, {"type": "relationship", "id": "relationship--94a0b238-5424-4df6-acea-943168b2f299", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014896", "modified": "2023-12-08T14:32:14.014898", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"}, {"type": "relationship", "id": "relationship--5342352a-dad8-445b-803e-ebb48ee9b41c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014924", "modified": "2023-12-08T14:32:14.014927", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"}, {"type": "relationship", "id": "relationship--dcace8c0-e55a-4c3e-a268-4515f79504d2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.014947", "modified": "2023-12-08T14:32:14.014949", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--59c90237-31d5-4664-bdfb-36197fc16b38", "name": "action.hacking.variety.Exploit vuln", "created": "2023-12-08T14:32:14.014990", "modified": "2023-12-08T14:32:14.014992"}, {"type": "relationship", "id": "relationship--15c990f5-11e7-4a51-b512-cba8b93d9fa9", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015012", "modified": "2023-12-08T14:32:14.015015", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--59c90237-31d5-4664-bdfb-36197fc16b38", "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--89ad1e1c-3fad-43fb-b9b2-22fc93c95874", "name": "action.malware.variety.Evade Defenses", "created": "2023-12-08T14:32:14.015038", "modified": "2023-12-08T14:32:14.015040"}, {"type": "relationship", "id": "relationship--98c790fa-b074-4cf3-8c9f-c4a0e6fccda1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015061", "modified": "2023-12-08T14:32:14.015063", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--89ad1e1c-3fad-43fb-b9b2-22fc93c95874", "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"}, {"type": "relationship", "id": "relationship--bd2d7092-ee63-40da-adfc-5daa238ab938", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015096", "modified": "2023-12-08T14:32:14.015098", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"}, {"type": "relationship", "id": "relationship--f7280d61-cc71-4b7b-aec4-50cdd796c58e", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015122", "modified": "2023-12-08T14:32:14.015124", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7692acc4-ac44-4839-914f-a73b00cb07c5", "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"}, {"type": "relationship", "id": "relationship--f499ac60-bb0b-4694-b1be-e2d0455a73f6", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015160", "modified": "2023-12-08T14:32:14.015162", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--89ad1e1c-3fad-43fb-b9b2-22fc93c95874", "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--5d894886-8666-47cc-9888-a6685aed007a", "name": "action.malware.variety.Modify data", "created": "2023-12-08T14:32:14.015186", "modified": "2023-12-08T14:32:14.015189"}, {"type": "relationship", "id": "relationship--e86c8049-e82f-4433-9b15-635a5ddd4894", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015209", "modified": "2023-12-08T14:32:14.015211", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5d894886-8666-47cc-9888-a6685aed007a", "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"}, {"type": "relationship", "id": "relationship--160cb7f8-1b66-4723-a220-d00920d03120", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015244", "modified": "2023-12-08T14:32:14.015246", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--1a3b2735-c2d1-4397-8f81-90e3174081ce", "name": "attribute.integrity.variety.Log tampering", "created": "2023-12-08T14:32:14.015271", "modified": "2023-12-08T14:32:14.015273"}, {"type": "relationship", "id": "relationship--7341b4f5-9d7a-4a63-b327-7af05618e9f2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015293", "modified": "2023-12-08T14:32:14.015296", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1a3b2735-c2d1-4397-8f81-90e3174081ce", "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"}, {"type": "relationship", "id": "relationship--c24d7f2e-ee71-4629-b41e-16db5d0172b4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015326", "modified": "2023-12-08T14:32:14.015328", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--6a78d6f2-ea47-4250-8741-01a87b388321", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--ab5ad9a0-c359-48ab-ace1-d86fb59334c7", "name": "action.hacking.vector.Web application", "created": "2023-12-08T14:32:14.015353", "modified": "2023-12-08T14:32:14.015355"}, {"type": "relationship", "id": "relationship--5dc2f6dd-6bce-4570-8213-83a7d994aace", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015376", "modified": "2023-12-08T14:32:14.015378", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--ab5ad9a0-c359-48ab-ace1-d86fb59334c7", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--16321e0a-d407-45a9-bcf8-a9998ab76c93", "name": "action.malware.variety.Exploit misconfig", "created": "2023-12-08T14:32:14.015403", "modified": "2023-12-08T14:32:14.015405"}, {"type": "relationship", "id": "relationship--98b19459-0190-44d0-b547-92ec707019c8", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015426", "modified": "2023-12-08T14:32:14.015428", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--16321e0a-d407-45a9-bcf8-a9998ab76c93", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--04a1eaab-f315-41d4-a5e3-31dd95089c70", "name": "action.malware.vector.Web application", "created": "2023-12-08T14:32:14.015454", "modified": "2023-12-08T14:32:14.015456"}, {"type": "relationship", "id": "relationship--75d607a0-8c49-4a2b-8ca1-35c6d285fe24", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015478", "modified": "2023-12-08T14:32:14.015480", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--04a1eaab-f315-41d4-a5e3-31dd95089c70", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "relationship", "id": "relationship--d610eb83-0a23-4507-8b11-a82ecf36bdf4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015505", "modified": "2023-12-08T14:32:14.015507", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "relationship", "id": "relationship--ff009a5a-8590-4609-8167-5672dc742ccc", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015533", "modified": "2023-12-08T14:32:14.015536", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--56d73a72-3bd5-4d7e-bbe7-2fe7016bee6c", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "relationship", "id": "relationship--65992d51-558f-4b91-8a38-999745daa2df", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015563", "modified": "2023-12-08T14:32:14.015565", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dc1aefb3-8900-4c24-8439-1d7703313457", "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"}, {"type": "relationship", "id": "relationship--0d0cd599-6710-471e-9608-a6a5fddbf175", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015602", "modified": "2023-12-08T14:32:14.015604", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--59c90237-31d5-4664-bdfb-36197fc16b38", "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--6f82e632-9946-417d-9991-ec50ab9a50b9", "name": "action.malware.variety.Exploit vuln", "created": "2023-12-08T14:32:14.015632", "modified": "2023-12-08T14:32:14.015634"}, {"type": "relationship", "id": "relationship--62527a2e-ffe4-48b7-b7c0-7bdf038f7a0b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015656", "modified": "2023-12-08T14:32:14.015658", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--6f82e632-9946-417d-9991-ec50ab9a50b9", "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"}, {"type": "relationship", "id": "relationship--147ea47c-57e4-4391-a58c-29a83618a580", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015690", "modified": "2023-12-08T14:32:14.015692", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--32f61f4a-eca5-421d-923f-9575c0ed8711", "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"}, {"type": "relationship", "id": "relationship--bdeff291-dd14-4d75-8d0a-3d01475ece5a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015730", "modified": "2023-12-08T14:32:14.015732", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--59c90237-31d5-4664-bdfb-36197fc16b38", "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"}, {"type": "relationship", "id": "relationship--41db0c7a-49ee-4a27-ba95-36a81051f842", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015772", "modified": "2023-12-08T14:32:14.015774", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--6f82e632-9946-417d-9991-ec50ab9a50b9", "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"}, {"type": "relationship", "id": "relationship--1724f0c9-fbb8-462e-b76c-c201134edb4d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015801", "modified": "2023-12-08T14:32:14.015803", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--81d95866-bfb2-4839-8138-4174834bf5dc", "name": "action.social.vector.Software", "created": "2023-12-08T14:32:14.015830", "modified": "2023-12-08T14:32:14.015833"}, {"type": "relationship", "id": "relationship--fa1de041-2777-4678-b384-a3a28c51afe8", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015855", "modified": "2023-12-08T14:32:14.015857", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--81d95866-bfb2-4839-8138-4174834bf5dc", "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"}, {"type": "relationship", "id": "relationship--c5a17020-1541-41ec-8ee0-1e5f27237281", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015886", "modified": "2023-12-08T14:32:14.015888", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dc1aefb3-8900-4c24-8439-1d7703313457", "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--b2780e2c-4401-4fe4-a0f5-faf3539c3210", "name": "action.hacking.variety.MitM", "created": "2023-12-08T14:32:14.015916", "modified": "2023-12-08T14:32:14.015918"}, {"type": "relationship", "id": "relationship--af1415ae-69dc-438c-8530-18b0b9869242", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015941", "modified": "2023-12-08T14:32:14.015943", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--b2780e2c-4401-4fe4-a0f5-faf3539c3210", "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--5d436ad2-a735-4c41-9019-3c953fa243df", "name": "action.malware.variety.Packet sniffer", "created": "2023-12-08T14:32:14.015971", "modified": "2023-12-08T14:32:14.015974"}, {"type": "relationship", "id": "relationship--90f246de-9087-4180-9ecd-4729c687cdae", "spec_version": "2.1", "created": "2023-12-08T14:32:14.015997", "modified": "2023-12-08T14:32:14.015999", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5d436ad2-a735-4c41-9019-3c953fa243df", "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "name": "attribute.confidentiality.data_disclosure", "created": "2023-12-08T14:32:14.016027", "modified": "2023-12-08T14:32:14.016029"}, {"type": "relationship", "id": "relationship--7d573e5d-4b4b-42c7-b4fc-d1fdafecb4ce", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016052", "modified": "2023-12-08T14:32:14.016054", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"}, {"type": "relationship", "id": "relationship--6b38cd75-799e-456d-935d-63c9df9a41a2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016089", "modified": "2023-12-08T14:32:14.016091", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"}, {"type": "relationship", "id": "relationship--048d9563-4eac-49ea-ad3f-a5777d895445", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016134", "modified": "2023-12-08T14:32:14.016136", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--b2780e2c-4401-4fe4-a0f5-faf3539c3210", "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--7aa09cad-0f0e-40ac-8063-8ce926736021", "name": "action.malware.variety.Scan network", "created": "2023-12-08T14:32:14.016165", "modified": "2023-12-08T14:32:14.016167"}, {"type": "relationship", "id": "relationship--89a65f45-e0cb-4ea5-b5d7-39dd7396756f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016191", "modified": "2023-12-08T14:32:14.016193", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7aa09cad-0f0e-40ac-8063-8ce926736021", "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"}, {"type": "relationship", "id": "relationship--90e61ec5-6d04-48a0-9679-5d417b2b3861", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016221", "modified": "2023-12-08T14:32:14.016223", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"}, {"type": "relationship", "id": "relationship--28459890-d417-470c-a6cf-81c2d0a52385", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016256", "modified": "2023-12-08T14:32:14.016259", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--364d53da-db0a-44af-b7ea-4b76c3259578", "name": "value_chain.targeting.variety.Other", "created": "2023-12-08T14:32:14.016288", "modified": "2023-12-08T14:32:14.016290"}, {"type": "relationship", "id": "relationship--5949812b-9383-48f1-8cce-0c937fde97ba", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016314", "modified": "2023-12-08T14:32:14.016316", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--364d53da-db0a-44af-b7ea-4b76c3259578", "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--28fb9a20-e444-4ae3-a6b7-dc9d45c3e2a1", "name": "action.hacking.variety.Use of stolen creds", "created": "2023-12-08T14:32:14.016345", "modified": "2023-12-08T14:32:14.016347"}, {"type": "relationship", "id": "relationship--61d117c0-8eb5-4225-9593-69ef205e7e5d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016371", "modified": "2023-12-08T14:32:14.016374", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--28fb9a20-e444-4ae3-a6b7-dc9d45c3e2a1", "target_ref": "attack-pattern--8bb4538f-f16f-49f0-a431-70b5444c7349"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--1db37c8a-5f02-4497-ab6b-22fe3cfa4ad1", "name": "value_chain.targeting.variety.Default credentials", "created": "2023-12-08T14:32:14.016403", "modified": "2023-12-08T14:32:14.016406"}, {"type": "relationship", "id": "relationship--e861875a-dc97-4c21-b3d1-2d6e51e4a64a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016430", "modified": "2023-12-08T14:32:14.016432", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1db37c8a-5f02-4497-ab6b-22fe3cfa4ad1", "target_ref": "attack-pattern--8bb4538f-f16f-49f0-a431-70b5444c7349"}, {"type": "relationship", "id": "relationship--6d738257-c78f-4917-b3fa-49f6cfc42c51", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016478", "modified": "2023-12-08T14:32:14.016480", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--28fb9a20-e444-4ae3-a6b7-dc9d45c3e2a1", "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"}, {"type": "relationship", "id": "relationship--15c24614-71d3-4ed6-9747-cd5a1182878c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016524", "modified": "2023-12-08T14:32:14.016527", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--dfcce3cc-fed4-4f68-8dd5-a26159451380", "name": "value_chain.targeting.variety.Lost or stolen credentials", "created": "2023-12-08T14:32:14.016556", "modified": "2023-12-08T14:32:14.016559"}, {"type": "relationship", "id": "relationship--9b07a2cf-3ad0-40e8-b33b-b7e6aab32334", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016583", "modified": "2023-12-08T14:32:14.016585", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dfcce3cc-fed4-4f68-8dd5-a26159451380", "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"}, {"type": "relationship", "id": "relationship--df20753a-497d-48f4-b3f9-b10a86c3f388", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016631", "modified": "2023-12-08T14:32:14.016634", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--28fb9a20-e444-4ae3-a6b7-dc9d45c3e2a1", "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"}, {"type": "relationship", "id": "relationship--70edf385-dd65-40e6-97b0-693c0803c355", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016678", "modified": "2023-12-08T14:32:14.016680", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"}, {"type": "relationship", "id": "relationship--ef699bf6-6a80-46cc-a147-5aa9ff8c7a5a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016727", "modified": "2023-12-08T14:32:14.016729", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--dfcce3cc-fed4-4f68-8dd5-a26159451380", "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"}, {"type": "relationship", "id": "relationship--70c8d0b7-e389-472a-85dd-ae07a291b75d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016761", "modified": "2023-12-08T14:32:14.016763", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--87e221bb-a421-499b-a1a8-79ca447817ee", "target_ref": "attack-pattern--d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--d34f36cb-c25e-482e-9b61-e9cbb7b8ffbd", "name": "value_chain.non-distribution services.variety.Proxy", "created": "2023-12-08T14:32:14.016794", "modified": "2023-12-08T14:32:14.016796"}, {"type": "relationship", "id": "relationship--8b140450-6997-4148-a213-25bfa833af74", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016821", "modified": "2023-12-08T14:32:14.016823", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d34f36cb-c25e-482e-9b61-e9cbb7b8ffbd", "target_ref": "attack-pattern--d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4"}, {"type": "relationship", "id": "relationship--15d90486-21da-4bbd-ae97-db748f0eefc3", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016856", "modified": "2023-12-08T14:32:14.016858", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--eeb359a0-9b64-4673-a40c-48d2eaead5c4", "target_ref": "attack-pattern--24a9253e-8948-4c98-b751-8e2aee53127c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--81a09fbf-28e6-442b-820e-4ab17cd1c8ba", "name": "action.hacking.vector.Other network service", "created": "2023-12-08T14:32:14.016888", "modified": "2023-12-08T14:32:14.016891"}, {"type": "relationship", "id": "relationship--c0dbb11e-167c-4026-a4f0-d109c0d05d85", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016916", "modified": "2023-12-08T14:32:14.016918", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--81a09fbf-28e6-442b-820e-4ab17cd1c8ba", "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"}, {"type": "relationship", "id": "relationship--f00090b1-d63d-449d-b727-20f97e4a165c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.016963", "modified": "2023-12-08T14:32:14.016966", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5d436ad2-a735-4c41-9019-3c953fa243df", "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"}, {"type": "relationship", "id": "relationship--56c51c30-81b8-44c5-8776-dbf135582de6", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017026", "modified": "2023-12-08T14:32:14.017028", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7aa09cad-0f0e-40ac-8063-8ce926736021", "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"}, {"type": "relationship", "id": "relationship--78e3be1a-1fcb-4aa1-a5e1-c9283bea8723", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017074", "modified": "2023-12-08T14:32:14.017076", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--364d53da-db0a-44af-b7ea-4b76c3259578", "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--8d7eb215-8986-40f1-96d2-357af6c315f2", "name": "action.malware.variety.Backdoor", "created": "2023-12-08T14:32:14.017107", "modified": "2023-12-08T14:32:14.017109"}, {"type": "relationship", "id": "relationship--c3974982-2597-4267-896d-dcf5d3fb3851", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017135", "modified": "2023-12-08T14:32:14.017137", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--8d7eb215-8986-40f1-96d2-357af6c315f2", "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--eb3b7370-15de-4147-b41d-c3ab5732c889", "name": "action.malware.vector.Partner", "created": "2023-12-08T14:32:14.017167", "modified": "2023-12-08T14:32:14.017169"}, {"type": "relationship", "id": "relationship--3d2e1216-dd64-4ce7-817d-b6a792a27a9b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017194", "modified": "2023-12-08T14:32:14.017197", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--eb3b7370-15de-4147-b41d-c3ab5732c889", "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"}, {"type": "relationship", "id": "relationship--644b2a53-dff3-4a36-8268-cd5811aca7fe", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017226", "modified": "2023-12-08T14:32:14.017228", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--51296de2-f49d-43bf-8dab-3bf569fd2e79", "name": "action.social.vector.In-person", "created": "2023-12-08T14:32:14.017259", "modified": "2023-12-08T14:32:14.017261"}, {"type": "relationship", "id": "relationship--9efaa0c7-e2b5-4d80-acfa-bdb955e6a286", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017287", "modified": "2023-12-08T14:32:14.017289", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--51296de2-f49d-43bf-8dab-3bf569fd2e79", "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--9210919f-a5ec-49b7-9d0b-aff44af8450b", "name": "value_chain.targeting.variety.Partner", "created": "2023-12-08T14:32:14.017320", "modified": "2023-12-08T14:32:14.017322"}, {"type": "relationship", "id": "relationship--881de19b-de1d-4388-b910-0027e89129e1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017348", "modified": "2023-12-08T14:32:14.017350", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--9210919f-a5ec-49b7-9d0b-aff44af8450b", "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--f1908137-bb62-4d85-b4ce-2756e189171d", "name": "action.malware.variety.Capture app data", "created": "2023-12-08T14:32:14.017382", "modified": "2023-12-08T14:32:14.017384"}, {"type": "relationship", "id": "relationship--0d8cb777-7d58-4e44-a836-6f67de7fc75b", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017411", "modified": "2023-12-08T14:32:14.017413", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--f1908137-bb62-4d85-b4ce-2756e189171d", "target_ref": "attack-pattern--2aa406ed-81c3-4c1d-ba83-cfbee5a2847a"}, {"type": "relationship", "id": "relationship--c3bdfd08-16fe-4b8e-b02b-3aad6545ff0c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017463", "modified": "2023-12-08T14:32:14.017465", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--f1908137-bb62-4d85-b4ce-2756e189171d", "target_ref": "attack-pattern--53a48c74-0025-45f4-b04a-baa853df8204"}, {"type": "relationship", "id": "relationship--dce2b850-3380-494c-a291-87891137d7f9", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017506", "modified": "2023-12-08T14:32:14.017508", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5d894886-8666-47cc-9888-a6685aed007a", "target_ref": "attack-pattern--53a48c74-0025-45f4-b04a-baa853df8204"}, {"type": "relationship", "id": "relationship--cf21ac87-6855-44d1-aaa8-284dc4e08021", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017558", "modified": "2023-12-08T14:32:14.017561", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--f1908137-bb62-4d85-b4ce-2756e189171d", "target_ref": "attack-pattern--c5e3cdbc-0387-4be9-8f83-ff5c0865f377"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--8c246d6d-aaff-4f7a-9047-7a79d09ed340", "name": "action.malware.variety.Capture stored data", "created": "2023-12-08T14:32:14.017593", "modified": "2023-12-08T14:32:14.017595"}, {"type": "relationship", "id": "relationship--1b94e351-4022-4115-840a-c52cfacd2a53", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017622", "modified": "2023-12-08T14:32:14.017624", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--8c246d6d-aaff-4f7a-9047-7a79d09ed340", "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"}, {"type": "relationship", "id": "relationship--2ff80562-ca8f-46fd-9e21-366630ab88d4", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017670", "modified": "2023-12-08T14:32:14.017672", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"}, {"type": "relationship", "id": "relationship--534490f3-9bce-46fe-9431-a9b656944fd7", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017705", "modified": "2023-12-08T14:32:14.017707", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--ed4373db-d33b-43cf-a513-2963d78b747a", "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--29fff353-4925-43f1-8de5-5a0216b40e6b", "name": "action.malware.variety.Destroy data", "created": "2023-12-08T14:32:14.017740", "modified": "2023-12-08T14:32:14.017742"}, {"type": "relationship", "id": "relationship--95472d61-0402-473d-ac94-dda13d9e7dee", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017770", "modified": "2023-12-08T14:32:14.017772", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--29fff353-4925-43f1-8de5-5a0216b40e6b", "target_ref": "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675"}, {"type": "relationship", "id": "relationship--3c3ced75-e26c-47e6-bf19-c9112e1a7324", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017803", "modified": "2023-12-08T14:32:14.017805", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--2dabf3ea-b72d-4a0b-8556-611c904b4615", "name": "action.malware.variety.Export data", "created": "2023-12-08T14:32:14.017838", "modified": "2023-12-08T14:32:14.017840"}, {"type": "relationship", "id": "relationship--f5464b9e-1332-4c64-b57e-34a4e5718313", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017868", "modified": "2023-12-08T14:32:14.017870", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--2dabf3ea-b72d-4a0b-8556-611c904b4615", "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"}, {"type": "relationship", "id": "relationship--e826cef1-fc5e-4485-8007-8da7b4f62cf2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017917", "modified": "2023-12-08T14:32:14.017919", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--675500b9-f012-47e6-ab65-4dc142234713", "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--58ee5e83-2dac-496b-ab63-944ff0e8f0ca", "name": "value_chain.targeting.variety.Organizational Information", "created": "2023-12-08T14:32:14.017952", "modified": "2023-12-08T14:32:14.017954"}, {"type": "relationship", "id": "relationship--2e446e68-5c09-47ae-8b67-6e6b166f4edc", "spec_version": "2.1", "created": "2023-12-08T14:32:14.017982", "modified": "2023-12-08T14:32:14.017984", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--58ee5e83-2dac-496b-ab63-944ff0e8f0ca", "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--cbc99579-dc6d-47e3-917e-565adbbbbb89", "name": "action.malware.variety.Profile host", "created": "2023-12-08T14:32:14.018018", "modified": "2023-12-08T14:32:14.018020"}, {"type": "relationship", "id": "relationship--fd44330e-02da-43d3-bd7d-17aad9dfe796", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018048", "modified": "2023-12-08T14:32:14.018050", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cbc99579-dc6d-47e3-917e-565adbbbbb89", "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"}, {"type": "relationship", "id": "relationship--df3d499a-c0c8-4344-8725-073c9a5729e0", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018098", "modified": "2023-12-08T14:32:14.018100", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--7aa09cad-0f0e-40ac-8063-8ce926736021", "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"}, {"type": "relationship", "id": "relationship--d3b08869-982b-4477-ba2a-6a4d478373f0", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018154", "modified": "2023-12-08T14:32:14.018156", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--58ee5e83-2dac-496b-ab63-944ff0e8f0ca", "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--cf2cb085-4021-42d6-b3b1-f15d7d429f36", "name": "action.malware.variety.Rootkit", "created": "2023-12-08T14:32:14.018190", "modified": "2023-12-08T14:32:14.018193"}, {"type": "relationship", "id": "relationship--703db9e3-4c6d-47d1-8d98-dc1b1ccbbaba", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018221", "modified": "2023-12-08T14:32:14.018223", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cf2cb085-4021-42d6-b3b1-f15d7d429f36", "target_ref": "attack-pattern--b9160e77-ea9e-4ba9-b1c8-53a3c466b13d"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--efbb6a0b-a9c3-438e-94d7-29eb63f399ce", "name": "value_chain.targeting.variety.Unknown", "created": "2023-12-08T14:32:14.018257", "modified": "2023-12-08T14:32:14.018259"}, {"type": "relationship", "id": "relationship--4ad3a740-8013-44a8-95b4-c7ac9c1fe0ba", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018288", "modified": "2023-12-08T14:32:14.018290", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--efbb6a0b-a9c3-438e-94d7-29eb63f399ce", "target_ref": "attack-pattern--b9160e77-ea9e-4ba9-b1c8-53a3c466b13d"}, {"type": "relationship", "id": "relationship--b255d7a3-4034-48f7-83ba-2fd5e2815c00", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018345", "modified": "2023-12-08T14:32:14.018347", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cf2cb085-4021-42d6-b3b1-f15d7d429f36", "target_ref": "attack-pattern--3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9"}, {"type": "relationship", "id": "relationship--76455688-8302-4a7e-a6d9-55acba3848e1", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018388", "modified": "2023-12-08T14:32:14.018391", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--03cf6dd1-ece0-4431-bdb6-a47b8b6e3cd4", "name": "action.malware.variety.Worm", "created": "2023-12-08T14:32:14.018426", "modified": "2023-12-08T14:32:14.018428"}, {"type": "relationship", "id": "relationship--f8df37f0-3342-4f75-8e62-6cba1ee8b47a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018457", "modified": "2023-12-08T14:32:14.018459", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--03cf6dd1-ece0-4431-bdb6-a47b8b6e3cd4", "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"}, {"type": "relationship", "id": "relationship--5cae42e0-a7e2-4e99-aecb-b98d093fbb74", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018492", "modified": "2023-12-08T14:32:14.018494", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--5ca60486-58eb-4cd8-aa42-cbd3be917cc5", "name": "action.social.vector.Removable media", "created": "2023-12-08T14:32:14.018529", "modified": "2023-12-08T14:32:14.018532"}, {"type": "relationship", "id": "relationship--35a6a1b9-4316-44a8-9000-75600fd9dd6c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018561", "modified": "2023-12-08T14:32:14.018563", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--5ca60486-58eb-4cd8-aa42-cbd3be917cc5", "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--b0b3091c-93b6-4cfb-b0ea-e73f253179e3", "name": "action.malware.vector.Download by malware", "created": "2023-12-08T14:32:14.018599", "modified": "2023-12-08T14:32:14.018601"}, {"type": "relationship", "id": "relationship--86d3af9c-8216-4d61-b322-945b11091b72", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018630", "modified": "2023-12-08T14:32:14.018632", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--b0b3091c-93b6-4cfb-b0ea-e73f253179e3", "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--46afd0f0-e017-4716-80f0-e99e92f7ecb8", "name": "action.malware.vector.Email attachment", "created": "2023-12-08T14:32:14.018669", "modified": "2023-12-08T14:32:14.018671"}, {"type": "relationship", "id": "relationship--323419c6-304c-434a-ba00-9fafc2f359ef", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018700", "modified": "2023-12-08T14:32:14.018702", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--46afd0f0-e017-4716-80f0-e99e92f7ecb8", "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--0569d569-0a64-4d6b-88c4-37a78bd94e6c", "name": "action.social.vector.Documents", "created": "2023-12-08T14:32:14.018739", "modified": "2023-12-08T14:32:14.018741"}, {"type": "relationship", "id": "relationship--c98a62ef-571c-4eeb-a370-078cfc2752cf", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018770", "modified": "2023-12-08T14:32:14.018772", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--0569d569-0a64-4d6b-88c4-37a78bd94e6c", "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--43030a9a-7e90-4ff4-9ad5-a74eca75b614", "name": "action.social.vector.Email", "created": "2023-12-08T14:32:14.018809", "modified": "2023-12-08T14:32:14.018811"}, {"type": "relationship", "id": "relationship--6c69e926-0d2e-4f18-9b30-915a82a3cf33", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018840", "modified": "2023-12-08T14:32:14.018843", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43030a9a-7e90-4ff4-9ad5-a74eca75b614", "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"}, {"type": "relationship", "id": "relationship--44ebf8ff-7f1a-431b-bba8-069f17cc7ca8", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018901", "modified": "2023-12-08T14:32:14.018903", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--46afd0f0-e017-4716-80f0-e99e92f7ecb8", "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--74fe1a8b-1e1f-4b3f-8c28-49d7aa2c550b", "name": "action.social.variety.Phishing", "created": "2023-12-08T14:32:14.018940", "modified": "2023-12-08T14:32:14.018942"}, {"type": "relationship", "id": "relationship--b6409333-4fc2-4a89-91ab-158a6a2217bc", "spec_version": "2.1", "created": "2023-12-08T14:32:14.018972", "modified": "2023-12-08T14:32:14.018974", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74fe1a8b-1e1f-4b3f-8c28-49d7aa2c550b", "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"}, {"type": "relationship", "id": "relationship--3ecd971e-e2c4-4cb2-b5d4-ba817cef655a", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019032", "modified": "2023-12-08T14:32:14.019034", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--43030a9a-7e90-4ff4-9ad5-a74eca75b614", "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--e613df23-0f02-4f69-a5c8-b51a2b18399a", "name": "value_chain.distribution.variety.Email", "created": "2023-12-08T14:32:14.019071", "modified": "2023-12-08T14:32:14.019073"}, {"type": "relationship", "id": "relationship--908b33c6-f64d-4eaa-aac6-58fcc8add70d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019103", "modified": "2023-12-08T14:32:14.019105", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--e613df23-0f02-4f69-a5c8-b51a2b18399a", "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--02c29122-b3bf-46de-b4e7-0d75b4a5d1d2", "name": "value_chain.targeting.variety.Email addresses", "created": "2023-12-08T14:32:14.019143", "modified": "2023-12-08T14:32:14.019145"}, {"type": "relationship", "id": "relationship--4e32ebac-3098-4274-9e09-7bb346e4cc2c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019176", "modified": "2023-12-08T14:32:14.019178", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--02c29122-b3bf-46de-b4e7-0d75b4a5d1d2", "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"}, {"type": "relationship", "id": "relationship--7ca9ff4b-bf26-42d9-b053-3915e444cb85", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019232", "modified": "2023-12-08T14:32:14.019234", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--eb3b7370-15de-4147-b41d-c3ab5732c889", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "relationship", "id": "relationship--03c9eb28-73f1-4979-aace-60081c80fc92", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019270", "modified": "2023-12-08T14:32:14.019272", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "relationship", "id": "relationship--8f48bd0e-0e81-4b0e-9644-44a407c372cf", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019322", "modified": "2023-12-08T14:32:14.019324", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--81d95866-bfb2-4839-8138-4174834bf5dc", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "relationship", "id": "relationship--736978f9-591d-441a-9f14-217fea182235", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019358", "modified": "2023-12-08T14:32:14.019360", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--336eb4d9-4413-4540-8bfd-4c444943697f", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--87d383d1-3a54-48d6-ad2a-472e630d0c89", "name": "value_chain.distribution.variety.Partner", "created": "2023-12-08T14:32:14.019400", "modified": "2023-12-08T14:32:14.019402"}, {"type": "relationship", "id": "relationship--1ab5f595-3898-49d1-a996-3cbcb010ab08", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019434", "modified": "2023-12-08T14:32:14.019436", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--87d383d1-3a54-48d6-ad2a-472e630d0c89", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "relationship", "id": "relationship--1934de38-456f-4391-bc4c-b5a99abd7372", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019492", "modified": "2023-12-08T14:32:14.019494", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--9210919f-a5ec-49b7-9d0b-aff44af8450b", "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"}, {"type": "relationship", "id": "relationship--5a448741-1575-4f11-96bf-238b2c1574b3", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019538", "modified": "2023-12-08T14:32:14.019540", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--ba203963-3182-41ac-af14-7e7ebc83cd61"}, {"type": "relationship", "id": "relationship--c52667cf-7184-41c9-b353-35fd1a53bd6c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019584", "modified": "2023-12-08T14:32:14.019586", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--74570d21-93c2-4d6d-85e8-7fa8e1946c39", "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--c2a6c99d-1195-40d2-ab43-cf5d7f6dbff8", "name": "attribute.integrity.variety.Misrepresentation", "created": "2023-12-08T14:32:14.019625", "modified": "2023-12-08T14:32:14.019628"}, {"type": "relationship", "id": "relationship--cb6ac88c-a0c3-40db-ac36-cb2290b8bef2", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019659", "modified": "2023-12-08T14:32:14.019662", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--c2a6c99d-1195-40d2-ab43-cf5d7f6dbff8", "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"}, {"type": "relationship", "id": "relationship--11322c2c-7a66-41c7-aa91-06c7b1277242", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019705", "modified": "2023-12-08T14:32:14.019707", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"}, {"type": "relationship", "id": "relationship--99bafc73-0eb6-4809-a1d4-45fb2108bf3d", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019743", "modified": "2023-12-08T14:32:14.019745", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d62629e5-a48f-4040-a47a-b9fddee54979", "target_ref": "attack-pattern--e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf"}, {"type": "relationship", "id": "relationship--46559b0e-a603-4bb2-b195-8d0a10b8b22c", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019787", "modified": "2023-12-08T14:32:14.019789", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--a5daa9ae-dcc7-44c5-8f40-25e5d6bc6333", "target_ref": "attack-pattern--e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf"}, {"type": "relationship", "id": "relationship--7945a3d2-2a37-4892-91dc-807478f085ea", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019824", "modified": "2023-12-08T14:32:14.019827", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--1cf9e9af-530f-41e5-9be5-3e184ba59cbf", "target_ref": "attack-pattern--008b8f56-6107-48be-aa9f-746f927dbb61"}, {"type": "relationship", "id": "relationship--6788a351-e0c8-415a-9728-e1bd48e6b2ff", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019867", "modified": "2023-12-08T14:32:14.019869", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--163186d7-1eb5-4d1e-9075-2a076da384f2", "target_ref": "attack-pattern--008b8f56-6107-48be-aa9f-746f927dbb61"}, {"type": "attack-pattern", "spec_version": "2.1", "id": "attack-pattern--d1c9b7a0-0d5b-4a2d-9e36-fd14e99910bb", "name": "attribute.integrity.variety.Modify configuration", "created": "2023-12-08T14:32:14.019909", "modified": "2023-12-08T14:32:14.019911"}, {"type": "relationship", "id": "relationship--a3911f92-6bbd-4731-be29-c47b501fc257", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019943", "modified": "2023-12-08T14:32:14.019945", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d1c9b7a0-0d5b-4a2d-9e36-fd14e99910bb", "target_ref": "attack-pattern--097924ce-a9a9-4039-8591-e0deedfb8722"}, {"type": "relationship", "id": "relationship--3ed49287-cefe-4971-a48b-ab0a053b9d27", "spec_version": "2.1", "created": "2023-12-08T14:32:14.019989", "modified": "2023-12-08T14:32:14.019991", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--097924ce-a9a9-4039-8591-e0deedfb8722"}, {"type": "relationship", "id": "relationship--ed42f9f9-743a-48f1-8c3f-45e1633a1819", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020056", "modified": "2023-12-08T14:32:14.020058", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d1c9b7a0-0d5b-4a2d-9e36-fd14e99910bb", "target_ref": "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243"}, {"type": "relationship", "id": "relationship--a288e230-954c-422c-b7a2-51b6fee2370e", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020102", "modified": "2023-12-08T14:32:14.020105", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243"}, {"type": "relationship", "id": "relationship--65845867-2d82-42e3-bdd7-e3ebabc029b3", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020169", "modified": "2023-12-08T14:32:14.020171", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d1c9b7a0-0d5b-4a2d-9e36-fd14e99910bb", "target_ref": "attack-pattern--fc5fda7e-6b2c-4457-b036-759896a2efa2"}, {"type": "relationship", "id": "relationship--16735ea4-40b1-4eae-9503-a604ff42e523", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020215", "modified": "2023-12-08T14:32:14.020218", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--fc5fda7e-6b2c-4457-b036-759896a2efa2"}, {"type": "relationship", "id": "relationship--3b0598e6-0b56-425e-83f8-fab6cc24a0b0", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020281", "modified": "2023-12-08T14:32:14.020284", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--d1c9b7a0-0d5b-4a2d-9e36-fd14e99910bb", "target_ref": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722"}, {"type": "relationship", "id": "relationship--4c970b89-3be5-4345-b6ee-8ab0655cf179", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020328", "modified": "2023-12-08T14:32:14.020330", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--3a9ca3ac-7344-4ad9-90d9-cbfbbbed791e", "target_ref": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722"}, {"type": "relationship", "id": "relationship--6a7fe96a-4195-479e-bb96-cdf4ff71e052", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020367", "modified": "2023-12-08T14:32:14.020370", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--83ebd22f-b401-4d59-8219-2294172cf916"}, {"type": "relationship", "id": "relationship--dda478dc-5c0d-4a6c-8fd2-e7f330e11995", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020407", "modified": "2023-12-08T14:32:14.020409", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--b5b9bacb-97f2-4249-b804-47fd44de1f95"}, {"type": "relationship", "id": "relationship--84280be0-f6b7-4640-ab47-6b18628502ff", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020445", "modified": "2023-12-08T14:32:14.020448", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--a81696ef-c106-482c-8f80-59c30f2569fb"}, {"type": "relationship", "id": "relationship--172cea48-f18c-4533-b28b-0939c85fca2f", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020484", "modified": "2023-12-08T14:32:14.020487", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--63b6942d-8359-4506-bfb3-cf87aa8120ee"}, {"type": "relationship", "id": "relationship--9be2c8df-1ab6-476e-a9e9-349d642b3730", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020524", "modified": "2023-12-08T14:32:14.020526", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--2bb4d762-bf4a-4bc3-9318-15cc6a354163"}, {"type": "relationship", "id": "relationship--1257a1dd-19d2-422c-8f49-66869350b502", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020563", "modified": "2023-12-08T14:32:14.020566", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--5fa00fdd-4a55-4191-94a0-564181d7fec2"}, {"type": "relationship", "id": "relationship--a65ee512-c7bf-4cec-b94e-c87cc54b0ffb", "spec_version": "2.1", "created": "2023-12-08T14:32:14.020603", "modified": "2023-12-08T14:32:14.020606", "relationship_type": "8b6745f1-1cbd-4b57-983e-27f02ab7fbda", "source_ref": "attack-pattern--cb09f2ea-4613-4df7-9a2d-97b84a0d707e", "target_ref": "attack-pattern--138979ba-0430-4de6-a128-2fc0b056ba36"}]}
+{
+  "type": "bundle",
+  "id": "bundle--c3e99807-c5e9-40cb-87f4-71aa6a713a6d",
+  "spec_version": "2.1",
+  "created": "2024-01-10T12:29:55.218686",
+  "modified": "2024-01-10T12:29:55.218699",
+  "objects": [
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "name": "action.hacking.variety.Abuse of functionality",
+      "created": "2024-01-10T12:29:59.237410",
+      "modified": "2024-01-10T12:29:59.237423"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cf0599cf-4130-4d5b-be9b-f52c09284d85",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237443",
+      "modified": "2024-01-10T12:29:59.237447",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "name": "action.hacking.variety.Evade Defenses",
+      "created": "2024-01-10T12:29:59.237495",
+      "modified": "2024-01-10T12:29:59.237504"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b0cf67ab-fcd3-4b97-84d9-dfa9fc4c1422",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237527",
+      "modified": "2024-01-10T12:29:59.237532",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "name": "attribute.availability.variety.Interruption",
+      "created": "2024-01-10T12:29:59.237550",
+      "modified": "2024-01-10T12:29:59.237552"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cabe70ca-8cd7-4f7e-8933-a9740e381e45",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237567",
+      "modified": "2024-01-10T12:29:59.237570",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--55ab5fa8-d69c-4013-8cba-397b835943ba",
+      "name": "attribute.integrity.variety.Hardware tampering",
+      "created": "2024-01-10T12:29:59.237583",
+      "modified": "2024-01-10T12:29:59.237585"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--30a30418-d89a-408f-97e1-43a363bdc53b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237596",
+      "modified": "2024-01-10T12:29:59.237598",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--55ab5fa8-d69c-4013-8cba-397b835943ba",
+      "target_ref": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0d4f0f7a-b645-41fe-8388-294cafb01d5c",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237616",
+      "modified": "2024-01-10T12:29:59.237620",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--e6c31185-8040-4267-83d3-b217b8a92f07"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4a56dcf8-ccd6-422b-985d-57c6dcd00904",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237692",
+      "modified": "2024-01-10T12:29:59.237698",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e2ba2364-0539-45e1-88b3-150d2cb3f0cf",
+      "name": "action.hacking.variety.DoS",
+      "created": "2024-01-10T12:29:59.237719",
+      "modified": "2024-01-10T12:29:59.237721"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--44456d67-c001-4886-8004-6ff03002651c",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237737",
+      "modified": "2024-01-10T12:29:59.237739",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e2ba2364-0539-45e1-88b3-150d2cb3f0cf",
+      "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--08f97a80-cca3-441f-a17d-effc30f7cf0a",
+      "name": "action.malware.variety.DoS",
+      "created": "2024-01-10T12:29:59.237756",
+      "modified": "2024-01-10T12:29:59.237759"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6d193efa-05d8-40f4-9f14-ee2349505892",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237775",
+      "modified": "2024-01-10T12:29:59.237778",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--08f97a80-cca3-441f-a17d-effc30f7cf0a",
+      "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "name": "attribute.availability.variety.Loss",
+      "created": "2024-01-10T12:29:59.237792",
+      "modified": "2024-01-10T12:29:59.237794"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f433ed8a-687c-458a-ad38-bc168654e3df",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237805",
+      "modified": "2024-01-10T12:29:59.237807",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e1a00663-b50f-45ee-bc08-ebd99689203d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237820",
+      "modified": "2024-01-10T12:29:59.237822",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e15b0a8d-a633-4182-b78b-c481722259d1",
+      "name": "action.malware.vector.Web application - drive-by",
+      "created": "2024-01-10T12:29:59.237835",
+      "modified": "2024-01-10T12:29:59.237838"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a55d28b4-b334-4c1a-b4e1-b22ff4b75096",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237850",
+      "modified": "2024-01-10T12:29:59.237852",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e15b0a8d-a633-4182-b78b-c481722259d1",
+      "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "name": "action.social.variety.Other",
+      "created": "2024-01-10T12:29:59.237865",
+      "modified": "2024-01-10T12:29:59.237867"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--db62aeb5-99a3-421a-bf82-d94a59bdbd87",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237880",
+      "modified": "2024-01-10T12:29:59.237882",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e48d6f99-5b8b-48bd-b530-b8c1f7fb79c4",
+      "name": "action.social.vector.Web application",
+      "created": "2024-01-10T12:29:59.237895",
+      "modified": "2024-01-10T12:29:59.237897"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--584cb520-ca15-4135-a657-84de655426b2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237909",
+      "modified": "2024-01-10T12:29:59.237911",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e48d6f99-5b8b-48bd-b530-b8c1f7fb79c4",
+      "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9696829a-e1d3-48a7-a3c1-cfd25267856d",
+      "name": "value_chain.distribution.variety.Website",
+      "created": "2024-01-10T12:29:59.237923",
+      "modified": "2024-01-10T12:29:59.237925"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c9b78f02-d024-47ea-93cf-e7e433b909d5",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237937",
+      "modified": "2024-01-10T12:29:59.237939",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--9696829a-e1d3-48a7-a3c1-cfd25267856d",
+      "target_ref": "attack-pattern--7830cfcf-b268-4ac0-a69e-73c6affbae9a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--abd2eb0c-62b6-48dc-85f5-3e13a32ec5b2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237953",
+      "modified": "2024-01-10T12:29:59.237955",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--5a2610f6-9fff-41e1-bc27-575ca20383d4"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8b995062-9656-4a18-b4a2-7fe07e569396",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237969",
+      "modified": "2024-01-10T12:29:59.237971",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--b0628bfc-5376-4a38-9182-f324501cb4cf"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cc21c39a-9f21-44ac-9d43-8f653bb2de22",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.237986",
+      "modified": "2024-01-10T12:29:59.237988",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--ab390887-afc0-4715-826d-b1b167d522ae"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--89bb3ef5-bc3d-4577-b515-9054faaa924b",
+      "name": "value_chain.targeting.variety.Weaknesses",
+      "created": "2024-01-10T12:29:59.238004",
+      "modified": "2024-01-10T12:29:59.238006"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0257dcd4-aac4-4f4c-af12-05bbbcaf805d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238020",
+      "modified": "2024-01-10T12:29:59.238023",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--89bb3ef5-bc3d-4577-b515-9054faaa924b",
+      "target_ref": "attack-pattern--ab390887-afc0-4715-826d-b1b167d522ae"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8e2309c0-7791-45b4-a04a-32c6b89695ad",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238037",
+      "modified": "2024-01-10T12:29:59.238041",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--ead7bd34-186e-4c79-9a4d-b65bcce6ed9d"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2a13e1a7-2a57-4bca-bde7-a63356e1c1d8",
+      "name": "attribute.integrity.variety.Software installation",
+      "created": "2024-01-10T12:29:59.238063",
+      "modified": "2024-01-10T12:29:59.238067"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a40d1793-9030-4b9e-b0c3-16ec335330f9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238082",
+      "modified": "2024-01-10T12:29:59.238084",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2a13e1a7-2a57-4bca-bde7-a63356e1c1d8",
+      "target_ref": "attack-pattern--ead7bd34-186e-4c79-9a4d-b65bcce6ed9d"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6d89508a-b5f3-4e35-9cf6-4a3a7c69700d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238099",
+      "modified": "2024-01-10T12:29:59.238101",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "name": "action.hacking.variety.Backdoor",
+      "created": "2024-01-10T12:29:59.238117",
+      "modified": "2024-01-10T12:29:59.238119"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0158d343-9ae7-4113-ab2b-7ea5edfd3bd9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238140",
+      "modified": "2024-01-10T12:29:59.238144",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bef0fb34-0179-48ae-80a6-33a4c787d877",
+      "name": "action.hacking.vector.Backdoor",
+      "created": "2024-01-10T12:29:59.238170",
+      "modified": "2024-01-10T12:29:59.238172"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f4c275f5-d1ca-429e-9d4a-879650060f6d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238186",
+      "modified": "2024-01-10T12:29:59.238189",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--bef0fb34-0179-48ae-80a6-33a4c787d877",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--28771517-61ec-4394-b32d-1a4671e8edbf",
+      "name": "action.hacking.vector.Command shell",
+      "created": "2024-01-10T12:29:59.238204",
+      "modified": "2024-01-10T12:29:59.238207"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--699b8165-2baf-4d40-9019-a37d8945ea33",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238221",
+      "modified": "2024-01-10T12:29:59.238223",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--28771517-61ec-4394-b32d-1a4671e8edbf",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b0901daa-a54a-477b-a214-8e74be2e6dc3",
+      "name": "value_chain.targeting.variety.Misconfigurations",
+      "created": "2024-01-10T12:29:59.238238",
+      "modified": "2024-01-10T12:29:59.238240"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--882ff90a-48a0-4e1d-8924-79c651bd3759",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238254",
+      "modified": "2024-01-10T12:29:59.238256",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b0901daa-a54a-477b-a214-8e74be2e6dc3",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--316af98d-8af5-43e8-b995-d72982de11e3",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238328",
+      "modified": "2024-01-10T12:29:59.238332",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--89bb3ef5-bc3d-4577-b515-9054faaa924b",
+      "target_ref": "attack-pattern--40b300ba-f553-48bf-862e-9471b220d455"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--80b2285d-5631-4d8c-9e35-c219b3b7e217",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238352",
+      "modified": "2024-01-10T12:29:59.238355",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--cfc33673-5fac-4aee-9fde-3553174d5486",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238383",
+      "modified": "2024-01-10T12:29:59.238385",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7945f7f5-f3d8-455b-b240-c62aad78ef43",
+      "name": "value_chain.non-distribution services.variety.C2",
+      "created": "2024-01-10T12:29:59.238404",
+      "modified": "2024-01-10T12:29:59.238406"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--03f09013-bdd3-4849-b296-52362371fba7",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238422",
+      "modified": "2024-01-10T12:29:59.238424",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7945f7f5-f3d8-455b-b240-c62aad78ef43",
+      "target_ref": "attack-pattern--e076cca8-2f08-45c9-aff7-ea5ac798b387"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--24f7edde-3508-4397-a923-8fda9855ac28",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238441",
+      "modified": "2024-01-10T12:29:59.238443",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--efbf0b71-6388-4169-a336-778e3998f22a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238461",
+      "modified": "2024-01-10T12:29:59.238464",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "name": "attribute.integrity.variety.Alter behavior",
+      "created": "2024-01-10T12:29:59.238485",
+      "modified": "2024-01-10T12:29:59.238516"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a195c78e-fdde-44a7-a876-09e67b4514c0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238548",
+      "modified": "2024-01-10T12:29:59.238551",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "target_ref": "attack-pattern--063b5b92-5361-481a-9c3f-95492ed9a2d8"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--515690e5-96e0-4510-b987-060a3d589293",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238574",
+      "modified": "2024-01-10T12:29:59.238576",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e5b25440-ad8e-44f7-89e1-69c68a5ce755",
+      "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f6e3fa30-22bd-4a25-abf5-e9d531df9125",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238602",
+      "modified": "2024-01-10T12:29:59.238605",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7d1c9ec6-8b4c-430d-aa72-e085cbe37120",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238628",
+      "modified": "2024-01-10T12:29:59.238630",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--28771517-61ec-4394-b32d-1a4671e8edbf",
+      "target_ref": "attack-pattern--2dc2b567-8821-49f9-9045-8740f3d0b958"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--011c2d74-fca1-4afb-a496-c9f94193480d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238652",
+      "modified": "2024-01-10T12:29:59.238654",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f45d85ab-d97c-4631-bfca-3b397fee9fb6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238679",
+      "modified": "2024-01-10T12:29:59.238681",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--bef0fb34-0179-48ae-80a6-33a4c787d877",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8ddf4d68-2c19-4b2d-a487-00a7dd0d427b",
+      "name": "action.malware.variety.Backdoor or C2",
+      "created": "2024-01-10T12:29:59.238701",
+      "modified": "2024-01-10T12:29:59.238722"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c90dcc9b-d897-44ff-b191-26be0a7df7f3",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238779",
+      "modified": "2024-01-10T12:29:59.238784",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8ddf4d68-2c19-4b2d-a487-00a7dd0d427b",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--68b981fe-fbaa-469a-a9ff-f6a40ef9f6ea",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238823",
+      "modified": "2024-01-10T12:29:59.238826",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "name": "action.social.vector.Other",
+      "created": "2024-01-10T12:29:59.238880",
+      "modified": "2024-01-10T12:29:59.238887"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--00082d3a-7752-44bc-a1bd-3099192a43b6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.238931",
+      "modified": "2024-01-10T12:29:59.238935",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5553059e-fa4a-4096-8bc3-1d00e0aefe6f",
+      "name": "value_chain.targeting.variety.Vulnerabilities",
+      "created": "2024-01-10T12:29:59.238976",
+      "modified": "2024-01-10T12:29:59.238980"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--29031a15-fd00-482b-87e6-cea6745c972b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239012",
+      "modified": "2024-01-10T12:29:59.239016",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5553059e-fa4a-4096-8bc3-1d00e0aefe6f",
+      "target_ref": "attack-pattern--8d2f3bab-507c-4424-b58b-edc977bd215c"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--442e5d73-eeb6-4d1e-beaf-cd83a2379a03",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239061",
+      "modified": "2024-01-10T12:29:59.239066",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6ae1c33a-ee25-4a9a-a711-73e40272faa3",
+      "name": "action.hacking.variety.Exploit misconfig",
+      "created": "2024-01-10T12:29:59.239104",
+      "modified": "2024-01-10T12:29:59.239108"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--754cd075-da3b-4fec-832b-558a7a8a2e2a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239143",
+      "modified": "2024-01-10T12:29:59.239147",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6ae1c33a-ee25-4a9a-a711-73e40272faa3",
+      "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b84ade07-03e6-4fd4-9aef-003cd3e8faa4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239187",
+      "modified": "2024-01-10T12:29:59.239191",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--bad682e4-b162-418c-86a2-d4dc4fd630d0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239242",
+      "modified": "2024-01-10T12:29:59.239246",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "target_ref": "attack-pattern--f8df6b57-14bc-425f-9a91-6f59f6799307"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--bdbcb7eb-ed4b-4979-aaf6-6748581b4c0d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239289",
+      "modified": "2024-01-10T12:29:59.239293",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d6d8cc09-f8d0-4c3a-88b4-0875aff150ad",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239336",
+      "modified": "2024-01-10T12:29:59.239340",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--bef0fb34-0179-48ae-80a6-33a4c787d877",
+      "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--29d4f1ea-70e5-494a-933a-d8838d10be60",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239378",
+      "modified": "2024-01-10T12:29:59.239382",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--890072af-2e91-4275-8ad4-eec295ab6f08",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239433",
+      "modified": "2024-01-10T12:29:59.239437",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f39e0024-d3ab-4ce9-bcfe-e519604c9549",
+      "name": "value_chain.distribution.variety.Compromised server",
+      "created": "2024-01-10T12:29:59.239476",
+      "modified": "2024-01-10T12:29:59.239480"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ad2c95d8-f4f1-4f63-942b-b6ca5ab46e89",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239511",
+      "modified": "2024-01-10T12:29:59.239515",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--f39e0024-d3ab-4ce9-bcfe-e519604c9549",
+      "target_ref": "attack-pattern--b14395bd-5419-4ef4-9bd8-696936f509bb"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--98cd3e89-8f7c-40d7-95f9-f199ffad4ef6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239555",
+      "modified": "2024-01-10T12:29:59.239558",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--647a36c7-8e2f-4156-8fff-62dd30b9f456",
+      "name": "attribute.availability.variety.Degradation",
+      "created": "2024-01-10T12:29:59.239582",
+      "modified": "2024-01-10T12:29:59.239586"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c62d1591-20e6-4e9e-9483-ec9f7876bb05",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239618",
+      "modified": "2024-01-10T12:29:59.239622",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--647a36c7-8e2f-4156-8fff-62dd30b9f456",
+      "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "name": "attribute.integrity.variety.Modify data",
+      "created": "2024-01-10T12:29:59.239695",
+      "modified": "2024-01-10T12:29:59.239704"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f0a70931-57a6-49ee-819b-2495805cf071",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239744",
+      "modified": "2024-01-10T12:29:59.239749",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--36e9f5bc-ac13-4da4-a2f4-01f4877d9004"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--49375876-14e8-431d-b8ae-cb681e5361cd",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239799",
+      "modified": "2024-01-10T12:29:59.239804",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--65dc8136-d59d-4cb4-9fd8-8c655e541590",
+      "target_ref": "attack-pattern--1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a5a5ecb0-dcb6-498a-9786-45a87f58cf26",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239861",
+      "modified": "2024-01-10T12:29:59.239866",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--647a36c7-8e2f-4156-8fff-62dd30b9f456",
+      "target_ref": "attack-pattern--1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--71b28826-53d5-4a9c-847b-a0b728b0c019",
+      "name": "action.hacking.variety.Brute force",
+      "created": "2024-01-10T12:29:59.239941",
+      "modified": "2024-01-10T12:29:59.239948"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6fc8013d-a0ee-43b4-98c5-80890c78430c",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.239981",
+      "modified": "2024-01-10T12:29:59.239985",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71b28826-53d5-4a9c-847b-a0b728b0c019",
+      "target_ref": "attack-pattern--8e7089d3-fba2-44f8-94a8-9a79c53920c4"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1c4cb141-9c73-40a2-8a55-215328b875ac",
+      "name": "action.hacking.variety.Disable controls",
+      "created": "2024-01-10T12:29:59.240021",
+      "modified": "2024-01-10T12:29:59.240026"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0f1d327e-1c6b-470c-8776-79e4e2137657",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240060",
+      "modified": "2024-01-10T12:29:59.240064",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1c4cb141-9c73-40a2-8a55-215328b875ac",
+      "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "name": "action.social.variety.Evade Defenses",
+      "created": "2024-01-10T12:29:59.240105",
+      "modified": "2024-01-10T12:29:59.240110"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--79a4a5c8-752a-4145-89fd-05c570628fa4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240137",
+      "modified": "2024-01-10T12:29:59.240140",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--792b8019-d0e5-45ff-9ce6-67eeaf8aa724",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240187",
+      "modified": "2024-01-10T12:29:59.240192",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "target_ref": "attack-pattern--2883c520-7957-46ca-89bd-dab1ad53b601"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ef9757e5-9d46-4cd6-b0fe-2b0328e21290",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240232",
+      "modified": "2024-01-10T12:29:59.240236",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e2ba2364-0539-45e1-88b3-150d2cb3f0cf",
+      "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2552509a-6e57-4dbe-8927-0c02af2ca2a8",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240276",
+      "modified": "2024-01-10T12:29:59.240280",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--08f97a80-cca3-441f-a17d-effc30f7cf0a",
+      "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c2bf7fd8-c25f-409c-9d60-957382993f18",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240319",
+      "modified": "2024-01-10T12:29:59.240324",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--e33c7ecc-5a38-497f-beb2-a9a2049a4c20"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--3d5d3afa-e40e-4e28-9371-95d234ac1cde",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240366",
+      "modified": "2024-01-10T12:29:59.240370",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e2ba2364-0539-45e1-88b3-150d2cb3f0cf",
+      "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1728d448-cc3a-4cd0-9749-e7935c5b5321",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240414",
+      "modified": "2024-01-10T12:29:59.240418",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--08f97a80-cca3-441f-a17d-effc30f7cf0a",
+      "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--74d6276b-f49f-4f2e-9a85-2f4d4e0fdd32",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240461",
+      "modified": "2024-01-10T12:29:59.240465",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--1b22b676-9347-4c55-9a35-ef0dc653db5b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a71958fe-c0d6-4f95-9c2f-1fda7e665fd1",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240505",
+      "modified": "2024-01-10T12:29:59.240510",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e2ba2364-0539-45e1-88b3-150d2cb3f0cf",
+      "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1f425d10-4e44-4901-bed8-56f076aec133",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240553",
+      "modified": "2024-01-10T12:29:59.240557",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--08f97a80-cca3-441f-a17d-effc30f7cf0a",
+      "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fc8b2d06-2444-47e5-8171-e87e25e54f14",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240600",
+      "modified": "2024-01-10T12:29:59.240605",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--56ddc820-6cfb-407f-850b-52c035d123ac"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--38582c8a-d306-4810-8793-0765117e8cf6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240695",
+      "modified": "2024-01-10T12:29:59.240702",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0cbfa039-73c5-417d-a6c8-2ab75f19b2b2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240779",
+      "modified": "2024-01-10T12:29:59.240785",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "target_ref": "attack-pattern--2900bbd8-308a-4274-b074-5b8bde8347bc"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2441e40c-3af1-4124-af1a-af0383fd7790",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240833",
+      "modified": "2024-01-10T12:29:59.240838",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c8c3a9ea-f173-42ba-b368-06c70a6670b2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240884",
+      "modified": "2024-01-10T12:29:59.240888",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1ea0e2f9-4c1c-487e-8253-a993206848a0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240939",
+      "modified": "2024-01-10T12:29:59.240943",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "target_ref": "attack-pattern--3f1f4ccb-9be2-4ff8-8f69-dd972221169b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0616ee34-84b7-47e7-ba01-58087c47c4f1",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.240981",
+      "modified": "2024-01-10T12:29:59.240985",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--9a02039e-a070-46e6-bccf-11820769d9c5",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241028",
+      "modified": "2024-01-10T12:29:59.241033",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--03115b38-e0c2-41cf-af5e-674e7d6d3fa2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241070",
+      "modified": "2024-01-10T12:29:59.241073",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "target_ref": "attack-pattern--1c478716-71d9-46a4-9a53-fa5d576adb60"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--def27891-4aa0-4a38-9a20-3f5b8a99fe6a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241096",
+      "modified": "2024-01-10T12:29:59.241099",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c2256eb6-389e-4394-9c26-61c3f361c515",
+      "name": "action.hacking.variety.Exploit vuln",
+      "created": "2024-01-10T12:29:59.241125",
+      "modified": "2024-01-10T12:29:59.241127"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8dfd68fe-7e9d-4dd5-bbe4-e1036042259d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241149",
+      "modified": "2024-01-10T12:29:59.241151",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c2256eb6-389e-4394-9c26-61c3f361c515",
+      "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b65c178e-1660-4a42-b59b-6f9338dd0eb6",
+      "name": "action.malware.variety.Evade Defenses",
+      "created": "2024-01-10T12:29:59.241176",
+      "modified": "2024-01-10T12:29:59.241178"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--927e3bdf-308f-42f9-98e3-19cefd415aa0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241215",
+      "modified": "2024-01-10T12:29:59.241219",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b65c178e-1660-4a42-b59b-6f9338dd0eb6",
+      "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c3753328-2c3d-4d6b-b238-c75c3fbebe44",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241286",
+      "modified": "2024-01-10T12:29:59.241291",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--9f947a1c-3860-48a8-8af0-a2dfa3efde03"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--07284cf0-b261-4bef-81d9-73092bbf3b1b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241339",
+      "modified": "2024-01-10T12:29:59.241344",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6c52cfbf-0d03-4408-8294-714a7bd6e117",
+      "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--400ac7a3-8e19-452f-bfdf-d993e9a39eed",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241428",
+      "modified": "2024-01-10T12:29:59.241433",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b65c178e-1660-4a42-b59b-6f9338dd0eb6",
+      "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ab37b658-d0b9-4a16-b73e-c4bb3f1c6bc4",
+      "name": "action.malware.variety.Modify data",
+      "created": "2024-01-10T12:29:59.241483",
+      "modified": "2024-01-10T12:29:59.241487"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e54a9a55-f930-4158-886d-72b355e898bc",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241542",
+      "modified": "2024-01-10T12:29:59.241548",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--ab37b658-d0b9-4a16-b73e-c4bb3f1c6bc4",
+      "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c70d1822-0bc5-426f-8a12-000272446512",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241617",
+      "modified": "2024-01-10T12:29:59.241621",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2ea56c6a-214b-4f78-8786-cca5e4addee7",
+      "name": "attribute.integrity.variety.Log tampering",
+      "created": "2024-01-10T12:29:59.241673",
+      "modified": "2024-01-10T12:29:59.241702"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d13a814a-7b09-49ec-aa65-d43d48c81849",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241757",
+      "modified": "2024-01-10T12:29:59.241763",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2ea56c6a-214b-4f78-8786-cca5e4addee7",
+      "target_ref": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--af00fc50-ccb7-494c-b31f-386d20c205d7",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241833",
+      "modified": "2024-01-10T12:29:59.241838",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--6ae1c33a-ee25-4a9a-a711-73e40272faa3",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9c6e5542-ebca-4c20-aeba-9deaa5640886",
+      "name": "action.hacking.vector.Web application",
+      "created": "2024-01-10T12:29:59.241895",
+      "modified": "2024-01-10T12:29:59.241900"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--09ecd867-1bdf-4501-afd2-94e7f7d04276",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.241945",
+      "modified": "2024-01-10T12:29:59.241950",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--9c6e5542-ebca-4c20-aeba-9deaa5640886",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a809f933-1601-4482-b845-0eb2825604d8",
+      "name": "action.malware.variety.Exploit misconfig",
+      "created": "2024-01-10T12:29:59.242006",
+      "modified": "2024-01-10T12:29:59.242011"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8c6ec639-fce5-4042-bd0b-5204b659ba69",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242054",
+      "modified": "2024-01-10T12:29:59.242059",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--a809f933-1601-4482-b845-0eb2825604d8",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fefb08ac-5451-4cb0-bfb2-3a2ae296d9e0",
+      "name": "action.malware.vector.Web application",
+      "created": "2024-01-10T12:29:59.242115",
+      "modified": "2024-01-10T12:29:59.242120"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--19151627-0558-472c-8db1-6904ca437bac",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242164",
+      "modified": "2024-01-10T12:29:59.242168",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--fefb08ac-5451-4cb0-bfb2-3a2ae296d9e0",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8a90fd1f-903b-49a6-bd4e-828eebca12e9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242223",
+      "modified": "2024-01-10T12:29:59.242228",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--eac89681-7b0a-4927-9f6b-71fc18e852d8",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242266",
+      "modified": "2024-01-10T12:29:59.242269",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e48d6f99-5b8b-48bd-b530-b8c1f7fb79c4",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ba718ef6-81da-45e0-90b7-276d31ea164f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242339",
+      "modified": "2024-01-10T12:29:59.242348",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--89bb3ef5-bc3d-4577-b515-9054faaa924b",
+      "target_ref": "attack-pattern--32632a95-6856-47b9-9ab7-fea5cd7dce00"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fd2f0e54-4891-4cc1-be1f-51a60f868a0e",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242437",
+      "modified": "2024-01-10T12:29:59.242443",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c2256eb6-389e-4394-9c26-61c3f361c515",
+      "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ab44b78d-6bf0-4c4a-8134-ff768a9a20f5",
+      "name": "action.malware.variety.Exploit vuln",
+      "created": "2024-01-10T12:29:59.242489",
+      "modified": "2024-01-10T12:29:59.242493"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4f45865a-a913-459e-8a8c-a6c5072b2ca9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242519",
+      "modified": "2024-01-10T12:29:59.242521",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--ab44b78d-6bf0-4c4a-8134-ff768a9a20f5",
+      "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--660c867b-37e1-4433-a83c-3118c7cd07d4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242572",
+      "modified": "2024-01-10T12:29:59.242576",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5553059e-fa4a-4096-8bc3-1d00e0aefe6f",
+      "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8ced2b57-c27a-4774-8e32-99622d4a2886",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242678",
+      "modified": "2024-01-10T12:29:59.242687",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c2256eb6-389e-4394-9c26-61c3f361c515",
+      "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--0d2c95d5-c38c-4779-9701-a1adb2b15d93",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242774",
+      "modified": "2024-01-10T12:29:59.242779",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--ab44b78d-6bf0-4c4a-8134-ff768a9a20f5",
+      "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a616b139-1644-4a16-bb33-0b82c2c4d4c0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242849",
+      "modified": "2024-01-10T12:29:59.242856",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2f014ed2-0dc6-4f92-aa3e-30100857b599",
+      "name": "action.social.vector.Software",
+      "created": "2024-01-10T12:29:59.242893",
+      "modified": "2024-01-10T12:29:59.242896"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6cff5163-c0d7-45a2-af24-a08434618903",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242923",
+      "modified": "2024-01-10T12:29:59.242926",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2f014ed2-0dc6-4f92-aa3e-30100857b599",
+      "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--744a3d2a-9d43-4456-956f-64b5f004bbaf",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.242958",
+      "modified": "2024-01-10T12:29:59.242960",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--89bb3ef5-bc3d-4577-b515-9054faaa924b",
+      "target_ref": "attack-pattern--85a45294-08f1-4539-bf00-7da08aa7b0ee"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--95d47958-bf82-4557-9f32-6c944d1be40b",
+      "name": "action.hacking.variety.MitM",
+      "created": "2024-01-10T12:29:59.242990",
+      "modified": "2024-01-10T12:29:59.242992"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f9d2d239-2931-4128-b314-06e2174c83d4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243016",
+      "modified": "2024-01-10T12:29:59.243018",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--95d47958-bf82-4557-9f32-6c944d1be40b",
+      "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--67683ec3-347a-4e53-a9af-f695e8b999dc",
+      "name": "action.malware.variety.Packet sniffer",
+      "created": "2024-01-10T12:29:59.243048",
+      "modified": "2024-01-10T12:29:59.243050"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--73108855-06ca-4940-bef9-2500ccc37b58",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243092",
+      "modified": "2024-01-10T12:29:59.243097",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--67683ec3-347a-4e53-a9af-f695e8b999dc",
+      "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "name": "attribute.confidentiality.data_disclosure",
+      "created": "2024-01-10T12:29:59.243149",
+      "modified": "2024-01-10T12:29:59.243152"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4dcf8b13-edda-4331-ab01-f6038d6732c1",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243191",
+      "modified": "2024-01-10T12:29:59.243201",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--538fcec9-9c04-4717-876f-a2f3d2ee7d96",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243257",
+      "modified": "2024-01-10T12:29:59.243260",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--9a505987-ab05-4f46-a9a6-6441442eec3b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fe6140cb-6d9e-48f6-a3f6-9f7359426640",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243306",
+      "modified": "2024-01-10T12:29:59.243309",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--95d47958-bf82-4557-9f32-6c944d1be40b",
+      "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d43043b3-2484-4c98-9239-61a7c91cd036",
+      "name": "action.malware.variety.Scan network",
+      "created": "2024-01-10T12:29:59.243351",
+      "modified": "2024-01-10T12:29:59.243355"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e3f4c02e-feef-4bec-b273-22903b586f3c",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243400",
+      "modified": "2024-01-10T12:29:59.243431",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--d43043b3-2484-4c98-9239-61a7c91cd036",
+      "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7a94eb8b-2d9c-4728-b7ba-8ffbc4582f7f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243502",
+      "modified": "2024-01-10T12:29:59.243507",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--62eca28a-b2e8-4fbe-a1ac-dfc5eaf21890",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243561",
+      "modified": "2024-01-10T12:29:59.243565",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--043908a8-8dfb-4915-824c-c5e10679ffa8",
+      "name": "value_chain.targeting.variety.Other",
+      "created": "2024-01-10T12:29:59.243600",
+      "modified": "2024-01-10T12:29:59.243602"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b3d93b9a-1147-4cca-bc38-04cffcf52f18",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243645",
+      "modified": "2024-01-10T12:29:59.243650",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--043908a8-8dfb-4915-824c-c5e10679ffa8",
+      "target_ref": "attack-pattern--2877063e-1851-48d2-bcc6-bc1d2733157e"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7a66db27-6bdb-40fb-b56b-30f86c3880ad",
+      "name": "action.hacking.variety.Use of stolen creds",
+      "created": "2024-01-10T12:29:59.243711",
+      "modified": "2024-01-10T12:29:59.243716"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d67a1c06-4c29-441a-8476-58088bcc1d06",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243756",
+      "modified": "2024-01-10T12:29:59.243780",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a66db27-6bdb-40fb-b56b-30f86c3880ad",
+      "target_ref": "attack-pattern--8bb4538f-f16f-49f0-a431-70b5444c7349"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b1c93167-5440-4a11-b510-1af117bdb5ab",
+      "name": "value_chain.targeting.variety.Default credentials",
+      "created": "2024-01-10T12:29:59.243890",
+      "modified": "2024-01-10T12:29:59.243895"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f24fca50-9019-4db0-b1ef-2030de98054d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.243949",
+      "modified": "2024-01-10T12:29:59.243954",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b1c93167-5440-4a11-b510-1af117bdb5ab",
+      "target_ref": "attack-pattern--8bb4538f-f16f-49f0-a431-70b5444c7349"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c9173203-aba9-4645-9699-ea1f74b34d1a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244015",
+      "modified": "2024-01-10T12:29:59.244018",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a66db27-6bdb-40fb-b56b-30f86c3880ad",
+      "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--889efa0c-f2ea-441b-97ea-e97f9694516f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244076",
+      "modified": "2024-01-10T12:29:59.244081",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8a145449-2313-4876-a905-257b71b97c41",
+      "name": "value_chain.targeting.variety.Lost or stolen credentials",
+      "created": "2024-01-10T12:29:59.244163",
+      "modified": "2024-01-10T12:29:59.244168"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--32bf9246-3902-4c6e-9e8c-37b467206483",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244208",
+      "modified": "2024-01-10T12:29:59.244211",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8a145449-2313-4876-a905-257b71b97c41",
+      "target_ref": "attack-pattern--c9a8d958-fcdb-40d2-af4c-461c8031651a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--382207fb-d55f-42fc-88c7-1dee59895cd9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244277",
+      "modified": "2024-01-10T12:29:59.244280",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a66db27-6bdb-40fb-b56b-30f86c3880ad",
+      "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--269c4ab7-2eb4-41f2-a4ee-e685be43cb72",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244331",
+      "modified": "2024-01-10T12:29:59.244333",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fac97005-2ffc-48ad-9966-48c1084abc8b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244385",
+      "modified": "2024-01-10T12:29:59.244387",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8a145449-2313-4876-a905-257b71b97c41",
+      "target_ref": "attack-pattern--cd2c76a4-5e23-4ca5-9c40-d5e0604f7101"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6e32d503-351c-4a18-9b99-8641cb57ffbf",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244421",
+      "modified": "2024-01-10T12:29:59.244424",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--bef0fb34-0179-48ae-80a6-33a4c787d877",
+      "target_ref": "attack-pattern--d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--917bb3cd-f7dc-4e98-a1ba-aa8495767944",
+      "name": "value_chain.non-distribution services.variety.Proxy",
+      "created": "2024-01-10T12:29:59.244458",
+      "modified": "2024-01-10T12:29:59.244462"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a356d121-1879-46af-8b1c-cf85d72d8b6f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244502",
+      "modified": "2024-01-10T12:29:59.244505",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--917bb3cd-f7dc-4e98-a1ba-aa8495767944",
+      "target_ref": "attack-pattern--d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--27ecc59b-99f6-44a2-93f9-bc4e134ae997",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244546",
+      "modified": "2024-01-10T12:29:59.244549",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--28771517-61ec-4394-b32d-1a4671e8edbf",
+      "target_ref": "attack-pattern--24a9253e-8948-4c98-b751-8e2aee53127c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--84929806-ef0e-428b-8d8f-1dfc318fdd8a",
+      "name": "action.hacking.vector.Other network service",
+      "created": "2024-01-10T12:29:59.244583",
+      "modified": "2024-01-10T12:29:59.244585"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4e039d71-4b4c-481d-8b0b-8c048ce60473",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244613",
+      "modified": "2024-01-10T12:29:59.244615",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--84929806-ef0e-428b-8d8f-1dfc318fdd8a",
+      "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d531c495-ae9b-4d7e-b277-a08917aad2fc",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244692",
+      "modified": "2024-01-10T12:29:59.244696",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--67683ec3-347a-4e53-a9af-f695e8b999dc",
+      "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b1e27683-364d-43d0-8a19-280082061067",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244784",
+      "modified": "2024-01-10T12:29:59.244788",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--d43043b3-2484-4c98-9239-61a7c91cd036",
+      "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ca463a87-429d-4ea6-a16f-3d8eb8990ea1",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244875",
+      "modified": "2024-01-10T12:29:59.244879",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--043908a8-8dfb-4915-824c-c5e10679ffa8",
+      "target_ref": "attack-pattern--0fe075d5-beac-4d02-b93e-0f874997db72"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4139ac8a-3d20-44bf-a45b-9871b03acf22",
+      "name": "action.malware.variety.Backdoor",
+      "created": "2024-01-10T12:29:59.244937",
+      "modified": "2024-01-10T12:29:59.244941"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ecbb55e4-ecf2-406d-963d-114a018236b3",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.244991",
+      "modified": "2024-01-10T12:29:59.244995",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--4139ac8a-3d20-44bf-a45b-9871b03acf22",
+      "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7a07bbd8-2893-465b-abae-c193195db3df",
+      "name": "action.malware.vector.Partner",
+      "created": "2024-01-10T12:29:59.245086",
+      "modified": "2024-01-10T12:29:59.245095"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c4317419-3ed5-4c38-a422-7883704d5f5f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245153",
+      "modified": "2024-01-10T12:29:59.245158",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a07bbd8-2893-465b-abae-c193195db3df",
+      "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--eb3f3bae-0eb7-4f1d-9662-1a065a133da9",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245200",
+      "modified": "2024-01-10T12:29:59.245202",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b50ac780-8e84-4821-b920-95532d9d0d04",
+      "name": "action.social.vector.In-person",
+      "created": "2024-01-10T12:29:59.245242",
+      "modified": "2024-01-10T12:29:59.245244"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1b33edd8-3530-4436-9c93-80decbfed935",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245297",
+      "modified": "2024-01-10T12:29:59.245301",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b50ac780-8e84-4821-b920-95532d9d0d04",
+      "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--3dc8ec73-fad7-44b6-b676-f9c696e242c3",
+      "name": "value_chain.targeting.variety.Partner",
+      "created": "2024-01-10T12:29:59.245366",
+      "modified": "2024-01-10T12:29:59.245371"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--525b098e-9ca5-4a47-9627-dcd75c137031",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245424",
+      "modified": "2024-01-10T12:29:59.245430",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--3dc8ec73-fad7-44b6-b676-f9c696e242c3",
+      "target_ref": "attack-pattern--35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--85d14866-cfbe-4caa-a846-01ca7c82e698",
+      "name": "action.malware.variety.Capture app data",
+      "created": "2024-01-10T12:29:59.245498",
+      "modified": "2024-01-10T12:29:59.245503"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--33aedb73-ffe5-486d-95e2-bbd80ddab571",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245558",
+      "modified": "2024-01-10T12:29:59.245563",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--85d14866-cfbe-4caa-a846-01ca7c82e698",
+      "target_ref": "attack-pattern--2aa406ed-81c3-4c1d-ba83-cfbee5a2847a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7d4215bd-9fb2-48bf-97ef-78f330f19e7a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245673",
+      "modified": "2024-01-10T12:29:59.245697",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--85d14866-cfbe-4caa-a846-01ca7c82e698",
+      "target_ref": "attack-pattern--53a48c74-0025-45f4-b04a-baa853df8204"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--8bd4c5ad-e2e2-41cb-b7b5-5285ccd04202",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245784",
+      "modified": "2024-01-10T12:29:59.245790",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--ab37b658-d0b9-4a16-b73e-c4bb3f1c6bc4",
+      "target_ref": "attack-pattern--53a48c74-0025-45f4-b04a-baa853df8204"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--560390e4-9f82-48f9-b63a-7b5ff2cc31eb",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245858",
+      "modified": "2024-01-10T12:29:59.245862",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--85d14866-cfbe-4caa-a846-01ca7c82e698",
+      "target_ref": "attack-pattern--c5e3cdbc-0387-4be9-8f83-ff5c0865f377"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e29de8cd-345f-4b5b-a195-f8dc7ca80348",
+      "name": "action.malware.variety.Capture stored data",
+      "created": "2024-01-10T12:29:59.245934",
+      "modified": "2024-01-10T12:29:59.245939"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--4c277b07-9352-4772-a768-e418b95dc921",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.245992",
+      "modified": "2024-01-10T12:29:59.245997",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--e29de8cd-345f-4b5b-a195-f8dc7ca80348",
+      "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7b26a196-8b6f-44c4-bc9e-4b2c8a8a4e14",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246058",
+      "modified": "2024-01-10T12:29:59.246060",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f453ae8f-e61c-4f19-8a41-583bbd81b44d",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246099",
+      "modified": "2024-01-10T12:29:59.246101",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--b0901daa-a54a-477b-a214-8e74be2e6dc3",
+      "target_ref": "attack-pattern--3405891b-16aa-4bd7-bd7c-733501f9b20f"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--4e35ef63-74cb-49b0-9b90-b9956326d9b2",
+      "name": "action.malware.variety.Destroy data",
+      "created": "2024-01-10T12:29:59.246177",
+      "modified": "2024-01-10T12:29:59.246184"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--56df837d-c989-4b3d-b557-c301c091f186",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246233",
+      "modified": "2024-01-10T12:29:59.246237",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--4e35ef63-74cb-49b0-9b90-b9956326d9b2",
+      "target_ref": "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--575f1bdb-f376-4c88-a049-677c653d4af8",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246299",
+      "modified": "2024-01-10T12:29:59.246303",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--493832d9-cea6-4b63-abe7-9a65a6473675"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--0e59fed3-77d6-403c-901e-c2e297b9ce5f",
+      "name": "action.malware.variety.Export data",
+      "created": "2024-01-10T12:29:59.246377",
+      "modified": "2024-01-10T12:29:59.246382"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e78942a3-3ef3-4614-bb17-65e40b1564c6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246428",
+      "modified": "2024-01-10T12:29:59.246431",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--0e59fed3-77d6-403c-901e-c2e297b9ce5f",
+      "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6f95c6f7-a5b1-4931-98c4-0e29db883e5e",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246549",
+      "modified": "2024-01-10T12:29:59.246556",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c41c0518-c8ba-4bcf-83b6-940b351bd835",
+      "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--5d6e16aa-e427-4f9c-8466-c2a4105c1b9e",
+      "name": "value_chain.targeting.variety.Organizational Information",
+      "created": "2024-01-10T12:29:59.246623",
+      "modified": "2024-01-10T12:29:59.246629"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--ef5e1628-4c78-4972-9260-7b0362d64700",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246684",
+      "modified": "2024-01-10T12:29:59.246687",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5d6e16aa-e427-4f9c-8466-c2a4105c1b9e",
+      "target_ref": "attack-pattern--b7e13ee8-182c-4f19-92a4-a88d7d855d54"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--caa1df92-7e7b-4c1d-9a88-66a4f35d86a4",
+      "name": "action.malware.variety.Profile host",
+      "created": "2024-01-10T12:29:59.246765",
+      "modified": "2024-01-10T12:29:59.246772"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--fe4ffa7e-ef50-4f90-8cdc-9a0e095ac35e",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246832",
+      "modified": "2024-01-10T12:29:59.246837",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--caa1df92-7e7b-4c1d-9a88-66a4f35d86a4",
+      "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--57811c04-e23c-4b88-b57b-a9b7c4c0c96b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246906",
+      "modified": "2024-01-10T12:29:59.246909",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--d43043b3-2484-4c98-9239-61a7c91cd036",
+      "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--a294cb12-5189-4a30-a9bb-e927b5e062f0",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.246971",
+      "modified": "2024-01-10T12:29:59.246973",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5d6e16aa-e427-4f9c-8466-c2a4105c1b9e",
+      "target_ref": "attack-pattern--3de230d4-3e42-4041-b089-17e1128feded"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--12b5e930-e7c2-47b8-87d5-9f4956274b08",
+      "name": "action.malware.variety.Rootkit",
+      "created": "2024-01-10T12:29:59.247013",
+      "modified": "2024-01-10T12:29:59.247016"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--aa4e9801-ed0d-4a58-8199-5644f9bff631",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247052",
+      "modified": "2024-01-10T12:29:59.247056",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--12b5e930-e7c2-47b8-87d5-9f4956274b08",
+      "target_ref": "attack-pattern--b9160e77-ea9e-4ba9-b1c8-53a3c466b13d"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--78206f8a-ec47-4862-856e-c0b497fe5e8a",
+      "name": "value_chain.targeting.variety.Unknown",
+      "created": "2024-01-10T12:29:59.247096",
+      "modified": "2024-01-10T12:29:59.247098"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--20f9c86c-481d-4324-a185-c17f9d8b1cbb",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247130",
+      "modified": "2024-01-10T12:29:59.247133",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--78206f8a-ec47-4862-856e-c0b497fe5e8a",
+      "target_ref": "attack-pattern--b9160e77-ea9e-4ba9-b1c8-53a3c466b13d"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--36967606-4813-45d2-a3d2-59c04652464f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247204",
+      "modified": "2024-01-10T12:29:59.247207",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--12b5e930-e7c2-47b8-87d5-9f4956274b08",
+      "target_ref": "attack-pattern--3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d9acefa2-19a8-4097-973f-3228b2c6f3c4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247264",
+      "modified": "2024-01-10T12:29:59.247269",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--309058e8-14cb-4da7-ad9a-67110c276179",
+      "name": "action.malware.variety.Worm",
+      "created": "2024-01-10T12:29:59.247317",
+      "modified": "2024-01-10T12:29:59.247320"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d7e1792a-962a-4f82-afe1-082d5a168f0c",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247352",
+      "modified": "2024-01-10T12:29:59.247354",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--309058e8-14cb-4da7-ad9a-67110c276179",
+      "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c880ef47-88bd-4e14-9be3-65e133d2e046",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247405",
+      "modified": "2024-01-10T12:29:59.247409",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--a6ad5d65-ac81-4b44-9747-c7097a13aa3d",
+      "name": "action.social.vector.Removable media",
+      "created": "2024-01-10T12:29:59.247473",
+      "modified": "2024-01-10T12:29:59.247476"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b5007298-dc65-4435-a89c-7d38d0a7f645",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247514",
+      "modified": "2024-01-10T12:29:59.247517",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--a6ad5d65-ac81-4b44-9747-c7097a13aa3d",
+      "target_ref": "attack-pattern--c267bbee-bb59-47fe-85e0-3ed210337c21"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7ff985e7-6c3a-49c3-b8ac-0d9ad0f6ff5c",
+      "name": "action.malware.vector.Download by malware",
+      "created": "2024-01-10T12:29:59.247557",
+      "modified": "2024-01-10T12:29:59.247559"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--03c5495f-d2e4-46ea-8f80-d004446ba9c3",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247593",
+      "modified": "2024-01-10T12:29:59.247596",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7ff985e7-6c3a-49c3-b8ac-0d9ad0f6ff5c",
+      "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--f07144f8-9511-4a56-ac9d-ec623090caea",
+      "name": "action.malware.vector.Email attachment",
+      "created": "2024-01-10T12:29:59.247668",
+      "modified": "2024-01-10T12:29:59.247672"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--5efe8ed2-dead-42fc-b026-c4795fad53e6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247734",
+      "modified": "2024-01-10T12:29:59.247739",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--f07144f8-9511-4a56-ac9d-ec623090caea",
+      "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bd70c51b-f86c-4b7f-9dbf-20f826da81b2",
+      "name": "action.social.vector.Documents",
+      "created": "2024-01-10T12:29:59.247795",
+      "modified": "2024-01-10T12:29:59.247798"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--d646569b-2e35-4b53-900f-00ade69d18b7",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247833",
+      "modified": "2024-01-10T12:29:59.247835",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--bd70c51b-f86c-4b7f-9dbf-20f826da81b2",
+      "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--2b235331-cd99-4914-887f-60fbaff82145",
+      "name": "action.social.vector.Email",
+      "created": "2024-01-10T12:29:59.247875",
+      "modified": "2024-01-10T12:29:59.247878"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--bc891658-4284-4593-a7f0-e516e61ddd55",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.247915",
+      "modified": "2024-01-10T12:29:59.247917",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2b235331-cd99-4914-887f-60fbaff82145",
+      "target_ref": "attack-pattern--2736b752-4ec5-4421-a230-8977dea7649c"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--2894b40a-37db-4347-a626-3f0d9178c6aa",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248012",
+      "modified": "2024-01-10T12:29:59.248019",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--f07144f8-9511-4a56-ac9d-ec623090caea",
+      "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--840862d5-1c4b-4d6a-a40d-9cbba5c79f4b",
+      "name": "action.social.variety.Phishing",
+      "created": "2024-01-10T12:29:59.248075",
+      "modified": "2024-01-10T12:29:59.248078"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e976f34d-ee9a-4b3d-ac81-e50f6857eea8",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248118",
+      "modified": "2024-01-10T12:29:59.248120",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--840862d5-1c4b-4d6a-a40d-9cbba5c79f4b",
+      "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--652f5bdd-d717-4808-8be9-ee694dae19ae",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248189",
+      "modified": "2024-01-10T12:29:59.248191",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2b235331-cd99-4914-887f-60fbaff82145",
+      "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--94084ceb-5904-4c74-8866-f150dcedd69b",
+      "name": "value_chain.distribution.variety.Email",
+      "created": "2024-01-10T12:29:59.248235",
+      "modified": "2024-01-10T12:29:59.248237"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e9158c0c-7176-4694-a877-2808f9ad7c15",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248271",
+      "modified": "2024-01-10T12:29:59.248273",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--94084ceb-5904-4c74-8866-f150dcedd69b",
+      "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--d88b0099-a790-40ac-b3fd-0798bcc5cfbf",
+      "name": "value_chain.targeting.variety.Email addresses",
+      "created": "2024-01-10T12:29:59.248313",
+      "modified": "2024-01-10T12:29:59.248316"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--849d7bc1-11f6-41f4-b9fb-b2efbb043e64",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248350",
+      "modified": "2024-01-10T12:29:59.248352",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--d88b0099-a790-40ac-b3fd-0798bcc5cfbf",
+      "target_ref": "attack-pattern--648f995e-9c3a-41e4-aeee-98bb41037426"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--3c166b43-b43d-4891-9eed-8464f9d005bf",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248419",
+      "modified": "2024-01-10T12:29:59.248422",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--7a07bbd8-2893-465b-abae-c193195db3df",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e09f63e8-9f02-4c64-8f87-fcfd853058b7",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248461",
+      "modified": "2024-01-10T12:29:59.248464",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6fc34298-f346-4186-a5b1-a8dde062c4f2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248517",
+      "modified": "2024-01-10T12:29:59.248520",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--2f014ed2-0dc6-4f92-aa3e-30100857b599",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--5649f337-3097-4ee8-a09d-f26658add3d8",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248557",
+      "modified": "2024-01-10T12:29:59.248559",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--55ab5fa8-d69c-4013-8cba-397b835943ba",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--c7b28bf9-9235-47eb-8cba-af078c4ec603",
+      "name": "value_chain.distribution.variety.Partner",
+      "created": "2024-01-10T12:29:59.248603",
+      "modified": "2024-01-10T12:29:59.248606"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--96537aba-009a-4089-85ea-9dfd229ebaec",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248641",
+      "modified": "2024-01-10T12:29:59.248643",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--c7b28bf9-9235-47eb-8cba-af078c4ec603",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--11b83413-ef8d-491d-b612-a2b96731c5f5",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248706",
+      "modified": "2024-01-10T12:29:59.248708",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--3dc8ec73-fad7-44b6-b676-f9c696e242c3",
+      "target_ref": "attack-pattern--5e0f75da-e108-4688-a6de-a4f07cc2cbe3"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c8aa218b-8998-448b-aad0-1e2581999fb5",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248757",
+      "modified": "2024-01-10T12:29:59.248759",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--ba203963-3182-41ac-af14-7e7ebc83cd61"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--3f1a7256-ee06-4618-ba72-109543a24dcc",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248809",
+      "modified": "2024-01-10T12:29:59.248811",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--93b5be56-733f-47c3-bcce-b73d6597c53c",
+      "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8326b3a2-ab0e-4c57-87f8-e826d6983390",
+      "name": "attribute.integrity.variety.Misrepresentation",
+      "created": "2024-01-10T12:29:59.248854",
+      "modified": "2024-01-10T12:29:59.248856"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--76ee92cb-8cd3-460b-b266-6c0f55cf0e1b",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248892",
+      "modified": "2024-01-10T12:29:59.248894",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--8326b3a2-ab0e-4c57-87f8-e826d6983390",
+      "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1c6a0922-e7cb-492f-bb20-293065a7f255",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248942",
+      "modified": "2024-01-10T12:29:59.248944",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--8535b71e-3c12-4258-a4ab-40257a1becc4"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--81de9a7c-25f0-4bc3-94db-8d9300e5dd3e",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.248985",
+      "modified": "2024-01-10T12:29:59.248988",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--03fe12f2-1819-467c-a196-9dd97f835c1d",
+      "target_ref": "attack-pattern--e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--49c56d42-d9d4-4577-8631-1c52733d9ca6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249034",
+      "modified": "2024-01-10T12:29:59.249036",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--1055dad6-1ebc-4dd9-870c-36fa75525007",
+      "target_ref": "attack-pattern--e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f0167869-64ec-4b3e-8263-39fe03e75a8a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249074",
+      "modified": "2024-01-10T12:29:59.249077",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--5eb94868-fe7a-4823-8bb5-a15b3c8501ce",
+      "target_ref": "attack-pattern--008b8f56-6107-48be-aa9f-746f927dbb61"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--28c0423d-e588-4574-a2ae-8b470eaf7a2a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249122",
+      "modified": "2024-01-10T12:29:59.249124",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--998163f1-86dc-4ee5-8f8c-c787635f2d60",
+      "target_ref": "attack-pattern--008b8f56-6107-48be-aa9f-746f927dbb61"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--648c5e67-1187-49a7-9c4b-15f996aa31c0",
+      "name": "attribute.integrity.variety.Modify configuration",
+      "created": "2024-01-10T12:29:59.249169",
+      "modified": "2024-01-10T12:29:59.249171"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6c43abf9-3a7d-4b15-a2a2-d238b5fcf7a6",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249207",
+      "modified": "2024-01-10T12:29:59.249209",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--648c5e67-1187-49a7-9c4b-15f996aa31c0",
+      "target_ref": "attack-pattern--097924ce-a9a9-4039-8591-e0deedfb8722"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--7ea4919a-7862-48ff-a02d-5969de69c76f",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249263",
+      "modified": "2024-01-10T12:29:59.249266",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--097924ce-a9a9-4039-8591-e0deedfb8722"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--42557280-65d9-4f0e-9f17-e7dd56d0bb42",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249357",
+      "modified": "2024-01-10T12:29:59.249360",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--648c5e67-1187-49a7-9c4b-15f996aa31c0",
+      "target_ref": "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--5cc05b47-5fb8-4e19-9897-b4cbbea32598",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249413",
+      "modified": "2024-01-10T12:29:59.249416",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--09a61657-46e1-439e-b3ed-3e4556a78243"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--147cc2cd-2332-45a8-ad61-08133520926a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249492",
+      "modified": "2024-01-10T12:29:59.249495",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--648c5e67-1187-49a7-9c4b-15f996aa31c0",
+      "target_ref": "attack-pattern--fc5fda7e-6b2c-4457-b036-759896a2efa2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--9cab08f5-01a2-46af-a0dd-4b136ceb8adf",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249544",
+      "modified": "2024-01-10T12:29:59.249547",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--fc5fda7e-6b2c-4457-b036-759896a2efa2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--9127876e-a24f-44cb-9efa-113eea0a3a23",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249692",
+      "modified": "2024-01-10T12:29:59.249700",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--648c5e67-1187-49a7-9c4b-15f996aa31c0",
+      "target_ref": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--263f8e89-ea00-4b6e-aa39-fd34245f01c2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249771",
+      "modified": "2024-01-10T12:29:59.249775",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--71a05d0f-8162-4107-96fa-9bef2d125b62",
+      "target_ref": "attack-pattern--e72425f8-9ae6-41d3-bfdb-e1b865e60722"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--68e08c84-a71e-40ec-9493-fab50bd51fb4",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.249948",
+      "modified": "2024-01-10T12:29:59.249955",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--83ebd22f-b401-4d59-8219-2294172cf916"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e7af2841-c68c-49fb-9d7a-799b9f5557e1",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250012",
+      "modified": "2024-01-10T12:29:59.250015",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--b5b9bacb-97f2-4249-b804-47fd44de1f95"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--6bf1def7-0138-4f11-b243-a5737f1db355",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250060",
+      "modified": "2024-01-10T12:29:59.250062",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--a81696ef-c106-482c-8f80-59c30f2569fb"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--b337ef62-af9a-44ae-8899-0d2ca5c74dcf",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250105",
+      "modified": "2024-01-10T12:29:59.250107",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--63b6942d-8359-4506-bfb3-cf87aa8120ee"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--985ebbbb-70df-4b47-a220-25dc347b84ed",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250148",
+      "modified": "2024-01-10T12:29:59.250150",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--2bb4d762-bf4a-4bc3-9318-15cc6a354163"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--1d4f2ea4-58c4-4264-8fb7-32c36d0977d2",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250192",
+      "modified": "2024-01-10T12:29:59.250194",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--5fa00fdd-4a55-4191-94a0-564181d7fec2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--63f1325c-1e8a-4a34-ad0c-487d48bf272a",
+      "spec_version": "2.1",
+      "created": "2024-01-10T12:29:59.250235",
+      "modified": "2024-01-10T12:29:59.250237",
+      "relationship_type": "related-to",
+      "source_ref": "attack-pattern--49bf50eb-1149-476b-9a62-093e8f21a14e",
+      "target_ref": "attack-pattern--138979ba-0430-4de6-a128-2fc0b056ba36"
+    }
+  ]
+}

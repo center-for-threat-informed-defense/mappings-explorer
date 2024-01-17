@@ -1,5 +1,4 @@
 import os
-import uuid
 
 import pandas as pd
 
@@ -10,7 +9,7 @@ def configure_veris_mappings(veris_mappings, domain):
     creation_date = (
         "08/26/2021" if mappings_framework_version == "1.3.5" else "04/06/2023"
     )
-    mapping_types = {str(uuid.uuid4()): {"name": "related-to", "description": ""}}
+    mapping_types = {"related_to": {"name": "related-to", "description": ""}}
     parsed_mappings = {
         "metadata": {
             "mapping_version": veris_mappings["metadata"]["mappings_version"],
@@ -41,7 +40,7 @@ def configure_veris_mappings(veris_mappings, domain):
             # if veris object is missing one of the sections, replace extra '.""'
             veris_object = veris_object.replace('.""', "")
 
-            mapping_type_uuid = [
+            mapping_type_id = [
                 mapping_type
                 for mapping_type in mapping_types
                 if mapping_types[mapping_type]["name"] == "related-to"
@@ -62,7 +61,7 @@ def configure_veris_mappings(veris_mappings, domain):
                     "references": [],
                     "capability_description": description_dict[veris_object],
                     "capability_id": veris_object,
-                    "mapping_type": mapping_type_uuid,
+                    "mapping_type": mapping_type_id,
                     "group": veris_group,
                     "status": "complete",
                 }
