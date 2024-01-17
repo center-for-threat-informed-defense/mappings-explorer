@@ -1010,9 +1010,9 @@ def build_technique_landing_page(
     )
     stream.dump(str(output_path))
     print("          Created technique landing page ")
-    description = """Tactics represent the "why" of an ATT&CK technique or sub-technique.
-      It is the adversary's tactical goal: the reason for performing an action.
-      For example, an adversary may want to achieve credential access.
+    description = """Tactics represent the "why" of an ATT&CK technique or
+      sub-technique.  It is the adversary's tactical goal: the reason for performing an
+      action. For example, an adversary may want to achieve credential access.
     """
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
