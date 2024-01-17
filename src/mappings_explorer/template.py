@@ -20,3 +20,22 @@ def load_template(name: str) -> Template:
         name: e.g. "nav.html"
     """
     return _environment.get_template(name)
+
+
+def build_capability_url(mapping: dict, url_prefix: str, id: str):
+    """Jinja template to handle building custom capability urls
+    Args:
+        mapping: mapping data that holds information on the capability to be linked
+        url_prefix: base url for built site
+        id: the capability id to link to
+
+    Returns:
+        url pointing to the capability referenced in mapping
+    """
+    return (
+        f"{url_prefix}external/{mapping['project']}/attack-{mapping['attack_version']}/"
+        f"domain-{mapping['attack_domain'].lower()}/{mapping['project']}-{mapping['project_version']}/{id}/"
+    )
+
+
+_environment.filters["build_capability_url"] = build_capability_url
