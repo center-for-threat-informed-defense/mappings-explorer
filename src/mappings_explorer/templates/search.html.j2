@@ -38,6 +38,7 @@
             />
           </div>
         </section>
+        <div class="loader" v-if="loading"></div>
         <section>
           <div class="container" data-aos="fade-up" v-if="resultsLength">
             <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"</h2>
@@ -72,7 +73,7 @@
             </div>
             <nav v-if="amountOfPages > 1">
               <span>
-                Showing [[ parseInt(displayedResultKeys[0]) + 1 ]]  to [[ parseInt(displayedResultKeys[displayedResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] pages
+                Showing [[ parseInt(displayedResultKeys[0]) + 1 ]]  to [[ parseInt(displayedResultKeys[displayedResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] results
                 <select v-model="itemsPerPage">
                   <option
                     v-for="item in itemPerPageOptions.filter(option => option <= resultsLength)"
@@ -132,7 +133,8 @@
         searchString: "",
         pageNum: 1,
         itemsPerPage: 10,
-        itemPerPageOptions: [10, 25, 50, 100]
+        itemPerPageOptions: [10, 25, 50, 100],
+        loading: true,
       };
     },
     computed:{
@@ -205,6 +207,7 @@
         if (url.searchParams.get("search")) {
           let search = url.searchParams.get("search");
           this.searchString = search;
+          this.searchModel = search;
           document.getElementById("nav-search-input").value = search;
           let results = this.searchIndex(this.searchString);
           this.results = results.results;
@@ -225,6 +228,7 @@
     },
     async mounted() {
       await this.initializeSearch(`${this.url_prefix}static/lunr-index.zip`);
+      this.loading = false;
       this.searchMain();
     },
   };
@@ -301,7 +305,18 @@
     background: transparent;
     box-shadow: none;
   }
-
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #005b94;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 </style>
 {% endblock content %}
