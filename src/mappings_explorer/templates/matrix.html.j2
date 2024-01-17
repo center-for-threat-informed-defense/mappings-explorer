@@ -373,12 +373,12 @@
     },
   };
 
-  const app = new Vue({
-    el: "#matrix",
+  Vue.createApp({
     components: {
-      Matrix: Matrix,
-    },
-  });
+      Matrix
+    }
+  }).mount("#matrix");
+
 </script>
 
 

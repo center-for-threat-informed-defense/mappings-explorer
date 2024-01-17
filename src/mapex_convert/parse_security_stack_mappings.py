@@ -1,6 +1,3 @@
-import uuid
-
-
 def configure_security_stack_mappings(data, parsed_mappings):
     # ensure creation date meets correct date format
     platform = data["platform"].lower()
@@ -23,7 +20,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
 
     if len(list(parsed_mappings.keys())) == 0:
         mapping_types = {
-            str(uuid.uuid4()): {"name": "technique_scores", "description": ""}
+            "technique_scores": {"name": "technique_scores", "description": ""}
         }
         parsed_mappings["metadata"] = {
             "mapping_version": str(data["version"]),
@@ -46,7 +43,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
         }
         parsed_mappings["mapping_objects"] = []
 
-    mapping_type_uuid = [
+    mapping_type_id = [
         mapping_type
         for mapping_type in parsed_mappings["metadata"]["mapping_types"]
         if parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
@@ -69,7 +66,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 "score_value": None,
                 "related_score": None,
                 "group": data["name"],
-                "status": "not_mappable",
+                "status": "non_mappable",
             }
         )
 
@@ -79,7 +76,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
         for technique_score in technique["technique-scores"]:
             comments = technique_score.get("comments") or ""
 
-            # get group uuid
+            # get group id
             capability_name = data["name"]
             capability_id = capability_name.lower().replace(" ", "_")
             if capability_id not in list(parsed_mappings["metadata"]["groups"].keys()):
@@ -93,7 +90,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "references": list(references),
                     "capability_description": capability_name,
                     "capability_id": capability_name,
-                    "mapping_type": mapping_type_uuid,
+                    "mapping_type": mapping_type_id,
                     "score_category": technique_score["category"].lower(),
                     "score_value": technique_score["value"].lower(),
                     "related_score": "",
@@ -116,7 +113,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "references": subtechniqe_references,
                                 "capability_description": capability_name,
                                 "capability_id": capability_name,
-                                "mapping_type": mapping_type_uuid,
+                                "mapping_type": mapping_type_id,
                                 "score_category": score["category"].lower(),
                                 "score_value": score["value"].lower(),
                                 "related_score": technique["id"],
