@@ -955,7 +955,15 @@ def build_tactic_page(
 def build_technique_landing_page(
     url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
 ):
-    """Builds default pages that list all tactics and techiniques"""
+    """Builds default pages that list all tactics and techiniques
+    Args:
+        url_prefix: root url for website
+        parent_dir: directory to build pages inside of
+        attack_version: version of ATT&CK to build page for
+        attack_domain: ATT&CK domain to build page for
+        techniques: list of all techniques to be listed in technique page
+        tactics: list of all tactics to be listed in tactic page
+    """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
@@ -965,7 +973,10 @@ def build_technique_landing_page(
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
     ]
-
+    description = """Techniques represent 'how' an adversary achieves a tactical goal by
+      performing an action. For example, an adversary may dump credentials to achieve
+      credential access.
+    """
     valid_versions = []
     for d in attack_domains.keys():
         for version in attack_domains[d]:
@@ -978,6 +989,7 @@ def build_technique_landing_page(
     template = load_template("attack_landing.html.j2")
     stream = template.stream(
         title="ATT&CK Techniques",
+        description=description,
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
@@ -991,6 +1003,10 @@ def build_technique_landing_page(
     )
     stream.dump(str(output_path))
     print("          Created technique landing page ")
+    description = """Tactics represent the "why" of an ATT&CK technique or sub-technique.
+      It is the adversary's tactical goal: the reason for performing an action.
+      For example, an adversary may want to achieve credential access.
+    """
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
         ("label", "ATT&CK Name", "id", attack_prefix),
@@ -1003,6 +1019,7 @@ def build_technique_landing_page(
     template = load_template("attack_landing.html.j2")
     stream = template.stream(
         title="ATT&CK Tactics",
+        description=description,
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
