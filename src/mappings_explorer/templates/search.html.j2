@@ -1,8 +1,7 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="search">
-  <Search url_prefix="{{url_prefix}}"></Search>
+    <Search url_prefix="{{url_prefix}}"></Search>
 </div>
-
 <script src="{{url_prefix}}static/lunr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 
@@ -39,41 +38,69 @@
           </div>
         </section>
         <div class="loader" v-if="loading"></div>
+        <div class="container" data-aos="fade-up">
+          <form class="col-12 version-select">
+            <div class="row col-12" style="display: flex;">
+              <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
+                <p>ATT&CK Version</p>
+                <div class="form-control select" @click="attackSelectOpen = !attackSelectOpen">
+                  <span class="selected-item">[[ selectedAttackVersion ]]</span>
+                </div>
+                <div v-if="attackSelectOpen" class="dropdown-items">
+                  <div
+                    :class="{
+                      'dropdown-item': true,
+                      'selected-option': selectedAttackVersion === attackVersion
+                    }"
+                    v-for="attackVersion in attackVersionsInResults"
+                    :key="attackVersion"
+                    @click="selectedAttackVersion = attackVersion; pageNum = 1; attackSelectOpen = false;"
+                  >
+                    <span class="dropdown-item-text">[[ attackVersion ]]</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
         <section>
           <div class="container" data-aos="fade-up" v-if="resultsLength">
-            <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"</h2>
+            <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"
+              <span v-if="selectedAttackVersion !== 'All Versions'">ATT&CK V[[selectedAttackVersion]]</span>
+              <span v-else> All ATT&CK Versions</span>
+            </h2>
             <div
               class="result-container"
-              v-for="result in displayedResultKeys"
+              v-for="result in currentPageResultKeys"
               :key="result"
             >
-              <div v-if="results[result].ref.startsWith('external/')">
-                <a class="result-title" :href="url_prefix + results[result].ref"> [[ results[result].pageData.name ]] </a>
+              <div v-if="displayedResults[result].ref.startsWith('external/')">
+                <a class="result-title" :href="url_prefix + displayedResults[result].ref"> [[ displayedResults[result].pageData.name ]] </a>
                 <div class="result-subtext">
-                  <span>Page for [[ getStringFromUrl(results[result].ref, 'external/') ]] control [[ results[result].pageData.name]]</span>
+                  <span>Page for [[ getStringFromUrl(displayedResults[result].ref, 'external/') ]] control [[ displayedResults[result].pageData.name]]</span>
                   <span class="float-right">
-                    ATT&CK Version: <b>[[ getStringFromUrl(results[result].ref, "attack-") ]]</b>
-                    ATT&CK Domain: <b>[[ getStringFromUrl(results[result].ref, "domain-") ]]</b>
+                    ATT&CK Version: <b>[[ getStringFromUrl(displayedResults[result].ref, "attack-") ]]</b>
+                    ATT&CK Domain: <b>[[ getStringFromUrl(displayedResults[result].ref, "domain-") ]]</b>
                   </span>
                 </div>
               </div>
               <div v-else>
-                <a class="result-title" :href="url_prefix + results[result].ref"> [[ results[result].pageData.id ]] [[ results[result].pageData.name ]]</a>
+                <a class="result-title" :href="url_prefix + displayedResults[result].ref"> [[ displayedResults[result].pageData.id ]] [[ displayedResults[result].pageData.name ]]</a>
                 <div class="result-subtext">
                   <span>
-                    Page for ATT&CK [[ results[result].pageData.id.includes('.') ? 'subtechnique' : 'technique' ]]
-                    [[ results[result].pageData.id ]] [[ results[result].pageData.name]]
+                    Page for ATT&CK [[ displayedResults[result].pageData.id.includes('.') ? 'subtechnique' : 'technique' ]]
+                    [[ displayedResults[result].pageData.id ]] [[ displayedResults[result].pageData.name]]
                   </span>
                   <span class="float-right">
-                    ATT&CK Version: <b>[[ getStringFromUrl(results[result].ref, "attack-") ]]</b>
-                    ATT&CK Domain: <b>[[ getStringFromUrl(results[result].ref, "domain-") ]]</b>
+                    ATT&CK Version: <b>[[ getStringFromUrl(displayedResults[result].ref, "attack-") ]]</b>
+                    ATT&CK Domain: <b>[[ getStringFromUrl(displayedResults[result].ref, "domain-") ]]</b>
                   </span>
                 </div>
               </div>
             </div>
             <nav v-if="amountOfPages > 1">
               <span>
-                Showing [[ parseInt(displayedResultKeys[0]) + 1 ]]  to [[ parseInt(displayedResultKeys[displayedResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] results
+                Showing [[ parseInt(currentPageResultKeys[0]) + 1 ]]  to [[ parseInt(currentPageResultKeys[currentPageResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] results
                 <select v-model="itemsPerPage">
                   <option
                     v-for="item in itemPerPageOptions.filter(option => option <= resultsLength)"
@@ -126,30 +153,79 @@
     },
     data() {
       return {
-        webPages: undefined,
+        attackSelectOpen: false,
+        attackVersionsInResults: [],
         index: undefined,
-        results: {},
-        searchModel: "",
-        searchString: "",
-        pageNum: 1,
         itemsPerPage: 10,
         itemPerPageOptions: [10, 25, 50, 100],
         loading: true,
+        pageNum: 1,
+        results: {},
+        searchModel: "",
+        searchString: "",
+        selectedAttackVersion: undefined,
+        webPages: undefined,
       };
     },
     computed:{
-      displayedResultKeys(){
-        // get results that are on the current page
-        return Object.keys(this.results).filter(r => (r >= (this.pageNum - 1) * this.itemsPerPage) && (r <= (this.pageNum - 1) * this.itemsPerPage + this.itemsPerPage - 1));
-      },
-      resultsLength(){
-        return Object.keys(this.results).length;
-      },
       amountOfPages(){
         return Math.ceil(this.resultsLength / this.itemsPerPage);
+      },
+      currentPageResultKeys(){
+        // get results that are on the current page
+        let filteredResultKeys = Object.keys(this.displayedResults).filter((r) => {
+          return (
+            (r >= (this.pageNum - 1) * this.itemsPerPage) &&
+            (r <= (this.pageNum - 1) * this.itemsPerPage + this.itemsPerPage - 1)
+          )
+        });
+        return filteredResultKeys;
+      },
+      displayedResults(){
+        if(this.results?.results){
+          if(this.selectedAttackVersion !== "All Versions"){
+            let filteredResults = this.results.results.filter(result => {
+              return this.getStringFromUrl(result.ref, "attack-") === this.selectedAttackVersion;
+            });
+            return filteredResults;
+          }
+          else {
+            return this.results.results;
+          }
+        }
+        return [];
+      },
+      resultsLength(){
+        return Object.keys(this.displayedResults).length;
       }
     },
     methods: {
+      /**
+       * create an array with all attack versions that appear in the results
+       */
+      getAttackVersionsInResults(){
+        let attackVersions = [];
+        this.results.results.forEach(result => {
+          let attackVersion = this.getStringFromUrl(result.ref, "attack-");
+          !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
+        })
+        this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
+        // if the selected Attack version is not yet set, set to the most recent
+        // attack version that appears in the results
+        !this.selectedAttackVersion && this.setSelectedAttackVersion();
+        this.attackVersionsInResults.push("All Versions");
+      },
+
+      /**
+       * Extracts a string from a url
+       * Arguments:
+       * url - url to search for the string in
+       * string - string to begin search after
+       * currently works for
+       * - attack version: gets url beginning with `attack-` and ending with the next `/`
+       * - domain: gets url beginning with `domain-` and ending with the next `/`
+       * - mapping framework: gets url beginning with `external/` and ending with the next `/`
+       */
       getStringFromUrl(url, string) {
         let returnStringAndOn = url.substring(url.indexOf(string) + string.length);
         let returnString = returnStringAndOn.substring(0, returnStringAndOn.indexOf("/"));
@@ -163,6 +239,52 @@
           return 'NIST 800-53';
         }
         return returnString
+      },
+      handleItemPerPageChange(){
+        console.log("IN HERE!")
+        this.pageNum = 1;
+      },
+      /**
+       * One enter, searches for string entered in input on the search page.
+       */
+      handleKeypress(event){
+        if (event.key === "Enter") {
+          this.handleSearch();
+        }
+      },
+
+      /**
+       * Searches for string entered in input on the search page.
+       */
+      handleSearch(){
+        this.searchString = this.searchModel;
+        let newurl = `${window.location.origin}${window.location.pathname}?search=${this.searchString}`
+        window.history.pushState({path:newurl},'',newurl);
+        document.getElementById("nav-search-input").value = this.searchString;
+        this.searchMain();
+      },
+
+      /**
+       * closes attack version select dropdown on outside click
+       */
+      handleOutsideClick() {
+        this.attackSelectOpen = false;
+      },
+
+      /**
+       * Initialize the search index.
+       */
+       async initializeSearch(indexUrl) {
+        indexFile = await fetch(indexUrl);
+        fileBuffer = await indexFile.arrayBuffer();
+        let zip = new JSZip();
+        let loadedZip = await zip.loadAsync(fileBuffer);
+        for (const filename of Object.keys(loadedZip.files)) {
+          let indexData = await loadedZip.files[filename].async('string');
+          let indexJson = JSON.parse(indexData);
+          this.webPages = indexJson["pages"];
+          this.index = lunr.Index.load(indexJson["index"]);
+        }
       },
 
       /**
@@ -186,46 +308,37 @@
         };
       },
 
-      /**
-       * Initialize the search index.
-       */
-      async initializeSearch(indexUrl) {
-        indexFile = await fetch(indexUrl);
-        fileBuffer = await indexFile.arrayBuffer();
-        let zip = new JSZip();
-        let loadedZip = await zip.loadAsync(fileBuffer);
-        for (const filename of Object.keys(loadedZip.files)) {
-          let indexData = await loadedZip.files[filename].async('string');
-          let indexJson = JSON.parse(indexData);
-          this.webPages = indexJson["pages"];
-          this.index = lunr.Index.load(indexJson["index"]);
-        }
-      },
-
-      async searchMain() {
+      searchMain() {
         const url = new URL(window.location.href);
         if (url.searchParams.get("search")) {
           let search = url.searchParams.get("search");
           this.searchString = search;
           this.searchModel = search;
           document.getElementById("nav-search-input").value = search;
-          let results = this.searchIndex(this.searchString);
-          this.results = results.results;
+          this.results = this.searchIndex(this.searchString);
+          this.getAttackVersionsInResults();
         }
       },
-      handleSearch(){
-        this.searchString = this.searchModel;
-        let newurl = `${window.location.origin}${window.location.pathname}?search=${this.searchString}`
-        window.history.pushState({path:newurl},'',newurl);
-        document.getElementById("nav-search-input").value = this.searchString;
-        this.searchMain();
+
+      setSelectedAttackVersion(){
+        let attackVersionNumbers = this.attackVersionsInResults.map(Number);
+        this.selectedAttackVersion = Math.max(...attackVersionNumbers).toString();
       },
-      handleKeypress(event){
-        if (event.key === "Enter") {
-          this.handleSearch();
+
+    },
+
+    watch: {
+      itemsPerPage(newValue, previousValue){
+        let previousFirstItemDisplayed = (this.pageNum - 1) * previousValue;
+        for(let page = 0; page < this.amountOfPages; page++) {
+          if(page * newValue <= previousFirstItemDisplayed && page * newValue + newValue -1 >= previousFirstItemDisplayed) {
+            this.pageNum = page + 1;
+            return;
+          }
         }
       }
     },
+
     async mounted() {
       await this.initializeSearch(`${this.url_prefix}static/lunr-index.zip`);
       this.loading = false;
@@ -233,13 +346,14 @@
     },
   };
 
-  const app = new Vue({
-    el: "#search",
+  Vue.createApp({
     components: {
-      Search: Search,
-    },
-  });
+      Search
+    }
+  }).mount("#search");
+
 </script>
+
 <style>
   .result-container {
     background-color: white;
@@ -317,6 +431,48 @@
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+
+  .dropdown-items {
+    position: absolute;
+    background-color: white;
+    box-shadow: 2px 2px 2px #bdbdbd;
+    border-radius: 5px;
+    z-index: 999;
+    width: 150px;
+  }
+
+  .select {
+    width: 150px;
+    cursor: pointer;
+  }
+
+  .dropdown-item {
+    cursor: pointer;
+    border-top: 1px solid #dbdbd9;
+  }
+
+  .dropdown-item:hover {
+    background-color: #ededeb;
+  }
+
+  .dropdown-item-text {
+    margin-left: 4px !important;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+  }
+
+  .invalid-option {
+    color: #bdbdbd !important;
+  }
+
+  .selected-item {
+    font-size: 1.25rem !important;
+  }
+
+  .selected-option {
+    background-color: #ededeb;
   }
 </style>
 {% endblock content %}
