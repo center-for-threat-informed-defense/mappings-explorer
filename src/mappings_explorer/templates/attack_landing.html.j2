@@ -1,0 +1,30 @@
+{% import "./macros.html.j2" as macros %}
+{% extends "base.html.j2" %}
+{% block content %}
+
+<section id="header-container" class="header-container">
+    <div class="container" data-aos="fade-up" id="my_view">
+      <div class="row justify-content-left">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+          <h1>ATT&CK <span class="highlight">v{{attack_version}}</span> MAPPINGS</h1>
+        </div>
+    </div>
+  </section>
+
+  {% if (attackVersions|length > 1 or domains|length > 1) %}
+    {% block set_version %}
+      {% include "_set_versions.html.j2" %}
+    {% endblock set_version %}
+  {% endif %}
+
+  <section id="all-tactic-table" class="mapping-table">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <div class="col-12">
+          <h2>{{attack_domain}} Tactics</h2>
+            {{ macros.table(headers, tactics, url_prefix) }}
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

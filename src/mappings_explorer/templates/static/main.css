@@ -39,6 +39,10 @@
 body {
   font-family: var(--font-default);
   color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -2415,34 +2419,46 @@ section#user-stories button.accordion-button div {
 
 /* ----------------------- */
 
-/* .customTable  td, th, thead, tbody{
-    border: none !important;
-  } */
-.table-borderless>thead>th,
-.table-borderless>tbody>tr>td,
-.table-borderless>tbody>tr>th,
-.table-borderless>tfoot>tr>td,
-.table-borderless>tfoot>tr>th,
-.table-borderless>thead>tr>td,
-.table-borderless>thead>tr>th {
+.table-borderless > thead > th,
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
   border: none;
 }
-
-/*
-  .table-borderless td, .table-borderless th {
-    border: none;
-  } */
-
-/* table.borderless td,table.borderless th{
-    border: none !important;
-  } */
 
 .bootstrap-table .search input {
   width: 300px;
 }
+.mapping-table .table-outer {
+  overflow: visible;
+}
 
-.bootstrap-table .search.btn-group {
-  float: left !important;
+.bootstrap-table .search.btn-group:hover {
+  &::before {
+    content: "Use this field to filter mappings in the below table. To search across all mappings, use the search bar at the top of the screen.";
+    position: absolute;
+    background-color: var(--color-primary);
+    padding: 8px;
+    border-radius: 10px;
+    width: 500px;
+    bottom: 50px;
+    right: -250px;
+  }
+}
+
+.bootstrap-table .search.btn-group:after {
+  content: "";
+  background-image: url("../static/img/info.svg");
+  background-size: contain;
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+  margin-left: 10px;
 }
 
 .banner .banner-link {
