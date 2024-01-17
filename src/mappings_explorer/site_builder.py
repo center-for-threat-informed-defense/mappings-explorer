@@ -955,8 +955,9 @@ def build_tactic_page(
 def build_technique_landing_page(
     url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
 ):
+    """Builds default pages that list all tactics and techiniques"""
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
@@ -964,6 +965,12 @@ def build_technique_landing_page(
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
     ]
+
+    valid_versions = []
+    for d in attack_domains.keys():
+        for version in attack_domains[d]:
+            valid_versions.append((d, version))
+
     dir = parent_dir / "techniques"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -978,6 +985,9 @@ def build_technique_landing_page(
         prev_page=prev_page,
         mappings=techniques,
         object_type="Techniques",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
     )
     stream.dump(str(output_path))
     print("          Created technique landing page ")
@@ -1000,6 +1010,9 @@ def build_technique_landing_page(
         prev_page=prev_page,
         mappings=tactics,
         object_type="Tactics",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
     )
     stream.dump(str(output_path))
     print("          Created tactics landing page ")

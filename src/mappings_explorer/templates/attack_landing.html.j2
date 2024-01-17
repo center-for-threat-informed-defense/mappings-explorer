@@ -16,6 +16,9 @@
       </div>
     </div>
   </section>
+  {% block set_version_attack %}
+    {% include "_set_versions_attack.html.j2" %}
+  {% endblock set_version_attack %}
   <section id="attack-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
