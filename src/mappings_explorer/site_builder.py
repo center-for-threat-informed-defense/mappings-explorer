@@ -451,6 +451,18 @@ def build_external_landing(
     mappings,
     attack_domain,
 ):
+    """Create landing page for each project and build pages for each capability group
+        and capability for the specified project and version combination
+    Args:
+        project: the project object (containing mappings and description information)
+        url_prefix: the root url for the built site
+        project_version: version of project to build page for
+        attack_version: version of ATT&CK to build page for
+        domain_dir: folder for page to be built in
+        mappings: list of mappings to be displayed on the page
+        attack_domain: ATT&CK domain to build page for
+
+    """
     output_path = domain_dir / "index.html"
     template = load_template("external-control.html.j2")
     attack_prefix = (
