@@ -25,19 +25,19 @@
           <h6>Download Mapping Artifacts:</h6>
           <div class="downloads">
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{domain.lower()}}.yaml">
+              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.yaml">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 YAML
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{domain.lower()}}.csv">
+              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.csv">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 CSV
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{domain.lower()}}.xlsx">
+              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.xlsx">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 Excel
               </a>
@@ -45,7 +45,7 @@
             <p>
               <a
                 onclick="downloadJSON(
-                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{domain.lower()}}_stix.json',
+                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_stix.json',
                   '{{project_id}}-{{project_version}}_attack-{{attack_version}}_stix.json'
                 )"
               >
@@ -56,7 +56,7 @@
             <p>
               <a
                 onclick="downloadJSON(
-                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{domain.lower()}}_navigator_layer.json',
+                  '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_navigator_layer.json',
                   '{{project_id}}-{{project_version}}_attack-{{attack_version}}_navigator_layer.json'
                 )"
               >
@@ -80,7 +80,7 @@
       <div class="row justify-content-left">
         <div class="col-12">
           <h2>Groups</h2>
-            {{ macros.table(group_headers, groups) }}
+            {{ macros.table(group_headers, groups, url_prefix) }}
       </div>
     </div>
   </section>
@@ -90,7 +90,7 @@
       <div class="row justify-content-left">
         <div class="col-12">
           <h2>All Mappings</h2>
-            {{ macros.table(headers, mappings) }}
+            {{ macros.table(headers, mappings, url_prefix) }}
       </div>
     </div>
   </section>

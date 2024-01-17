@@ -277,8 +277,8 @@ function handleSubmission(event) {
   }
   else {
     params.push("attack-" + newAttack)
-    params.push(params[params.length-2] + "-" + newControl)
     params.push("domain-" + newDomain)
+    params.push(params[params.length-3] + "-" + newControl)
   }
   let newUrl = params.join("/")
   window.location = "/" + newUrl + "/"

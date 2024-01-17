@@ -5,7 +5,7 @@
     </a>
 {% endmacro %}
 
-{% macro table(headers, mappings) %}
+{% macro table(headers, mappings, url_prefix) %}
 <div class="table-responsive table-outer">
 <div class="form-outline mb-4">
   <table class="table table-borderless table-hover table-responsive"
@@ -27,6 +27,9 @@
         {%- for header in headers -%}
             {% if header[2] and header[3] %}
                 <td><a href="{{header[3]}}{{mapping[header[2]]}}/">{{mapping[header[0]]}}</a></td>
+            {% endif %}
+            {% if header[2] and not header[3] %}
+                <td><a href="{{mapping | build_capability_url(url_prefix, mapping[header[2]])}}">{{mapping[header[0]]}}</a></td>
             {% endif %}
             {% if not header[2] %}
                 <td>{{mapping[header[0]]}}</td>
