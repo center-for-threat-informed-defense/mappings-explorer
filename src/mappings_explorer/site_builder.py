@@ -827,6 +827,7 @@ def build_attack_pages(projects: list, url_prefix: str):
                 attack_version=attack_version,
                 attack_domain=attack_domain,
                 techniques=all_techniques,
+                tactics=all_tactics,
             )
             for technique in all_techniques:
                 if technique.id:
@@ -954,10 +955,14 @@ def build_tactic_page(
 def build_technique_landing_page(
     url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
 ):
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+    )
     headers = [
-        ("id", "ATT&CK ID"),
-        ("label", "ATT&CK Name"),
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
+        ("num_subtechniques", "Number of Subtechniques"),
     ]
     dir = parent_dir / "techniques"
     dir.mkdir(parents=True, exist_ok=True)
@@ -972,9 +977,32 @@ def build_technique_landing_page(
         headers=headers,
         prev_page=prev_page,
         mappings=techniques,
+        object_type="Techniques",
     )
     stream.dump(str(output_path))
     print("          Created technique landing page ")
+    headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("num_techniques", "Number of Techniques"),
+    ]
+    dir = parent_dir / "tactics"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Tactics",
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=tactics,
+        object_type="Tactics",
+    )
+    stream.dump(str(output_path))
+    print("          Created tactics landing page ")
 
 
 def build_matrix(url_prefix, projects):
