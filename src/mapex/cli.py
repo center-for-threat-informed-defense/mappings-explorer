@@ -148,43 +148,54 @@ def validate_file(input_file):
 
 
 def sanity_check_mappings(parsed_mappings):
-    # get all group ids defined and group ids used
+    # get all capability_groups ids defined and capability_groups ids used
     mapping_objects = parsed_mappings["mapping_objects"]
-    groups_used_in_mappings = set(
-        [mapping_object["group"] for mapping_object in mapping_objects]
+    capability_groups_used_in_mappings = set(
+        [mapping_object["capability_group"] for mapping_object in mapping_objects]
     )
 
-    metadata_group_ids = set(list(parsed_mappings["metadata"]["groups"].keys()))
+    metadata_capability_group_ids = set(
+        list(parsed_mappings["metadata"]["capability_groups"].keys())
+    )
 
-    # warning if there is a group in metadata that is never used
-    all_groups_used = metadata_group_ids.issubset(groups_used_in_mappings)
-    extra_groups = metadata_group_ids.difference(groups_used_in_mappings)
-    if not all_groups_used:
+    # warning if there is a capability group in metadata that is never used
+    all_capability_groups_used = metadata_capability_group_ids.issubset(
+        capability_groups_used_in_mappings
+    )
+    extra_capability_groups = metadata_capability_group_ids.difference(
+        capability_groups_used_in_mappings
+    )
+    if not all_capability_groups_used:
         print(
             colored(
                 f"""WARNING: The following groups are not used
-            by the mapping objects: {extra_groups}""",
+            by the mapping objects: {extra_capability_groups}""",
                 "yellow",
             )
         )
-        # unused groups are eliminated in exported file
-        metadata_groups = parsed_mappings["metadata"]["groups"]
-        for group in extra_groups:
-            metadata_group = list(
+        # unused capability groups are eliminated in exported file
+        metadata_capability_groups = parsed_mappings["metadata"]["groups"]
+        for capability_group in extra_capability_groups:
+            metadata_capability_group = list(
                 filter(
-                    lambda group_object: group_object["id"] == group, metadata_groups
+                    lambda group_object: group_object["id"] == capability_group,
+                    metadata_capability_groups,
                 )
             )[0]
-            parsed_mappings["metadata"]["groups"].remove(metadata_group)
+            parsed_mappings["metadata"]["groups"].remove(metadata_capability_group)
 
     # # error if any objects reference a group that is not defined in metadata
-    all_used_groups_defined = groups_used_in_mappings.issubset(metadata_group_ids)
-    missing_groups = groups_used_in_mappings.difference(metadata_group_ids)
-    if not all_used_groups_defined:
+    all_used_capability_groups_defined = capability_groups_used_in_mappings.issubset(
+        metadata_capability_group_ids
+    )
+    missing_capability_groups = capability_groups_used_in_mappings.difference(
+        metadata_capability_group_ids
+    )
+    if not all_used_capability_groups_defined:
         print(
             colored(
                 f"""ERROR: The following groups are referenced by mapping
-            objects but aren't defined in 'metadata': {missing_groups}""",
+            objects but aren't defined in 'metadata': {missing_capability_groups}""",
                 "red",
             )
         )
@@ -216,7 +227,7 @@ def sanity_check_mappings(parsed_mappings):
             )
         )
 
-    # error if any objects reference a group that is not defined in metadata
+    # error if any objects reference a mapping type that is not defined in metadata
     all_mapping_types_defined = mapping_types_used_in_mappings.issubset(
         metadata_mapping_type_ids
     )

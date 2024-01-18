@@ -28,12 +28,12 @@ def configure_veris_mappings(veris_mappings, domain):
             "mapping_framework": "veris",
             "mapping_framework_version": mappings_framework_version,
             "mapping_types": mapping_types,
-            "groups": {},
+            "capability_groups": {},
         },
         "mapping_objects": [],
     }
 
-    groups = {}
+    capability_groups = {}
     for attack_object in veris_mappings["attack_to_veris"]:
         mapped_attack_object = veris_mappings["attack_to_veris"][attack_object]
         for veris_object in mapped_attack_object["veris"]:
@@ -46,12 +46,12 @@ def configure_veris_mappings(veris_mappings, domain):
                 if mapping_types[mapping_type]["name"] == "related-to"
             ][0]
 
-            # get group id and anme
+            # get capability group id and anme
             veris_group = veris_object[
                 : veris_object.index(".", veris_object.index(".") + 1)
             ].replace(" ", "_")
-            if veris_group not in list(groups.keys()):
-                groups[veris_group] = veris_group
+            if veris_group not in capability_groups:
+                capability_groups[veris_group] = veris_group
 
             parsed_mappings["mapping_objects"].append(
                 {
@@ -62,12 +62,12 @@ def configure_veris_mappings(veris_mappings, domain):
                     "capability_description": description_dict[veris_object],
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_id,
-                    "group": veris_group,
+                    "capability_group": veris_group,
                     "status": "complete",
                 }
             )
 
-    parsed_mappings["metadata"]["groups"] = groups
+    parsed_mappings["metadata"]["capability_groups"] = capability_groups
     return parsed_mappings
 
 
