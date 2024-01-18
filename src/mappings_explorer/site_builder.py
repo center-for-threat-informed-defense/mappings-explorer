@@ -466,7 +466,7 @@ def build_external_landing(
     output_path = domain_dir / "index.html"
     template = load_template("external-control.html.j2")
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
@@ -825,7 +825,7 @@ def build_attack_pages(projects: list, url_prefix: str):
                 PUBLIC_DIR
                 / "attack"
                 / ("attack-" + attack_version)
-                / ("domain-" + attack_domain)
+                / ("domain-" + attack_domain.lower())
             )
             external_dir.mkdir(parents=True, exist_ok=True)
             build_technique_landing_page(
@@ -876,7 +876,7 @@ def build_technique_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -932,7 +932,7 @@ def build_tactic_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
