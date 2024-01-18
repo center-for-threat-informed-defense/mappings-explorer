@@ -194,7 +194,6 @@ def load_projects():
         ("1.3.7", "12.1", "Mobile"),
         ("1.3.7", "12.1", "Enterprise"),
     ]
-    veris.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     veris.mappings = []
 
     cve = ExternalControl()
@@ -215,7 +214,6 @@ def load_projects():
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
     cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
-    cve.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     cve.mappings = []
 
     aws = ExternalControl()
@@ -232,7 +230,6 @@ def load_projects():
     aws.attackVersions = ["9.0"]
     aws.versions = ["09.21.2021"]
     aws.validVersions = [("09.21.2021", "9.0", "Enterprise")]
-    aws.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     aws.mappings = []
 
     azure = ExternalControl()
@@ -249,7 +246,6 @@ def load_projects():
     azure.attackVersions = ["8.2"]
     azure.versions = ["06.29.2021"]
     azure.validVersions = [("06.29.2021", "8.2", "Enterprise")]
-    azure.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     azure.mappings = []
 
     gcp = ExternalControl()
@@ -267,7 +263,6 @@ def load_projects():
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["06.28.2022"]
     gcp.validVersions = [("06.28.2022", "10.0", "Enterprise")]
-    gcp.tableHeaders = ["ID", "Control Family", "Number of Controls", "Description"]
     gcp.mappings = []
 
     projects = [
@@ -401,7 +396,7 @@ def get_nist_descriptions(project, version):
             element_array = elements[0]["elements"][0]["elements"]
             for item in element_array:
                 if item["elementTypeIdentifier"] == "discussion":
-                    c.description = item["text"].replace("<p>", "").replace("</p>", "")
+                    c.description = item["text"]
                     break
         except Exception as e:
             print("exception ", e)
@@ -456,6 +451,18 @@ def build_external_landing(
     mappings,
     attack_domain,
 ):
+    """Create landing page for each project and build pages for each capability group
+        and capability for the specified project and version combination
+    Args:
+        project: the project object (containing mappings and description information)
+        url_prefix: the root url for the built site
+        project_version: version of project to build page for
+        attack_version: version of ATT&CK to build page for
+        domain_dir: folder for page to be built in
+        mappings: list of mappings to be displayed on the page
+        attack_domain: ATT&CK domain to build page for
+
+    """
     output_path = domain_dir / "index.html"
     template = load_template("external-control.html.j2")
     attack_prefix = (
@@ -465,9 +472,6 @@ def build_external_landing(
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
 
     headers = [
-        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
-        ("mapping_type", "Mapping Type"),
         ("capability_id", "Capability ID", "capability_id", external_prefix),
         (
             "capability_description",
@@ -475,13 +479,12 @@ def build_external_landing(
             "capability_id",
             external_prefix,
         ),
+        ("mapping_type", "Mapping Type"),
+        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
     ]
     if project.id == "azure" or project.id == "aws" or project.id == "gcp":
         headers = [
-            ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-            ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
-            ("score_category", "Category"),
-            ("score_value", "Value"),
             ("capability_id", "Capability ID", "capability_id", external_prefix),
             (
                 "capability_description",
@@ -489,6 +492,10 @@ def build_external_landing(
                 "capability_id",
                 external_prefix,
             ),
+            ("score_category", "Category"),
+            ("score_value", "Value"),
+            ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+            ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
     group_headers = [
@@ -870,15 +877,15 @@ def build_technique_page(
         ("num_mappings", "Number of Mappings"),
     ]
     headers = [
-        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
-        ("mapping_type", "Mapping Type"),
         ("capability_id", "Capability ID", "capability_id"),
         (
             "capability_description",
             "Capability Description",
             "capability_id",
         ),
+        ("mapping_type", "Mapping Type"),
+        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
+        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
     ]
     dir = parent_dir / technique.id
     dir.mkdir(parents=True, exist_ok=True)

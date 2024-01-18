@@ -1,5 +1,3 @@
-import uuid
-
 import pandas as pd
 
 control_family_lookup_dict = {
@@ -28,7 +26,7 @@ control_family_lookup_dict = {
 def configure_nist_mappings(dataframe, attack_version, mapping_framework_version):
     # put data in correct format with correct fields
     mapping_framework_version = "rev" + mapping_framework_version[-1]
-    mapping_types = {str(uuid.uuid4()): {"name": "mitigates", "description": ""}}
+    mapping_types = {"mitigates": {"name": "mitigates", "description": ""}}
     parsed_mappings = {
         "metadata": {
             "mapping_version": "",
@@ -54,8 +52,8 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
 
     groups = {}
     for _, row in dataframe.iterrows():
-        # get mapping type uuid
-        mapping_type_uuid = [
+        # get mapping type id
+        mapping_type_id = [
             mapping_type
             for mapping_type in mapping_types
             if mapping_types[mapping_type]["name"] == "mitigates"
@@ -93,7 +91,7 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "references": [],
                 "capability_description": capability_name,
                 "capability_id": capability_id,
-                "mapping_type": mapping_type_uuid,
+                "mapping_type": mapping_type_id,
                 "group": control_family_id,
                 "status": status,
             }
