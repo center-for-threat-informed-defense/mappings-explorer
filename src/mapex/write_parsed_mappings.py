@@ -49,16 +49,16 @@ def create_df(parsed_mappings):
         )
 
         # get group name based on id
-        group_objects = parsed_mappings["metadata"]["groups"]
-        group_name = [
-            group_objects[group]
-            for group in group_objects
-            if group == mapping_object["group"]
+        capability_group_objects = parsed_mappings["metadata"]["capability_groups"]
+        capability_group_name = [
+            capability_group_objects[capability_group]
+            for capability_group in capability_group_objects
+            if capability_group == mapping_object["capability_group"]
         ][0]
 
         # swap mapping_type id and group id with mapping_type name and group name
         mapping_object["mapping_type"] = mapping_type_name
-        mapping_object["group"] = group_name
+        mapping_object["capability_group"] = capability_group_name
 
     return pd.DataFrame(mapping_objects)
 

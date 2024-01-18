@@ -79,7 +79,7 @@
             }
           }
         },
-        "groups": {
+        "capability_groups": {
           "description": "The groups that the mappings can be organized in.",
           "type": "object"
         }
@@ -92,7 +92,7 @@
         "mapping_framework",
         "mapping_framework_version",
         "mapping_types",
-        "groups"
+        "capability_groups"
       ]
     },
     "mapping_objects": {
@@ -145,8 +145,8 @@
             "description": "Mapping type has framework-specific values. This property describes how the capability_id and attack_object_id are related.",
             "type": ["string", "null"]
           },
-          "group": {
-            "description": "This property describes which group this mapping falls into.",
+          "capability_group": {
+            "description": "This property describes which capability_group this mapping falls into.",
             "type": ["string"]
           },
           "status": {
