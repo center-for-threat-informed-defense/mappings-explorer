@@ -10,7 +10,7 @@ expected_nist_mapping_json = {
         "organization": "",
         "mapping_framework": "nist_800_53",
         "mapping_framework_version": "rev1",
-        "groups": {"AC": "Access Control"},
+        "capability_groups": {"AC": "Access Control"},
     },
     "mapping_objects": [
         {
@@ -20,7 +20,7 @@ expected_nist_mapping_json = {
             "references": [],
             "capability_description": "Concurrent Session Control",
             "capability_id": "AC-10",
-            "group": "AC",
+            "capability_group": "AC",
             "status": "complete",
         },
         {
@@ -30,7 +30,7 @@ expected_nist_mapping_json = {
             "references": [],
             "capability_description": "Concurrent Session Control",
             "capability_id": "AC-10",
-            "group": "AC",
+            "capability_group": "AC",
             "status": "complete",
         },
     ],
@@ -48,7 +48,7 @@ expected_security_stack_mapping_json = {
         "organization": "",
         "mapping_framework": "aws",
         "mapping_framework_version": "09/21/2021",
-        "groups": {"amazon_cognito": "Amazon Cognito"},
+        "capability_groups": {"amazon_cognito": "Amazon Cognito"},
     },
     "mapping_objects": [
         {
@@ -65,7 +65,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "minimal",
             "related_score": "",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -78,7 +78,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1078",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -95,7 +95,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -108,7 +108,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -121,7 +121,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -134,7 +134,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -147,7 +147,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -164,7 +164,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "minimal",
             "related_score": "",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -177,7 +177,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1078",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -194,7 +194,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -207,7 +207,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -220,7 +220,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -233,7 +233,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
         {
@@ -246,7 +246,7 @@ expected_security_stack_mapping_json = {
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "group": "amazon_cognito",
+            "capability_group": "amazon_cognito",
             "status": "complete",
         },
     ],
@@ -264,7 +264,7 @@ expected_veris_mapping_json = {
         "organization": "",
         "mapping_framework": "veris",
         "mapping_framework_version": "1.3.5",
-        "groups": {"action.hacking": "action.hacking"},
+        "capability_groups": {"action.hacking": "action.hacking"},
     },
     "mapping_objects": [
         {
@@ -274,7 +274,7 @@ expected_veris_mapping_json = {
             "references": [],
             "capability_description": "Abuse of functionality",
             "capability_id": "action.hacking.variety.Abuse of functionality",
-            "group": "action.hacking",
+            "capability_group": "action.hacking",
             "status": "complete",
         },
         {
@@ -284,7 +284,7 @@ expected_veris_mapping_json = {
             "references": [],
             "capability_description": "Remote shell",
             "capability_id": "action.hacking.vector.Command shell",
-            "group": "action.hacking",
+            "capability_group": "action.hacking",
             "status": "complete",
         },
         {
@@ -294,7 +294,7 @@ expected_veris_mapping_json = {
             "references": [],
             "capability_description": "Abuse of functionality",
             "capability_id": "action.hacking.variety.Abuse of functionality",
-            "group": "action.hacking",
+            "capability_group": "action.hacking",
             "status": "complete",
         },
     ],
@@ -313,7 +313,7 @@ expected_cve_mapping_json = {
         "organization": "",
         "mapping_framework": "cve",
         "mapping_framework_version": "10/21/2021",
-        "groups": {"2019": "2019 CVEs"},
+        "capability_groups": {"2019": "2019 CVEs"},
     },
     "mapping_objects": [
         {
@@ -323,7 +323,7 @@ expected_cve_mapping_json = {
             "references": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "group": "2019",
+            "capability_group": "2019",
             "status": "complete",
         },
         {
@@ -333,7 +333,7 @@ expected_cve_mapping_json = {
             "references": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "group": "2019",
+            "capability_group": "2019",
             "status": "complete",
         },
         {
@@ -343,7 +343,7 @@ expected_cve_mapping_json = {
             "references": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15243",
-            "group": "2019",
+            "capability_group": "2019",
             "status": "complete",
         },
         {
@@ -353,7 +353,7 @@ expected_cve_mapping_json = {
             "references": [],
             "capability_description": "",
             "capability_id": "CVE-2019-15976",
-            "group": "2019",
+            "capability_group": "2019",
             "status": "complete",
         },
     ],
