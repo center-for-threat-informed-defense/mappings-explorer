@@ -59,7 +59,7 @@ class ExternalControl:
     attackDomain = ""
     attackDomains = []
     validVersions = []
-    groups = []
+    capability_groups = []
     mappings = []
     capabilities = []
 
@@ -282,7 +282,7 @@ def replace_mapping_type(mapping, type_list):
             return type_list[mapping_type]["name"]
 
 
-def parse_groups(project, attack_version, project_version, attack_domain):
+def parse_capability_groups(project, attack_version, project_version, attack_domain):
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -306,7 +306,7 @@ def parse_groups(project, attack_version, project_version, attack_domain):
     f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
-    project.groups = []
+    project.capability_groups = []
 
     mappings = data["mapping_objects"]
     for mapping in mappings:
@@ -318,7 +318,7 @@ def parse_groups(project, attack_version, project_version, attack_domain):
             g = Group()
             g.id = i
             g.label = metadata["groups"][i]
-            project.groups.append(g)
+            project.capability_groups.append(g)
             filtered_mappings = [m for m in mappings if (m["group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
@@ -464,7 +464,7 @@ def build_external_landing(
 
     """
     output_path = domain_dir / "index.html"
-    template = load_template("external-control.html.j2")
+    template = load_template("framework_landing.html.j2")
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
     )
@@ -498,7 +498,7 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
-    group_headers = [
+    capability_group_headers = [
         ("id", "ID", "id", external_prefix),
         ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
@@ -520,8 +520,8 @@ def build_external_landing(
         domains=project.attackDomains,
         mappings=mappings,
         headers=headers,
-        group_headers=group_headers,
-        groups=project.groups,
+        group_headers=capability_group_headers,
+        capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
     )
     stream.dump(str(output_path))
@@ -536,10 +536,10 @@ def build_external_landing(
         + attack_domain.lower()
     )
 
-    for group in project.groups:
+    for capability_group in project.capability_groups:
         build_external_group(
             project=project,
-            group=group,
+            capability_group=capability_group,
             url_prefix=url_prefix,
             parent_dir=domain_dir,
             project_version=project_version,
@@ -577,7 +577,7 @@ def build_external_pages(projects, url_prefix):
             p = f"{project.id}-{project_version}"
             domain_dir = dir / a / d / p
             domain_dir.mkdir(parents=True, exist_ok=True)
-            parse_groups(
+            parse_capability_groups(
                 project=project,
                 attack_version=attack_version,
                 project_version=project_version,
@@ -610,7 +610,7 @@ def build_external_pages(projects, url_prefix):
 
 def build_external_group(
     project: ExternalControl,
-    group,
+    capability_group,
     url_prefix,
     parent_dir,
     project_version,
@@ -618,18 +618,18 @@ def build_external_group(
     headers,
     attack_domain,
 ):
-    group_id = group.id
-    dir = parent_dir / group_id
+    capability_group_id = capability_group.id
+    dir = parent_dir / capability_group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-group.html.j2")
+    template = load_template("capability_group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=f"{project.label} {group.label}",
+        title=f"{project.label} {capability_group.label}",
         url_prefix=url_prefix,
         control=project.label,
-        group_id=group.id,
-        group_name=group.label,
+        capability_group_id=capability_group.id,
+        capability_group_name=capability_group.label,
         project=project,
         description=project.description,
         control_version=project_version,
@@ -639,11 +639,11 @@ def build_external_group(
         attack_domain=attack_domain,
         domains=project.attackDomains,
         prev_page=prev_page,
-        mappings=group.mappings,
+        mappings=capability_group.mappings,
         headers=headers,
     )
     stream.dump(str(output_path))
-    print("          Created group page " + group.label)
+    print("          Created capability group page " + capability_group.label)
 
 
 def build_external_capability(
@@ -659,7 +659,7 @@ def build_external_capability(
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-capability.html.j2")
+    template = load_template("capability.html.j2")
     prev_page = parent_dir
     stream = template.stream(
         title=f"{project.label} {capability.id}",
@@ -1234,10 +1234,10 @@ def main():
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-landing.html.j2")
+    template = load_template("external_landing.html.j2")
     stream = template.stream(title="External Mappings Home", url_prefix=url_prefix)
     stream.dump(str(output_path))
-    print("Created external mappings home")
+    print("Created Mappings Frameworks landing page")
 
     build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)

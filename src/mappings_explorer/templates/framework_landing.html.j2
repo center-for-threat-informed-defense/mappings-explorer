@@ -74,13 +74,13 @@
       {% include "_set_versions.html.j2" %}
     {% endblock set_version %}
   {% endif %}
-  {% if groups %}
+  {% if capability_groups %}
   <section id="groups-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
         <div class="col-12">
-          <h2>Groups</h2>
-            {{ macros.table(group_headers, groups, url_prefix) }}
+          <h2>Capability Groups</h2>
+            {{ macros.table(group_headers, capability_groups, url_prefix) }}
       </div>
     </div>
   </section>
