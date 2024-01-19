@@ -35,6 +35,852 @@
     "mapping_objects": [
         {
             "references": [],
+            "attack_object_id": "T1659",
+            "attack_object_name": "Content Injection",
+            "capability_id": "AC-17",
+            "capability_description": "Remote Access",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1659",
+            "attack_object_name": "Content Injection",
+            "capability_id": "AC-04",
+            "capability_description": "Information Flow Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1657",
+            "attack_object_name": "Financial Theft",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1654",
+            "attack_object_name": "Log Enumeration",
+            "capability_id": "AC-04",
+            "capability_description": "Information Flow Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1654",
+            "attack_object_name": "Log Enumeration",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "in_progress"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1654",
+            "attack_object_name": "Log Enumeration",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "capability_id": "CM-03",
+            "capability_description": "Configuration Change Control",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "capability_id": "CM-02",
+            "capability_description": "Baseline Configuration",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_id": "IA-02",
+            "capability_description": "Identification and Authentication (organizational Users)",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_id": "AC-17",
+            "capability_description": "Remote Access",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1578.005",
+            "attack_object_name": "Modify Cloud Compute Configurations",
+            "capability_id": "AC-20",
+            "capability_description": "Use of External Systems",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1578.005",
+            "attack_object_name": "Modify Cloud Compute Configurations",
+            "capability_id": "CM-03",
+            "capability_description": "Configuration Change Control",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1578.005",
+            "attack_object_name": "Modify Cloud Compute Configurations",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1578.005",
+            "attack_object_name": "Modify Cloud Compute Configurations",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1567.004",
+            "attack_object_name": "Exfiltration Over Webhook",
+            "capability_id": "AC-17",
+            "capability_description": "Remote Access",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1567.004",
+            "attack_object_name": "Exfiltration Over Webhook",
+            "capability_id": "SC-07",
+            "capability_description": "Boundary Protection",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1567.003",
+            "attack_object_name": "Exfiltration to Text Storage Sites",
+            "capability_id": "SC-07",
+            "capability_description": "Boundary Protection",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1567.003",
+            "attack_object_name": "Exfiltration to Text Storage Sites",
+            "capability_id": "AC-17",
+            "capability_description": "Remote Access",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "SI-07",
+            "capability_description": "Software, Firmware, and Information Integrity",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "CM-05",
+            "capability_description": "Access Restrictions for Change",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "CM-03",
+            "capability_description": "Configuration Change Control",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.012",
+            "attack_object_name": "Disable or Modify Linux Audit System",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.011",
+            "attack_object_name": "Spoof Security Alerting",
+            "capability_id": "SI-07",
+            "capability_description": "Software, Firmware, and Information Integrity",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.011",
+            "attack_object_name": "Spoof Security Alerting",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.011",
+            "attack_object_name": "Spoof Security Alerting",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1562.011",
+            "attack_object_name": "Spoof Security Alerting",
+            "capability_id": "SI-03",
+            "capability_description": "Malicious Code Protection",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "SI-07",
+            "capability_description": "Software, Firmware, and Information Integrity",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "CM-03",
+            "capability_description": "Configuration Change Control",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "CM-05",
+            "capability_description": "Access Restrictions for Change",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "CM-02",
+            "capability_description": "Baseline Configuration",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1555.006",
+            "attack_object_name": "Cloud Secrets Management Stores",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1555.006",
+            "attack_object_name": "Cloud Secrets Management Stores",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1555.006",
+            "attack_object_name": "Cloud Secrets Management Stores",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1555.006",
+            "attack_object_name": "Cloud Secrets Management Stores",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_id": "AC-04",
+            "capability_description": "Information Flow Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_id": "CM-05",
+            "capability_description": "Access Restrictions for Change",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1098.006",
+            "attack_object_name": "Additional Container Cluster Roles",
+            "capability_id": "IA-05",
+            "capability_description": "Authenticator Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1098.006",
+            "attack_object_name": "Additional Container Cluster Roles",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1098.006",
+            "attack_object_name": "Additional Container Cluster Roles",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "IA-02",
+            "capability_description": "Identification and Authentication (organizational Users)",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1036.008",
+            "attack_object_name": "Masquerade File Type",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1036.008",
+            "attack_object_name": "Masquerade File Type",
+            "capability_id": "SI-10",
+            "capability_description": "Information Input Validation",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1036.008",
+            "attack_object_name": "Masquerade File Type",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1036.008",
+            "attack_object_name": "Masquerade File Type",
+            "capability_id": "SC-07",
+            "capability_description": "Boundary Protection",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1027.012",
+            "attack_object_name": "LNK Icon Smuggling",
+            "capability_id": "SI-03",
+            "capability_description": "Malicious Code Protection",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1027.010",
+            "attack_object_name": "Command Obfuscation",
+            "capability_id": "SI-10",
+            "capability_description": "Information Input Validation",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1027.010",
+            "attack_object_name": "Command Obfuscation",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1027.010",
+            "attack_object_name": "Command Obfuscation",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "IA-05",
+            "capability_description": "Authenticator Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "IA-02",
+            "capability_description": "Identification and Authentication (organizational Users)",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "CM-05",
+            "capability_description": "Access Restrictions for Change",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "AC-20",
+            "capability_description": "Use of External Systems",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "AC-17",
+            "capability_description": "Remote Access",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "IA-05",
+            "capability_description": "Authenticator Management",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "IA-02",
+            "capability_description": "Identification and Authentication (organizational Users)",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "IA",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "AC-20",
+            "capability_description": "Use of External Systems",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "AC-03",
+            "capability_description": "Access Enforcement",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.008",
+            "attack_object_name": "Direct Cloud VM Connections",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "AC-05",
+            "capability_description": "Separation of Duties",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1021.007",
+            "attack_object_name": "Cloud Services",
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "AC",
+            "status": "complete"
+        },
+        {
+            "references": [],
+            "attack_object_id": "T1112",
+            "attack_object_name": "Modify Registry",
+            "capability_id": "SI-07",
+            "capability_description": "Software, Firmware, and Information Integrity",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "SI",
+            "status": "complete"
+        },
+        {
+            "references": [],
             "attack_object_id": "T1562.010",
             "attack_object_name": "Downgrade Attack",
             "capability_id": "SC-08",
@@ -95,51 +941,6 @@
         },
         {
             "references": [],
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
             "attack_object_id": "T1212",
             "attack_object_name": "Exploitation for Credential Access",
             "capability_id": "IA-05",
@@ -157,24 +958,6 @@
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "SC",
             "status": "complete"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
         },
         {
             "references": [],
@@ -225,24 +1008,6 @@
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "CM",
             "status": "complete"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1040",
-            "attack_object_name": "Network Sniffing",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1040",
-            "attack_object_name": "Network Sniffing",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
         },
         {
             "references": [],
@@ -3866,19 +4631,21 @@
             "references": [],
             "attack_object_id": "T1021.007",
             "attack_object_name": "Cloud Services",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1021.008",
             "attack_object_name": "Direct Cloud VM Connections",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -4260,28 +5027,31 @@
             "references": [],
             "attack_object_id": "T1027.010",
             "attack_object_name": "Command Obfuscation",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-03",
+            "capability_description": "Malicious Code Protection",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1027.011",
             "attack_object_name": "Fileless Storage",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1027.012",
             "attack_object_name": "LNK Icon Smuggling",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
@@ -4857,10 +5627,11 @@
             "references": [],
             "attack_object_id": "T1036.008",
             "attack_object_name": "Masquerade File Type",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-03",
+            "capability_description": "Malicious Code Protection",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
@@ -10209,15 +10980,6 @@
         },
         {
             "references": [],
-            "attack_object_id": "T1059.009",
-            "attack_object_name": "Cloud API",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
             "attack_object_id": "T1068",
             "attack_object_name": "Exploitation for Privilege Escalation",
             "capability_id": "AC-02",
@@ -15186,10 +15948,11 @@
             "references": [],
             "attack_object_id": "T1098.006",
             "attack_object_name": "Additional Container Cluster Roles",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -16526,7 +17289,7 @@
             "capability_description": "Least Privilege",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "AC",
-            "status": "Dropped Mitigations"
+            "status": "complete"
         },
         {
             "references": [],
@@ -16536,7 +17299,7 @@
             "capability_description": "Least Functionality",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "CM",
-            "status": "Dropped Mitigations"
+            "status": "complete"
         },
         {
             "references": [],
@@ -33694,15 +34457,6 @@
         },
         {
             "references": [],
-            "attack_object_id": "T1548.005",
-            "attack_object_name": "Temporary Elevated Cloud Access",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
             "attack_object_id": "T1550",
             "attack_object_name": "Use Alternate Authentication Material",
             "capability_id": "AC-02",
@@ -35503,15 +36257,6 @@
         },
         {
             "references": [],
-            "attack_object_id": "T1552.008",
-            "attack_object_name": "Chat Messages",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
             "attack_object_id": "T1553",
             "attack_object_name": "Subvert Trust Controls",
             "capability_id": "AC-06",
@@ -36402,15 +37147,6 @@
         },
         {
             "references": [],
-            "attack_object_id": "T1555.006",
-            "attack_object_name": "Cloud Secrets Management Stores",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
             "attack_object_id": "T1556",
             "attack_object_name": "Modify Authentication Process",
             "capability_id": "AC-02",
@@ -37189,15 +37925,6 @@
             "capability_version": "[UNKNOWN_VERSION:d7822ced-2375-42be-b1e2-f6f1e614a493]",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "IA",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1556.008",
-            "attack_object_name": "Network Provider DLL",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "status": "in_progress"
         },
         {
@@ -40813,19 +41540,21 @@
             "references": [],
             "attack_object_id": "T1562.011",
             "attack_object_name": "Spoof Security Alerting",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "CM-05",
+            "capability_description": "Access Restrictions for Change",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "CM",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1562.012",
             "attack_object_name": "Disable or Modify Linux Audit System",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
@@ -43261,19 +43990,21 @@
             "references": [],
             "attack_object_id": "T1567.003",
             "attack_object_name": "Exfiltration to Text Storage Sites",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-04",
+            "capability_description": "Information Flow Enforcement",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1567.004",
             "attack_object_name": "Exfiltration Over Webhook",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-04",
+            "capability_description": "Information Flow Enforcement",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -46291,10 +47022,11 @@
             "references": [],
             "attack_object_id": "T1578.005",
             "attack_object_name": "Modify Cloud Compute Configurations",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -50075,38 +50807,31 @@
             "references": [],
             "attack_object_id": "T1651",
             "attack_object_name": "Cloud Administration Command",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-02",
+            "capability_description": "Account Management",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1653",
             "attack_object_name": "Power Settings",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SI-04",
+            "capability_description": "System Monitoring",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SI",
+            "status": "complete"
         },
         {
             "references": [],
             "attack_object_id": "T1654",
             "attack_object_name": "Log Enumeration",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1655",
-            "attack_object_name": "Masquerading",
-            "attack_object_version": "[UNKNOWN_VERSION:d7822ced-2375-42be-b1e2-f6f1e614a493]",
-            "capability_id": null,
-            "capability_description": null,
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -50121,10 +50846,11 @@
             "references": [],
             "attack_object_id": "T1657",
             "attack_object_name": "Financial Theft",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "AC-05",
+            "capability_description": "Separation of Duties",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "AC",
+            "status": "complete"
         },
         {
             "references": [],
@@ -50140,10 +50866,11 @@
             "references": [],
             "attack_object_id": "T1659",
             "attack_object_name": "Content Injection",
-            "capability_id": null,
-            "capability_description": null,
+            "capability_id": "SC-07",
+            "capability_description": "Boundary Protection",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "status": "in_progress"
+            "group": "SC",
+            "status": "complete"
         }
     ]
 }
