@@ -313,13 +313,13 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-    if metadata.get("groups"):
-        for i in metadata["groups"]:
+    if metadata.get("capability_groups"):
+        for i in metadata["capability_groups"]:
             g = Group()
             g.id = i
-            g.label = metadata["groups"][i]
+            g.label = metadata["capability_groups"][i]
             project.capability_groups.append(g)
-            filtered_mappings = [m for m in mappings if (m["group"] == g.id)]
+            filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
             print(
