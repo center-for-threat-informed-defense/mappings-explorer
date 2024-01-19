@@ -466,7 +466,7 @@ def build_external_landing(
     output_path = domain_dir / "index.html"
     template = load_template("framework_landing.html.j2")
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
@@ -825,10 +825,17 @@ def build_attack_pages(projects: list, url_prefix: str):
                 PUBLIC_DIR
                 / "attack"
                 / ("attack-" + attack_version)
-                / ("domain-" + attack_domain)
+                / ("domain-" + attack_domain.lower())
             )
             external_dir.mkdir(parents=True, exist_ok=True)
-
+            build_technique_landing_page(
+                url_prefix=url_prefix,
+                parent_dir=external_dir,
+                attack_version=attack_version,
+                attack_domain=attack_domain,
+                techniques=all_techniques,
+                tactics=all_tactics,
+            )
             for technique in all_techniques:
                 if technique.id:
                     build_technique_page(
@@ -869,7 +876,7 @@ def build_technique_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -925,7 +932,7 @@ def build_tactic_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -952,8 +959,91 @@ def build_tactic_page(
     print("          Created tactic page " + tactic.id)
 
 
+def build_technique_landing_page(
+    url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
+):
+    """Builds default pages that list all tactics and techiniques
+    Args:
+        url_prefix: root url for website
+        parent_dir: directory to build pages inside of
+        attack_version: version of ATT&CK to build page for
+        attack_domain: ATT&CK domain to build page for
+        techniques: list of all techniques to be listed in technique page
+        tactics: list of all tactics to be listed in tactic page
+    """
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
+    )
+    headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("num_mappings", "Number of Mappings"),
+        ("num_subtechniques", "Number of Subtechniques"),
+    ]
+    description = """Techniques represent 'how' an adversary achieves a tactical goal by
+      performing an action. For example, an adversary may dump credentials to achieve
+      credential access.
+    """
+    valid_versions = []
+    for d in attack_domains.keys():
+        for version in attack_domains[d]:
+            valid_versions.append((d, version))
+
+    dir = parent_dir / "techniques"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Techniques",
+        description=description,
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=techniques,
+        object_type="Techniques",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
+    )
+    stream.dump(str(output_path))
+    print("          Created technique landing page ")
+    description = """Tactics represent the "why" of an ATT&CK technique or
+      sub-technique.  It is the adversary's tactical goal: the reason for performing an
+      action. For example, an adversary may want to achieve credential access.
+    """
+    headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("num_techniques", "Number of Techniques"),
+    ]
+    dir = parent_dir / "tactics"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Tactics",
+        description=description,
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=tactics,
+        object_type="Tactics",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
+    )
+    stream.dump(str(output_path))
+    print("          Created tactics landing page ")
+
+
 def build_matrix(url_prefix, projects):
-    external_dir = PUBLIC_DIR / "external" / "matrix"
+    external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
 
