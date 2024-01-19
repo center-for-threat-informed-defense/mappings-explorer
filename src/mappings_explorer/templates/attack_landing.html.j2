@@ -7,9 +7,9 @@
 
    <section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up">
+      {% include "_breadcrumbs.html.j2" %}
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            {{ macros.back_button("", "ATT&CK Matrix", url_prefix)}}
           <h1 style="text-transform: uppercase;"><span class="highlight">ATT&CK</span> {{object_type}}</h1>
           <p>{{description}}</p>
           <p>You can view information about {{object_type | lower}} in the <a href="{{url_prefix}}attack/matrix">matrix view</a> to see how techniques and tactics interact and the mappings coverage on ATT&CK objects.</p>
@@ -28,7 +28,7 @@
             <h2 style="width: max-content">ATT&CK {{object_type}} Mappings</h2>
             </div>
             <div class="col-lg-8 col-md-12" style="margin-left: auto;">
-            {% include "_badge-section.html.j2" %}
+            {% include "_badge_section.html.j2" %}
             </div>
         </div>
         <div class="col-12">

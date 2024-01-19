@@ -1,0 +1,10 @@
+{% block breadcrumbs %}
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs ">
+      <ol>
+        {% for item in breadcrumbs %}
+            <li><a href="{{item[0]}}">{{item[1]}}</a></li>
+        {% endfor %}
+      </ol>
+    </div><!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
