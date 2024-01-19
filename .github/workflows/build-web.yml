@@ -31,11 +31,13 @@ jobs:
         run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
+      - name: Compress Artifacts
+        run: zip -rq output.zip output/
       - name: Upload Web Site
         uses: actions/upload-artifact@v3
         with:
           name: mapex-web
-          path: output/
+          path: output.zip
 
   # Delete this job for public release and clear GitHub secrets:
   azure_blob:
@@ -55,7 +57,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: mapex-web
-          path: output
+          path: .
+      - name: Decompress Artifacts
+        run: unzip -q output.zip
       - env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
         run: >
@@ -107,7 +111,9 @@ jobs:
   #     uses: actions/download-artifact@v3
   #     with:
   #       name: mapex-web
-  #       path: output
+  #       path: .
+  #   - name: Decompress Artifacts
+  #     run: unzip -q output.zip
   #   - name: Upload artifact
   #     uses: actions/upload-pages-artifact@v1
   #     with:
