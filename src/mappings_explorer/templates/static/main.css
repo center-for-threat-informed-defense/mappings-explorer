@@ -134,7 +134,7 @@ section.version-select {
 
 .breadcrumbs h2 {
   font-size: 56px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-link);
   font-family: var(--font-primary);
 }
@@ -146,7 +146,7 @@ section.version-select {
   padding: 0 0 10px 0;
   margin: 0;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-link);
 }
 
@@ -268,7 +268,9 @@ div.banner {
   position: fixed;
   top: 84px;
   z-index: 10 !important;
+  transition: all 0.5s;
 }
+
 
 .banner p {
   margin-bottom: 0;
@@ -282,6 +284,10 @@ div.banner {
   div.banner {
     top: 60px;
   }
+}
+
+.banner.sticked {
+  top: 74px;
 }
 
 .header.transparent-header {

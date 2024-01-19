@@ -1,8 +1,8 @@
-    <div id="banner" class="banner">
+    <div id="banner" class="banner fade-up">
         <p>You're currently viewing ATT&CK Version {{attack_version}}
             {{attack_domain}}
-            {% if versions %} and {{control}} {{control_version}}{%-endif-%}.
-            <a class="banner-link" href="../">
-            Change versions here.</a>
+            {%- if not versions -%}.{%-endif-%}
+            {% if versions %} and {{control}} {{control_version}}.{% endif %}
+            <a class="banner-link" href="../">Change versions here.</a>
         </p>
     </div>

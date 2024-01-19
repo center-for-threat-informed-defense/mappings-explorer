@@ -1097,10 +1097,14 @@ def build_technique_landing_page(
     print("          Created tactics landing page ")
 
 
-def build_matrix(url_prefix, projects):
+def build_matrix(url_prefix, projects, breadcrumbs):
     external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
+
+    nav = breadcrumbs + [
+        (f"{url_prefix}attack/matrix/", "ATT&CK Matrix"),
+    ]
 
     all_attack_versions = [
         "8.2",
@@ -1193,6 +1197,7 @@ def build_matrix(url_prefix, projects):
         url_prefix=url_prefix,
         attack_domains=attack_domains,
         attack_domain_versions_with_mappings=attack_domain_versions_with_mappings,
+        breadcrumbs=nav,
     )
     stream.dump(str(output_path))
     print("Created matrix")
@@ -1400,7 +1405,7 @@ def main():
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
-    build_matrix(url_prefix=url_prefix, projects=projects)
+    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
     build_search_index(url_prefix)
     print("Done building site")
 

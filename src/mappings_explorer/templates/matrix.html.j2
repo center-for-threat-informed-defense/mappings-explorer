@@ -1,5 +1,5 @@
 {% extends "base.html.j2" %} {% block content %}
-<div id="matrix">
+<div id="matrix-component">
   <Matrix :url_prefix="'{{url_prefix}}'" :all_attack_versions="{{all_attack_versions}}"
     :all_attack_domains="{{attack_domains}}"
     :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"></Matrix>
@@ -8,29 +8,28 @@
 <script>
   const Matrix = {
     template: `
-      <div class="matrix-component">
-       <section id="header-container" class="header-container">
-          <div class="container" data-aos="fade-up">
-            <div class="row justify-content-left">
-              <div class="col-lg-8 col-md-10 col-sm-12">
-                <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
-                <p>[[description]]</p>
-              </div>
-              <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
-          <h6>Download Mapping Artifacts:</h6>
-          <div class="downloads">
-            <p>
-              <a href="">
-                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
-                Navigator Layers
-              </a>
-            </p>
-          </div>
-        </div>
+      <section id="header-container" class="header-container">
+        <div class="container" data-aos="fade-up">
+          {% include "_breadcrumbs.html.j2" %}
+          <div class="row justify-content-left">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+              <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
+              <p>[[description]]</p>
+            </div>
+          <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
+            <h6>Download Mapping Artifacts:</h6>
+            <div class="downloads">
+              <p>
+                <a href="">
+                  <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                  Navigator Layers
+                </a>
+              </p>
             </div>
           </div>
-        </section>
-
+        </div>
+      </section>
+      <div class="matrix-component" id="matrix">
         <div class="container" data-aos="fade-up">
           <div class="row justify-content-left">
             <form class="col-12 version-select">
@@ -377,7 +376,7 @@
     components: {
       Matrix
     }
-  }).mount("#matrix");
+  }).mount("#matrix-component");
 
 </script>
 
