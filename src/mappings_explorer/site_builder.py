@@ -576,7 +576,15 @@ def build_external_landing(
         )
 
 
-def build_external_pages(projects, url_prefix, breadcrumbs):
+def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
+    """Parse ATT&CK data and build all pages for ATT&CK objects
+
+    Args:
+        projects: the list of projects and their mappings to parse into ATT&CK objects
+        url_prefix: the root url for the built site
+        breadcrumbs: the navigation tree above the pages being built in this function
+        used to render the breadcrumbs on each page
+    """
     for project in projects:
         external_dir = PUBLIC_DIR / "external"
         external_dir.mkdir(parents=True, exist_ok=True)
@@ -680,6 +688,20 @@ def build_external_capability(
     attack_domain: str,
     breadcrumbs: list,
 ):
+    """Builds a capability page for a given capability
+
+    Args:
+       project: object that contains the capability (used for metadata and linking)
+       url_prefix: the root url for the built site
+       parent_dir: folder 1 level above where the technique page will be built
+       project_version: project version for the page
+       attack_version: version of ATT&CK for the page
+       headers: headers for mapping table
+       capability: capability object that the page is being built for
+       attack_domain: ATT&CK domain for the page
+       breadcrumbs: the navigation tree above the page being built in this function
+
+    """
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -864,6 +886,13 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 breadcrumbs=breadcrumbs,
             )
             for technique in all_techniques:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "techniques"
+                )
                 if technique.id:
                     build_technique_page(
                         url_prefix=url_prefix,
@@ -875,6 +904,13 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                     )
             print("built all technique pages")
             for tactic in all_tactics:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "tactics"
+                )
                 if tactic.id:
                     build_tactic_page(
                         url_prefix=url_prefix,
@@ -903,19 +939,22 @@ def build_technique_page(
         attack_version: version of ATT&CK for the page
         attack_domain: ATT&CK domain for the page
         technique: technique object that the page is being built for
+        breadcrumbs: the navigation tree above the page being built in this function
 
     """
-    attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
-    )
+    attack_prefix = f"""{url_prefix}
+    attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
         ("label", "Technique Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
     ]
     nav = breadcrumbs + [
-        (f"{attack_prefix}techniques/", "ATT&CK Techniques"),
-        (f"{attack_prefix}{technique.id}", f"{technique.id} {technique.label}"),
+        (f"{attack_prefix}", "ATT&CK Techniques"),
+        (
+            f"{attack_prefix}{technique.id}/",
+            f"{technique.id} {technique.label}",
+        ),
     ]
     headers = [
         ("capability_id", "Capability ID", "capability_id"),
@@ -965,21 +1004,25 @@ def build_tactic_page(
         attack_version: version of ATT&CK for the page
         attack_domain: ATT&CK domain for the page
         tactic: tactic object that the page is being built for
+        breadcrumbs: the navigation tree above the page being built in this function
 
     """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
+    nav = breadcrumbs + [
+        (f"{attack_prefix}tactics/", "ATT&CK Tactics"),
+        (f"{attack_prefix}tactics/{tactic.id}/", f"{tactic.id} {tactic.label}"),
+    ]
+    attack_prefix += "techniques/"
+
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
         ("label", "Technique Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
     ]
-    nav = breadcrumbs + [
-        (f"{attack_prefix}tactics/", "ATT&CK Tactics"),
-        (f"{attack_prefix}{tactic.id}/", f"{tactic.id} {tactic.label}"),
-    ]
+
     dir = parent_dir / tactic.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -1266,12 +1309,13 @@ def getIndexPages():
     return pages
 
 
-def build_search_index(url_prefix):
+def build_search_index(url_prefix: str, breadcrumbs=list):
     """
     Render the search page and also build the search index as a JSON file.
 
     Args:
         url_prefix - the site's URL prefix
+        breadcrumbs: the navigation tree above the page being built in this function
     """
     print("Creating search page")
     search_dir = PUBLIC_DIR / "search"
@@ -1279,9 +1323,10 @@ def build_search_index(url_prefix):
     output_path = search_dir / "index.html"
     template = load_template("search.html.j2")
 
+    nav = breadcrumbs + [(f"{url_prefix}search/", "Search")]
     print("Creating search index")
     pages = getIndexPages()
-    stream = template.stream(url_prefix=url_prefix)
+    stream = template.stream(url_prefix=url_prefix, breadcrumbs=nav)
     stream.dump(str(output_path))
 
     index = lunr(
@@ -1313,40 +1358,43 @@ def build_search_index(url_prefix):
         zip_file.testzip()
 
 
-def build_about_pages(url_prefix: str):
+def build_about_pages(url_prefix: str, breadcrumbs: list):
     """
     Build the documentation pages, e.g. explaining what the site is for, who it's for,
     etc.
 
     Args:
         url_prefix: The prefix to put in front of any internal URLs.
+        breadcrumbs: the navigation tree above the pages being built in this function
     """
+    nav = breadcrumbs + [(f"{url_prefix}about/", "About")]
     dir = PUBLIC_DIR / "about"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("about.html.j2")
-    stream = template.stream(title="About Mappings Explorer", url_prefix=url_prefix)
+    stream = template.stream(
+        title="About Mappings Explorer", url_prefix=url_prefix, breadcrumbs=nav
+    )
     stream.dump(str(output_path))
     print("Created about page")
+    nav1 = nav + [(f"{url_prefix}about/use-cases/", "Use Cases")]
 
     dir = PUBLIC_DIR / "about" / "use-cases"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("use_cases.html.j2")
     stream = template.stream(
-        title="Mappings Explorer Use Cases",
-        url_prefix=url_prefix,
+        title="Mappings Explorer Use Cases", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
     print("Created use cases page")
-
+    nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
     dir = PUBLIC_DIR / "about" / "methodology"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("methodology.html.j2")
     stream = template.stream(
-        title="Mappings Explorer Methodology",
-        url_prefix=url_prefix,
+        title="Mappings Explorer Methodology", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
     print("Created methodology page")
@@ -1395,18 +1443,18 @@ def main():
     stream.dump(str(output_path))
     print("Created Mappings Frameworks landing page")
 
-    build_about_pages(url_prefix=url_prefix)
     build_external_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
     ]
+    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
     build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    build_search_index(url_prefix)
+    build_search_index(url_prefix, breadcrumbs)
     print("Done building site")
 
 
