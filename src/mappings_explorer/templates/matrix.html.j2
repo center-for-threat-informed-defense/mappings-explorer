@@ -98,7 +98,7 @@
                       <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
                         <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
                           <div class="tactic-header">
-                            <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
+                            <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/tactics/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
                             <br/>
                             ([[ tactic.id ]])
                           </div>
@@ -140,7 +140,7 @@
                                   class="technique-box"
                                   :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
                                 >
-                                  <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/' + technique.id" @mouseenter="techniqueHovered = technique">
+                                  <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id" @mouseenter="techniqueHovered = technique">
                                     [[  technique.name  ]]
                                   </a>
                                   <br/>
@@ -167,7 +167,7 @@
                                   :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
                                 >
                                   <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
-                                    <a :href="url_prefix + '/attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                    <a :href="url_prefix + '/attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/techniques/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
                                     <br/>
                                     ( [[ subtechnique.id ]] )
                                   </div>
