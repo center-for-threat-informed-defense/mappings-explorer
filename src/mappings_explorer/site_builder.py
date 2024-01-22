@@ -59,7 +59,7 @@ class ExternalControl:
     attackDomain = ""
     attackDomains = []
     validVersions = []
-    groups = []
+    capability_groups = []
     mappings = []
     capabilities = []
 
@@ -282,7 +282,7 @@ def replace_mapping_type(mapping, type_list):
             return type_list[mapping_type]["name"]
 
 
-def parse_groups(project, attack_version, project_version, attack_domain):
+def parse_capability_groups(project, attack_version, project_version, attack_domain):
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -306,20 +306,20 @@ def parse_groups(project, attack_version, project_version, attack_domain):
     f = open(full_path, "r")
     data = json.load(f)
     metadata = data["metadata"]
-    project.groups = []
+    project.capability_groups = []
 
     mappings = data["mapping_objects"]
     for mapping in mappings:
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-    if metadata.get("groups"):
-        for i in metadata["groups"]:
+    if metadata.get("capability_groups"):
+        for i in metadata["capability_groups"]:
             g = Group()
             g.id = i
-            g.label = metadata["groups"][i]
-            project.groups.append(g)
-            filtered_mappings = [m for m in mappings if (m["group"] == g.id)]
+            g.label = metadata["capability_groups"][i]
+            project.capability_groups.append(g)
+            filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
             print(
@@ -464,9 +464,9 @@ def build_external_landing(
 
     """
     output_path = domain_dir / "index.html"
-    template = load_template("external-control.html.j2")
+    template = load_template("framework_landing.html.j2")
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
@@ -498,7 +498,7 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
-    group_headers = [
+    capability_group_headers = [
         ("id", "ID", "id", external_prefix),
         ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
@@ -520,8 +520,8 @@ def build_external_landing(
         domains=project.attackDomains,
         mappings=mappings,
         headers=headers,
-        group_headers=group_headers,
-        groups=project.groups,
+        group_headers=capability_group_headers,
+        capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
     )
     stream.dump(str(output_path))
@@ -536,10 +536,10 @@ def build_external_landing(
         + attack_domain.lower()
     )
 
-    for group in project.groups:
+    for capability_group in project.capability_groups:
         build_external_group(
             project=project,
-            group=group,
+            capability_group=capability_group,
             url_prefix=url_prefix,
             parent_dir=domain_dir,
             project_version=project_version,
@@ -577,7 +577,7 @@ def build_external_pages(projects, url_prefix):
             p = f"{project.id}-{project_version}"
             domain_dir = dir / a / d / p
             domain_dir.mkdir(parents=True, exist_ok=True)
-            parse_groups(
+            parse_capability_groups(
                 project=project,
                 attack_version=attack_version,
                 project_version=project_version,
@@ -610,7 +610,7 @@ def build_external_pages(projects, url_prefix):
 
 def build_external_group(
     project: ExternalControl,
-    group,
+    capability_group,
     url_prefix,
     parent_dir,
     project_version,
@@ -618,18 +618,18 @@ def build_external_group(
     headers,
     attack_domain,
 ):
-    group_id = group.id
-    dir = parent_dir / group_id
+    capability_group_id = capability_group.id
+    dir = parent_dir / capability_group_id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-group.html.j2")
+    template = load_template("capability_group.html.j2")
     prev_page = parent_dir
     stream = template.stream(
-        title=f"{project.label} {group.label}",
+        title=f"{project.label} {capability_group.label}",
         url_prefix=url_prefix,
         control=project.label,
-        group_id=group.id,
-        group_name=group.label,
+        capability_group_id=capability_group.id,
+        capability_group_name=capability_group.label,
         project=project,
         description=project.description,
         control_version=project_version,
@@ -639,11 +639,11 @@ def build_external_group(
         attack_domain=attack_domain,
         domains=project.attackDomains,
         prev_page=prev_page,
-        mappings=group.mappings,
+        mappings=capability_group.mappings,
         headers=headers,
     )
     stream.dump(str(output_path))
-    print("          Created group page " + group.label)
+    print("          Created capability group page " + capability_group.label)
 
 
 def build_external_capability(
@@ -659,7 +659,7 @@ def build_external_capability(
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-capability.html.j2")
+    template = load_template("capability.html.j2")
     prev_page = parent_dir
     stream = template.stream(
         title=f"{project.label} {capability.id}",
@@ -825,10 +825,17 @@ def build_attack_pages(projects: list, url_prefix: str):
                 PUBLIC_DIR
                 / "attack"
                 / ("attack-" + attack_version)
-                / ("domain-" + attack_domain)
+                / ("domain-" + attack_domain.lower())
             )
             external_dir.mkdir(parents=True, exist_ok=True)
-
+            build_technique_landing_page(
+                url_prefix=url_prefix,
+                parent_dir=external_dir,
+                attack_version=attack_version,
+                attack_domain=attack_domain,
+                techniques=all_techniques,
+                tactics=all_tactics,
+            )
             for technique in all_techniques:
                 if technique.id:
                     build_technique_page(
@@ -869,7 +876,7 @@ def build_technique_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -925,7 +932,7 @@ def build_tactic_page(
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain}/"
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
@@ -952,8 +959,91 @@ def build_tactic_page(
     print("          Created tactic page " + tactic.id)
 
 
+def build_technique_landing_page(
+    url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
+):
+    """Builds default pages that list all tactics and techiniques
+    Args:
+        url_prefix: root url for website
+        parent_dir: directory to build pages inside of
+        attack_version: version of ATT&CK to build page for
+        attack_domain: ATT&CK domain to build page for
+        techniques: list of all techniques to be listed in technique page
+        tactics: list of all tactics to be listed in tactic page
+    """
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
+    )
+    headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("num_mappings", "Number of Mappings"),
+        ("num_subtechniques", "Number of Subtechniques"),
+    ]
+    description = """Techniques represent 'how' an adversary achieves a tactical goal by
+      performing an action. For example, an adversary may dump credentials to achieve
+      credential access.
+    """
+    valid_versions = []
+    for d in attack_domains.keys():
+        for version in attack_domains[d]:
+            valid_versions.append((d, version))
+
+    dir = parent_dir / "techniques"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Techniques",
+        description=description,
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=techniques,
+        object_type="Techniques",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
+    )
+    stream.dump(str(output_path))
+    print("          Created technique landing page ")
+    description = """Tactics represent the "why" of an ATT&CK technique or
+      sub-technique.  It is the adversary's tactical goal: the reason for performing an
+      action. For example, an adversary may want to achieve credential access.
+    """
+    headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("num_techniques", "Number of Techniques"),
+    ]
+    dir = parent_dir / "tactics"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    prev_page = parent_dir
+    template = load_template("attack_landing.html.j2")
+    stream = template.stream(
+        title="ATT&CK Tactics",
+        description=description,
+        url_prefix=url_prefix,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+        headers=headers,
+        prev_page=prev_page,
+        mappings=tactics,
+        object_type="Tactics",
+        attackVersions=all_attack_versions,
+        domains=attack_domains,
+        valid_versions=valid_versions,
+    )
+    stream.dump(str(output_path))
+    print("          Created tactics landing page ")
+
+
 def build_matrix(url_prefix, projects):
-    external_dir = PUBLIC_DIR / "external" / "matrix"
+    external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
 
@@ -1234,10 +1324,10 @@ def main():
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
-    template = load_template("external-landing.html.j2")
+    template = load_template("external_landing.html.j2")
     stream = template.stream(title="External Mappings Home", url_prefix=url_prefix)
     stream.dump(str(output_path))
-    print("Created external mappings home")
+    print("Created Mappings Frameworks landing page")
 
     build_about_pages(url_prefix=url_prefix)
     build_external_pages(projects=projects, url_prefix=url_prefix)

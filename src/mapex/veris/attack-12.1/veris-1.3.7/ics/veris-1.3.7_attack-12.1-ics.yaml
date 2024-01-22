@@ -2,9 +2,9 @@ mapping_objects:
 - attack_object_id: T0800
   attack_object_name: Activate Firmware Update Mode
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -12,81 +12,81 @@ mapping_objects:
   attack_object_name: Activate Firmware Update Mode
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0800
   attack_object_name: Activate Firmware Update Mode
   capability_description: Interruption
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Interruption
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0800
   attack_object_name: Activate Firmware Update Mode
   capability_description: Hardware tampering or physical alteration
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Hardware tampering
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0885
   attack_object_name: Commonly Used Port
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0816
   attack_object_name: Device Restart/Shutdown
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0816
   attack_object_name: Device Restart/Shutdown
   capability_description: Denial of service
+  capability_group: action.hacking
   capability_id: action.hacking.variety.DoS
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0816
   attack_object_name: Device Restart/Shutdown
   capability_description: DoS attack
+  capability_group: action.malware
   capability_id: action.malware.variety.DoS
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0816
   attack_object_name: Device Restart/Shutdown
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0817
   attack_object_name: Drive-by Compromise
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -94,27 +94,27 @@ mapping_objects:
   attack_object_name: Drive-by Compromise
   capability_description: Web via auto-executed or "drive-by" infection. Child of
     'Web application'.
+  capability_group: action.malware
   capability_id: action.malware.vector.Web application - drive-by
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0817
   attack_object_name: Drive-by Compromise
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0817
   attack_object_name: Drive-by Compromise
   capability_description: Web application
+  capability_group: action.social
   capability_id: action.social.vector.Web application
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -122,36 +122,36 @@ mapping_objects:
   attack_object_name: Drive-by Compromise
   capability_description: Malicious content shared intentionally, including bullet-proof
     hosting
+  capability_group: value_chain.distribution
   capability_id: value_chain.distribution.variety.Website
   comments: ''
-  group: value_chain.distribution
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0871
   attack_object_name: Execution through API
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0823
   attack_object_name: Graphical User Interface
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0874
   attack_object_name: Hooking
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -159,45 +159,45 @@ mapping_objects:
   attack_object_name: Hooking
   capability_description: Knowledge of weaknesses other than vulnerability and misconfigurations
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Weaknesses
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0867
   attack_object_name: Lateral Tool Transfer
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0867
   attack_object_name: Lateral Tool Transfer
   capability_description: Software installation or code modification
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Software installation
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0855
   attack_object_name: Unauthorized Command Message
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0855
   attack_object_name: Unauthorized Command Message
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -205,18 +205,18 @@ mapping_objects:
   attack_object_name: Unauthorized Command Message
   capability_description: Hacking actions taken through a backdoor.  C2 is only used
     by malware.
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0855
   attack_object_name: Unauthorized Command Message
   capability_description: Remote shell
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Command shell
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -224,9 +224,9 @@ mapping_objects:
   attack_object_name: Unauthorized Command Message
   capability_description: Knowledge of system misconfigurations used to pick an organization
     as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Misconfigurations
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -234,27 +234,27 @@ mapping_objects:
   attack_object_name: Unauthorized Command Message
   capability_description: Knowledge of weaknesses other than vulnerability and misconfigurations
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Weaknesses
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0869
   attack_object_name: Standard Application Layer Protocol
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0869
   attack_object_name: Standard Application Layer Protocol
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -262,72 +262,72 @@ mapping_objects:
   attack_object_name: Standard Application Layer Protocol
   capability_description: Command and control. Separate from distribution of mawlare
     or bots, this is how they are maintained
+  capability_group: value_chain.non-distribution_services
   capability_id: value_chain.non-distribution services.variety.C2
   comments: ''
-  group: value_chain.non-distribution_services
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0881
   attack_object_name: Service Stop
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0881
   attack_object_name: Service Stop
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0881
   attack_object_name: Service Stop
   capability_description: Influence or alter human behavior
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Alter behavior
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0853
   attack_object_name: Scripting
   capability_description: Abuse of functionality.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Abuse of functionality
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0853
   attack_object_name: Scripting
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0853
   attack_object_name: Scripting
   capability_description: Remote shell
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Command shell
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0822
   attack_object_name: External Remote Services
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -335,9 +335,9 @@ mapping_objects:
   attack_object_name: External Remote Services
   capability_description: Hacking actions taken through a backdoor.  C2 is only used
     by malware.
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -345,27 +345,27 @@ mapping_objects:
   attack_object_name: External Remote Services
   capability_description: Malware creates a remote control capability, but it's unclear
     if it's a backdoor for hacking or C2 for malware. Parent of 'C2' and 'Backdoor'.
+  capability_group: action.malware
   capability_id: action.malware.variety.Backdoor or C2
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0822
   attack_object_name: External Remote Services
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0822
   attack_object_name: External Remote Services
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.vector.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -373,54 +373,54 @@ mapping_objects:
   attack_object_name: External Remote Services
   capability_description: Knowledge of software vulnerabilities, both at an organization
     or associated with a specific vendor's product, used to pick them as a target.
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Vulnerabilities
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0883
   attack_object_name: Internet Accessible Device
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0883
   attack_object_name: Internet Accessible Device
   capability_description: Exploit a misconfiguration (vs vuln or weakness)
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Exploit misconfig
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0883
   attack_object_name: Internet Accessible Device
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0883
   attack_object_name: Internet Accessible Device
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.vector.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0848
   attack_object_name: Rogue Master
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -428,27 +428,27 @@ mapping_objects:
   attack_object_name: Rogue Master
   capability_description: Hacking actions taken through a backdoor.  C2 is only used
     by malware.
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0848
   attack_object_name: Rogue Master
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0848
   attack_object_name: Rogue Master
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.vector.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -457,72 +457,72 @@ mapping_objects:
   capability_description: "malicious content added to a benign server, such as a webserver,\
     \ by the actor, without the permission or necessarily knowledge of the server\u2019\
     s owner"
+  capability_group: value_chain.distribution
   capability_id: value_chain.distribution.variety.Compromised server
   comments: ''
-  group: value_chain.distribution
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0835
   attack_object_name: Manipulate I/O Image
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0835
   attack_object_name: Manipulate I/O Image
   capability_description: Performance degradation
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Degradation
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0835
   attack_object_name: Manipulate I/O Image
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0831
   attack_object_name: Manipulation of Control
   capability_description: Hacking action that creates a backdoor for use.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0831
   attack_object_name: Manipulation of Control
   capability_description: Performance degradation
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Degradation
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0806
   attack_object_name: Brute Force I/O
   capability_description: Brute force or password guessing attacks.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Brute force
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0858
   attack_object_name: Change Operating Mode
   capability_description: Disable or interfere with security controls
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Disable controls
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -530,99 +530,99 @@ mapping_objects:
   attack_object_name: Change Operating Mode
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0858
   attack_object_name: Change Operating Mode
   capability_description: Influence or alter human behavior
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Alter behavior
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0813
   attack_object_name: Denial of Control
   capability_description: Denial of service
+  capability_group: action.hacking
   capability_id: action.hacking.variety.DoS
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0813
   attack_object_name: Denial of Control
   capability_description: DoS attack
+  capability_group: action.malware
   capability_id: action.malware.variety.DoS
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0813
   attack_object_name: Denial of Control
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0814
   attack_object_name: Denial of Service
   capability_description: Denial of service
+  capability_group: action.hacking
   capability_id: action.hacking.variety.DoS
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0814
   attack_object_name: Denial of Service
   capability_description: DoS attack
+  capability_group: action.malware
   capability_id: action.malware.variety.DoS
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0814
   attack_object_name: Denial of Service
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0815
   attack_object_name: Denial of View
   capability_description: Denial of service
+  capability_group: action.hacking
   capability_id: action.hacking.variety.DoS
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0815
   attack_object_name: Denial of View
   capability_description: DoS attack
+  capability_group: action.malware
   capability_id: action.malware.variety.DoS
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0815
   attack_object_name: Denial of View
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
@@ -630,18 +630,18 @@ mapping_objects:
   attack_object_name: Alarm Suppression
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0878
   attack_object_name: Alarm Suppression
   capability_description: Interruption
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Interruption
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
@@ -649,27 +649,27 @@ mapping_objects:
   attack_object_name: Block Reporting Message
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0804
   attack_object_name: Block Reporting Message
   capability_description: Interruption
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Interruption
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0804
   attack_object_name: Block Reporting Message
   capability_description: Influence or alter human behavior
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Alter behavior
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
@@ -677,27 +677,27 @@ mapping_objects:
   attack_object_name: Block Serial COM
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0805
   attack_object_name: Block Serial COM
   capability_description: Interruption
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Interruption
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0805
   attack_object_name: Block Serial COM
   capability_description: Influence or alter human behavior
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Alter behavior
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
@@ -705,9 +705,9 @@ mapping_objects:
   attack_object_name: Exploitation for Evasion
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -716,9 +716,9 @@ mapping_objects:
   capability_description: Exploit vulnerability in code (vs misconfig or weakness).
     This can be used with other hacking enumerations, (such as XSS when an XSS vuln
     exists.). Parent of many hacking varieties.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Exploit vuln
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -726,9 +726,9 @@ mapping_objects:
   attack_object_name: Exploitation for Evasion
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.malware
   capability_id: action.malware.variety.Evade Defenses
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -736,9 +736,9 @@ mapping_objects:
   attack_object_name: Exploitation for Evasion
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -746,9 +746,9 @@ mapping_objects:
   attack_object_name: Indicator Removal on Host
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Evade Defenses
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -756,9 +756,9 @@ mapping_objects:
   attack_object_name: Indicator Removal on Host
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.malware
   capability_id: action.malware.variety.Evade Defenses
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -766,9 +766,9 @@ mapping_objects:
   attack_object_name: Indicator Removal on Host
   capability_description: Malware which compromises a legitimate file rather than
     creating new filess
+  capability_group: action.malware
   capability_id: action.malware.variety.Modify data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -776,45 +776,45 @@ mapping_objects:
   attack_object_name: Indicator Removal on Host
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0872
   attack_object_name: Indicator Removal on Host
   capability_description: Log tampering or modification
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Log tampering
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0819
   attack_object_name: Exploit Public-Facing Application
   capability_description: Exploit a misconfiguration (vs vuln or weakness)
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Exploit misconfig
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0819
   attack_object_name: Exploit Public-Facing Application
   capability_description: Web application
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Web application
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0819
   attack_object_name: Exploit Public-Facing Application
   capability_description: Exploit a misconfiguration (vs vuln or weakness)
+  capability_group: action.malware
   capability_id: action.malware.variety.Exploit misconfig
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -822,27 +822,27 @@ mapping_objects:
   attack_object_name: Exploit Public-Facing Application
   capability_description: Web application. Parent of 'Web application - download'
     and 'Web application - drive-by.
+  capability_group: action.malware
   capability_id: action.malware.vector.Web application
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0819
   attack_object_name: Exploit Public-Facing Application
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0819
   attack_object_name: Exploit Public-Facing Application
   capability_description: Web application
+  capability_group: action.social
   capability_id: action.social.vector.Web application
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -850,9 +850,9 @@ mapping_objects:
   attack_object_name: Exploit Public-Facing Application
   capability_description: Knowledge of weaknesses other than vulnerability and misconfigurations
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Weaknesses
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -861,9 +861,9 @@ mapping_objects:
   capability_description: Exploit vulnerability in code (vs misconfig or weakness).
     This can be used with other hacking enumerations, (such as XSS when an XSS vuln
     exists.). Parent of many hacking varieties.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Exploit vuln
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -872,9 +872,9 @@ mapping_objects:
   capability_description: Exploit vulnerability in code (vs misconfig or weakness).
     This can be used with other malware enumerations, (such as Remote injection when
     a Remote injection vuln exists.)
+  capability_group: action.malware
   capability_id: action.malware.variety.Exploit vuln
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -882,9 +882,9 @@ mapping_objects:
   attack_object_name: Exploitation for Privilege Escalation
   capability_description: Knowledge of software vulnerabilities, both at an organization
     or associated with a specific vendor's product, used to pick them as a target.
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Vulnerabilities
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -893,9 +893,9 @@ mapping_objects:
   capability_description: Exploit vulnerability in code (vs misconfig or weakness).
     This can be used with other hacking enumerations, (such as XSS when an XSS vuln
     exists.). Parent of many hacking varieties.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Exploit vuln
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -904,27 +904,27 @@ mapping_objects:
   capability_description: Exploit vulnerability in code (vs misconfig or weakness).
     This can be used with other malware enumerations, (such as Remote injection when
     a Remote injection vuln exists.)
+  capability_group: action.malware
   capability_id: action.malware.variety.Exploit vuln
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0866
   attack_object_name: Exploitation of Remote Services
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0866
   attack_object_name: Exploitation of Remote Services
   capability_description: Software
+  capability_group: action.social
   capability_id: action.social.vector.Software
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -932,90 +932,90 @@ mapping_objects:
   attack_object_name: Exploitation of Remote Services
   capability_description: Knowledge of weaknesses other than vulnerability and misconfigurations
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Weaknesses
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0830
   attack_object_name: Adversary-in-the-Middle
   capability_description: Man-in-the-middle attack. Child of 'Exploit vuln'.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.MitM
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0830
   attack_object_name: Adversary-in-the-Middle
   capability_description: Packet sniffer (capture data from network)
+  capability_group: action.malware
   capability_id: action.malware.variety.Packet sniffer
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0830
   attack_object_name: Adversary-in-the-Middle
   capability_description: ''
+  capability_group: attribute.confidentiality
   capability_id: attribute.confidentiality.data_disclosure
   comments: ''
-  group: attribute.confidentiality
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0830
   attack_object_name: Adversary-in-the-Middle
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0860
   attack_object_name: Wireless Compromise
   capability_description: Man-in-the-middle attack. Child of 'Exploit vuln'.
+  capability_group: action.hacking
   capability_id: action.hacking.variety.MitM
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0860
   attack_object_name: Wireless Compromise
   capability_description: Enumerating the state of the network
+  capability_group: action.malware
   capability_id: action.malware.variety.Scan network
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0860
   attack_object_name: Wireless Compromise
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0860
   attack_object_name: Wireless Compromise
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.vector.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0860
   attack_object_name: Wireless Compromise
   capability_description: The variety of targeting was known, but is not listed
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Other
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1023,18 +1023,18 @@ mapping_objects:
   attack_object_name: Default Credentials
   capability_description: Use of stolen or default authentication credentials (including
     credential stuffing)
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Use of stolen creds
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0812
   attack_object_name: Default Credentials
   capability_description: Credentials the system came with
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Default credentials
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1042,18 +1042,18 @@ mapping_objects:
   attack_object_name: Hardcoded Credentials
   capability_description: Use of stolen or default authentication credentials (including
     credential stuffing)
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Use of stolen creds
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0891
   attack_object_name: Hardcoded Credentials
   capability_description: ''
+  capability_group: attribute.confidentiality
   capability_id: attribute.confidentiality.data_disclosure
   comments: ''
-  group: attribute.confidentiality
   mapping_type: related_to
   references: []
   status: complete
@@ -1061,9 +1061,9 @@ mapping_objects:
   attack_object_name: Hardcoded Credentials
   capability_description: lost or stolen credentials, including credental stuffing,
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Lost or stolen credentials
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1071,18 +1071,18 @@ mapping_objects:
   attack_object_name: Valid Accounts
   capability_description: Use of stolen or default authentication credentials (including
     credential stuffing)
+  capability_group: action.hacking
   capability_id: action.hacking.variety.Use of stolen creds
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0859
   attack_object_name: Valid Accounts
   capability_description: ''
+  capability_group: attribute.confidentiality
   capability_id: attribute.confidentiality.data_disclosure
   comments: ''
-  group: attribute.confidentiality
   mapping_type: related_to
   references: []
   status: complete
@@ -1090,9 +1090,9 @@ mapping_objects:
   attack_object_name: Valid Accounts
   capability_description: lost or stolen credentials, including credental stuffing,
     used to pick an organization as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Lost or stolen credentials
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1100,9 +1100,9 @@ mapping_objects:
   attack_object_name: Connection Proxy
   capability_description: Hacking actions taken through a backdoor.  C2 is only used
     by malware.
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Backdoor
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
@@ -1110,54 +1110,54 @@ mapping_objects:
   attack_object_name: Connection Proxy
   capability_description: A proxy service (either formally or informally hosted) is
     used by the actor to obscure their source
+  capability_group: value_chain.non-distribution_services
   capability_id: value_chain.non-distribution services.variety.Proxy
   comments: ''
-  group: value_chain.non-distribution_services
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0807
   attack_object_name: Command-Line Interface
   capability_description: Remote shell
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Command shell
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0887
   attack_object_name: Wireless Sniffing
   capability_description: Network service that is not remote access or a web application.
+  capability_group: action.hacking
   capability_id: action.hacking.vector.Other network service
   comments: ''
-  group: action.hacking
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0887
   attack_object_name: Wireless Sniffing
   capability_description: Packet sniffer (capture data from network)
+  capability_group: action.malware
   capability_id: action.malware.variety.Packet sniffer
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0887
   attack_object_name: Wireless Sniffing
   capability_description: Enumerating the state of the network
+  capability_group: action.malware
   capability_id: action.malware.variety.Scan network
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0887
   attack_object_name: Wireless Sniffing
   capability_description: The variety of targeting was known, but is not listed
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Other
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1165,9 +1165,9 @@ mapping_objects:
   attack_object_name: Transient Cyber Asset
   capability_description: Malware creates a backdoor capability for hacking. Child
     of 'RAT' when combined with 'Trojan'. Child of 'Backdoor or C2'.
+  capability_group: action.malware
   capability_id: action.malware.variety.Backdoor
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1175,54 +1175,54 @@ mapping_objects:
   attack_object_name: Transient Cyber Asset
   capability_description: Partner connection or credential. (Indicates supply chain
     breach.)
+  capability_group: action.malware
   capability_id: action.malware.vector.Partner
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0864
   attack_object_name: Transient Cyber Asset
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0864
   attack_object_name: Transient Cyber Asset
   capability_description: In-person
+  capability_group: action.social
   capability_id: action.social.vector.In-person
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0864
   attack_object_name: Transient Cyber Asset
   capability_description: The actor used access to a partner to target the victim.
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Partner
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0868
   attack_object_name: Detect Operating Mode
   capability_description: Capture data from application or system process
+  capability_group: action.malware
   capability_id: action.malware.variety.Capture app data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0877
   attack_object_name: I/O Image
   capability_description: Capture data from application or system process
+  capability_group: action.malware
   capability_id: action.malware.variety.Capture app data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1230,36 +1230,36 @@ mapping_objects:
   attack_object_name: I/O Image
   capability_description: Malware which compromises a legitimate file rather than
     creating new filess
+  capability_group: action.malware
   capability_id: action.malware.variety.Modify data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0852
   attack_object_name: Screen Capture
   capability_description: Capture data from application or system process
+  capability_group: action.malware
   capability_id: action.malware.variety.Capture app data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0811
   attack_object_name: Data from Information Repositories
   capability_description: Capture data stored on system disk
+  capability_group: action.malware
   capability_id: action.malware.variety.Capture stored data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0811
   attack_object_name: Data from Information Repositories
   capability_description: ''
+  capability_group: attribute.confidentiality
   capability_id: attribute.confidentiality.data_disclosure
   comments: ''
-  group: attribute.confidentiality
   mapping_type: related_to
   references: []
   status: complete
@@ -1267,45 +1267,45 @@ mapping_objects:
   attack_object_name: Data from Information Repositories
   capability_description: Knowledge of system misconfigurations used to pick an organization
     as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Misconfigurations
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0809
   attack_object_name: Data Destruction
   capability_description: Destroy or corrupt stored data
+  capability_group: action.malware
   capability_id: action.malware.variety.Destroy data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0809
   attack_object_name: Data Destruction
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0882
   attack_object_name: Theft of Operational Information
   capability_description: Export data to another site or system
+  capability_group: action.malware
   capability_id: action.malware.variety.Export data
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0882
   attack_object_name: Theft of Operational Information
   capability_description: ''
+  capability_group: attribute.confidentiality
   capability_id: attribute.confidentiality.data_disclosure
   comments: ''
-  group: attribute.confidentiality
   mapping_type: related_to
   references: []
   status: complete
@@ -1313,27 +1313,27 @@ mapping_objects:
   attack_object_name: Theft of Operational Information
   capability_description: Information on an organization such as org chart, technologies
     in use, financial assets, etc, used to pick them as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Organizational Information
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0802
   attack_object_name: Automated Collection
   capability_description: Enumerating the state of the current host
+  capability_group: action.malware
   capability_id: action.malware.variety.Profile host
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0802
   attack_object_name: Automated Collection
   capability_description: Enumerating the state of the network
+  capability_group: action.malware
   capability_id: action.malware.variety.Scan network
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1341,18 +1341,18 @@ mapping_objects:
   attack_object_name: Automated Collection
   capability_description: Information on an organization such as org chart, technologies
     in use, financial assets, etc, used to pick them as a target
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Organizational Information
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0857
   attack_object_name: System Firmware
   capability_description: Rootkit (maintain local privileges and stealth)
+  capability_group: action.malware
   capability_id: action.malware.variety.Rootkit
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1360,18 +1360,18 @@ mapping_objects:
   attack_object_name: System Firmware
   capability_description: Nothing is known about the need for or type of targeting
     investment other than it was present.
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Unknown
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0851
   attack_object_name: Rootkit
   capability_description: Rootkit (maintain local privileges and stealth)
+  capability_group: action.malware
   capability_id: action.malware.variety.Rootkit
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1379,81 +1379,81 @@ mapping_objects:
   attack_object_name: Rootkit
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0847
   attack_object_name: Replication Through Removable Media
   capability_description: Worm (propagate to other systems or devices)
+  capability_group: action.malware
   capability_id: action.malware.variety.Worm
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0847
   attack_object_name: Replication Through Removable Media
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0847
   attack_object_name: Replication Through Removable Media
   capability_description: Removable storage media
+  capability_group: action.social
   capability_id: action.social.vector.Removable media
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0863
   attack_object_name: User Execution
   capability_description: Downloaded and installed by local malware
+  capability_group: action.malware
   capability_id: action.malware.vector.Download by malware
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0863
   attack_object_name: User Execution
   capability_description: Email via user-executed attachment. Child of 'Email'
+  capability_group: action.malware
   capability_id: action.malware.vector.Email attachment
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0863
   attack_object_name: User Execution
   capability_description: Documents
+  capability_group: action.social
   capability_id: action.social.vector.Documents
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0863
   attack_object_name: User Execution
   capability_description: Email
+  capability_group: action.social
   capability_id: action.social.vector.Email
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0865
   attack_object_name: Spearphishing Attachment
   capability_description: Email via user-executed attachment. Child of 'Email'
+  capability_group: action.malware
   capability_id: action.malware.vector.Email attachment
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
@@ -1463,36 +1463,36 @@ mapping_objects:
     \ data from the victim. Phishing usually has some element of pretexting, but often\
     \ it doesn\u2019t rise to the level of an invented scenario. E.g. A fake google\
     \ login page isn\u2019t really pretexting."
+  capability_group: action.social
   capability_id: action.social.variety.Phishing
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0865
   attack_object_name: Spearphishing Attachment
   capability_description: Email
+  capability_group: action.social
   capability_id: action.social.vector.Email
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0865
   attack_object_name: Spearphishing Attachment
   capability_description: Distribution by email including anonymous/one time and spam
+  capability_group: value_chain.distribution
   capability_id: value_chain.distribution.variety.Email
   comments: ''
-  group: value_chain.distribution
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0865
   attack_object_name: Spearphishing Attachment
   capability_description: Email addresses
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Email addresses
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1500,36 +1500,36 @@ mapping_objects:
   attack_object_name: Supply Chain Compromise
   capability_description: Partner connection or credential. (Indicates supply chain
     breach.)
+  capability_group: action.malware
   capability_id: action.malware.vector.Partner
   comments: ''
-  group: action.malware
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0862
   attack_object_name: Supply Chain Compromise
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0862
   attack_object_name: Supply Chain Compromise
   capability_description: Software
+  capability_group: action.social
   capability_id: action.social.vector.Software
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0862
   attack_object_name: Supply Chain Compromise
   capability_description: Hardware tampering or physical alteration
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Hardware tampering
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
@@ -1537,18 +1537,18 @@ mapping_objects:
   attack_object_name: Supply Chain Compromise
   capability_description: The actor distributed the attack to the victim through a
     partner.  (Indicates supply chain breach.)
+  capability_group: value_chain.distribution
   capability_id: value_chain.distribution.variety.Partner
   comments: ''
-  group: value_chain.distribution
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0862
   attack_object_name: Supply Chain Compromise
   capability_description: The actor used access to a partner to target the victim.
+  capability_group: value_chain.targeting
   capability_id: value_chain.targeting.variety.Partner
   comments: ''
-  group: value_chain.targeting
   mapping_type: related_to
   references: []
   status: complete
@@ -1556,9 +1556,9 @@ mapping_objects:
   attack_object_name: Masquerading
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -1566,9 +1566,9 @@ mapping_objects:
   attack_object_name: Spoof Reporting Message
   capability_description: Modification of the action (rather than the system, as in
     'Disable controls') to avoid detection.
+  capability_group: action.social
   capability_id: action.social.variety.Evade Defenses
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
@@ -1576,198 +1576,196 @@ mapping_objects:
   attack_object_name: Spoof Reporting Message
   capability_description: compromise of authenticity (e.g. masquerading as the legitimate
     owner of an account)
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Misrepresentation
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0856
   attack_object_name: Spoof Reporting Message
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0886
   attack_object_name: Remote Services
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.variety.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0886
   attack_object_name: Remote Services
   capability_description: Other
+  capability_group: action.social
   capability_id: action.social.vector.Other
   comments: ''
-  group: action.social
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0803
   attack_object_name: Block Command Message
   capability_description: Interruption
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Interruption
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0803
   attack_object_name: Block Command Message
   capability_description: Influence or alter human behavior
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Alter behavior
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0836
   attack_object_name: Modify Parameter
   capability_description: Modified configuration or services
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify configuration
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0836
   attack_object_name: Modify Parameter
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0821
   attack_object_name: Modify Controller Tasking
   capability_description: Modified configuration or services
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify configuration
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0821
   attack_object_name: Modify Controller Tasking
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0889
   attack_object_name: Modify Program
   capability_description: Modified configuration or services
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify configuration
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0889
   attack_object_name: Modify Program
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0873
   attack_object_name: Project File Infection
   capability_description: Modified configuration or services
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify configuration
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0873
   attack_object_name: Project File Infection
   capability_description: Modified stored data or content
+  capability_group: attribute.integrity
   capability_id: attribute.integrity.variety.Modify data
   comments: ''
-  group: attribute.integrity
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0879
   attack_object_name: Damage to Property
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0826
   attack_object_name: Loss of Availability
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0827
   attack_object_name: Loss of Control
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0828
   attack_object_name: Loss of Productivity and Revenue
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0837
   attack_object_name: Loss of Protection
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0880
   attack_object_name: Loss of Safety
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 - attack_object_id: T0829
   attack_object_name: Loss of View
   capability_description: Loss
+  capability_group: attribute.availability
   capability_id: attribute.availability.variety.Loss
   comments: ''
-  group: attribute.availability
   mapping_type: related_to
   references: []
   status: complete
 metadata:
   attack_version: '12.1'
   author: ''
-  contact: ''
-  creation_date: 04/06/2023
-  groups:
+  capability_groups:
     action.hacking: action.hacking
     action.malware: action.malware
     action.social: action.social
@@ -1777,6 +1775,8 @@ metadata:
     value_chain.distribution: value_chain.distribution
     value_chain.non-distribution_services: value_chain.non-distribution_services
     value_chain.targeting: value_chain.targeting
+  contact: ''
+  creation_date: 04/06/2023
   last_update: 04/06/2023
   mapping_framework: veris
   mapping_framework_version: 1.3.7

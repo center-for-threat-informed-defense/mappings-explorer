@@ -231,8 +231,8 @@ def add_background_colors(attack_version_data):
 
     if max_score != 0:
         r = 255
-        g = 180
-        b = 0
+        g = 138
+        b = 54
         max_a = 1
         min_a = 0 if min_score == 0 else 0.13
         difference = (

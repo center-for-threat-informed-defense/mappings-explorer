@@ -39,7 +39,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
             "mapping_framework": platform,
             "mapping_framework_version": f"{month}/{day}/{year}",
             "mapping_types": mapping_types,
-            "groups": {},
+            "capability_groups": {},
         }
         parsed_mappings["mapping_objects"] = []
 
@@ -51,8 +51,10 @@ def configure_security_stack_mappings(data, parsed_mappings):
     ][0]
 
     if len(data["techniques"]) == 0:
-        if data["name"] not in list(parsed_mappings["metadata"]["groups"].keys()):
-            parsed_mappings["metadata"]["groups"][data["name"]] = data["name"]
+        if data["name"] not in parsed_mappings["metadata"]["capability_groups"]:
+            parsed_mappings["metadata"]["capability_groups"][data["name"]] = data[
+                "name"
+            ]
         parsed_mappings["mapping_objects"].append(
             {
                 "comments": None,
@@ -65,7 +67,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 "score_category": None,
                 "score_value": None,
                 "related_score": None,
-                "group": data["name"],
+                "capability_group": data["name"],
                 "status": "non_mappable",
             }
         )
@@ -76,11 +78,13 @@ def configure_security_stack_mappings(data, parsed_mappings):
         for technique_score in technique["technique-scores"]:
             comments = technique_score.get("comments") or ""
 
-            # get group id
+            # get capability_group id
             capability_name = data["name"]
             capability_id = capability_name.lower().replace(" ", "_")
-            if capability_id not in list(parsed_mappings["metadata"]["groups"].keys()):
-                parsed_mappings["metadata"]["groups"][capability_id] = capability_name
+            if capability_id not in parsed_mappings["metadata"]["capability_groups"]:
+                parsed_mappings["metadata"]["capability_groups"][
+                    capability_id
+                ] = capability_name
 
             parsed_mappings["mapping_objects"].append(
                 {
@@ -94,7 +98,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "score_category": technique_score["category"].lower(),
                     "score_value": technique_score["value"].lower(),
                     "related_score": "",
-                    "group": capability_id,
+                    "capability_group": capability_id,
                     "status": "complete",
                 }
             )
@@ -117,7 +121,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "score_category": score["category"].lower(),
                                 "score_value": score["value"].lower(),
                                 "related_score": technique["id"],
-                                "group": capability_id,
+                                "capability_group": capability_id,
                                 "status": "complete",
                             }
                         )
