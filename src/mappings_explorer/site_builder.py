@@ -466,9 +466,8 @@ def build_external_landing(
     """
     output_path = domain_dir / "index.html"
     template = load_template("framework_landing.html.j2")
-    attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
-    )
+    attack_prefix = f"""
+        {url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
 
