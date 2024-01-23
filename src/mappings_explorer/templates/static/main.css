@@ -271,7 +271,9 @@ div.banner {
   transition: all 0.5s;
 }
 
-
+.banner.sticked {
+  top: 76px;
+}
 .banner p {
   margin-bottom: 0;
 }
@@ -280,15 +282,15 @@ div.banner {
   .header {
     padding: 12px 0;
   }
-
   div.banner {
-    top: 60px;
+    top: 58px;
+  }
+  .banner.sticked {
+    top: 54px;
   }
 }
 
-.banner.sticked {
-  top: 74px;
-}
+
 
 .header.transparent-header {
   background: none;
