@@ -35,6 +35,16 @@
     "mapping_objects": [
         {
             "references": [],
+            "attack_object_id": "T1053.006",
+            "attack_object_name": "Systemd Timers",
+            "capability_id": "CM-06",
+            "capability_description": "Configuration Settings",
+            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
+            "group": "CM",
+            "status": "complete"
+        },
+        {
+            "references": [],
             "attack_object_id": "T1659",
             "attack_object_name": "Content Injection",
             "capability_id": "AC-17",
@@ -7402,17 +7412,6 @@
             "attack_object_id": "T1048.003",
             "attack_object_name": "Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
             "attack_object_version": "[UNKNOWN_VERSION:d7822ced-2375-42be-b1e2-f6f1e614a493]",
-            "capability_id": "SC-46",
-            "capability_description": "Cross Domain Policy Enforcement",
-            "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
-            "group": "SC",
-            "status": "Assigned"
-        },
-        {
-            "references": [],
-            "attack_object_id": "T1048.003",
-            "attack_object_name": "Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
-            "attack_object_version": "[UNKNOWN_VERSION:d7822ced-2375-42be-b1e2-f6f1e614a493]",
             "capability_id": "SC-07",
             "capability_description": "Boundary Protection",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
@@ -8446,7 +8445,7 @@
             "capability_description": "Access Restrictions for Change",
             "mapping_type": "71839af4-8f10-40f2-9dc5-3823ef54da77",
             "group": "CM",
-            "status": "Assigned"
+            "status": "complete"
         },
         {
             "references": [],
