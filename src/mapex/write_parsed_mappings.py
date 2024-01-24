@@ -1,11 +1,11 @@
 import json
 import uuid
 from datetime import datetime
-from loguru import logger
 
 import pandas as pd
 import requests
 import yaml
+from loguru import logger
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):

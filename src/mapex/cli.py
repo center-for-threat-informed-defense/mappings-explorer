@@ -3,10 +3,10 @@ import json
 import os
 import shutil
 import sys
-from loguru import logger
 from pathlib import Path
 
 from jsonschema import validate
+from loguru import logger
 from mapex.write_parsed_mappings import (
     create_df,
     write_parsed_mappings_csv,
