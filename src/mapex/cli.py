@@ -3,9 +3,8 @@ import json
 import os
 import shutil
 import sys
-from pathlib import Path
-
 from loguru import logger
+from pathlib import Path
 
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
