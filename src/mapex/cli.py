@@ -5,6 +5,8 @@ import shutil
 import sys
 from pathlib import Path
 
+from loguru import logger
+
 from jsonschema import validate
 from mapex.write_parsed_mappings import (
     create_df,
@@ -14,7 +16,6 @@ from mapex.write_parsed_mappings import (
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
 )
-from termcolor import colored
 
 ROOT_DIR = Path.cwd()
 PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
@@ -47,7 +48,7 @@ def main():
                         output_filepath.mkdir(parents=True, exist_ok=True)
                         export_file(input_filepath, output_filepath, file_type)
         else:
-            print("Input file must be a valid file or directory")
+            logger.debug("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
@@ -64,7 +65,7 @@ def main():
                     if validation_errors is not None:
                         sys.exit(1)
 
-        print("succesfully validated")
+        logger.debug("succesfully validated")
         sys.exit(0)
 
 
@@ -137,7 +138,7 @@ def export_file(input_file, output_file, file_type):
     elif file_type == "json":
         copy_parsed_mappings(input_file, output_filepath)
     else:
-        print("Please enter a correct filetype")
+        logger.debug("Please enter a correct filetype")
 
 
 def validate_file(input_file):
@@ -166,12 +167,9 @@ def sanity_check_mappings(parsed_mappings):
         capability_groups_used_in_mappings
     )
     if not all_capability_groups_used:
-        print(
-            colored(
-                f"""WARNING: The following groups are not used
-            by the mapping objects: {extra_capability_groups}""",
-                "yellow",
-            )
+        logger.warning(
+            "WARNING: The following groups are not used "
+            + f"by the mapping objects: {extra_capability_groups}",
         )
         # unused capability groups are eliminated in exported file
         metadata_capability_groups = parsed_mappings["metadata"]["groups"]
@@ -192,12 +190,9 @@ def sanity_check_mappings(parsed_mappings):
         metadata_capability_group_ids
     )
     if not all_used_capability_groups_defined:
-        print(
-            colored(
-                f"""ERROR: The following groups are referenced by mapping
-            objects but aren't defined in 'metadata': {missing_capability_groups}""",
-                "red",
-            )
+        logger.error(
+            "ERROR: The following groups are referenced by mapping "
+            + f"objects but aren't defined in 'metadata': {missing_capability_groups}",
         )
         sys.exit(1)
 
@@ -219,12 +214,9 @@ def sanity_check_mappings(parsed_mappings):
         mapping_types_used_in_mappings
     )
     if not all_mapping_types_used:
-        print(
-            colored(
-                f"""WARNING: The following mapping types are not used
-                    by the mapping objects: {extra_mapping_types} """,
-                "yellow",
-            )
+        logger.warning(
+            "WARNING: The following mapping types are not used "
+            + f"by the mapping objects: {extra_mapping_types}"
         )
 
     # error if any objects reference a mapping type that is not defined in metadata
@@ -238,11 +230,8 @@ def sanity_check_mappings(parsed_mappings):
     # do not show warning if the missing mapping type is 'None', which is the
     # value of mapping_type in not_mappable items
     if not all_mapping_types_defined and missing_mapping_types != set([None]):
-        print(
-            colored(
-                f"""ERROR: The following mapping types are referenced by mapping
-            objects but are not defined in 'metadata': {missing_mapping_types}""",
-                "red",
-            )
+        logger.error(
+            "ERROR: The following mapping types are referenced by mapping "
+            + f"objects but are not defined in 'metadata': {missing_mapping_types}"
         )
         sys.exit(1)
