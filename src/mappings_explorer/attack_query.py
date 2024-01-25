@@ -208,21 +208,23 @@ def add_background_colors(attack_version_data):
     min_score = 100000
     for attack_object in attack_version_data:
         score = 0
-        score_text = ""
+        mapped_capabilities = []
         mapping_frameworks = attack_version_data[attack_object]["mapping_frameworks"]
         for mapping_framework in mapping_frameworks:
             mapping_framework_name = mapping_framework_id_to_name[mapping_framework]
-            controls_mapped = mapping_frameworks[mapping_framework]
-            if score_text != "":
-                score_text += ", "
+            amount_mapped_capabilities = mapping_frameworks[mapping_framework]
             if mapping_framework == "cve":
                 score += 1
-                score_text += f"{controls_mapped} {mapping_framework_name}"
+                mapped_capabilities.append(
+                    f"{amount_mapped_capabilities} {mapping_framework_name}"
+                )
             else:
                 score += mapping_frameworks[mapping_framework]
-                score_text += f"{controls_mapped} {mapping_framework_name}"
+                mapped_capabilities.append(
+                    f"{amount_mapped_capabilities} {mapping_framework_name}"
+                )
         attack_version_data[attack_object]["score"] = score
-        attack_version_data[attack_object]["score_text"] = score_text
+        attack_version_data[attack_object]["mapped_capabilities"] = mapped_capabilities
 
         if score > max_score:
             max_score = score
