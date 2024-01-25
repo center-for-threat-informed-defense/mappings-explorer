@@ -941,8 +941,10 @@ def build_technique_page(
         breadcrumbs: the navigation tree above the page being built in this function
 
     """
-    attack_prefix = f"""{url_prefix}
-    attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
+    )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
         ("label", "Technique Name", "id", attack_prefix),
@@ -1060,8 +1062,10 @@ def build_technique_landing_page(
         techniques: list of all techniques to be listed in technique page
         tactics: list of all tactics to be listed in tactic page
     """
-    attack_prefix = f"""{url_prefix}
-        attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
+    )
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
         ("label", "ATT&CK Name", "id", attack_prefix),
@@ -1105,8 +1109,10 @@ def build_technique_landing_page(
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
     """
-    attack_prefix = f"""{url_prefix}
-        attack/attack-{attack_version}/domain-{attack_domain.lower()}/tactics/"""
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/tactics/"
+    )
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
         ("label", "ATT&CK Name", "id", attack_prefix),
