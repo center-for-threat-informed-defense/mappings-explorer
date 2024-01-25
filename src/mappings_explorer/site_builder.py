@@ -399,7 +399,7 @@ def get_nist_descriptions(project, version):
                 if item["elementTypeIdentifier"] == "discussion":
                     c.description = item["text"]
                     break
-        except Exception as e:
+        except Exception:
             logger.exception("Error loading description for nist capability {c.id}")
 
 
