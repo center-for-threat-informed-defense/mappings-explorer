@@ -375,7 +375,7 @@ def get_cve_descriptions(project):
             descriptions = response["containers"]["cna"]["descriptions"]
             c.description = descriptions[0]["value"]
         except Exception:
-            c.description = ""
+            logger.exception("Error loading description for CVE capability {c.id}")
 
 
 def get_nist_descriptions(project, version):
@@ -400,7 +400,7 @@ def get_nist_descriptions(project, version):
                     c.description = item["text"]
                     break
         except Exception as e:
-            logger.error("exception ", e)
+            logger.exception("Error loading description for nist capability {c.id}")
 
 
 def parse_capabilities(

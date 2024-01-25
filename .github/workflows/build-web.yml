@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      LOGURU_LEVEL: INFO
+      LOGURU_LEVEL: DEBUG
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -49,7 +49,6 @@ jobs:
       AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
-      LOGURU_LEVEL: INFO
     steps:
       - uses: actions/setup-node@v3
         with:
