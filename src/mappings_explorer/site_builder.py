@@ -19,6 +19,8 @@ class Capability:
     label = ""
     description = ""
     mappings = []
+    capability_group = ""
+    num_mappings = 0
 
 
 class Technique:
@@ -41,11 +43,13 @@ class Tactic:
     num_mappings = 0
 
 
-class Group:
+class CapabilityGroup:
     id = ""
     label = ""
     num_mappings = ""
     mappings = []
+    capabilities = []
+    num_capabilities = 0
 
 
 class ExternalControl:
@@ -315,9 +319,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
         )
     if metadata.get("groups"):
         for i in metadata["groups"]:
-            g = Group()
+            g = CapabilityGroup()
             g.id = i
             g.label = metadata["groups"][i]
+            g.capabilities = []
             project.capability_groups.append(g)
             filtered_mappings = [m for m in mappings if (m["group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
@@ -429,12 +434,20 @@ def parse_capabilities(
         c = Capability()
         c.id = id
         c.mappings = [m for m in mappings if (m["capability_id"] == id)]
+        c.num_mappings = len(c.mappings)
+        c.label = c.mappings[0]["capability_description"]
         for mapping in c.mappings:
             mapping["project"] = project.id
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
             mapping["attack_domain"] = attack_domain
-
+        if c.mappings[0]["group"]:
+            capability_group = [
+                g for g in project.capability_groups if (g.id == mapping["group"])
+            ]
+            capability_group[0].capabilities.append(c)
+            capability_group[0].num_capabilities += 1
+            c.capability_group = capability_group[0]
         print(
             "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
         )
@@ -502,6 +515,7 @@ def build_external_landing(
         ("id", "ID", "id", external_prefix),
         ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
+        ("num_capabilities", "Number of Capabilities"),
     ]
     project_id = project.id
     if project_id == "nist":
@@ -536,15 +550,19 @@ def build_external_landing(
         + ", attack domain "
         + attack_domain.lower()
     )
-
+    capability_group_headers = [
+        ("id", "Capability ID", "id", external_prefix),
+        ("label", "Capability Name", "id", external_prefix),
+        ("num_mappings", "Number of Mappings"),
+    ]
     for capability_group in project.capability_groups:
         nav = breadcrumbs + [
             (
                 f"{external_prefix}{capability_group.id}/",
-                f"{capability_group.label}",
+                f"{capability_group.label} Capability Group",
             )
         ]
-        build_external_group(
+        build_capability_group(
             project=project,
             capability_group=capability_group,
             url_prefix=url_prefix,
@@ -554,13 +572,18 @@ def build_external_landing(
             headers=headers,
             attack_domain=attack_domain,
             breadcrumbs=nav,
+            capability_group_headers=capability_group_headers,
         )
     for capability in project.capabilities:
         capability_nav = breadcrumbs + [
             (
+                f"{external_prefix}{capability.capability_group.id}/",
+                f"{capability.capability_group.label if capability.capability_group.label else capability.capability_group.id} Capability Group",
+            ),
+            (
                 f"{external_prefix}{capability.id}/",
                 f"{capability.label if capability.label else capability.id}",
-            )
+            ),
         ]
         build_external_capability(
             project=project,
@@ -636,7 +659,7 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 shutil.copytree(domain_dir, dir, dirs_exist_ok=True)
 
 
-def build_external_group(
+def build_capability_group(
     project: ExternalControl,
     capability_group,
     url_prefix,
@@ -646,6 +669,7 @@ def build_external_group(
     headers,
     attack_domain,
     breadcrumbs,
+    capability_group_headers,
 ):
     capability_group_id = capability_group.id
     dir = parent_dir / capability_group_id
@@ -659,6 +683,7 @@ def build_external_group(
         control=project.label,
         capability_group_id=capability_group.id,
         capability_group_name=capability_group.label,
+        capability_group=capability_group,
         project=project,
         description=project.description,
         control_version=project_version,
@@ -671,6 +696,7 @@ def build_external_group(
         mappings=capability_group.mappings,
         headers=headers,
         breadcrumbs=breadcrumbs,
+        capability_group_headers=capability_group_headers,
     )
     stream.dump(str(output_path))
     print("          Created capability group page " + capability_group.label)
