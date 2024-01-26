@@ -240,14 +240,9 @@ def get_nested_filepath_directories(parsed_mappings):
     attack_version = parsed_mappings["metadata"]["attack_version"]
     framework = parsed_mappings["metadata"]["mapping_framework"]
     mapping_framework_version = parsed_mappings["metadata"]["mapping_framework_version"]
+    mapping_framework_version = mapping_framework_version.replace("/", ".")
     attack_domain = parsed_mappings["metadata"]["technology_domain"]
     return (
-        "attack-"
-        + attack_version
-        + "/"
-        + framework
-        + "-"
-        + mapping_framework_version.replace("/", ".")
-        + "/"
-        + attack_domain
+        f"attack-{attack_version}/{framework}-{mapping_framework_version}"
+        f"/{attack_domain}"
     )

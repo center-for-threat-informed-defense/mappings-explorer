@@ -45,12 +45,12 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
             "mapping_framework": "nist_800_53",
             "mapping_framework_version": mapping_framework_version,
             "mapping_types": mapping_types,
-            "groups": {},
+            "capability_groups": {},
         },
         "mapping_objects": [],
     }
 
-    groups = {}
+    capability_groups = {}
     for _, row in dataframe.iterrows():
         # get mapping type id
         mapping_type_id = [
@@ -63,8 +63,8 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
         control_id = row["Control ID"]
         if pd.notna(control_id):
             control_family_id = control_id[0 : control_id.index("-")]
-            if control_family_id not in list(groups.keys()):
-                groups[control_family_id] = (
+            if control_family_id not in capability_groups:
+                capability_groups[control_family_id] = (
                     control_family_lookup_dict.get(control_family_id, ""),
                 )[0]
         else:
@@ -92,10 +92,10 @@ def configure_nist_mappings(dataframe, attack_version, mapping_framework_version
                 "capability_description": capability_name,
                 "capability_id": capability_id,
                 "mapping_type": mapping_type_id,
-                "group": control_family_id,
+                "capability_group": control_family_id,
                 "status": status,
             }
         )
 
-    parsed_mappings["metadata"]["groups"] = groups
+    parsed_mappings["metadata"]["capability_groups"] = capability_groups
     return parsed_mappings
