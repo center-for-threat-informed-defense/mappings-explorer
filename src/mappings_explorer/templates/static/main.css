@@ -971,7 +971,7 @@ section#user-stories button.accordion-button div {
 /**
   # Mapping Table Section
   **/
-.mapping-table h2 {
+.mapping-table h2, .references h2 {
   text-transform: uppercase;
   font-family: var(--font-default);
   font-weight: 700;
@@ -2892,4 +2892,12 @@ td a:hover {
   .selected-option {
     background-color: #ededeb;
   }
+}
+
+#references ul li {
+  margin-left: 10px;
+}
+#references ul {
+  margin-left: 10px;
+  list-style-type: square !important;
 }
