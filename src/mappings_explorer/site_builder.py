@@ -441,9 +441,11 @@ def parse_capabilities(
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
             mapping["attack_domain"] = attack_domain
-        if c.mappings[0]["group"]:
+        if c.mappings[0]["capability_group"]:
             capability_group = [
-                g for g in project.capability_groups if (g.id == mapping["group"])
+                g
+                for g in project.capability_groups
+                if (g.id == mapping["capability_group"])
             ]
             capability_group[0].capabilities.append(c)
             capability_group[0].num_capabilities += 1
@@ -578,7 +580,7 @@ def build_external_landing(
         capability_nav = breadcrumbs + [
             (
                 f"{external_prefix}{capability.capability_group.id}/",
-                f"{capability.capability_group.label if capability.capability_group.label else capability.capability_group.id} Capability Group",
+                f"{capability.capability_group.label} Capability Group",
             ),
             (
                 f"{external_prefix}{capability.id}/",
