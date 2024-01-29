@@ -1,7 +1,7 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<section id="header-container" class="header-container">
+<section id="about-header" class="header-container">
   <div class="container aos-init aos-animate" data-aos="fade-up">
     {% include "_breadcrumbs.html.j2" %}
     <div class="row justify-content-center">
@@ -20,7 +20,7 @@
   </div>
 </section>
 
-<section id="services-list" class="services-list">
+<section id="mappings-explore-uses" class="services-list">
   <div class="container aos-init aos-animate" data-aos="fade-up">
     <div class="section-header">
       <h2>What is Mappings Explorer for?</h2>
@@ -28,71 +28,50 @@
         You can use Mappings Explorer for many different purposes.
       </p>
     </div>
-    <div class="row gy-5">
-      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-5 col-lg-8 offset-lg-2">
+      <div class="col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div>
           <h4 class="title">Align cyber defense to adversary behavior</h4>
           <blockquote>
             <p>Explore how your current or promposed security controls can be used to detect, prevent, mitigate, or
               respond to specific adversary behaviors seen in the wild.</p>
           </blockquote>
-          <div class="section-details">
+          {#<div class="section-details">
             <p>
               <span><strong>Placeholder</strong> text</span>
             </p>
-            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/"
+            <a href="{{url_prefix}}/external/nist/"
               class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
-          </div>
+          </div>#}
         </div>
       </div>
 
-      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div>
-          <h4 class="title">Expand the Vocabulary for Incident Response</h4>
+          <h4 class="title">Expand VERIS</h4>
           <blockquote>
-            <p>The VERIS mappings connect the incident response terminology of the Verizon DBIR to the adversary
+            <p>The <a href="{{url_prefix}}external/veris">VERIS (Vocabulary for Incident Response)</a> mappings connect the incident response terminology of the Verizon DBIR to the adversary
               behavior in MITRE ATT&CK for a more complete analysis of any breach.</p>
           </blockquote>
-          <div class="section-details">
-            <p>
-              <span><strong>Placeholder</strong> text</span>
-            </p>
-            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/"
-              class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
-          </div>
         </div>
       </div>
-      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div>
           <h4 class="title">Assess Unpatched Vulnerabilities</h4>
           <blockquote>
-            <p>The CVE mappings help understand how adversaries might exploit unpatched vulnerabilities and what the
+            <p>The <a href="{{url_prefix}}external/cve">CVE mappings</a> help understand how adversaries might exploit unpatched vulnerabilities and what the
               knock-on effects could be.</p>
           </blockquote>
-          <div class="section-details">
-            <p>
-              <span><strong>Placeholder</strong> text</span>
-            </p>
-            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/"
-              class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
-          </div>
         </div>
       </div>
 
-      <div class="col-md-4 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 service-item d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
         <div>
           <h4 class="title">Evolve and Expand Cyber Defense</h4>
           <blockquote>
             <p>Visualize and assess deficiencies in cyber defense. Plan future policy and security controls around
               real-world adversary behavior.</p>
           </blockquote>
-          <div class="section-details">
-            <p>
-              <span><strong>Placeholder</strong> text</span>
-            </p>
-            <a href="https://mappingsexplorer.z13.web.core.windows.net/MAPEX-80-methodology/external/nist/"
-              class="readmore stretched-link"><span>Learn More TBD</span><i class="bi bi-arrow-right"></i></a>
-          </div>
         </div>
       </div>
     </div>

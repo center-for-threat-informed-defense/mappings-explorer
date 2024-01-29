@@ -67,7 +67,7 @@
         <section>
           <div class="container" data-aos="fade-up" v-if="resultsLength">
             <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"
-              <span v-if="selectedAttackVersion !== 'All Versions'">ATT&CK V[[selectedAttackVersion]]</span>
+              <span v-if="selectedAttackVersion !== 'All Versions'">ATT&CK v[[selectedAttackVersion]]</span>
               <span v-else> All ATT&CK Versions</span>
             </h2>
             <div
@@ -99,8 +99,8 @@
                 </div>
               </div>
             </div>
-            <nav v-if="amountOfPages > 1">
-              <span>
+            <nav v-if="amountOfPages > 1" style="display: flex;">
+              <span class="pagination-text">
                 Showing [[ parseInt(currentPageResultKeys[0]) + 1 ]]  to [[ parseInt(currentPageResultKeys[currentPageResultKeys.length - 1]) + 1 ]] of [[ resultsLength ]] results
                 <select v-model="itemsPerPage">
                   <option
@@ -355,127 +355,5 @@
   }).mount("#search");
 
 </script>
-
-<style>
-  .result-container {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 2px 2px 4px #bdbdbd;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  }
-  .result-subtext {
-    margin-left: 1rem;
-  }
-  .result-title {
-    font-size: 18px;
-  }
-  .pagination-item {
-    padding: 10px;
-    background-color: white;
-    cursor: pointer;
-    border-right: 1px solid #dee2e6;
-    border-top: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
-    min-width: 40px;
-    text-align: center;
-    color: #6241c5;
-  }
-  .pagination-item--active {
-    background-color: #6241c5;
-    color: white;
-  }
-  .pagination-item:hover {
-    background-color: #dee2e6;
-    color: #495057;
-  }
-  .pagination-item--active:hover {
-    background-color: #6241c5;
-    color: white;
-  }
-  .next {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
-  .previous {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-left: 1px solid #dee2e6;
-  }
-  .float-right {
-    float: right;
-  }
-  .search-bar {
-    width: 50%;
-    margin: auto;
-    border: 1px solid #495057;
-  }
-  .border-none {
-    border: none;
-  }
-  .transparent {
-    background-color: transparent;
-  }
-  .search-bar-input:focus {
-    border: none;
-    background: transparent;
-    box-shadow: none;
-  }
-  .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #005b94;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    animation: spin 2s linear infinite;
-  }
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  .dropdown-items {
-    position: absolute;
-    background-color: white;
-    box-shadow: 2px 2px 2px #bdbdbd;
-    border-radius: 5px;
-    z-index: 999;
-    width: 150px;
-  }
-
-  .select {
-    width: 150px;
-    cursor: pointer;
-  }
-
-  .dropdown-item {
-    cursor: pointer;
-    border-top: 1px solid #dbdbd9;
-  }
-
-  .dropdown-item:hover {
-    background-color: #ededeb;
-  }
-
-  .dropdown-item-text {
-    margin-left: 4px !important;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem !important;
-    font-weight: 400 !important;
-  }
-
-  .invalid-option {
-    color: #bdbdbd !important;
-  }
-
-  .selected-item {
-    font-size: 1.25rem !important;
-  }
-
-  .selected-option {
-    background-color: #ededeb;
-  }
-</style>
 {% endblock content %}
 
