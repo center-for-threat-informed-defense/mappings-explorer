@@ -205,15 +205,21 @@
        */
       getAttackVersionsInResults(){
         let attackVersions = [];
-        this.results.results.forEach(result => {
-          let attackVersion = this.getStringFromUrl(result.ref, "attack-");
-          !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
-        })
-        this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
-        // if the selected Attack version is not yet set, set to the most recent
-        // attack version that appears in the results
-        !this.selectedAttackVersion && this.setSelectedAttackVersion();
-        this.attackVersionsInResults.push("All Versions");
+        if (!this.results.results.length) {
+          this.selectedAttackVersion = "All Versions";
+          this.attackVersionsInResults = ["All Versions"];
+        }
+        else {
+          this.results.results.forEach(result => {
+            let attackVersion = this.getStringFromUrl(result.ref, "attack-");
+            !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
+          })
+          this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
+          // if the selected Attack version is not yet set, set to the most recent
+          // attack version that appears in the results
+          !this.selectedAttackVersion && this.setSelectedAttackVersion();
+          this.attackVersionsInResults.push("All Versions");
+          }
       },
 
       /**
