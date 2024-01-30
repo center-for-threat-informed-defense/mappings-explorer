@@ -47,7 +47,7 @@ def main():
                         output_filepath.mkdir(parents=True, exist_ok=True)
                         export_file(input_filepath, output_filepath, file_type)
         else:
-            logger.debug("Input file must be a valid file or directory")
+            logger.error("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
@@ -64,7 +64,7 @@ def main():
                     if validation_errors is not None:
                         sys.exit(1)
 
-        logger.debug("succesfully validated")
+        logger.info("succesfully validated")
         sys.exit(0)
 
 
@@ -137,7 +137,7 @@ def export_file(input_file, output_file, file_type):
     elif file_type == "json":
         copy_parsed_mappings(input_file, output_filepath)
     else:
-        logger.debug("Please enter a correct filetype")
+        logger.error("Please enter a correct filetype")
 
 
 def validate_file(input_file):
@@ -167,8 +167,9 @@ def sanity_check_mappings(parsed_mappings):
     )
     if not all_capability_groups_used:
         logger.warning(
-            "WARNING: The following groups are not used "
-            + f"by the mapping objects: {extra_capability_groups}",
+            "The following groups are not used "
+            "by the mapping objects: {extra_capability_groups}",
+            extra_capability_groups=extra_capability_groups,
         )
         # unused capability groups are eliminated in exported file
         metadata_capability_groups = parsed_mappings["metadata"]["groups"]
@@ -190,8 +191,9 @@ def sanity_check_mappings(parsed_mappings):
     )
     if not all_used_capability_groups_defined:
         logger.error(
-            "ERROR: The following groups are referenced by mapping "
-            + f"objects but aren't defined in 'metadata': {missing_capability_groups}",
+            "The following groups are referenced by mapping "
+            "objects but aren't defined in 'metadata': {missing_capability_groups}",
+            missing_capability_groups=missing_capability_groups,
         )
         sys.exit(1)
 
@@ -214,8 +216,9 @@ def sanity_check_mappings(parsed_mappings):
     )
     if not all_mapping_types_used:
         logger.warning(
-            "WARNING: The following mapping types are not used "
-            + f"by the mapping objects: {extra_mapping_types}"
+            "The following mapping types are not used "
+            + "by the mapping objects: {extra_mapping_types}",
+            extra_mapping_types=extra_mapping_types,
         )
 
     # error if any objects reference a mapping type that is not defined in metadata
@@ -230,7 +233,8 @@ def sanity_check_mappings(parsed_mappings):
     # value of mapping_type in not_mappable items
     if not all_mapping_types_defined and missing_mapping_types != set([None]):
         logger.error(
-            "ERROR: The following mapping types are referenced by mapping "
-            + f"objects but are not defined in 'metadata': {missing_mapping_types}"
+            "The following mapping types are referenced by mapping "
+            "objects but are not defined in 'metadata': {missing_mapping_types}",
+            missing_mapping_types=missing_mapping_types,
         )
         sys.exit(1)
