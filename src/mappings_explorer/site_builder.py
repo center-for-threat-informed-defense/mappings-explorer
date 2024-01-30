@@ -5,6 +5,7 @@ import shutil
 import zipfile
 
 import requests
+from loguru import logger
 from lunr import lunr
 from mapex_convert.read_files import (
     read_yaml_file,
@@ -327,11 +328,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
             filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
-            print(
-                "     found "
-                + f"{len(filtered_mappings)}"
-                + " mappings in group: "
-                + g.label
+            logger.trace(
+                "     found {count} mappings in group {g_label}",
+                count=len(filtered_mappings),
+                g_label=g.label,
             )
     project.capabilities = parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
@@ -379,7 +379,9 @@ def get_cve_descriptions(project):
             descriptions = response["containers"]["cna"]["descriptions"]
             c.description = descriptions[0]["value"]
         except Exception:
-            c.description = ""
+            logger.exception(
+                "Error loading description for CVE capability {c_id}", c_id=c.id
+            )
 
 
 def get_nist_descriptions(project, version):
@@ -403,8 +405,10 @@ def get_nist_descriptions(project, version):
                 if item["elementTypeIdentifier"] == "discussion":
                     c.description = item["text"]
                     break
-        except Exception as e:
-            print("exception ", e)
+        except Exception:
+            logger.exception(
+                "Error loading description for NIST capability {c_id}", c_id=c.id
+            )
 
 
 def parse_capabilities(
@@ -450,8 +454,10 @@ def parse_capabilities(
             capability_group[0].capabilities.append(c)
             capability_group[0].num_capabilities += 1
             c.capability_group = capability_group[0]
-        print(
-            "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
+        logger.trace(
+            "for capability {id} the number of mappings is {count}",
+            id=c.id,
+            count=str(len(c.mappings)),
         )
         capabilities.append(c)
     return capabilities
@@ -542,15 +548,13 @@ def build_external_landing(
         breadcrumbs=breadcrumbs,
     )
     stream.dump(str(output_path))
-    print(
-        "Created "
-        + project.id
-        + " landing: ATT&CK Version "
-        + attack_version
-        + ", control version "
-        + project_version
-        + ", attack domain "
-        + attack_domain.lower()
+    logger.trace(
+        "Created {project_id} landing: ATT&CK version {attack_version}, ",
+        "control version {project_version}, ATT&CK domain {attack_domain}",
+        project_id=project.id,
+        attack_version=attack_version,
+        project_version=project_version,
+        attack_domain=attack_domain,
     )
     capability_group_headers = [
         ("id", "Capability ID", "id", external_prefix),
@@ -609,14 +613,15 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
         breadcrumbs: the navigation tree above the pages being built in this function
         used to render the breadcrumbs on each page
     """
+    logger.info("Parsing and building external pages...")
     for project in projects:
         external_dir = PUBLIC_DIR / "external"
         external_dir.mkdir(parents=True, exist_ok=True)
         dir = external_dir / project.id
         dir.mkdir(parents=True, exist_ok=True)
-
+        logger.info("Parsing project " + project.id)
         for index, validCombo in enumerate(project.validVersions):
-            print("creating pages for version combo ", str(validCombo))
+            logger.debug(f"Creating pages for version combo: {validCombo}")
             attack_version = validCombo[1]
             project_version = validCombo[0]
             attack_domain = validCombo[2]
@@ -638,6 +643,7 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 and m["project_version"] == project_version
             ][0]
             mappings = m["mappings"]
+            logger.trace("project parsed successfully")
             nav = breadcrumbs + [
                 (f"{url_prefix}external/{project.id}/", f"{project.label} Home")
             ]
@@ -652,10 +658,11 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 attack_domain=attack_domain,
                 breadcrumbs=nav,
             )
+            logger.debug(f"Built all pages for version combo: {validCombo}")
             # for the most up to date combo, copy the pages higher up the directory
             if index == len(project.validVersions) - 1:
-                print(
-                    "copying the most recent version pair into main directory ",
+                logger.debug(
+                    "Copying the most recent version pair into main directory ",
                     str(validCombo),
                 )
                 shutil.copytree(domain_dir, dir, dirs_exist_ok=True)
@@ -701,7 +708,9 @@ def build_capability_group(
         capability_group_headers=capability_group_headers,
     )
     stream.dump(str(output_path))
-    print("          Created capability group page " + capability_group.label)
+    logger.trace(
+        "          Created capability group page {group}", group=capability_group.label
+    )
 
 
 def build_external_capability(
@@ -754,7 +763,7 @@ def build_external_capability(
         breadcrumbs=breadcrumbs,
     )
     stream.dump(str(output_path))
-    print("          Created capability page " + capability.id)
+    logger.trace("          Created capability page {id}", id=capability.id)
 
 
 def parse_techniques(
@@ -776,7 +785,7 @@ def parse_techniques(
     techniques = []
     for project in projects:
         mappings = []
-        print("adding mappings in project ", project.id)
+        logger.trace("adding mappings in project {id}", id=project.id)
         m = [
             m
             for m in project.mappings
@@ -882,6 +891,9 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
         for attack_version in attack_domains[attack_domain]:
+            logger.info(
+                f"Creating pages for ATT&CK {attack_version} {attack_domain}..."
+            )
             attack_data = get_attack_data(attack_version, attack_domain)
             all_techniques = parse_techniques(
                 attack_version=attack_version,
@@ -929,7 +941,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                         technique=technique,
                         breadcrumbs=breadcrumbs,
                     )
-            print("built all technique pages")
+            logger.trace("built all technique pages")
             for tactic in all_tactics:
                 external_dir = (
                     PUBLIC_DIR
@@ -947,7 +959,10 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                         tactic=tactic,
                         breadcrumbs=breadcrumbs,
                     )
-            print("built all tactic pages")
+            logger.trace("built all tactic pages")
+            logger.info(f"Built pages for ATT&CK {attack_version} {attack_domain}")
+
+    logger.info("Done building all ATT&CK pages ")
 
 
 def build_technique_page(
@@ -1015,6 +1030,7 @@ def build_technique_page(
         breadcrumbs=nav,
     )
     stream.dump(str(output_path))
+    logger.trace("          Created technique page {id}", id=technique.id)
 
 
 def build_tactic_page(
@@ -1069,7 +1085,7 @@ def build_tactic_page(
         breadcrumbs=nav,
     )
     stream.dump(str(output_path))
-    print("          Created tactic page " + tactic.id)
+    logger.trace("          Created tactic page {id}", id=tactic.id)
 
 
 def build_technique_landing_page(
@@ -1132,7 +1148,6 @@ def build_technique_landing_page(
         breadcrumbs=technique_nav,
     )
     stream.dump(str(output_path))
-    print("          Created technique landing page ")
     description = """Tactics represent the "why" of an ATT&CK technique or
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
@@ -1171,14 +1186,14 @@ def build_technique_landing_page(
         breadcrumbs=tactic_nav,
     )
     stream.dump(str(output_path))
-    print("          Created tactics landing page ")
+    logger.trace("Built techniques and tactics landing pages ")
 
 
 def build_matrix(url_prefix, projects, breadcrumbs):
     external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
-
+    logger.info("Building ATT&CK Matrix ")
     nav = breadcrumbs + [
         (f"{url_prefix}attack/matrix/", "ATT&CK Matrix"),
     ]
@@ -1277,7 +1292,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         breadcrumbs=nav,
     )
     stream.dump(str(output_path))
-    print("Created matrix")
+    logger.info("Done building ATT&CK matrix")
 
 
 def getIndexPages():
@@ -1351,14 +1366,14 @@ def build_search_index(url_prefix: str, breadcrumbs=list):
         url_prefix - the site's URL prefix
         breadcrumbs: the navigation tree above the page being built in this function
     """
-    print("Creating search page")
+    logger.info("Creating search page")
     search_dir = PUBLIC_DIR / "search"
     search_dir.mkdir(parents=True, exist_ok=True)
     output_path = search_dir / "index.html"
     template = load_template("search.html.j2")
 
     nav = breadcrumbs + [(f"{url_prefix}search/", "Search")]
-    print("Creating search index")
+    logger.info("Creating search index")
     pages = getIndexPages()
     stream = template.stream(url_prefix=url_prefix, breadcrumbs=nav)
     stream.dump(str(output_path))
@@ -1410,7 +1425,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         title="About Mappings Explorer", url_prefix=url_prefix, breadcrumbs=nav
     )
     stream.dump(str(output_path))
-    print("Created about page")
+    logger.debug("Created about page")
     nav1 = nav + [(f"{url_prefix}about/use-cases/", "Use Cases")]
 
     dir = PUBLIC_DIR / "about" / "use-cases"
@@ -1421,7 +1436,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         title="Mappings Explorer Use Cases", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
-    print("Created use cases page")
+    logger.debug("Created use cases page")
     nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
     dir = PUBLIC_DIR / "about" / "methodology"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1431,7 +1446,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         title="Mappings Explorer Methodology", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
-    print("Created methodology page")
+    logger.debug("Created methodology page")
 
 
 def main():
@@ -1444,15 +1459,15 @@ def main():
     args = parser.parse_args()
 
     url_prefix = args.url_prefix
-    print("url prefix: ", url_prefix)
+    logger.info(f"url prefix: {url_prefix}")
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
-    print("Copying static resources:", static_dir)
+    logger.info("Copying static resources:", static_dir)
     shutil.copytree(TEMPLATE_DIR / "static", static_dir, dirs_exist_ok=True)
 
     data_dir = PUBLIC_DIR / "data"
-    print("Copying parsed mappings to output directory:", data_dir)
+    logger.info("Copying parsed mappings to output directory:", data_dir)
     shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
     output_path = PUBLIC_DIR / "index.html"
@@ -1461,7 +1476,7 @@ def main():
         title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
     )
     stream.dump(str(output_path))
-    print("Created site index")
+    logger.info("Created site homepage")
 
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1475,7 +1490,7 @@ def main():
         title="External Mappings Home", url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
     stream.dump(str(output_path))
-    print("Created Mappings Frameworks landing page")
+    logger.info("Created Mappings Frameworks landing page")
 
     build_external_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
@@ -1489,7 +1504,7 @@ def main():
     )
     build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
     build_search_index(url_prefix, breadcrumbs)
-    print("Done building site")
+    logger.info("Done building site")
 
 
 if __name__ == "__main__":

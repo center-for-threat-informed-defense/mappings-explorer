@@ -1,11 +1,9 @@
 import json
-import logging
 
 import requests
+from loguru import logger
 
 from .template import PUBLIC_DIR
-
-logging.basicConfig(level=logging.INFO)
 
 
 def get_attack_data(attack_version, attack_domain):
@@ -42,13 +40,13 @@ def load_attack_json(attack_version, attack_domain):
         PUBLIC_DIR / "data" / "attack" / f"{domain}-attack-{attack_version}.json"
     )
     if cache_path.exists():
-        logging.info(
+        logger.debug(
             f"Loading cached ATT&CK data for {attack_domain}-{attack_version}…"
         )
         with cache_path.open() as cache_file:
             attack_data = json.load(cache_file)
     else:
-        logging.info(f"Downloading ATT&CK data for {attack_domain}-{attack_version}…")
+        logger.debug(f"Downloading ATT&CK data for {attack_domain}-{attack_version}…")
         BASE_URL = (
             "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master"
         )
