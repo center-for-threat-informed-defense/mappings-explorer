@@ -21,7 +21,10 @@
             <h6>Download Mapping Artifacts:</h6>
             <div class="downloads">
               <p>
-                <a href="">
+                <a @click="downloadJson(
+                  url_prefix + 'static/matrices/' + selectedDomain.toLowerCase() + '/' + selectedAttackVersion + '/' + selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json',
+                  selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json'
+                )">
                   <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                   Navigator Layers
                 </a>
@@ -249,6 +252,22 @@
       },
     },
     methods: {
+      downloadJson(file, filename){
+        console.log(file)
+        console.log(filename)
+        fetch(file)
+          .then((response) => response.json())
+          .then((json) => {
+            json = JSON.stringify(json);
+            let blob = new Blob([json], {
+              type: 'application/json'
+            });
+            let link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+          });
+      },
       handleScroll(e) {
         const { offsetWidth, scrollWidth } = e.target;
         let scrollableElement = document.getElementById("matrix-table-scrollable");

@@ -84,9 +84,11 @@ def write_parsed_mappings_excel(df, filepath):
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
-    techniques_dict = get_techniques_dict(parsed_mappings)
+    techniques_dict = get_techniques_dict(parsed_mappings["mapping_objects"])
     mapping_type = parsed_mappings["metadata"]["mapping_framework"]
-    layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
+    domain = parsed_mappings["metadata"]["technology_domain"]
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+    layer = create_layer(techniques_dict, mapping_type, domain, attack_version)
     navigator_layer = open(
         f"{filepath}_navigator_layer.json",
         "w",
@@ -270,19 +272,14 @@ def load_attack_json(parsed_mappings):
     return attack_object_id_to_name
 
 
-def get_techniques_dict(parsed_mappings):
+def get_techniques_dict(mapping_objects):
     techniques_dict = {}
-    for mapping in parsed_mappings["mapping_objects"]:
+    for mapping in mapping_objects:
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 
         # add score metadata if it is a scoring mapping
-        mapping_types_names = []
-        for mapping_type in parsed_mappings["metadata"]["mapping_types"]:
-            mapping_types_names.append(
-                parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
-            )
-        score_metadata = "technique_scores" in mapping_types_names
+        score_metadata = mapping["mapping_type"] == "technique_scores"
 
         if score_metadata:
             # define metadata objects
@@ -299,15 +296,17 @@ def get_techniques_dict(parsed_mappings):
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
             if score_metadata:
-                techniques_dict[tehchnique_id]["metadata"].extend(
-                    [
-                        metadata_control,
-                        metadata_score_category,
-                        metadata_score_value,
-                        metadata_comment,
-                        divider,
-                    ]
-                )
+                metadata_info = [
+                    metadata_control,
+                    metadata_score_category,
+                    metadata_score_value,
+                    metadata_comment,
+                    divider,
+                ]
+                if "metadata" in techniques_dict[tehchnique_id]:
+                    techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
+                else:
+                    techniques_dict[tehchnique_id]["metadata"] = metadata_info
         else:
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
@@ -322,25 +321,23 @@ def get_techniques_dict(parsed_mappings):
     return techniques_dict
 
 
-def create_layer(techniques_dict, parsed_mappings, mapping_type):
+def create_layer(techniques_dict, layer_title, domain, attack_version):
     description = (
-        f"{mapping_type} heatmap overview of {mapping_type} "
+        f"{layer_title} heatmap overview of {layer_title} "
         "mappings, scores are the number of associated entries"
     )
 
-    mappings_metadata = parsed_mappings["metadata"]
-
     gradient = ["#ffe766", "#ffaf66"]
     layer = {
-        "name": f"{mapping_type} overview",
+        "name": f"{layer_title} overview",
         "versions": {
             "navigator": "4.8.0",
             "layer": "4.4",
-            "attack": mappings_metadata["attack_version"],
+            "attack": attack_version,
         },
         "sorting": 3,
         "description": description,
-        "domain": f"{mappings_metadata['technology_domain']}-attack",
+        "domain": f"{domain}-attack",
         "techniques": [],
         "gradient": {
             "colors": gradient,

@@ -4,6 +4,7 @@ import requests
 from loguru import logger
 
 from .template import PUBLIC_DIR
+from mapex.write_parsed_mappings import create_layer, get_techniques_dict
 
 
 def get_attack_data(attack_version, attack_domain):
@@ -137,19 +138,20 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
 
     """
     attack_data_dict = {}
-    for attack_domain in list(attack_domains.keys()):
+    for attack_domain in attack_domains:
         for attack_version in attack_domains[attack_domain]:
             attack_data = load_attack_json(attack_version, attack_domain.lower())
             if attack_data:
                 formatted_attack_data = format_attack_data(
                     attack_data, attack_domain.lower()
                 )
-                if attack_version not in list(attack_data_dict.keys()):
+                if attack_version not in attack_data_dict:
                     attack_data_dict[attack_version] = {}
                 attack_data_dict[attack_version][
                     attack_domain.lower()
                 ] = formatted_attack_data
 
+    mappings_by_attack_version = {}
     for mappings_file in mappings_filepath.rglob("**/*.json"):
         if (
             mappings_file.parent.name != "attack"
@@ -157,29 +159,67 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
             and "navigator_layer" not in mappings_file.name
         ):
             mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
+            metadata = mappings["metadata"]
+            domain = metadata["technology_domain"]
+            attack_version = metadata["attack_version"]
+            mapping_objects = mappings["mapping_objects"]
+            if domain in mappings_by_attack_version:
+                if attack_version in mappings_by_attack_version[domain]:
+                    mappings_by_attack_version[domain][attack_version].append(
+                        mapping_objects[0]
+                    )
+                else:
+                    mappings_by_attack_version[domain][attack_version] = mapping_objects
+            else:
+                mappings_by_attack_version[domain] = {}
+                mappings_by_attack_version[domain][attack_version] = mapping_objects
             add_mappings_to_attack_data_dict(mappings, attack_data_dict)
 
-    for attack_domain in list(attack_domains.keys()):
+    for attack_domain in attack_domains:
         for attack_version in attack_domains[attack_domain]:
             add_background_colors(
                 attack_data_dict[attack_version][attack_domain.lower()]
             )
-            filepath = (
-                output_filepath
-                / attack_domain.lower()
-                / attack_version
-                / f"{attack_domain.lower()}-{attack_version}_matrix_data.json"
+            filepath = output_filepath / attack_domain.lower() / attack_version
+            matrix_filepath = (
+                filepath / f"{attack_domain.lower()}-{attack_version}_matrix_data.json"
             )
-            filepath.parent.mkdir(parents=True, exist_ok=True)
+            matrix_filepath.parent.mkdir(parents=True, exist_ok=True)
 
-            json_file = open(
-                filepath,
+            matrix_json_file = open(
+                matrix_filepath,
                 "w",
                 encoding="UTF-8",
             )
             json.dump(
                 attack_data_dict[attack_version][attack_domain.lower()],
-                fp=json_file,
+                fp=matrix_json_file,
+            )
+
+    for attack_domain in mappings_by_attack_version:
+        for attack_version in mappings_by_attack_version[attack_domain]:
+            techniques_dict = get_techniques_dict(
+                mappings_by_attack_version[attack_domain.lower()][attack_version]
+            )
+            layer = create_layer(
+                techniques_dict,
+                f"{attack_domain.lower()}-{attack_version}",
+                attack_domain.lower(),
+                attack_version,
+            )
+            navigator_layer_filepath = (
+                filepath
+                / f"{attack_domain.lower()}-{attack_version}_navigator_layer.json"
+            )
+
+            navigatory_layer_json_file = open(
+                navigator_layer_filepath,
+                "w",
+                encoding="UTF-8",
+            )
+            json.dump(
+                layer,
+                fp=navigatory_layer_json_file,
             )
 
 
@@ -263,7 +303,6 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
     attack_data_version = attack_data_dict[mappings["metadata"]["attack_version"]][
         mappings["metadata"]["technology_domain"]
     ]
-    # original_attack_data_version = deepcopy(attack_data_version)
     mapping_framework = mappings["metadata"]["mapping_framework"]
 
     for mapping in mappings["mapping_objects"]:
@@ -380,7 +419,7 @@ def load_tactic_structure(attack_version, attack_domain):
     attack_data = load_attack_json(attack_version, attack_domain.lower())
     if attack_data:
         formatted_attack_data = format_attack_data(attack_data, attack_domain.lower())
-        if attack_version not in list(attack_data_dict.keys()):
+        if attack_version not in attack_data_dict:
             attack_data_dict[attack_version] = {}
         attack_data_dict[attack_version][attack_domain.lower()] = formatted_attack_data
     return attack_data_dict[attack_version][attack_domain.lower()]
