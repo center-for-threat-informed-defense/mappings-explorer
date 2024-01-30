@@ -324,10 +324,9 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
             logger.trace(
-                "     found "
-                + f"{len(filtered_mappings)}"
-                + " mappings in group: "
-                + g.label
+                "     found {count} mappings in group {g_label}",
+                count=len(filtered_mappings),
+                g_label=g.label,
             )
     project.capabilities = parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
@@ -375,7 +374,9 @@ def get_cve_descriptions(project):
             descriptions = response["containers"]["cna"]["descriptions"]
             c.description = descriptions[0]["value"]
         except Exception:
-            logger.exception("Error loading description for CVE capability {c.id}")
+            logger.exception(
+                "Error loading description for CVE capability {c_id}", c_id=c.id
+            )
 
 
 def get_nist_descriptions(project, version):
@@ -400,7 +401,9 @@ def get_nist_descriptions(project, version):
                     c.description = item["text"]
                     break
         except Exception:
-            logger.exception("Error loading description for nist capability {c.id}")
+            logger.exception(
+                "Error loading description for NIST capability {c_id}", c_id=c.id
+            )
 
 
 def parse_capabilities(
@@ -437,7 +440,9 @@ def parse_capabilities(
             mapping["attack_domain"] = attack_domain
 
         logger.trace(
-            "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
+            "for capability {id} the number of mappings is {count}",
+            id=c.id,
+            count=str(len(c.mappings)),
         )
         capabilities.append(c)
     return capabilities
@@ -527,14 +532,12 @@ def build_external_landing(
     )
     stream.dump(str(output_path))
     logger.trace(
-        "Created "
-        + project.id
-        + " landing: ATT&CK Version "
-        + attack_version
-        + ", control version "
-        + project_version
-        + ", attack domain "
-        + attack_domain.lower()
+        "Created {project_id} landing: ATT&CK version {attack_version}, ",
+        "control version {project_version}, ATT&CK domain {attack_domain}",
+        project_id=project.id,
+        attack_version=attack_version,
+        project_version=project_version,
+        attack_domain=attack_domain,
     )
 
     for capability_group in project.capability_groups:
@@ -647,7 +650,9 @@ def build_external_group(
         headers=headers,
     )
     stream.dump(str(output_path))
-    logger.trace("          Created capability group page " + capability_group.label)
+    logger.trace(
+        "          Created capability group page {group}", group=capability_group.label
+    )
 
 
 def build_external_capability(
@@ -684,7 +689,7 @@ def build_external_capability(
         capability=capability,
     )
     stream.dump(str(output_path))
-    logger.trace("          Created capability page " + capability.id)
+    logger.trace("          Created capability page {id}", id=capability.id)
 
 
 def parse_techniques(
@@ -706,7 +711,7 @@ def parse_techniques(
     techniques = []
     for project in projects:
         mappings = []
-        logger.trace("adding mappings in project ", project.id)
+        logger.trace("adding mappings in project {id}", id=project.id)
         m = [
             m
             for m in project.mappings
@@ -922,7 +927,7 @@ def build_technique_page(
         subtechniques=technique.subtechniques,
     )
     stream.dump(str(output_path))
-    logger.trace("          Created technique page " + technique.id)
+    logger.trace("          Created technique page {id}", id=technique.id)
 
 
 def build_tactic_page(
@@ -967,7 +972,7 @@ def build_tactic_page(
         prev_page=prev_page,
     )
     stream.dump(str(output_path))
-    logger.trace("          Created tactic page " + tactic.id)
+    logger.trace("          Created tactic page {id}", id=tactic.id)
 
 
 def build_technique_landing_page(
