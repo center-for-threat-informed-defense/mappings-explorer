@@ -1550,12 +1550,19 @@ def main():
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")
 
-    build_about_pages(url_prefix=url_prefix)
-    build_external_pages(projects=projects, url_prefix=url_prefix)
-    build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix=url_prefix, projects=projects)
-    build_search_index(url_prefix)
-    print("Done building site")
+    build_external_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    breadcrumbs = [
+        (f"{url_prefix}", "Home"),
+    ]
+    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
+    build_attack_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    build_search_index(url_prefix, breadcrumbs)
+    logger.info("Done building site")
 
 
 if __name__ == "__main__":
