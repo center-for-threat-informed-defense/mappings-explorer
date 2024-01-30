@@ -54,5 +54,15 @@
     </div>
   </section>
   {% endif %}
+  <section id="references" class="references">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-left">
+        <h2>REFERENCES</h2>
+        <ul>
+          <li><a href="https://attack.mitre.org/versions/v{{attack_version.split('.')[0]}}/techniques/{{technique.id}}" target="_blank" rel="noopener noreferrer">ATT&CK Tactic Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </div>
 {% endblock content %}
