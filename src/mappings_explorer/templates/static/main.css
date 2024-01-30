@@ -129,25 +129,13 @@ section.version-select {
   # Breadcrumbs
   --------------------------------------------------------------*/
 .breadcrumbs {
-  padding: 140px 0 60px 0;
-  min-height: 30vh;
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.breadcrumbs:before {
-  content: "";
-  background-color: rgba(27, 47, 69, 0.7);
-  position: absolute;
-  inset: 0;
 }
 
 .breadcrumbs h2 {
   font-size: 56px;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 500;
+  color: var(--color-link);
   font-family: var(--font-primary);
 }
 
@@ -158,12 +146,12 @@ section.version-select {
   padding: 0 0 10px 0;
   margin: 0;
   font-size: 16px;
-  font-weight: 700;
-  color: var(--color-primary);
+  font-weight: 600;
+  color: var(--color-text);
 }
 
 .breadcrumbs ol a {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-link);
   transition: 0.3s;
 }
 
@@ -178,7 +166,7 @@ section.version-select {
 .breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #fff;
+  color: var(--color-link);
   content: "›";
 }
 
@@ -280,8 +268,12 @@ div.banner {
   position: fixed;
   top: 84px;
   z-index: 10 !important;
+  transition: all 0.5s;
 }
 
+.banner.sticked {
+  top: 76px;
+}
 .banner p {
   margin-bottom: 0;
 }
@@ -290,11 +282,15 @@ div.banner {
   .header {
     padding: 12px 0;
   }
-
   div.banner {
-    top: 60px;
+    top: 58px;
+  }
+  .banner.sticked {
+    top: 54px;
   }
 }
+
+
 
 .header.transparent-header {
   background: none;
