@@ -148,8 +148,7 @@ def load_projects():
         """The NIST 800-53 is a cybersecurity standard and compliance framework
         developed by the National Institute of Standards in Technology. It’s a
         continuously updated framework that tries to flexibly define standards, controls
-        , and assessments based on risk, cost-effectiveness, and capabilities. Currently
-        , the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.""",
+        , and assessments based on risk, cost-effectiveness, and capabilities.""",
         """The NIST 800-53 framework is designed to provide a foundation of guiding
          elements, strategies, systems, and controls, that can agnostically support any
          organization’s cybersecurity needs and priorities. By establishing a framework
@@ -277,10 +276,10 @@ def load_projects():
     projects = [
         nist,
         cve,
-        aws,
+        veris,
         azure,
         gcp,
-        veris,
+        aws,
     ]
     return projects
 
@@ -1531,7 +1530,10 @@ def main():
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
-        title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
+        title="Mappings Explorer",
+        url_prefix=url_prefix,
+        public_dir=PUBLIC_DIR,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created site homepage")
