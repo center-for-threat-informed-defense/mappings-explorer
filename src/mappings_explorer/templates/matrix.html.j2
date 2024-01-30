@@ -17,7 +17,10 @@
               <p>[[description]]</p>
             </div>
           </div>
-          <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
+          <div
+            class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20"
+            v-if="attack_domain_versions_with_mappings[selectedDomain].includes(selectedAttackVersion)"
+          >
             <h6>Download Mapping Artifacts:</h6>
             <div class="downloads">
               <p>
