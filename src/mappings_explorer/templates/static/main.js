@@ -27,6 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
       });
     }
+    /**
+     * Sticky banner on scroll
+     */
+    const selectBanner = document.querySelector('div.banner');
+    if (selectBanner) {
+      document.addEventListener('scroll', () => {
+        window.scrollY > 100 ? selectBanner.classList.add('sticked') : selectBanner.classList.remove('sticked');
+      });
+    }
 
     /**
      * Mobile nav toggle

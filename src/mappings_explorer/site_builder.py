@@ -19,6 +19,8 @@ class Capability:
     label = ""
     description = ""
     mappings = []
+    capability_group = ""
+    num_mappings = 0
 
 
 class Technique:
@@ -41,11 +43,13 @@ class Tactic:
     num_mappings = 0
 
 
-class Group:
+class CapabilityGroup:
     id = ""
     label = ""
     num_mappings = ""
     mappings = []
+    capabilities = []
+    num_capabilities = 0
 
 
 class ExternalControl:
@@ -315,9 +319,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
         )
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
-            g = Group()
+            g = CapabilityGroup()
             g.id = i
             g.label = metadata["capability_groups"][i]
+            g.capabilities = []
             project.capability_groups.append(g)
             filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
             g.num_mappings = len(filtered_mappings)
@@ -429,12 +434,22 @@ def parse_capabilities(
         c = Capability()
         c.id = id
         c.mappings = [m for m in mappings if (m["capability_id"] == id)]
+        c.num_mappings = len(c.mappings)
+        c.label = c.mappings[0]["capability_description"]
         for mapping in c.mappings:
             mapping["project"] = project.id
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
             mapping["attack_domain"] = attack_domain
-
+        if c.mappings[0]["capability_group"]:
+            capability_group = [
+                g
+                for g in project.capability_groups
+                if (g.id == mapping["capability_group"])
+            ]
+            capability_group[0].capabilities.append(c)
+            capability_group[0].num_capabilities += 1
+            c.capability_group = capability_group[0]
         print(
             "for capability " + c.id + " number of mappings is  " + str(len(c.mappings))
         )
@@ -450,6 +465,7 @@ def build_external_landing(
     domain_dir,
     mappings,
     attack_domain,
+    breadcrumbs,
 ):
     """Create landing page for each project and build pages for each capability group
         and capability for the specified project and version combination
@@ -465,9 +481,8 @@ def build_external_landing(
     """
     output_path = domain_dir / "index.html"
     template = load_template("framework_landing.html.j2")
-    attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
-    )
+    attack_prefix = f"""
+        {url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
 
@@ -502,6 +517,7 @@ def build_external_landing(
         ("id", "ID", "id", external_prefix),
         ("label", "Control Family", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
+        ("num_capabilities", "Number of Capabilities"),
     ]
     project_id = project.id
     if project_id == "nist":
@@ -523,6 +539,7 @@ def build_external_landing(
         group_headers=capability_group_headers,
         capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
+        breadcrumbs=breadcrumbs,
     )
     stream.dump(str(output_path))
     print(
@@ -535,9 +552,19 @@ def build_external_landing(
         + ", attack domain "
         + attack_domain.lower()
     )
-
+    capability_group_headers = [
+        ("id", "Capability ID", "id", external_prefix),
+        ("label", "Capability Name", "id", external_prefix),
+        ("num_mappings", "Number of Mappings"),
+    ]
     for capability_group in project.capability_groups:
-        build_external_group(
+        nav = breadcrumbs + [
+            (
+                f"{external_prefix}{capability_group.id}/",
+                f"{capability_group.label} Capability Group",
+            )
+        ]
+        build_capability_group(
             project=project,
             capability_group=capability_group,
             url_prefix=url_prefix,
@@ -546,8 +573,20 @@ def build_external_landing(
             attack_version=attack_version,
             headers=headers,
             attack_domain=attack_domain,
+            breadcrumbs=nav,
+            capability_group_headers=capability_group_headers,
         )
     for capability in project.capabilities:
+        capability_nav = breadcrumbs + [
+            (
+                f"{external_prefix}{capability.capability_group.id}/",
+                f"{capability.capability_group.label} Capability Group",
+            ),
+            (
+                f"{external_prefix}{capability.id}/",
+                f"{capability.label if capability.label else capability.id}",
+            ),
+        ]
         build_external_capability(
             project=project,
             url_prefix=url_prefix,
@@ -557,10 +596,19 @@ def build_external_landing(
             headers=headers,
             capability=capability,
             attack_domain=attack_domain,
+            breadcrumbs=capability_nav,
         )
 
 
-def build_external_pages(projects, url_prefix):
+def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
+    """Parse ATT&CK data and build all pages for ATT&CK objects
+
+    Args:
+        projects: the list of projects and their mappings to parse into ATT&CK objects
+        url_prefix: the root url for the built site
+        breadcrumbs: the navigation tree above the pages being built in this function
+        used to render the breadcrumbs on each page
+    """
     for project in projects:
         external_dir = PUBLIC_DIR / "external"
         external_dir.mkdir(parents=True, exist_ok=True)
@@ -590,6 +638,10 @@ def build_external_pages(projects, url_prefix):
                 and m["project_version"] == project_version
             ][0]
             mappings = m["mappings"]
+            nav = breadcrumbs + [
+                (f"{url_prefix}external/{project.id}/", f"{project.label} Home")
+            ]
+
             build_external_landing(
                 project=project,
                 url_prefix=url_prefix,
@@ -598,6 +650,7 @@ def build_external_pages(projects, url_prefix):
                 domain_dir=domain_dir,
                 mappings=mappings,
                 attack_domain=attack_domain,
+                breadcrumbs=nav,
             )
             # for the most up to date combo, copy the pages higher up the directory
             if index == len(project.validVersions) - 1:
@@ -608,7 +661,7 @@ def build_external_pages(projects, url_prefix):
                 shutil.copytree(domain_dir, dir, dirs_exist_ok=True)
 
 
-def build_external_group(
+def build_capability_group(
     project: ExternalControl,
     capability_group,
     url_prefix,
@@ -617,6 +670,8 @@ def build_external_group(
     attack_version,
     headers,
     attack_domain,
+    breadcrumbs,
+    capability_group_headers,
 ):
     capability_group_id = capability_group.id
     dir = parent_dir / capability_group_id
@@ -630,6 +685,7 @@ def build_external_group(
         control=project.label,
         capability_group_id=capability_group.id,
         capability_group_name=capability_group.label,
+        capability_group=capability_group,
         project=project,
         description=project.description,
         control_version=project_version,
@@ -641,6 +697,8 @@ def build_external_group(
         prev_page=prev_page,
         mappings=capability_group.mappings,
         headers=headers,
+        breadcrumbs=breadcrumbs,
+        capability_group_headers=capability_group_headers,
     )
     stream.dump(str(output_path))
     print("          Created capability group page " + capability_group.label)
@@ -655,7 +713,22 @@ def build_external_capability(
     headers: list,
     capability: Capability,
     attack_domain: str,
+    breadcrumbs: list,
 ):
+    """Builds a capability page for a given capability
+
+    Args:
+       project: object that contains the capability (used for metadata and linking)
+       url_prefix: the root url for the built site
+       parent_dir: folder 1 level above where the technique page will be built
+       project_version: project version for the page
+       attack_version: version of ATT&CK for the page
+       headers: headers for mapping table
+       capability: capability object that the page is being built for
+       attack_domain: ATT&CK domain for the page
+       breadcrumbs: the navigation tree above the page being built in this function
+
+    """
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -678,6 +751,7 @@ def build_external_capability(
         mappings=capability.mappings,
         headers=headers,
         capability=capability,
+        breadcrumbs=breadcrumbs,
     )
     stream.dump(str(output_path))
     print("          Created capability page " + capability.id)
@@ -796,13 +870,14 @@ def parse_tactics(
     return tactic_list
 
 
-def build_attack_pages(projects: list, url_prefix: str):
+def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """Parse ATT&CK data and build all pages for ATT&CK objects
 
     Args:
         projects: the list of projects and their mappings to parse into ATT&CK objects
         url_prefix: the root url for the built site
-
+        breadcrumbs: the navigation tree above the pages being built in this function
+        used to render the breadcrumbs on each page
     """
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
@@ -835,8 +910,16 @@ def build_attack_pages(projects: list, url_prefix: str):
                 attack_domain=attack_domain,
                 techniques=all_techniques,
                 tactics=all_tactics,
+                breadcrumbs=breadcrumbs,
             )
             for technique in all_techniques:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "techniques"
+                )
                 if technique.id:
                     build_technique_page(
                         url_prefix=url_prefix,
@@ -844,9 +927,17 @@ def build_attack_pages(projects: list, url_prefix: str):
                         attack_version=attack_version,
                         attack_domain=attack_domain,
                         technique=technique,
+                        breadcrumbs=breadcrumbs,
                     )
             print("built all technique pages")
             for tactic in all_tactics:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "tactics"
+                )
                 if tactic.id:
                     build_tactic_page(
                         url_prefix=url_prefix,
@@ -854,6 +945,7 @@ def build_attack_pages(projects: list, url_prefix: str):
                         attack_version=attack_version,
                         attack_domain=attack_domain,
                         tactic=tactic,
+                        breadcrumbs=breadcrumbs,
                     )
             print("built all tactic pages")
 
@@ -864,6 +956,7 @@ def build_technique_page(
     attack_version: str,
     attack_domain: str,
     technique: Technique,
+    breadcrumbs: list,
 ):
     """Builds a technique page for a given technique
 
@@ -873,15 +966,24 @@ def build_technique_page(
         attack_version: version of ATT&CK for the page
         attack_domain: ATT&CK domain for the page
         technique: technique object that the page is being built for
+        breadcrumbs: the navigation tree above the page being built in this function
 
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
     )
     technique_headers = [
         ("id", "Technique ID", "id", attack_prefix),
         ("label", "Technique Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
+    ]
+    nav = breadcrumbs + [
+        (f"{attack_prefix}", "ATT&CK Techniques"),
+        (
+            f"{attack_prefix}{technique.id}/",
+            f"{technique.id} {technique.label}",
+        ),
     ]
     headers = [
         ("capability_id", "Capability ID", "capability_id"),
@@ -910,6 +1012,7 @@ def build_technique_page(
         prev_page=prev_page,
         mappings=technique.mappings,
         subtechniques=technique.subtechniques,
+        breadcrumbs=nav,
     )
     stream.dump(str(output_path))
 
@@ -920,6 +1023,7 @@ def build_tactic_page(
     attack_version: str,
     attack_domain: str,
     tactic: Tactic,
+    breadcrumbs: list,
 ):
     """Builds a tactic page for a given tactic
 
@@ -929,17 +1033,25 @@ def build_tactic_page(
         attack_version: version of ATT&CK for the page
         attack_domain: ATT&CK domain for the page
         tactic: tactic object that the page is being built for
+        breadcrumbs: the navigation tree above the page being built in this function
 
     """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
+    nav = breadcrumbs + [
+        (f"{attack_prefix}tactics/", "ATT&CK Tactics"),
+        (f"{attack_prefix}tactics/{tactic.id}/", f"{tactic.id} {tactic.label}"),
+    ]
+    attack_prefix += "techniques/"
+
     headers = [
         ("id", "Technique ID", "id", attack_prefix),
         ("label", "Technique Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
     ]
+
     dir = parent_dir / tactic.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -954,13 +1066,20 @@ def build_tactic_page(
         mappings=tactic.techniques,
         tactic=tactic,
         prev_page=prev_page,
+        breadcrumbs=nav,
     )
     stream.dump(str(output_path))
     print("          Created tactic page " + tactic.id)
 
 
 def build_technique_landing_page(
-    url_prefix, parent_dir, attack_version, attack_domain, techniques, tactics
+    url_prefix,
+    parent_dir,
+    attack_version,
+    attack_domain,
+    techniques,
+    tactics,
+    breadcrumbs,
 ):
     """Builds default pages that list all tactics and techiniques
     Args:
@@ -972,7 +1091,8 @@ def build_technique_landing_page(
         tactics: list of all tactics to be listed in tactic page
     """
     attack_prefix = (
-        f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
     )
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
@@ -988,7 +1108,9 @@ def build_technique_landing_page(
     for d in attack_domains.keys():
         for version in attack_domains[d]:
             valid_versions.append((d, version))
-
+    technique_nav = breadcrumbs + [
+        (f"{attack_prefix}techniques/", "ATT&CK Techniques"),
+    ]
     dir = parent_dir / "techniques"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -1007,6 +1129,7 @@ def build_technique_landing_page(
         attackVersions=all_attack_versions,
         domains=attack_domains,
         valid_versions=valid_versions,
+        breadcrumbs=technique_nav,
     )
     stream.dump(str(output_path))
     print("          Created technique landing page ")
@@ -1014,6 +1137,10 @@ def build_technique_landing_page(
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
     """
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/tactics/"
+    )
     headers = [
         ("id", "ATT&CK ID", "id", attack_prefix),
         ("label", "ATT&CK Name", "id", attack_prefix),
@@ -1024,6 +1151,10 @@ def build_technique_landing_page(
     output_path = dir / "index.html"
     prev_page = parent_dir
     template = load_template("attack_landing.html.j2")
+    tactic_nav = breadcrumbs + [
+        (f"{attack_prefix}tactics/", "ATT&CK Tactics"),
+    ]
+
     stream = template.stream(
         title="ATT&CK Tactics",
         description=description,
@@ -1037,15 +1168,20 @@ def build_technique_landing_page(
         attackVersions=all_attack_versions,
         domains=attack_domains,
         valid_versions=valid_versions,
+        breadcrumbs=tactic_nav,
     )
     stream.dump(str(output_path))
     print("          Created tactics landing page ")
 
 
-def build_matrix(url_prefix, projects):
+def build_matrix(url_prefix, projects, breadcrumbs):
     external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
     output_path = external_dir / "index.html"
+
+    nav = breadcrumbs + [
+        (f"{url_prefix}attack/matrix/", "ATT&CK Matrix"),
+    ]
 
     all_attack_versions = [
         "8.2",
@@ -1138,6 +1274,7 @@ def build_matrix(url_prefix, projects):
         url_prefix=url_prefix,
         attack_domains=attack_domains,
         attack_domain_versions_with_mappings=attack_domain_versions_with_mappings,
+        breadcrumbs=nav,
     )
     stream.dump(str(output_path))
     print("Created matrix")
@@ -1177,7 +1314,7 @@ def getIndexPages():
                 attack_object_id = mapping["attack_object_id"]
                 if attack_object_id:
                     attack_url = (
-                        f"attack/attack-{attack_version}/domain-{domain}/"
+                        f"attack/attack-{attack_version}/domain-{domain}/techniques/"
                         f"{attack_object_id}"
                     )
                     if not any(page["url"] == attack_url for page in pages):
@@ -1192,8 +1329,8 @@ def getIndexPages():
                 if capability_id:
                     capability_url = (
                         f"external/{mapping_framework}/attack-{attack_version}"
-                        f"/{mapping_framework}-{mapping_framework_version}"
-                        f"/domain-{domain}/{capability_id.replace(' ', '%20')}"
+                        f"/domain-{domain}/{mapping_framework}-{mapping_framework_version}"
+                        f"/{capability_id.replace(' ', '%20')}"
                     )
                     if not any(page["url"] == capability_url for page in pages):
                         pages.append(
@@ -1206,12 +1343,13 @@ def getIndexPages():
     return pages
 
 
-def build_search_index(url_prefix):
+def build_search_index(url_prefix: str, breadcrumbs=list):
     """
     Render the search page and also build the search index as a JSON file.
 
     Args:
         url_prefix - the site's URL prefix
+        breadcrumbs: the navigation tree above the page being built in this function
     """
     print("Creating search page")
     search_dir = PUBLIC_DIR / "search"
@@ -1219,9 +1357,10 @@ def build_search_index(url_prefix):
     output_path = search_dir / "index.html"
     template = load_template("search.html.j2")
 
+    nav = breadcrumbs + [(f"{url_prefix}search/", "Search")]
     print("Creating search index")
     pages = getIndexPages()
-    stream = template.stream(url_prefix=url_prefix)
+    stream = template.stream(url_prefix=url_prefix, breadcrumbs=nav)
     stream.dump(str(output_path))
 
     index = lunr(
@@ -1253,40 +1392,43 @@ def build_search_index(url_prefix):
         zip_file.testzip()
 
 
-def build_about_pages(url_prefix: str):
+def build_about_pages(url_prefix: str, breadcrumbs: list):
     """
     Build the documentation pages, e.g. explaining what the site is for, who it's for,
     etc.
 
     Args:
         url_prefix: The prefix to put in front of any internal URLs.
+        breadcrumbs: the navigation tree above the pages being built in this function
     """
+    nav = breadcrumbs + [(f"{url_prefix}about/", "About")]
     dir = PUBLIC_DIR / "about"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("about.html.j2")
-    stream = template.stream(title="About Mappings Explorer", url_prefix=url_prefix)
+    stream = template.stream(
+        title="About Mappings Explorer", url_prefix=url_prefix, breadcrumbs=nav
+    )
     stream.dump(str(output_path))
     print("Created about page")
+    nav1 = nav + [(f"{url_prefix}about/use-cases/", "Use Cases")]
 
     dir = PUBLIC_DIR / "about" / "use-cases"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("use_cases.html.j2")
     stream = template.stream(
-        title="Mappings Explorer Use Cases",
-        url_prefix=url_prefix,
+        title="Mappings Explorer Use Cases", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
     print("Created use cases page")
-
+    nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
     dir = PUBLIC_DIR / "about" / "methodology"
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("methodology.html.j2")
     stream = template.stream(
-        title="Mappings Explorer Methodology",
-        url_prefix=url_prefix,
+        title="Mappings Explorer Methodology", url_prefix=url_prefix, breadcrumbs=nav1
     )
     stream.dump(str(output_path))
     print("Created methodology page")
@@ -1325,15 +1467,28 @@ def main():
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("external_landing.html.j2")
-    stream = template.stream(title="External Mappings Home", url_prefix=url_prefix)
+    breadcrumbs = [
+        (f"{url_prefix}", "Home"),
+        (f"{url_prefix}external/", "Mapping Frameworks"),
+    ]
+    stream = template.stream(
+        title="External Mappings Home", url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
     stream.dump(str(output_path))
     print("Created Mappings Frameworks landing page")
 
-    build_about_pages(url_prefix=url_prefix)
-    build_external_pages(projects=projects, url_prefix=url_prefix)
-    build_attack_pages(projects=projects, url_prefix=url_prefix)
-    build_matrix(url_prefix=url_prefix, projects=projects)
-    build_search_index(url_prefix)
+    build_external_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    breadcrumbs = [
+        (f"{url_prefix}", "Home"),
+    ]
+    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
+    build_attack_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    build_search_index(url_prefix, breadcrumbs)
     print("Done building site")
 
 
