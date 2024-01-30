@@ -113,6 +113,14 @@ def export_file(input_file, output_file, file_type):
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
 
+    # remove status field
+    # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
+    for mapping in parsed_mappings["mapping_objects"]:
+        mapping.pop("status")
+        if not mapping["attack_object_id"]:
+            print(mapping)
+            mapping["mapping_type"] = "non_mappable"
+
     # export mappings
     if file_type is None:
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)

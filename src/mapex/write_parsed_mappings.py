@@ -45,6 +45,9 @@ def create_df(parsed_mappings):
                 if mapping_type == mapping_object["mapping_type"]
             ][0]
             if mapping_object["mapping_type"]
+            and mapping_object["mapping_type"] != "non_mappable"
+            else "non_mappable"
+            if mapping_object["mapping_type"] == "non_mappable"
             else None
         )
 
