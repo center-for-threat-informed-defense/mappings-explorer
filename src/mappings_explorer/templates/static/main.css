@@ -80,7 +80,7 @@ span.highlight {
   --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 section.version-select {
@@ -888,31 +888,22 @@ section#user-stories button.accordion-button div {
 
 @media (min-width: 768px) {
   .header-container .download-artifacts {
-    margin-top: 82px;
+    margin-top: 12px;
   }
-
+  .download-artifacts h6 {
+    font-weight: 600;
+  }
   .header-container .download-artifacts .downloads {
     display: block;
   }
-
   .header-container .download-artifacts .downloads p {
     line-height: normal;
-  }
-
-  .header-container .download-artifacts .downloads a {
-    color: var(--color-link) !important;
-    text-decoration: none !important;
-    transition: 0.3s !important;
-    cursor: pointer !important;
-  }
-
-  .header-container .download-artifacts .downloads a:hover {
-    cursor: pointer !important;
-    color: #82cbed !important;
-    text-decoration: none !important;
+    margin-bottom: 12px;
   }
 }
-
+  .download-artifacts .downloads a img {
+    margin-top: -5px;
+  }
 /* display download buttons in a single line for small screens */
 @media (max-width: 768px) {
   .header-container .download-artifacts .downloads {
