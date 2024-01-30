@@ -266,13 +266,13 @@ div.banner {
   text-align: center;
   display: block;
   position: fixed;
-  top: 84px;
+  top: 80px;
   z-index: 10 !important;
   transition: all 0.5s;
 }
 
 .banner.sticked {
-  top: 76px;
+  top: 72px;
 }
 .banner p {
   margin-bottom: 0;
@@ -473,7 +473,7 @@ div.banner {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: #212c5ee3;
+    background: var(--color-default);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998 !important;
@@ -513,13 +513,13 @@ div.banner {
     display: none;
     padding: 10px 0;
     margin: 10px 20px;
-    background-color: #212c5e;
+    background-color: var(--color-default);
   }
 
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
-    background: #212c5e;
+    background: var(--color-default);
   }
 
   .mobile-nav-show {
@@ -571,7 +571,11 @@ div.banner {
   padding: 120px 0;
   z-index: 3;
 }
-
+#hero div {
+  width: 90vw;
+  margin: auto;
+  z-index: 100;
+}
 @media (min-width: 1034px) {
   .hero:after {
     position: absolute;
@@ -580,6 +584,10 @@ div.banner {
     background: var(--color-default);
     top: 0;
     bottom: 0;
+  }
+  #hero div {
+    width: 30vw;
+    margin-left: 5vw;
   }
 }
 
@@ -2491,7 +2499,7 @@ section#user-stories button.accordion-button div {
   border: none;
   border-radius: 10px;
   display: block;
-  float: right;
+  /* float: right; */
 }
 
 .custom-badge .white {
@@ -2513,7 +2521,8 @@ section#user-stories button.accordion-button div {
 }
 
 .badge-section {
-  width: auto;
+  width: max-content;
+  display: flex;
 }
 
 .badge-section .icon-btn {
@@ -2525,9 +2534,74 @@ section#user-stories button.accordion-button div {
   box-shadow: 2px 2px 4px #bdbdbd;
   margin: 5px 0px 5px 5px;
   border: none;
-  float: right;
+  /* float: right; */
+}
+.badge-section .icon-btn-sm {
+  display: none;
+}
+.mapping-table .badges {
+  margin-left: 0;
+  display: flex;
+  padding: 0 20px;
+}
+.mapping-table h2 {
+  padding: 0 10px;
+  margin-bottom: 5px;
 }
 
+@media (min-width: 1200px) {
+  .mapping-table .badges {
+    margin-left: auto;
+    padding: 0;
+  }
+  .mapping-table .badges .badge-section {
+    margin-left: auto;
+    padding: 0;
+  }
+  .mapping-table h2 {
+    padding-left: 12px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .custom-badge {
+    height: 35px;
+    width: max-content;
+    margin: 5px 5px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    font-weight: 600;
+  }
+
+  .custom-badge .white {
+    background-color: #eff1f4;
+    color: var(--color-text);
+    height: 100%;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .custom-badge .purple {
+    background-color: #eff1f4!important;
+    color: var(--color-secondary);
+    height: 100%;
+    padding: 0;
+    padding-left: 4px;
+    box-shadow: none;
+  }
+  .badge-section .icon-btn {
+    display: none;
+  }
+  .badge-section .icon-btn-sm {
+    color: var(--color-text);
+    height: 35px;
+    margin: 5px 0px 5px 5px;
+    border: none;
+    display: block;
+  }
+}
 .bootstrap-table th,
 .bootstrap-table td {
   color: var(--color-text);
