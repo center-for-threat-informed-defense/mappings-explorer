@@ -16,6 +16,7 @@
               <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
               <p>[[description]]</p>
             </div>
+          </div>
           <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
             <h6>Download Mapping Artifacts:</h6>
             <div class="downloads">
@@ -140,9 +141,14 @@
                                   class="technique-box"
                                   :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
                                 >
-                                  <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id" @mouseenter="techniqueHovered = technique">
+                                  <a
+                                    v-if="technique.score >0"
+                                    :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id"
+                                    @mouseenter="techniqueHovered = technique"
+                                  >
                                     [[  technique.name  ]]
                                   </a>
+                                  <span v-else>[[ technique.name ]]</span>
                                   <br/>
                                   ( [[ technique.id ]] )
                                   <span class="technique-score" v-if="technique.subtechniques.length">
