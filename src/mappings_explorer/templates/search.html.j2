@@ -40,7 +40,7 @@
         </section>
         <div class="loader" v-if="loading"></div>
         <div class="container" data-aos="fade-up">
-          <form class="col-12 version-select">
+          <form class="col-12 version-select" v-if="results && results.results && results.results.length">
             <div class="row col-12" style="display: flex;">
               <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                 <p>ATT&CK Version</p>
@@ -205,16 +205,17 @@
        * create an array with all attack versions that appear in the results
        */
       getAttackVersionsInResults(){
-        let attackVersions = [];
-        this.results.results.forEach(result => {
-          let attackVersion = this.getStringFromUrl(result.ref, "attack-");
-          !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
-        })
-        this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
-        // if the selected Attack version is not yet set, set to the most recent
-        // attack version that appears in the results
-        !this.selectedAttackVersion && this.setSelectedAttackVersion();
-        this.attackVersionsInResults.push("All Versions");
+        if (this.results.results.length) {
+          this.results.results.forEach(result => {
+            let attackVersion = this.getStringFromUrl(result.ref, "attack-");
+            !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
+          })
+          this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
+          // if the selected Attack version is not yet set, set to the most recent
+          // attack version that appears in the results
+          !this.selectedAttackVersion && this.setSelectedAttackVersion();
+          this.attackVersionsInResults.push("All Versions");
+          }
       },
 
       /**
@@ -242,7 +243,6 @@
         return returnString
       },
       handleItemPerPageChange(){
-        console.log("IN HERE!")
         this.pageNum = 1;
       },
       /**
