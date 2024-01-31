@@ -173,6 +173,7 @@ def create_attack_jsons(attack_domains, output_filepath, mappings_filepath):
             else:
                 mappings_by_attack_version[domain] = {}
                 mappings_by_attack_version[domain][attack_version] = mapping_objects
+
             add_mappings_to_attack_data_dict(mappings, attack_data_dict)
 
     for attack_domain in attack_domains:
@@ -249,15 +250,25 @@ def add_background_colors(attack_version_data):
         mapped_capabilities = []
         mapping_frameworks = attack_version_data[attack_object]["mapping_frameworks"]
         for mapping_framework in mapping_frameworks:
+            if len(list(mapping_frameworks[mapping_framework].keys())) > 1:
+                mapping_framework_version = "rev5"
+            else:
+                mapping_framework_version = list(
+                    mapping_frameworks[mapping_framework].keys()
+                )[0]
             mapping_framework_name = mapping_framework_id_to_name[mapping_framework]
-            amount_mapped_capabilities = mapping_frameworks[mapping_framework]
+            amount_mapped_capabilities = mapping_frameworks[mapping_framework][
+                mapping_framework_version
+            ]
             if mapping_framework == "cve":
                 score += 1
                 mapped_capabilities.append(
                     f"{amount_mapped_capabilities} {mapping_framework_name}"
                 )
             else:
-                score += mapping_frameworks[mapping_framework]
+                score += mapping_frameworks[mapping_framework][
+                    mapping_framework_version
+                ]
                 mapped_capabilities.append(
                     f"{amount_mapped_capabilities} {mapping_framework_name}"
                 )
@@ -304,7 +315,7 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
         mappings["metadata"]["technology_domain"]
     ]
     mapping_framework = mappings["metadata"]["mapping_framework"]
-
+    mapping_framework_version = mappings["metadata"]["mapping_framework_version"]
     for mapping in mappings["mapping_objects"]:
         attack_object_id = mapping["attack_object_id"]
         if attack_data_version.get(attack_object_id):
@@ -312,9 +323,15 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
                 "mapping_frameworks"
             ]
             if mapping_framework in mapping_frameworks:
-                mapping_frameworks[mapping_framework] += 1
+                if mapping_framework_version in mapping_frameworks[mapping_framework]:
+                    mapping_frameworks[mapping_framework][
+                        mapping_framework_version
+                    ] += 1
+                else:
+                    mapping_frameworks[mapping_framework][mapping_framework_version] = 1
             else:
-                mapping_frameworks[mapping_framework] = 1
+                mapping_frameworks[mapping_framework] = {}
+                mapping_frameworks[mapping_framework][mapping_framework_version] = 1
 
 
 def format_attack_data(attack_data, attack_domain):
@@ -360,9 +377,11 @@ def format_attack_data(attack_data, attack_domain):
             attack_object_type = (
                 "tactic"
                 if attack_object.get("type") == "x-mitre-tactic"
-                else "subtechnique"
-                if attack_object.get("x_mitre_is_subtechnique")
-                else "technique"
+                else (
+                    "subtechnique"
+                    if attack_object.get("x_mitre_is_subtechnique")
+                    else "technique"
+                )
             )
             attack_object_parents = []
             source_name = (
