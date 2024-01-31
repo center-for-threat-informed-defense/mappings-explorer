@@ -148,7 +148,7 @@
                                   :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
                                 >
                                   <a
-                                    v-if="technique.score >0"
+                                    v-if="technique.score > 0"
                                     :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id"
                                     @mouseenter="techniqueHovered = technique"
                                   >
@@ -179,7 +179,7 @@
                                   :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
                                 >
                                   <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
-                                    <a :href="url_prefix + '/attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/techniques/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                    <a :href="url_prefix + '/attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
                                     <br/>
                                     ( [[ subtechnique.id ]] )
                                   </div>
