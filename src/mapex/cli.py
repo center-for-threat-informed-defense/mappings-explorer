@@ -10,10 +10,10 @@ from mapex.write_parsed_mappings import (
     create_df,
     write_parsed_mappings_csv,
     write_parsed_mappings_excel,
+    write_parsed_mappings_json,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
-    write_parsed_mappings_json,
 )
 
 ROOT_DIR = Path.cwd()
