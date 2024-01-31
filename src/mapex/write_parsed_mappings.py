@@ -8,6 +8,19 @@ import yaml
 from loguru import logger
 
 
+def write_parsed_mappings_json(parsed_mappings, filepath):
+    json_file = open(
+        f"{filepath}_json.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(parsed_mappings, fp=json_file)
+    logger.info(
+        "Successfully wrote mappings json file to {filepath}_json.json",
+        filepath=filepath,
+    )
+
+
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
     result_yaml_file = open(
@@ -242,19 +255,19 @@ def load_attack_json(parsed_mappings):
         f"{BASE_URL}/enterprise-attack/enterprise-attack-{attack_version}.json"
     )
 
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = (
         f"{BASE_URL}/mobile-attack/mobile-attack-{attack_version}.json"
     )
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-{attack_version}.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     ics_attack_data = json.loads(response.text)
 
     domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
