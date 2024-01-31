@@ -179,6 +179,10 @@ def get_stix_object(parsed_mappings, mapping):
         return create_infrastructure_object(mapping)
     elif mapping_framwork == "veris":
         return create_attack_pattern_object(mapping)
+    else:
+        logger.warning(
+            "Cannot create STIX export for mappings with unrecognized mapping framework"
+        )
 
 
 def create_vulnerability_object(mapping):
