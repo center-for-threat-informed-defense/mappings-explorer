@@ -182,11 +182,12 @@ def load_projects():
     veris.id = "veris"
     veris.label = "VERIS"
     veris.description = [
-        """The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of
-         metrics designed to provide a common language for describing security incidents
-         in a structured and repeatable manner. The overall goal is to lay a foundation
-         from which we can constructively and cooperatively learn from our experiences
-         to better measure and manage risk. """
+        """The Vocabulary for Event Recording and Incident Sharing (VERIS) provides a
+         common language for describing security incidents in a structured and
+         repeatable manner that allows for the analysis of data across a variety of
+         incidents. This project provides mappings to better connect the who, what, and
+         why captured in VERIS incident representation with the when and how described
+         in ATT&CK adversary behavioral tactics and techniques."""
     ]
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
@@ -207,14 +208,12 @@ def load_projects():
     cve.id = "cve"
     cve.label = "CVE"
     cve.description = [
-        """Common Vulnerabilities and Exposures (CVE) is a database of publicly
-         available information security issues. CVE provides a convenient, reliable way
-         for vendors, enterprises, academics, and all other interested parties to
-         exchange information about cyber security issues. Sharing CVE details is
-         beneficial to all organizations it allows organizations to set a baseline for
-         evaluating the coverage of their security tools. CVE numbers allow
-         organizations to see what each tool covers and how appropriate they are
-         for your organization."""
+        """The Common Vulnerabilities and Exposures (CVE®) Program provides a catalog of
+         publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
+         community to communicate consistent descriptions of vulnerabilities. This
+         project uses the adversary behaviors described in ATT&CK to characterize the
+         impact of vulnerabilities from CVE, establishing a critical connection between
+         vulnerability management, threat modeling, and compensating controls. """
     ]
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
@@ -228,10 +227,11 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = [
-        """This project maps the security controls native to the Amazon Web Services
-        (AWS) platform to ATT&CK. AWS users can use these mappings to evaluate the
-        effectiveness of their native cloud security controls against an array of ATT&CK
-        techniques."""
+        """Amazon Web Services (AWS) is a widely used cloud computing platform. This
+         project maps the security controls native to the (AWS) platform to ATT&CK,
+         providing resources to assess how to protect, detect, and respond to real-world
+         threats as described in the ATT&CK knowledge base.
+        """
     ]
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -244,10 +244,10 @@ def load_projects():
     azure.id = "azure"
     azure.label = "Azure"
     azure.description = [
-        """This project maps the security controls native to the Azure Infrastructure as
-        a Service (IaaS) platform to ATT&CK. With over 45 native Azure security
-        controls mapped, it provides a critical resource for organizations to assess
-        their Azure security control coverage against real-world threats."""
+        """Azure is a widely used cloud computing platform. This project maps the
+         security controls native to the Azure platform to ATT&CK, providing resources
+         to assess how to protect, detect, and respond to real-world threats as
+         described in the ATT&CK knowledge base."""
     ]
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
@@ -260,10 +260,10 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = [
-        """This project maps the security controls native to the Google Cloud Platform
-        platform (GCP) to ATT&CK. With 49 native GCP security controls mapped, it
-        provides a critical resource for organizations to assess their cloud security
-        control coverage against real-world threats."""
+        """Google Cloud Platform (GCP) is a widely used cloud computing platform. This
+         project maps the security controls native to the GCP platform to ATT&CK
+         providing resources to assess how to protect, detect, and respond to real-world
+         threats as described in the ATT&CK knowledge base."""
     ]
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
@@ -1205,7 +1205,7 @@ def build_technique_landing_page(
         non_mappables=non_mappables,
     )
     stream.dump(str(output_path))
-    description = """Tactics represent the "why" of an ATT&CK technique or
+    description = """Tactics represent the "why" of a MITRE ATT&CK® technique or
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
     """
@@ -1547,7 +1547,10 @@ def main():
         (f"{url_prefix}external/", "Mapping Frameworks"),
     ]
     stream = template.stream(
-        title="External Mappings Home", url_prefix=url_prefix, breadcrumbs=breadcrumbs
+        title="External Mappings Home",
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")

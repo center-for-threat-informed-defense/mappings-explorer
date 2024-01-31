@@ -20,7 +20,7 @@
         </div>
 
         <p>This page describes the methodology used to map security controls native to a technology platform to
-            ATT&amp;CK; and aims to provide the community a reusable method of using ATT&CK to determine the
+            MITRE ATT&CK®; and aims to provide the community a reusable method of using ATT&CK to determine the
             capabilities of
             a platform's security offerings.</p>
         <p>ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world
@@ -38,10 +38,11 @@
             <li><h3><a href="#step3">Identify Mappable ATT&CK Techniques & Sub-techniques</a></h3> - Identify the ATT&CK techniques and sub-techniques
                 mappable to the control.</li>
             <li><h3><a href="#step4">Score Assessment</a></h3> - Assess the effectiveness of the type of protection the control provides for the
-                identified ATT&CK techniques and sub-techniques.</li>
+                identified ATT&CK techniques and sub-techniques.*</li>
             <li><h3><a href="#step5">Create a Mapping</a></h3> - Creating a mapping based on the information gathered from the previous steps.</li>
         </ol>
-        </p>
+        <p>* Scoring assessments have been performed for cloud security capability mappings to record the category of ATT&CK coverage provided by a
+         control (protect, detect, or response) along with an assessment of its effectiveness (minimal, partial, or significant). </p>
     </div>
 </section>
 
@@ -164,8 +165,8 @@
 
         <p>After identifying the techniques and sub-techniques that are mappable to the control, use the scoring rubric
             to score the effectiveness of the security function (protect, detect, respond) provided by the control in
-            mitigating the behavior described by the ATT&CK entity.</p>
-        <p><strong>TODO: link to scoring rubric or put it inline right here</strong></p>
+            relation to the behavior described by the ATT&CK technique or sub-technique.</p>
+        {#<p><strong>TODO: link to scoring rubric or put it inline right here</strong></p>#}
     </div>
 </section>
 
@@ -176,44 +177,18 @@
             <h2><span class="highlight">Step 5:</span> Create A Mapping</h2>
         </div>
 
-        <p>The previous steps enabled you to gather the information required to create a mapping file for a control
-            according to the mapping data format. Use the following guidelines to help you in the process of creating a
+        <p>The previous steps enabled the gathering of information required to create a mapping file for a control
+            according to the mapping data format. Use the following guidelines to help in the process of creating a
             mapping:</p>
-        <p><strong>TODO: do we want to link to / include inline the data format? the SSM methodology links to a data
-                format.</strong></p>
+        {#<p><strong>TODO: do we want to link to / include inline the data format? the SSM methodology links to a data
+                format.</strong></p>#}
 
         <ul>
             <li>The mapping format promotes producing mappings that are self-contained, enabling a reader of the mapping
                 file to understand the basic functionality provided by the control and also the rational for selecting
-                the ATT&CK techniques and sub-techniques it maps. Use the various comment and description fields to
-                communicate this information to readers.</li>
-            <li>Populate the tags field with tags that will enable you to categorize the control in different ways, for
-                example, by the resource(s) protected by the control. The tags field can then be utilized to visualize
-                multiple controls with the same tag.</li>
-            <ul>
-                <li>Do not include ATT&CK information in the tag field. This information is already present in the
-                    techniques field of the YAML mapping file and the visualization tools also support grouping controls
-                    by ATT&CK (sub-)techniques and therefore there is no need to duplicate the information in the tags
-                    field.</li>
-                <li>The list of valid tags is maintained in the valid_tags.txt file contained in the mappings folder for
-                    each platform. (e.g. mappings/Azure/valid_tags.txt) file. Consult this file first and reuse existing
-                    tags where it makes sense. If you introduce a new tag, add it to this file.</li>
-            </ul>
-            <li>When scoring a control's effectiveness at mitigating a technique or sub-technique, you are encouraged to
-                include a comment along with the score that explains your assessment. Comments can be provided at
-                multiple levels: top level, per technique or per group of sub-techniques. Choose the level that makes
-                the most sense for a control, for example:</li>
-            <ul>
-                <li>If the score and rational applies to most techniques in scope of the mapping, rather than repeating
-                    the comment for each technique, add a comment using the top-level comment field of the mapping file.
-                </li>
-                <li>If the score and rational applies to multiple groups of sub-techniques for a technique, provide a
-                    comment along with the score at the technique level.</li>
-                <li>If the score and rational is specific to a group of sub-techniques, provide a comment along with the
-                    score at the sub-techniques level.</li>
-            </ul>
-            <li>Use the Mapping CLI to validate and produce ATT&CK Navigator layers for the mappings that you produce.
-                The tool can be applied to an individual mapping file or a directory of mapping files.</li>
+                the ATT&CK techniques and sub-techniques to which it maps. </li>
+            <li>When scoring a control's effectiveness at mitigating a technique or sub-technique, use the comment field
+                to provide an explanation of the assessment.</li>
         </ul>
     </div>
 </section>
