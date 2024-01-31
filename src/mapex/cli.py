@@ -113,14 +113,23 @@ def export_file(input_file, output_file, file_type):
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
 
-    # remove status field
+    # remove status, attack_version, and technology_domain fields
     # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
     for mapping in parsed_mappings["mapping_objects"]:
+<<<<<<< HEAD
         mapping.pop("status")
         if mapping.get("mapping_framework"):
             mapping.pop("mapping_framework")
         if mapping.get("mapping_framework_version"):
             mapping.pop("mapping_framework_version")
+=======
+        if mapping.get("status"):
+            mapping.pop("status")
+        if mapping.get("attack_version"):
+            mapping.pop("attack_version")
+        if mapping.get("technology_domain"):
+            mapping.pop("technology_domain")
+>>>>>>> 958561e (remove status, attack_version, and technology_domain fields from exports)
         if not mapping["attack_object_id"]:
             mapping["mapping_type"] = "non_mappable"
 
