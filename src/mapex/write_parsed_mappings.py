@@ -2,6 +2,7 @@ import json
 import uuid
 from datetime import datetime
 
+import os
 import pandas as pd
 import requests
 import yaml
@@ -9,28 +10,41 @@ from loguru import logger
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
+    filepath = f"{filepath}_json"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+
     json_file = open(
-        f"{filepath}_json.json",
+        f"{filepath_with_count}.json",
         "w",
         encoding="UTF-8",
     )
     json.dump(parsed_mappings, fp=json_file)
     logger.info(
-        "Successfully wrote mappings json file to {filepath}_json.json",
-        filepath=filepath,
+        "Successfully wrote mappings json file to {filepath_with_count}_json.json",
+        filepath_with_count=filepath_with_count,
     )
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.yaml"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     result_yaml_file = open(
-        f"{filepath}.yaml",
+        f"{filepath_with_count}.yaml",
         "w",
         encoding="UTF-8",
     )
     result_yaml_file.write(parsed_mappings_yaml)
     logger.info(
-        "Successfully wrote mappings yaml file to {filepath}.yaml", filepath=filepath
+        "Successfully wrote mappings yaml file to {filepath_with_count}.yaml",
+        filepath_with_count=filepath_with_count,
     )
 
 
@@ -91,16 +105,28 @@ def create_df(parsed_mappings):
 
 
 def write_parsed_mappings_csv(df, filepath):
-    df.to_csv(f"{filepath}.csv")
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.csv"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+    df.to_csv(f"{filepath_with_count}.csv")
     logger.info(
-        "Successfully wrote mappings csv file to {filepath}.csv", filepath=filepath
+        "Successfully wrote mappings csv file to {filepath_with_count}.csv",
+        filepath_with_count=filepath_with_count,
     )
 
 
 def write_parsed_mappings_excel(df, filepath):
-    df.to_excel(f"{filepath}.xlsx", index=False)
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.xlsx"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+    df.to_excel(f"{filepath_with_count}.xlsx", index=False)
     logger.info(
-        "Successfully wrote mappings excel file to {filepath}.xlsx", filepath=filepath
+        "Successfully wrote mappings excel file to {filepath_with_count}.xlsx",
+        filepath_with_count=filepath_with_count,
     )
 
 
@@ -110,15 +136,21 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
     domain = parsed_mappings["metadata"]["technology_domain"]
     attack_version = parsed_mappings["metadata"]["attack_version"]
     layer = create_layer(techniques_dict, mapping_type, domain, attack_version)
+    filepath = f"{filepath}_navigator_layer"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     navigator_layer = open(
-        f"{filepath}_navigator_layer.json",
+        f"{filepath_with_count}.json",
         "w",
         encoding="UTF-8",
     )
     json.dump(layer, fp=navigator_layer)
     logger.info(
-        "Successfully wrote mappings navigator layer file to {filepath}.json",
-        filepath=filepath,
+        "Successfully wrote navigator layer file to {filepath_with_count}.json",
+        filepath_with_count=filepath_with_count,
     )
 
 
@@ -171,15 +203,21 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 ),
             },
         )
-
+    filepath = f"{filepath}_stix"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     stix_file = open(
-        f"{filepath}_stix.json",
+        f"{filepath_with_count}.json",
         "w",
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
     logger.info(
-        "Successfully wrote mappings stix file to {filepath}.json", filepath=filepath
+        "Successfully wrote mappings stix file to {filepath_with_count}.json",
+        filepath_with_count=filepath_with_count,
     )
 
 
@@ -255,19 +293,19 @@ def load_attack_json(parsed_mappings):
         f"{BASE_URL}/enterprise-attack/enterprise-attack-{attack_version}.json"
     )
 
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     enterprise_attack_data = json.loads(response.text)
 
     # load mobile attack stix json to map technique ids to names
     enterpise_attack_url = (
         f"{BASE_URL}/mobile-attack/mobile-attack-{attack_version}.json"
     )
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     mobile_attack_data = json.loads(response.text)
 
     # load ics attack stix json to map technique ids to names
     enterpise_attack_url = f"{BASE_URL}/ics-attack/ics-attack-{attack_version}.json"
-    response = requests.get(enterpise_attack_url)
+    response = requests.get(enterpise_attack_url, verify=False)
     ics_attack_data = json.loads(response.text)
 
     domain_data = [enterprise_attack_data, mobile_attack_data, ics_attack_data]
