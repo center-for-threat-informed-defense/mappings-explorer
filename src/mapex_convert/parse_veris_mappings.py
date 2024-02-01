@@ -1,6 +1,11 @@
 import os
 
 import pandas as pd
+from pathlib import Path
+from loguru import logger
+from mapex_convert.read_files import read_csv_file
+
+ROOT_DIR = Path(os.path.abspath(os.curdir))
 
 
 def configure_veris_mappings(veris_mappings, domain):
@@ -39,7 +44,6 @@ def configure_veris_mappings(veris_mappings, domain):
         for veris_object in mapped_attack_object["veris"]:
             # if veris object is missing one of the sections, replace extra '.""'
             veris_object = veris_object.replace('.""', "")
-
             mapping_type_id = [
                 mapping_type
                 for mapping_type in mapping_types
@@ -59,26 +63,48 @@ def configure_veris_mappings(veris_mappings, domain):
                     "attack_object_id": attack_object,
                     "attack_object_name": mapped_attack_object["name"],
                     "references": [],
-                    "capability_description": description_dict[veris_object],
+                    "capability_description": description_dict[veris_object.lower()],
                     "capability_id": veris_object,
                     "mapping_type": mapping_type_id,
                     "capability_group": veris_group,
                     "status": "complete",
                 }
             )
+    non_mappables = get_non_mappables(domain, mappings_framework_version)
+    for veris_object in non_mappables:
+        veris_group = (
+            veris_object[: veris_object.index(".", veris_object.index(".") + 1)]
+            .replace(" ", "_")
+            .lower()
+        )
+        if veris_group not in capability_groups:
+            capability_groups[veris_group] = veris_group
+        parsed_mappings["mapping_objects"].append(
+            {
+                "comments": "",
+                "attack_object_id": None,
+                "attack_object_name": None,
+                "references": None,
+                "capability_description": description_dict[veris_object.lower()]
+                if description_dict.get(veris_object)
+                else "",
+                "capability_id": veris_object,
+                "mapping_type": None,
+                "capability_group": veris_group,
+                "status": "complete",
+            }
+        )
 
     parsed_mappings["metadata"]["capability_groups"] = capability_groups
     return parsed_mappings
 
 
 def create_description_dict(mappings_version):
-    ROOT_DIR = os.path.abspath(os.curdir)
-    enumerations_filepath = ROOT_DIR + "/src/mapex_convert/mappings/Veris/enumerations"
+    enumerations_filepath = ROOT_DIR / "src/mapex_convert/mappings/Veris/enumeration"
     if mappings_version == "1.3.5":
-        filepath = f"{enumerations_filepath}/veris135-enumerations.csv"
+        filepath = enumerations_filepath / "veris135-enumerations.csv"
     elif mappings_version == "1.3.7":
-        filepath = f"{enumerations_filepath}/veris1_3_7-enumerations-groups.csv"
-
+        filepath = enumerations_filepath / "veris1_3_7-enumerations-groups.csv"
     df = pd.read_csv(filepath)
 
     description_dict = {}
@@ -88,6 +114,39 @@ def create_description_dict(mappings_version):
         path = f"{row['AXES']}.{row['CATEGORY']}.{row['SUB CATEGORY']}.{row['VALUE']}"
         # if any of the veris paths do not have all sections, remove the extra '.'
         path = path.replace("..", ".")
-        description_dict[path] = row["DESCRIPTION"]
-
+        description_dict[path.lower()] = row["DESCRIPTION"]
     return description_dict
+
+
+def get_non_mappables(domain, mapping_framework_version):
+    non_mappables_filepath = ROOT_DIR / "src/mapex_convert/mappings/Veris/non-mappables"
+    non_mappables_df = pd.DataFrame()
+    valid_domain_and_version = True
+    if domain == "ics":
+        non_mappables_df = read_csv_file(
+            non_mappables_filepath / "veris_ics_aggregate_non_mappables.csv"
+        )
+    elif domain == "mobile":
+        non_mappables_df = read_csv_file(
+            non_mappables_filepath / "veris_mobile_aggregate_non_mappables.csv"
+        )
+    elif domain == "enterprise" and mapping_framework_version == "1.3.7":
+        non_mappables_df = read_csv_file(
+            non_mappables_filepath / "veris_enterprise_aggregate_non_mappables.csv"
+        )
+    elif mapping_framework_version == "1.3.5":
+        non_mappables_df = read_csv_file(
+            non_mappables_filepath / "veris_135_non_mappables.csv"
+        )
+    else:
+        valid_domain_and_version = False
+        logger.warning(
+            "No non-mappables for {domain} and {mapping_framewwork_version}",
+            domain=domain,
+            mapping_framework_version=mapping_framework_version,
+        )
+    if valid_domain_and_version:
+        non_mappables = []
+        for index, row in non_mappables_df.iterrows():
+            non_mappables.append(row["Non-Mappable"])
+        return non_mappables
