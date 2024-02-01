@@ -7,9 +7,9 @@
 
    <section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up">
+      {% include "_breadcrumbs.html.j2" %}
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
-          {{ macros.back_button(project.label, " Landing", url_prefix)}}
           <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ capability.id }}</span> Mappings</h1>
           {{description}}
         </div>
