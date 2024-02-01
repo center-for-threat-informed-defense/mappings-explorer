@@ -2,9 +2,9 @@ import json
 
 import requests
 from loguru import logger
+from mapex.write_parsed_mappings import create_layer, get_techniques_dict
 
 from .template import PUBLIC_DIR
-from mapex.write_parsed_mappings import create_layer, get_techniques_dict
 
 
 def get_attack_data(attack_version, attack_domain):
@@ -123,7 +123,7 @@ def build_attack_data_dict(attack_domains):
         they support
 
     Returns:
-        A dictionary mapping an attack domain and version to pertinent attack information
+        A dictionary mapping an attack domain and version to attack information
 
     """
     attack_data_dict = {}
