@@ -62,8 +62,8 @@ To get started, visit the project website.
 
 | Resource                       | Description                                      |
 | ------------------------------ | ------------------------------------------------ |
-| [Mappings Explorer Website](#) | Access and explore mapped security capabilities. |
-| [Mappings Editor (beta)](#)    | Lightweight tool to create or update mappings.   |
+| [Mappings Explorer Website](<!-- TODO Add link>) | Access and explore mapped security capabilities. |
+| [Mappings Editor (beta)](#<!-- TODO Add link>)    | Lightweight tool to create or update mappings.   |
 
 ## Getting Involved
 
