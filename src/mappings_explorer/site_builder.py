@@ -794,7 +794,7 @@ def parse_techniques(
         projects: list of projects that contain mappings to sort through
 
     Returns:
-        List of capability objects
+        List of technique objects
     """
     techniques = []
     for project in projects:
@@ -833,6 +833,28 @@ def parse_techniques(
     return techniques
 
 
+def parse_non_mappable_techniques(attack_data: dict, techniques: list):
+    """Create a list of non-mappable objects for all ATT&CK techniques in each version
+        Adds all technique objects that do not have mappings associated with them
+    Args:
+        attack_data: ATT&CK data containing technique metadata
+        techniques: list of technique objects that are mappable
+
+    Returns:
+        List of technique objects
+    """
+    non_mappables = []
+    for technique in attack_data:
+        if technique["id"] not in [t.id for t in techniques]:
+            if technique.get("id")[:2] != "TA":
+                t = Technique()
+                t.id = technique["id"]
+                t.label = technique["name"]
+                t.description = technique["description"]
+                non_mappables.append(t)
+    return non_mappables
+
+
 def parse_tactics(
     attack_version: str,
     attack_domain: str,
@@ -851,7 +873,7 @@ def parse_tactics(
         techniques: list of technique objects to be assigned to a given tactic
 
     Returns:
-        List of capability objects
+        List of tactic objects
     """
 
     tactic_dict = load_tactic_structure(
@@ -922,6 +944,10 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 projects=projects,
                 techniques=all_techniques,
             )
+            non_mappables = parse_non_mappable_techniques(
+                attack_data=attack_data,
+                techniques=all_techniques,
+            )
             external_dir = (
                 PUBLIC_DIR
                 / "attack"
@@ -937,6 +963,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 techniques=all_techniques,
                 tactics=all_tactics,
                 breadcrumbs=breadcrumbs,
+                non_mappables=non_mappables,
             )
             for technique in all_techniques:
                 external_dir = (
@@ -1110,6 +1137,7 @@ def build_technique_landing_page(
     techniques,
     tactics,
     breadcrumbs,
+    non_mappables,
 ):
     """Builds default pages that list all tactics and techiniques
     Args:
@@ -1119,6 +1147,8 @@ def build_technique_landing_page(
         attack_domain: ATT&CK domain to build page for
         techniques: list of all techniques to be listed in technique page
         tactics: list of all tactics to be listed in tactic page
+        breadcrumbs: the navigation tree above the page being built in this function
+        non_mappables: list of techniques that are non_mappable
     """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/"
@@ -1131,8 +1161,9 @@ def build_technique_landing_page(
         ("num_subtechniques", "Number of Subtechniques"),
     ]
     non_mappable_headers = [
-        ("id", "ATT&CK ID", "id", attack_prefix),
-        ("label", "ATT&CK Name", "id", attack_prefix),
+        ("id", "ATT&CK ID"),
+        ("label", "ATT&CK Name"),
+        # ("description", "Description"),
     ]
     description = """Techniques represent 'how' an adversary achieves a tactical goal by
       performing an action. For example, an adversary may dump credentials to achieve
@@ -1150,8 +1181,6 @@ def build_technique_landing_page(
     output_path = dir / "index.html"
     prev_page = parent_dir
     template = load_template("attack_landing.html.j2")
-    # temporary: until we can parse non mappables
-    non_mappables = [{"id": "T1652", "label": "Device Driver Discovery"}]
     stream = template.stream(
         title="ATT&CK Techniques",
         description=description,
