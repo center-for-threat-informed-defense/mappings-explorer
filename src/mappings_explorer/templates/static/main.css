@@ -2801,16 +2801,19 @@ td a:hover {
     position: absolute;
     z-index: 999;
     border-radius: 3px;
-    margin-left: -2.5%;
-    margin-top: -2.5%;
+    margin-left: -5%;
     background-color: lightblue;
     color: #212c5e;
     padding: 8px;
-    width: 120px !important;
+    width: 150px !important;
     opacity: 0.95;
     text-overflow: ellipsis !important;
     box-shadow: 2px 2px 10px #ababab;
     font-size: 12px;
+  }
+
+  .technique-tooltip ul {
+    margin-bottom: 0 !important;
   }
 
   .header-row {
@@ -2887,6 +2890,11 @@ td a:hover {
 
   .selected-option {
     background-color: #ededeb;
+  }
+
+  .mapped-capability-list {
+    list-style-position: inside;
+    padding-left: 0;
   }
 }
 

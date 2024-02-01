@@ -195,9 +195,11 @@
           <hr class="header-row"/>
           <span>Mapped To:</span>
           <br/>
-          <span>
-            [[ techniqueHovered.score_text ]]
-          </span>
+          <ul class="mapped-capability-list">
+            <li v-for="mappedCapability in techniqueHovered.mapped_capabilities">
+              [[ mappedCapability ]]
+            </li>
+          </ul>
         </div>
       </div>
   `,
