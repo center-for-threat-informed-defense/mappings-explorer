@@ -156,14 +156,18 @@ def add_mappings_to_navigator_layer_dict(mappings, navigator_layer_dict):
     domain = metadata["technology_domain"]
     attack_version = metadata["attack_version"]
     mapping_objects = mappings["mapping_objects"]
-    if domain in navigator_layer_dict:
-        if attack_version in navigator_layer_dict[domain]:
-            navigator_layer_dict[domain][attack_version].append(mapping_objects[0])
+    mapping_framework = metadata["mapping_framework"]
+    mapping_framework_version = metadata["mapping_framework_version"]
+    # only count nist_800_53 for rev5
+    if mapping_framework != "nist_800_53" or mapping_framework_version == "rev5":
+        if domain in navigator_layer_dict:
+            if attack_version in navigator_layer_dict[domain]:
+                navigator_layer_dict[domain][attack_version].extend(mapping_objects)
+            else:
+                navigator_layer_dict[domain][attack_version] = mapping_objects
         else:
+            navigator_layer_dict[domain] = {}
             navigator_layer_dict[domain][attack_version] = mapping_objects
-    else:
-        navigator_layer_dict[domain] = {}
-        navigator_layer_dict[domain][attack_version] = mapping_objects
 
 
 def write_matrix_jsons(attack_data_dict, output_filepath):
@@ -175,6 +179,8 @@ def write_matrix_jsons(attack_data_dict, output_filepath):
     """
     for attack_version, attack_domain_dict in attack_data_dict.items():
         for domain, attack_data in attack_domain_dict.items():
+            add_background_colors(attack_data)
+
             filepath = output_filepath / domain / attack_version
             matrix_filepath = filepath / f"{domain}-{attack_version}_matrix_data.json"
             matrix_filepath.parent.mkdir(parents=True, exist_ok=True)
