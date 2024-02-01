@@ -2897,3 +2897,34 @@ td a:hover {
   margin-left: 10px;
   list-style-type: square !important;
 }
+#nonmappable-table {
+  overflow: visible;
+}
+#nonmappable-table h2 {
+  margin-bottom: 0;
+}
+#nonmappable-table img {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+#nonmappable-table .tooltip-img {
+  margin: auto;
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+}
+#nonmappable-table .tooltip-text{
+  visibility: hidden;
+  background-color: var(--color-primary);
+  padding: 8px;
+  border-radius: 10px;
+  width: 500px;
+  bottom: 30px;
+  right: -250px;
+  z-index: 1000000;
+  position: absolute;
+}
+#nonmappable-table .tooltip-img:hover .tooltip-text {
+  visibility: visible;
+}

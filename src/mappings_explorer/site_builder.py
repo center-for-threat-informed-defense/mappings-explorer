@@ -67,6 +67,7 @@ class ExternalControl:
     capability_groups = []
     mappings = []
     capabilities = []
+    non_mappables = []
 
 
 all_attack_versions = [
@@ -333,9 +334,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
                 count=len(filtered_mappings),
                 g_label=g.label,
             )
-    project.capabilities = parse_capabilities(
+    parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
+    mappings = [m for m in mappings if m["status"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
@@ -434,6 +436,7 @@ def parse_capabilities(
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
+    non_mappables = []
     for id in capabilityIds:
         c = Capability()
         c.id = id
@@ -459,8 +462,13 @@ def parse_capabilities(
             id=c.id,
             count=str(len(c.mappings)),
         )
-        capabilities.append(c)
-    return capabilities
+        if c.mappings[0]["status"] == "non_mappable":
+            non_mappables.append(c)
+        else:
+            capabilities.append(c)
+
+    project.non_mappables = non_mappables
+    project.capabilities = capabilities
 
 
 def build_external_landing(
@@ -521,9 +529,13 @@ def build_external_landing(
 
     capability_group_headers = [
         ("id", "ID", "id", external_prefix),
-        ("label", "Control Family", "id", external_prefix),
+        ("label", "Capability Group Name", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_capabilities", "Number of Capabilities"),
+    ]
+    non_mappable_headers = [
+        ("id", "Capability ID"),
+        ("label", "Capability Description"),
     ]
     project_id = project.id
     if project_id == "nist":
@@ -546,6 +558,8 @@ def build_external_landing(
         capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
         breadcrumbs=breadcrumbs,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=project.non_mappables,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -1116,6 +1130,10 @@ def build_technique_landing_page(
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
     ]
+    non_mappable_headers = [
+        ("id", "ATT&CK ID", "id", attack_prefix),
+        ("label", "ATT&CK Name", "id", attack_prefix),
+    ]
     description = """Techniques represent 'how' an adversary achieves a tactical goal by
       performing an action. For example, an adversary may dump credentials to achieve
       credential access.
@@ -1132,6 +1150,8 @@ def build_technique_landing_page(
     output_path = dir / "index.html"
     prev_page = parent_dir
     template = load_template("attack_landing.html.j2")
+    # temporary: until we can parse non mappables
+    non_mappables = [{"id": "T1652", "label": "Device Driver Discovery"}]
     stream = template.stream(
         title="ATT&CK Techniques",
         description=description,
@@ -1146,6 +1166,8 @@ def build_technique_landing_page(
         domains=attack_domains,
         valid_versions=valid_versions,
         breadcrumbs=technique_nav,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=non_mappables,
     )
     stream.dump(str(output_path))
     description = """Tactics represent the "why" of an ATT&CK technique or
