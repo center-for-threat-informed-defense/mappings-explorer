@@ -1504,6 +1504,16 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created methodology page")
+    nav1 = nav + [(f"{url_prefix}about/scoring/", "Scoring Rubric")]
+    dir = PUBLIC_DIR / "about" / "scoring"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("scoring_rubric.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Scoring", url_prefix=url_prefix, breadcrumbs=nav1
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created scoring page")
 
 
 def main():
