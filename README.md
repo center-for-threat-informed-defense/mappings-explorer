@@ -1,78 +1,88 @@
 # Mappings Explorer
 
-<!-- TODO Put a one paragraph summary of the project here. -->
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
+Mappings Explorer enables cyber defenders to understand how security controls
+and capabilities map onto the adversary behaviors catalogued in the MITRE ATT&CK®
+knowledge base. The[Center for Threat-Informed Defense}(https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created these open source
+mappings to serve as a bridge between the threat-informed approach to cybersecurity
+and the traditional perspective applied to the employment of security controls.
 
 **Table Of Contents:**
 
-<!--
-TODO The table of contents should include only h2-h6, NOT h1. The "Markdown All In One"
-extension for VS Code will update the TOC automatically for you:
-https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
-Set the extension's TOC:Levels setting to "2..6"
--->
-
+- [Overview](#overview)
 - [Getting Started](#getting-started)
 - [Getting Involved](#getting-involved)
 - [Questions and Feedback](#questions-and-feedback)
-- [How Do I Contribute?](#how-do-i-contribute)
 - [Notice](#notice)
+
+## Overview
+
+The website provides an open, curated knowledge base of Center mapping projects between
+the ATT&CK framework and security capabilities/controls. The mappings have been brought
+into a structured data format, allowing for this expanded accessibility and usability
+including search capabilities. A customizable ATT&CK Navigator of the control framework
+mappings is provided for visual exploration of the mappings and viewing mapping coverage.
+Usage documentation is also hosted on Mappings Explorer, including mapping methodologies
+to determine the capabilities of a platform's security offerings and use cases to
+demonstrate how the mappings can be used. In addition, the mapping resources are linked
+via the website, making them easy to download.
+
+# Mappings Explorer
+
+You can use Mappings Explorer for many different purposes. Examples of usage include:
+
+Align cyber defense to adversary behavior.
+
+- Explore how your current or promposedproposed security controls can be used to detect,
+  prevent, mitigate, or respond to specific adversary behaviors seen in the wild.
+
+Expand the Vocabulary for Incident Response.
+
+- The VERIS mappings connect the incident response terminology of the Verizon DBIR to
+  the adversary behavior in MITRE ATT&CK for a more complete analysis of any breach.
+
+Assess Unpatched Vulnerabilities.
+
+- The CVE mappings help understand how adversaries might exploit unpatched vulnerabilities
+  and what the knock-on effects could be.
+
+Evolve and Expand Cyber Defense.
+
+- Visualize and assess deficiencies in cyber defense. Plan future policy and security
+  controls around real-world adversary behavior.
+
+# Mappings Editor
+
+The Mappings Editor is a custom-built tool developed under the Mappings Explorer project.
+This lightweight, easy to use tool is being used internally by the Center to create new
+and update existing capability mappings to ATT&CK objects.
 
 ## Getting Started
 
-<!-- TODO Write one paragraph about how users should get started,
-     and update the table of resources below. -->
+To get started, visit the project website.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
-
-| Resource        | Description              |
-| --------------- | ------------------------ |
-| [Resource 1](#) | Description of resource. |
-| [Resource 2](#) | Description of resource. |
-| [Resource 3](#) | Description of resource. |
+| Resource                       | Description                                      |
+| ------------------------------ | ------------------------------------------------ |
+| [Mappings Explorer Website](<!-- TODO Add link>) | Access and explore mapped security capabilities. |
+| [Mappings Editor (beta)](#<!-- TODO Add link>)    | Lightweight tool to create or update mappings.   |
 
 ## Getting Involved
 
-<!-- TODO Add some bullets telling users how to get involved. -->
-
 There are several ways that you can get involved with this project and help
-advance threat-informed defense:
+advance threat-informed defense.
 
-- **Way to get involved 1.** Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-- **Way to get involved 2.** Ut enim ad minim veniam, quis nostrud exercitation ullamco
-  laboris nisi ut aliquip ex ea commodo consequat.
-- **Way to get involved 3.** Duis aute irure dolor in reprehenderit in voluptate velit
-  esse cillum dolore eu fugiat nulla pariatur.
+We welcome your feedback and contributions to continue to advance Mappings Explorer.
+You are also welcome to submit issues for any technical questions/concerns.
+
+If you are interested in learning more about the Mappings Editor tool, please contact
+the [Center](mailto:ctid@mitre-engenuity.org?subject=subject=Question%20about%20mappings-explorer).
 
 ## Questions and Feedback
 
-Please submit issues for any technical questions/concerns or contact
-[ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=Question%20about%20mappings-explorer)
-directly for more general inquiries.
+We welcome your feedback and contributions to help advance Mappings Explorer.
+Please see the guidance for contributors if are you interested in
+[contributing or simply reporting issues.](/CONTRIBUTING.md)
 
-Also see the guidance for contributors if are you interested in contributing or simply
-reporting issues.
-
-## How Do I Contribute?
-
-We welcome your feedback and contributions to help advance
-Mappings Explorer. Please see the guidance for contributors if are you
-interested in [contributing or simply reporting issues.](/CONTRIBUTING.md)
-
-Please submit
-[issues](https://github.com/center-for-threat-informed-defense/mappings-explorer/issues) for
+Please submit[issues](https://github.com/center-for-threat-informed-defense/mappings-explorer/issues) for
 any technical questions/concerns or contact
 [ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=subject=Question%20about%20mappings-explorer)
 directly for more general inquiries.
