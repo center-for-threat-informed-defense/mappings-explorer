@@ -68,6 +68,7 @@ class ExternalControl:
     mappings = []
     capabilities = []
     non_mappables = []
+    has_non_mappables = True
 
 
 all_attack_versions = [
@@ -176,6 +177,7 @@ def load_projects():
         ("rev5", "12.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
+    nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
     veris = ExternalControl()
     veris.id = "veris"
@@ -220,6 +222,7 @@ def load_projects():
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
     cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
+    cve.has_non_mappables = False
     cve.mappings = []
 
     aws = ExternalControl()
@@ -462,7 +465,7 @@ def parse_capabilities(
             id=c.id,
             count=str(len(c.mappings)),
         )
-        if c.mappings[0]["status"] == "non_mappable":
+        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
             non_mappables.append(c)
         else:
             capabilities.append(c)
@@ -560,6 +563,7 @@ def build_external_landing(
         breadcrumbs=breadcrumbs,
         non_mappable_headers=non_mappable_headers,
         non_mappables=project.non_mappables,
+        project=project,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -926,6 +930,9 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
+        all_techniques = []
+        all_tactics = []
+        non_mappables = []
         for attack_version in attack_domains[attack_domain]:
             logger.info(
                 f"Creating pages for ATT&CK {attack_version} {attack_domain}..."
