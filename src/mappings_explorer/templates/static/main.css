@@ -124,6 +124,9 @@ section.version-select {
 .white-bg {
   background-color: white;
 }
+.uppercase {
+  text-transform: uppercase;
+}
 
 /*--------------------------------------------------------------
   # Breadcrumbs
@@ -917,7 +920,7 @@ section#user-stories button.accordion-button div {
   padding-bottom: 40px;
 }
 
-.version-select h2 {
+.version-select h2, #matrix-table h2 {
   text-transform: uppercase;
   font-family: var(--font-default);
   font-weight: 700;
