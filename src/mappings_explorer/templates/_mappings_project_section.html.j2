@@ -4,13 +4,12 @@
             <div>
                 <h4 class="title"><a href="{{url_prefix}}external/{{framework.id}}/" class="stretched-link">{{framework.label}}</a></h4>
                 <blockquote>
-                <p>{{framework.description[0]}}</p>
+                <p>{{framework.description}}</p>
                 </blockquote>
                 <div class="section-details">
                 <p>
-                    {#<span><strong>{{projects.mappings | length}}</strong> Mappings</span>#}
                     <span>ATT&CK {{ 'Versions' if framework.attackVersions|length > 1 else 'Version' }} <strong>{{framework.attackVersions |join(', ')}}</strong></span>
-                    {% if framework.versions|length > 1%}<span>Project Versions <strong>{{framework.versions |join(', ')}}</strong></span>{% endif %}
+                    <span>ATT&CK {{ 'Domains' if framework.attackDomains|length > 1 else 'Domain' }} <strong>{{framework.attackDomains |join(', ')}}</strong></span>
                 </p>
                 <a href="{{url_prefix}}external/{{framework.id}}/" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
                 </div>

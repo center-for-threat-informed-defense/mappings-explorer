@@ -56,7 +56,8 @@ class CapabilityGroup:
 class ExternalControl:
     id = ""
     label = ""
-    description = []
+    description = ""
+    resources = []
     version = ""
     versions = []
     attackVersion = ""
@@ -144,20 +145,13 @@ def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
-    nist.description = [
-        """The NIST 800-53 is a cybersecurity standard and compliance framework
-        developed by the National Institute of Standards in Technology. It’s a
-        continuously updated framework that tries to flexibly define standards, controls
-        , and assessments based on risk, cost-effectiveness, and capabilities.""",
-        """The NIST 800-53 framework is designed to provide a foundation of guiding
-         elements, strategies, systems, and controls, that can agnostically support any
-         organization’s cybersecurity needs and priorities. By establishing a framework
-         available to all, it fosters communication and allows organizations to speak
-         using a shared language. Lastly, because it doesn’t specifically support or
-         suggest specific tools, companies, or vendors (intentionally so), it’s designed
-         to be used as new technologies, systems, environments, and organizational
-         changes arise, shifting cybersecurity needs.""",
-    ]
+    nist.description = """National Institute of Standards in Technology (NIST) Special
+     Publication 800-53 provides a catalog of security and privacy controls for the
+     protection of information systems and organizations from a diverse set of threats
+     and risks. This project provides resources for assessing security control coverage
+     against real-world threats as described in the ATT&CK knowledge base and
+     provide a foundation for integrating ATT&CK-based threat information into the
+     risk management process."""
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
         "12.1",
@@ -178,17 +172,18 @@ def load_projects():
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
+    nist.resources = [{"link": "references/nist_scope.md", "label": "Mappings Scope"}]
+
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
-    veris.description = [
-        """The Vocabulary for Event Recording and Incident Sharing (VERIS) provides a
+    veris.description = """The Vocabulary for Event Recording and Incident Sharing
+    (VERIS) provides a
          common language for describing security incidents in a structured and
          repeatable manner that allows for the analysis of data across a variety of
          incidents. This project provides mappings to better connect the who, what, and
          why captured in VERIS incident representation with the when and how described
          in ATT&CK adversary behavioral tactics and techniques."""
-    ]
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -207,14 +202,14 @@ def load_projects():
     cve = ExternalControl()
     cve.id = "cve"
     cve.label = "CVE"
-    cve.description = [
-        """The Common Vulnerabilities and Exposures (CVE®) Program provides a catalog of
+    cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
+      provides a catalog of
          publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
          community to communicate consistent descriptions of vulnerabilities. This
          project uses the adversary behaviors described in ATT&CK to characterize the
          impact of vulnerabilities from CVE, establishing a critical connection between
          vulnerability management, threat modeling, and compensating controls. """
-    ]
+
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.21.2021"]
@@ -226,13 +221,12 @@ def load_projects():
     aws = ExternalControl()
     aws.id = "aws"
     aws.label = "AWS"
-    aws.description = [
-        """Amazon Web Services (AWS) is a widely used cloud computing platform. This
+    aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
+      platform. This
          project maps the security controls native to the (AWS) platform to ATT&CK,
          providing resources to assess how to protect, detect, and respond to real-world
          threats as described in the ATT&CK knowledge base.
         """
-    ]
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
@@ -243,12 +237,11 @@ def load_projects():
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
-    azure.description = [
-        """Azure is a widely used cloud computing platform. This project maps the
+    azure.description = """Azure is a widely used cloud computing platform. This
+      project maps the
          security controls native to the Azure platform to ATT&CK, providing resources
          to assess how to protect, detect, and respond to real-world threats as
          described in the ATT&CK knowledge base."""
-    ]
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
@@ -259,12 +252,12 @@ def load_projects():
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
-    gcp.description = [
-        """Google Cloud Platform (GCP) is a widely used cloud computing platform. This
+    gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
+      platform. This
          project maps the security controls native to the GCP platform to ATT&CK
          providing resources to assess how to protect, detect, and respond to real-world
          threats as described in the ATT&CK knowledge base."""
-    ]
+
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
