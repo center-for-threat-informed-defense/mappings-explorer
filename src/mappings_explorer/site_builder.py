@@ -1494,6 +1494,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created use cases page")
+
     nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
     dir = PUBLIC_DIR / "about" / "methodology"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1504,6 +1505,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created methodology page")
+
     nav1 = nav + [(f"{url_prefix}about/scoring/", "Scoring Rubric")]
     dir = PUBLIC_DIR / "about" / "scoring"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1514,6 +1516,19 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created scoring page")
+
+    nav1 = nav + [(f"{url_prefix}about/related-projects/", "Related Projects")]
+    dir = PUBLIC_DIR / "about" / "related-projects"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("related_projects.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Related Projects",
+        url_prefix=url_prefix,
+        breadcrumbs=nav1,
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created Related Projects page")
 
 
 def main():
