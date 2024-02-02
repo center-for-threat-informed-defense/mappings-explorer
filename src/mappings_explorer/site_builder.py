@@ -172,7 +172,9 @@ def load_projects():
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
-    nist.resources = [{"link": "references/nist_scope.md", "label": "Mappings Scope"}]
+    nist.resources = [
+        {"link": "static/references/nist_scope.md", "label": "Mappings Scope"}
+    ]
 
     veris = ExternalControl()
     veris.id = "veris"
