@@ -67,6 +67,8 @@ class ExternalControl:
     capability_groups = []
     mappings = []
     capabilities = []
+    non_mappables = []
+    has_non_mappables = True
 
 
 all_attack_versions = [
@@ -175,6 +177,7 @@ def load_projects():
         ("rev5", "12.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
+    nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
     veris = ExternalControl()
     veris.id = "veris"
@@ -219,6 +222,7 @@ def load_projects():
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
     cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
+    cve.has_non_mappables = False
     cve.mappings = []
 
     aws = ExternalControl()
@@ -333,9 +337,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
                 count=len(filtered_mappings),
                 g_label=g.label,
             )
-    project.capabilities = parse_capabilities(
+    parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
+    mappings = [m for m in mappings if m["status"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
@@ -434,6 +439,7 @@ def parse_capabilities(
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
+    non_mappables = []
     for id in capabilityIds:
         c = Capability()
         c.id = id
@@ -459,8 +465,13 @@ def parse_capabilities(
             id=c.id,
             count=str(len(c.mappings)),
         )
-        capabilities.append(c)
-    return capabilities
+        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
+            non_mappables.append(c)
+        else:
+            capabilities.append(c)
+
+    project.non_mappables = non_mappables
+    project.capabilities = capabilities
 
 
 def build_external_landing(
@@ -521,9 +532,13 @@ def build_external_landing(
 
     capability_group_headers = [
         ("id", "ID", "id", external_prefix),
-        ("label", "Control Family", "id", external_prefix),
+        ("label", "Capability Group Name", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_capabilities", "Number of Capabilities"),
+    ]
+    non_mappable_headers = [
+        ("id", "Capability ID"),
+        ("label", "Capability Description"),
     ]
     project_id = project.id
     if project_id == "nist":
@@ -546,6 +561,9 @@ def build_external_landing(
         capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
         breadcrumbs=breadcrumbs,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=project.non_mappables,
+        project=project,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -780,7 +798,7 @@ def parse_techniques(
         projects: list of projects that contain mappings to sort through
 
     Returns:
-        List of capability objects
+        List of technique objects
     """
     techniques = []
     for project in projects:
@@ -819,6 +837,28 @@ def parse_techniques(
     return techniques
 
 
+def parse_non_mappable_techniques(attack_data: dict, techniques: list):
+    """Create a list of non-mappable objects for all ATT&CK techniques in each version
+        Adds all technique objects that do not have mappings associated with them
+    Args:
+        attack_data: ATT&CK data containing technique metadata
+        techniques: list of technique objects that are mappable
+
+    Returns:
+        List of technique objects
+    """
+    non_mappables = []
+    for technique in attack_data:
+        if technique["id"] not in [t.id for t in techniques]:
+            if technique.get("id")[:2] != "TA":
+                t = Technique()
+                t.id = technique["id"]
+                t.label = technique["name"]
+                t.description = technique["description"]
+                non_mappables.append(t)
+    return non_mappables
+
+
 def parse_tactics(
     attack_version: str,
     attack_domain: str,
@@ -837,7 +877,7 @@ def parse_tactics(
         techniques: list of technique objects to be assigned to a given tactic
 
     Returns:
-        List of capability objects
+        List of tactic objects
     """
 
     tactic_dict = load_tactic_structure(
@@ -890,6 +930,9 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
+        all_techniques = []
+        all_tactics = []
+        non_mappables = []
         for attack_version in attack_domains[attack_domain]:
             logger.info(
                 f"Creating pages for ATT&CK {attack_version} {attack_domain}..."
@@ -908,6 +951,10 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 projects=projects,
                 techniques=all_techniques,
             )
+            non_mappables = parse_non_mappable_techniques(
+                attack_data=attack_data,
+                techniques=all_techniques,
+            )
             external_dir = (
                 PUBLIC_DIR
                 / "attack"
@@ -923,6 +970,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 techniques=all_techniques,
                 tactics=all_tactics,
                 breadcrumbs=breadcrumbs,
+                non_mappables=non_mappables,
             )
             for technique in all_techniques:
                 external_dir = (
@@ -1096,6 +1144,7 @@ def build_technique_landing_page(
     techniques,
     tactics,
     breadcrumbs,
+    non_mappables,
 ):
     """Builds default pages that list all tactics and techiniques
     Args:
@@ -1105,6 +1154,8 @@ def build_technique_landing_page(
         attack_domain: ATT&CK domain to build page for
         techniques: list of all techniques to be listed in technique page
         tactics: list of all tactics to be listed in tactic page
+        breadcrumbs: the navigation tree above the page being built in this function
+        non_mappables: list of techniques that are non_mappable
     """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/"
@@ -1115,6 +1166,11 @@ def build_technique_landing_page(
         ("label", "ATT&CK Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
+    ]
+    non_mappable_headers = [
+        ("id", "ATT&CK ID"),
+        ("label", "ATT&CK Name"),
+        # ("description", "Description"),
     ]
     description = """Techniques represent 'how' an adversary achieves a tactical goal by
       performing an action. For example, an adversary may dump credentials to achieve
@@ -1146,6 +1202,8 @@ def build_technique_landing_page(
         domains=attack_domains,
         valid_versions=valid_versions,
         breadcrumbs=technique_nav,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=non_mappables,
     )
     stream.dump(str(output_path))
     description = """Tactics represent the "why" of an ATT&CK technique or
