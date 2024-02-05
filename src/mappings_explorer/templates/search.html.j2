@@ -205,6 +205,7 @@
        * create an array with all attack versions that appear in the results
        */
       getAttackVersionsInResults(){
+        let attackVersions = [];
         if (this.results.results.length) {
           this.results.results.forEach(result => {
             let attackVersion = this.getStringFromUrl(result.ref, "attack-");
