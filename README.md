@@ -1,8 +1,8 @@
 # Mappings Explorer
 
 Mappings Explorer enables cyber defenders to understand how security controls
-and capabilities map onto the adversary behaviors catalogued in the MITRE ATT&CK®
-knowledge base. The[Center for Threat-Informed Defense}(https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created these open source
+and capabilities map onto the adversary behaviors catalogued in the [MITRE ATT&CK®](https://attack.mitre.org/)
+knowledge base. The [Center for Threat-Informed Defense}(https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created these open source
 mappings to serve as a bridge between the threat-informed approach to cybersecurity
 and the traditional perspective applied to the employment of security controls.
 
