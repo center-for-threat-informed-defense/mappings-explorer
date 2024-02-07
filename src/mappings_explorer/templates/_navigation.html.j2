@@ -14,21 +14,23 @@
   <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
   <nav id="navbar" class="navbar">
     <ul>
-      <li class="dropdown"><a href="#"><span>ABOUT</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+      <li class="dropdown"><a href="{{url_prefix}}about/"><span>ABOUT</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
           <li><a href="{{url_prefix}}about/">Overview</a></li>
           <li><a href="{{url_prefix}}about/methodology/">Methodology</a></li>
+          <li><a href="{{url_prefix}}about/related-projects/">Related Projects</a></li>
+          <li><a href="{{url_prefix}}about/scoring/">Scoring Rubric</a></li>
           <li><a href="{{url_prefix}}about/use-cases/">Use Cases</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#"><span>ATT&CK OBJECTS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+      <li class="dropdown"><a href="{{url_prefix}}attack/matrix/"><span>ATT&CK OBJECTS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
-          <li><a href="{{url_prefix}}attack/matrix/">ATT&CK Matrix</a></li>
+          <li><a href="{{url_prefix}}attack/matrix/">Matrix</a></li>
           <li><a href="{{url_prefix}}attack/attack-10.1/domain-enterprise/tactics/">Tactics</a></li>
           <li><a href="{{url_prefix}}attack/attack-10.1/domain-enterprise/techniques/">Techniques</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a href="#"><span>MAPPING FRAMEWORKS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+      <li class="dropdown"><a href="{{url_prefix}}external"><span>MAPPING FRAMEWORKS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
         <ul>
           <li><a href="{{url_prefix}}external">About Mappings</a></li>
           <li><a href="{{url_prefix}}external/aws/">Amazon Web Services (AWS)</a></li>
@@ -39,7 +41,7 @@
           <li><a href="{{url_prefix}}external/veris/">VERIS</a></li>
         </ul>
       </li>
-      <li style="padding: 10px;">
+      <li style="padding-left: 20px;">
         <div class="input-group rounded">
           <input
             type="search"

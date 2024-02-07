@@ -56,7 +56,8 @@ class CapabilityGroup:
 class ExternalControl:
     id = ""
     label = ""
-    description = []
+    description = ""
+    resources = []
     version = ""
     versions = []
     attackVersion = ""
@@ -144,21 +145,13 @@ def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
-    nist.description = [
-        """The NIST 800-53 is a cybersecurity standard and compliance framework
-        developed by the National Institute of Standards in Technology. It’s a
-        continuously updated framework that tries to flexibly define standards, controls
-        , and assessments based on risk, cost-effectiveness, and capabilities. Currently
-        , the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.""",
-        """The NIST 800-53 framework is designed to provide a foundation of guiding
-         elements, strategies, systems, and controls, that can agnostically support any
-         organization’s cybersecurity needs and priorities. By establishing a framework
-         available to all, it fosters communication and allows organizations to speak
-         using a shared language. Lastly, because it doesn’t specifically support or
-         suggest specific tools, companies, or vendors (intentionally so), it’s designed
-         to be used as new technologies, systems, environments, and organizational
-         changes arise, shifting cybersecurity needs.""",
-    ]
+    nist.description = """National Institute of Standards in Technology (NIST) Special
+     Publication 800-53 provides a catalog of security and privacy controls for the
+     protection of information systems and organizations from a diverse set of threats
+     and risks. This project provides resources for assessing security control coverage
+     against real-world threats as described in the ATT&CK knowledge base and
+     provide a foundation for integrating ATT&CK-based threat information into the
+     risk management process."""
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
         "12.1",
@@ -179,16 +172,20 @@ def load_projects():
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
+    nist.resources = [
+        {"link": "static/references/nist_scope.md", "label": "Mappings Scope"}
+    ]
+
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
-    veris.description = [
-        """The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of
-         metrics designed to provide a common language for describing security incidents
-         in a structured and repeatable manner. The overall goal is to lay a foundation
-         from which we can constructively and cooperatively learn from our experiences
-         to better measure and manage risk. """
-    ]
+    veris.description = """The Vocabulary for Event Recording and Incident Sharing
+    (VERIS) provides a
+         common language for describing security incidents in a structured and
+         repeatable manner that allows for the analysis of data across a variety of
+         incidents. This project provides mappings to better connect the who, what, and
+         why captured in VERIS incident representation with the when and how described
+         in ATT&CK adversary behavioral tactics and techniques."""
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -207,16 +204,14 @@ def load_projects():
     cve = ExternalControl()
     cve.id = "cve"
     cve.label = "CVE"
-    cve.description = [
-        """Common Vulnerabilities and Exposures (CVE) is a database of publicly
-         available information security issues. CVE provides a convenient, reliable way
-         for vendors, enterprises, academics, and all other interested parties to
-         exchange information about cyber security issues. Sharing CVE details is
-         beneficial to all organizations it allows organizations to set a baseline for
-         evaluating the coverage of their security tools. CVE numbers allow
-         organizations to see what each tool covers and how appropriate they are
-         for your organization."""
-    ]
+    cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
+      provides a catalog of
+         publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
+         community to communicate consistent descriptions of vulnerabilities. This
+         project uses the adversary behaviors described in ATT&CK to characterize the
+         impact of vulnerabilities from CVE, establishing a critical connection between
+         vulnerability management, threat modeling, and compensating controls. """
+
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.21.2021"]
@@ -228,12 +223,12 @@ def load_projects():
     aws = ExternalControl()
     aws.id = "aws"
     aws.label = "AWS"
-    aws.description = [
-        """This project maps the security controls native to the Amazon Web Services
-        (AWS) platform to ATT&CK. AWS users can use these mappings to evaluate the
-        effectiveness of their native cloud security controls against an array of ATT&CK
-        techniques."""
-    ]
+    aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
+      platform. This
+         project maps the security controls native to the (AWS) platform to ATT&CK,
+         providing resources to assess how to protect, detect, and respond to real-world
+         threats as described in the ATT&CK knowledge base.
+        """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
@@ -244,12 +239,11 @@ def load_projects():
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
-    azure.description = [
-        """This project maps the security controls native to the Azure Infrastructure as
-        a Service (IaaS) platform to ATT&CK. With over 45 native Azure security
-        controls mapped, it provides a critical resource for organizations to assess
-        their Azure security control coverage against real-world threats."""
-    ]
+    azure.description = """Azure is a widely used cloud computing platform. This
+      project maps the
+         security controls native to the Azure platform to ATT&CK, providing resources
+         to assess how to protect, detect, and respond to real-world threats as
+         described in the ATT&CK knowledge base."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
@@ -260,12 +254,12 @@ def load_projects():
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
-    gcp.description = [
-        """This project maps the security controls native to the Google Cloud Platform
-        platform (GCP) to ATT&CK. With 49 native GCP security controls mapped, it
-        provides a critical resource for organizations to assess their cloud security
-        control coverage against real-world threats."""
-    ]
+    gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
+      platform. This
+         project maps the security controls native to the GCP platform to ATT&CK
+         providing resources to assess how to protect, detect, and respond to real-world
+         threats as described in the ATT&CK knowledge base."""
+
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
@@ -277,10 +271,10 @@ def load_projects():
     projects = [
         nist,
         cve,
-        aws,
+        veris,
         azure,
         gcp,
-        veris,
+        aws,
     ]
     return projects
 
@@ -1206,7 +1200,7 @@ def build_technique_landing_page(
         non_mappables=non_mappables,
     )
     stream.dump(str(output_path))
-    description = """Tactics represent the "why" of an ATT&CK technique or
+    description = """Tactics represent the "why" of a MITRE ATT&CK® technique or
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
     """
@@ -1495,6 +1489,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created use cases page")
+
     nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
     dir = PUBLIC_DIR / "about" / "methodology"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1505,6 +1500,30 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
     )
     stream.dump(str(output_path))
     logger.debug("Created methodology page")
+
+    nav1 = nav + [(f"{url_prefix}about/scoring/", "Scoring Rubric")]
+    dir = PUBLIC_DIR / "about" / "scoring"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("scoring_rubric.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Scoring", url_prefix=url_prefix, breadcrumbs=nav1
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created scoring page")
+
+    nav1 = nav + [(f"{url_prefix}about/related-projects/", "Related Projects")]
+    dir = PUBLIC_DIR / "about" / "related-projects"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("related_projects.html.j2")
+    stream = template.stream(
+        title="Mappings Explorer Related Projects",
+        url_prefix=url_prefix,
+        breadcrumbs=nav1,
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created Related Projects page")
 
 
 def main():
@@ -1531,7 +1550,10 @@ def main():
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
-        title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
+        title="Mappings Explorer",
+        url_prefix=url_prefix,
+        public_dir=PUBLIC_DIR,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created site homepage")
@@ -1545,7 +1567,10 @@ def main():
         (f"{url_prefix}external/", "Mapping Frameworks"),
     ]
     stream = template.stream(
-        title="External Mappings Home", url_prefix=url_prefix, breadcrumbs=breadcrumbs
+        title="External Mappings Home",
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")

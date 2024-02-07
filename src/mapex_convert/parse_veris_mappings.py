@@ -1,7 +1,7 @@
 import os
+from pathlib import Path
 
 import pandas as pd
-from pathlib import Path
 from loguru import logger
 from mapex_convert.read_files import read_csv_file
 

@@ -9,14 +9,14 @@
       <div class="row justify-content-left">
         <div class="col-lg-8 col-md-10 col-sm-12">
           <h1><span class="highlight">{{control}}</span> MAPPINGS</h1>
-          {% for paragraph in description %}
-            <p>
-              {{- paragraph -}}
-            </p>
-          {% endfor %}
+          <p>
+            {{- description -}}
+          </p>
           <div class="section-details">
             <p>
-              <span>Total Mappings: <strong>300</strong></span>
+              {% if versions|length > 1%}
+                <span>{{control}} Versions: <strong>{{ versions|join(', ') }}</strong></span>
+              {% endif %}
               <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
               <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
             </p>
@@ -26,25 +26,25 @@
           <h6>Download Mapping Artifacts:</h6>
           <div class="downloads">
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.yaml">
+              <a class="link" href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.yaml">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 YAML
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.csv">
+              <a class="link" href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.csv">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 CSV
               </a>
             </p>
             <p>
-              <a href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.xlsx">
+              <a class="link" href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.xlsx">
                 <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                 Excel
               </a>
             </p>
             <p>
-              <a
+              <a class="link"
                 onclick="downloadJSON(
                   '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_stix.json',
                   '{{project_id}}-{{project_version}}_attack-{{attack_version}}_stix.json'
@@ -55,7 +55,7 @@
               </a>
             </p>
             <p>
-              <a
+              <a class="link"
                 onclick="downloadJSON(
                   '{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_navigator_layer.json',
                   '{{project_id}}-{{project_version}}_attack-{{attack_version}}_navigator_layer.json'
@@ -65,6 +65,14 @@
                 Navigator Layers
               </a>
             </p>
+            {% for resource in project.resources %}
+            <p>
+              <a class="link" href="{{url_prefix}}{{resource.link}}">
+                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                {{resource.label}}
+              </a>
+            </p>
+            {% endfor %}
           </div>
         </div>
       </div>
