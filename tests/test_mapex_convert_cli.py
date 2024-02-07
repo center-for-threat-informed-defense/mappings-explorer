@@ -53,9 +53,6 @@ def test_security_stack_mappings_json(tmpdir):
             result = pop_uuids(json.load(file))
 
             # ASSERT
-            print(result)
-            print("")
-            print(expected_security_stack_mapping_json)
             assert result == expected_security_stack_mapping_json
 
 
