@@ -344,9 +344,15 @@ def create_layer(techniques_dict, layer_title, domain, attack_version):
         },
     }
     for technique in techniques_dict:
-        related_controls_string = ", ".join(
-            techniques_dict[technique]["capability_ids"]
-        )
+        capability_ids = [
+            capability_id for capability_id in
+            techniques_dict[technique]["capability_ids"] if capability_id
+        ]
+
+        related_controls_string = ""
+        if (len(capability_ids)):
+            related_controls_string = ", ".join(capability_ids)
+
         layer["techniques"].append(
             {
                 "techniqueID": technique,
