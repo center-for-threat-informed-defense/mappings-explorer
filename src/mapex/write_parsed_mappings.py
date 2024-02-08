@@ -49,9 +49,11 @@ def create_df(parsed_mappings):
             ][0]
             if mapping_object["mapping_type"]
             and mapping_object["mapping_type"] != "non_mappable"
-            else "non_mappable"
-            if mapping_object["mapping_type"] == "non_mappable"
-            else None
+            else (
+                "non_mappable"
+                if mapping_object["mapping_type"] == "non_mappable"
+                else None
+            )
         )
 
         # get group name based on id
@@ -345,12 +347,13 @@ def create_layer(techniques_dict, layer_title, domain, attack_version):
     }
     for technique in techniques_dict:
         capability_ids = [
-            capability_id for capability_id in
-            techniques_dict[technique]["capability_ids"] if capability_id
+            capability_id
+            for capability_id in techniques_dict[technique]["capability_ids"]
+            if capability_id
         ]
 
         related_controls_string = ""
-        if (len(capability_ids)):
+        if len(capability_ids):
             related_controls_string = ", ".join(capability_ids)
 
         layer["techniques"].append(
