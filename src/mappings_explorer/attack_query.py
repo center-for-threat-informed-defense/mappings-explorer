@@ -369,9 +369,10 @@ def add_mappings_to_attack_data_dict(mappings, attack_data_dict):
                     "mapping_frameworks"
                 ]
                 if mapping_framework in mapping_frameworks:
-                    if mapping_framework_version in mapping_frameworks[
-                        mapping_framework
-                    ]:
+                    if (
+                        mapping_framework_version
+                        in mapping_frameworks[mapping_framework]
+                    ):
                         mapping_frameworks[mapping_framework][
                             mapping_framework_version
                         ] += 1
