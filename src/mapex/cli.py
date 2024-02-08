@@ -117,8 +117,11 @@ def export_file(input_file, output_file, file_type):
     # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
     for mapping in parsed_mappings["mapping_objects"]:
         mapping.pop("status")
+        if mapping.get("mapping_framework"):
+            mapping.pop("mapping_framework")
+        if mapping.get("mapping_framework_version"):
+            mapping.pop("mapping_framework_version")
         if not mapping["attack_object_id"]:
-            print(mapping)
             mapping["mapping_type"] = "non_mappable"
 
     # export mappings
