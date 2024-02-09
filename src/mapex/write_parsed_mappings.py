@@ -62,7 +62,13 @@ def create_df(parsed_mappings):
             capability_group_objects[capability_group]
             for capability_group in capability_group_objects
             if capability_group == mapping_object["capability_group"]
-        ][0]
+        ]
+
+        if len(capability_group_name):
+            capability_group_name = capability_group_name[0]
+
+        else:
+            capability_group_name = None
 
         # swap mapping_type id and group id with mapping_type name and group name
         mapping_object["mapping_type"] = mapping_type_name
