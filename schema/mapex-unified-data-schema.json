@@ -122,13 +122,25 @@
             "description": "The name of the ATT&CK object. (Serverless Execution)",
             "type": ["string", "null"]
           },
+          "attack_version": {
+            "description": "The version of ATT&CK used to source the objects included in this mapping.",
+            "type": "string"
+          },
+          "mapping_framework": {
+            "description": "The name of the mapping framework. (Veris)",
+            "type": "string"
+          },
+          "mapping_framework_version": {
+            "description": "The version of the mapping framework. (1.3.7)",
+            "type": "string"
+          },
           "capability_id": {
             "description": "Unique identifier of the framework object being mapped.",
-            "type": "string"
+            "type":["string", "null"]
           },
           "capability_description": {
             "description": "Name or description of framework object",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "comments": {
             "description": "Used to document assumptions, circumstances, or other information regarding the mapping",
@@ -147,12 +159,16 @@
           },
           "capability_group": {
             "description": "This property describes which capability_group this mapping falls into.",
-            "type": ["string"]
+            "type": ["string", "null"]
           },
           "status": {
             "description": "This property describes the status of the mapping, whether it is complete, in progress, or not mapable.",
             "type": "string",
             "enum": ["complete", "in_progress", "non_mappable"]
+          },
+          "technology_domain": {
+            "description": "ATT&CK Technology Domain (Enterprise, Mobile, ICS).",
+            "type": "string"
           },
           "score_category": {
             "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",

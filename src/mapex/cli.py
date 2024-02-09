@@ -117,8 +117,11 @@ def export_file(input_file, output_file, file_type):
     # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
     for mapping in parsed_mappings["mapping_objects"]:
         mapping.pop("status")
+        if mapping.get("mapping_framework"):
+            mapping.pop("mapping_framework")
+        if mapping.get("mapping_framework_version"):
+            mapping.pop("mapping_framework_version")
         if not mapping["attack_object_id"]:
-            print(mapping)
             mapping["mapping_type"] = "non_mappable"
 
     # export mappings
@@ -180,15 +183,9 @@ def sanity_check_mappings(parsed_mappings):
             extra_capability_groups=extra_capability_groups,
         )
         # unused capability groups are eliminated in exported file
-        metadata_capability_groups = parsed_mappings["metadata"]["groups"]
+        metadata_capability_groups = parsed_mappings["metadata"]["capability_groups"]
         for capability_group in extra_capability_groups:
-            metadata_capability_group = list(
-                filter(
-                    lambda group_object: group_object["id"] == capability_group,
-                    metadata_capability_groups,
-                )
-            )[0]
-            parsed_mappings["metadata"]["groups"].remove(metadata_capability_group)
+            metadata_capability_groups.pop(capability_group)
 
     # # error if any objects reference a group that is not defined in metadata
     all_used_capability_groups_defined = capability_groups_used_in_mappings.issubset(
@@ -197,7 +194,9 @@ def sanity_check_mappings(parsed_mappings):
     missing_capability_groups = capability_groups_used_in_mappings.difference(
         metadata_capability_group_ids
     )
-    if not all_used_capability_groups_defined:
+    if not all_used_capability_groups_defined and missing_capability_groups != set(
+        [None]
+    ):
         logger.error(
             "The following groups are referenced by mapping "
             "objects but aren't defined in 'metadata': {missing_capability_groups}",

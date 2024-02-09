@@ -86,7 +86,7 @@ all_attack_versions = [
     # "13.0",
     # "13.1",
     # "14.0",
-    # "14.1",
+    "14.1",
 ]
 
 attack_domains = {
@@ -104,7 +104,7 @@ attack_domains = {
         # "13.0",
         # "13.1",
         # "14.0",
-        # "14.1",
+        "14.1",
     ],
     "ICS": [
         "8.2",
@@ -158,6 +158,7 @@ def load_projects():
         "10.1",
         "9.0",
         "8.2",
+        "14.1",
     ]
     nist.validVersions = [
         ("rev4", "8.2", "Enterprise"),
@@ -168,6 +169,8 @@ def load_projects():
         ("rev5", "10.1", "Enterprise"),
         ("rev4", "12.1", "Enterprise"),
         ("rev5", "12.1", "Enterprise"),
+        ("rev4", "14.1", "Enterprise"),
+        ("rev5", "14.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
@@ -593,27 +596,28 @@ def build_external_landing(
             capability_group_headers=capability_group_headers,
         )
     for capability in project.capabilities:
-        capability_nav = breadcrumbs + [
-            (
-                f"{external_prefix}{capability.capability_group.id}/",
-                f"{capability.capability_group.label} Capability Group",
-            ),
-            (
-                f"{external_prefix}{capability.id}/",
-                f"{capability.label if capability.label else capability.id}",
-            ),
-        ]
-        build_external_capability(
-            project=project,
-            url_prefix=url_prefix,
-            parent_dir=domain_dir,
-            project_version=project_version,
-            attack_version=attack_version,
-            headers=headers,
-            capability=capability,
-            attack_domain=attack_domain,
-            breadcrumbs=capability_nav,
-        )
+        if capability.capability_group:
+            capability_nav = breadcrumbs + [
+                (
+                    f"{external_prefix}{capability.capability_group.id}/",
+                    f"{capability.capability_group.label} Capability Group",
+                ),
+                (
+                    f"{external_prefix}{capability.id}/",
+                    f"{capability.label if capability.label else capability.id}",
+                ),
+            ]
+            build_external_capability(
+                project=project,
+                url_prefix=url_prefix,
+                parent_dir=domain_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                capability=capability,
+                attack_domain=attack_domain,
+                breadcrumbs=capability_nav,
+            )
 
 
 def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):

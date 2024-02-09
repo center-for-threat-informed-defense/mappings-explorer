@@ -49,9 +49,11 @@ def create_df(parsed_mappings):
             ][0]
             if mapping_object["mapping_type"]
             and mapping_object["mapping_type"] != "non_mappable"
-            else "non_mappable"
-            if mapping_object["mapping_type"] == "non_mappable"
-            else None
+            else (
+                "non_mappable"
+                if mapping_object["mapping_type"] == "non_mappable"
+                else None
+            )
         )
 
         # get group name based on id
@@ -60,7 +62,13 @@ def create_df(parsed_mappings):
             capability_group_objects[capability_group]
             for capability_group in capability_group_objects
             if capability_group == mapping_object["capability_group"]
-        ][0]
+        ]
+
+        if len(capability_group_name):
+            capability_group_name = capability_group_name[0]
+
+        else:
+            capability_group_name = None
 
         # swap mapping_type id and group id with mapping_type name and group name
         mapping_object["mapping_type"] = mapping_type_name
@@ -344,9 +352,16 @@ def create_layer(techniques_dict, layer_title, domain, attack_version):
         },
     }
     for technique in techniques_dict:
-        related_controls_string = ", ".join(
-            techniques_dict[technique]["capability_ids"]
-        )
+        capability_ids = [
+            capability_id
+            for capability_id in techniques_dict[technique]["capability_ids"]
+            if capability_id
+        ]
+
+        related_controls_string = ""
+        if len(capability_ids):
+            related_controls_string = ", ".join(capability_ids)
+
         layer["techniques"].append(
             {
                 "techniqueID": technique,
