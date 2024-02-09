@@ -194,7 +194,9 @@ def sanity_check_mappings(parsed_mappings):
     missing_capability_groups = capability_groups_used_in_mappings.difference(
         metadata_capability_group_ids
     )
-    if not all_used_capability_groups_defined:
+    if not all_used_capability_groups_defined and missing_capability_groups != set(
+        [None]
+    ):
         logger.error(
             "The following groups are referenced by mapping "
             "objects but aren't defined in 'metadata': {missing_capability_groups}",
