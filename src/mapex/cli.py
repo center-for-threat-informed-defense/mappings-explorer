@@ -183,7 +183,7 @@ def sanity_check_mappings(parsed_mappings):
             extra_capability_groups=extra_capability_groups,
         )
         # unused capability groups are eliminated in exported file
-        metadata_capability_groups = parsed_mappings["metadata"]["groups"]
+        metadata_capability_groups = parsed_mappings["metadata"]["capability_groups"]
         for capability_group in extra_capability_groups:
             metadata_capability_group = list(
                 filter(
@@ -191,7 +191,9 @@ def sanity_check_mappings(parsed_mappings):
                     metadata_capability_groups,
                 )
             )[0]
-            parsed_mappings["metadata"]["groups"].remove(metadata_capability_group)
+            parsed_mappings["metadata"]["capability_groups"].remove(
+                metadata_capability_group
+            )
 
     # # error if any objects reference a group that is not defined in metadata
     all_used_capability_groups_defined = capability_groups_used_in_mappings.issubset(
