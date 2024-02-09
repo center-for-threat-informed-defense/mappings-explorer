@@ -122,6 +122,10 @@
             "description": "The name of the ATT&CK object. (Serverless Execution)",
             "type": ["string", "null"]
           },
+          "attack_version": {
+            "description": "The version of ATT&CK used to source the objects included in this mapping.",
+            "type": "string"
+          },
           "mapping_framework": {
             "description": "The name of the mapping framework. (Veris)",
             "type": "string"
@@ -161,6 +165,10 @@
             "description": "This property describes the status of the mapping, whether it is complete, in progress, or not mapable.",
             "type": "string",
             "enum": ["complete", "in_progress", "non_mappable"]
+          },
+          "technology_domain": {
+            "description": "ATT&CK Technology Domain (Enterprise, Mobile, ICS).",
+            "type": "string"
           },
           "score_category": {
             "description": "Assessment of the effectiveness of the mitigations provided. (Protect, Detect, Respond)",
