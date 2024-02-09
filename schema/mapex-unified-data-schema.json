@@ -136,11 +136,11 @@
           },
           "capability_id": {
             "description": "Unique identifier of the framework object being mapped.",
-            "type": "string"
+            "type":["string", "null"]
           },
           "capability_description": {
             "description": "Name or description of framework object",
-            "type": "string"
+            "type": ["string", "null"]
           },
           "comments": {
             "description": "Used to document assumptions, circumstances, or other information regarding the mapping",
