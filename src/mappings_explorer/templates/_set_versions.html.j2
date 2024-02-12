@@ -245,13 +245,13 @@ function parseParams() {
   let uri = window.location.pathname;
   let params = uri.split("/").filter(n => n);
   if (params.length > 4){
-    attackDomain = params[params.length - 1].split("-")[1];
-    if (attackDomain) {
-      setValue("attack_domain", attackDomain)
-    }
-    controlVersion = params[params.length - 2].split("-")[1];
+    controlVersion = params[params.length - 1].split("-")[1];
     if (controlVersion) {
       setValue("control_version", controlVersion)
+    }
+    attackDomain = params[params.length - 2].split("-")[1];
+    if (attackDomain) {
+      setValue("attack_domain", attackDomain)
     }
     attackVersion = params[params.length - 3].split("-")[1];
     if (attackVersion) {
@@ -271,8 +271,8 @@ function handleSubmission(event) {
   let newAttack = document.getElementById("attack_version_select").value
   let newDomain = document.getElementById("attack_domain_select").value.toLowerCase()
   if (params.length > 4) {
-    params[params.length-1] = "domain-" + newDomain
-    params[params.length-2] = params[params.length-4] + "-" + newControl
+    params[params.length-1] = params[params.length-4] + "-" + newControl
+    params[params.length-2] = "domain-" + newDomain
     params[params.length-3] = "attack-" + newAttack
   }
   else {
