@@ -220,7 +220,9 @@ def load_projects():
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
-    cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
+    cve.validVersions = [
+        ("10.21.2021", "9.0", "Enterprise"),
+    ]
     cve.has_non_mappables = False
     cve.mappings = []
 
@@ -237,7 +239,9 @@ def load_projects():
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
     aws.versions = ["09.21.2021"]
-    aws.validVersions = [("09.21.2021", "9.0", "Enterprise")]
+    aws.validVersions = [
+        ("09.21.2021", "9.0", "Enterprise"),
+    ]
     aws.mappings = []
 
     azure = ExternalControl()
@@ -252,7 +256,9 @@ def load_projects():
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
     azure.versions = ["06.29.2021"]
-    azure.validVersions = [("06.29.2021", "8.2", "Enterprise")]
+    azure.validVersions = [
+        ("06.29.2021", "8.2", "Enterprise"),
+    ]
     azure.mappings = []
 
     gcp = ExternalControl()
@@ -269,7 +275,9 @@ def load_projects():
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["06.28.2022"]
-    gcp.validVersions = [("06.28.2022", "10.0", "Enterprise")]
+    gcp.validVersions = [
+        ("06.28.2022", "10.0", "Enterprise"),
+    ]
     gcp.mappings = []
 
     projects = [
@@ -537,6 +545,14 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
+    # Temporary hack for showing VERIS group download artifact on # the VERIS
+    # 1.3.7/ATT&CK 12.1 landing page.
+    group_artifact = (
+        project.id == "veris"
+        and project_version == "1.3.7"
+        and attack_version == "12.1"
+    )
+
     capability_group_headers = [
         ("id", "ID", "id", external_prefix),
         ("label", "Capability Group Name", "id", external_prefix),
@@ -571,6 +587,7 @@ def build_external_landing(
         non_mappable_headers=non_mappable_headers,
         non_mappables=project.non_mappables,
         project=project,
+        group_artifact=group_artifact,
     )
     stream.dump(str(output_path))
     logger.trace(
