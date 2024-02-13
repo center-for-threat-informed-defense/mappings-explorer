@@ -62,8 +62,8 @@ jobs:
 
       # Upload Test Coverage
       - name: Upload coverage to CodeCov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
-          token: $\{\{ secrets.CODECOV_SECRET \}\}
+          token: ${{ secrets.CODECOV_SECRET }}
           files: ./coverage.xml
           verbose: true
