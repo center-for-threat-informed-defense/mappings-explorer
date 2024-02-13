@@ -451,7 +451,7 @@ def parse_capabilities(
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
             mapping["attack_domain"] = attack_domain
-        if c.mappings[0]["capability_group"]:
+        if c.mappings[0].get("capability_group"):
             capability_group = [
                 g
                 for g in project.capability_groups
