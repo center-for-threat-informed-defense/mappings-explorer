@@ -15,6 +15,13 @@
             <div class="col-lg-8 col-md-10 col-sm-12">
               <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
               <p>[[description]]</p>
+                View information about techniques, how techniques and tactics interact, and the
+                <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
+                Center for Threat-Informed Defense
+                </a>’s mappings coverage of
+                <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
+                techniques in the Mappings Explorer matrix view below.
+              </p>
             </div>
             <div
               class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20 text-end"
@@ -23,7 +30,9 @@
               <h6>Download Mapping Artifacts:</h6>
               <div class="downloads">
                 <p>
-                  <a @click="downloadJson(
+                  <a
+                    class="link"
+                    @click="downloadJson(
                     url_prefix + 'static/matrices/' + selectedDomain.toLowerCase() + '/' + selectedAttackVersion + '/' + selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json',
                     selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json'
                   )">
@@ -91,7 +100,7 @@
           <div class="container" data-aos="fade-up">
             <div class="row justify-content-left">
               <div class="col-12">
-                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MATRIX</h2>
+                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MAPPINGS MATRIX</h2>
                 <div class="matrix-table-container">
                   <div class="row">
                     <div class="col-md-12" style="display: flex">

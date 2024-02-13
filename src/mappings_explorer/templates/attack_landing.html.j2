@@ -12,9 +12,15 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
           <h1 style="text-transform: uppercase;"><span class="highlight">ATT&CK</span> {{object_type}}</h1>
           <p>{{description}}</p>
-          <p>You can view information about {{object_type | lower}} in the
-           <a href="{{url_prefix}}attack/matrix">matrix view</a> to see how techniques and
-           tactics interact and the mappings coverage of ATT&CK objects.</p>
+          <p>
+            View information about {{object_type | lower}},
+            how techniques and tactics interact, and the
+            <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
+            Center for Threat-Informed Defense</a>’s mappings coverage of
+            <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
+            techniques in the Mappings Explorer
+            <a href="{{url_prefix}}attack/matrix">matrix view</a>.
+          </p>
         </div>
       </div>
     </div>
