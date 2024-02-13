@@ -149,16 +149,16 @@ def load_projects():
      Publication 800-53 provides a catalog of security and privacy controls for the
      protection of information systems and organizations from a diverse set of threats
      and risks. This project provides resources for assessing security control coverage
-     against real-world threats as described in the ATT&CK knowledge base and
+     against real-world threats as described in the MITRE ATT&CK® knowledge base and
      provide a foundation for integrating ATT&CK-based threat information into the
      risk management process."""
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
+        "14.1",
         "12.1",
         "10.1",
         "9.0",
         "8.2",
-        "14.1",
     ]
     nist.validVersions = [
         ("rev4", "8.2", "Enterprise"),
@@ -188,7 +188,7 @@ def load_projects():
          repeatable manner that allows for the analysis of data across a variety of
          incidents. This project provides mappings to better connect the who, what, and
          why captured in VERIS incident representation with the when and how described
-         in ATT&CK adversary behavioral tactics and techniques."""
+         in MITRE ATT&CK® adversary behavioral tactics and techniques."""
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -211,9 +211,10 @@ def load_projects():
       provides a catalog of
          publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
          community to communicate consistent descriptions of vulnerabilities. This
-         project uses the adversary behaviors described in ATT&CK to characterize the
-         impact of vulnerabilities from CVE, establishing a critical connection between
-         vulnerability management, threat modeling, and compensating controls. """
+         project uses the adversary behaviors described in MITRE ATT&CK® to characterize
+         the impact of vulnerabilities from CVE, establishing a critical connection
+         between vulnerability management, threat modeling, and compensating controls.
+    """
 
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
@@ -228,9 +229,9 @@ def load_projects():
     aws.label = "AWS"
     aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
       platform. This
-         project maps the security controls native to the (AWS) platform to ATT&CK,
-         providing resources to assess how to protect, detect, and respond to real-world
-         threats as described in the ATT&CK knowledge base.
+         project maps the security controls native to the (AWS) platform to
+         MITRE ATT&CK®, providing resources to assess how to protect, detect, and
+         respond to real-world threats as described in the ATT&CK knowledge base.
         """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -244,9 +245,9 @@ def load_projects():
     azure.label = "Azure"
     azure.description = """Azure is a widely used cloud computing platform. This
       project maps the
-         security controls native to the Azure platform to ATT&CK, providing resources
-         to assess how to protect, detect, and respond to real-world threats as
-         described in the ATT&CK knowledge base."""
+         security controls native to the Azure platform to MITRE ATT&CK®, providing
+         resources to assess how to protect, detect, and respond to real-world threats
+         as described in the ATT&CK knowledge base."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
@@ -259,7 +260,7 @@ def load_projects():
     gcp.label = "GCP"
     gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
       platform. This
-         project maps the security controls native to the GCP platform to ATT&CK
+         project maps the security controls native to the GCP platform to MITRE ATT&CK®
          providing resources to assess how to protect, detect, and respond to real-world
          threats as described in the ATT&CK knowledge base."""
 
