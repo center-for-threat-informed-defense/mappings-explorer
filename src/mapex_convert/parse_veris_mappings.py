@@ -85,11 +85,13 @@ def configure_veris_mappings(veris_mappings, domain):
                 "attack_object_id": None,
                 "attack_object_name": None,
                 "references": None,
-                "capability_description": description_dict[veris_object.lower()]
-                if description_dict.get(veris_object)
-                else "",
+                "capability_description": (
+                    description_dict[veris_object.lower()]
+                    if description_dict.get(veris_object.lower())
+                    else ""
+                ),
                 "capability_id": veris_object,
-                "mapping_type": None,
+                "mapping_type": "non_mappable",
                 "capability_group": veris_group,
                 "status": "complete",
             }
@@ -105,7 +107,7 @@ def create_description_dict(mappings_version):
         filepath = enumerations_filepath / "veris135-enumerations.csv"
     elif mappings_version == "1.3.7":
         filepath = enumerations_filepath / "veris1_3_7-enumerations-groups.csv"
-    df = pd.read_csv(filepath)
+    df = pd.read_csv(filepath, na_values=[""], keep_default_na=False)
 
     description_dict = {}
     # if any of df cells have no value, fill with an empty string

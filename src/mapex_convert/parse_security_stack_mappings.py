@@ -66,7 +66,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 "references": None,
                 "capability_description": data["name"],
                 "capability_id": data["name"].lower().replace(" ", "_"),
-                "mapping_type": None,
+                "mapping_type": "non_mappable",
                 "score_category": None,
                 "score_value": None,
                 "related_score": None,
