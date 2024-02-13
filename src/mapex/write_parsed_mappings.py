@@ -74,7 +74,30 @@ def create_df(parsed_mappings):
         mapping_object["mapping_type"] = mapping_type_name
         mapping_object["capability_group"] = capability_group_name
 
-    return pd.DataFrame(mapping_objects)
+    columns_order = [
+        "mapping_framework",
+        "mapping_framework_version",
+        "capability_group",
+        "capability_id",
+        "capability_description",
+        "mapping_type",
+        "attack_object_id",
+        "attack_object_name",
+        "attack_version",
+        "technology_domain",
+        "references",
+        "comments",
+        "organization",
+        "creation_date",
+        "last_update",
+    ]
+    if "technique_scores" in parsed_mappings["metadata"]["mapping_types"]:
+        score_columns = ["score_category", "score_value", "related_score"]
+        columns_order[columns_order.index("technology_domain") : len(score_columns)] = (
+            score_columns
+        )
+
+    return pd.DataFrame(data=mapping_objects, columns=columns_order)
 
 
 def write_parsed_mappings_csv(df, filepath):
