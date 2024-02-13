@@ -326,7 +326,9 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
             g.label = metadata["capability_groups"][i]
             g.capabilities = []
             project.capability_groups.append(g)
-            filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
+            filtered_mappings = [
+                m for m in mappings if (m.get("capability_group") == g.id)
+            ]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
             logger.trace(
