@@ -460,6 +460,8 @@ def parse_capabilities(
             capability_group[0].capabilities.append(c)
             capability_group[0].num_capabilities += 1
             c.capability_group = capability_group[0]
+        else:
+            print(c.mappings[0])
         logger.trace(
             "for capability {id} the number of mappings is {count}",
             id=c.id,
