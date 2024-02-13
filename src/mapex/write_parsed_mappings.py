@@ -93,9 +93,9 @@ def create_df(parsed_mappings):
     ]
     if "technique_scores" in parsed_mappings["metadata"]["mapping_types"]:
         score_columns = ["score_category", "score_value", "related_score"]
-        columns_order[columns_order.index("technology_domain") : len(score_columns)] = (
-            score_columns
-        )
+        columns_order[
+            columns_order.index("technology_domain") : len(score_columns)
+        ] = score_columns
 
     return pd.DataFrame(data=mapping_objects, columns=columns_order)
 
