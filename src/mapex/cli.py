@@ -121,7 +121,7 @@ def export_file(input_file, output_file, file_type):
             mapping.pop("mapping_framework")
         if mapping.get("mapping_framework_version"):
             mapping.pop("mapping_framework_version")
-        if not mapping["attack_object_id"]:
+        if not mapping["attack_object_id"] or not mapping["capability_id"]:
             mapping["mapping_type"] = "non_mappable"
 
     # export mappings
