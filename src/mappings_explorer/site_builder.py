@@ -273,12 +273,12 @@ def load_projects():
     gcp.mappings = []
 
     projects = [
-        nist,
-        cve,
+        # nist,
+        # cve,
         veris,
-        azure,
-        gcp,
-        aws,
+        # azure,
+        # gcp,
+        # aws,
     ]
     return projects
 
@@ -287,6 +287,8 @@ def replace_mapping_type(mapping, type_list):
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
+        elif mapping["mapping_type"] == "non_mappable":
+            return "non_mappable"
 
 
 def parse_capability_groups(project, attack_version, project_version, attack_domain):
@@ -338,7 +340,7 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
     parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
-    mappings = [m for m in mappings if m["status"] != "non_mappable"]
+    mappings = [m for m in mappings if m["mapping_type"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
@@ -378,7 +380,9 @@ def get_security_stack_descriptions(project):
 def get_cve_descriptions(project):
     for c in project.capabilities:
         try:
-            response = requests.get("https://cveawg.mitre.org/api/cve/" + c.id).json()
+            response = requests.get(
+                "https://cveawg.mitre.org/api/cve/" + c.id, verify=False
+            ).json()
             descriptions = response["containers"]["cna"]["descriptions"]
             c.description = descriptions[0]["value"]
         except Exception:
@@ -401,7 +405,7 @@ def get_nist_descriptions(project, version):
             id = c.id
             if len(id) < 5 and version != "rev4":
                 id = c.id[0:3] + "0" + c.id[3:4]
-            response = requests.get(link + id + "/graph").json()
+            response = requests.get(link + id + "/graph", verify=False).json()
             elements = response["response"]["elements"]
             element_array = elements[0]["elements"][0]["elements"]
             for item in element_array:
@@ -463,7 +467,10 @@ def parse_capabilities(
             id=c.id,
             count=str(len(c.mappings)),
         )
-        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
+        if (
+            project.has_non_mappables
+            and c.mappings[0]["mapping_type"] == "non_mappable"
+        ):
             non_mappables.append(c)
         else:
             capabilities.append(c)
@@ -832,6 +839,7 @@ def parse_techniques(
                     t.subtechniques = []
                     t.mappings = [m for m in mappings if (m["attack_object_id"] == id)]
                     t.num_mappings = len(t.mappings)
+                    if attack_domain == "Mobile" and t.id == "T1464":
                     techniques.append(t)
     return techniques
 
@@ -954,6 +962,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 attack_data=attack_data,
                 techniques=all_techniques,
             )
+
             external_dir = (
                 PUBLIC_DIR
                 / "attack"
@@ -1586,12 +1595,12 @@ def main():
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
     ]
-    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
+    # build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
-    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    build_search_index(url_prefix, breadcrumbs)
+    # build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    # build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
 
