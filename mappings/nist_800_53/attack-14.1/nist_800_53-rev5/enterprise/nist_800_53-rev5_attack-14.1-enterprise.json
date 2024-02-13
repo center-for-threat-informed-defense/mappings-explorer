@@ -32267,6 +32267,7 @@
             "attack_object_id": "T1654",
             "attack_object_name": "Log Enumeration",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45006,6 +45007,7 @@
             "attack_object_id": "T1659",
             "attack_object_name": "Content Injection",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45015,15 +45017,7 @@
             "attack_object_id": "T1659",
             "attack_object_name": "Content Injection",
             "references": [],
-            "mapping_type": "protects",
-            "status": "complete"
-        },
-        {
-            "capability_id": "AC-06",
-            "capability_description": "Least Privilege",
-            "attack_object_id": "T1657",
-            "attack_object_name": "Financial Theft",
-            "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45044,33 +45038,6 @@
             "attack_object_name": "Log Enumeration",
             "references": [],
             "capability_group": "AC",
-            "mapping_type": "protects",
-            "status": "complete"
-        },
-        {
-            "capability_id": "CM-07",
-            "capability_description": "Least Functionality",
-            "attack_object_id": "T1653",
-            "attack_object_name": "Power Settings",
-            "references": [],
-            "mapping_type": "protects",
-            "status": "complete"
-        },
-        {
-            "capability_id": "CM-03",
-            "capability_description": "Configuration Change Control",
-            "attack_object_id": "T1653",
-            "attack_object_name": "Power Settings",
-            "references": [],
-            "mapping_type": "protects",
-            "status": "complete"
-        },
-        {
-            "capability_id": "CM-02",
-            "capability_description": "Baseline Configuration",
-            "attack_object_id": "T1653",
-            "attack_object_name": "Power Settings",
-            "references": [],
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45130,6 +45097,7 @@
             "attack_object_id": "T1578.005",
             "attack_object_name": "Modify Cloud Compute Configurations",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45319,6 +45287,7 @@
             "attack_object_id": "T1556.008",
             "attack_object_name": "Network Provider DLL",
             "references": [],
+            "capability_group": "SI",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45478,6 +45447,7 @@
             "attack_object_id": "T1548.005",
             "attack_object_name": "Temporary Elevated Cloud Access",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45487,6 +45457,7 @@
             "attack_object_id": "T1548.005",
             "attack_object_name": "Temporary Elevated Cloud Access",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45616,6 +45587,7 @@
             "attack_object_id": "T1036.008",
             "attack_object_name": "Masquerade File Type",
             "references": [],
+            "capability_group": "SI",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45655,6 +45627,7 @@
             "attack_object_id": "T1027.010",
             "attack_object_name": "Command Obfuscation",
             "references": [],
+            "capability_group": "SI",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -45814,6 +45787,7 @@
             "attack_object_id": "T1021.007",
             "attack_object_name": "Cloud Services",
             "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
@@ -47603,6 +47577,47 @@
             "attack_object_id": "T1011",
             "attack_object_name": "Exfiltration Over Other Network Medium",
             "references": [],
+            "capability_group": "SC",
+            "mapping_type": "protects",
+            "status": "complete"
+        },
+        {
+            "capability_id": "CM-07",
+            "capability_description": "Least Functionality",
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "references": [],
+            "capability_group": "CM",
+            "mapping_type": "protects",
+            "status": "complete"
+        },
+        {
+            "capability_id": "CM-03",
+            "capability_description": "Configuration Change Control",
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "references": [],
+            "capability_group": "CM",
+            "mapping_type": "protects",
+            "status": "complete"
+        },
+        {
+            "capability_id": "CM-02",
+            "capability_description": "Baseline Configuration",
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "references": [],
+            "capability_group": "CM",
+            "mapping_type": "protects",
+            "status": "complete"
+        },
+        {
+            "capability_id": "AC-06",
+            "capability_description": "Least Privilege",
+            "attack_object_id": "T1657",
+            "attack_object_name": "Financial Theft",
+            "references": [],
+            "capability_group": "AC",
             "mapping_type": "protects",
             "status": "complete"
         },
