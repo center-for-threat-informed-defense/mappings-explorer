@@ -3,7 +3,6 @@
 
 {% block content %}
 <div id="my_view">
-{% include "_banner.html.j2" %}
 
    <section id="header-container" class="header-container">
     <div class="container" data-aos="fade-up">
@@ -34,9 +33,6 @@
         <div class="row" style="padding: 0;">
           <div class="col-xl-4 col-lg-12">
             <h2 style="width: max-content">ATT&CK {{object_type}} Mappings</h2>
-          </div>
-          <div class="col-xl-8 col-lg-12 badges">
-          {% include "_badge_section.html.j2" %}
           </div>
         </div>
         <div class="col-12">
