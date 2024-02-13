@@ -238,7 +238,10 @@ def sanity_check_mappings(parsed_mappings):
 
     # do not show warning if the missing mapping type is 'None', which is the
     # value of mapping_type in not_mappable items
-    if not all_mapping_types_defined and missing_mapping_types != set([None]):
+    if not all_mapping_types_defined and (
+        missing_mapping_types != set([None])
+        or missing_mapping_types != set(["non_mappable"])
+    ):
         logger.error(
             "The following mapping types are referenced by mapping "
             "objects but are not defined in 'metadata': {missing_mapping_types}",
