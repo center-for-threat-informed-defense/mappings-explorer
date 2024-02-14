@@ -112,20 +112,17 @@ def export_file(input_file, output_file, file_type):
     # remove status, attack_version, and technology_domain fields
     # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
     for mapping in parsed_mappings["mapping_objects"]:
-<<<<<<< HEAD
         mapping.pop("status")
         if mapping.get("mapping_framework"):
             mapping.pop("mapping_framework")
         if mapping.get("mapping_framework_version"):
             mapping.pop("mapping_framework_version")
-=======
         if mapping.get("status"):
             mapping.pop("status")
         if mapping.get("attack_version"):
             mapping.pop("attack_version")
         if mapping.get("technology_domain"):
             mapping.pop("technology_domain")
->>>>>>> 958561e (remove status, attack_version, and technology_domain fields from exports)
         if not mapping["attack_object_id"]:
             mapping["mapping_type"] = "non_mappable"
 
@@ -241,9 +238,12 @@ def sanity_check_mappings(parsed_mappings):
         metadata_mapping_type_ids
     )
 
-    # do not show warning if the missing mapping type is 'None', which is the
+    # do not show warning if the missing mapping type is 'non_mappable', which is the
     # value of mapping_type in not_mappable items
-    if not all_mapping_types_defined and missing_mapping_types != set([None]):
+    if not all_mapping_types_defined and (
+        missing_mapping_types != set([None])
+        or missing_mapping_types != set(["non_mappable"])
+    ):
         logger.error(
             "The following mapping types are referenced by mapping "
             "objects but are not defined in 'metadata': {missing_mapping_types}",
