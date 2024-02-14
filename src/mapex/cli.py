@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-import shutil
 import sys
 from pathlib import Path
 
@@ -11,6 +10,7 @@ from mapex.write_parsed_mappings import (
     create_df,
     write_parsed_mappings_csv,
     write_parsed_mappings_excel,
+    write_parsed_mappings_json,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
@@ -94,10 +94,6 @@ def read_json_file(filepath):
         return json.loads(mappings)
 
 
-def copy_parsed_mappings(input_filepath, output_filepath):
-    shutil.copyfile(input_filepath, f"{output_filepath}.json")
-
-
 def export_file(input_file, output_file, file_type):
     # read input file
     parsed_mappings = read_json_file(input_file)
@@ -113,14 +109,19 @@ def export_file(input_file, output_file, file_type):
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
 
-    # remove status field
+    # remove status, attack_version, and technology_domain fields
     # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
     for mapping in parsed_mappings["mapping_objects"]:
-        mapping.pop("status")
         if mapping.get("mapping_framework"):
             mapping.pop("mapping_framework")
         if mapping.get("mapping_framework_version"):
             mapping.pop("mapping_framework_version")
+        if mapping.get("status"):
+            mapping.pop("status")
+        if mapping.get("attack_version"):
+            mapping.pop("attack_version")
+        if mapping.get("technology_domain"):
+            mapping.pop("technology_domain")
         if not mapping["attack_object_id"] or not mapping["capability_id"]:
             mapping["mapping_type"] = "non_mappable"
 
@@ -129,7 +130,7 @@ def export_file(input_file, output_file, file_type):
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
-        copy_parsed_mappings(input_file, output_filepath)
+        write_parsed_mappings_json(parsed_mappings, output_filepath)
         df = create_df(parsed_mappings)
         write_parsed_mappings_csv(df, output_filepath)
         write_parsed_mappings_excel(df, output_filepath)
@@ -146,7 +147,7 @@ def export_file(input_file, output_file, file_type):
     elif file_type == "stix":
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
     elif file_type == "json":
-        copy_parsed_mappings(input_file, output_filepath)
+        write_parsed_mappings_json(parsed_mappings, output_filepath)
     else:
         logger.error("Please enter a correct filetype")
 
@@ -236,7 +237,7 @@ def sanity_check_mappings(parsed_mappings):
         metadata_mapping_type_ids
     )
 
-    # do not show warning if the missing mapping type is 'None', which is the
+    # do not show warning if the missing mapping type is 'non_mappable', which is the
     # value of mapping_type in not_mappable items
     if (
         not all_mapping_types_defined
