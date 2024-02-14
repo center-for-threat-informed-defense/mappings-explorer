@@ -12,6 +12,14 @@
           <p>
             {{- description -}}
           </p>
+          <a href="https://attack.mitre.org/" target="_blank">View in MITRE ATT&CK®</a>
+          {% for resource in project.resources %}
+            <p>
+              <a class="link" href="{{url_prefix}}{{resource.link}}">
+                {{resource.label}}
+              </a>
+            </p>
+          {% endfor %}
           <div class="section-details">
             <p>
               {% if versions|length > 1%}
@@ -65,14 +73,6 @@
                 Navigator Layers
               </a>
             </p>
-            {% for resource in project.resources %}
-            <p>
-              <a class="link" href="{{url_prefix}}{{resource.link}}">
-                <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
-                {{resource.label}}
-              </a>
-            </p>
-            {% endfor %}
           </div>
         </div>
       </div>
