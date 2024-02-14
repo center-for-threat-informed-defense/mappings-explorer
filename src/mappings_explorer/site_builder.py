@@ -469,10 +469,7 @@ def parse_capabilities(
             id=c.id,
             count=str(len(c.mappings)),
         )
-        if (
-            project.has_non_mappables
-            and c.mappings[0]["status"] == "non_mappable"
-        ):
+        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
             non_mappables.append(c)
         else:
             capabilities.append(c)
