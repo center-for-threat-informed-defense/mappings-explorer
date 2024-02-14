@@ -471,7 +471,7 @@ def parse_capabilities(
         )
         if (
             project.has_non_mappables
-            and c.mappings[0]["mapping_type"] == "non_mappable"
+            and c.mappings[0]["status"] == "non_mappable"
         ):
             non_mappables.append(c)
         else:
