@@ -287,7 +287,9 @@ def replace_mapping_type(mapping, type_list):
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
-        elif mapping["mapping_type"] == "non_mappable":
+        elif mapping["mapping_type"] == "non_mappable" or (
+            not mapping["mapping_type"] and mapping["status"] == "non_mappable"
+        ):
             return "non_mappable"
 
 
