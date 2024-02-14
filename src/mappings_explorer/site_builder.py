@@ -1592,10 +1592,10 @@ def main():
     build_external_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
-    # breadcrumbs = [
-    #     (f"{url_prefix}", "Home"),
-    # ]
-    # build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
+    breadcrumbs = [
+        (f"{url_prefix}", "Home"),
+    ]
+    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
