@@ -287,9 +287,11 @@ def replace_mapping_type(mapping, type_list):
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
-        elif mapping["mapping_type"] == "non_mappable" or (
-            not mapping["mapping_type"] and mapping["status"] == "non_mappable"
+        elif (
+            mapping["mapping_type"] == "non_mappable"
+            or mapping["status"] == "non_mappable"
         ):
+            print(mapping)
             return "non_mappable"
 
 
@@ -1591,10 +1593,10 @@ def main():
     build_external_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
-    breadcrumbs = [
-        (f"{url_prefix}", "Home"),
-    ]
-    build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
+    # breadcrumbs = [
+    #     (f"{url_prefix}", "Home"),
+    # ]
+    # build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
     )
