@@ -93,7 +93,7 @@ def configure_veris_mappings(veris_mappings, domain):
                 "capability_id": veris_object,
                 "mapping_type": "non_mappable",
                 "capability_group": veris_group,
-                "status": "complete",
+                "status": "non_mappable",
             }
         )
 
