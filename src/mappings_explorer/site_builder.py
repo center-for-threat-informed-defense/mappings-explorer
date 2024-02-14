@@ -291,7 +291,6 @@ def replace_mapping_type(mapping, type_list):
             mapping["mapping_type"] == "non_mappable"
             or mapping["status"] == "non_mappable"
         ):
-            print(mapping)
             return "non_mappable"
 
 
