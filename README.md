@@ -2,7 +2,7 @@
 
 Mappings Explorer enables cyber defenders to understand how security controls
 and capabilities map onto the adversary behaviors catalogued in the [MITRE ATT&CK®](https://attack.mitre.org/)
-knowledge base. The [Center for Threat-Informed Defense}(https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created these open source
+knowledge base. The [Center for Threat-Informed Defense](https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created these open source
 mappings to serve as a bridge between the threat-informed approach to cybersecurity
 and the traditional perspective applied to the employment of security controls.
 
@@ -26,44 +26,71 @@ to determine the capabilities of a platform's security offerings and use cases t
 demonstrate how the mappings can be used. In addition, the mapping resources are linked
 via the website, making them easy to download.
 
-# Mappings Explorer
+### Mappings Explorer Usage
 
 You can use Mappings Explorer for many different purposes. Examples of usage include:
 
-Align cyber defense to adversary behavior.
+**Align Cyber Defense to Threats​** 
 
-- Explore how your current or promposedproposed security controls can be used to detect,
-  prevent, mitigate, or respond to specific adversary behaviors seen in the wild.
+- Explore how security controls and capabilities can be used to protect from, detect, or
+  respond to specific adversary behaviors.​
 
-Expand the Vocabulary for Incident Response.
+**Assess Unpatched Vulnerabilities​**
 
-- The VERIS mappings connect the incident response terminology of the Verizon DBIR to
-  the adversary behavior in MITRE ATT&CK for a more complete analysis of any breach.
+- Understand how adversaries might exploit unpatched vulnerabilities and what adversaries
+  may achieve by exploiting the vulnerability.​
 
-Assess Unpatched Vulnerabilities.
+**Evolve and Expand Cyber Defense​**
 
-- The CVE mappings help understand how adversaries might exploit unpatched vulnerabilities
-  and what the knock-on effects could be.
+- Visualize and assess deficiencies in cyber defense to plan future policy and security
+  controls around real-world adversary behavior.​
 
-Evolve and Expand Cyber Defense.
+**Effectively Describe Incidents​**
 
-- Visualize and assess deficiencies in cyber defense. Plan future policy and security
-  controls around real-world adversary behavior.
+- Create detailed incident reports incorporating ATT&CK-based threat intel, recommendations
+  for increased security protocols, and response measures.​
 
-# Mappings Editor
+### Mappings Editor
 
-The Mappings Editor is a custom-built tool developed under the Mappings Explorer project.
-This lightweight, easy to use tool is being used internally by the Center to create new
-and update existing capability mappings to ATT&CK objects.
+The Mappings Editor is a custom-built tool developed under the Mappings Explorer project. The 
+Mappings Editor enables the mapping of customized security controls or capabilities to ATT&CK, 
+either to be used solely internally within an organization or shared with the Center or other 
+organizations. This lightweight, easy to use tool is being used internally by the Center to 
+create new and update existing capability mappings to ATT&CK objects. Contact the Center at 
+[ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=subject=Question%20about%20mappings-explorer) to learn more about using Mappings Editor.
+
+#### Mappings Editor Usage
+
+Mappings Editor usage includes:
+
+**Create Customized Mappings**
+
+- Create customized mappings for products or systems in use at your organization. Use those
+  mappings to view and better understand current coverage of adversary behaviors provided by
+  the mapped tools and capabilities.
+
+**Integrate Mappings**
+
+- Create customized mappings for product capability or system settings. Use those mappings to
+  integrate threat-informed defense into security operations, such as new system and network
+  set up and configuration or to provide remediation actions to take in incident reports.
+
+**Share Mappings Contributions**
+
+- Create and share security capability mappings with the Center or other organizations using a
+  unified data schema.
 
 ## Getting Started
 
-To get started, visit the project website.
+To get started understanding how security controls and capabilities map onto the adversary behaviors 
+catalogued in ATT&CK, visit the Mappings Explorer website. 
 
-| Resource                       | Description                                      |
-| ------------------------------ | ------------------------------------------------ |
-| [Mappings Explorer Website](<!-- TODO Add link>) | Access and explore mapped security capabilities. |
-| [Mappings Editor (beta)](#<!-- TODO Add link>)    | Lightweight tool to create or update mappings.   |
+Visit the Mappings Editor GitHub page to learn more about that tool.
+
+| Resource                                                                                                    | Description                                      |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| [Mappings Explorer Website](https://center-for-threat-informed-defense.github.io/mappings-explorer/)        | Access and explore mapped security capabilities. |
+| [Mappings Editor GitHub (beta)](https://center-for-threat-informed-defense.github.io/mappings-editor)       | Lightweight tool to create or update mappings.   |
 
 ## Getting Involved
 
@@ -89,9 +116,7 @@ directly for more general inquiries.
 
 ## Notice
 
-<!-- TODO Add PRS prior to publication. -->
-
-Copyright 2023 MITRE Engenuity. Approved for public release. Document number REPLACE_WITH_PRS_NUMBER
+Copyright 2023 MITRE Engenuity. Approved for public release. Document number CT0104
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
 file except in compliance with the License. You may obtain a copy of the License at
