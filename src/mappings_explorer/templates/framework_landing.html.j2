@@ -12,14 +12,6 @@
         <p>
           {{- description -}}
         </p>
-        <a href="https://attack.mitre.org/" target="_blank">View in MITRE ATT&CK®</a>
-        {% for resource in project.resources %}
-        <p>
-          <a class="link" href="{{url_prefix}}{{resource.link}}">
-            {{resource.label}}
-          </a>
-        </p>
-        {% endfor %}
         <div class="section-details">
           <p>
             {% if versions|length > 1%}
@@ -27,6 +19,16 @@
             {% endif %}
             <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
             <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
+          </p>
+          {% if project.resources %}
+          <p>
+            {% for resource in project.resources %}
+            <a class="link" href="{{url_prefix}}{{resource.link}}">
+              {{resource.label}}
+            </a> {% if not loop.last %}|{% endif %}
+            {% endfor %}
+          </p>
+          {% endif %}
           </p>
         </div>
       </div>

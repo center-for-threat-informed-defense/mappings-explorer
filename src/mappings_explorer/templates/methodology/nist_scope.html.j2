@@ -1,0 +1,222 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">NIST 800-53 <span class="highlight">MAPPING SCOPE</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Scope Overview</h2>
+        </div>
+
+        <p>
+            Scoping decisions for mapping NIST 800-53 Rev. 4 & Rev. 5 controls are documented below.
+            The mapping methodology for NIST 800-53 Rev. 5 controls builds upon and refines the
+            overall NIST SP 800-53 framework mapping methodology.
+        </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">General</span> Scoping Decisions</h2>
+        </div>
+        <dl>
+            <dt>Operational vs. Policy and Procedural Controls</dt>
+            <dd>This effort is focused on the technical and operational elements of NIST 800-53 and did not take into
+                account the management elements that are often focused on organization specific policies and procedures.
+                This decision was made because management specific controls are policy-based, and the intent of this
+                effort was focusing on technical and operation controls that correlate to ATT&CK mitigations,
+                techniques, and sub-techniques.</dd>
+            <dt>Mitigation vs. Monitoring</dt>
+            <dd>Controls that may only monitor adversary behaviors are out of scope. The focus of this effort is on
+                technical controls that mitigate adversary techniques and sub-techniques. For example, IR-5 Incident
+                Monitoring would be out-of-scope as this does not serve as a mitigation, but rather detection of
+                security incident occurrence. However, RA-4 Vulnerability Scanning is in scope as it can lead to
+                findings which allow for remediation prior to exploitation (e.g., apply patches, remove vulnerable
+                software) thereby mitigating attacks. Consideration is not given for the potential that an adversary
+                might be dissuaded or change their tactics to try and avoid detection if they thought activity was being
+                monitored.</dd>
+            <dt>Controls vs. Control Enhancements</dt>
+            <dd>This effort maps at the control level and does not map to specific control enhancements.</dd>
+            <dt>Implicit vs. Explicit Mitigation</dt>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data
+                backups) and controls that support those mitigations rather than other, non-technical methods of
+                mitigation (e.g., put system in a locked room, write a backup policy). </dd>
+            <dt>Network Infrastructure Devices</dt>
+            <dd><a href="https://attack.mitre.org/resources/versions/">ATT&CK v8</a> released on October 27, 2020,
+                introduces techniques for adversary behavior on Network Infrastructure Devices, such as switches and
+                routers. These have not been included in the control mappings.</dd>
+            <dt><a href="https://attack.mitre.org/mitigations/M1056">Pre-compromise Mitigation</a></dt>
+            <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to
+                techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource
+                Development techniques, and are considered out of scope.</dd>
+        </dl>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Control Family</span> Scoping Decisions</h2>
+        </div>
+
+        <p>
+            NIST 800-53 control families are listed below with our rational for a given control
+            family being in or out of scope:
+        </p>
+        <table class="table">
+            <tr>
+                <th>Control Family</th>
+                <th>In Scope</th>
+                <th>Rationale</th>
+            </tr>
+            <tr>
+                <td>AC: Access Control</td>
+                <td>Yes</td>
+                <td>Access Control family is in scope as it provides technical and operational controls for the control
+                    and
+                    enforcement of system access, accounts, and information.</td>
+            </tr>
+            <tr>
+                <td>AT: Awareness and Training</td>
+                <td>No</td>
+                <td>Awareness and Training controls are not applicable as they are for general security awareness
+                    training
+                    and not specific threat mitigations.</td>
+            </tr>
+            <tr>
+                <td>AU: Audit and Accountability</td>
+                <td>No</td>
+                <td>Audit and Accountability controls are not applicable as they do not provide mitigations of specific
+                    threats, but instead detect successful attacks.</td>
+            </tr>
+            <tr>
+                <td>CA: Assessment, Authorization, and Monitoring (Rev.5); Security Assessment and Authorization (Rev.4)
+                </td>
+                <td>Yes</td>
+                <td>CA control family is in scope as they provide technical and operational controls and techniques for
+                    monitoring and assessing security at the system level.</td>
+            </tr>
+            <tr>
+                <td>CM: Configuration Management</td>
+                <td>Yes</td>
+                <td>Configuration Management controls are in scope as they maintain technical and operational controls
+                    for
+                    maintaining secure configuration of information systems.</td>
+            </tr>
+            <tr>
+                <td>CP: Contingency Planning</td>
+                <td>Yes</td>
+                <td>Contingency Planning controls are in scope as they provide operational and technical controls for
+                    information protection at the system level.</td>
+            </tr>
+            <tr>
+                <td>IA: Identification and Authentication</td>
+                <td>Yes</td>
+                <td>Identification and Authentication controls are in scope as they provide operational and technical
+                    controls for managing and enforcing identification and authentication of network and system users
+                    and
+                    devices.</td>
+            </tr>
+            <tr>
+                <td>IR: Incident Response</td>
+                <td>No</td>
+                <td>Incident Response controls are not applicable as they do not provide mitigations of specific threats
+                    but
+                    rather provide detection of security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>MA: Maintenance</td>
+                <td>No</td>
+                <td>Maintenance controls are not applicable as they are related to the procedural management of
+                    information
+                    system maintenance and are not threat-specific.</td>
+            </tr>
+            <tr>
+                <td>MP: Media Protection</td>
+                <td>Yes</td>
+                <td>Media Protection family is in scope as it provides technical and operational controls for the
+                    control
+                    and access of digital system media.</td>
+            </tr>
+            <tr>
+                <td>PE: Physical and Environmental Protection</td>
+                <td>No</td>
+                <td>Physical and Environmental Protection controls are not applicable as they are related to the
+                    management
+                    and protection of physical space.</td>
+            </tr>
+            <tr>
+                <td>PL: Planning</td>
+                <td>No</td>
+                <td>Planning controls are not applicable as they focus on high-level system security plans and are not
+                    threat-specific.</td>
+            </tr>
+            <tr>
+                <td>PM: Program Management</td>
+                <td>No</td>
+                <td>Program Management controls are not applicable as they focus on programmatic, organization-wide
+                    information security requirements for managing information security programs.</td>
+            </tr>
+            <tr>
+                <td>PS: Personnel Security</td>
+                <td>No</td>
+                <td>Personnel security controls are not applicable as they are related to the procedural management of
+                    individuals.</td>
+            </tr>
+            <tr>
+                <td>PT: Personally Identifiable Information Processing and Transparency (Rev.5)</td>
+                <td>No</td>
+                <td>PII Processing and Transparency controls are not applicable as they are procedural in nature.</td>
+            </tr>
+            <tr>
+                <td>RA: Risk Assessment</td>
+                <td>Yes</td>
+                <td>Risk Assessment controls are in scope as they provide technical and operational controls and
+                    techniques
+                    for risk and vulnerability management and maintaining security at the system level.</td>
+            </tr>
+            <tr>
+                <td>SA: System and Services Acquisition</td>
+                <td>Yes</td>
+                <td>System and Services Acquisition are in scope as they provide technical and operational controls for
+                    security testing and evaluation of the system development life cycle.</td>
+            </tr>
+            <tr>
+                <td>SC: System and Communications Protection</td>
+                <td>Yes</td>
+                <td>System and Communications Protection controls are in scope as they provide technical and operational
+                    controls for the separation and protection of systems and information.</td>
+            </tr>
+            <tr>
+                <td>SI: System and Information Integrity</td>
+                <td>Yes</td>
+                <td>System and Information Integrity controls are in scope as they provide technical and operational
+                    controls and techniques for protecting and analyzing the integrity of software, firmware, and
+                    information.</td>
+            </tr>
+            <tr>
+                <td>SR: Supply Chain Risk Management (Rev.5)</td>
+                <td>Yes</td>
+                <td>Supply Chain Risk Management is in scope as they provide technical and operational controls for
+                    security
+                    testing and evaluation of supply chain processes and elements.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+{% endblock content %}

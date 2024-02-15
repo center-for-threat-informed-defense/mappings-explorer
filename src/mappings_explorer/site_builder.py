@@ -3,6 +3,7 @@ import json
 import os
 import shutil
 import zipfile
+from pathlib import Path
 
 import requests
 from loguru import logger
@@ -161,22 +162,23 @@ def load_projects():
         "8.2",
     ]
     nist.validVersions = [
-        ("rev4", "8.2", "Enterprise"),
-        ("rev5", "8.2", "Enterprise"),
-        ("rev4", "9.0", "Enterprise"),
-        ("rev5", "9.0", "Enterprise"),
-        ("rev4", "10.1", "Enterprise"),
-        ("rev5", "10.1", "Enterprise"),
-        ("rev4", "12.1", "Enterprise"),
+        # ("rev4", "8.2", "Enterprise"),
+        # ("rev5", "8.2", "Enterprise"),
+        # ("rev4", "9.0", "Enterprise"),
+        # ("rev5", "9.0", "Enterprise"),
+        # ("rev4", "10.1", "Enterprise"),
+        # ("rev5", "10.1", "Enterprise"),
+        # ("rev4", "12.1", "Enterprise"),
         ("rev5", "12.1", "Enterprise"),
-        ("rev4", "14.1", "Enterprise"),
-        ("rev5", "14.1", "Enterprise"),
+        # ("rev4", "14.1", "Enterprise"),
+        # ("rev5", "14.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
     nist.resources = [
-        {"link": "static/references/nist_scope.md", "label": "Mappings Scope"}
+        {"link": "about/methodology/nist-methodology/", "label": "Mapping Methodology"},
+        {"link": "about/methodology/nist-scope/", "label": "Mapping Scope"},
     ]
 
     veris = ExternalControl()
@@ -203,6 +205,12 @@ def load_projects():
         ("1.3.7", "12.1", "Enterprise"),
     ]
     veris.mappings = []
+    veris.resources = [
+        {
+            "link": "about/methodology/veris-methodology/",
+            "label": "Mapping Methodology",
+        },
+    ]
 
     cve = ExternalControl()
     cve.id = "cve"
@@ -225,6 +233,9 @@ def load_projects():
     ]
     cve.has_non_mappables = False
     cve.mappings = []
+    cve.resources = [
+        {"link": "about/methodology/cve-methodology/", "label": "Mapping Methodology"},
+    ]
 
     aws = ExternalControl()
     aws.id = "aws"
@@ -243,6 +254,9 @@ def load_projects():
         ("09.21.2021", "9.0", "Enterprise"),
     ]
     aws.mappings = []
+    aws.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     azure = ExternalControl()
     azure.id = "azure"
@@ -260,6 +274,9 @@ def load_projects():
         ("06.29.2021", "8.2", "Enterprise"),
     ]
     azure.mappings = []
+    azure.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     gcp = ExternalControl()
     gcp.id = "gcp"
@@ -279,14 +296,17 @@ def load_projects():
         ("06.28.2022", "10.0", "Enterprise"),
     ]
     gcp.mappings = []
+    gcp.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     projects = [
         nist,
-        cve,
-        veris,
-        azure,
-        gcp,
-        aws,
+        # cve,
+        # veris,
+        # azure,
+        # gcp,
+        # aws,
     ]
     return projects
 
@@ -1490,71 +1510,132 @@ def build_search_index(url_prefix: str, breadcrumbs=list):
         zip_file.testzip()
 
 
+def build_about_page(
+    url_prefix: str,
+    url_suffix: str,
+    breadcrumbs: list,
+    template_path: str,
+    title: str,
+) -> list:
+    """
+    Build one about page.
+
+    Args:
+        url_prefix: The prefix to put in front of any internal URLs.
+        url_suffix: The unique part of the URL, the part after the prefix.
+        breadcrumbs: The navigation tree above the pages being built in this function.
+        template_path: The jinja template to render for this page.
+        title: The page title.
+        output_dir: The path to write the rendered HTML to.
+
+    Returns:
+        A list of breadcrumbs to this page, which you may need for subpages
+    """
+    breadcrumbs = breadcrumbs + [(f"{url_prefix}{url_suffix}/", title)]
+    output_dir = PUBLIC_DIR
+    for url_part in url_suffix.split("/"):
+        output_dir = output_dir / url_part
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "index.html"
+    template = load_template(template_path)
+    stream = template.stream(
+        title=title,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created {} page -> {}", url_suffix, output_path)
+    return breadcrumbs
+
+
 def build_about_pages(url_prefix: str, breadcrumbs: list):
     """
-    Build the documentation pages, e.g. explaining what the site is for, who it's for,
+    Build the site's "about" pages, e.g. explaining what the site is for, who it's for,
     etc.
 
     Args:
         url_prefix: The prefix to put in front of any internal URLs.
         breadcrumbs: the navigation tree above the pages being built in this function
     """
-    nav = breadcrumbs + [(f"{url_prefix}about/", "About")]
-    dir = PUBLIC_DIR / "about"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("about.html.j2")
-    stream = template.stream(
-        title="About Mappings Explorer", url_prefix=url_prefix, breadcrumbs=nav
-    )
-    stream.dump(str(output_path))
-    logger.debug("Created about page")
-    nav1 = nav + [(f"{url_prefix}about/use-cases/", "Use Cases")]
-
-    dir = PUBLIC_DIR / "about" / "use-cases"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("use_cases.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Use Cases", url_prefix=url_prefix, breadcrumbs=nav1
-    )
-    stream.dump(str(output_path))
-    logger.debug("Created use cases page")
-
-    nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
-    dir = PUBLIC_DIR / "about" / "methodology"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("methodology.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Methodology", url_prefix=url_prefix, breadcrumbs=nav1
-    )
-    stream.dump(str(output_path))
-    logger.debug("Created methodology page")
-
-    nav1 = nav + [(f"{url_prefix}about/scoring/", "Scoring Rubric")]
-    dir = PUBLIC_DIR / "about" / "scoring"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("scoring_rubric.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Scoring", url_prefix=url_prefix, breadcrumbs=nav1
-    )
-    stream.dump(str(output_path))
-    logger.debug("Created scoring page")
-
-    nav1 = nav + [(f"{url_prefix}about/related-projects/", "Related Projects")]
-    dir = PUBLIC_DIR / "about" / "related-projects"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("related_projects.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Related Projects",
+    about_breadcrumbs = build_about_page(
         url_prefix=url_prefix,
-        breadcrumbs=nav1,
+        url_suffix="about",
+        breadcrumbs=breadcrumbs,
+        template_path="about.html.j2",
+        title="About",
     )
-    stream.dump(str(output_path))
-    logger.debug("Created Related Projects page")
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/use-cases",
+        breadcrumbs=about_breadcrumbs,
+        template_path="use_cases.html.j2",
+        title="Use Cases",
+    )
+
+    methodology_breadcrumbs = build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology",
+        breadcrumbs=about_breadcrumbs,
+        template_path="methodology.html.j2",
+        title="Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/cve-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/cve_methodology.html.j2",
+        title="CVE Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/nist-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/nist_methodology.html.j2",
+        title="NIST 800-53 Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/nist-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/nist_scope.html.j2",
+        title="NIST 800-53 Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/ssm-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/ssm_methodology.html.j2",
+        title="Security Stack Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/veris-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/veris_methodology.html.j2",
+        title="VERIS Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/scoring",
+        breadcrumbs=about_breadcrumbs,
+        template_path="scoring_rubric.html.j2",
+        title="Scoring",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/related-projects",
+        breadcrumbs=about_breadcrumbs,
+        template_path="related_projects.html.j2",
+        title="Related Projects",
+    )
 
 
 def main():
@@ -1581,7 +1662,7 @@ def main():
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
-        title="Mappings Explorer",
+        title="Home",
         url_prefix=url_prefix,
         public_dir=PUBLIC_DIR,
         projects=projects,
@@ -1613,11 +1694,11 @@ def main():
         (f"{url_prefix}", "Home"),
     ]
     build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
-    build_attack_pages(
-        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
-    )
-    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    build_search_index(url_prefix, breadcrumbs)
+    # build_attack_pages(
+    #     projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    # )
+    # build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    # build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
 

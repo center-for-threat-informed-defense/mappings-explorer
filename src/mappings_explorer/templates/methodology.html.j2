@@ -1,7 +1,7 @@
 {% extends "base.html.j2" %}
 
 {% block content %}
-<section id="header-container" class="header-container">
+<section class="header-container">
     <div class="container aos-init aos-animate" data-aos="fade-up">
         {% include "_breadcrumbs.html.j2" %}
         <div class="row justify-content-center">
@@ -12,7 +12,7 @@
     </div>
 </section>
 
-<section id="methodology-overview" class="services-cards gray-bg">
+<section class="services-cards gray-bg">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -32,22 +32,37 @@
             are able to mitigate.</p>
         <p>The methodology consists of the following steps:</p>
         <ol>
-            <li><h3><a href="#step1">Identify Platform Security Controls</a></h3> - Identify the native security controls available on the platform.
+            <li>
+                <h3><a href="#step1">Identify Platform Security Controls</a></h3> - Identify the native security
+                controls available on the platform.
             </li>
-            <li><h3><a href="#step2">Security Control Review</a></h3> - For each identified control, understand the security capabilities it provides.
+            <li>
+                <h3><a href="#step2">Security Control Review</a></h3> - For each identified control, understand the
+                security capabilities it provides.
             </li>
-            <li><h3><a href="#step3">Identify Mappable ATT&CK Techniques & Sub-techniques</a></h3> - Identify the ATT&CK techniques and sub-techniques
-                mappable to the control.</li>
-            <li><h3><a href="#step4">Score Assessment</a></h3> - Assess the effectiveness of the type of protection the control provides for the
-                identified ATT&CK techniques and sub-techniques.*</li>
-            <li><h3><a href="#step5">Create a Mapping</a></h3> - Creating a mapping based on the information gathered from the previous steps.</li>
+            <li>
+                <h3><a href="#step3">Identify Mappable ATT&CK Techniques & Sub-techniques</a></h3> - Identify the ATT&CK
+                techniques and sub-techniques
+                mappable to the control.
+            </li>
+            <li>
+                <h3><a href="#step4">Score Assessment</a></h3> - Assess the effectiveness of the type of protection the
+                control provides for the
+                identified ATT&CK techniques and sub-techniques.*
+            </li>
+            <li>
+                <h3><a href="#step5">Create a Mapping</a></h3> - Creating a mapping based on the information gathered
+                from the previous steps.
+            </li>
         </ol>
-        <p>* Scoring assessments have been performed for cloud security capability mappings to record the category of ATT&CK coverage provided by a
-         control (protect, detect, or response) along with an assessment of its effectiveness (minimal, partial, or significant). </p>
+        <p>* Scoring assessments have been performed for cloud security capability mappings to record the category of
+            ATT&CK coverage provided by a
+            control (protect, detect, or response) along with an assessment of its effectiveness (minimal, partial, or
+            significant). </p>
     </div>
 </section>
 
-<section id="step1" class="services-cards">
+<section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -73,7 +88,7 @@
     </div>
 </section>
 
-<section id="step2" class="services-cards">
+<section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -104,7 +119,7 @@
     </div>
 </section>
 
-<section id="step3" class="services-cards">
+<section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -157,7 +172,7 @@
     </div>
 </section>
 
-<section id="step4" class="services-cards">
+<section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -165,18 +180,20 @@
         </div>
 
         <p>After identifying the techniques and sub-techniques that are mappable to the control, use the
-        <a href="{{url_prefix}}about/scoring/"> scoring rubric</a>
-         to score the effectiveness of the security function (protect, detect, respond) provided by the control in
-         relation to the behavior described by the ATT&CK technique or sub-technique. The scoring rubric provides score
-         values of Minimal, Partial, and Significant based on careful consideration of scoring factors, including the
-         control's ability to mitigate the behavior described, how frequently the control operates, and the fidelity
-         of the capability.</p>
+            <a href="{{url_prefix}}about/scoring/"> scoring rubric</a>
+            to score the effectiveness of the security function (protect, detect, respond) provided by the control in
+            relation to the behavior described by the ATT&CK technique or sub-technique. The scoring rubric provides
+            score
+            values of Minimal, Partial, and Significant based on careful consideration of scoring factors, including the
+            control's ability to mitigate the behavior described, how frequently the control operates, and the fidelity
+            of the capability.
+        </p>
 
         <p>Currently, the cloud security capability mappings provide these scoring assessments. </p>
     </div>
 </section>
 
-<section id="step5" class="services-cards">
+<section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
@@ -195,6 +212,23 @@
                 the ATT&CK techniques and sub-techniques to which it maps. </li>
             <li>When scoring a control's effectiveness at mitigating a technique or sub-technique, use the comment field
                 to provide an explanation of the assessment.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Additional</span> Resources</h2>
+        </div>
+
+        <ul>
+            <li><strong>CVE:</strong> <a href="./cve-methodology/">Methodology</a></li>
+            <li><strong>NIST 800-53:</strong> <a href="./nist-methodology/">Methodology</a> | <a
+                    href="./nist-scope/">Scope</a></li>
+            <li><strong>Security Stack Mappings:</strong> <a href="./ssm-methodology/">Methodology</a></li>
+            <li><strong>VERIS:</strong> <a href="./veris-methodology/">Methodology</a></li>
         </ul>
     </div>
 </section>
