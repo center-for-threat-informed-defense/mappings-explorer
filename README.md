@@ -8,25 +8,41 @@ and the traditional perspective applied to the employment of security controls.
 
 **Table Of Contents:**
 
-- [Overview](#overview)
 - [Getting Started](#getting-started)
 - [Getting Involved](#getting-involved)
+- [Use Cases](#use-cases)
+- [Mappings Editor](#mappings-editor)
 - [Questions and Feedback](#questions-and-feedback)
+- [How Do I Contribute?](#how-do-i-contribute)
 - [Notice](#notice)
 
-## Overview
+## Getting Started
 
-The website provides an open, curated knowledge base of Center mapping projects between
-the ATT&CK framework and security capabilities/controls. The mappings have been brought
-into a structured data format, allowing for this expanded accessibility and usability
-including search capabilities. A customizable ATT&CK Navigator of the control framework
-mappings is provided for visual exploration of the mappings and viewing mapping coverage.
-Usage documentation is also hosted on Mappings Explorer, including mapping methodologies
-to determine the capabilities of a platform's security offerings and use cases to
-demonstrate how the mappings can be used. In addition, the mapping resources are linked
-via the website, making them easy to download.
+To get started, visit the project website.
 
-# Mappings Explorer
+| Resource                                                                                     | Description                                                                                               |
+| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| [Mappings Explorer](https://center-for-threat-informed-defense.github.io/mappings-explorer/) | A website to access, explore, search, and download our ATT&CK mappings.                                   |
+| [Mappings Editor](https://center-for-threat-informed-defense.github.io/mappings-explorer/)   | An interactive, web-based tool for creating your own mappings. (This tool is available as a public beta.) |
+
+## Getting Involved
+
+There are several ways that you can get involved with this project and help
+advance threat-informed defense.
+
+- **Visit the Mappings Explorer website.** Use the website to browse, navigate, search,
+  and download mappings data.
+- **Recommend new mappings projects.** Is there a security control framework (or other
+  security capability) that is not in Mappings Explorer but should be? [Let us
+  know.](mailto:ctid@mitre-engenuity.org?subject=Mappings%20Explorer%20framework%20request)
+- **Create new mappings.** The Mappings Editor is released as a public beta; you may try
+  using it to create your own mappings data. The mappings data can be used internally
+  inside your organization, or if you think the public would benefit, we would be happy
+  to accept pull requests for new mappings. Please [get in touch with
+  us]((mailto:ctid@mitre-engenuity.org?subject=Mappings%20Explorer%20framework%20submission))
+  ahead of time so that we can coordinate submissions.
+
+## Use Cases
 
 You can use Mappings Explorer for many different purposes. Examples of usage include:
 
@@ -50,31 +66,14 @@ Evolve and Expand Cyber Defense.
 - Visualize and assess deficiencies in cyber defense. Plan future policy and security
   controls around real-world adversary behavior.
 
-# Mappings Editor
+## Mappings Editor
 
-The Mappings Editor is a custom-built tool developed under the Mappings Explorer project.
-This lightweight, easy to use tool is being used internally by the Center to create new
-and update existing capability mappings to ATT&CK objects.
-
-## Getting Started
-
-To get started, visit the project website.
-
-| Resource                       | Description                                      |
-| ------------------------------ | ------------------------------------------------ |
-| [Mappings Explorer Website](<!-- TODO Add link>) | Access and explore mapped security capabilities. |
-| [Mappings Editor (beta)](#<!-- TODO Add link>)    | Lightweight tool to create or update mappings.   |
-
-## Getting Involved
-
-There are several ways that you can get involved with this project and help
-advance threat-informed defense.
-
-We welcome your feedback and contributions to continue to advance Mappings Explorer.
-You are also welcome to submit issues for any technical questions/concerns.
-
-If you are interested in learning more about the Mappings Editor tool, please contact
-the [Center](mailto:ctid@mitre-engenuity.org?subject=subject=Question%20about%20mappings-explorer).
+The Mappings Editor is a custom-built tool developed under the Mappings Explorer
+project. This lightweight, easy to use tool is being used internally by the Center to
+create new and update existing capability mappings to ATT&CK objects. It is available
+for your own use as a public beta, but most users should not need to use this tool.
+Instead, you should generally use the mappings data available on the Mappings Explorer
+website.
 
 ## Questions and Feedback
 
@@ -84,14 +83,25 @@ Please see the guidance for contributors if are you interested in
 
 Please submit[issues](https://github.com/center-for-threat-informed-defense/mappings-explorer/issues) for
 any technical questions/concerns or contact
-[ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=subject=Question%20about%20mappings-explorer)
+[ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=Question%20about%20Mappings%20Explorer)
 directly for more general inquiries.
+
+## How Do I Contribute?
+
+We welcome your feedback and contributions to continue to advance Mappings Explorer.
+Please see the guidance for contributors if are you interested in [contributing or
+simply reporting issues.](/CONTRIBUTING.md)
+
+Please submit
+[issues](https://github.com/center-for-threat-informed-defense/mappings-explorer/issues)
+for any technical questions/concerns or contact ctid@mitre-engenuity.org directly for
+more general inquiries.
 
 ## Notice
 
 <!-- TODO Add PRS prior to publication. -->
 
-Copyright 2023 MITRE Engenuity. Approved for public release. Document number REPLACE_WITH_PRS_NUMBER
+Copyright 2024 MITRE Engenuity. Approved for public release. Document number REPLACE_WITH_PRS_NUMBER
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
 file except in compliance with the License. You may obtain a copy of the License at

@@ -1,0 +1,452 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">VERIS <span class="highlight">MAPPING METHODOLOGY</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Mapping</span> Overview</h2>
+        </div>
+
+        <p>The Vocabulary for Event Recording and Incident Sharing (VERIS) provides a common language for describing
+            security incidents in a structured and repeatable manner. The overall goal is to lay a foundation from which
+            cyber analysts can constructively and cooperatively learn to better measure and manage risk.</p>
+        <p>VERIS employs a threat model with four primary axes, the "A4" model, to describe incidents. The four axes
+            are:</p>
+        <ul>
+            <li><strong>Actors:</strong> Whose actions affected the assets?</li>
+            <li><strong>Actions:</strong> What actions affected the assets?</li>
+            <li><strong>Assets:</strong> Which assets were affected?</li>
+            <li><strong>Attributes:</strong> How were the assets affected?</li>
+        </ul>
+        <p>Each axis has a categorized set of values, called an enumeration, associated with it. Incidents are
+            classified with one or more of those enumeration values for each axis. Examples of incidents mapped to VERIS
+            can be seen in the VERIS Community Database. One other axis outside the 4A model is the Value Chain, which
+            represents pre-attack activities. These activities are essential to a successful campaign and are very
+            closely associated with an entire category of behavior.</p>
+        <p>In this document, VERIS enumeration values follow the form [Axis].[Category].[Subcategory].[Value]; for
+            example, Action.Malware.Variety.C2 corresponds to the C2 value in the Action axis, Malware category, Variety
+            subcategory.</p>
+        <p>MITRE ATT&CK® is a globally-accessible knowledge base of adversary tactics and techniques based on real-world
+            observations. ATT&CK focuses on how external adversaries compromise and operate within computer information
+            networks. ATT&CK describes adversary behaviors using the following core components:</p>
+        <ul>
+            <li><strong>Tactics:</strong> "why" - the adversary's objective or reason for performing an action</li>
+            <li><strong>Techniques:</strong> "how" - the means by which adversaries achieve tactical goals</li>
+            <li><strong>Sub-techniques:</strong> describing more specific means by which adversaries achieve tactical
+                goals at a lower level than techniques</li>
+        </ul>
+        <p>Adversary behaviors can be described by mapping them to the appropriate tactics, techniques, and
+            sub-techniques in ATT&CK.</p>
+        <p>The 2021 mapping project took enumeration values in VERIS and mapped them to ATT&CK Enterprise Techniques.
+            The resultant mappings could be used to either take a VERIS enumeration value and come up with a list of
+            ATT&CK techniques and sub-techniques, or to take an ATT&CK technique or sub-technique and come up with a
+            list of VERIS enumeration values.</p>
+        <p>The 2023 update to the mapping project continues the work of the original integration project by updating and
+            expanding the mapping and translation layer between VERIS and ATT&CK to enhance the community's ability to
+            pivot from VERIS to ATT&CK Techniques related to a particular incident. In addition, the documentation has
+            been updated and expanded to provide updated use cases and new scenario examples that further demonstrate
+            how the mappings can support describing and communicating information about security incidents.</p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Mapping</span> Scope</h2>
+        </div>
+        <h3>Axis Scope</h3>
+        <p>Note that some VERIS axes and enumeration values cannot be mapped cleanly to ATT&amp;CK; therefore this
+            project maps onto a subset of the axes and enumerations as detailed here.</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Axis</th>
+                    <th>Description</th>
+                    <th>In
+                        Scope</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Actor</td>
+                    <td>Whose actions
+                        affected the asset?</td>
+                    <td>Yes</td>
+                    <td>Aligns with ATT&amp;CK groups of
+                        adversarial activity clusters
+                        tracked by common names in
+                        the security community.</td>
+                </tr>
+                <tr>
+                    <td>Action</td>
+                    <td>What actions affected
+                        the asset?</td>
+                    <td>Yes</td>
+                    <td>Describes adversary behaviors
+                        performed by hands-on-keyboard
+                        attackers or automated by
+                        software/malware.</td>
+                </tr>
+                <tr>
+                    <td>Asset</td>
+                    <td>Which assets were
+                        affected?</td>
+                    <td>No</td>
+                    <td>Does not describe adversary
+                        behavior.</td>
+                </tr>
+                <tr>
+                    <td>Attributes</td>
+                    <td>How was the asset
+                        affected?</td>
+                    <td>Yes</td>
+                    <td>Describes strategic and
+                        tactical impact.</td>
+                </tr>
+                <tr>
+                    <td>Value
+                        Chain</td>
+                    <td>Capabilities and
+                        investments an
+                        attacker must acquire
+                        prior to the actions
+                        on target.</td>
+                    <td>Yes</td>
+                    <td>Aligns with ATT&amp;CK Tactic
+                        TA0042 Resource Development.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Action Axis Scope</h3>
+        <p>Within each of the axes that describe adversary behaviors, the scope is further narrowed based on whether the
+            adversary behaviors for a particular enumeration category align to ATT&CK. For example, ATT&CK does not
+            cover unintentional errors or natural disasters and therefore the Error and Environmental enumeration
+            categories in the Action axis are not mapped. </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>In
+                        Scope</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Malware</td>
+                    <td>Automated activity</td>
+                    <td>Yes</td>
+                    <td>Describes any
+                        malicious
+                        software,
+                        script, or code
+                        run on a device
+                        that alters
+                        state or
+                        function without
+                        informed
+                        consent.</td>
+                </tr>
+                <tr>
+                    <td>Hacking</td>
+                    <td>Hands-on-keyboard
+                        activity</td>
+                    <td>Yes</td>
+                    <td>Describes all
+                        attempts to
+                        intentionally
+                        access or harm
+                        information
+                        assets without
+                        (or exceeding)
+                        authorization.</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>Exploitation of
+                        human element</td>
+                    <td>Yes</td>
+                    <td>Describes use of
+                        deception,
+                        manipulation,
+                        intimidation,
+                        etc., to exploit
+                        users of
+                        information
+                        assets.</td>
+                </tr>
+                <tr>
+                    <td>Misuse</td>
+                    <td>Unapproved use of
+                        access</td>
+                    <td>Yes</td>
+                    <td>Describes
+                        actor-focused
+                        categorizations,
+                        not behaviors.</td>
+                </tr>
+                <tr>
+                    <td>Physical</td>
+                    <td>Actions involving
+                        proximity</td>
+                    <td>No</td>
+                    <td>Describes
+                        physical
+                        attacks, which
+                        are out of scope
+                        for ATT&amp;CK.</td>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td>Unintentional
+                        actions</td>
+                    <td>No</td>
+                    <td>Does not
+                        describe
+                        intentionally
+                        malicious
+                        behavior by an
+                        adversary, and
+                        therefore out of
+                        scope for
+                        ATT&amp;CK.</td>
+                </tr>
+                <tr>
+                    <td>Environmental</td>
+                    <td>Natural disaster
+                        events</td>
+                    <td>No</td>
+                    <td>Describes
+                        physical
+                        accidents and
+                        not
+                        intentionally
+                        malicious
+                        actions.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Attribute Axis Scope</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>In
+                        Scope</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Confidentiality/Possession</td>
+                    <td>Data
+                        disclosure</td>
+                    <td>Partial</td>
+                    <td>Describes
+                        both
+                        tactical
+                        and
+                        strategic
+                        goals.
+                        Tactical
+                        goals are
+                        in-scope
+                        and mapped
+                        to ATT&amp;CK.</td>
+                </tr>
+                <tr>
+                    <td>Integrity/Authenticity</td>
+                    <td>State of
+                        system changed</td>
+                    <td>Partial</td>
+                    <td>Describes
+                        both
+                        tactical
+                        and
+                        strategic
+                        goals.
+                        Tactical
+                        goals are
+                        in-scope
+                        and mapped
+                        to ATT&amp;CK.</td>
+                </tr>
+                <tr>
+                    <td>Availability/Utility</td>
+                    <td>Availability
+                        of system(s)
+                        impacted</td>
+                    <td>Partial</td>
+                    <td>Describes
+                        both
+                        tactical
+                        and
+                        strategic
+                        goals.
+                        Tactical
+                        goals are
+                        in-scope
+                        and mapped
+                        to ATT&amp;CK.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Value Chain Axis Scope</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>In
+                        Scope</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Development</td>
+                    <td>Software that must be
+                        developed to accomplish
+                        the actions on target</td>
+                    <td>Yes</td>
+                    <td>Describes activities
+                        establishing
+                        capabilities and
+                        infrastructure.</td>
+                </tr>
+                <tr>
+                    <td>Distribution</td>
+                    <td>Services used to
+                        distribute actor
+                        content</td>
+                    <td>Yes</td>
+                    <td>Describes activities
+                        for establishing
+                        delivery mechanisms.</td>
+                </tr>
+                <tr>
+                    <td>Non-
+                        Distribution
+                        Services</td>
+                    <td>Services other than
+                        those used for
+                        distribution of actor
+                        content</td>
+                    <td>Yes</td>
+                    <td>Describes staging
+                        activities for
+                        engagement.</td>
+                </tr>
+                <tr>
+                    <td>Targeting</td>
+                    <td>Things that identify
+                        exploitable
+                        opportunities</td>
+                    <td>Yes</td>
+                    <td>Aligns with ATT&amp;CK
+                        Tactic TA0042 Resource
+                        Development.</td>
+                </tr>
+                <tr>
+                    <td>Cash-Out</td>
+                    <td>Methods for converting
+                        something into currency</td>
+                    <td>No</td>
+                    <td>Describes activities
+                        after involvement with
+                        victim.</td>
+                </tr>
+                <tr>
+                    <td>Money
+                        Laundering</td>
+                    <td>Methods for concealing
+                        the origins of
+                        illegally obtained
+                        money</td>
+                    <td>No</td>
+                    <td>Describes activities
+                        after involvement with
+                        victim.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Mapping</span> Philosophy and Process</h2>
+        </div>
+        <p>Based on those scoping decisions, the mappings were created by analyzing each in-scope ATT&CK
+            technique/sub-technique and each in-scope VERIS enumeration value. VERIS and ATT&CK are at different levels
+            of abstraction and cannot always perfectly describe the adversary behaviors that they are meant to
+            represent. Some amount of analyst judgment is required, and whenever judgment is involved, there can be
+            differences of opinion. These design decisions document our judgement and rationale.</p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Guiding Principles</span> and Design Decisions</h2>
+        </div>
+        <p>Mappings are many-to-many:</p>
+        <ul>
+            <li>VERIS enumeration values may describe multiple adversary behaviors. Values are mapped to all relevant
+                techniques and sub-techniques.</li>
+            <li>ATT&CK techniques and sub-techniques may describe a behavior that is also described by multiple VERIS
+                enumeration values. Techniques are mapped to all relevant values.</li>
+        </ul>
+        <p>VERIS enumeration values are mapped to the most specific ATT&CK entity that applies:</p>
+        <ul>
+            <li>If the VERIS enumeration value describes a behavior that maps to a sub-technique, it is mapped to that
+                sub-technique.</li>
+            <li>If the VERIS enumeration value describes a behavior that maps to a technique, it is mapped to that
+                technique and all sub-techniques.</li>
+            <li>If the VERIS enumeration value describes a behavior that maps to a tactic, it is mapped to all
+                techniques and sub-techniques in that tactic.</li>
+        </ul>
+        <p>ATT&CK techniques are considered in the context of their descriptions and adversary goals:</p>
+        <ul>
+            <li>In some cases, techniques that appear to describe the same technical behavior are not mapped because the
+                adversary objective differs from that described by the VERIS enumeration value.</li>
+            <li>Many adversary behaviors are described by both Action.Hacking and Action.Malware:</li>
+            <li>Activities in the VERIS Action.Hacking category are those performed by hands-on-keyboard attackers.</li>
+            <li>Activities in the VERIS Action.Malware category are automated by software/malware.</li>
+            <li>ATT&CK techniques and sub-techniques will be mapped to one or both depending on if they describe
+                behaviors that are always automated, always manual, or might be either.</li>
+        </ul>
+        <p>Any remaining [sub-]techniques are mapped to one of these:</p>
+        <ul>
+            <li>Action.Hacking.Variety.Other</li>
+            <li>Action.Hacking.Vector.Other</li>
+            <li>Action.Malware.Variety.Other</li>
+            <li>Action.Malware.Vector.Other</li>
+        </ul>
+        <p>Any techniques that have unspecified components of adversary behavior are mapped to one of these:</p>
+        <ul>
+            <li>Action.Hacking.Variety.Unknown</li>
+            <li>Action.Malware.Variety.Unknown</li>
+        </ul>
+    </div>
+</section>
+{% endblock content %}
