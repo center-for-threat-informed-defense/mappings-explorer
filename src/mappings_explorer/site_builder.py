@@ -3,7 +3,6 @@ import json
 import os
 import shutil
 import zipfile
-from pathlib import Path
 
 import requests
 from loguru import logger
@@ -162,16 +161,16 @@ def load_projects():
         "8.2",
     ]
     nist.validVersions = [
-        # ("rev4", "8.2", "Enterprise"),
-        # ("rev5", "8.2", "Enterprise"),
-        # ("rev4", "9.0", "Enterprise"),
-        # ("rev5", "9.0", "Enterprise"),
-        # ("rev4", "10.1", "Enterprise"),
-        # ("rev5", "10.1", "Enterprise"),
-        # ("rev4", "12.1", "Enterprise"),
+        ("rev4", "8.2", "Enterprise"),
+        ("rev5", "8.2", "Enterprise"),
+        ("rev4", "9.0", "Enterprise"),
+        ("rev5", "9.0", "Enterprise"),
+        ("rev4", "10.1", "Enterprise"),
+        ("rev5", "10.1", "Enterprise"),
+        ("rev4", "12.1", "Enterprise"),
         ("rev5", "12.1", "Enterprise"),
-        # ("rev4", "14.1", "Enterprise"),
-        # ("rev5", "14.1", "Enterprise"),
+        ("rev4", "14.1", "Enterprise"),
+        ("rev5", "14.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
@@ -302,11 +301,11 @@ def load_projects():
 
     projects = [
         nist,
-        # cve,
-        # veris,
-        # azure,
-        # gcp,
-        # aws,
+        cve,
+        veris,
+        azure,
+        gcp,
+        aws,
     ]
     return projects
 
@@ -1659,6 +1658,10 @@ def main():
     logger.info("Copying parsed mappings to output directory:", data_dir)
     shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
+    legacy_dir = PUBLIC_DIR / "legacy"
+    logger.info("Copying legacy data to output directory:", data_dir)
+    shutil.copytree(ROOT_DIR / "legacy", legacy_dir, dirs_exist_ok=True)
+
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
@@ -1694,11 +1697,11 @@ def main():
         (f"{url_prefix}", "Home"),
     ]
     build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
-    # build_attack_pages(
-    #     projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
-    # )
-    # build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    # build_search_index(url_prefix, breadcrumbs)
+    build_attack_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
 
