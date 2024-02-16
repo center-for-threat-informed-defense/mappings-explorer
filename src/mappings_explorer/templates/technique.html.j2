@@ -14,7 +14,7 @@
           {%-markdown-%}
             {{technique.description}}
           {%-endmarkdown-%}
-          <a href="https://attack.mitre.org/versions/v{{attack_version.split('.')[0]}}/techniques/{{technique.id}}" target="_blank" rel="noopener noreferrer"">
+          <a href="https://attack.mitre.org/versions/v{{attack_version.split('.')[0]}}/techniques/{{technique.id.replace(".","/")}}" target="_blank" rel="noopener noreferrer"">
             View in MITRE ATT&CK®
           </a>
         </div>
