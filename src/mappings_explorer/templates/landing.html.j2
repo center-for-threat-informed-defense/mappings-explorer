@@ -5,27 +5,23 @@
 {% block content %}
         <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-4">
-          <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
-            <img data-aos="fade-up" src="{{url_prefix}}static/img/logo-horizontal-white.png" alt="center for threat informed defense logo" style="height: 20px; margin-bottom: 10px;"/></a>
-          <h2 data-aos="fade-up">Mappings <span style="color: #C2EAF6">Explorer</span></h2>
-          <blockquote data-aos="fade-up" data-aos-delay="100">
-            <p>
-              Mappings Explorer enables cyber defenders to understand how security controls
-              map onto the adversary behaviors catalogued in the MITRE ATT&CK® knowledge base.
-              These mappings form a bridge between the threat-informed approach to cybersecurity
-              and the traditional security controls perspective.
-            </p>
-          </blockquote>
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="{{url_prefix}}about/" class="btn-get-started">Learn More</a>
-          </div>
-
+      <div>
+        <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
+          <img data-aos="fade-up" src="{{url_prefix}}static/img/logo-horizontal-white.png" alt="center for threat informed defense logo" style="height: 20px; margin-bottom: 10px;"/></a>
+        <h2 data-aos="fade-up">Mappings <span style="color: #C2EAF6">Explorer</span></h2>
+        <blockquote data-aos="fade-up" data-aos-delay="100">
+          <p>
+            Mappings Explorer enables cyber defenders to understand how security controls and capabilities
+            map onto the adversary behaviors catalogued in the
+            <a href="https://attack.mitre.org/" target="_blank" class="white-link">MITRE ATT&CK®</a>
+            knowledge base. These mappings form a bridge between the threat-informed approach
+            to cybersecurity and the traditional security controls perspective.
+          </p>
+        </blockquote>
+        <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+          <a href="{{url_prefix}}about/" class="btn-get-started">Learn More</a>
         </div>
       </div>
-    </div>
   </section><!-- End Hero Section -->
 
   <main id="main">
@@ -36,7 +32,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 text-center">
           <h3>Search All Mappings</h3>
-          <p>Search by any ATT&CK object or security control to get their associated mappings.</p>
+          <p>Search by any ATT&CK object or security capability to get the associated mappings.</p>
           <div class="input-group rounded">
             <input
               type="search"

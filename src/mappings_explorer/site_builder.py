@@ -56,7 +56,8 @@ class CapabilityGroup:
 class ExternalControl:
     id = ""
     label = ""
-    description = []
+    description = ""
+    resources = []
     version = ""
     versions = []
     attackVersion = ""
@@ -67,6 +68,8 @@ class ExternalControl:
     capability_groups = []
     mappings = []
     capabilities = []
+    non_mappables = []
+    has_non_mappables = True
 
 
 all_attack_versions = [
@@ -83,7 +86,7 @@ all_attack_versions = [
     # "13.0",
     # "13.1",
     # "14.0",
-    # "14.1",
+    "14.1",
 ]
 
 attack_domains = {
@@ -101,7 +104,7 @@ attack_domains = {
         # "13.0",
         # "13.1",
         # "14.0",
-        # "14.1",
+        "14.1",
     ],
     "ICS": [
         "8.2",
@@ -142,23 +145,16 @@ def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
-    nist.description = [
-        """The NIST 800-53 is a cybersecurity standard and compliance framework
-        developed by the National Institute of Standards in Technology. It’s a
-        continuously updated framework that tries to flexibly define standards, controls
-        , and assessments based on risk, cost-effectiveness, and capabilities. Currently
-        , the NIST framework is mapped to ATT&CK Versions 8.2, 9.0, and 10.1.""",
-        """The NIST 800-53 framework is designed to provide a foundation of guiding
-         elements, strategies, systems, and controls, that can agnostically support any
-         organization’s cybersecurity needs and priorities. By establishing a framework
-         available to all, it fosters communication and allows organizations to speak
-         using a shared language. Lastly, because it doesn’t specifically support or
-         suggest specific tools, companies, or vendors (intentionally so), it’s designed
-         to be used as new technologies, systems, environments, and organizational
-         changes arise, shifting cybersecurity needs.""",
-    ]
+    nist.description = """National Institute of Standards in Technology (NIST) Special
+     Publication 800-53 provides a catalog of security and privacy controls for the
+     protection of information systems and organizations from a diverse set of threats
+     and risks. This project provides resources for assessing security control coverage
+     against real-world threats as described in the MITRE ATT&CK® knowledge base and
+     provide a foundation for integrating ATT&CK-based threat information into the
+     risk management process."""
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
+        "14.1",
         "12.1",
         "10.1",
         "9.0",
@@ -173,19 +169,27 @@ def load_projects():
         ("rev5", "10.1", "Enterprise"),
         ("rev4", "12.1", "Enterprise"),
         ("rev5", "12.1", "Enterprise"),
+        ("rev4", "14.1", "Enterprise"),
+        ("rev5", "14.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
+    nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
+    nist.resources = [
+        {"link": "about/methodology/nist-methodology/", "label": "Mapping Methodology"},
+        {"link": "about/methodology/nist-scope/", "label": "Mapping Scope"},
+    ]
+
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
-    veris.description = [
-        """The Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of
-         metrics designed to provide a common language for describing security incidents
-         in a structured and repeatable manner. The overall goal is to lay a foundation
-         from which we can constructively and cooperatively learn from our experiences
-         to better measure and manage risk. """
-    ]
+    veris.description = """The Vocabulary for Event Recording and Incident Sharing
+    (VERIS) provides a
+         common language for describing security incidents in a structured and
+         repeatable manner that allows for the analysis of data across a variety of
+         incidents. This project provides mappings to better connect the who, what, and
+         why captured in VERIS incident representation with the when and how described
+         in MITRE ATT&CK® adversary behavioral tactics and techniques."""
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -200,83 +204,108 @@ def load_projects():
         ("1.3.7", "12.1", "Enterprise"),
     ]
     veris.mappings = []
+    veris.resources = [
+        {
+            "link": "about/methodology/veris-methodology/",
+            "label": "Mapping Methodology",
+        },
+    ]
 
     cve = ExternalControl()
     cve.id = "cve"
     cve.label = "CVE"
-    cve.description = [
-        """Common Vulnerabilities and Exposures (CVE) is a database of publicly
-         available information security issues. CVE provides a convenient, reliable way
-         for vendors, enterprises, academics, and all other interested parties to
-         exchange information about cyber security issues. Sharing CVE details is
-         beneficial to all organizations it allows organizations to set a baseline for
-         evaluating the coverage of their security tools. CVE numbers allow
-         organizations to see what each tool covers and how appropriate they are
-         for your organization."""
-    ]
+    cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
+      provides a catalog of
+         publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
+         community to communicate consistent descriptions of vulnerabilities. This
+         project uses the adversary behaviors described in MITRE ATT&CK® to characterize
+         the impact of vulnerabilities from CVE, establishing a critical connection
+         between vulnerability management, threat modeling, and compensating controls.
+    """
+
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
     cve.versions = ["10.21.2021"]
     cve.attackVersions = ["9.0"]
-    cve.validVersions = [("10.21.2021", "9.0", "Enterprise")]
+    cve.validVersions = [
+        ("10.21.2021", "9.0", "Enterprise"),
+    ]
+    cve.has_non_mappables = False
     cve.mappings = []
+    cve.resources = [
+        {"link": "about/methodology/cve-methodology/", "label": "Mapping Methodology"},
+    ]
 
     aws = ExternalControl()
     aws.id = "aws"
     aws.label = "AWS"
-    aws.description = [
-        """This project maps the security controls native to the Amazon Web Services
-        (AWS) platform to ATT&CK. AWS users can use these mappings to evaluate the
-        effectiveness of their native cloud security controls against an array of ATT&CK
-        techniques."""
-    ]
+    aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
+      platform. This
+         project maps the security controls native to the (AWS) platform to
+         MITRE ATT&CK®, providing resources to assess how to protect, detect, and
+         respond to real-world threats as described in the ATT&CK knowledge base.
+        """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["9.0"]
     aws.versions = ["09.21.2021"]
-    aws.validVersions = [("09.21.2021", "9.0", "Enterprise")]
+    aws.validVersions = [
+        ("09.21.2021", "9.0", "Enterprise"),
+    ]
     aws.mappings = []
+    aws.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
-    azure.description = [
-        """This project maps the security controls native to the Azure Infrastructure as
-        a Service (IaaS) platform to ATT&CK. With over 45 native Azure security
-        controls mapped, it provides a critical resource for organizations to assess
-        their Azure security control coverage against real-world threats."""
-    ]
+    azure.description = """Azure is a widely used cloud computing platform. This
+      project maps the
+         security controls native to the Azure platform to MITRE ATT&CK®, providing
+         resources to assess how to protect, detect, and respond to real-world threats
+         as described in the ATT&CK knowledge base."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
     azure.versions = ["06.29.2021"]
-    azure.validVersions = [("06.29.2021", "8.2", "Enterprise")]
+    azure.validVersions = [
+        ("06.29.2021", "8.2", "Enterprise"),
+    ]
     azure.mappings = []
+    azure.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
-    gcp.description = [
-        """This project maps the security controls native to the Google Cloud Platform
-        platform (GCP) to ATT&CK. With 49 native GCP security controls mapped, it
-        provides a critical resource for organizations to assess their cloud security
-        control coverage against real-world threats."""
-    ]
+    gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
+      platform. This
+         project maps the security controls native to the GCP platform to MITRE ATT&CK®
+         providing resources to assess how to protect, detect, and respond to real-world
+         threats as described in the ATT&CK knowledge base."""
+
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
     gcp.versions = ["06.28.2022"]
-    gcp.validVersions = [("06.28.2022", "10.0", "Enterprise")]
+    gcp.validVersions = [
+        ("06.28.2022", "10.0", "Enterprise"),
+    ]
     gcp.mappings = []
+    gcp.resources = [
+        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+    ]
 
     projects = [
         nist,
         cve,
-        aws,
+        veris,
         azure,
         gcp,
-        veris,
+        aws,
     ]
     return projects
 
@@ -285,6 +314,11 @@ def replace_mapping_type(mapping, type_list):
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
+        elif (
+            mapping["mapping_type"] == "non_mappable"
+            or mapping["status"] == "non_mappable"
+        ):
+            return "non_mappable"
 
 
 def parse_capability_groups(project, attack_version, project_version, attack_domain):
@@ -325,7 +359,9 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
             g.label = metadata["capability_groups"][i]
             g.capabilities = []
             project.capability_groups.append(g)
-            filtered_mappings = [m for m in mappings if (m["capability_group"] == g.id)]
+            filtered_mappings = [
+                m for m in mappings if (m.get("capability_group") == g.id)
+            ]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
             logger.trace(
@@ -333,9 +369,10 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
                 count=len(filtered_mappings),
                 g_label=g.label,
             )
-    project.capabilities = parse_capabilities(
+    parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
+    mappings = [m for m in mappings if m["mapping_type"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
@@ -434,6 +471,7 @@ def parse_capabilities(
     allIds = [m["capability_id"] for m in mappings]
     capabilityIds = list(set(allIds))
     capabilities = []
+    non_mappables = []
     for id in capabilityIds:
         c = Capability()
         c.id = id
@@ -445,7 +483,7 @@ def parse_capabilities(
             mapping["project_version"] = project_version
             mapping["attack_version"] = attack_version
             mapping["attack_domain"] = attack_domain
-        if c.mappings[0]["capability_group"]:
+        if c.mappings[0].get("capability_group"):
             capability_group = [
                 g
                 for g in project.capability_groups
@@ -454,13 +492,20 @@ def parse_capabilities(
             capability_group[0].capabilities.append(c)
             capability_group[0].num_capabilities += 1
             c.capability_group = capability_group[0]
+        else:
+            print(c.mappings[0])
         logger.trace(
             "for capability {id} the number of mappings is {count}",
             id=c.id,
             count=str(len(c.mappings)),
         )
-        capabilities.append(c)
-    return capabilities
+        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
+            non_mappables.append(c)
+        else:
+            capabilities.append(c)
+
+    project.non_mappables = non_mappables
+    project.capabilities = capabilities
 
 
 def build_external_landing(
@@ -519,11 +564,23 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
+    # Temporary hack for showing VERIS group download artifact on # the VERIS
+    # 1.3.7/ATT&CK 12.1 landing page.
+    group_artifact = (
+        project.id == "veris"
+        and project_version == "1.3.7"
+        and attack_version == "12.1"
+    )
+
     capability_group_headers = [
         ("id", "ID", "id", external_prefix),
-        ("label", "Control Family", "id", external_prefix),
+        ("label", "Capability Group Name", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_capabilities", "Number of Capabilities"),
+    ]
+    non_mappable_headers = [
+        ("id", "Capability ID"),
+        ("label", "Capability Description"),
     ]
     project_id = project.id
     if project_id == "nist":
@@ -546,6 +603,10 @@ def build_external_landing(
         capability_groups=project.capability_groups,
         valid_versions=project.validVersions,
         breadcrumbs=breadcrumbs,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=project.non_mappables,
+        project=project,
+        group_artifact=group_artifact,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -581,27 +642,28 @@ def build_external_landing(
             capability_group_headers=capability_group_headers,
         )
     for capability in project.capabilities:
-        capability_nav = breadcrumbs + [
-            (
-                f"{external_prefix}{capability.capability_group.id}/",
-                f"{capability.capability_group.label} Capability Group",
-            ),
-            (
-                f"{external_prefix}{capability.id}/",
-                f"{capability.label if capability.label else capability.id}",
-            ),
-        ]
-        build_external_capability(
-            project=project,
-            url_prefix=url_prefix,
-            parent_dir=domain_dir,
-            project_version=project_version,
-            attack_version=attack_version,
-            headers=headers,
-            capability=capability,
-            attack_domain=attack_domain,
-            breadcrumbs=capability_nav,
-        )
+        if capability.capability_group:
+            capability_nav = breadcrumbs + [
+                (
+                    f"{external_prefix}{capability.capability_group.id}/",
+                    f"{capability.capability_group.label} Capability Group",
+                ),
+                (
+                    f"{external_prefix}{capability.id}/",
+                    f"{capability.label if capability.label else capability.id}",
+                ),
+            ]
+            build_external_capability(
+                project=project,
+                url_prefix=url_prefix,
+                parent_dir=domain_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                capability=capability,
+                attack_domain=attack_domain,
+                breadcrumbs=capability_nav,
+            )
 
 
 def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
@@ -780,7 +842,7 @@ def parse_techniques(
         projects: list of projects that contain mappings to sort through
 
     Returns:
-        List of capability objects
+        List of technique objects
     """
     techniques = []
     for project in projects:
@@ -819,6 +881,28 @@ def parse_techniques(
     return techniques
 
 
+def parse_non_mappable_techniques(attack_data: dict, techniques: list):
+    """Create a list of non-mappable objects for all ATT&CK techniques in each version
+        Adds all technique objects that do not have mappings associated with them
+    Args:
+        attack_data: ATT&CK data containing technique metadata
+        techniques: list of technique objects that are mappable
+
+    Returns:
+        List of technique objects
+    """
+    non_mappables = []
+    for technique in attack_data:
+        if technique["id"] not in [t.id for t in techniques]:
+            if technique.get("id")[:2] != "TA":
+                t = Technique()
+                t.id = technique["id"]
+                t.label = technique["name"]
+                t.description = technique["description"]
+                non_mappables.append(t)
+    return non_mappables
+
+
 def parse_tactics(
     attack_version: str,
     attack_domain: str,
@@ -837,7 +921,7 @@ def parse_tactics(
         techniques: list of technique objects to be assigned to a given tactic
 
     Returns:
-        List of capability objects
+        List of tactic objects
     """
 
     tactic_dict = load_tactic_structure(
@@ -890,6 +974,9 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """
     # loop through all domain/version combinations
     for attack_domain in list(attack_domains.keys()):
+        all_techniques = []
+        all_tactics = []
+        non_mappables = []
         for attack_version in attack_domains[attack_domain]:
             logger.info(
                 f"Creating pages for ATT&CK {attack_version} {attack_domain}..."
@@ -908,6 +995,10 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 projects=projects,
                 techniques=all_techniques,
             )
+            non_mappables = parse_non_mappable_techniques(
+                attack_data=attack_data,
+                techniques=all_techniques,
+            )
             external_dir = (
                 PUBLIC_DIR
                 / "attack"
@@ -923,6 +1014,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 techniques=all_techniques,
                 tactics=all_tactics,
                 breadcrumbs=breadcrumbs,
+                non_mappables=non_mappables,
             )
             for technique in all_techniques:
                 external_dir = (
@@ -1096,6 +1188,7 @@ def build_technique_landing_page(
     techniques,
     tactics,
     breadcrumbs,
+    non_mappables,
 ):
     """Builds default pages that list all tactics and techiniques
     Args:
@@ -1105,6 +1198,8 @@ def build_technique_landing_page(
         attack_domain: ATT&CK domain to build page for
         techniques: list of all techniques to be listed in technique page
         tactics: list of all tactics to be listed in tactic page
+        breadcrumbs: the navigation tree above the page being built in this function
+        non_mappables: list of techniques that are non_mappable
     """
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/"
@@ -1115,6 +1210,11 @@ def build_technique_landing_page(
         ("label", "ATT&CK Name", "id", attack_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_subtechniques", "Number of Subtechniques"),
+    ]
+    non_mappable_headers = [
+        ("id", "ATT&CK ID"),
+        ("label", "ATT&CK Name"),
+        # ("description", "Description"),
     ]
     description = """Techniques represent 'how' an adversary achieves a tactical goal by
       performing an action. For example, an adversary may dump credentials to achieve
@@ -1146,9 +1246,11 @@ def build_technique_landing_page(
         domains=attack_domains,
         valid_versions=valid_versions,
         breadcrumbs=technique_nav,
+        non_mappable_headers=non_mappable_headers,
+        non_mappables=non_mappables,
     )
     stream.dump(str(output_path))
-    description = """Tactics represent the "why" of an ATT&CK technique or
+    description = """Tactics represent the "why" of a MITRE ATT&CK® technique or
       sub-technique.  It is the adversary's tactical goal: the reason for performing an
       action. For example, an adversary may want to achieve credential access.
     """
@@ -1407,46 +1509,132 @@ def build_search_index(url_prefix: str, breadcrumbs=list):
         zip_file.testzip()
 
 
+def build_about_page(
+    url_prefix: str,
+    url_suffix: str,
+    breadcrumbs: list,
+    template_path: str,
+    title: str,
+) -> list:
+    """
+    Build one about page.
+
+    Args:
+        url_prefix: The prefix to put in front of any internal URLs.
+        url_suffix: The unique part of the URL, the part after the prefix.
+        breadcrumbs: The navigation tree above the pages being built in this function.
+        template_path: The jinja template to render for this page.
+        title: The page title.
+        output_dir: The path to write the rendered HTML to.
+
+    Returns:
+        A list of breadcrumbs to this page, which you may need for subpages
+    """
+    breadcrumbs = breadcrumbs + [(f"{url_prefix}{url_suffix}/", title)]
+    output_dir = PUBLIC_DIR
+    for url_part in url_suffix.split("/"):
+        output_dir = output_dir / url_part
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "index.html"
+    template = load_template(template_path)
+    stream = template.stream(
+        title=title,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+    )
+    stream.dump(str(output_path))
+    logger.debug("Created {} page -> {}", url_suffix, output_path)
+    return breadcrumbs
+
+
 def build_about_pages(url_prefix: str, breadcrumbs: list):
     """
-    Build the documentation pages, e.g. explaining what the site is for, who it's for,
+    Build the site's "about" pages, e.g. explaining what the site is for, who it's for,
     etc.
 
     Args:
         url_prefix: The prefix to put in front of any internal URLs.
         breadcrumbs: the navigation tree above the pages being built in this function
     """
-    nav = breadcrumbs + [(f"{url_prefix}about/", "About")]
-    dir = PUBLIC_DIR / "about"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("about.html.j2")
-    stream = template.stream(
-        title="About Mappings Explorer", url_prefix=url_prefix, breadcrumbs=nav
+    about_breadcrumbs = build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about",
+        breadcrumbs=breadcrumbs,
+        template_path="about.html.j2",
+        title="About",
     )
-    stream.dump(str(output_path))
-    logger.debug("Created about page")
-    nav1 = nav + [(f"{url_prefix}about/use-cases/", "Use Cases")]
 
-    dir = PUBLIC_DIR / "about" / "use-cases"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("use_cases.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Use Cases", url_prefix=url_prefix, breadcrumbs=nav1
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/use-cases",
+        breadcrumbs=about_breadcrumbs,
+        template_path="use_cases.html.j2",
+        title="Use Cases",
     )
-    stream.dump(str(output_path))
-    logger.debug("Created use cases page")
-    nav1 = nav + [(f"{url_prefix}about/methodology/", "Methodology")]
-    dir = PUBLIC_DIR / "about" / "methodology"
-    dir.mkdir(parents=True, exist_ok=True)
-    output_path = dir / "index.html"
-    template = load_template("methodology.html.j2")
-    stream = template.stream(
-        title="Mappings Explorer Methodology", url_prefix=url_prefix, breadcrumbs=nav1
+
+    methodology_breadcrumbs = build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology",
+        breadcrumbs=about_breadcrumbs,
+        template_path="methodology.html.j2",
+        title="Methodology",
     )
-    stream.dump(str(output_path))
-    logger.debug("Created methodology page")
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/cve-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/cve_methodology.html.j2",
+        title="CVE Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/nist-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/nist_methodology.html.j2",
+        title="NIST 800-53 Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/nist-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/nist_scope.html.j2",
+        title="NIST 800-53 Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/ssm-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/ssm_methodology.html.j2",
+        title="Security Stack Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/veris-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/veris_methodology.html.j2",
+        title="VERIS Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/scoring",
+        breadcrumbs=about_breadcrumbs,
+        template_path="scoring_rubric.html.j2",
+        title="Scoring",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/related-projects",
+        breadcrumbs=about_breadcrumbs,
+        template_path="related_projects.html.j2",
+        title="Related Projects",
+    )
 
 
 def main():
@@ -1470,10 +1658,17 @@ def main():
     logger.info("Copying parsed mappings to output directory:", data_dir)
     shutil.copytree(ROOT_DIR / "mappings", data_dir, dirs_exist_ok=True)
 
+    legacy_dir = PUBLIC_DIR / "legacy"
+    logger.info("Copying legacy data to output directory:", data_dir)
+    shutil.copytree(ROOT_DIR / "legacy", legacy_dir, dirs_exist_ok=True)
+
     output_path = PUBLIC_DIR / "index.html"
     template = load_template("landing.html.j2")
     stream = template.stream(
-        title="Mappings Explorer", url_prefix=url_prefix, public_dir=PUBLIC_DIR
+        title="Home",
+        url_prefix=url_prefix,
+        public_dir=PUBLIC_DIR,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created site homepage")
@@ -1487,7 +1682,10 @@ def main():
         (f"{url_prefix}external/", "Mapping Frameworks"),
     ]
     stream = template.stream(
-        title="External Mappings Home", url_prefix=url_prefix, breadcrumbs=breadcrumbs
+        title="External Mappings Home",
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+        projects=projects,
     )
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")

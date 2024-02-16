@@ -1,20 +1,20 @@
 import argparse
 import json
 import os
-import shutil
 import sys
 from pathlib import Path
 
 from jsonschema import validate
+from loguru import logger
 from mapex.write_parsed_mappings import (
     create_df,
     write_parsed_mappings_csv,
     write_parsed_mappings_excel,
+    write_parsed_mappings_json,
     write_parsed_mappings_navigator_layer,
     write_parsed_mappings_stix,
     write_parsed_mappings_yaml,
 )
-from termcolor import colored
 
 ROOT_DIR = Path.cwd()
 PARSED_MAPPINGS_DIR = ROOT_DIR / "mappings"
@@ -47,7 +47,7 @@ def main():
                         output_filepath.mkdir(parents=True, exist_ok=True)
                         export_file(input_filepath, output_filepath, file_type)
         else:
-            print("Input file must be a valid file or directory")
+            logger.error("Input file must be a valid file or directory")
             sys.exit(1)
 
     elif args.command == "validate":
@@ -64,7 +64,7 @@ def main():
                     if validation_errors is not None:
                         sys.exit(1)
 
-        print("succesfully validated")
+        logger.info("succesfully validated")
         sys.exit(0)
 
 
@@ -94,10 +94,6 @@ def read_json_file(filepath):
         return json.loads(mappings)
 
 
-def copy_parsed_mappings(input_filepath, output_filepath):
-    shutil.copyfile(input_filepath, f"{output_filepath}.json")
-
-
 def export_file(input_file, output_file, file_type):
     # read input file
     parsed_mappings = read_json_file(input_file)
@@ -113,12 +109,28 @@ def export_file(input_file, output_file, file_type):
     output_filename = input_file.stem
     output_filepath = output_file / output_filename
 
+    # remove status, attack_version, and technology_domain fields
+    # if capability is not mapped to anything, add 'non_mappable' as the mapping_type
+    for mapping in parsed_mappings["mapping_objects"]:
+        if mapping.get("mapping_framework"):
+            mapping.pop("mapping_framework")
+        if mapping.get("mapping_framework_version"):
+            mapping.pop("mapping_framework_version")
+        if mapping.get("status"):
+            mapping.pop("status")
+        if mapping.get("attack_version"):
+            mapping.pop("attack_version")
+        if mapping.get("technology_domain"):
+            mapping.pop("technology_domain")
+        if not mapping["attack_object_id"] or not mapping["capability_id"]:
+            mapping["mapping_type"] = "non_mappable"
+
     # export mappings
     if file_type is None:
         write_parsed_mappings_yaml(parsed_mappings, output_filepath)
         write_parsed_mappings_navigator_layer(parsed_mappings, output_filepath)
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
-        copy_parsed_mappings(input_file, output_filepath)
+        write_parsed_mappings_json(parsed_mappings, output_filepath)
         df = create_df(parsed_mappings)
         write_parsed_mappings_csv(df, output_filepath)
         write_parsed_mappings_excel(df, output_filepath)
@@ -135,9 +147,9 @@ def export_file(input_file, output_file, file_type):
     elif file_type == "stix":
         write_parsed_mappings_stix(parsed_mappings, output_filepath)
     elif file_type == "json":
-        copy_parsed_mappings(input_file, output_filepath)
+        write_parsed_mappings_json(parsed_mappings, output_filepath)
     else:
-        print("Please enter a correct filetype")
+        logger.error("Please enter a correct filetype")
 
 
 def validate_file(input_file):
@@ -166,23 +178,15 @@ def sanity_check_mappings(parsed_mappings):
         capability_groups_used_in_mappings
     )
     if not all_capability_groups_used:
-        print(
-            colored(
-                f"""WARNING: The following groups are not used
-            by the mapping objects: {extra_capability_groups}""",
-                "yellow",
-            )
+        logger.warning(
+            "The following groups are not used "
+            "by the mapping objects: {extra_capability_groups}",
+            extra_capability_groups=extra_capability_groups,
         )
         # unused capability groups are eliminated in exported file
-        metadata_capability_groups = parsed_mappings["metadata"]["groups"]
+        metadata_capability_groups = parsed_mappings["metadata"]["capability_groups"]
         for capability_group in extra_capability_groups:
-            metadata_capability_group = list(
-                filter(
-                    lambda group_object: group_object["id"] == capability_group,
-                    metadata_capability_groups,
-                )
-            )[0]
-            parsed_mappings["metadata"]["groups"].remove(metadata_capability_group)
+            metadata_capability_groups.pop(capability_group)
 
     # # error if any objects reference a group that is not defined in metadata
     all_used_capability_groups_defined = capability_groups_used_in_mappings.issubset(
@@ -191,13 +195,13 @@ def sanity_check_mappings(parsed_mappings):
     missing_capability_groups = capability_groups_used_in_mappings.difference(
         metadata_capability_group_ids
     )
-    if not all_used_capability_groups_defined:
-        print(
-            colored(
-                f"""ERROR: The following groups are referenced by mapping
-            objects but aren't defined in 'metadata': {missing_capability_groups}""",
-                "red",
-            )
+    if not all_used_capability_groups_defined and missing_capability_groups != set(
+        [None]
+    ):
+        logger.error(
+            "The following groups are referenced by mapping "
+            "objects but aren't defined in 'metadata': {missing_capability_groups}",
+            missing_capability_groups=missing_capability_groups,
         )
         sys.exit(1)
 
@@ -219,12 +223,10 @@ def sanity_check_mappings(parsed_mappings):
         mapping_types_used_in_mappings
     )
     if not all_mapping_types_used:
-        print(
-            colored(
-                f"""WARNING: The following mapping types are not used
-                    by the mapping objects: {extra_mapping_types} """,
-                "yellow",
-            )
+        logger.warning(
+            "The following mapping types are not used "
+            + "by the mapping objects: {extra_mapping_types}",
+            extra_mapping_types=extra_mapping_types,
         )
 
     # error if any objects reference a mapping type that is not defined in metadata
@@ -235,14 +237,16 @@ def sanity_check_mappings(parsed_mappings):
         metadata_mapping_type_ids
     )
 
-    # do not show warning if the missing mapping type is 'None', which is the
+    # do not show warning if the missing mapping type is 'non_mappable', which is the
     # value of mapping_type in not_mappable items
-    if not all_mapping_types_defined and missing_mapping_types != set([None]):
-        print(
-            colored(
-                f"""ERROR: The following mapping types are referenced by mapping
-            objects but are not defined in 'metadata': {missing_mapping_types}""",
-                "red",
-            )
+    if (
+        not all_mapping_types_defined
+        and missing_mapping_types != set([None])
+        and missing_mapping_types != set(["non_mappable"])
+    ):
+        logger.error(
+            "The following mapping types are referenced by mapping "
+            "objects but are not defined in 'metadata': {missing_mapping_types}",
+            missing_mapping_types=missing_mapping_types,
         )
         sys.exit(1)

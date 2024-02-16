@@ -1,21 +1,51 @@
 import json
+import os
 import uuid
 from datetime import datetime
 
 import pandas as pd
 import requests
 import yaml
+from loguru import logger
+
+
+def write_parsed_mappings_json(parsed_mappings, filepath):
+    filepath = f"{filepath}_json"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+
+    json_file = open(
+        f"{filepath_with_count}.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(parsed_mappings, fp=json_file)
+    logger.info(
+        "Successfully wrote mappings json file to {filepath_with_count}_json.json",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
     parsed_mappings_yaml = yaml.dump(parsed_mappings)
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.yaml"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     result_yaml_file = open(
-        f"{filepath}.yaml",
+        f"{filepath_with_count}.yaml",
         "w",
         encoding="UTF-8",
     )
     result_yaml_file.write(parsed_mappings_yaml)
-    print(f"Successfully wrote mappings yaml file to {filepath}.yaml")
+    logger.info(
+        "Successfully wrote mappings yaml file to {filepath_with_count}.yaml",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def create_df(parsed_mappings):
@@ -45,7 +75,12 @@ def create_df(parsed_mappings):
                 if mapping_type == mapping_object["mapping_type"]
             ][0]
             if mapping_object["mapping_type"]
-            else None
+            and mapping_object["mapping_type"] != "non_mappable"
+            else (
+                "non_mappable"
+                if mapping_object["mapping_type"] == "non_mappable"
+                else None
+            )
         )
 
         # get group name based on id
@@ -54,36 +89,92 @@ def create_df(parsed_mappings):
             capability_group_objects[capability_group]
             for capability_group in capability_group_objects
             if capability_group == mapping_object["capability_group"]
-        ][0]
+        ]
+
+        if len(capability_group_name):
+            capability_group_name = capability_group_name[0]
+
+        else:
+            capability_group_name = None
 
         # swap mapping_type id and group id with mapping_type name and group name
         mapping_object["mapping_type"] = mapping_type_name
         mapping_object["capability_group"] = capability_group_name
 
-    return pd.DataFrame(mapping_objects)
+    columns_order = [
+        "mapping_framework",
+        "mapping_framework_version",
+        "capability_group",
+        "capability_id",
+        "capability_description",
+        "mapping_type",
+        "attack_object_id",
+        "attack_object_name",
+        "attack_version",
+        "technology_domain",
+        "references",
+        "comments",
+        "organization",
+        "creation_date",
+        "last_update",
+    ]
+    if "technique_scores" in parsed_mappings["metadata"]["mapping_types"]:
+        score_columns = ["score_category", "score_value", "related_score"]
+        columns_order[
+            columns_order.index("technology_domain") + 1 : len(score_columns)
+        ] = score_columns
+
+    return pd.DataFrame(data=mapping_objects, columns=columns_order)
 
 
 def write_parsed_mappings_csv(df, filepath):
-    df.to_csv(f"{filepath}.csv")
-    print(f"Successfully wrote mappings csv file to {filepath}.csv")
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.csv"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+    df.to_csv(f"{filepath_with_count}.csv")
+    logger.info(
+        "Successfully wrote mappings csv file to {filepath_with_count}.csv",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def write_parsed_mappings_excel(df, filepath):
-    df.to_excel(f"{filepath}.xlsx", index=False)
-    print(f"Successfully wrote mappings excel file to {filepath}.xlsx")
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.xlsx"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
+    df.to_excel(f"{filepath_with_count}.xlsx", index=False)
+    logger.info(
+        "Successfully wrote mappings excel file to {filepath_with_count}.xlsx",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
-    techniques_dict = get_techniques_dict(parsed_mappings)
+    techniques_dict = get_techniques_dict(parsed_mappings["mapping_objects"])
     mapping_type = parsed_mappings["metadata"]["mapping_framework"]
-    layer = create_layer(techniques_dict, parsed_mappings, mapping_type)
+    domain = parsed_mappings["metadata"]["technology_domain"]
+    attack_version = parsed_mappings["metadata"]["attack_version"]
+    layer = create_layer(techniques_dict, mapping_type, domain, attack_version)
+    filepath = f"{filepath}_navigator_layer"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     navigator_layer = open(
-        f"{filepath}_navigator_layer.json",
+        f"{filepath_with_count}.json",
         "w",
         encoding="UTF-8",
     )
     json.dump(layer, fp=navigator_layer)
-    print(f"Successfully wrote mappings navigator layer file to {filepath}.json")
+    logger.info(
+        "Successfully wrote navigator layer file to {filepath_with_count}.json",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def write_parsed_mappings_stix(parsed_mappings, filepath):
@@ -135,14 +226,22 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 ),
             },
         )
-
+    filepath = f"{filepath}_stix"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
     stix_file = open(
-        f"{filepath}_stix.json",
+        f"{filepath_with_count}.json",
         "w",
         encoding="UTF-8",
     )
     json.dump(stix_bundle, fp=stix_file)
-    print(f"Successfully wrote mappings stix file to {filepath}.json")
+    logger.info(
+        "Successfully wrote mappings stix file to {filepath_with_count}.json",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def get_stix_object(parsed_mappings, mapping):
@@ -154,6 +253,10 @@ def get_stix_object(parsed_mappings, mapping):
         return create_infrastructure_object(mapping)
     elif mapping_framwork == "veris":
         return create_attack_pattern_object(mapping)
+    else:
+        logger.warning(
+            "Cannot create STIX export for mappings with unrecognized mapping framework"
+        )
 
 
 def create_vulnerability_object(mapping):
@@ -255,19 +358,14 @@ def load_attack_json(parsed_mappings):
     return attack_object_id_to_name
 
 
-def get_techniques_dict(parsed_mappings):
+def get_techniques_dict(mapping_objects):
     techniques_dict = {}
-    for mapping in parsed_mappings["mapping_objects"]:
+    for mapping in mapping_objects:
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 
         # add score metadata if it is a scoring mapping
-        mapping_types_names = []
-        for mapping_type in parsed_mappings["metadata"]["mapping_types"]:
-            mapping_types_names.append(
-                parsed_mappings["metadata"]["mapping_types"][mapping_type]["name"]
-            )
-        score_metadata = "technique_scores" in mapping_types_names
+        score_metadata = mapping["mapping_type"] == "technique_scores"
 
         if score_metadata:
             # define metadata objects
@@ -284,15 +382,17 @@ def get_techniques_dict(parsed_mappings):
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
             if score_metadata:
-                techniques_dict[tehchnique_id]["metadata"].extend(
-                    [
-                        metadata_control,
-                        metadata_score_category,
-                        metadata_score_value,
-                        metadata_comment,
-                        divider,
-                    ]
-                )
+                metadata_info = [
+                    metadata_control,
+                    metadata_score_category,
+                    metadata_score_value,
+                    metadata_comment,
+                    divider,
+                ]
+                if "metadata" in techniques_dict[tehchnique_id]:
+                    techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
+                else:
+                    techniques_dict[tehchnique_id]["metadata"] = metadata_info
         else:
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
@@ -307,34 +407,39 @@ def get_techniques_dict(parsed_mappings):
     return techniques_dict
 
 
-def create_layer(techniques_dict, parsed_mappings, mapping_type):
+def create_layer(techniques_dict, layer_title, domain, attack_version):
     description = (
-        f"{mapping_type} heatmap overview of {mapping_type} "
+        f"{layer_title} heatmap overview of {layer_title} "
         "mappings, scores are the number of associated entries"
     )
 
-    mappings_metadata = parsed_mappings["metadata"]
-
     gradient = ["#ffe766", "#ffaf66"]
     layer = {
-        "name": f"{mapping_type} overview",
+        "name": f"{layer_title} overview",
         "versions": {
             "navigator": "4.8.0",
             "layer": "4.4",
-            "attack": mappings_metadata["attack_version"],
+            "attack": attack_version,
         },
         "sorting": 3,
         "description": description,
-        "domain": f"{mappings_metadata['technology_domain']}-attack",
+        "domain": f"{domain}-attack",
         "techniques": [],
         "gradient": {
             "colors": gradient,
         },
     }
     for technique in techniques_dict:
-        related_controls_string = ", ".join(
-            techniques_dict[technique]["capability_ids"]
-        )
+        capability_ids = [
+            capability_id
+            for capability_id in techniques_dict[technique]["capability_ids"]
+            if capability_id
+        ]
+
+        related_controls_string = ""
+        if len(capability_ids):
+            related_controls_string = ", ".join(capability_ids)
+
         layer["techniques"].append(
             {
                 "techniqueID": technique,

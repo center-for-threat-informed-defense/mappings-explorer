@@ -51,10 +51,13 @@ def configure_security_stack_mappings(data, parsed_mappings):
     ][0]
 
     if len(data["techniques"]) == 0:
-        if data["name"] not in parsed_mappings["metadata"]["capability_groups"]:
-            parsed_mappings["metadata"]["capability_groups"][data["name"]] = data[
-                "name"
-            ]
+        if (
+            data["name"].lower().replace(" ", "_")
+            not in parsed_mappings["metadata"]["capability_groups"]
+        ):
+            parsed_mappings["metadata"]["capability_groups"][
+                data["name"].lower().replace(" ", "_")
+            ] = data["name"]
         parsed_mappings["mapping_objects"].append(
             {
                 "comments": None,
@@ -62,12 +65,12 @@ def configure_security_stack_mappings(data, parsed_mappings):
                 "attack_object_name": None,
                 "references": None,
                 "capability_description": data["name"],
-                "capability_id": data["name"],
-                "mapping_type": None,
+                "capability_id": data["name"].lower().replace(" ", "_"),
+                "mapping_type": "non_mappable",
                 "score_category": None,
                 "score_value": None,
                 "related_score": None,
-                "capability_group": data["name"],
+                "capability_group": data["name"].lower().replace(" ", "_"),
                 "status": "non_mappable",
             }
         )
@@ -93,7 +96,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                     "attack_object_name": technique["name"],
                     "references": list(references),
                     "capability_description": capability_name,
-                    "capability_id": capability_name,
+                    "capability_id": capability_id,
                     "mapping_type": mapping_type_id,
                     "score_category": technique_score["category"].lower(),
                     "score_value": technique_score["value"].lower(),
@@ -116,7 +119,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
                                 "attack_object_name": subtechnique["name"],
                                 "references": subtechniqe_references,
                                 "capability_description": capability_name,
-                                "capability_id": capability_name,
+                                "capability_id": capability_id,
                                 "mapping_type": mapping_type_id,
                                 "score_category": score["category"].lower(),
                                 "score_value": score["value"].lower(),
