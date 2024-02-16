@@ -11,13 +11,21 @@
         </button>
     {% endif %}
     <button class="icon-btn">
-        <a href="../" style="color: black">
+        {%- if previous_link -%}
+            <a href={{previous_link}} style="color: black">
+        {%- else -%}
+            <a href="../" style="color: black">
+        {%- endif -%}
             <img src="{{url_prefix}}static/img/gear.svg" alt="">
             Change Versions
         </a>
     </button>
     <button class="icon-btn-sm">
-        <a href="../" style="color: black">
+        {%- if previous_link -%}
+            <a href={{previous_link}} style="color: black">
+        {%- else -%}
+            <a href="../" style="color: black">
+        {%- endif -%}
             <img src="{{url_prefix}}static/img/gear.svg" alt="">
         </a>
     </button>

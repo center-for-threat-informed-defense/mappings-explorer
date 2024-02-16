@@ -3,6 +3,8 @@
             {{attack_domain}}
             {%- if not versions -%}.{%-endif-%}
             {% if versions %} and {{control}} {{control_version}}.{% endif %}
-            <a class="banner-link" href="../">Change versions here.</a>
+            <span> </span>
+            {%- if previous_link -%}<a class="banner-link" href={{previous_link}}>Change versions here.</a>{%-endif-%}
+            {%- if not previous_link -%}<a class="banner-link" href="../">Change versions here.</a>{%-endif-%}
         </p>
     </div>
