@@ -63,6 +63,7 @@ jobs:
         run: unzip -q output.zip
       - env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+          NODE_OPTIONS: --max-old-space-size=8192
         run: >
           staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
             --password $STATICRYPT_PASS --short \
