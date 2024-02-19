@@ -321,7 +321,9 @@ def replace_mapping_type(mapping, type_list):
             return "non_mappable"
 
 
-def parse_capability_groups(project, attack_version, project_version, attack_domain):
+def parse_capability_groups(
+    project, attack_version, project_version, attack_domain, reset_descriptions
+):
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -382,10 +384,22 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
         }
     )
     #  set the descriptions for each project's capability list
-    if project.id == "cve":
-        get_cve_descriptions(project=project)
-    if project.id == "nist":
-        get_nist_descriptions(project=project, version=project_version)
+    if reset_descriptions:
+        if project.id == "cve":
+            get_cve_descriptions(project=project)
+        if project.id == "nist":
+            get_nist_descriptions(project=project, version=project_version)
+    else:
+        if project.id == "nist":
+            file_name = (
+                DATA_DIR
+                / "NIST_800-53"
+                / f"{project.id}-{project_version}_descriptions.json"
+            )
+            read_descriptions(capabilities=project.capabilities, file_name=file_name)
+        if project.id == "cve":
+            file_name = DATA_DIR / f"{project.id}-{project_version}_descriptions.json"
+            read_descriptions(capabilities=project.capabilities, file_name=file_name)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
@@ -410,6 +424,9 @@ def get_security_stack_descriptions(project):
 
 
 def get_cve_descriptions(project):
+    root = DATA_DIR
+    file_name = f"{project.id}-project"
+    descriptions = []
     for c in project.capabilities:
         try:
             response = requests.get("https://cveawg.mitre.org/api/cve/" + c.id).json()
@@ -419,9 +436,17 @@ def get_cve_descriptions(project):
             logger.exception(
                 "Error loading description for CVE capability {c_id}", c_id=c.id
             )
+        descriptions.append({"id": c.id, "description": c.description})
+    json_object = json.dumps(descriptions, indent=4)
+    with open(root / "cve_descriptions.json", "w") as outfile:
+        outfile.write(json_object)
 
 
 def get_nist_descriptions(project, version):
+    root = DATA_DIR / "NIST_800-53"
+    file_name = f"{project.id}-{version}_descriptions.json"
+    descriptions = []
+
     rev5_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_5_1_1/element/"
     rev4_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_4_0_0/element/"
     link = ""
@@ -446,6 +471,25 @@ def get_nist_descriptions(project, version):
             logger.exception(
                 "Error loading description for NIST capability {c_id}", c_id=c.id
             )
+        descriptions.append({"id": c.id, "description": c.description})
+    json_object = json.dumps(descriptions, indent=4)
+    with open(root / file_name, "w") as outfile:
+        outfile.write(json_object)
+
+
+def read_descriptions(capabilities, file_name):
+    try:
+        with open(file_name, "r") as openfile:
+            json_object = json.load(openfile)
+            # add description
+            for c in capabilities:
+                obj = [obj["description"] for obj in json_object if obj["id"] == c.id]
+                c.description = obj[0]
+    except Exception:
+        logger.exception(
+            "Error loading descriptions: file name {f_name} does not exist",
+            f_name=file_name,
+        )
 
 
 def parse_capabilities(
@@ -666,7 +710,9 @@ def build_external_landing(
             )
 
 
-def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
+def build_external_pages(
+    projects: list, url_prefix: str, breadcrumbs: list, reset_descriptions: bool
+):
     """Parse ATT&CK data and build all pages for ATT&CK objects
 
     Args:
@@ -674,6 +720,8 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
         url_prefix: the root url for the built site
         breadcrumbs: the navigation tree above the pages being built in this function
         used to render the breadcrumbs on each page
+        reset_descriptions: whether or not to reset the saved descriptions for nist and
+        cve capabilities to save time on the build
     """
     logger.info("Parsing and building external pages...")
     for project in projects:
@@ -697,6 +745,7 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 attack_version=attack_version,
                 project_version=project_version,
                 attack_domain=attack_domain,
+                reset_descriptions=reset_descriptions,
             )
             m = [
                 m
@@ -1644,10 +1693,18 @@ def main():
         default="http://[::]:8000/",
         help="A prefix to apply to generated (default: /public)",
     )
+    parser.add_argument(
+        "--reset-descriptions",
+        action="store_true",
+        default=False,
+        help="Adds ability to refresh and load capability descriptions from API calls",
+    )
     args = parser.parse_args()
 
     url_prefix = args.url_prefix
+    reset = args.reset_descriptions
     logger.info(f"url prefix: {url_prefix}")
+    logger.info(f"Reset description? {reset}")
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
@@ -1691,7 +1748,10 @@ def main():
     logger.info("Created Mappings Frameworks landing page")
 
     build_external_pages(
-        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+        projects=projects,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+        reset_descriptions=reset,
     )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
