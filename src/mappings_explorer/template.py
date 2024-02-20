@@ -34,7 +34,8 @@ def build_capability_url(mapping: dict, url_prefix: str, id: str):
     """
     return (
         f"{url_prefix}external/{mapping['project']}/attack-{mapping['attack_version']}/"
-        f"domain-{mapping['attack_domain'].lower()}/{mapping['project']}-{mapping['project_version']}/{id}/"
+        f"domain-{mapping['attack_domain'].lower()}/{mapping['project']}-"
+        f"{mapping['project_version']}/{id.replace(' ', '_')}/"
     )
 
 
