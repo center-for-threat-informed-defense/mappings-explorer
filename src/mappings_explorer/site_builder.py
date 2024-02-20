@@ -536,7 +536,7 @@ def build_external_landing(
         {url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
-
+    capability_group_prefix = f"{external_prefix}capability-groups/"
     headers = [
         ("capability_id", "Capability ID", "capability_id", external_prefix),
         (
@@ -573,8 +573,8 @@ def build_external_landing(
     )
 
     capability_group_headers = [
-        ("id", "ID", "id", external_prefix),
-        ("label", "Capability Group Name", "id", external_prefix),
+        ("id", "ID", "id", capability_group_prefix),
+        ("label", "Capability Group Name", "id", capability_group_prefix),
         ("num_mappings", "Number of Mappings"),
         ("num_capabilities", "Number of Capabilities"),
     ]
@@ -622,10 +622,12 @@ def build_external_landing(
         ("label", "Capability Name", "id", external_prefix),
         ("num_mappings", "Number of Mappings"),
     ]
+    capability_group_dir = domain_dir / "capability-groups"
+    previous_link = external_prefix
     for capability_group in project.capability_groups:
         nav = breadcrumbs + [
             (
-                f"{external_prefix}{capability_group.id}/",
+                f"{external_prefix}capability-groups/{capability_group.id}/",
                 f"{capability_group.label} Capability Group",
             )
         ]
@@ -633,19 +635,20 @@ def build_external_landing(
             project=project,
             capability_group=capability_group,
             url_prefix=url_prefix,
-            parent_dir=domain_dir,
+            parent_dir=capability_group_dir,
             project_version=project_version,
             attack_version=attack_version,
             headers=headers,
             attack_domain=attack_domain,
             breadcrumbs=nav,
             capability_group_headers=capability_group_headers,
+            previous_link=previous_link,
         )
     for capability in project.capabilities:
         if capability.capability_group:
             capability_nav = breadcrumbs + [
                 (
-                    f"{external_prefix}{capability.capability_group.id}/",
+                    f"{external_prefix}capability-groups/{capability.capability_group.id}/",
                     f"{capability.capability_group.label} Capability Group",
                 ),
                 (
@@ -663,6 +666,7 @@ def build_external_landing(
                 capability=capability,
                 attack_domain=attack_domain,
                 breadcrumbs=capability_nav,
+                previous_link=previous_link,
             )
 
 
@@ -741,6 +745,7 @@ def build_capability_group(
     attack_domain,
     breadcrumbs,
     capability_group_headers,
+    previous_link,
 ):
     capability_group_id = capability_group.id
     dir = parent_dir / capability_group_id
@@ -768,6 +773,7 @@ def build_capability_group(
         headers=headers,
         breadcrumbs=breadcrumbs,
         capability_group_headers=capability_group_headers,
+        previous_link=previous_link,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -785,6 +791,7 @@ def build_external_capability(
     capability: Capability,
     attack_domain: str,
     breadcrumbs: list,
+    previous_link: str,
 ):
     """Builds a capability page for a given capability
 
@@ -798,7 +805,7 @@ def build_external_capability(
        capability: capability object that the page is being built for
        attack_domain: ATT&CK domain for the page
        breadcrumbs: the navigation tree above the page being built in this function
-
+        previous_link: link to go to in order to "change versions" on banner or badges
     """
     dir = parent_dir / capability.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -823,6 +830,7 @@ def build_external_capability(
         headers=headers,
         capability=capability,
         breadcrumbs=breadcrumbs,
+        previous_link=previous_link,
     )
     stream.dump(str(output_path))
     logger.trace("          Created capability page {id}", id=capability.id)
@@ -1016,6 +1024,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 breadcrumbs=breadcrumbs,
                 non_mappables=non_mappables,
             )
+
             for technique in all_techniques:
                 external_dir = (
                     PUBLIC_DIR
@@ -1120,6 +1129,7 @@ def build_technique_page(
         mappings=technique.mappings,
         subtechniques=technique.subtechniques,
         breadcrumbs=nav,
+        previous_link=attack_prefix,
     )
     stream.dump(str(output_path))
     logger.trace("          Created technique page {id}", id=technique.id)
@@ -1147,6 +1157,7 @@ def build_tactic_page(
     attack_prefix = (
         f"{url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/"
     )
+    previous_link = attack_prefix + "tactics/"
     nav = breadcrumbs + [
         (f"{attack_prefix}tactics/", "ATT&CK Tactics"),
         (f"{attack_prefix}tactics/{tactic.id}/", f"{tactic.id} {tactic.label}"),
@@ -1175,6 +1186,7 @@ def build_tactic_page(
         tactic=tactic,
         prev_page=prev_page,
         breadcrumbs=nav,
+        previous_link=previous_link,
     )
     stream.dump(str(output_path))
     logger.trace("          Created tactic page {id}", id=tactic.id)
