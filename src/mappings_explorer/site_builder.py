@@ -383,23 +383,9 @@ def parse_capability_groups(
             "mappings": mappings,
         }
     )
-    #  set the descriptions for each project's capability list
-    if reset_descriptions:
-        if project.id == "cve":
-            get_cve_descriptions(project=project)
-        if project.id == "nist":
-            get_nist_descriptions(project=project, version=project_version)
-    else:
-        if project.id == "nist":
-            file_name = (
-                DATA_DIR
-                / "NIST_800-53"
-                / f"{project.id}-{project_version}_descriptions.json"
-            )
-            read_descriptions(capabilities=project.capabilities, file_name=file_name)
-        if project.id == "cve":
-            file_name = DATA_DIR / f"{project.id}-{project_version}_descriptions.json"
-            read_descriptions(capabilities=project.capabilities, file_name=file_name)
+    if project.id == "nist" or project.id == "cve":
+        for capability in project.capabilities:
+            get_description_for_capability(capability, project, project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
@@ -423,29 +409,107 @@ def get_security_stack_descriptions(project):
                 break
 
 
-def get_cve_descriptions(project):
+def get_cve_description(project: ExternalControl, version: str, capability: Capability):
+    """Query CVE endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+        capability: object that needs a description
+    """
     root = DATA_DIR
-    file_name = f"{project.id}-project"
-    descriptions = []
-    for c in project.capabilities:
-        try:
-            response = requests.get("https://cveawg.mitre.org/api/cve/" + c.id).json()
-            descriptions = response["containers"]["cna"]["descriptions"]
-            c.description = descriptions[0]["value"]
-        except Exception:
-            logger.exception(
-                "Error loading description for CVE capability {c_id}", c_id=c.id
-            )
-        descriptions.append({"id": c.id, "description": c.description})
-    json_object = json.dumps(descriptions, indent=4)
-    with open(root / "cve_descriptions.json", "w") as outfile:
+    file_name = f"{project.id}-{version}_descriptions.json"
+    try:
+        response = requests.get(
+            "https://cveawg.mitre.org/api/cve/" + capability.id
+        ).json()
+        descriptions = response["containers"]["cna"]["descriptions"]
+        capability.description = descriptions[0]["value"]
+    except Exception:
+        logger.exception(
+            "Error loading description for CVE capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
+    with open(root / file_name, "w") as outfile:
         outfile.write(json_object)
 
 
-def get_nist_descriptions(project, version):
+def get_description_for_capability(
+    capability: Capability, project: ExternalControl, version: str
+):
+    """Pull description for each capability either from saved capability file
+    or direct another method to query for a description
+
+    Args:
+        capability: object that needs a description
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+    """
+    if project.id == "nist":
+        folder_name = DATA_DIR / "NIST_800-53"
+    elif project.id == "cve":
+        folder_name = DATA_DIR
+    file_name = folder_name / f"{project.id}-{version}_descriptions.json"
+    if os.path.isfile(file_name):
+        try:
+            with open(file_name, "r") as openfile:
+                json_object = json.load(openfile)
+                obj = [
+                    obj["description"]
+                    for obj in json_object
+                    if obj["id"] == capability.id
+                ]
+                if len(obj) > 0:
+                    capability.description = obj[0]
+                else:
+                    logger.trace(
+                        "Getting description for capability {c_id}", c_id=capability.id
+                    )
+                    if project.id == "nist":
+                        get_nist_description(
+                            project=project, version=version, capability=capability
+                        )
+                    if project.id == "cve":
+                        get_cve_description(
+                            project=project, version=version, capability=capability
+                        )
+        except Exception:
+            logger.exception(
+                "Error loading description for capability {c_id}",
+                c_id=capability.id,
+            )
+    else:
+        # if description file doesn't already exist, create it
+        with open(file_name, "w") as outfile:
+            json.dump([], outfile)
+        # then query for capability description
+        if project.id == "nist":
+            get_nist_description(
+                project=project, version=version, capability=capability
+            )
+        if project.id == "cve":
+            get_cve_description(project=project, version=version, capability=capability)
+
+
+def get_nist_description(
+    project: ExternalControl, version: str, capability: Capability
+):
+    """Query NIST endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for
+        capability: object that needs a description
+    """
     root = DATA_DIR / "NIST_800-53"
     file_name = f"{project.id}-{version}_descriptions.json"
-    descriptions = []
 
     rev5_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_5_1_1/element/"
     rev4_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_4_0_0/element/"
@@ -455,41 +519,48 @@ def get_nist_descriptions(project, version):
     else:
         link = rev5_link
 
-    for c in project.capabilities:
-        try:
-            id = c.id
-            if len(id) < 5 and version != "rev4":
-                id = c.id[0:3] + "0" + c.id[3:4]
-            response = requests.get(link + id + "/graph").json()
-            elements = response["response"]["elements"]
-            element_array = elements[0]["elements"][0]["elements"]
-            for item in element_array:
-                if item["elementTypeIdentifier"] == "discussion":
-                    c.description = item["text"]
-                    break
-        except Exception:
-            logger.exception(
-                "Error loading description for NIST capability {c_id}", c_id=c.id
-            )
-        descriptions.append({"id": c.id, "description": c.description})
-    json_object = json.dumps(descriptions, indent=4)
+    try:
+        id = capability.id
+        if len(id) < 5 and version != "rev4":
+            id = capability.id[0:3] + "0" + capability.id[3:4]
+        response = requests.get(link + id + "/graph").json()
+        elements = response["response"]["elements"]
+        element_array = elements[0]["elements"][0]["elements"]
+        for item in element_array:
+            if item["elementTypeIdentifier"] == "discussion":
+                capability.description = item["text"]
+    except Exception:
+        logger.exception(
+            "Error loading description for NIST capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
     with open(root / file_name, "w") as outfile:
         outfile.write(json_object)
 
 
-def read_descriptions(capabilities, file_name):
-    try:
-        with open(file_name, "r") as openfile:
-            json_object = json.load(openfile)
-            # add description
-            for c in capabilities:
-                obj = [obj["description"] for obj in json_object if obj["id"] == c.id]
-                c.description = obj[0]
-    except Exception:
-        logger.exception(
-            "Error loading descriptions: file name {f_name} does not exist",
-            f_name=file_name,
-        )
+def delete_all_descriptions(projects: list):
+    """Delete the description files to have them be refreshed if --reset-descriptions
+    flag is turned on
+
+    Args:
+        projects: list of projects to delete description files for
+    """
+    for project in projects:
+        for version in project.versions:
+            file_name = f"{project.id}-{version}_descriptions.json"
+            if project.id == "cve":
+                dir = DATA_DIR
+            if project.id == "nist":
+                dir = DATA_DIR / "NIST_800-53"
+
+            if os.path.exists(dir / file_name):
+                logger.trace("deleting descriptions file {file}", file=dir / file_name)
+                os.remove(dir / file_name)
 
 
 def parse_capabilities(
@@ -1702,9 +1773,9 @@ def main():
     args = parser.parse_args()
 
     url_prefix = args.url_prefix
-    reset = args.reset_descriptions
+    reset_descriptions = args.reset_descriptions
     logger.info(f"url prefix: {url_prefix}")
-    logger.info(f"Reset description? {reset}")
+    logger.info(f"Reset descriptions? {reset_descriptions}")
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
@@ -1747,11 +1818,14 @@ def main():
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")
 
+    if reset_descriptions:
+        delete_all_descriptions(projects=projects)
+
     build_external_pages(
         projects=projects,
         url_prefix=url_prefix,
         breadcrumbs=breadcrumbs,
-        reset_descriptions=reset,
+        reset_descriptions=reset_descriptions,
     )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
