@@ -5,6 +5,13 @@ on:
     branches: [main]
   pull_request:
 
+# If another web build starts for the same branch, cancel the previous build. This
+# protects us from two builds trying to upload at the same time and clobbering each
+# other.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
   id-token: write
@@ -63,6 +70,7 @@ jobs:
         run: unzip -q output.zip
       - env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+          NODE_OPTIONS: --max-old-space-size=8192
         run: >
           staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
             --password $STATICRYPT_PASS --short \

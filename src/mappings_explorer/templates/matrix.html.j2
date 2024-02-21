@@ -15,6 +15,7 @@
             <div class="col-lg-8 col-md-10 col-sm-12">
               <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
               <p>[[description]]</p>
+              <p>
                 View information about techniques, how techniques and tactics interact, and the
                 <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
                 Center for Threat-Informed Defense
@@ -24,7 +25,7 @@
               </p>
             </div>
             <div
-              class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20 text-end"
+              class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20"
               v-if="attack_domain_versions_with_mappings[selectedDomain].includes(selectedAttackVersion)"
             >
               <h6>Download Mapping Artifacts:</h6>
@@ -112,7 +113,7 @@
                     <div class="scroll-indicator-left" v-if="!scrolledCompletelyToLeft"></div>
                     <div class="overflow-scroll" id="matrix-table-scrollable" @scroll="handleScroll">
                       <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
-                        <div v-for="tactic in tactics" class="col-md-1 col-sm-4 col--less-x-padding tactic-box">
+                        <div v-for="tactic in tactics" class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding tactic-box">
                           <div class="tactic-header">
                             <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/tactics/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
                             <br/>
@@ -121,7 +122,7 @@
                         </div>
                       </div>
                       <div class="row row--no-x-margin row--no-padding flex-nowrap">
-                        <div class="col-md-1 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
+                        <div class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
                           <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
                             <div class="row row--no-x-margin row--no-padding">
                               <div
@@ -228,6 +229,7 @@
     delimiters: ["[[", "]]"],
     data() {
       return {
+        amountMatrixColsShown: undefined,
         tactics: [],
         selectedTechnique: {},
         selectedAttackVersion: "10.1",
@@ -266,8 +268,6 @@
     },
     methods: {
       downloadJson(file, filename){
-        console.log(file)
-        console.log(filename)
         fetch(file)
           .then((response) => response.json())
           .then((json) => {
@@ -282,10 +282,7 @@
           });
       },
       handleScroll(e) {
-        const { offsetWidth, scrollWidth } = e.target;
-        let scrollableElement = document.getElementById("matrix-table-scrollable");
-        let scrollLeft = scrollableElement.scrollLeft;
-        let scrollRight = scrollableElement.scrollRight;
+        const { offsetWidth, scrollWidth, scrollLeft, scrollRight } = e.target;
         this.scrolledCompletelyToRight = (scrollLeft + offsetWidth) > (scrollWidth - 1);
         this.scrolledCompletelyToLeft = scrollLeft === 0;
       },
@@ -390,6 +387,16 @@
       handleOutsideClick() {
         this.attackSelectOpen = false;
         this.domainSelectOpen = false;
+      },
+      setMatrixColumnAmount(){
+        let matrixWidth = document.getElementById("matrix-table-scrollable").clientWidth;
+        console.log(matrixWidth)
+        // based off of bootsrap breakpoint sizes
+        // matrix column size is set to col-lg-1 col-md-2 col-sm-4
+        this.amountMatrixColsShown = matrixWidth <= 576 ? 3 : matrixWidth <= 768 ? 5 : 12;
+      },
+      handleWindowResize(){
+        this.setMatrixColumnAmount();
       }
     },
     watch: {
@@ -405,11 +412,32 @@
           window.history.pushState({ path: newurl }, '', newurl);
         },
       },
+      tactics(value){
+        if(value.length > this.amountMatrixColsShown){
+          this.scrolledCompletelyToRight = false;
+        }
+        else {
+          this.scrolledCompletelyToRight = true;
+        }
+      },
+      amountMatrixColsShown(value){
+        if(this.tactics.length > value){
+          this.scrolledCompletelyToRight = false;
+        }
+        else {
+          this.scrolledCompletelyToRight = true;
+        }
+      }
     },
     mounted() {
+      window.addEventListener("resize", this.handleWindowResize);
       this.getAttackObjectDict();
       this.setVersionsAccoringToQueryParams();
+      this.setMatrixColumnAmount();
     },
+    unmounted(){
+      window.removeEventListener("resize", this.handleWindowResize);
+    }
   };
 
   Vue.createApp({

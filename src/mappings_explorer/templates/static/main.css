@@ -907,13 +907,13 @@ section#user-stories button.accordion-button div {
   padding-top: 180px;
 }
 
+.header-container .download-artifacts {
+  margin-top: 12px;
+}
+
 @media (min-width: 768px) {
   .header-container .download-artifacts {
-    margin-top: 12px;
-  }
-
-  .download-artifacts h6 {
-    font-weight: 600;
+    padding-left: 15px;
   }
 
   .header-container .download-artifacts .downloads {
@@ -926,6 +926,9 @@ section#user-stories button.accordion-button div {
   }
 }
 
+.download-artifacts h6 {
+  font-weight: 600;
+}
 .download-artifacts .downloads a img {
   margin-top: -5px;
 }
@@ -1009,7 +1012,7 @@ section#user-stories button.accordion-button div {
   background-color: white;
   padding: 40px;
   box-shadow: 2px 2px 4px #bdbdbd;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .mapping-table .table-outer input {
@@ -2533,9 +2536,8 @@ section#user-stories button.accordion-button div {
   margin: 5px 5px;
   padding: 0;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   display: block;
-  /* float: right; */
 }
 
 .custom-badge .white {
@@ -2545,6 +2547,7 @@ section#user-stories button.accordion-button div {
   height: 100%;
   padding: 8px 10px;
   box-shadow: 2px 2px 4px #bdbdbd;
+  cursor: default;
 }
 
 .custom-badge .purple {
@@ -2554,6 +2557,7 @@ section#user-stories button.accordion-button div {
   padding: 8px 10px;
   border-radius: 0 10px 10px 0;
   box-shadow: 2px 2px 4px #bdbdbd;
+  cursor: default;
 }
 
 .badge-section {
@@ -2570,7 +2574,6 @@ section#user-stories button.accordion-button div {
   box-shadow: 2px 2px 4px #bdbdbd;
   margin: 5px 0px 5px 5px;
   border: none;
-  /* float: right; */
 }
 
 .badge-section .icon-btn-sm {
