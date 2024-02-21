@@ -6,7 +6,7 @@ on:
   pull_request:
 
 # If another web build starts for the same branch, cancel the previous build. This
-# protects us from two build trying to upload at the same time and clobbering each
+# protects us from two builds trying to upload at the same time and clobbering each
 # other.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
