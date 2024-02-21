@@ -807,7 +807,7 @@ def build_external_capability(
        breadcrumbs: the navigation tree above the page being built in this function
         previous_link: link to go to in order to "change versions" on banner or badges
     """
-    dir = parent_dir / capability.id
+    dir = parent_dir / capability.id.replace(" ", "_")
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("capability.html.j2")
