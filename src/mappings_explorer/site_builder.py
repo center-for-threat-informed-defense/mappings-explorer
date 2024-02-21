@@ -1003,6 +1003,8 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 projects=projects,
                 techniques=all_techniques,
             )
+            # non_mappable attack technique tables not currently shown
+            # in the website. Waiting for better solution to be worked out
             non_mappables = parse_non_mappable_techniques(
                 attack_data=attack_data,
                 techniques=all_techniques,
