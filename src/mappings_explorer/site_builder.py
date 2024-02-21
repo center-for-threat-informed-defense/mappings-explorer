@@ -310,7 +310,14 @@ def load_projects():
     return projects
 
 
-def replace_mapping_type(mapping, type_list):
+def replace_mapping_type(mapping: dict, type_list: list):
+    """Replace the mapping_type value with the more descriptive name found in mappings
+    file metadata
+
+    Args:
+        mapping: individual mapping object to replace mapping_type value on
+        typeList: table of mapping_type values to lookup and replace
+    """
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
@@ -322,8 +329,21 @@ def replace_mapping_type(mapping, type_list):
 
 
 def parse_capability_groups(
-    project, attack_version, project_version, attack_domain, reset_descriptions
+    project: ExternalControl,
+    attack_version: str,
+    project_version: str,
+    attack_domain: str,
 ):
+    """Load mappings data from files, then find and create capability group objects
+    and capability objects for the objects in the mapping files
+
+    Args:
+        project: the mapping framework to parse mappings for
+        attack_version: version of ATT&CK to parse mappings for
+        project_version: version of project to parse mappings for
+        attack_domain: domain of ATT&CK to parse mappings for
+         (ex. Enterprise, mobile, or ics)
+    """
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -390,7 +410,12 @@ def parse_capability_groups(
         get_security_stack_descriptions(project=project)
 
 
-def get_security_stack_descriptions(project):
+def get_security_stack_descriptions(project: ExternalControl):
+    """Pull capability descriptions from data files for security stack projects
+
+    Args:
+        project: project to provide descriptions for
+    """
     root = DATA_DIR / "SecurityStack"
     data_dir = os.listdir(root)
     for dir in data_dir:
@@ -781,9 +806,7 @@ def build_external_landing(
             )
 
 
-def build_external_pages(
-    projects: list, url_prefix: str, breadcrumbs: list, reset_descriptions: bool
-):
+def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """Parse ATT&CK data and build all pages for ATT&CK objects
 
     Args:
@@ -791,8 +814,6 @@ def build_external_pages(
         url_prefix: the root url for the built site
         breadcrumbs: the navigation tree above the pages being built in this function
         used to render the breadcrumbs on each page
-        reset_descriptions: whether or not to reset the saved descriptions for nist and
-        cve capabilities to save time on the build
     """
     logger.info("Parsing and building external pages...")
     for project in projects:
@@ -816,7 +837,6 @@ def build_external_pages(
                 attack_version=attack_version,
                 project_version=project_version,
                 attack_domain=attack_domain,
-                reset_descriptions=reset_descriptions,
             )
             m = [
                 m
@@ -1825,7 +1845,6 @@ def main():
         projects=projects,
         url_prefix=url_prefix,
         breadcrumbs=breadcrumbs,
-        reset_descriptions=reset_descriptions,
     )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
