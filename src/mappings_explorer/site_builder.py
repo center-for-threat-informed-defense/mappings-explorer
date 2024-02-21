@@ -847,6 +847,7 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 for m in project.mappings
                 if m["attack_version"] == attack_version
                 and m["project_version"] == project_version
+                and m["attack_domain"] == attack_domain
             ][0]
             mappings = m["mappings"]
             logger.trace("project parsed successfully")
@@ -1000,6 +1001,7 @@ def parse_techniques(
             m
             for m in project.mappings
             if float(m["attack_version"]) == float(attack_version)
+            and m["attack_domain"] == attack_domain
         ]
         if len(m) > 0:
             m = m[len(m) - 1]
