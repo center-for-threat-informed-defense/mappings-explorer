@@ -82,11 +82,11 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             f"https://cveawg.mitre.org/api/cve/{capability_id}/",
                             verify=False,
                         ).json()
-                        descriptions = response["containers"]["cna"]["descriptions"]
-                        capability_description = descriptions[0]["value"]
+                        descriptions = response["containers"]["cna"]["affected"]
+                        capability_description = descriptions[0]["product"]
                     except:
                         logger.error("Failed to fetch capability description")
-]
+
                     # if group doesn't exist yet, create it
                     if capability_year not in capability_groups:
                         capability_groups[capability_year] = f"{capability_year} CVEs"
