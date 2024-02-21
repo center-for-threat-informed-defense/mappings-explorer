@@ -77,13 +77,14 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                         capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
                     ]
                     capability_description = ""
+                    # get capability product description from cve api
                     try:
                         response = requests.get(
                             f"https://cveawg.mitre.org/api/cve/{capability_id}/",
                             verify=False,
                         ).json()
                         descriptions = response["containers"]["cna"]["affected"]
-                        capability_description = descriptions[0]["product"]
+                        capability_description = descriptions[0]["product"].strip()
                     except:
                         logger.error("Failed to fetch capability description")
 
