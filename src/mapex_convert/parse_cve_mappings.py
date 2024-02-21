@@ -1,3 +1,7 @@
+import requests
+from loguru import logger
+
+
 def configure_cve_mappings(df, attack_id_to_name_dict):
     cve_mapping_types = [
         "Primary Impact",
@@ -72,6 +76,21 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                     capability_year = capability_id[
                         capability_id.index("-") + 1 : row["CVE ID"].rindex("-")
                     ]
+                    capability_description = ""
+                    # get capability product description from cve api
+                    try:
+                        response = requests.get(
+                            f"https://cveawg.mitre.org/api/cve/{capability_id}/",
+                            verify=False,
+                        ).json()
+                        descriptions = response["containers"]["cna"]["affected"]
+                        capability_description = descriptions[0]["product"].strip()
+                    except Exception:
+                        logger.exception(
+                            "Failed to fetch description for {capability_id}",
+                            capability_id,
+                        )
+
                     # if group doesn't exist yet, create it
                     if capability_year not in capability_groups:
                         capability_groups[capability_year] = f"{capability_year} CVEs"
@@ -82,7 +101,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                             "attack_object_id": attack_object,
                             "attack_object_name": name,
                             "references": [],
-                            "capability_description": "",
+                            "capability_description": capability_description,
                             "capability_id": row["CVE ID"],
                             "mapping_type": mapping_type_id,
                             "capability_group": capability_year,
