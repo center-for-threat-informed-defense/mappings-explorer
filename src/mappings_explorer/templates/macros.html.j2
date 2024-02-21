@@ -26,7 +26,7 @@
       <tr>
         {%- for header in headers -%}
             {% if header[2] and header[3] %}
-                <td><a href="{{header[3]}}{{mapping[header[2]]}}/">{{mapping[header[0]]}}</a></td>
+                <td><a href="{{header[3]}}{{mapping[header[2]] | replace(' ', '_') }}/">{{mapping[header[0]]}}</a></td>
             {% endif %}
             {% if header[2] and not header[3] %}
                 <td><a href="{{mapping | build_capability_url(url_prefix, mapping[header[2]])}}">{{mapping[header[0]]}}</a></td>

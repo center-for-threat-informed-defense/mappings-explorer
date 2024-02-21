@@ -807,7 +807,7 @@ def build_external_capability(
        breadcrumbs: the navigation tree above the page being built in this function
         previous_link: link to go to in order to "change versions" on banner or badges
     """
-    dir = parent_dir / capability.id
+    dir = parent_dir / capability.id.replace(" ", "_")
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("capability.html.j2")
@@ -1003,6 +1003,8 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 projects=projects,
                 techniques=all_techniques,
             )
+            # non_mappable attack technique tables not currently shown
+            # in the website. Waiting for better solution to be worked out
             non_mappables = parse_non_mappable_techniques(
                 attack_data=attack_data,
                 techniques=all_techniques,

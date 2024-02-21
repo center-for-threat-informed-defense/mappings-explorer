@@ -315,7 +315,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Cache poisoning. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Cache poisoning",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -326,7 +325,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Cross-site request forgery. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.CSRF",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -337,7 +335,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Mail command injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Mail command injection",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -348,7 +345,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Null byte injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Null byte injection",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -359,7 +355,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "OS commanding. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.OS commanding",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -370,7 +365,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Path traversal. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Path traversal",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -381,7 +375,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Reverse engineering. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Reverse engineering",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -392,7 +385,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Remote file inclusion. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.RFI",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -403,7 +395,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Credential or session prediction. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Session prediction",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -414,7 +405,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Session replay. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Session replay",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -425,7 +415,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Special element injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.Special element injection",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -436,7 +425,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "SQL injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.SQLi",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -447,7 +435,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "SSI injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.SSI injection",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -458,7 +445,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "URL redirector abuse. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.URL redirector abuse",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -469,7 +455,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Elevation of privilege by another customer in shared environment. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.User breakout",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -480,7 +465,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "XQuery injection. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.XQuery injection",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -491,7 +475,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Cross-site scripting. Child of 'Exploit vuln'.",
             "capability_id": "action.hacking.variety.XSS",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -502,7 +485,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.hacking.variety.Other",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -513,7 +495,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Graphical desktop sharing (RDP, VNC, PCAnywhere, Citrix)",
             "capability_id": "action.hacking.vector.Desktop sharing",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -524,7 +505,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.hacking.vector.Other",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -535,7 +515,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "VPN",
             "capability_id": "action.hacking.vector.VPN",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -546,7 +525,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Web application",
             "capability_id": "action.hacking.vector.Web application",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -557,7 +535,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unknown",
             "capability_id": "action.hacking.vector.Unknown",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -568,7 +545,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The hacking action resulted in additional security access",
             "capability_id": "action.hacking.result.Infiltrate",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -579,7 +555,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The hacking action exfiltrated data from the victim",
             "capability_id": "action.hacking.result.Exfiltrate",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -590,7 +565,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The hacking action resulted in additional security permissions",
             "capability_id": "action.hacking.result.Elevate",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -601,7 +575,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The hacking action used security access or permissions already acuired",
             "capability_id": "action.hacking.result.Lateral movement",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -612,7 +585,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "e.g. cryptomining, ransomware, etc",
             "capability_id": "action.hacking.result.Deploy payload",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -623,7 +595,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the hacking action is not listed",
             "capability_id": "action.hacking.result.Other",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -634,7 +605,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the hacking action is unknown",
             "capability_id": "action.hacking.result.Unknown",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -645,7 +615,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The hacking action did not have a result",
             "capability_id": "action.hacking.result.NA",
-
             "capability_group": "action.hacking",
             "status": "non_mappable",
         },
@@ -656,7 +625,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Downloader (pull updates or other malware)",
             "capability_id": "action.malware.variety.Downloader",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -667,7 +635,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Send spam",
             "capability_id": "action.malware.variety.Spam",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -678,7 +645,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "SQL injection attack",
             "capability_id": "action.malware.variety.SQL injection",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -689,7 +655,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.malware.variety.Other",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -700,7 +665,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Email. Parent to 'Email attachment', 'Email autoexecute', 'Email link', 'Email unknown'",
             "capability_id": "action.malware.vector.Email",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -711,7 +675,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Email via automatic execution. Child of 'Email'",
             "capability_id": "action.malware.vector.Email autoexecute",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -722,7 +685,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Email but sub-variety (attachment, autoexecute, link, etc) not known. Child of 'Email'",
             "capability_id": "action.malware.vector.Email unknown",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -733,7 +695,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Email sub-variety known, but not one of those listed (attachment, link, autoexecute, etc). Child of 'Email'",
             "capability_id": "action.malware.vector.Email other",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -744,7 +705,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.malware.vector.Other",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -755,7 +715,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unknown",
             "capability_id": "action.malware.vector.Unknown",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -766,7 +725,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The malware action resulted in additional security access",
             "capability_id": "action.malware.result.Infiltrate",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -777,7 +735,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The malware action exfiltrated data from the victim",
             "capability_id": "action.malware.result.Exfiltrate",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -788,7 +745,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The malware action resulted in additional security permissions",
             "capability_id": "action.malware.result.Elevate",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -799,7 +755,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The malware action used security access or permissions already acuired",
             "capability_id": "action.malware.result.Lateral movement",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -810,7 +765,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "e.g. cryptomining, ransomware, etc",
             "capability_id": "action.malware.result.Deploy payload",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -821,7 +775,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the malware action is not listed",
             "capability_id": "action.malware.result.Other",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -832,7 +785,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the malware action is unknown",
             "capability_id": "action.malware.result.Unknown",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -843,7 +795,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The malware action did not have a result",
             "capability_id": "action.malware.result.NA",
-
             "capability_group": "action.malware",
             "status": "non_mappable",
         },
@@ -854,7 +805,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Handling of data in an unapproved manner",
             "capability_id": "action.misuse.variety.Data mishandling",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -865,7 +815,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Inappropriate use of email or IM",
             "capability_id": "action.misuse.variety.Email misuse",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -876,7 +825,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Storage or distribution of illicit content",
             "capability_id": "action.misuse.variety.Illicit content",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -887,7 +835,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Abuse of private or entrusted knowledge",
             "capability_id": "action.misuse.variety.Knowledge abuse",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -898,7 +845,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Inappropriate use of network or Web access including cloud services",
             "capability_id": "action.misuse.variety.Net misuse",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -909,7 +855,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Abuse of physical access to asset",
             "capability_id": "action.misuse.variety.Possession abuse",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -920,7 +865,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Abuse of system access privileges",
             "capability_id": "action.misuse.variety.Privilege abuse",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -931,7 +875,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Actor photographs the confidentiality data variety.",
             "capability_id": "action.misuse.variety.Snap picture",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -942,7 +885,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Use of unapproved hardware or devices",
             "capability_id": "action.misuse.variety.Unapproved hardware",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -953,7 +895,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Use of unapproved software or services",
             "capability_id": "action.misuse.variety.Unapproved software",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -964,7 +905,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unapproved workaround or shortcut",
             "capability_id": "action.misuse.variety.Unapproved workaround",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -975,7 +915,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.misuse.variety.Other",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -986,7 +925,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unknown",
             "capability_id": "action.misuse.variety.Unknown",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -997,7 +935,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Local network access within corporate facility",
             "capability_id": "action.misuse.vector.LAN access",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1008,7 +945,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Non-corporate facilities or networks",
             "capability_id": "action.misuse.vector.Non-corporate",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1019,7 +955,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Physical access within corporate facility",
             "capability_id": "action.misuse.vector.Physical access",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1030,7 +965,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Remote access connection to corporate network (i.e. VPN)",
             "capability_id": "action.misuse.vector.Remote access",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1041,7 +975,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Web application",
             "capability_id": "action.misuse.vector.Web application",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1052,7 +985,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.misuse.vector.Other",
-
             "capability_group": "action.misuse",
             "status": "non_mappable",
         },
@@ -1343,7 +1275,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.social.vector.Other",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1354,7 +1285,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unknown",
             "capability_id": "action.social.vector.Unknown",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1365,7 +1295,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Auditor",
             "capability_id": "action.social.target.Auditor",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1376,7 +1305,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Call center staff",
             "capability_id": "action.social.target.Call center",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1387,7 +1315,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Cashier, teller or waiter",
             "capability_id": "action.social.target.Cashier",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1398,7 +1325,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Customer (B2C)",
             "capability_id": "action.social.target.Customer",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1409,7 +1335,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Software developer",
             "capability_id": "action.social.target.Developer",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1420,7 +1345,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "End-user of the victim's products and/or services. Child of 'End-user or employee'",
             "capability_id": "action.social.target.End-user",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1431,7 +1355,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "End-user or regular employee not otherwise listed. Parent of 'End-user' or 'Other employee'",
             "capability_id": "action.social.target.End-user or employee",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1442,7 +1365,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Senior staff with legal responsibility such as board members and corporate officers",
             "capability_id": "action.social.target.Executive",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1453,7 +1375,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Finance or accounting staff",
             "capability_id": "action.social.target.Finance",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1464,7 +1385,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Former employee",
             "capability_id": "action.social.target.Former employee",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1475,7 +1395,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Security guard",
             "capability_id": "action.social.target.Guard",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1486,7 +1405,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Helpdesk staff",
             "capability_id": "action.social.target.Helpdesk",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1497,7 +1415,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Human resources staff",
             "capability_id": "action.social.target.Human resources",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1508,7 +1425,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Maintenance or janitorial staff",
             "capability_id": "action.social.target.Maintenance",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1519,7 +1435,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Manager or supervisor",
             "capability_id": "action.social.target.Manager",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1530,7 +1445,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Regular employee not otherwise listed. Child of 'End-user or employee'",
             "capability_id": "action.social.target.Other employee",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1541,7 +1455,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Partner (B2B)",
             "capability_id": "action.social.target.Partner",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1552,7 +1465,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "System or network administrator",
             "capability_id": "action.social.target.System admin",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1563,7 +1475,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "action.social.target.Other",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1574,7 +1485,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Unknown",
             "capability_id": "action.social.target.Unknown",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1585,7 +1495,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The social action resulted in additional security access",
             "capability_id": "action.social.result.Infiltrate",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1596,7 +1505,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The social action exfiltrated data from the victim",
             "capability_id": "action.social.result.Exfiltrate",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1607,7 +1515,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The social action resulted in additional security permissions",
             "capability_id": "action.social.result.Elevate",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1618,7 +1525,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The social action used security access or permissions already acuired",
             "capability_id": "action.social.result.Lateral movement",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1629,7 +1535,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "e.g. cryptomining, ransomware, etc",
             "capability_id": "action.social.result.Deploy payload",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1640,7 +1545,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the social action is not listed",
             "capability_id": "action.social.result.Other",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1651,7 +1555,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The result of the social action is unknown",
             "capability_id": "action.social.result.Unknown",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1662,7 +1565,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The social action did not have a result",
             "capability_id": "action.social.result.NA",
-
             "capability_group": "action.social",
             "status": "non_mappable",
         },
@@ -1673,7 +1575,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Initiate fraudulent transaction",
             "capability_id": "attribute.integrity.variety.Fraudulent transaction",
-
             "capability_group": "attribute.integrity",
             "status": "non_mappable",
         },
@@ -1684,7 +1585,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Hardware tampering or physical alteration",
             "capability_id": "attribute.integrity.variety.Hardware tampering",
-
             "capability_group": "attribute.integrity",
             "status": "non_mappable",
         },
@@ -1695,7 +1595,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Software installation or code modification",
             "capability_id": "attribute.integrity.variety.Software installation",
-
             "capability_group": "attribute.integrity",
             "status": "non_mappable",
         },
@@ -1706,7 +1605,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Other",
             "capability_id": "attribute.integrity.variety.Other",
-
             "capability_group": "attribute.integrity",
             "status": "non_mappable",
         },
@@ -1717,7 +1615,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "No type of development was necessary",
             "capability_id": "value_chain.development.variety.NA",
-
             "capability_group": "value_chain.development",
             "status": "non_mappable",
         },
@@ -1728,7 +1625,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Command and control. Separate from distribution of mawlare or bots, this is how they are maintained",
             "capability_id": "value_chain.non-distribution services.variety.C2",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1739,7 +1635,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Services for testing if malware is detected by anti-virus",
             "capability_id": "value_chain.non-distribution services.variety.Counter AV",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1750,7 +1645,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "DNS services including fast flux",
             "capability_id": "value_chain.non-distribution services.variety.DNS",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1761,7 +1655,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Something kept in the custody of a third party until a condition has been fulfilled.",
             "capability_id": "value_chain.non-distribution services.variety.Escrow",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1772,7 +1665,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "i.e. converting hashes into the text that produce them",
             "capability_id": "value_chain.non-distribution services.variety.Hashcracking",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1783,7 +1675,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Use of a marketplace was required as part of this incident.",
             "capability_id": "value_chain.non-distribution services.variety.Marketplace",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1794,7 +1685,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "A proxy service (either formally or informally hosted) is used by the actor to obscure their source",
             "capability_id": "value_chain.non-distribution services.variety.Proxy",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1805,7 +1695,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "A VPN service (either formally or informally hosted) is used by the actor to obscure their source",
             "capability_id": "value_chain.non-distribution services.variety.VPN",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1816,7 +1705,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "No type of non-distribution service was necessary",
             "capability_id": "value_chain.non-distribution services.variety.NA",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1827,7 +1715,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Nothing is known about the need for or type of non-distribution service investment other than it was present.",
             "capability_id": "value_chain.non-distribution services.variety.Unknown",
-
             "capability_group": "value_chain.non-distribution_services",
             "status": "non_mappable",
         },
@@ -1838,7 +1725,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Credentials the system came with",
             "capability_id": "value_chain.targeting.variety.Default credentials",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1849,7 +1735,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Knowledge of system misconfigurations used to pick an organization as a target",
             "capability_id": "value_chain.targeting.variety.Misconfigurations",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1860,7 +1745,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The actor used access to a partner to target the victim.",
             "capability_id": "value_chain.targeting.variety.Partner",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1871,7 +1755,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Knowledge of software vulnerabilities, both at an organization or associated with a specific vendor's product, used to pick them as a target.",
             "capability_id": "value_chain.targeting.variety.Vulnerabilities",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1882,7 +1765,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Knowledge of weaknesses other than vulnerability and misconfigurations used to pick an organization as a target",
             "capability_id": "value_chain.targeting.variety.Weaknesses",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1893,7 +1775,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "No type of targeting was necessary. (This includes targeted.Targeted since the victim was chosen without targeting.",
             "capability_id": "value_chain.targeting.variety.NA",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1904,7 +1785,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The variety of targeting was known, but is not listed",
             "capability_id": "value_chain.targeting.variety.Other",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1915,7 +1795,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Nothing is known about the need for or type of targeting investment other than it was present.",
             "capability_id": "value_chain.targeting.variety.Unknown",
-
             "capability_group": "value_chain.targeting",
             "status": "non_mappable",
         },
@@ -1926,7 +1805,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Distributed directly from the actor's computer",
             "capability_id": "value_chain.distribution.variety.Direct",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1937,7 +1815,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Distribution by email including anonymous/one time and spam",
             "capability_id": "value_chain.distribution.variety.Email",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1948,7 +1825,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "malware that loads other malware",
             "capability_id": "value_chain.distribution.variety.Loader",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1959,7 +1835,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "The actor distributed the attack to the victim through a partner, (i.e. supply chain attack).",
             "capability_id": "value_chain.distribution.variety.Partner",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1970,7 +1845,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "Distribution over the Plain Old Telephone System (POTS).",
             "capability_id": "value_chain.distribution.variety.Phone",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1981,7 +1855,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "No type of distribution was necessary",
             "capability_id": "value_chain.distribution.variety.NA",
-
             "capability_group": "value_chain.distribution",
             "status": "non_mappable",
         },
@@ -1992,7 +1865,6 @@ expected_veris_mapping_json = {
             "references": None,
             "capability_description": "",
             "capability_id": "attribute.confidentiality.data_disclosure",
-
             "capability_group": "attribute.confidentiality",
             "status": "non_mappable",
         },
@@ -2020,7 +1892,7 @@ expected_cve_mapping_json = {
             "attack_object_id": "T1059",
             "attack_object_name": "Name for T1059",
             "references": [],
-            "capability_description": "",
+            "capability_description": "Cisco SPA112 2-Port Phone Adapter",
             "capability_id": "CVE-2019-15243",
             "capability_group": "2019",
             "status": "complete",
@@ -2030,7 +1902,7 @@ expected_cve_mapping_json = {
             "attack_object_id": "T1190",
             "attack_object_name": "Name for T1190",
             "references": [],
-            "capability_description": "",
+            "capability_description": "Cisco SPA112 2-Port Phone Adapter",
             "capability_id": "CVE-2019-15243",
             "capability_group": "2019",
             "status": "complete",
@@ -2040,7 +1912,7 @@ expected_cve_mapping_json = {
             "attack_object_id": "T1078",
             "attack_object_name": "Name for T1078",
             "references": [],
-            "capability_description": "",
+            "capability_description": "Cisco SPA112 2-Port Phone Adapter",
             "capability_id": "CVE-2019-15243",
             "capability_group": "2019",
             "status": "complete",
@@ -2050,7 +1922,7 @@ expected_cve_mapping_json = {
             "attack_object_id": "T1068",
             "attack_object_name": "Name for T1068",
             "references": [],
-            "capability_description": "",
+            "capability_description": "Cisco Data Center Network Manager",
             "capability_id": "CVE-2019-15976",
             "capability_group": "2019",
             "status": "complete",
