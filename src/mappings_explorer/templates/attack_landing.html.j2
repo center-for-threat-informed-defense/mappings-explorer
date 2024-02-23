@@ -41,7 +41,9 @@
       </div>
     </div>
   </section>
-  {% if non_mappables %}
+  <!-- non-mappables table removed until better solution worked out -->
+ {#
+ {% if non_mappables %}
   <section id="nonmappable-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -53,11 +55,11 @@
               <span class="tooltip-text">Non-mappable techniques cannot be easily mitigated with preventive controls since they are based on behaviors performed outside of the scope of enterprise defenses and controls</span>
             </div>
           </div>
-          <!-- non-mappables table removed until better solution worked out -->
-          <!-- {{ macros.table(non_mappable_headers, non_mappables, url_prefix) }} -->
+          {{ macros.table(non_mappable_headers, non_mappables, url_prefix) }}
       </div>
     </div>
   </section>
 {% endif %}
+#}
 </div>
 {% endblock content %}
