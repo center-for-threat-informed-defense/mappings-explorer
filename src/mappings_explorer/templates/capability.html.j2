@@ -13,9 +13,11 @@
           <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ capability.id }}</span> Mappings</h1>
           {{description | safe}}
         </div>
+        <p class="pt-2">
+          {{capability.non_mappable_comment}}
+        </p>
       </div>
     </div>
-  </section>
   <section id="attack-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">

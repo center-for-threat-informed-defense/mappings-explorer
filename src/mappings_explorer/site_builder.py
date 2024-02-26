@@ -22,6 +22,7 @@ class Capability:
     mappings = []
     capability_group = ""
     num_mappings = 0
+    non_mappable_comment = ""
 
 
 class Technique:
@@ -70,6 +71,7 @@ class ExternalControl:
     capabilities = []
     non_mappables = []
     has_non_mappables = True
+    has_non_mappable_comments = False
 
 
 all_attack_versions = [
@@ -256,6 +258,7 @@ def load_projects():
     aws.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    aws.has_non_mappable_comments = True
 
     azure = ExternalControl()
     azure.id = "azure"
@@ -276,6 +279,7 @@ def load_projects():
     azure.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    azure.has_non_mappable_comments = True
 
     gcp = ExternalControl()
     gcp.id = "gcp"
@@ -298,6 +302,7 @@ def load_projects():
     gcp.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    gcp.has_non_mappable_comments = True
 
     projects = [
         nist,
@@ -382,7 +387,9 @@ def parse_capability_groups(
             g.capabilities = []
             project.capability_groups.append(g)
             filtered_mappings = [
-                m for m in mappings if (m.get("capability_group") == g.id)
+                m
+                for m in mappings
+                if (m.get("capability_group") == g.id and m["status"] != "non_mappable")
             ]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
@@ -394,13 +401,12 @@ def parse_capability_groups(
     parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
-    mappings = [m for m in mappings if m["mapping_type"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
             "project_version": project_version,
             "attack_domain": attack_domain,
-            "mappings": mappings,
+            "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
     if project.id == "nist" or project.id == "cve":
@@ -422,12 +428,19 @@ def get_security_stack_descriptions(project: ExternalControl):
         if dir.lower() == project.id:
             rootdir = root / dir
 
+    capabilities = project.capabilities
+    # if the project has non mappable comments and we are therefore building the
+    # capability page even though it is non_mappable, get non_mappable capabilities'
+    # descriptions as well
+    if project.has_non_mappable_comments:
+        capabilities.extend(project.non_mappables)
+
     # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
         name = data["name"]
         description = data["description"]
-        for c in project.capabilities:
+        for c in capabilities:
             if c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_"):
                 c.description = description
                 c.label = data["name"]
@@ -615,34 +628,59 @@ def parse_capabilities(
     for id in capabilityIds:
         c = Capability()
         c.id = id
-        c.mappings = [m for m in mappings if (m["capability_id"] == id)]
-        c.num_mappings = len(c.mappings)
-        c.label = c.mappings[0]["capability_description"]
-        for mapping in c.mappings:
-            mapping["project"] = project.id
-            mapping["project_version"] = project_version
-            mapping["attack_version"] = attack_version
-            mapping["attack_domain"] = attack_domain
-        if c.mappings[0].get("capability_group"):
-            capability_group = [
-                g
-                for g in project.capability_groups
-                if (g.id == mapping["capability_group"])
-            ]
-            capability_group[0].capabilities.append(c)
-            capability_group[0].num_capabilities += 1
-            c.capability_group = capability_group[0]
-        else:
-            print(c.mappings[0])
-        logger.trace(
-            "for capability {id} the number of mappings is {count}",
-            id=c.id,
-            count=str(len(c.mappings)),
+
+        capability_mappable_mappings = [
+            m
+            for m in mappings
+            if (m["capability_id"] == id) and m["status"] != "non_mappable"
+        ]
+        capability_non_mappables = [
+            m
+            for m in mappings
+            if (m["capability_id"] == id) and m["status"] == "non_mappable"
+        ]
+        capability_not_mappable = (
+            len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
         )
-        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
-            non_mappables.append(c)
-        else:
+
+        c.num_mappings = len(capability_mappable_mappings)
+        c.mappings = capability_mappable_mappings
+
+        if not capability_not_mappable:
+            c.label = capability_mappable_mappings[0]["capability_description"]
+            for mapping in capability_mappable_mappings:
+                mapping["project"] = project.id
+                mapping["project_version"] = project_version
+                mapping["attack_version"] = attack_version
+                mapping["attack_domain"] = attack_domain
+            if capability_mappable_mappings[0].get("capability_group"):
+                capability_group = [
+                    g
+                    for g in project.capability_groups
+                    if (g.id == mapping["capability_group"])
+                ]
+                capability_group[0].capabilities.append(c)
+                capability_group[0].num_capabilities += 1
+                c.capability_group = capability_group[0]
+            else:
+                print(capability_mappable_mappings[0])
+            logger.trace(
+                "for capability {id} the number of mappings is {count}",
+                id=c.id,
+                count=str(len(c.mappings)),
+            )
             capabilities.append(c)
+        else:
+            c.label = capability_non_mappables[0]["capability_description"]
+            if capability_non_mappables[0].get("capability_group"):
+                capability_group = [
+                    g
+                    for g in project.capability_groups
+                    if (g.id == capability_non_mappables[0]["capability_group"])
+                ]
+                c.capability_group = capability_group[0]
+            c.non_mappable_comment = capability_non_mappables[0].get("comments", None)
+            non_mappables.append(c)
 
     project.non_mappables = non_mappables
     project.capabilities = capabilities
@@ -722,6 +760,13 @@ def build_external_landing(
         ("id", "Capability ID"),
         ("label", "Capability Description"),
     ]
+
+    if project.has_non_mappable_comments:
+        non_mappable_headers = [
+            ("id", "Capability ID", "id", external_prefix),
+            ("label", "Capability Description", "id", external_prefix),
+        ]
+
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -740,7 +785,7 @@ def build_external_landing(
         mappings=mappings,
         headers=headers,
         group_headers=capability_group_headers,
-        capability_groups=project.capability_groups,
+        capability_groups=[g for g in project.capability_groups if g.num_mappings > 0],
         valid_versions=project.validVersions,
         breadcrumbs=breadcrumbs,
         non_mappable_headers=non_mappable_headers,
@@ -765,32 +810,29 @@ def build_external_landing(
     capability_group_dir = domain_dir / "capability-groups"
     previous_link = external_prefix
     for capability_group in project.capability_groups:
-        nav = breadcrumbs + [
-            (
-                f"{external_prefix}capability-groups/{capability_group.id}/",
-                f"{capability_group.label} Capability Group",
+        if capability_group.num_mappings > 0:
+            nav = breadcrumbs + [
+                (
+                    f"{external_prefix}capability-groups/{capability_group.id}/",
+                    f"{capability_group.label} Capability Group",
+                )
+            ]
+            build_capability_group(
+                project=project,
+                capability_group=capability_group,
+                url_prefix=url_prefix,
+                parent_dir=capability_group_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                attack_domain=attack_domain,
+                breadcrumbs=nav,
+                capability_group_headers=capability_group_headers,
+                previous_link=previous_link,
             )
-        ]
-        build_capability_group(
-            project=project,
-            capability_group=capability_group,
-            url_prefix=url_prefix,
-            parent_dir=capability_group_dir,
-            project_version=project_version,
-            attack_version=attack_version,
-            headers=headers,
-            attack_domain=attack_domain,
-            breadcrumbs=nav,
-            capability_group_headers=capability_group_headers,
-            previous_link=previous_link,
-        )
     for capability in project.capabilities:
         if capability.capability_group:
             capability_nav = breadcrumbs + [
-                (
-                    f"{external_prefix}capability-groups/{capability.capability_group.id}/",
-                    f"{capability.capability_group.label} Capability Group",
-                ),
                 (
                     f"{external_prefix}{capability.id}/",
                     f"{capability.label if capability.label else capability.id}",
@@ -804,6 +846,26 @@ def build_external_landing(
                 attack_version=attack_version,
                 headers=headers,
                 capability=capability,
+                attack_domain=attack_domain,
+                breadcrumbs=capability_nav,
+                previous_link=previous_link,
+            )
+    if project.has_non_mappable_comments:
+        for non_mappable in project.non_mappables:
+            capability_nav = breadcrumbs + [
+                (
+                    f"{external_prefix}{non_mappable.id}/",
+                    f"{non_mappable.label if non_mappable.label else non_mappable.id}",
+                ),
+            ]
+            build_external_capability(
+                project=project,
+                url_prefix=url_prefix,
+                parent_dir=domain_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                capability=non_mappable,
                 attack_domain=attack_domain,
                 breadcrumbs=capability_nav,
                 previous_link=previous_link,
