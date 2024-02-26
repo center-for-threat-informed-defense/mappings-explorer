@@ -410,7 +410,15 @@ def parse_capability_groups(
         }
     )
     if project.id == "nist" or project.id == "cve":
-        for capability in project.capabilities:
+        # if the project has non mappable comments and we are therefore building the
+        # capability page even though it is non_mappable, get non_mappable capabilities'
+        # descriptions as well
+        capabilities_to_get_description = (
+            project.capabilities
+            if not project.has_non_mappable_comments
+            else project.capabilities.extend(project.non_mappables)
+        )
+        for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
