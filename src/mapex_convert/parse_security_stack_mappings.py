@@ -60,7 +60,7 @@ def configure_security_stack_mappings(data, parsed_mappings):
             ] = data["name"]
         parsed_mappings["mapping_objects"].append(
             {
-                "comments": None,
+                "comments": data["comments"],
                 "attack_object_id": None,
                 "attack_object_name": None,
                 "references": None,
