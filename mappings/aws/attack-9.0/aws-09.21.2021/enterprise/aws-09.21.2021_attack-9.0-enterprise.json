@@ -2403,7 +2403,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "This control is not mappable because it does not provide any security capabilities other than allowing for use of security features contained within AWS Organizations and AWS Identity and Access Management.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -4010,7 +4010,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "This control is not mappable because it does not provide any detection of malicious techniques. It primarily provides a way to log and record events within AWS which then can be piped to other security controls to determine if malicious activity has occurred.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -4024,7 +4024,7 @@
       "status": "non_mappable"
     },
     {
-      "comments": null,
+      "comments": "This control was not mapped because it is primarily acting as a connector for Microsoft Active Directory with AWS services and does not provide any security functions other than allowing use of other AWS security controls.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -4038,7 +4038,7 @@
       "status": "non_mappable"
     },
     {
-      "comments": null,
+      "comments": "This control was not mapped because AWS Artifact provides access to reports and information but does not protect against any ATT&CK techniques. All protections against ATT&CK techniques are provided by the lower-level services evaluated by and referenced in those reports.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -5214,7 +5214,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "Although this service can be scored as a Response control (Minimal/Data Enrichment/Forensics), due to the generic nature of its functionality, currently it does not look to be reasonably mappable to specific (sub-)techniques of MITRE ATT&CK.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -5914,7 +5914,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "This control was not mapped because AWS Firewall Manager is simply a management service for other AWS security services. It does not inherently protect against any ATT&CK (sub-)techniques. All protections against ATT&CK (sub-)techniques are provided by the lower-level services that it manages (e.g., AWS WAF, AWS Network Firewall, etc.).  This is evident by the fact that to use firewall rules or security groups, they must first be configured in the respective lower-level services. ",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -6110,7 +6110,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "This control was not mapped because AWS Certificate Manager simply issues certificates for use in other AWS services such as Elastic Load Balancing, Amazon CloudFront, AWS Elastic Beanstalk, Amazon API Gateway, AWS Nitro Enclaves, and AWS CloudFormation. It does not inherently protect against any ATT&CK techniques as it cannot be used to deploy certificates to other AWS services. That must be done either manually or with services integrated into AWS Certificate Manager.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
@@ -7082,7 +7082,7 @@
       "status": "complete"
     },
     {
-      "comments": null,
+      "comments": "This control was not mapped because AWS Audit Manager is used to aggregate evidence from other services in order to produce audit-ready reports, not provide protection against any ATT&CK techniques or adversary behaviors. All protections against ATT&CK techniques are provided by the lower-level services used for the evidence collection, which are assessed in different mappings.",
       "attack_object_id": null,
       "attack_object_name": null,
       "references": null,
