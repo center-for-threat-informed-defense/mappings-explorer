@@ -8,14 +8,14 @@ expected_navigator_layer_results = {
         {
             "techniqueID": "T1137",
             "score": 1,
-            "comment": "Related to AC-10",
-            "metadata": [{"name": "control", "value": "AC-10"}, {"divider": True}],
+            "comment": " Related to: \n •AC-10",
+            "metadata": [],
         },
         {
             "techniqueID": "T1137.002",
             "score": 1,
-            "comment": "Related to AC-10",
-            "metadata": [{"name": "control", "value": "AC-10"}, {"divider": True}],
+            "comment": " Related to: \n •AC-10",
+            "metadata": [],
         },
     ],
     "gradient": {"colors": ["#ffe766", "#ffaf66"], "minValue": 1, "maxValue": 1},

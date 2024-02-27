@@ -366,39 +366,52 @@ def get_techniques_dict(mapping_objects):
 
         # define metadata
         metadata = []
-        if mapping.get("score_category"):
-            metadata.append(
-                {
-                    "name": "category",
-                    "value": mapping["score_category"],
-                }
-            )
+        if (
+            mapping.get("score_category")
+            or mapping.get("score_value")
+            or mapping.get("comments")
+        ):
+            if mapping.get("score_category"):
+                metadata.append(
+                    {
+                        "name": "category",
+                        "value": mapping["score_category"],
+                    }
+                )
 
-        if mapping.get("score_value"):
-            metadata.append({"name": "value", "value": mapping["score_value"]})
+            if mapping.get("score_value"):
+                metadata.append({"name": "value", "value": mapping["score_value"]})
 
-        if mapping.get("comments"):
-            metadata.append({"name": "comment", "value": mapping["comments"]})
+            if mapping.get("comments"):
+                metadata.append({"name": "comment", "value": mapping["comments"]})
 
         if techniques_dict.get(tehchnique_id):
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
-            metadata_info = [{"name": "control", "value": mapping["capability_id"]}]
-            metadata_info.extend(metadata)
-            metadata_info.append({"divider": True})
 
-            if "metadata" in techniques_dict[tehchnique_id]:
+            metadata_info = []
+            if len(metadata) > 0:
+                metadata_info.extend(
+                    [
+                        {"divider": True},
+                        {"name": "control", "value": mapping["capability_id"]},
+                    ]
+                )
+                metadata_info.extend(metadata)
+
+            if "metadata" in techniques_dict[tehchnique_id] and len(metadata_info) > 0:
                 techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
             else:
                 techniques_dict[tehchnique_id]["metadata"] = metadata_info
         else:
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
-            techniques_dict[tehchnique_id]["metadata"] = [
-                {"name": "control", "value": mapping["capability_id"]}
-            ]
-            techniques_dict[tehchnique_id]["metadata"].extend(metadata)
-            techniques_dict[tehchnique_id]["metadata"].append({"divider": True})
+            if len(metadata) > 0:
+                techniques_dict[tehchnique_id]["metadata"] = [
+                    {"divider": True},
+                    {"name": "control", "value": mapping["capability_id"]},
+                ]
+                techniques_dict[tehchnique_id]["metadata"].extend(metadata)
 
     return techniques_dict
 
@@ -434,13 +447,14 @@ def create_layer(techniques_dict, layer_title, domain, attack_version):
 
         related_controls_string = ""
         if len(capability_ids):
-            related_controls_string = ", ".join(capability_ids)
+            # formats ids in a bulleted list
+            related_controls_string = "\u2022" + "\n\u2022".join(capability_ids)
 
         layer["techniques"].append(
             {
                 "techniqueID": technique,
                 "score": len(techniques_dict[technique]["capability_ids"]),
-                "comment": f"Related to {related_controls_string}",
+                "comment": f" Related to: \n {related_controls_string}",
                 "metadata": techniques_dict[technique].get("metadata", []),
             }
         )
