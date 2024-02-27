@@ -366,7 +366,7 @@ def get_techniques_dict(mapping_objects):
 
         # define metadata
         metadata = []
-        if mapping["score_category"]:
+        if mapping.get("score_category"):
             metadata.append(
                 {
                     "name": "category",
@@ -374,10 +374,10 @@ def get_techniques_dict(mapping_objects):
                 }
             )
 
-        if mapping["score_value"]:
+        if mapping.get("score_value"):
             metadata.append({"name": "value", "value": mapping["score_value"]})
 
-        if mapping["comments"]:
+        if mapping.get("comments"):
             metadata.append({"name": "comment", "value": mapping["comments"]})
 
         if techniques_dict.get(tehchnique_id):

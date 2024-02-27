@@ -80,8 +80,7 @@ def configure_cve_mappings(df, attack_id_to_name_dict):
                     # get capability product description from cve api
                     try:
                         response = requests.get(
-                            f"https://cveawg.mitre.org/api/cve/{capability_id}/",
-                            verify=False,
+                            f"https://cveawg.mitre.org/api/cve/{capability_id}/"
                         ).json()
                         descriptions = response["containers"]["cna"]["affected"]
                         capability_description = descriptions[0]["product"].strip()
