@@ -364,46 +364,42 @@ def get_techniques_dict(mapping_objects):
         tehchnique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 
-        # add score metadata if it is a scoring mapping
-        score_metadata = mapping["mapping_type"] == "technique_scores"
+        # define metadata
+        metadata = []
+        if mapping.get("score_category"):
+            metadata.append(
+                {
+                    "name": "category",
+                    "value": mapping["score_category"],
+                }
+            )
 
-        if score_metadata:
-            # define metadata objects
-            metadata_control = {"name": "control", "value": mapping["capability_id"]}
-            metadata_score_category = {
-                "name": "category",
-                "value": mapping["score_category"],
-            }
-            metadata_score_value = {"name": "value", "value": mapping["score_value"]}
-            metadata_comment = {"name": "comment", "value": mapping["comments"]}
-            divider = {"divider": True}
+        if mapping.get("score_value"):
+            metadata.append({"name": "value", "value": mapping["score_value"]})
+
+        if mapping.get("comments"):
+            metadata.append({"name": "comment", "value": mapping["comments"]})
 
         if techniques_dict.get(tehchnique_id):
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
-            if score_metadata:
-                metadata_info = [
-                    metadata_control,
-                    metadata_score_category,
-                    metadata_score_value,
-                    metadata_comment,
-                    divider,
-                ]
-                if "metadata" in techniques_dict[tehchnique_id]:
-                    techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
-                else:
-                    techniques_dict[tehchnique_id]["metadata"] = metadata_info
+            metadata_info = [{"name": "control", "value": mapping["capability_id"]}]
+            metadata_info.extend(metadata)
+            metadata_info.append({"divider": True})
+
+            if "metadata" in techniques_dict[tehchnique_id]:
+                techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
+            else:
+                techniques_dict[tehchnique_id]["metadata"] = metadata_info
         else:
             # add capability information to technique it is mapped to
             techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
-            if score_metadata:
-                techniques_dict[tehchnique_id]["metadata"] = [
-                    metadata_control,
-                    metadata_score_category,
-                    metadata_score_value,
-                    metadata_comment,
-                    divider,
-                ]
+            techniques_dict[tehchnique_id]["metadata"] = [
+                {"name": "control", "value": mapping["capability_id"]}
+            ]
+            techniques_dict[tehchnique_id]["metadata"].extend(metadata)
+            techniques_dict[tehchnique_id]["metadata"].append({"divider": True})
+
     return techniques_dict
 
 
