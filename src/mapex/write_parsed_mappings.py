@@ -382,15 +382,14 @@ def get_techniques_dict(mapping_objects):
 
         if techniques_dict.get(technique_id) is None:
             techniques_dict[technique_id] = {
-                "capability_ids": [capability_id],
+                "capability_ids": {capability_id},
                 "metadata": [],
             }
 
         technique = techniques_dict[technique_id]
 
         # Add Capability ID
-        if capability_id not in technique["capability_ids"]:
-            technique["capability_ids"].append(capability_id)
+        technique["capability_ids"].add(capability_id)
 
         # Add Metadata
         metadata_info = []
