@@ -361,57 +361,50 @@ def load_attack_json(parsed_mappings):
 def get_techniques_dict(mapping_objects):
     techniques_dict = {}
     for mapping in mapping_objects:
-        tehchnique_id = mapping["attack_object_id"]
+        technique_id = mapping["attack_object_id"]
         capability_id = mapping["capability_id"]
 
         # define metadata
         metadata = []
-        if (
-            mapping.get("score_category")
-            or mapping.get("score_value")
-            or mapping.get("comments")
-        ):
-            if mapping.get("score_category"):
-                metadata.append(
-                    {
-                        "name": "category",
-                        "value": mapping["score_category"],
-                    }
-                )
+        if mapping.get("score_category"):
+            metadata.append(
+                {
+                    "name": "category",
+                    "value": mapping["score_category"],
+                }
+            )
 
-            if mapping.get("score_value"):
-                metadata.append({"name": "value", "value": mapping["score_value"]})
+        if mapping.get("score_value"):
+            metadata.append({"name": "value", "value": mapping["score_value"]})
 
-            if mapping.get("comments"):
-                metadata.append({"name": "comment", "value": mapping["comments"]})
+        if mapping.get("comments"):
+            metadata.append({"name": "comment", "value": mapping["comments"]})
 
-        if techniques_dict.get(tehchnique_id):
-            # add capability information to technique it is mapped to
-            techniques_dict[tehchnique_id]["capability_ids"].append(capability_id)
+        if techniques_dict.get(technique_id) is None:
+            techniques_dict[technique_id] = {
+                "capability_ids": [capability_id],
+                "metadata": [],
+            }
 
-            metadata_info = []
-            if len(metadata) > 0:
-                metadata_info.extend(
-                    [
-                        {"divider": True},
-                        {"name": "control", "value": mapping["capability_id"]},
-                    ]
-                )
-                metadata_info.extend(metadata)
+        technique = techniques_dict[technique_id]
 
-            if "metadata" in techniques_dict[tehchnique_id] and len(metadata_info) > 0:
-                techniques_dict[tehchnique_id]["metadata"].extend(metadata_info)
-            else:
-                techniques_dict[tehchnique_id]["metadata"] = metadata_info
-        else:
-            # add capability information to technique it is mapped to
-            techniques_dict[tehchnique_id] = {"capability_ids": [capability_id]}
-            if len(metadata) > 0:
-                techniques_dict[tehchnique_id]["metadata"] = [
+        # Add Capability ID
+        if capability_id not in technique["capability_ids"]:
+            technique["capability_ids"].append(capability_id)
+
+        # Add Metadata
+        metadata_info = []
+        if len(metadata) > 0:
+            metadata_info.extend(
+                [
                     {"divider": True},
                     {"name": "control", "value": mapping["capability_id"]},
                 ]
-                techniques_dict[tehchnique_id]["metadata"].extend(metadata)
+            )
+            metadata_info.extend(metadata)
+
+        # No need to check if metadata_info is empty
+        technique["metadata"].extend(metadata_info)
 
     return techniques_dict
 
