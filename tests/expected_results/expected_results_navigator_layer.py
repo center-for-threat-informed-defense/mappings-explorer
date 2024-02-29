@@ -8,13 +8,13 @@ expected_navigator_layer_results = {
         {
             "techniqueID": "T1137",
             "score": 1,
-            "comment": "Related to AC-10",
+            "comment": " Related to: \n •AC-10",
             "metadata": [],
         },
         {
             "techniqueID": "T1137.002",
             "score": 1,
-            "comment": "Related to AC-10",
+            "comment": " Related to: \n •AC-10",
             "metadata": [],
         },
     ],

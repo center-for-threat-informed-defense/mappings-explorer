@@ -22,6 +22,7 @@ class Capability:
     mappings = []
     capability_group = ""
     num_mappings = 0
+    non_mappable_comment = ""
 
 
 class Technique:
@@ -70,6 +71,7 @@ class ExternalControl:
     capabilities = []
     non_mappables = []
     has_non_mappables = True
+    has_non_mappable_comments = False
 
 
 all_attack_versions = [
@@ -256,6 +258,7 @@ def load_projects():
     aws.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    aws.has_non_mappable_comments = True
 
     azure = ExternalControl()
     azure.id = "azure"
@@ -276,6 +279,7 @@ def load_projects():
     azure.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    azure.has_non_mappable_comments = True
 
     gcp = ExternalControl()
     gcp.id = "gcp"
@@ -298,6 +302,7 @@ def load_projects():
     gcp.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
     ]
+    gcp.has_non_mappable_comments = True
 
     projects = [
         nist,
@@ -310,7 +315,14 @@ def load_projects():
     return projects
 
 
-def replace_mapping_type(mapping, type_list):
+def replace_mapping_type(mapping: dict, type_list: list):
+    """Replace the mapping_type value with the more descriptive name found in mappings
+    file metadata
+
+    Args:
+        mapping: individual mapping object to replace mapping_type value on
+        typeList: table of mapping_type values to lookup and replace
+    """
     for mapping_type in type_list:
         if mapping["mapping_type"] == mapping_type:
             return type_list[mapping_type]["name"]
@@ -321,7 +333,22 @@ def replace_mapping_type(mapping, type_list):
             return "non_mappable"
 
 
-def parse_capability_groups(project, attack_version, project_version, attack_domain):
+def parse_capability_groups(
+    project: ExternalControl,
+    attack_version: str,
+    project_version: str,
+    attack_domain: str,
+):
+    """Load mappings data from files, then find and create capability group objects
+    and capability objects for the objects in the mapping files
+
+    Args:
+        project: the mapping framework to parse mappings for
+        attack_version: version of ATT&CK to parse mappings for
+        project_version: version of project to parse mappings for
+        attack_domain: domain of ATT&CK to parse mappings for
+         (ex. Enterprise, mobile, or ics)
+    """
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -360,7 +387,9 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
             g.capabilities = []
             project.capability_groups.append(g)
             filtered_mappings = [
-                m for m in mappings if (m.get("capability_group") == g.id)
+                m
+                for m in mappings
+                if (m.get("capability_group") == g.id and m["status"] != "non_mappable")
             ]
             g.num_mappings = len(filtered_mappings)
             g.mappings = filtered_mappings
@@ -372,56 +401,162 @@ def parse_capability_groups(project, attack_version, project_version, attack_dom
     parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
-    mappings = [m for m in mappings if m["mapping_type"] != "non_mappable"]
     project.mappings.append(
         {
             "attack_version": attack_version,
             "project_version": project_version,
             "attack_domain": attack_domain,
-            "mappings": mappings,
+            "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    #  set the descriptions for each project's capability list
-    if project.id == "cve":
-        get_cve_descriptions(project=project)
-    if project.id == "nist":
-        get_nist_descriptions(project=project, version=project_version)
+    if project.id == "nist" or project.id == "cve":
+        # if the project has non mappable comments and we are therefore building the
+        # capability page even though it is non_mappable, get non_mappable capabilities'
+        # descriptions as well
+        capabilities_to_get_description = (
+            project.capabilities
+            if not project.has_non_mappable_comments
+            else project.capabilities.extend(project.non_mappables)
+        )
+        for capability in capabilities_to_get_description:
+            get_description_for_capability(capability, project, project_version)
     if project.id == "aws" or project.id == "gcp" or project.id == "azure":
         get_security_stack_descriptions(project=project)
 
 
-def get_security_stack_descriptions(project):
+def get_security_stack_descriptions(project: ExternalControl):
+    """Pull capability descriptions from data files for security stack projects
+
+    Args:
+        project: project to provide descriptions for
+    """
     root = DATA_DIR / "SecurityStack"
     data_dir = os.listdir(root)
     for dir in data_dir:
         if dir.lower() == project.id:
             rootdir = root / dir
 
+    capabilities = project.capabilities
+    # if the project has non mappable comments and we are therefore building the
+    # capability page even though it is non_mappable, get non_mappable capabilities'
+    # descriptions as well
+    if project.has_non_mappable_comments:
+        capabilities.extend(project.non_mappables)
+
     # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
         name = data["name"]
         description = data["description"]
-        for c in project.capabilities:
+        for c in capabilities:
             if c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_"):
                 c.description = description
                 c.label = data["name"]
                 break
 
 
-def get_cve_descriptions(project):
-    for c in project.capabilities:
+def get_cve_description(project: ExternalControl, version: str, capability: Capability):
+    """Query CVE endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+        capability: object that needs a description
+    """
+    root = DATA_DIR
+    file_name = f"{project.id}-{version}_descriptions.json"
+    try:
+        response = requests.get(
+            "https://cveawg.mitre.org/api/cve/" + capability.id
+        ).json()
+        descriptions = response["containers"]["cna"]["descriptions"]
+        capability.description = descriptions[0]["value"]
+    except Exception:
+        logger.exception(
+            "Error loading description for CVE capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
+    with open(root / file_name, "w") as outfile:
+        outfile.write(json_object)
+
+
+def get_description_for_capability(
+    capability: Capability, project: ExternalControl, version: str
+):
+    """Pull description for each capability either from saved capability file
+    or direct another method to query for a description
+
+    Args:
+        capability: object that needs a description
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+    """
+    if project.id == "nist":
+        folder_name = DATA_DIR / "NIST_800-53"
+    elif project.id == "cve":
+        folder_name = DATA_DIR
+    file_name = folder_name / f"{project.id}-{version}_descriptions.json"
+    if os.path.isfile(file_name):
         try:
-            response = requests.get("https://cveawg.mitre.org/api/cve/" + c.id).json()
-            descriptions = response["containers"]["cna"]["descriptions"]
-            c.description = descriptions[0]["value"]
+            with open(file_name, "r") as openfile:
+                json_object = json.load(openfile)
+                obj = [
+                    obj["description"]
+                    for obj in json_object
+                    if obj["id"] == capability.id
+                ]
+                if len(obj) > 0:
+                    capability.description = obj[0]
+                else:
+                    logger.trace(
+                        "Getting description for capability {c_id}", c_id=capability.id
+                    )
+                    if project.id == "nist":
+                        get_nist_description(
+                            project=project, version=version, capability=capability
+                        )
+                    if project.id == "cve":
+                        get_cve_description(
+                            project=project, version=version, capability=capability
+                        )
         except Exception:
             logger.exception(
-                "Error loading description for CVE capability {c_id}", c_id=c.id
+                "Error loading description for capability {c_id}",
+                c_id=capability.id,
             )
+    else:
+        # if description file doesn't already exist, create it
+        with open(file_name, "w") as outfile:
+            json.dump([], outfile)
+        # then query for capability description
+        if project.id == "nist":
+            get_nist_description(
+                project=project, version=version, capability=capability
+            )
+        if project.id == "cve":
+            get_cve_description(project=project, version=version, capability=capability)
 
 
-def get_nist_descriptions(project, version):
+def get_nist_description(
+    project: ExternalControl, version: str, capability: Capability
+):
+    """Query NIST endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for
+        capability: object that needs a description
+    """
+    root = DATA_DIR / "NIST_800-53"
+    file_name = f"{project.id}-{version}_descriptions.json"
+
     rev5_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_5_1_1/element/"
     rev4_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_4_0_0/element/"
     link = ""
@@ -430,22 +565,48 @@ def get_nist_descriptions(project, version):
     else:
         link = rev5_link
 
-    for c in project.capabilities:
-        try:
-            id = c.id
-            if len(id) < 5 and version != "rev4":
-                id = c.id[0:3] + "0" + c.id[3:4]
-            response = requests.get(link + id + "/graph").json()
-            elements = response["response"]["elements"]
-            element_array = elements[0]["elements"][0]["elements"]
-            for item in element_array:
-                if item["elementTypeIdentifier"] == "discussion":
-                    c.description = item["text"]
-                    break
-        except Exception:
-            logger.exception(
-                "Error loading description for NIST capability {c_id}", c_id=c.id
-            )
+    try:
+        id = capability.id
+        if len(id) < 5 and version != "rev4":
+            id = capability.id[0:3] + "0" + capability.id[3:4]
+        response = requests.get(link + id + "/graph").json()
+        elements = response["response"]["elements"]
+        element_array = elements[0]["elements"][0]["elements"]
+        for item in element_array:
+            if item["elementTypeIdentifier"] == "discussion":
+                capability.description = item["text"]
+    except Exception:
+        logger.exception(
+            "Error loading description for NIST capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
+    with open(root / file_name, "w") as outfile:
+        outfile.write(json_object)
+
+
+def delete_all_descriptions(projects: list):
+    """Delete the description files to have them be refreshed if --reset-descriptions
+    flag is turned on
+
+    Args:
+        projects: list of projects to delete description files for
+    """
+    for project in projects:
+        for version in project.versions:
+            file_name = f"{project.id}-{version}_descriptions.json"
+            if project.id == "cve":
+                dir = DATA_DIR
+            if project.id == "nist":
+                dir = DATA_DIR / "NIST_800-53"
+
+            if os.path.exists(dir / file_name):
+                logger.trace("deleting descriptions file {file}", file=dir / file_name)
+                os.remove(dir / file_name)
 
 
 def parse_capabilities(
@@ -475,34 +636,59 @@ def parse_capabilities(
     for id in capabilityIds:
         c = Capability()
         c.id = id
-        c.mappings = [m for m in mappings if (m["capability_id"] == id)]
-        c.num_mappings = len(c.mappings)
-        c.label = c.mappings[0]["capability_description"]
-        for mapping in c.mappings:
-            mapping["project"] = project.id
-            mapping["project_version"] = project_version
-            mapping["attack_version"] = attack_version
-            mapping["attack_domain"] = attack_domain
-        if c.mappings[0].get("capability_group"):
-            capability_group = [
-                g
-                for g in project.capability_groups
-                if (g.id == mapping["capability_group"])
-            ]
-            capability_group[0].capabilities.append(c)
-            capability_group[0].num_capabilities += 1
-            c.capability_group = capability_group[0]
-        else:
-            print(c.mappings[0])
-        logger.trace(
-            "for capability {id} the number of mappings is {count}",
-            id=c.id,
-            count=str(len(c.mappings)),
+
+        capability_mappable_mappings = [
+            m
+            for m in mappings
+            if (m["capability_id"] == id) and m["status"] != "non_mappable"
+        ]
+        capability_non_mappables = [
+            m
+            for m in mappings
+            if (m["capability_id"] == id) and m["status"] == "non_mappable"
+        ]
+        capability_not_mappable = (
+            len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
         )
-        if project.has_non_mappables and c.mappings[0]["status"] == "non_mappable":
-            non_mappables.append(c)
-        else:
+
+        c.num_mappings = len(capability_mappable_mappings)
+        c.mappings = capability_mappable_mappings
+
+        if not capability_not_mappable:
+            c.label = capability_mappable_mappings[0]["capability_description"]
+            for mapping in capability_mappable_mappings:
+                mapping["project"] = project.id
+                mapping["project_version"] = project_version
+                mapping["attack_version"] = attack_version
+                mapping["attack_domain"] = attack_domain
+            if capability_mappable_mappings[0].get("capability_group"):
+                capability_group = [
+                    g
+                    for g in project.capability_groups
+                    if (g.id == mapping["capability_group"])
+                ]
+                capability_group[0].capabilities.append(c)
+                capability_group[0].num_capabilities += 1
+                c.capability_group = capability_group[0]
+            else:
+                print(capability_mappable_mappings[0])
+            logger.trace(
+                "for capability {id} the number of mappings is {count}",
+                id=c.id,
+                count=str(len(c.mappings)),
+            )
             capabilities.append(c)
+        else:
+            c.label = capability_non_mappables[0]["capability_description"]
+            if capability_non_mappables[0].get("capability_group"):
+                capability_group = [
+                    g
+                    for g in project.capability_groups
+                    if (g.id == capability_non_mappables[0]["capability_group"])
+                ]
+                c.capability_group = capability_group[0]
+            c.non_mappable_comment = capability_non_mappables[0].get("comments", None)
+            non_mappables.append(c)
 
     project.non_mappables = non_mappables
     project.capabilities = capabilities
@@ -582,6 +768,13 @@ def build_external_landing(
         ("id", "Capability ID"),
         ("label", "Capability Description"),
     ]
+
+    if project.has_non_mappable_comments:
+        non_mappable_headers = [
+            ("id", "Capability ID", "id", external_prefix),
+            ("label", "Capability Description", "id", external_prefix),
+        ]
+
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
@@ -600,7 +793,7 @@ def build_external_landing(
         mappings=mappings,
         headers=headers,
         group_headers=capability_group_headers,
-        capability_groups=project.capability_groups,
+        capability_groups=[g for g in project.capability_groups if g.num_mappings > 0],
         valid_versions=project.validVersions,
         breadcrumbs=breadcrumbs,
         non_mappable_headers=non_mappable_headers,
@@ -625,32 +818,29 @@ def build_external_landing(
     capability_group_dir = domain_dir / "capability-groups"
     previous_link = external_prefix
     for capability_group in project.capability_groups:
-        nav = breadcrumbs + [
-            (
-                f"{external_prefix}capability-groups/{capability_group.id}/",
-                f"{capability_group.label} Capability Group",
+        if capability_group.num_mappings > 0:
+            nav = breadcrumbs + [
+                (
+                    f"{external_prefix}capability-groups/{capability_group.id}/",
+                    f"{capability_group.label} Capability Group",
+                )
+            ]
+            build_capability_group(
+                project=project,
+                capability_group=capability_group,
+                url_prefix=url_prefix,
+                parent_dir=capability_group_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                attack_domain=attack_domain,
+                breadcrumbs=nav,
+                capability_group_headers=capability_group_headers,
+                previous_link=previous_link,
             )
-        ]
-        build_capability_group(
-            project=project,
-            capability_group=capability_group,
-            url_prefix=url_prefix,
-            parent_dir=capability_group_dir,
-            project_version=project_version,
-            attack_version=attack_version,
-            headers=headers,
-            attack_domain=attack_domain,
-            breadcrumbs=nav,
-            capability_group_headers=capability_group_headers,
-            previous_link=previous_link,
-        )
     for capability in project.capabilities:
         if capability.capability_group:
             capability_nav = breadcrumbs + [
-                (
-                    f"{external_prefix}capability-groups/{capability.capability_group.id}/",
-                    f"{capability.capability_group.label} Capability Group",
-                ),
                 (
                     f"{external_prefix}{capability.id}/",
                     f"{capability.label if capability.label else capability.id}",
@@ -664,6 +854,26 @@ def build_external_landing(
                 attack_version=attack_version,
                 headers=headers,
                 capability=capability,
+                attack_domain=attack_domain,
+                breadcrumbs=capability_nav,
+                previous_link=previous_link,
+            )
+    if project.has_non_mappable_comments:
+        for non_mappable in project.non_mappables:
+            capability_nav = breadcrumbs + [
+                (
+                    f"{external_prefix}{non_mappable.id}/",
+                    f"{non_mappable.label if non_mappable.label else non_mappable.id}",
+                ),
+            ]
+            build_external_capability(
+                project=project,
+                url_prefix=url_prefix,
+                parent_dir=domain_dir,
+                project_version=project_version,
+                attack_version=attack_version,
+                headers=headers,
+                capability=non_mappable,
                 attack_domain=attack_domain,
                 breadcrumbs=capability_nav,
                 previous_link=previous_link,
@@ -707,6 +917,7 @@ def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 for m in project.mappings
                 if m["attack_version"] == attack_version
                 and m["project_version"] == project_version
+                and m["attack_domain"] == attack_domain
             ][0]
             mappings = m["mappings"]
             logger.trace("project parsed successfully")
@@ -860,6 +1071,7 @@ def parse_techniques(
             m
             for m in project.mappings
             if float(m["attack_version"]) == float(attack_version)
+            and m["attack_domain"] == attack_domain
         ]
         if len(m) > 0:
             m = m[len(m) - 1]
@@ -1658,10 +1870,18 @@ def main():
         default="http://[::]:8000/",
         help="A prefix to apply to generated (default: /public)",
     )
+    parser.add_argument(
+        "--reset-descriptions",
+        action="store_true",
+        default=False,
+        help="Adds ability to refresh and load capability descriptions from API calls",
+    )
     args = parser.parse_args()
 
     url_prefix = args.url_prefix
+    reset_descriptions = args.reset_descriptions
     logger.info(f"url prefix: {url_prefix}")
+    logger.info(f"Reset descriptions? {reset_descriptions}")
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
@@ -1704,8 +1924,13 @@ def main():
     stream.dump(str(output_path))
     logger.info("Created Mappings Frameworks landing page")
 
+    if reset_descriptions:
+        delete_all_descriptions(projects=projects)
+
     build_external_pages(
-        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+        projects=projects,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
     )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
