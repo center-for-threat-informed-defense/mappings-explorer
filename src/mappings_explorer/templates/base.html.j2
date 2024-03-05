@@ -5,7 +5,16 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>{% block title %}{{ title }} – Mappings Explorer{% endblock title %}</title>
-    <link rel="shortcut icon" href="{{url_prefix}}static/img/favicon.png">
+    <link
+    href="{{url_prefix}}static/img/favicon-light.ico"
+    rel="icon"
+    media="(prefers-color-scheme: light)"
+    />
+    <link
+    href="{{url_prefix}}static/img/favicon-dark.ico"
+    rel="icon"
+    media="(prefers-color-scheme: dark)"
+    />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
