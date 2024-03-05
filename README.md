@@ -23,6 +23,7 @@ To get started, visit the project website.
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | [Mappings Explorer](https://center-for-threat-informed-defense.github.io/mappings-explorer/) | A website to access, explore, search, and download our ATT&CK mappings.                                   |
 | [Mappings Editor](https://center-for-threat-informed-defense.github.io/mappings-editor)      | An interactive, web-based tool for creating your own mappings. (This tool is available as a public beta.) |
+| [Mappings Explorer Wiki](https://github.com/center-for-threat-informed-defense/mappings-explorer/wiki) | Documentation for adding to and editing the Mappings Explorer website. |
 
 ## Getting Involved
 
