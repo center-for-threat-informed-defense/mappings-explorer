@@ -331,7 +331,7 @@ def load_projects():
     ]
     gcp.has_non_mappable_comments = False
 
-    projects = [nist, cve, veris, azure, gcp, aws, m365]
+    projects = [m365, nist, cve, veris, azure, gcp, aws]
     return projects
 
 
