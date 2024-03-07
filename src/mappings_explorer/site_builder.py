@@ -307,11 +307,11 @@ def load_projects():
     m365 = ExternalControl()
     m365.id = "m365"
     m365.label = "M365"
-    m365.description = """Google Cloud Platform (GCP) is a widely used cloud computing
-      platform. This
-         project maps the security controls native to the GCP platform to MITRE ATT&CK®
-         providing resources to assess how to protect, detect, and respond to real-world
-         threats as described in the ATT&CK knowledge base."""
+    m365.description = """Microsoft 365 (M365) is a widely used Software as a Service
+        (SaaS) product family of productivity software, collaboration, and cloud-based
+        services. This project maps the security controls native to M365 product areas
+        to MITRE ATT&CK® providing resources to assess how to protect, detect, and
+        respond to real-world threats as described in the ATT&CK knowledge base."""
 
     m365.attackDomains = ["Enterprise"]
     m365.attackDomain = m365.attackDomains[0]
@@ -324,6 +324,10 @@ def load_projects():
     m365.mappings = []
     m365.resources = [
         {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "https://www.cisecurity.org/benchmark/microsoft_365",
+            "label": "CIS Microsoft 365 Benchmark (External link)",
+        },
     ]
     gcp.has_non_mappable_comments = False
 
