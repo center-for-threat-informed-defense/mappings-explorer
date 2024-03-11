@@ -178,7 +178,10 @@ def load_projects():
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
     nist.resources = [
-        {"link": "about/methodology/nist-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/nist-methodology/",
+            "label": "NIST 800-53 Mapping Methodology",
+        },
         {"link": "about/methodology/nist-scope/", "label": "Mapping Scope"},
     ]
 
@@ -209,7 +212,7 @@ def load_projects():
     veris.resources = [
         {
             "link": "about/methodology/veris-methodology/",
-            "label": "Mapping Methodology",
+            "label": "VERIS Mapping Methodology",
         },
     ]
 
@@ -235,7 +238,10 @@ def load_projects():
     cve.has_non_mappables = False
     cve.mappings = []
     cve.resources = [
-        {"link": "about/methodology/cve-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/cve-methodology/",
+            "label": "CVE Mapping Methodology",
+        },
     ]
 
     aws = ExternalControl()
@@ -256,7 +262,10 @@ def load_projects():
     ]
     aws.mappings = []
     aws.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     aws.has_non_mappable_comments = True
 
@@ -277,7 +286,10 @@ def load_projects():
     ]
     azure.mappings = []
     azure.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     azure.has_non_mappable_comments = True
 
@@ -300,7 +312,10 @@ def load_projects():
     ]
     gcp.mappings = []
     gcp.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     gcp.has_non_mappable_comments = True
 
@@ -323,7 +338,10 @@ def load_projects():
     ]
     m365.mappings = []
     m365.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
         {
             "link": "https://www.cisecurity.org/benchmark/microsoft_365",
             "label": "CIS Microsoft 365 Benchmark (External link)",
