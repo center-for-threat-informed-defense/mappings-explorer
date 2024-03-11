@@ -246,7 +246,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
 
 def get_stix_object(parsed_mappings, mapping):
     mapping_framwork = parsed_mappings["metadata"]["mapping_framework"]
-    infrastructure_frameworks = ["nist_800_53", "aws", "gcp", "azure"]
+    infrastructure_frameworks = ["nist_800_53", "aws", "gcp", "azure", "m365"]
     if mapping_framwork == "cve":
         return create_vulnerability_object(mapping)
     elif mapping_framwork in infrastructure_frameworks:
