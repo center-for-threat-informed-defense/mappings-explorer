@@ -287,6 +287,7 @@ def add_background_colors(attack_version_data):
         "aws": "AWS",
         "gcp": "GCP",
         "azure": "Azure",
+        "m365": "M365",
     }
     max_score = 0
     min_score = 100000
