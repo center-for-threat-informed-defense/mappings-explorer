@@ -8,8 +8,8 @@
         "author": "Center for Threat-Informed Defense",
         "contact": "ctid@mitre-engenuity.org",
         "organization": "Center for Threat-Informed Defense",
-        "creation_date": "12/10/2023",
-        "last_update": "03/11/2024",
+        "creation_date": "12/11/2023",
+        "last_update": "03/12/2024",
         "mapping_types": {
             "technique_score": {
                 "name": "Technique Scores",
@@ -25,55 +25,257 @@
     },
     "mapping_objects": [
         {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1556.007",
-            "attack_object_name": "Hybrid Identity",
-            "capability_group": "entra-id",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
             "score_category": "protect",
             "score_value": "significant",
-            "related_score": "T1556",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator, which may be used for modifying the hybrid identity authentication process from the cloud. Ideally, ensure these accounts are dedicated cloud-only rather than hybrid accounts. MFA can be required both when assigning Global Administrator, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Phishing attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
             "references": [
-                "https://attack.mitre.org/techniques/T1556/007/",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+                "https://attack.mitre.org/techniques/T1566/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
             ],
             "status": "complete"
         },
         {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1556.006",
-            "attack_object_name": "Multi-Factor Authentication",
-            "capability_group": "entra-id",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
             "score_category": "protect",
             "score_value": "significant",
-            "related_score": "T1556",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Conditional Access Administrator, Global Administrator or Security Administrator, which include privileges necessary to modify certain MFA settings. Configuration can include an MFA requirement, which can provide additional protection against modifying Multi-Factor Authentication. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use.\n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "related_score": "T1566",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Spearphishing Link attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
             "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+                "https://attack.mitre.org/techniques/T1566/002/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
             ],
             "status": "complete"
         },
         {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1556",
-            "attack_object_name": "Modify Authentication Process",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Impersonation attacks due to impersonation protection provided with anti-phishing policies.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://attack.mitre.org/techniques/T1656/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "DO365-AS-E3",
+            "capability_description": "Anti-Spoofing",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1534",
+            "attack_object_name": "Internal Spearphishing",
+            "capability_group": "m365-defender",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology detects Internal Spearphishing attacks due to spoof detections report, where users can view information about phishing attempts \n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
+            "references": [
+                "https://attack.mitre.org/techniques/T1534/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "Requiring the use of MFA for all users can significantly reduce the likelihood of adversaries gaining access to the environment's cloud accounts.",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1032/",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1136",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as creating cloud accounts. ",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1032/",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.002",
+            "attack_object_name": "Additional Email Delegate Permissions",
+            "capability_group": "entra-id",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as changes to email delegate permissions. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+                "https://attack.mitre.org/mitigations/M1032/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1032/",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
             "capability_group": "entra-id",
             "score_category": "protect",
             "score_value": "minimal",
-            "comments": "The PIM control significantly protects against  the modification of Multi-Factor Authentication by placing limitations and restrictions on relevant privileged accounts. However, this is overall Minimal coverage relative to the all the technique's sub-techniques. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation,  changes to permissions, etc.",
             "references": [
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
+                "https://attack.mitre.org/mitigations/M1032/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password cracking, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques, for example: phishing, brute force, credential stuffing, key logging, etc.",
+            "references": [
+                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1136",
+            "comments": "MFA can significantly reduce the impact from adversaries creating accounts by requiring an additional authentication method for verification (e.g., Microsoft Authenticator, Authenticator Lite (in Outlook), Windows Hello for Business, FIDO2 security key, OATH hardware token (preview), OATH software token, SMS, Voice call, etc.)",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "MFA can significantly reduce the impact of a password compromise, requiring the adversary to complete an additional authentication method before access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-MFA-E3",
+            "capability_description": "Multi-factor Authentication",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "MFA provides significant protection against password compromises, requiring the adversary to complete an additional authentication method before their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
             ],
             "status": "complete"
         },
@@ -134,6 +336,230 @@
             "score_value": "significant",
             "comments": "MFA provides significant protection by enforcing and restricting access to resources (e.g., cloud storage, APIs, etc.).",
             "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can notify administrators when the Global Administrator and other administrator roles are assigned to an account, allowing it to be a method of detection for Additional Cloud Roles execution. PIM supports multiple security alerts, with customizable triggers, including numeric specificity. Following Microsoft's role based access control Best Practices, assignment of Global Administrator, among other administrative roles should be uncommon, resulting in an overall low false positive rate for detecting unexpected privileged role assignments. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "The PIM control can assist post-execution detection by alerting on the assignment of privileged Additional Cloud Roles. This is not extendable to detect against the technique's other sub-techniques, resulting in overall minimal detection coverage. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
+                "https://attack.mitre.org/mitigations/M1026/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as Global Administrators. Configuration can include an MFA requirement, which can help limit the overall  privileged accounts available and their ability to execute administration commands. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Roles. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Application Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Credentials. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "The PIM control provides significant protection against multiple sub-techniques, although not all, resulting in partial coverage. The control scores Significant for the temporal aspects of its protection, which include requiring activation by eligible privileged roles, and confirming user identity with MFA before execution. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136.003",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1136",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the User Administrator. Configuration can include an MFA requirement, which can provide additional protection against Cloud Account creation. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1136",
+            "attack_object_name": "Create Account",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "The PIM control provides significant protection against Create Account: Cloud Account, but not against the technique's other sub-techniques. An overall score of Partial is provided, although overall coverage for the across the sub-techniques is minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "The PIM control supports an Access Review feature, which can be created to review privileged access  to avoid stale role assignments. Access Reviews can be scheduled routinely, and used to help evaluate the state of privileged access. Performing this review can help minimize the availability of valid accounts to adversaries. Although this review can be scheduled periodically, it would not occur at real-time frequency, and is therefore assigned Partial. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The PIM control supports an Access Review feature, which can partially be used to avoid stale role assignment for Valid Accounts: Cloud Accounts. The control does not protect against this technique's other sub-techniques, resulting in a Minimal coverage score, for an overall score of Minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
+                "https://attack.mitre.org/mitigations/M1026/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.007",
+            "attack_object_name": "Hybrid Identity",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator, which may be used for modifying the hybrid identity authentication process from the cloud. Ideally, ensure these accounts are dedicated cloud-only rather than hybrid accounts. MFA can be required both when assigning Global Administrator, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://attack.mitre.org/techniques/T1556/007/",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Conditional Access Administrator, Global Administrator or Security Administrator, which include privileges necessary to modify certain MFA settings. Configuration can include an MFA requirement, which can provide additional protection against modifying Multi-Factor Authentication. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. This scores Significant for its limitation of the overall accounts with these privileges, and the conditions for use.\n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-azure-mfa",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "ME-PIM-E5",
+            "capability_description": "Privileged Identity Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "The PIM control significantly protects against  the modification of Multi-Factor Authentication by placing limitations and restrictions on relevant privileged accounts. However, this is overall Minimal coverage relative to the all the technique's sub-techniques. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
+            "references": [
+                "https://attack.mitre.org/mitigations/M1026/",
+                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
+            ],
             "status": "complete"
         },
         {
@@ -376,6 +802,402 @@
                 "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-about?view=o365-worldwide",
                 "https://security.microsoft.com/quarantinePolicies.",
                 "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/quarantine-policies?view=o365-worldwide#anatomy-of-a-quarantine-policy"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1586",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.001",
+            "attack_object_name": "Default Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1133",
+            "attack_object_name": "External Remote Services",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-PAM-E5",
+            "capability_description": "Privileged Access Management",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087",
+            "attack_object_name": "Account Discovery",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Account Discovery attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1087/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1087.004",
+            "attack_object_name": "Cloud Account",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1087",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Cloud Account attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1087/004/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1119",
+            "attack_object_name": "Automated Collection",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Collection attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1119/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1020",
+            "attack_object_name": "Automated Exfiltration",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Exfiltration attacks due to Information Protection preventing company data from being exfiltrated by external users, by blocking file downloads in real time, using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1020/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Data from Cloud Storage attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1530/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1048",
+            "attack_object_name": "Exfiltration Over Alternative Protocol",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Alternative Protocol attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1048/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567",
+            "attack_object_name": "Exfiltration Over Web Service",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Web Service attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1567/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1567.004",
+            "attack_object_name": "Exfiltration Over Webhook",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1567",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Webhook attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1567/004/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1546",
+            "attack_object_name": "Event Triggered Execution",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Event Triggered Execution attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1546/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1070",
+            "attack_object_name": "Indicator Removal",
+            "capability_group": "purview",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Indicator Removal attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1070/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Unsecured Credential attacks due to it detecting and encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1552/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "PUR-IP-E5",
+            "capability_description": "Information Protection",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1552.008",
+            "attack_object_name": "Chat Messages",
+            "capability_group": "purview",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1552",
+            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Chat message attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "references": [
+                "https://attack.mitre.org/techniques/T1552/008/",
+                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
             ],
             "status": "complete"
         },
@@ -2062,177 +2884,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.003",
-            "attack_object_name": "Additional Cloud Roles",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1098",
-            "comments": "The PIM control can notify administrators when the Global Administrator and other administrator roles are assigned to an account, allowing it to be a method of detection for Additional Cloud Roles execution. PIM supports multiple security alerts, with customizable triggers, including numeric specificity. Following Microsoft's role based access control Best Practices, assignment of Global Administrator, among other administrative roles should be uncommon, resulting in an overall low false positive rate for detecting unexpected privileged role assignments. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/best-practices",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-configure-security-alerts",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098",
-            "attack_object_name": "Account Manipulation",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "minimal",
-            "comments": "The PIM control can assist post-execution detection by alerting on the assignment of privileged Additional Cloud Roles. This is not extendable to detect against the technique's other sub-techniques, resulting in overall minimal detection coverage. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
-                "https://attack.mitre.org/mitigations/M1026/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1651",
-            "attack_object_name": "Cloud Administration Command",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as Global Administrators. Configuration can include an MFA requirement, which can help limit the overall  privileged accounts available and their ability to execute administration commands. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.003",
-            "attack_object_name": "Additional Cloud Roles",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1098",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Global Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Roles. MFA can be required both when assigning these administrative roles, and/or when a user activates the role. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.001",
-            "attack_object_name": "Additional Cloud Credentials",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1098",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the Application Administrator. Configuration can include an MFA requirement, which can provide additional protection against Additional Cloud Credentials. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098",
-            "attack_object_name": "Account Manipulation",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "The PIM control provides significant protection against multiple sub-techniques, although not all, resulting in partial coverage. The control scores Significant for the temporal aspects of its protection, which include requiring activation by eligible privileged roles, and confirming user identity with MFA before execution. \n\n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1136.003",
-            "attack_object_name": "Cloud Account",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1136",
-            "comments": "The PIM control can enforce on-activation requirements for privileged roles, such as the User Administrator. Configuration can include an MFA requirement, which can provide additional protection against Cloud Account creation. PIM can also be used to assigned privileged roles as \"eligible\" rather than \"active\" to further, requiring activation of the assigned role before use. Due to these features, a score of Significant is assigned. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-how-to-activate-role",
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1136",
-            "attack_object_name": "Create Account",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "comments": "The PIM control provides significant protection against Create Account: Cloud Account, but not against the technique's other sub-techniques. An overall score of Partial is provided, although overall coverage for the across the sub-techniques is minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1078",
-            "comments": "The PIM control supports an Access Review feature, which can be created to review privileged access  to avoid stale role assignments. Access Reviews can be scheduled routinely, and used to help evaluate the state of privileged access. Performing this review can help minimize the availability of valid accounts to adversaries. Although this review can be scheduled periodically, it would not occur at real-time frequency, and is therefore assigned Partial. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1026/",
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-PIM-E5",
-            "capability_description": "Privileged Identity Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "The PIM control supports an Access Review feature, which can partially be used to avoid stale role assignment for Valid Accounts: Cloud Accounts. The control does not protect against this technique's other sub-techniques, resulting in a Minimal coverage score, for an overall score of Minimal. \n\nLicense Requirements:\nMicrosoft Entra ID P2 or Microsoft Entra ID Governance",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure",
-                "https://attack.mitre.org/mitigations/M1026/"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "ME-PP-E3",
             "capability_description": "Password Protection",
             "mapping_type": "technique_score",
@@ -2312,196 +2963,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1110/",
                 "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-password-ban-bad"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1078",
-            "comments": "Requiring the use of MFA for all users can significantly reduce the likelihood of adversaries gaining access to the environment's cloud accounts.",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1032/",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1136.003",
-            "attack_object_name": "Cloud Account",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1136",
-            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as creating cloud accounts. ",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1032/",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.002",
-            "attack_object_name": "Additional Email Delegate Permissions",
-            "capability_group": "entra-id",
-            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making modifications, such as changes to email delegate permissions. ",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
-                "https://attack.mitre.org/mitigations/M1032/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.003",
-            "attack_object_name": "Additional Cloud Roles",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1098",
-            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
-            "references": [
-                "https://attack.mitre.org/mitigations/M1032/",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.001",
-            "attack_object_name": "Additional Cloud Credentials",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1098",
-            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation, changes to permissions, etc.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
-                "https://www.microsoft.com/en-us/security/blog/2022/01/26/evolved-phishing-device-registration-trick-adds-to-phishers-toolbox-for-victims-without-mfa/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098",
-            "attack_object_name": "Account Manipulation",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "Requiring the use of MFA along with conditional access policies may reduce the likelihood of adversaries making credential modifications, administrator changes, account manipulation,  changes to permissions, etc.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-policy-all-users-mfa",
-                "https://attack.mitre.org/mitigations/M1032/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.004",
-            "attack_object_name": "Credential Stuffing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
-            "references": [
-                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.003",
-            "attack_object_name": "Password Spraying",
-            "capability_group": "entra-id",
-            "comments": "MFA can significantly reduce the impact of a password spraying, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques: phishing, brute force, credential stuffing, key logging, etc.",
-            "references": [
-                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.002",
-            "attack_object_name": "Password Cracking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "MFA can significantly reduce the impact of a password cracking, requiring the adversary to complete an additional authentication method before access is permitted. Based on studies, your account is less likely to get compromised by 99.9% by enabling MFA against the following techniques, for example: phishing, brute force, credential stuffing, key logging, etc.",
-            "references": [
-                "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-pa-word-doesn-t-matter/ba-p/731984"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1136.003",
-            "attack_object_name": "Cloud Account",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1136",
-            "comments": "MFA can significantly reduce the impact from adversaries creating accounts by requiring an additional authentication method for verification (e.g., Microsoft Authenticator, Authenticator Lite (in Outlook), Windows Hello for Business, FIDO2 security key, OATH hardware token (preview), OATH software token, SMS, Voice call, etc.)",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.001",
-            "attack_object_name": "Password Guessing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "MFA can significantly reduce the impact of a password compromise, requiring the adversary to complete an additional authentication method before access is permitted.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "ME-MFA-E3",
-            "capability_description": "Multi-factor Authentication",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110",
-            "attack_object_name": "Brute Force",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "MFA provides significant protection against password compromises, requiring the adversary to complete an additional authentication method before their access is permitted.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-howitworks"
             ],
             "status": "complete"
         },
@@ -7139,120 +7600,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "DO365-AP-E3",
-            "capability_description": "Anti-Phishing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1566",
-            "attack_object_name": "Phishing",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1566/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AP-E3",
-            "capability_description": "Anti-Phishing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1566.002",
-            "attack_object_name": "Spearphishing Link",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1566",
-            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Spearphishing Link attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1566/002/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AP-E3",
-            "capability_description": "Anti-Phishing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1656",
-            "attack_object_name": "Impersonation",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Impersonation attacks due to it's impersonation settings feature which provides User impersonation protection, Domain impersonation protection, mailbox intelligence impersonation protection,  \n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1656/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AS-E3",
-            "capability_description": "Anti-Spoofing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1566",
-            "attack_object_name": "Phishing",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Phishing attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1566/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AS-E3",
-            "capability_description": "Anti-Spoofing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1566.002",
-            "attack_object_name": "Spearphishing Link",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1566",
-            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Spearphishing Link attacks due to it's mechanisms provided which provides email authentication by DKIM, and anti-phishing policies\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1566/002/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AS-E3",
-            "capability_description": "Anti-Spoofing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1656",
-            "attack_object_name": "Impersonation",
-            "capability_group": "m365-defender",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology protects from Impersonation attacks due to impersonation protection provided with anti-phishing policies.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1656/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "DO365-AS-E3",
-            "capability_description": "Anti-Spoofing",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1534",
-            "attack_object_name": "Internal Spearphishing",
-            "capability_group": "m365-defender",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "The anti-spoofing technology in Microsoft O365 specifically examines forgery of the From header in the message body, because that header value is the message sender that's shown in email clients. When EOP has high confidence that the From header is forged, the message is identified as spoofed. The following anti-spoofing technologies are available in Microsoft O365: email authentication, spoof intelligence insight, allow or block spoofed senders in the tenant allow/block List, anti-phishing policies, and spoof detections report\n\nMicrosoft O365's anti-spoofing technology detects Internal Spearphishing attacks due to spoof detections report, where users can view information about phishing attempts \n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
-            "references": [
-                "https://attack.mitre.org/techniques/T1534/",
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-protection-spoofing-about?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "DEF-AIR-E5",
             "capability_description": "Automated Investigation and Response",
             "mapping_type": "technique_score",
@@ -8357,398 +8704,51 @@
             "status": "complete"
         },
         {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
+            "capability_id": "DO365-AP-E3",
+            "capability_description": "Anti-Phishing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1586.003",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1586",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.001",
-            "attack_object_name": "Default Accounts",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1078",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1133",
-            "attack_object_name": "External Remote Services",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213",
-            "attack_object_name": "Data from Information Repositories",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213.002",
-            "attack_object_name": "Sharepoint",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1213",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1059",
-            "attack_object_name": "Command and Scripting Interpreter",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1059.009",
-            "attack_object_name": "Cloud API",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1059",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1651",
-            "attack_object_name": "Cloud Administration Command",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.001",
-            "attack_object_name": "Additional Cloud Credentials",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1098",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.003",
-            "attack_object_name": "Additional Cloud Roles",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1098",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-PAM-E5",
-            "capability_description": "Privileged Access Management",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098",
-            "attack_object_name": "Account Manipulation",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "partial",
-            "comments": "Microsoft Purview Privileged Access Management allows granular access control over privileged admin tasks in Office 365. It can help protect your organization from breaches that use existing privileged admin accounts with standing access to sensitive data or access to critical configuration settings. Privileged access management requires users to request just-in-time access to complete elevated and privileged tasks through a highly scoped and time-bounded approval workflow. This configuration gives users just-enough-access to perform the task at hand, without risking exposure of sensitive data or critical configuration settings.  Microsoft 365 configuration settings. When used with Microsoft Entra Privileged Identity Management, these two features provide access control with just-in-time access at different scopes. (e.g., Encryption, RBAC, Conditional Access, JIT, Just Enough Access (with Approval). \n\nLicense requirements: M365 E5 customers.",
-            "references": [
-                "https://learn.microsoft.com/en-us/purview/privileged-access-management"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1087",
-            "attack_object_name": "Account Discovery",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Account Discovery attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1087/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1087.004",
-            "attack_object_name": "Cloud Account",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1087",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Cloud Account attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1087/004/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1119",
-            "attack_object_name": "Automated Collection",
-            "capability_group": "purview",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "m365-defender",
             "score_category": "protect",
             "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Collection attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Phishing attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
             "references": [
-                "https://attack.mitre.org/techniques/T1119/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+                "https://attack.mitre.org/techniques/T1566/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
             ],
             "status": "complete"
         },
         {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
+            "capability_id": "DO365-AP-E3",
+            "capability_description": "Anti-Phishing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1020",
-            "attack_object_name": "Automated Exfiltration",
-            "capability_group": "purview",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "m365-defender",
             "score_category": "protect",
             "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Automated Exfiltration attacks due to Information Protection preventing company data from being exfiltrated by external users, by blocking file downloads in real time, using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "related_score": "T1566",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Spearphishing Link attacks due to it's custom policy feature where users can create policies to determine if certain websites used for phishing are necessary for business operations and can block access if activity cannot be monitored well or if it poses a significant risk.\n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
             "references": [
-                "https://attack.mitre.org/techniques/T1020/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+                "https://attack.mitre.org/techniques/T1566/002/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
             ],
             "status": "complete"
         },
         {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
+            "capability_id": "DO365-AP-E3",
+            "capability_description": "Anti-Phishing",
             "mapping_type": "technique_score",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Data from Cloud Storage attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1530/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1048",
-            "attack_object_name": "Exfiltration Over Alternative Protocol",
-            "capability_group": "purview",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "m365-defender",
             "score_category": "protect",
             "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Alternative Protocol attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
+            "comments": "Policies to configure anti-phishing protection settings are available in Microsoft 365 organizations with Exchange Online mailboxes, standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, and Microsoft Defender for Office 365 organizations. The features provided with Anti-phishing policies in Defender for Office 365 are: Automatically creating default policies, creating custom policies, common policy settings, spoof settings, first contact safety tips, impersonation settings, and advanced phishing thresholds.\n\nMicrosoft 365's Anti-Phishing protection protects from Impersonation attacks due to it's impersonation settings feature which provides User impersonation protection, Domain impersonation protection, mailbox intelligence impersonation protection,  \n\nLicense Requirements: \nMicrosoft Exchange Online Protection, Defender for Office 365 plan 1 and plan 2, Microsoft XDR",
             "references": [
-                "https://attack.mitre.org/techniques/T1048/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1567",
-            "attack_object_name": "Exfiltration Over Web Service",
-            "capability_group": "purview",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Web Service attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1567/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1567.004",
-            "attack_object_name": "Exfiltration Over Webhook",
-            "capability_group": "purview",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1567",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Exfiltration Over Webhook attacks due to it preventing users from uploading unprotected data to the cloud, by using the Defender for Cloud Apps session controls.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1567/004/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1546",
-            "attack_object_name": "Event Triggered Execution",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Event Triggered Execution attacks due to Information Protection Detecting when certain files that belong to a specific user group are being accessed excessively by a user who is not part of the group, which could be a potential insider threat.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1546/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1070",
-            "attack_object_name": "Indicator Removal",
-            "capability_group": "purview",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Protects from Indicator Removal attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1070/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1552",
-            "attack_object_name": "Unsecured Credentials",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Unsecured Credential attacks due to it detecting and encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1552/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "PUR-IP-E5",
-            "capability_description": "Information Protection",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1552.008",
-            "attack_object_name": "Chat Messages",
-            "capability_group": "purview",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1552",
-            "comments": "Defender for Cloud Apps file policies allow you to enforce a wide range of automated processes. Policies can be set to provide Information Protection, including continuous compliance scans, legal eDiscovery tasks, and DLP for sensitive content shared publicly. \n\nInformation Protection Detects Chat message attacks due to it encrypting files containing personally identifying information and other sensitive data that is shared in a cloud app and applying sensitivity labels to limit access only to employees in your company.\n\nLicense Requirements: \nMicrosoft Defender for Office 365 plan 1 and plan 2",
-            "references": [
-                "https://attack.mitre.org/techniques/T1552/008/",
-                "https://learn.microsoft.com/en-us/defender-cloud-apps/policies-information-protection"
+                "https://attack.mitre.org/techniques/T1656/",
+                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-phishing-policies-about?view=o365-worldwide"
             ],
             "status": "complete"
         }
