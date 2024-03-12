@@ -362,6 +362,20 @@ def load_projects():
             "label": "CIS Microsoft 365 Benchmark (External link)",
         },
     ]
+    m365.additional_artifacts = {
+        "12.11.2023": {
+            "14.1": [
+                {
+                    "link": "/legacy/m365-12.11.2023_attack-14.1-enterprise_E3_navigator_layers.json",
+                    "label": "Navigator Layer (E3 License)",
+                },
+                {
+                    "link": "/legacy/m365-12.11.2023_attack-14.1-enterprise_E5_navigator_layers.json",
+                    "label": "Navigator Layer (E5 License)",
+                },
+            ]
+        }
+    }
     m365.has_non_mappable_comments = False
     projects = [aws, azure, cve, gcp, m365, nist, veris]
     return projects
