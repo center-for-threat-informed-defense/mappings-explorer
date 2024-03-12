@@ -85,7 +85,7 @@ jobs:
       - name: Copy encrypted HTML files
         run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
       - name: Set the branch name
-        run: mv output "$BRANCH_NAME"
+        run: mkdir m365 && mv output "m365/$BRANCH_NAME"
       - name: Install Azure CLI
         run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       - name: Delete old blobs
