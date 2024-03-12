@@ -362,15 +362,16 @@ def load_projects():
             "label": "CIS Microsoft 365 Benchmark (External link)",
         },
     ]
+    artifact_prefix = "/legacy/m365-12.11.2023_attack-14.1-enterprise_"
     m365.additional_artifacts = {
         "12.11.2023": {
             "14.1": [
                 {
-                    "link": "/legacy/m365-12.11.2023_attack-14.1-enterprise_E3_navigator_layers.json",
+                    "link": artifact_prefix + "E3_navigator_layers.json",
                     "label": "Navigator Layer (E3 License)",
                 },
                 {
-                    "link": "/legacy/m365-12.11.2023_attack-14.1-enterprise_E5_navigator_layers.json",
+                    "link": artifact_prefix + "E5_navigator_layers.json",
                     "label": "Navigator Layer (E5 License)",
                 },
             ]
