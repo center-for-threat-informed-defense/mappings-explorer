@@ -72,6 +72,7 @@ class ExternalControl:
     non_mappables = []
     has_non_mappables = True
     has_non_mappable_comments = False
+    additional_artifacts = {}
 
 
 all_attack_versions = [
@@ -215,6 +216,20 @@ def load_projects():
             "label": "VERIS Mapping Methodology",
         },
     ]
+    veris.additional_artifacts = {
+        "1.3.7": {
+            "12.1": [
+                {
+                    "link": "/legacy/veris-1.3.7_attack-12.1-groups.json",
+                    "label": "Group Mappings – JSON",
+                },
+                {
+                    "link": "/legacy/veris-1.3.7_attack-12.1-groups.xlsx",
+                    "label": "Group Mappings – Excel",
+                },
+            ]
+        }
+    }
 
     cve = ExternalControl()
     cve.id = "cve"
@@ -795,13 +810,12 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
-    # Temporary hack for showing VERIS group download artifact on # the VERIS
-    # 1.3.7/ATT&CK 12.1 landing page.
-    group_artifact = (
-        project.id == "veris"
-        and project_version == "1.3.7"
-        and attack_version == "12.1"
-    )
+    # Resolve additional download artifacts
+    additional_artifacts = []
+    if project_version in project.additional_artifacts:
+        project_artifacts = project.additional_artifacts[project_version]
+        if attack_version in project_artifacts:
+            additional_artifacts = project_artifacts[attack_version]
 
     capability_group_headers = [
         ("id", "ID", "id", capability_group_prefix),
@@ -844,7 +858,7 @@ def build_external_landing(
         non_mappable_headers=non_mappable_headers,
         non_mappables=project.non_mappables,
         project=project,
-        group_artifact=group_artifact,
+        additional_artifacts=additional_artifacts,
     )
     stream.dump(str(output_path))
     logger.trace(
