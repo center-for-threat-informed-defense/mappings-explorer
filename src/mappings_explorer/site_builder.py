@@ -457,7 +457,12 @@ def parse_capability_groups(
         )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if project.id == "aws" or project.id == "gcp" or project.id == "azure":
+    if (
+        project.id == "aws"
+        or project.id == "gcp"
+        or project.id == "azure"
+        or project.id == "m365"
+    ):
         get_security_stack_descriptions(project=project)
 
 
@@ -483,10 +488,13 @@ def get_security_stack_descriptions(project: ExternalControl):
     # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
+        id = data.get("id", None)
         name = data["name"]
         description = data["description"]
         for c in capabilities:
-            if c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_"):
+            matchId = c.id == id
+            matchName = c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_")
+            if matchId or matchName:
                 c.description = description
                 c.label = data["name"]
                 break
