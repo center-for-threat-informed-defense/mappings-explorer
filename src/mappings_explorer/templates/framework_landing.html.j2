@@ -79,7 +79,7 @@
           </p>
           {% for artifact in additional_artifacts %}
           <p>
-            <a class="link" download href="{{ artifact.link }}">
+            <a class="link" download href="{{ url_prefix }}{{ artifact.link }}">
               <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               {{ artifact.label }}
             </a>

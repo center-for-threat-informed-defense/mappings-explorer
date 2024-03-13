@@ -220,11 +220,11 @@ def load_projects():
         "1.3.7": {
             "12.1": [
                 {
-                    "link": "/legacy/veris-1.3.7_attack-12.1-groups.json",
+                    "link": "legacy/veris-1.3.7_attack-12.1-groups.json",
                     "label": "Group Mappings – JSON",
                 },
                 {
-                    "link": "/legacy/veris-1.3.7_attack-12.1-groups.xlsx",
+                    "link": "legacy/veris-1.3.7_attack-12.1-groups.xlsx",
                     "label": "Group Mappings – Excel",
                 },
             ]
@@ -362,7 +362,7 @@ def load_projects():
             "label": "CIS Microsoft 365 Benchmark (External link)",
         },
     ]
-    artifact_prefix = "/legacy/m365-12.11.2023_attack-14.1-enterprise_"
+    artifact_prefix = "legacy/m365-12.11.2023_attack-14.1-enterprise_"
     m365.additional_artifacts = {
         "12.11.2023": {
             "14.1": [
