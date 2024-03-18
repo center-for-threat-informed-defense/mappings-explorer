@@ -378,7 +378,7 @@ def load_projects():
         }
     }
     m365.has_non_mappable_comments = False
-    projects = [aws, azure, cve, gcp, m365, nist, veris]
+    projects = [nist, cve, veris, azure, gcp, aws, m365]
     return projects
 
 
