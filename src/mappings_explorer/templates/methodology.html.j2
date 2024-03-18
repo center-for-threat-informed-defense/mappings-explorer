@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="header-container">
-    <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="container aos-init aos-animate">
         {% include "_breadcrumbs.html.j2" %}
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -13,7 +13,7 @@
 </section>
 
 <section class="services-cards gray-bg">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2>Methodology Overview</h2>
@@ -23,7 +23,8 @@
             <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
             and aims to provide the community a reusable method of using ATT&CK to determine the
             capabilities of
-            a platform's security offerings.</p>
+            a platform's security offerings.
+        </p>
         <p>ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world
             observations. The ATT&CK knowledge base represents adversary goals as tactics and the specific behaviors
             employed by adversaries to achieve those goals (how) as techniques and sub-techniques. The methodology
@@ -62,8 +63,8 @@
     </div>
 </section>
 
-<section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+<section id="step1" class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Step 1:</span> Identify Platform Security Controls</h2>
@@ -88,8 +89,8 @@
     </div>
 </section>
 
-<section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+<section id="step2" class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Step 2:</span> Security Control Review</h2>
@@ -119,8 +120,8 @@
     </div>
 </section>
 
-<section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+<section id="step3" class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Step 3:</span> Identify Mappable ATT&CK Techniques & Sub-techniques</h2>
@@ -172,8 +173,8 @@
     </div>
 </section>
 
-<section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+<section id="step4" class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Step 4:</span> Score Assessments</h2>
@@ -193,8 +194,8 @@
     </div>
 </section>
 
-<section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+<section id="step5" class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Step 5:</span> Create A Mapping</h2>
@@ -203,9 +204,6 @@
         <p>The previous steps enabled the gathering of information required to create a mapping file for a control
             according to the mapping data format. Use the following guidelines to help in the process of creating a
             mapping:</p>
-        {#<p><strong>TODO: do we want to link to / include inline the data format? the SSM methodology links to a data
-                format.</strong></p>#}
-
         <ul>
             <li>The mapping format promotes producing mappings that are self-contained, enabling a reader of the mapping
                 file to understand the basic functionality provided by the control and also the rational for selecting
@@ -217,7 +215,7 @@
 </section>
 
 <section class="services-cards">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+    <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
             <h2><span class="highlight">Additional</span> Resources</h2>
