@@ -70,8 +70,6 @@ for (i = 0; i < l; i++) {
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     c.addEventListener("click", function(e) {
-      console.log("click on  ", e.srcElement)
-
       // add our own handling of option states to the boilerplate click handling
       let attack_version = document.getElementById("attack_version_select").value;
       let attack_domain = document.getElementById("attack_domain_select").value;

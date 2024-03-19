@@ -303,10 +303,6 @@ div.banner {
   }
 
   div.banner {
-    top: 58px;
-  }
-
-  .banner.sticked {
     top: 54px;
   }
 }
@@ -1020,6 +1016,12 @@ section#user-stories button.accordion-button div {
 /**
   # Mapping Table Section
   **/
+p.notice {
+  padding: 1rem;
+  border: 1px solid var(--bs-border-color);
+  background-color: var(--bs-gray-200);
+}
+
 .mapping-table h2,
 .references h2 {
   text-transform: uppercase;

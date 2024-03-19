@@ -390,7 +390,6 @@
       },
       setMatrixColumnAmount(){
         let matrixWidth = document.getElementById("matrix-table-scrollable").clientWidth;
-        console.log(matrixWidth)
         // based off of bootsrap breakpoint sizes
         // matrix column size is set to col-lg-1 col-md-2 col-sm-4
         this.amountMatrixColsShown = matrixWidth <= 576 ? 3 : matrixWidth <= 768 ? 5 : 12;
