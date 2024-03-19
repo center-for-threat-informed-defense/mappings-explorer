@@ -12,7 +12,13 @@ from mapex_convert.read_files import (
 )
 
 from .attack_query import create_attack_jsons, get_attack_data, load_tactic_structure
-from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
+from .template import (
+    DATA_DIR,
+    PUBLIC_DIR,
+    ROOT_DIR,
+    TEMPLATE_DIR,
+    load_template,
+)
 
 
 class Capability:
@@ -778,6 +784,7 @@ def build_external_landing(
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
+    table_max_count = 500
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
@@ -800,8 +807,47 @@ def build_external_landing(
         non_mappables=project.non_mappables,
         project=project,
         group_artifact=group_artifact,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
+
+    if len(mappings) > table_max_count:
+        full_size = output_path.stat().st_size
+        full_path = output_path.parent / "all-data.html"
+        output_path.rename(full_path)
+
+        stream = template.stream(
+            title=project.label + " Landing",
+            url_prefix=url_prefix,
+            control=project.label,
+            description=project.description,
+            project_version=project_version.replace("/", "."),
+            project_id=project_id,
+            versions=project.versions,
+            attack_version=attack_version,
+            attackVersions=project.attackVersions,
+            attack_domain=attack_domain,
+            domains=project.attackDomains,
+            mappings=mappings,
+            headers=headers,
+            group_headers=capability_group_headers,
+            capability_groups=[
+                g for g in project.capability_groups if g.num_mappings > 0
+            ],
+            valid_versions=project.validVersions,
+            breadcrumbs=breadcrumbs,
+            non_mappable_headers=non_mappable_headers,
+            non_mappables=project.non_mappables,
+            project=project,
+            group_artifact=group_artifact,
+            table_max_count=table_max_count,
+            full_link="all-data.html",
+            full_size=full_size,
+        )
+        stream.dump(str(output_path))
+
     logger.trace(
         "Created {project_id} landing: ATT&CK version {attack_version}, ",
         "control version {project_version}, ATT&CK domain {attack_domain}",
@@ -985,6 +1031,9 @@ def build_capability_group(
         breadcrumbs=breadcrumbs,
         capability_group_headers=capability_group_headers,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -1042,6 +1091,9 @@ def build_external_capability(
         capability=capability,
         breadcrumbs=breadcrumbs,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created capability page {id}", id=capability.id)
@@ -1344,6 +1396,9 @@ def build_technique_page(
         subtechniques=technique.subtechniques,
         breadcrumbs=nav,
         previous_link=attack_prefix,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created technique page {id}", id=technique.id)
@@ -1401,6 +1456,9 @@ def build_tactic_page(
         prev_page=prev_page,
         breadcrumbs=nav,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created tactic page {id}", id=tactic.id)
@@ -1474,6 +1532,9 @@ def build_technique_landing_page(
         breadcrumbs=technique_nav,
         non_mappable_headers=non_mappable_headers,
         non_mappables=non_mappables,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     description = """Tactics represent the "why" of a MITRE ATT&CK® technique or
@@ -1512,6 +1573,9 @@ def build_technique_landing_page(
         domains=attack_domains,
         valid_versions=valid_versions,
         breadcrumbs=tactic_nav,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("Built techniques and tactics landing pages ")

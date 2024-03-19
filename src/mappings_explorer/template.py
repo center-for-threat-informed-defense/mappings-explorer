@@ -40,3 +40,40 @@ def build_capability_url(mapping: dict, url_prefix: str, id: str):
 
 
 _environment.filters["build_capability_url"] = build_capability_url
+
+
+def format_int(value: int) -> str:
+    """
+    Format an integer value.
+
+    Args:
+        value: an integer to format
+
+    Returns:
+        formatted value
+    """
+    return "{:,d}".format(value)
+
+
+_environment.filters["format_int"] = format_int
+
+
+def data_size(value):
+    """
+    Format a number of bytes as a more readable unit.
+
+    Args:
+        value; a byte count
+
+    Returns:
+        A human-friendly string like "4.3MB"
+    """
+    units = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
+    unit_idx = 0
+    while value > 1000:
+        value /= 1000
+        unit_idx += 1
+    return f"{value:0.1f} {units[unit_idx]}"
+
+
+_environment.filters["data_size"] = data_size

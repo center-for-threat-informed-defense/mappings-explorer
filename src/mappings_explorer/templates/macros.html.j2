@@ -5,8 +5,15 @@
     </a>
 {% endmacro %}
 
-{% macro table(headers, mappings, url_prefix) %}
+{% macro table(headers, mappings, url_prefix, table_max_count, full_link, full_size) %}
 <div class="table-responsive table-outer">
+{% if mappings | length > table_max_count %}
+<p class="notice">
+  <strong>This is a very large mapping.</strong> To reduce the size, we have only
+  downloaded the first {{ table_max_count }} of {{ mappings | length | format_int }} mappings.
+  <a class="load-all" href="./{{ full_link }}">Load all data ({{ full_size | data_size }})</a>
+</p>
+{% endif %}
 <div class="form-outline mb-4">
   <table class="table table-borderless table-hover table-responsive text-truncate"
     data-toggle="table"
@@ -16,27 +23,27 @@
     data-search-align="left">
   <thead>
     <tr>
-        {%- for header in headers -%}
+        {%- for header in headers %}
             <th id={{id}} data-field={{header[0]}} data-sortable="true">{{header[1]}}</th>
         {% endfor %}
       </tr>
   </thead>
   <tbody>
-    {% for mapping in mappings %}
+    {%- for mapping in mappings[:table_max_count] %}
       <tr>
-        {%- for header in headers -%}
-            {% if header[2] and header[3] %}
+        {% for header in headers -%}
+            {%- if header[2] and header[3] -%}
                 <td><a href="{{header[3]}}{{mapping[header[2]] | replace(' ', '_') }}/">{{mapping[header[0]]}}</a></td>
-            {% endif %}
-            {% if header[2] and not header[3] %}
+            {% endif -%}
+            {%- if header[2] and not header[3] -%}
                 <td><a href="{{mapping | build_capability_url(url_prefix, mapping[header[2]])}}">{{mapping[header[0]]}}</a></td>
-            {% endif %}
-            {% if not header[2] %}
+            {% endif -%}
+            {%- if not header[2] -%}
                 <td>{{mapping[header[0]]}}</td>
-            {% endif %}
-        {% endfor %}
+            {% endif -%}
+        {% endfor -%}
       </tr>
-    {% endfor %}
+    {% endfor -%}
   </tbody>
 </table>
 <script>

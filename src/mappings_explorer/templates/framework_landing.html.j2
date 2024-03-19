@@ -110,7 +110,7 @@
     <div class="row justify-content-left">
       <div class="col-12">
         <h2>Capability Groups</h2>
-        {{ macros.table(group_headers, capability_groups, url_prefix) }}
+        {{ macros.table(group_headers, capability_groups, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>
@@ -120,7 +120,7 @@
     <div class="row justify-content-left">
       <div class="col-12">
         <h2>All Mappings</h2>
-        {{ macros.table(headers, mappings, url_prefix) }}
+        {{ macros.table(headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>
@@ -137,7 +137,7 @@
               ATT&CK objects</span>
           </div>
         </div>
-        {{ macros.table(non_mappable_headers, non_mappables, url_prefix) }}
+        {{ macros.table(non_mappable_headers, non_mappables, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>
