@@ -47,8 +47,9 @@ jobs:
           name: mapex-web
           path: output.zip
 
-  # Delete this job for public release and clear GitHub secrets:
+  # Publish to Azure blob only on PRs, not main.
   azure_blob:
+    if: github.ref_name != 'main'
     needs: web_site
     runs-on: ubuntu-latest
     env:
@@ -103,30 +104,29 @@ jobs:
               body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
             })
 
-  # Uncomment for public release:
-  # github_pages:
-  #   # This job only runs when committing or merging to main branch.
-  #   if: github.ref_name == 'main'
-  #   needs: web_site
-  #   runs-on: ubuntu-latest
-  #   environment:
-  #     name: github-pages
-  #     url: $\{\{ steps.deployment.outputs.page_url \}\}
+  github_pages:
+    # This job only runs when committing or merging to main branch.
+    if: github.ref_name == 'main'
+    needs: web_site
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: $\{\{ steps.deployment.outputs.page_url \}\}
 
-  #   steps:
-  #   - name: Setup Pages
-  #     uses: actions/configure-pages@v2
-  #   - name: Download Web Site
-  #     uses: actions/download-artifact@v3
-  #     with:
-  #       name: mapex-web
-  #       path: .
-  #   - name: Decompress Artifacts
-  #     run: unzip -q output.zip
-  #   - name: Upload artifact
-  #     uses: actions/upload-pages-artifact@v1
-  #     with:
-  #       path: ./output
-  #   - name: Deploy to GitHub Pages
-  #     id: deployment
-  #     uses: actions/deploy-pages@v1
+    steps:
+    - name: Setup Pages
+      uses: actions/configure-pages@v2
+    - name: Download Web Site
+      uses: actions/download-artifact@v3
+      with:
+        name: mapex-web
+        path: .
+    - name: Decompress Artifacts
+      run: unzip -q output.zip
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./output
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
