@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/center-for-threat-informed-defense/mappings-explorer/compare/mappings_explorer-v0.1.0...mappings_explorer-v1.0.0) (2024-03-27)
+
+
+### Miscellaneous Chores
+
+* release Mappings Explorer v1.0.0 ([65cb9a7](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/65cb9a752f67f2f99d92e3d2cb4e865bf5a62819))
+
 ## 0.1.0 (2023-11-29)
 
 
