@@ -1,3 +1,7 @@
+[![MITRE ATT&CK® v8–14](https://img.shields.io/badge/MITRE%20ATT%26CK®-v8–14-red)](https://attack.mitre.org/)
+[![build](https://github.com/center-for-threat-informed-defense/mappings-explorer/actions/workflows/build-web.yml/badge.svg)](https://github.com/center-for-threat-informed-defense/mappings-explorer/actions/workflows/build-web.yml)
+![codecov](https://codecov.io/gh/center-for-threat-informed-defense/mappings-explorer/branch/main/graph/badge.svg?token=MSGpc9mM6U)
+
 # Mappings Explorer
 
 Mappings Explorer enables cyber defenders to understand how security controls and
