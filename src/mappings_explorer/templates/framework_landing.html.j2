@@ -77,23 +77,14 @@
               Navigator Layers
             </a>
           </p>
-          {% if group_artifact: %}
+          {% for artifact in additional_artifacts %}
           <p>
-            <a class="link" download
-              href="{{url_prefix}}legacy/{{project_id}}-{{project_version}}_attack-{{attack_version}}-groups.json">
+            <a class="link" download href="{{ url_prefix }}{{ artifact.link }}">
               <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
-              Group Mappings – JSON
+              {{ artifact.label }}
             </a>
           </p>
-          <p>
-            <a class="link" download
-              href="{{url_prefix}}legacy/{{project_id}}-{{project_version}}_attack-{{attack_version}}-groups.xlsx">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
-              Group Mappings – Excel
-            </a>
-          </p>
-
-          {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
