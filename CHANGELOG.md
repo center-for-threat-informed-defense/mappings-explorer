@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/center-for-threat-informed-defense/mappings-explorer/compare/mappings_explorer-v1.0.0...mappings_explorer-v1.1.0) (2024-04-15)
+
+
+### Features
+
+* add M365 Mappings Project ([4596ab2](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/4596ab2bbd18a82250a4a4af69c84780ede2e437))
+
 ## [1.0.0](https://github.com/center-for-threat-informed-defense/mappings-explorer/compare/mappings_explorer-v0.1.0...mappings_explorer-v1.0.0) (2024-03-27)
 
 
