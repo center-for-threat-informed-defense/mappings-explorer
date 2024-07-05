@@ -3,9 +3,8 @@
 
 {% block content %}
 <div id="my_view">
-
    <section id="header-container" class="header-container">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       {% include "_breadcrumbs.html.j2" %}
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -15,7 +14,7 @@
             View information about {{object_type | lower}},
             how techniques and tactics interact, and the
             <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
-            Center for Threat-Informed Defense</a>’s mappings coverage of
+            Center for Threat-Informed Defense's</a> mappings coverage of
             <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
             techniques in the Mappings Explorer
             <a href="{{url_prefix}}attack/matrix">matrix view</a>.
@@ -32,16 +31,18 @@
       <div class="row justify-content-left">
         <div class="row" style="padding: 0;">
           <div class="col-xl-4 col-lg-12">
-            <h2 style="width: max-content">ATT&CK {{object_type}} Mappings</h2>
+            <h2 style="width: max-content">ATT&CK {{object_type}}</h2>
           </div>
         </div>
         <div class="col-12">
-            {{ macros.table(headers, mappings) }}
+            {{ macros.table(headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
         </div>
       </div>
     </div>
   </section>
-  {% if non_mappables %}
+  <!-- non-mappables table removed until better solution worked out -->
+ {#
+ {% if non_mappables %}
   <section id="nonmappable-table" class="mapping-table">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-left">
@@ -53,11 +54,11 @@
               <span class="tooltip-text">Non-mappable techniques cannot be easily mitigated with preventive controls since they are based on behaviors performed outside of the scope of enterprise defenses and controls</span>
             </div>
           </div>
-          <!-- non-mappables table removed until better solution worked out -->
-          <!-- {{ macros.table(non_mappable_headers, non_mappables, url_prefix) }} -->
+          {{ macros.table(non_mappable_headers, non_mappables, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
   </section>
 {% endif %}
+#}
 </div>
 {% endblock content %}

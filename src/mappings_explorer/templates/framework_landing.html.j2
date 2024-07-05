@@ -4,7 +4,7 @@
 {#{% include "_banner.html.j2" %}#}
 
 <section id="header-container" class="header-container">
-  <div class="container" data-aos="fade-up" id="my_view">
+  <div class="container" id="my_view">
     {% include "_breadcrumbs.html.j2" %}
     <div class="row justify-content-left">
       <div class="col-lg-8 col-md-10 col-sm-12">
@@ -77,23 +77,14 @@
               Navigator Layers
             </a>
           </p>
-          {% if group_artifact: %}
+          {% for artifact in additional_artifacts %}
           <p>
-            <a class="link" download
-              href="{{url_prefix}}legacy/{{project_id}}-{{project_version}}_attack-{{attack_version}}-groups.json">
+            <a class="link" download href="{{ url_prefix }}{{ artifact.link }}">
               <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
-              Group Mappings – JSON
+              {{ artifact.label }}
             </a>
           </p>
-          <p>
-            <a class="link" download
-              href="{{url_prefix}}legacy/{{project_id}}-{{project_version}}_attack-{{attack_version}}-groups.xlsx">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
-              Group Mappings – Excel
-            </a>
-          </p>
-
-          {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -110,7 +101,7 @@
     <div class="row justify-content-left">
       <div class="col-12">
         <h2>Capability Groups</h2>
-        {{ macros.table(group_headers, capability_groups, url_prefix) }}
+        {{ macros.table(group_headers, capability_groups, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>
@@ -120,7 +111,7 @@
     <div class="row justify-content-left">
       <div class="col-12">
         <h2>All Mappings</h2>
-        {{ macros.table(headers, mappings, url_prefix) }}
+        {{ macros.table(headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>
@@ -137,7 +128,7 @@
               ATT&CK objects</span>
           </div>
         </div>
-        {{ macros.table(non_mappable_headers, non_mappables, url_prefix) }}
+        {{ macros.table(non_mappable_headers, non_mappables, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
 </section>

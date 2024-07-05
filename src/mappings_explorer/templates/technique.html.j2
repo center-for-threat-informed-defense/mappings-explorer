@@ -6,7 +6,7 @@
 {% include "_banner.html.j2" %}
 
    <section id="header-container" class="header-container">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       {% include "_breadcrumbs.html.j2" %}
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="col-12">
-            {{ macros.table(headers, mappings, url_prefix) }}
+            {{ macros.table(headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="col-12">
-            {{ macros.table(technique_headers, subtechniques, url_prefix) }}
+            {{ macros.table(technique_headers, subtechniques, url_prefix, table_max_count, full_link, full_size) }}
         </div>
       </div>
     </div>

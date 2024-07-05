@@ -10,7 +10,7 @@
     template: `
       <div>
         <section id="header-container" class="header-container">
-          <div class="container" data-aos="fade-up">
+          <div class="container">
             {% include "_breadcrumbs.html.j2" %}
             <h1 style="text-transform: uppercase" class="text-center">
               <span class="highlight">Search</span> for Mappings
@@ -39,7 +39,7 @@
           </div>
         </section>
         <div class="loader" v-if="loading"></div>
-        <div class="container" data-aos="fade-up">
+        <div class="container">
           <form class="col-12 version-select" v-if="results && results.results && results.results.length">
             <div class="row col-12" style="display: flex;">
               <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">

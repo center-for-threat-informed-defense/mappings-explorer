@@ -12,7 +12,13 @@ from mapex_convert.read_files import (
 )
 
 from .attack_query import create_attack_jsons, get_attack_data, load_tactic_structure
-from .template import DATA_DIR, PUBLIC_DIR, ROOT_DIR, TEMPLATE_DIR, load_template
+from .template import (
+    DATA_DIR,
+    PUBLIC_DIR,
+    ROOT_DIR,
+    TEMPLATE_DIR,
+    load_template,
+)
 
 
 class Capability:
@@ -72,6 +78,7 @@ class ExternalControl:
     non_mappables = []
     has_non_mappables = True
     has_non_mappable_comments = False
+    additional_artifacts = {}
 
 
 all_attack_versions = [
@@ -178,7 +185,10 @@ def load_projects():
     nist.has_non_mappables = False
     nist.attackDomain = nist.attackDomains[0]
     nist.resources = [
-        {"link": "about/methodology/nist-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/nist-methodology/",
+            "label": "NIST 800-53 Mapping Methodology",
+        },
         {"link": "about/methodology/nist-scope/", "label": "Mapping Scope"},
     ]
 
@@ -209,9 +219,23 @@ def load_projects():
     veris.resources = [
         {
             "link": "about/methodology/veris-methodology/",
-            "label": "Mapping Methodology",
+            "label": "VERIS Mapping Methodology",
         },
     ]
+    veris.additional_artifacts = {
+        "1.3.7": {
+            "12.1": [
+                {
+                    "link": "legacy/veris-1.3.7_attack-12.1-groups.json",
+                    "label": "Group Mappings – JSON",
+                },
+                {
+                    "link": "legacy/veris-1.3.7_attack-12.1-groups.xlsx",
+                    "label": "Group Mappings – Excel",
+                },
+            ]
+        }
+    }
 
     cve = ExternalControl()
     cve.id = "cve"
@@ -235,7 +259,10 @@ def load_projects():
     cve.has_non_mappables = False
     cve.mappings = []
     cve.resources = [
-        {"link": "about/methodology/cve-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/cve-methodology/",
+            "label": "CVE Mapping Methodology",
+        },
     ]
 
     aws = ExternalControl()
@@ -256,7 +283,10 @@ def load_projects():
     ]
     aws.mappings = []
     aws.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     aws.has_non_mappable_comments = True
 
@@ -277,7 +307,10 @@ def load_projects():
     ]
     azure.mappings = []
     azure.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     azure.has_non_mappable_comments = True
 
@@ -300,18 +333,58 @@ def load_projects():
     ]
     gcp.mappings = []
     gcp.resources = [
-        {"link": "about/methodology/ssm-methodology/", "label": "Mapping Methodology"},
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
     ]
     gcp.has_non_mappable_comments = True
 
-    projects = [
-        nist,
-        cve,
-        veris,
-        azure,
-        gcp,
-        aws,
+    m365 = ExternalControl()
+    m365.id = "m365"
+    m365.label = "M365"
+    m365.description = """Microsoft 365 (M365) is a widely used Software as a Service
+        (SaaS) product family of productivity software, collaboration, and cloud-based
+        services. This project maps the security controls native to M365 product areas
+        to MITRE ATT&CK® providing resources to assess how to protect, detect, and
+        respond to real-world threats as described in the ATT&CK knowledge base."""
+
+    m365.attackDomains = ["Enterprise"]
+    m365.attackDomain = m365.attackDomains[0]
+    m365.attackVersions = ["14.1"]
+    m365.attackVersion = m365.attackVersions[0]
+    m365.versions = ["12.11.2023"]
+    m365.validVersions = [
+        ("12.11.2023", "14.1", "Enterprise"),
     ]
+    m365.mappings = []
+    m365.resources = [
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
+        {
+            "link": "https://www.cisecurity.org/benchmark/microsoft_365",
+            "label": "CIS Microsoft 365 Benchmark (External link)",
+        },
+    ]
+    artifact_prefix = "legacy/m365-12.11.2023_attack-14.1-enterprise_"
+    m365.additional_artifacts = {
+        "12.11.2023": {
+            "14.1": [
+                {
+                    "link": artifact_prefix + "E3_navigator_layers.json",
+                    "label": "Navigator Layer (E3 License)",
+                },
+                {
+                    "link": artifact_prefix + "E5_navigator_layers.json",
+                    "label": "Navigator Layer (E5 License)",
+                },
+            ]
+        }
+    }
+    m365.has_non_mappable_comments = False
+    projects = [nist, cve, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -420,7 +493,12 @@ def parse_capability_groups(
         )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if project.id == "aws" or project.id == "gcp" or project.id == "azure":
+    if (
+        project.id == "aws"
+        or project.id == "gcp"
+        or project.id == "azure"
+        or project.id == "m365"
+    ):
         get_security_stack_descriptions(project=project)
 
 
@@ -446,10 +524,13 @@ def get_security_stack_descriptions(project: ExternalControl):
     # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
+        id = data.get("id", None)
         name = data["name"]
         description = data["description"]
         for c in capabilities:
-            if c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_"):
+            matchId = c.id == id
+            matchName = c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_")
+            if matchId or matchName:
                 c.description = description
                 c.label = data["name"]
                 break
@@ -750,13 +831,12 @@ def build_external_landing(
             ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
         ]
 
-    # Temporary hack for showing VERIS group download artifact on # the VERIS
-    # 1.3.7/ATT&CK 12.1 landing page.
-    group_artifact = (
-        project.id == "veris"
-        and project_version == "1.3.7"
-        and attack_version == "12.1"
-    )
+    # Resolve additional download artifacts
+    additional_artifacts = []
+    if project_version in project.additional_artifacts:
+        project_artifacts = project.additional_artifacts[project_version]
+        if attack_version in project_artifacts:
+            additional_artifacts = project_artifacts[attack_version]
 
     capability_group_headers = [
         ("id", "ID", "id", capability_group_prefix),
@@ -778,6 +858,7 @@ def build_external_landing(
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
+    table_max_count = 500
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
@@ -799,9 +880,48 @@ def build_external_landing(
         non_mappable_headers=non_mappable_headers,
         non_mappables=project.non_mappables,
         project=project,
-        group_artifact=group_artifact,
+        additional_artifacts=additional_artifacts,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
+
+    if len(mappings) > table_max_count:
+        full_size = output_path.stat().st_size
+        full_path = output_path.parent / "all-data.html"
+        output_path.rename(full_path)
+
+        stream = template.stream(
+            title=project.label + " Landing",
+            url_prefix=url_prefix,
+            control=project.label,
+            description=project.description,
+            project_version=project_version.replace("/", "."),
+            project_id=project_id,
+            versions=project.versions,
+            attack_version=attack_version,
+            attackVersions=project.attackVersions,
+            attack_domain=attack_domain,
+            domains=project.attackDomains,
+            mappings=mappings,
+            headers=headers,
+            group_headers=capability_group_headers,
+            capability_groups=[
+                g for g in project.capability_groups if g.num_mappings > 0
+            ],
+            valid_versions=project.validVersions,
+            breadcrumbs=breadcrumbs,
+            non_mappable_headers=non_mappable_headers,
+            non_mappables=project.non_mappables,
+            project=project,
+            additional_artifacts=additional_artifacts,
+            table_max_count=table_max_count,
+            full_link="all-data.html",
+            full_size=full_size,
+        )
+        stream.dump(str(output_path))
+
     logger.trace(
         "Created {project_id} landing: ATT&CK version {attack_version}, ",
         "control version {project_version}, ATT&CK domain {attack_domain}",
@@ -985,6 +1105,9 @@ def build_capability_group(
         breadcrumbs=breadcrumbs,
         capability_group_headers=capability_group_headers,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -1042,6 +1165,9 @@ def build_external_capability(
         capability=capability,
         breadcrumbs=breadcrumbs,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created capability page {id}", id=capability.id)
@@ -1344,6 +1470,9 @@ def build_technique_page(
         subtechniques=technique.subtechniques,
         breadcrumbs=nav,
         previous_link=attack_prefix,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created technique page {id}", id=technique.id)
@@ -1401,6 +1530,9 @@ def build_tactic_page(
         prev_page=prev_page,
         breadcrumbs=nav,
         previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("          Created tactic page {id}", id=tactic.id)
@@ -1474,6 +1606,9 @@ def build_technique_landing_page(
         breadcrumbs=technique_nav,
         non_mappable_headers=non_mappable_headers,
         non_mappables=non_mappables,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     description = """Tactics represent the "why" of a MITRE ATT&CK® technique or
@@ -1512,6 +1647,9 @@ def build_technique_landing_page(
         domains=attack_domains,
         valid_versions=valid_versions,
         breadcrumbs=tactic_nav,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
     )
     stream.dump(str(output_path))
     logger.trace("Built techniques and tactics landing pages ")
@@ -1634,8 +1772,14 @@ def getIndexPages():
     pages = []
     for mappings_file in mappings_filepath.rglob("**/*.json"):
         project_name_in_filepath = (
-            "nist" or "veris" or "aws" or "azure" or "gcp" or "cve"
-        ) in str(mappings_file)
+            "/nist_800_53/" in str(mappings_file)
+            or "/veris/" in str(mappings_file)
+            or "/aws/" in str(mappings_file)
+            or "/azure/" in str(mappings_file)
+            or "/gcp/" in str(mappings_file)
+            or "/cve/" in str(mappings_file)
+            or "/m365/" in str(mappings_file)
+        )
         if (
             project_name_in_filepath
             and "stix" not in mappings_file.name

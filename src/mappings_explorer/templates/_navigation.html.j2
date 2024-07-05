@@ -3,12 +3,9 @@
 <div
   class="container-fluid container-xl d-flex align-items-center justify-content-between"
 >
-  <a href="{{url_prefix}}" class="logo d-flex align-items-center">
-    <img src="{{url_prefix}}static/img/CTID-brand.png" alt="" />
-    <h1 class="d-flex align-items-center">
-      MAPPINGS <span style="margin-left: 5px; color: #c2eaf6"> Explorer</span>
-    </h1>
-  </a>
+<a href="{{url_prefix}}" class="logo d-flex align-items-center">
+  <img src="{{url_prefix}}static/img/mappings_explorer_header_logo_h60.png" alt="Mappings Explorer" />
+</a>
 
   <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
   <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
@@ -18,7 +15,7 @@
         <ul>
           <li><a href="{{url_prefix}}about/">Overview</a></li>
           <li><a href="{{url_prefix}}about/use-cases/">Use Cases</a></li>
-          <li><a href="{{url_prefix}}about/methodology/">Methodology</a></li>
+          <li><a href="{{url_prefix}}about/methodology/">Mapping Methodology</a></li>
           <li><a href="{{url_prefix}}about/scoring/">Scoring Rubric</a></li>
           <li><a href="{{url_prefix}}about/related-projects/">Related Projects</a></li>
         </ul>
@@ -38,6 +35,7 @@
           <li><a href="{{url_prefix}}external/cve/">CVE</a></li>
           <li><a href="{{url_prefix}}external/gcp/">Google Cloud Platform (GCP)</a></li>
           <li><a href="{{url_prefix}}external/nist/">NIST 800-53</a></li>
+          <li><a href="{{url_prefix}}external/m365/">M365</a></li>
           <li><a href="{{url_prefix}}external/veris/">VERIS</a></li>
         </ul>
       </li>
@@ -62,7 +60,6 @@
 </div>
 <script>
   function navSearchWebsite(url) {
-    console.log("searching website");
     window.location.href = `${url}?search=${document.getElementById("nav-search-input").value}`;
   }
   function navHandleKeypress(event, url) {
