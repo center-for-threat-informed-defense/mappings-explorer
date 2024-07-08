@@ -1364,6 +1364,25 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 breadcrumbs=breadcrumbs,
                 non_mappables=non_mappables,
             )
+            # Build technique pages that don't have mappings to fix any linking errors
+            for technique in non_mappables:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "techniques"
+                )
+
+                if technique.id:
+                    build_technique_page(
+                        url_prefix=url_prefix,
+                        parent_dir=external_dir,
+                        attack_version=attack_version,
+                        attack_domain=attack_domain,
+                        technique=technique,
+                        breadcrumbs=breadcrumbs,
+                    )
 
             for technique in all_techniques:
                 external_dir = (
