@@ -7,26 +7,33 @@ import pandas as pd
 import requests
 import yaml
 from loguru import logger
+from stix2validator import validate_file
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
-    filepath = f"{filepath}_json"
-    filepath_with_count = filepath
-    counter = 0
-    while os.path.exists(f"{filepath_with_count}.json"):
-        counter += 1
-        filepath_with_count = f"{filepath}_{counter}"
+    if validate_file(parsed_mappings):
+        filepath = f"{filepath}_json"
+        filepath_with_count = filepath
+        counter = 0
+        while os.path.exists(f"{filepath_with_count}.json"):
+            counter += 1
+            filepath_with_count = f"{filepath}_{counter}"
 
-    json_file = open(
-        f"{filepath_with_count}.json",
-        "w",
-        encoding="UTF-8",
-    )
-    json.dump(parsed_mappings, fp=json_file)
-    logger.info(
-        "Successfully wrote mappings json file to {filepath_with_count}_json.json",
-        filepath_with_count=filepath_with_count,
-    )
+        json_file = open(
+            f"{filepath_with_count}.json",
+            "w",
+            encoding="UTF-8",
+        )
+        json.dump(parsed_mappings, fp=json_file)
+        logger.info(
+            "Successfully wrote mappings json file to {filepath_with_count}_json.json",
+            filepath_with_count=filepath_with_count,
+        )
+    else:
+        logger.error(
+            "Invalid STIX generated for {filepath_with_count}_json.json",
+            filepath_with_count=filepath_with_count,
+        )
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
@@ -217,8 +224,8 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 "type": "relationship",
                 "id": f"relationship--{relationship_uuid}",
                 "spec_version": "2.1",
-                "created": datetime.now().isoformat(),
-                "modified": datetime.now().isoformat(),
+                "created": datetime.now().isoformat() + "Z",
+                "modified": datetime.now().isoformat() + "Z",
                 "relationship_type": mapping_type,
                 "source_ref": related_source_ref,
                 "target_ref": technique_target_dict.get(
@@ -282,12 +289,12 @@ def create_vulnerability_object(mapping):
 def create_infrastructure_object(mapping):
     infrastructure_uuid = str(uuid.uuid4())
     return {
-        "type": "attack-pattern",
+        "type": "infrastructure",
         "spec_version": "2.1",
         "id": f"infrastructure--{infrastructure_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": datetime.now().isoformat() + "Z",
+        "modified": datetime.now().isoformat() + "Z",
     }
 
 
@@ -298,8 +305,8 @@ def create_attack_pattern_object(mapping):
         "spec_version": "2.1",
         "id": f"attack-pattern--{attack_pattern_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": datetime.now().isoformat() + "Z",
+        "modified": datetime.now().isoformat() + "Z",
     }
 
 
