@@ -1,39 +1,33 @@
 import json
 import os
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 import pandas as pd
 import requests
 import yaml
 from loguru import logger
-from stix2validator import validate_file
+from stix2validator import validate_instance
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
-    if validate_file(parsed_mappings):
-        filepath = f"{filepath}_json"
-        filepath_with_count = filepath
-        counter = 0
-        while os.path.exists(f"{filepath_with_count}.json"):
-            counter += 1
-            filepath_with_count = f"{filepath}_{counter}"
+    filepath = f"{filepath}_json"
+    filepath_with_count = filepath
+    counter = 0
+    while os.path.exists(f"{filepath_with_count}.json"):
+        counter += 1
+        filepath_with_count = f"{filepath}_{counter}"
 
-        json_file = open(
-            f"{filepath_with_count}.json",
-            "w",
-            encoding="UTF-8",
-        )
-        json.dump(parsed_mappings, fp=json_file)
-        logger.info(
-            "Successfully wrote mappings json file to {filepath_with_count}_json.json",
-            filepath_with_count=filepath_with_count,
-        )
-    else:
-        logger.error(
-            "Invalid STIX generated for {filepath_with_count}_json.json",
-            filepath_with_count=filepath_with_count,
-        )
+    json_file = open(
+        f"{filepath_with_count}.json",
+        "w",
+        encoding="UTF-8",
+    )
+    json.dump(parsed_mappings, fp=json_file)
+    logger.info(
+        "Successfully wrote mappings json file to {filepath_with_count}_json.json",
+        filepath_with_count=filepath_with_count,
+    )
 
 
 def write_parsed_mappings_yaml(parsed_mappings, filepath):
@@ -191,8 +185,8 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         "type": "bundle",
         "id": f"bundle--{bundle_uuid}",
         "spec_version": "2.1",
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "modified": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "objects": [],
     }
     technique_target_dict = load_attack_json(parsed_mappings)
@@ -224,8 +218,12 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 "type": "relationship",
                 "id": f"relationship--{relationship_uuid}",
                 "spec_version": "2.1",
-                "created": datetime.now().isoformat() + "Z",
-                "modified": datetime.now().isoformat() + "Z",
+                "created": datetime.now(timezone.utc)
+                .isoformat()
+                .replace("+00:00", "Z"),
+                "modified": datetime.now(timezone.utc)
+                .isoformat()
+                .replace("+00:00", "Z"),
                 "relationship_type": mapping_type,
                 "source_ref": related_source_ref,
                 "target_ref": technique_target_dict.get(
@@ -233,22 +231,29 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
                 ),
             },
         )
-    filepath = f"{filepath}_stix"
-    filepath_with_count = filepath
-    counter = 0
-    while os.path.exists(f"{filepath_with_count}.json"):
-        counter += 1
-        filepath_with_count = f"{filepath}_{counter}"
-    stix_file = open(
-        f"{filepath_with_count}.json",
-        "w",
-        encoding="UTF-8",
-    )
-    json.dump(stix_bundle, fp=stix_file)
-    logger.info(
-        "Successfully wrote mappings stix file to {filepath_with_count}.json",
-        filepath_with_count=filepath_with_count,
-    )
+    validation_results = validate_instance(stix_bundle)
+    if validation_results.is_valid:
+        filepath = f"{filepath}_stix"
+        filepath_with_count = filepath
+        counter = 0
+        while os.path.exists(f"{filepath_with_count}.json"):
+            counter += 1
+            filepath_with_count = f"{filepath}_{counter}"
+        stix_file = open(
+            f"{filepath_with_count}.json",
+            "w",
+            encoding="UTF-8",
+        )
+        json.dump(stix_bundle, fp=stix_file)
+        logger.info(
+            "Successfully wrote mappings stix file to {filepath_with_count}.json",
+            filepath_with_count=filepath_with_count,
+        )
+    else:
+        logger.error(
+            "Invalid STIX generated for {filepath}_json.json",
+            filepath=filepath,
+        )
 
 
 def get_stix_object(parsed_mappings, mapping):
@@ -272,8 +277,8 @@ def create_vulnerability_object(mapping):
         "type": "vulnerability",
         "id": f"vulnerability--{vulnerability_uuid}",
         "spec_version": "2.1",
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "modified": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "name": mapping["capability_id"],
         "description": mapping["capability_description"],
         "external_references": [
@@ -293,8 +298,8 @@ def create_infrastructure_object(mapping):
         "spec_version": "2.1",
         "id": f"infrastructure--{infrastructure_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat() + "Z",
-        "modified": datetime.now().isoformat() + "Z",
+        "created": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "modified": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
 
 
@@ -305,8 +310,8 @@ def create_attack_pattern_object(mapping):
         "spec_version": "2.1",
         "id": f"attack-pattern--{attack_pattern_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat() + "Z",
-        "modified": datetime.now().isoformat() + "Z",
+        "created": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "modified": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
     }
 
 
