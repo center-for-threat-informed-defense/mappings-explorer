@@ -3,7 +3,7 @@ expected_stix_results = {
     "spec_version": "2.1",
     "objects": [
         {
-            "type": "attack-pattern",
+            "type": "infrastructure",
             "spec_version": "2.1",
             "name": "AC-10",
         },
