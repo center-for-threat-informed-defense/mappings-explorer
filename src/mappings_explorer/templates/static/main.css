@@ -474,10 +474,13 @@ div.banner {
 }
 
 @media (min-width: 1280px) {
-
   .mobile-nav-show,
-  .mobile-nav-hide {
+  .mobile-nav-hide,
+  .mobile-nav-div {
     display: none;
+  }
+  .project-switcher-lg {
+    display: inline;
   }
 }
 
@@ -585,8 +588,65 @@ div.banner {
     background: #212c5e81;
     z-index: 9996 !important;
   }
+  .mobile-nav-div {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+  }
+  .mobile-nav-div i {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .project-switcher-lg {
+    display: none;
+  }
 }
+/*--------------------------------------------------------------
+  # Related Project Switcher
+  --------------------------------------------------------------*/
+  .project-switcher {
+    cursor: pointer;
+  }
+  .project-switcher-expanded {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    z-index: 100;
+    padding: 20px;
+    width: 375px;
+    height: 575px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  .project-switcher-expanded h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .project-switcher-expanded h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 10px;
+  }
+  .project-switcher-expanded .project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 15px 0px;
+  }
+  .project-switcher-expanded .project-container {
+    text-align: center;
+  }
 
+  .project-switcher-expanded .project-container img {
+    text-align: center;
+  }
+  .project-switcher-expanded .project-container h3 {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 8px;
+  }
 /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/

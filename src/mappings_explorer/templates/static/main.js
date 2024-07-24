@@ -38,6 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
+     * Project Switcher nav toggle
+     */
+
+    document.querySelectorAll('.project-switcher').forEach(el => {
+        el.addEventListener('click', function(event) {
+        event.preventDefault();
+        projectSwitcherToggle();
+        })
+    });
+
+    function projectSwitcherToggle() {
+        document.querySelectorAll('.project-switcher-expanded').forEach(el => {
+            el.classList.toggle('d-none')
+        })
+    }
+    /**
      * Mobile nav toggle
      */
     const mobileNavShow = document.querySelector('.mobile-nav-show');

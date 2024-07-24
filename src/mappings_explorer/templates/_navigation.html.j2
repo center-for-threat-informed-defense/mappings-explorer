@@ -6,9 +6,11 @@
 <a href="{{url_prefix}}" class="logo d-flex align-items-center">
   <img src="{{url_prefix}}static/img/mappings_explorer_header_logo_h60.png" alt="Mappings Explorer" />
 </a>
-
-  <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-  <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+  <div class="mobile-nav-div">
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      {% include "_related_switcher.html.j2" %}
+  </div>
   <nav id="navbar" class="navbar">
     <ul>
       <li class="dropdown"><a href="{{url_prefix}}about/"><span>ABOUT</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -54,6 +56,9 @@
             <img src="{{url_prefix}}static/img/search-white.svg" alt="search" style="height: 20px;" onclick="navSearchWebsite('{{url_prefix}}search/')"/>
           </span>
         </div>
+      </li>
+      <li style="padding-left: 20px;" class="project-switcher-lg">
+       {% include "_related_switcher.html.j2" %}
       </li>
     </ul>
   </nav>
