@@ -1,0 +1,90 @@
+<div id="switcher-component">
+  <Switcher :url_prefix="'{{url_prefix}}'"></Switcher>
+</div>
+
+<script>
+  const Switcher = {
+    template: `
+    <div class="project-switcher">
+        <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
+    </div>
+    <div class="project-switcher-expanded d-none">
+      <h1>CTID PROJECTS</h1>
+        <input
+          type="search"
+          id="ctid-search-input"
+          class="ctid-search-input form-control rounded"
+          placeholder="Search"
+          aria-label="Search"
+        />
+    <div class="project-content">
+      <div class="notification-section">
+        <div v-for="notification in notificationList" class="notification">
+          <img src="{{url_prefix}}static/img/project-logos/bell.svg" />
+          <a class="notif" :href="notification.url" target="_blank">[[notification.text]]</a>
+        </div>
+      </div>
+      <div class="featured projects">
+          <h2>Most Relevant</h2>
+            <div class="project-grid">
+              <template v-for="project in projectList" :key="project">
+              <a v-if="project.featured" class="project-container" :href="project.url" target="_blank">
+                <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
+                <h3>[[project.label]]</h3>
+              </a>
+              </template>
+          </div>
+      </div>
+      <div class="all projects">
+          <h2>All Projects</h2>
+          <div class="project-grid">
+            <div v-for="project in projectList" :key="project">
+              <a v-if="!project.featured" class="project-container" :href="project.url" target="_blank">
+                <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
+                <h3>[[project.label]]</h3>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+  `,
+    delimiters: ["[[", "]]"],
+    data() {
+      return {
+        projectList: {},
+        notificationList: {},
+      };
+    },
+    props: {
+      url_prefix: String,
+    },
+    computed: {
+    },
+    methods: {
+      getProjectList() {
+        project_file = `${this.url_prefix}static/related_projects_src.json`;
+        fetch(project_file)
+          .then((response) => response.json())
+          .then((json) => {
+            this.projectList = json.projects;
+            this.notificationList = json.notifications;
+          });
+      }
+    },
+    watch: {
+    },
+     mounted() {
+      this.getProjectList();
+    },
+  };
+
+  Vue.createApp({
+    components: {
+      Switcher
+    }
+  }).mount("#switcher-component");
+
+</script>
+
+

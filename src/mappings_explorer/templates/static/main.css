@@ -613,10 +613,14 @@ div.banner {
     right: 10px;
     background-color: white;
     z-index: 100;
-    padding: 20px;
+    padding: 40px 20px;
     width: 375px;
-    height: 575px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .project-switcher-expanded .project-content {
+    height: 472px;
+    overflow-y: scroll;
   }
   .project-switcher-expanded h1 {
     font-size: 24px;
@@ -636,17 +640,53 @@ div.banner {
   }
   .project-switcher-expanded .project-container {
     text-align: center;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    display: inline-block;
+    width: 100%;
   }
 
   .project-switcher-expanded .project-container img {
-    text-align: center;
+    text-align: center !important;
+    max-height: 30px;
   }
   .project-switcher-expanded .project-container h3 {
     font-size: 14px;
     font-weight: 400;
     text-align: center;
     margin-top: 8px;
+    color: #0B2338;
   }
+  .project-switcher-expanded .notification {
+    display: flex;
+    background-color: #C2EAF6;
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin: 6px 0px;
+    gap: 8px;
+    width: max-content;
+  }
+  .project-switcher-expanded .notification img {
+    height: 14px;
+    margin: auto 0px;
+  }
+  .project-switcher-expanded .notification a.notif {
+    margin-bottom: 0;
+    margin: auto 0;
+    font-size: 14px;
+    color: #0B2338 !important;
+  }
+
+
+
+
+  .project-switcher-expanded input {
+    color: #0B2338;
+    border: #0B2338 solid 1px;
+
+  }
+
 /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
