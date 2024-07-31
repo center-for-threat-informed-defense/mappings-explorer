@@ -6,10 +6,14 @@
 <a href="{{url_prefix}}" class="logo d-flex align-items-center">
   <img src="{{url_prefix}}static/img/mappings_explorer_header_logo_h60.png" alt="Mappings Explorer" />
 </a>
+  {% include "_related_switcher_content.html.j2" %}
+
   <div class="mobile-nav-div">
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-      {% include "_switcher.html.j2" %}
+    <div class="project-switcher">
+      <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
+    </div>
   </div>
   <nav id="navbar" class="navbar">
     <ul>
@@ -58,7 +62,9 @@
         </div>
       </li>
       <li style="padding-left: 20px;" class="project-switcher-lg">
-       {% include "_related_switcher.html.j2" %}
+        <div class="project-switcher">
+          <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
+        </div>
       </li>
     </ul>
   </nav>

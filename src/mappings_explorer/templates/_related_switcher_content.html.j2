@@ -5,9 +5,6 @@
 <script>
   const Switcher = {
     template: `
-    <div class="project-switcher">
-        <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
-    </div>
     <div class="project-switcher-expanded d-none">
       <h1>CTID PROJECTS</h1>
         <input
@@ -19,10 +16,16 @@
         />
     <div class="project-content">
       <div class="notification-section">
-        <div v-for="notification in notificationList" class="notification">
+        <a v-for="notification in notificationList" :href="notification.url" target="_blank" class="notification">
           <img src="{{url_prefix}}static/img/project-logos/bell.svg" />
-          <a class="notif" :href="notification.url" target="_blank">[[notification.text]]</a>
-        </div>
+          <h3 :href="notification.url" target="_blank">[[notification.text]]</h3>
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="24" viewBox="0 0 30 24" class="fade-up-left">
+            <g id="arrow_forward" transform="translate(6)">
+              <path id="Path_814" data-name="Path 814" d="M0,0H24V24H0Z" fill="none"/>
+              <path id="Path_815" data-name="Path 815" d="M12,4,10.59,5.41,16.17,11H-6v2H16.17l-5.58,5.59L12,20l8-8Z"/>
+            </g>
+          </svg>
+        </a>
       </div>
       <div class="featured projects">
           <h2>Most Relevant</h2>
@@ -38,12 +41,12 @@
       <div class="all projects">
           <h2>All Projects</h2>
           <div class="project-grid">
-            <div v-for="project in projectList" :key="project">
+            <template v-for="project in projectList" :key="project">
               <a v-if="!project.featured" class="project-container" :href="project.url" target="_blank">
                 <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
                 <h3>[[project.label]]</h3>
               </a>
-            </div>
+            </template>
           </div>
       </div>
     </div>
