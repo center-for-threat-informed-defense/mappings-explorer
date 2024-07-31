@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import uuid
 from datetime import datetime, timezone
 
@@ -219,11 +220,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             else None
         )
         # do not add a relationship node for a non-mappable technique
-        if (
-            related_source_ref
-            and related_target_ref
-            and not mapping_type == "non-mappable"
-        ):
+        if related_source_ref and related_target_ref:
             stix_bundle["objects"].append(
                 {
                     "type": "relationship",
@@ -260,6 +257,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             "Invalid STIX generated for {filepath}_json.json",
             filepath=filepath,
         )
+        sys.exit(1)
 
 
 def get_stix_object(parsed_mappings, mapping, created_date):
