@@ -1227,7 +1227,7 @@ def parse_techniques(
     return techniques
 
 
-def parse_non_mappable_techniques(attack_data: dict, techniques: list):
+def parse_unmapped_techniques(attack_data: dict, techniques: list):
     """Create a list of non-mappable objects for all ATT&CK techniques in each version
         Adds all technique objects that do not have mappings associated with them
     Args:
@@ -1237,7 +1237,7 @@ def parse_non_mappable_techniques(attack_data: dict, techniques: list):
     Returns:
         List of technique objects
     """
-    non_mappables = []
+    unmapped = []
     for technique in attack_data:
         if technique["id"] not in [t.id for t in techniques]:
             if technique.get("id")[:2] != "TA":
@@ -1245,8 +1245,8 @@ def parse_non_mappable_techniques(attack_data: dict, techniques: list):
                 t.id = technique["id"]
                 t.label = technique["name"]
                 t.description = technique["description"]
-                non_mappables.append(t)
-    return non_mappables
+                unmapped.append(t)
+    return unmapped
 
 
 def parse_tactics(
@@ -1322,7 +1322,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
     for attack_domain in list(attack_domains.keys()):
         all_techniques = []
         all_tactics = []
-        non_mappables = []
+        unmapped = []
         for attack_version in attack_domains[attack_domain]:
             logger.info(
                 f"Creating pages for ATT&CK {attack_version} {attack_domain}..."
@@ -1343,7 +1343,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
             )
             # non_mappable attack technique tables not currently shown
             # in the website. Waiting for better solution to be worked out
-            non_mappables = parse_non_mappable_techniques(
+            unmapped = parse_unmapped_techniques(
                 attack_data=attack_data,
                 techniques=all_techniques,
             )
@@ -1362,8 +1362,27 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                 techniques=all_techniques,
                 tactics=all_tactics,
                 breadcrumbs=breadcrumbs,
-                non_mappables=non_mappables,
+                non_mappables=unmapped,
             )
+            # Build technique pages that don't have mappings to fix any linking errors
+            for technique in unmapped:
+                external_dir = (
+                    PUBLIC_DIR
+                    / "attack"
+                    / ("attack-" + attack_version)
+                    / ("domain-" + attack_domain.lower())
+                    / "techniques"
+                )
+
+                if technique.id:
+                    build_technique_page(
+                        url_prefix=url_prefix,
+                        parent_dir=external_dir,
+                        attack_version=attack_version,
+                        attack_domain=attack_domain,
+                        technique=technique,
+                        breadcrumbs=breadcrumbs,
+                    )
 
             for technique in all_techniques:
                 external_dir = (

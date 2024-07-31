@@ -5,7 +5,7 @@
     </a>
 {% endmacro %}
 
-{% macro table(headers, mappings, url_prefix, table_max_count, full_link, full_size) %}
+{% macro table(headers, mappings, url_prefix, table_max_count, full_link, full_size, attack_version, attack_domain, previous_link) %}
 <div class="table-responsive table-outer">
 {% if mappings | length > table_max_count %}
 <p class="notice">
@@ -29,6 +29,7 @@
       </tr>
   </thead>
   <tbody>
+  {% if mappings | length > 0 %}
     {%- for mapping in mappings[:table_max_count] %}
       <tr>
         {% for header in headers -%}
@@ -44,6 +45,14 @@
         {% endfor -%}
       </tr>
     {% endfor -%}
+  {% else %}
+    <tr>
+        <td class="text-center" colspan="{{headers | length}}">
+          No mappings found for this technique in ATT&CK {{attack_domain}} version {{attack_version}}. <a href={{previous_link}}>Change versions
+          of ATT&CK</a> or check out a different technique with <a href="{{url_prefix}}attack/matrix/">Matrix View</a>.
+        </td>
+      </tr>
+  {% endif%}
   </tbody>
 </table>
 <script>
