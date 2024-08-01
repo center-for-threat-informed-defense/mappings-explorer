@@ -614,7 +614,7 @@ div.banner {
     background-color: white;
     z-index: 100;
     padding: 40px 20px;
-    width: 375px;
+    width: 400px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
@@ -624,7 +624,6 @@ div.banner {
     overflow-y: scroll;
   }
   .project-switcher-expanded .project-content::-webkit-scrollbar {
-    /* -webkit-appearance: none; */
     background-color: #EFF1F4;
     width: 7px;
   }
@@ -632,15 +631,26 @@ div.banner {
     background-color: #ADAEB1;
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
   }
+  .project-switcher-expanded .heading-div {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+  .project-switcher-expanded .heading-div img {
+   height: 20px;
+   margin: auto 0px;
+  }
   .project-switcher-expanded h1 {
     font-size: 24px;
     font-weight: bold;
+    margin: auto 0px;
   }
   .project-switcher-expanded h2 {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     padding-top: 10px;
+    margin-bottom: 4px;
   }
   .project-switcher-expanded .project-grid {
     display: grid;
@@ -655,13 +665,12 @@ div.banner {
     background-color: inherit;
     display: inline-block;
     width: 100%;
-    /* font-weight: 400; */
   }
 
   .project-switcher-expanded .project-container:hover {
     background-color: #EFF1F4;
-    /* text-decoration: underline; */
-    /* font-weight: bold !important; */
+    border-radius: 5px;
+    transition: 0.5s;
   }
 
   .project-switcher-expanded .project-container img {
@@ -675,16 +684,6 @@ div.banner {
     margin-bottom: 0px;
     color: #0B2338;
   }
-  /* .project-switcher-expanded .notification {
-    display: flex;
-    background-color: #C2EAF6;
-    border-radius: 100px;
-    padding: 6px 16px;
-    margin: 3px 0px;
-    gap: 8px;
-    width: max-content;
-  } */
-
 
   .project-switcher-expanded .notification img {
     height: 14px;
@@ -697,10 +696,6 @@ div.banner {
     color: #0B2338 !important;
   }
 
-  .project-switcher-expanded .notification svg {
-    /* display: none; */
-  }
-
   .project-switcher-expanded .notification {
     display: flex;
     background-color: #C2EAF6;
@@ -709,72 +704,27 @@ div.banner {
     margin: 3px 0px;
     gap: 8px;
     width: max-content;
-    /* transition: 0.5s; */
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    transition: .5s;
   }
   .project-switcher-expanded .notification svg {
     visibility: hidden;
+    opacity: 0;
     height: 14px;
     display: inline;
     margin: auto 0px;
     margin-left: -20px;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    /* transition: 1s; */
-
+    transition: .5s;
   }
   .project-switcher-expanded .notification:hover {
-    background-color: #0096D1;
+    background-color: #62BEE2;
   }
   .project-switcher-expanded .notification:hover svg {
     display: inline;
     visibility: visible;
+    opacity: 1;
     margin-left: 10px;
   }
 
-  /* .project-switcher-expanded .notification {
-    display: flex;
-    background-color: #C2EAF6;
-    border-radius: 100px;
-    padding: 6px 16px;
-    margin: 3px 0px;
-    gap: 8px;
-    width: max-content;
-    transition: 0.5s;
-    will-change: visibility;
-    svg {
-      visibility: hidden;
-      height: 14px;
-      display: inline;
-      margin: auto 0px;
-      margin-left: -20px;
-      transition: .5s;
-      will-change: visibility;
-    }
-    &:hover {
-      background-color: #0096D1;
-    }
-    &:hover svg {
-      display: inline;
-      visibility: visible;
-      margin-left: 10px;
-    }
-  } */
-
-  .project-switcher-expanded .notification:hover:after {
-    /* &svg {
-      display: inline;
-    } */
-    /* content: "->";
-    transition: 0.5s; */
-  }
 
   .project-switcher-expanded input {
     color: #0B2338;
