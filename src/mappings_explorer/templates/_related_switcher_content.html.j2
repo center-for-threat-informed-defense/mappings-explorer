@@ -18,6 +18,8 @@
           class="ctid-search-input form-control rounded"
           placeholder="Search"
           aria-label="Search"
+          v-model="searchModel"
+          aria-describedby="search-addon"
         />
     <div class="project-content">
       <div class="notification-section">
@@ -53,6 +55,7 @@
               </a>
             </template>
           </div>
+          <p class="error-text" v-if="projectList.length<1">No projects found for "[[searchModel]]"</p>
       </div>
     </div>
 </div>
@@ -61,7 +64,9 @@
     data() {
       return {
         projectList: {},
+        fullProjectList: {},
         notificationList: {},
+        searchModel: "",
       };
     },
     props: {
@@ -76,11 +81,16 @@
           .then((response) => response.json())
           .then((json) => {
             this.projectList = json.projects;
+            this.fullProjectList = json.projects;
             this.notificationList = json.notifications;
           });
       }
     },
     watch: {
+      searchModel: function (val) {
+        const filtered = this.fullProjectList.filter(project => project.label.toLowerCase().includes(this.searchModel.toLowerCase()) )
+        this.projectList = filtered
+      }
     },
      mounted() {
       this.getProjectList();
