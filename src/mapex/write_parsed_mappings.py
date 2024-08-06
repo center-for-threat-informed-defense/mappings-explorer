@@ -1,12 +1,14 @@
 import json
 import os
+import sys
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 import pandas as pd
 import requests
 import yaml
 from loguru import logger
+from stix2validator import validate_instance
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
@@ -178,24 +180,28 @@ def write_parsed_mappings_navigator_layer(parsed_mappings, filepath):
 
 
 def write_parsed_mappings_stix(parsed_mappings, filepath):
+    created_date = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     # create bundle
     bundle_uuid = str(uuid.uuid4())
     stix_bundle = {
         "type": "bundle",
         "id": f"bundle--{bundle_uuid}",
         "spec_version": "2.1",
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": created_date,
+        "modified": created_date,
         "objects": [],
     }
     technique_target_dict = load_attack_json(parsed_mappings)
     for mapping in parsed_mappings["mapping_objects"]:
         # create SDO for each capability
-        if not any(
-            stix_object.get("name") == mapping["capability_id"]
-            for stix_object in stix_bundle["objects"]
+        if (
+            not any(
+                stix_object.get("name") == mapping["capability_id"]
+                for stix_object in stix_bundle["objects"]
+            )
+            and mapping["capability_id"]
         ):
-            stix_object = get_stix_object(parsed_mappings, mapping)
+            stix_object = get_stix_object(parsed_mappings, mapping, created_date)
             stix_bundle["objects"].append(stix_object)
 
         # add attack pattern SDO for each technique/subtechnique
@@ -204,7 +210,9 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             stix_object["id"]
             for stix_object in stix_bundle["objects"]
             if stix_object.get("name") == mapping["capability_id"]
-        ][0]
+            and mapping["capability_id"]
+        ]
+        related_target_ref = technique_target_dict.get(mapping["attack_object_id"], "")
 
         # account for None mapping_type on not_mappable items
         mapping_type = (
@@ -212,61 +220,70 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             if mapping["mapping_type"]
             else None
         )
-        stix_bundle["objects"].append(
-            {
-                "type": "relationship",
-                "id": f"relationship--{relationship_uuid}",
-                "spec_version": "2.1",
-                "created": datetime.now().isoformat(),
-                "modified": datetime.now().isoformat(),
-                "relationship_type": mapping_type,
-                "source_ref": related_source_ref,
-                "target_ref": technique_target_dict.get(
-                    mapping["attack_object_id"], ""
-                ),
-            },
+        # do not add a relationship node for a non-mappable technique
+        if related_source_ref and related_target_ref:
+            stix_bundle["objects"].append(
+                {
+                    "type": "relationship",
+                    "id": f"relationship--{relationship_uuid}",
+                    "spec_version": "2.1",
+                    "created": created_date,
+                    "modified": created_date,
+                    "relationship_type": mapping_type,
+                    "source_ref": related_source_ref[0],
+                    "target_ref": related_target_ref,
+                },
+            )
+    # only write to file if stix is valid
+    validation_results = validate_instance(stix_bundle)
+    if validation_results.is_valid:
+        filepath = f"{filepath}_stix"
+        filepath_with_count = filepath
+        counter = 0
+        while os.path.exists(f"{filepath_with_count}.json"):
+            counter += 1
+            filepath_with_count = f"{filepath}_{counter}"
+        stix_file = open(
+            f"{filepath_with_count}.json",
+            "w",
+            encoding="UTF-8",
         )
-    filepath = f"{filepath}_stix"
-    filepath_with_count = filepath
-    counter = 0
-    while os.path.exists(f"{filepath_with_count}.json"):
-        counter += 1
-        filepath_with_count = f"{filepath}_{counter}"
-    stix_file = open(
-        f"{filepath_with_count}.json",
-        "w",
-        encoding="UTF-8",
-    )
-    json.dump(stix_bundle, fp=stix_file)
-    logger.info(
-        "Successfully wrote mappings stix file to {filepath_with_count}.json",
-        filepath_with_count=filepath_with_count,
-    )
+        json.dump(stix_bundle, fp=stix_file)
+        logger.info(
+            "Successfully wrote mappings stix file to {filepath_with_count}.json",
+            filepath_with_count=filepath_with_count,
+        )
+    else:
+        logger.error(
+            "Invalid STIX generated for {filepath}_json.json",
+            filepath=filepath,
+        )
+        sys.exit(1)
 
 
-def get_stix_object(parsed_mappings, mapping):
+def get_stix_object(parsed_mappings, mapping, created_date):
     mapping_framwork = parsed_mappings["metadata"]["mapping_framework"]
     infrastructure_frameworks = ["nist_800_53", "aws", "gcp", "azure", "m365"]
     if mapping_framwork == "cve":
-        return create_vulnerability_object(mapping)
+        return create_vulnerability_object(mapping, created_date)
     elif mapping_framwork in infrastructure_frameworks:
-        return create_infrastructure_object(mapping)
+        return create_infrastructure_object(mapping, created_date)
     elif mapping_framwork == "veris":
-        return create_attack_pattern_object(mapping)
+        return create_attack_pattern_object(mapping, created_date)
     else:
         logger.warning(
             "Cannot create STIX export for mappings with unrecognized mapping framework"
         )
 
 
-def create_vulnerability_object(mapping):
+def create_vulnerability_object(mapping, created_date):
     vulnerability_uuid = str(uuid.uuid4())
     return {
         "type": "vulnerability",
         "id": f"vulnerability--{vulnerability_uuid}",
         "spec_version": "2.1",
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": created_date,
+        "modified": created_date,
         "name": mapping["capability_id"],
         "description": mapping["capability_description"],
         "external_references": [
@@ -279,27 +296,27 @@ def create_vulnerability_object(mapping):
     }
 
 
-def create_infrastructure_object(mapping):
+def create_infrastructure_object(mapping, created_date):
     infrastructure_uuid = str(uuid.uuid4())
     return {
-        "type": "attack-pattern",
+        "type": "infrastructure",
         "spec_version": "2.1",
         "id": f"infrastructure--{infrastructure_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": created_date,
+        "modified": created_date,
     }
 
 
-def create_attack_pattern_object(mapping):
+def create_attack_pattern_object(mapping, created_date):
     attack_pattern_uuid = str(uuid.uuid4())
     return {
         "type": "attack-pattern",
         "spec_version": "2.1",
         "id": f"attack-pattern--{attack_pattern_uuid}",
         "name": mapping["capability_id"],
-        "created": datetime.now().isoformat(),
-        "modified": datetime.now().isoformat(),
+        "created": created_date,
+        "modified": created_date,
     }
 
 
