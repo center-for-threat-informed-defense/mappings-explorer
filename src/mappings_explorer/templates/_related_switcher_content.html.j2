@@ -5,6 +5,7 @@
 <script>
   const Switcher = {
     template: `
+    <link href="{{url_prefix}}static/project-switcher.css" rel="stylesheet"></link>
     <div class="project-switcher-expanded d-none">
       <div class="heading-div">
         <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
@@ -104,5 +105,22 @@
   }).mount("#switcher-component");
 
 </script>
+<script>
+  window.addEventListener('click', ({target}) => {
+      if (target.closest('.project-switcher-expanded')) {
+          // keep modal open
+      } else if (target.closest('.project-switcher')) {
+          document.querySelectorAll('.project-switcher-expanded').forEach(el => {
+              el.classList.toggle('d-none')
+          })
+      }
+      else {
+          document.querySelectorAll('.project-switcher-expanded').forEach(el => {
+              el.classList.add('d-none')
+          })
+      }
+  });
+</script>
+
 
 

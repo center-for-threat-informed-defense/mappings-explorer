@@ -38,25 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Project Switcher nav toggle
-     */
-
-    window.addEventListener('click', ({target}) => {
-        if (target.closest('.project-switcher-expanded')) {
-            // keep modal open
-        } else if (target.closest('.project-switcher')) {
-            document.querySelectorAll('.project-switcher-expanded').forEach(el => {
-                el.classList.toggle('d-none')
-            })
-        }
-        else {
-            document.querySelectorAll('.project-switcher-expanded').forEach(el => {
-                el.classList.add('d-none')
-            })
-        }
-    });
-
-    /**
      * Mobile nav toggle
      */
     const mobileNavShow = document.querySelector('.mobile-nav-show');
