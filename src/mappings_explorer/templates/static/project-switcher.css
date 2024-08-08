@@ -3,15 +3,27 @@
     cursor: pointer;
   }
   .project-switcher-expanded {
-    position: absolute;
+    position: fixed;
     top: 60px;
-    right: 10px;
+    right: 12px;
     background-color: white;
     z-index: 100;
     padding: 40px 20px;
     width: 400px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+  }
+  @media (min-width: 1280px) {
+    .project-switcher-expanded {
+
+        right: calc((100vw - 1140px)/2);
+    }
+  }
+  @media (min-width: 1400px) {
+    .project-switcher-expanded {
+
+        right: calc((100vw - 1320px)/2);
+    }
   }
   .project-switcher-expanded .project-content {
     margin-top: 8px;
