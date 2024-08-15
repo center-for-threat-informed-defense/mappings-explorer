@@ -44,7 +44,8 @@
         <p>Using these three categories, you can create a vulnerability impact description template such as:</p>
         <blockquote>The vulnerability allows the attacker to use <em>[EXPLOITATION TECHNIQUE]</em> to gain <em>[Primary
                 Impact]</em>, which leads to <em>[Secondary Impact]</em>.</blockquote>
-        <img src="{{url_prefix}}static/img/cve_methodology.png" class="img-fluid">
+        <img src="{{url_prefix}}static/img/cve_methodology.png" class="img-fluid"
+        alt="Vulnerability allows exploitation technique which enables impact and leads to secondary impact">
         <p>ATT&CK will not always contain a technique for each of the categories. ATT&CK is written at a higher level of
             abstraction than is often used to describe a vulnerability and ATT&CK requires examples where the technique
             has been used in real-world attacks. For example, the primary impact of a vulnerability may be too low-level
@@ -123,7 +124,8 @@
             vulnerabilities that modify memory (e.g., buffer overflows) share a common primary impact, but the secondary
             impacts and exploitation techniques are so varied that the methodology does not include a mapping for those
             categories.</p>
-        <img src="{{url_prefix}}static/img/cve_example_1.png" class="img-fluid">
+        <img src="{{url_prefix}}static/img/cve_example_1.png" class="img-fluid"
+        alt="Vulnerability allows exploitation technique which enables impact and leads to what?">
         <p>Some groupings will have more than one technique listed for a mapping category because there are common
             variations within that grouping. In these cases, select only the techniques that apply to the vulnerability.
             For example, the cross-site scripting (XSS) vulnerability type includes an option of <a
@@ -159,7 +161,8 @@
                 href="https://attack.mitre.org/techniques/T1190">T1190 Exploit Public-Facing
                 Application</a> the exploitation technique for the vulnerability.</p>
         <p>The description for CVE-2018-17900 can now be re-written using the ATT&CK standard.</p>
-        <img src="{{url_prefix}}static/img/cve_example_2.png" class="img-fluid">
+        <img src="{{url_prefix}}static/img/cve_example_2.png" class="img-fluid"
+        alt="CVE-2018-1790 (Unsecure Credentials) allows T1190 (Exploit Public-Facing Application) which enables T1552 (Unsecured Credentials) and leads to T1078 (Valid Accounts)">
         <blockquote>Yokogawa STARDOM Controllers FCJ, FCN-100, FCN-RTU, FCN-500, All versions R4.10 and prior, have
             Unsecured Credentials which could allow an attacker to gain access to Valid Accounts by Exploiting the
             Public-Facing Application.</blockquote>
