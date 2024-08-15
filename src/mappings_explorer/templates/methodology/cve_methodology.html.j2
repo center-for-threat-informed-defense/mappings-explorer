@@ -181,42 +181,43 @@
             <thead>
                 <tr>
                     <th>Vulnerability Type</th>
+                    <th>Exploitation Technique</th>
                     <th>Primary Impact</th>
                     <th>Secondary Impact</th>
-                    <th>Exploitation Technique</th>
                     <th>Notes</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>General Improper Access Control</td>
-                    <td>See the Functionality Section</a></td>
-                    <td>See the Functionality Section</a></td>
                     <td>N/A</td>
+                    <td>See the Functionality Section</a></td>
+                    <td>See the Functionality Section</a></td>
                     <td>The impacts of authentication, authorization, and permissions errors generally depend on the
                         functionality missing the authentication, authorization or permission.</td>
                 </tr>
                 <tr>
                     <td>Authentication Bypass by Capture-replay</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a>
                     <td><a href="https://attack.mitre.org/techniques/T1190">T1190 Exploit
                             Public-Facing Application</a></td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Improper Restriction of Excessive Authentication Attempts</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110/001">T1110.001 Brute Force: Password
+                            Guessing</a>
                     <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
                     </td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110/001">T1110.001 Brute Force: Password
-                            Guessing</a>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Overly Restrictive Account Lockout Mechanism</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td>
                         <ul>
                             <li>Mobile - <a href="https://attack.mitre.org/techniques/T1446">T1446 Device Lockout</a>
@@ -226,52 +227,52 @@
                         </ul>
                     </td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Use of Password Hash Instead of Password for Authentication</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1550/002">T1550.002 Use Alternate Authentication
                             Material: Pass the Hash</a>
                     </td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>General Credential Management Errors</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
                     </td>
-                    <td>N/A</td>
                     <td>A sub-technique can be chosen where applicable.</td>
                 </tr>
                 <tr>
                     <td>Cleartext Transmission of Sensitive Information</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a>
+                    </td>
                     <td><a href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
-                    </td>
-                    <td><a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a>
                     </td>
                     <td>A sub-technique can be chosen where applicable.</td>
                 </tr>
                 <tr>
                     <td>Hard-coded Credentials</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1078/001">T1078.001 Default Accounts</a></td>
                     <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1078/001">T1078.001 Default Accounts</a></td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Weak Password/Hashing</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
                     </td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>General Cryptographic Issues</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td>
                         <ul>
                             <li>Credential storage or transmission – <a
@@ -283,39 +284,35 @@
                         </ul>
                     </td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>XML External Entity (XXE)</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>.
                     </td>
                     <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
                             href="https://attack.mitre.org/techniques/T1046">T1046 Network Service Discovery</a></td>
-                    <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>XML Entity Expansion (XEE)</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint</a>
                         Denial of Service: Application or System Exploitation)</td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>URL Redirection to Untrusted Site ('Open Redirect')</td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1036">T1036 Masquerading</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1566/002">T1566.002 Phishing: Spearphishing
                             Link</a></td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1036">T1036 Masquerading</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Cross-site Scripting (XSS)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059/007">T1059.007 Command and Scripting
-                            Interpreter: JavaScript</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1557">T1557 Adversary-in-the-Browser</a></td>
                     <td>
                         <ul>
                             <li>Stored – <a href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by
@@ -324,19 +321,23 @@
                                     Execution: Malicious Link</a></li>
                         </ul>
                     </td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059/007">T1059.007 Command and Scripting
+                            Interpreter: JavaScript</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1557">T1557 Adversary-in-the-Browser</a></td>
                     <td>There are lots of possible secondary impacts but most of them can be summed up by
                         Adversary-in-the-Browser.</td>
                 </tr>
                 <tr>
                     <td>OS Command Injection</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
                     </td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
                     <td>Primary depends on the OS being attacked but is often T1059.004.</td>
                 </tr>
                 <tr>
                     <td>SQL Injection</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
                     </td>
                     <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
@@ -346,98 +347,97 @@
                         <a href="https://attack.mitre.org/techniques/T1565/001">T1565.001
                             Data Manipulation: Stored Data Manipulation</a>
                     </td>
-                    <td>N/A</td>
                     <td>There currently is not a sub-technique for SQL commands. Not all possible secondary impacts are
                         listed and not all secondary impacts will always apply.</td>
                 </tr>
                 <tr>
                     <td>Code Injection</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
                     </td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td>A sub-technique can be used depending on the type of injection.</td>
                 </tr>
                 <tr>
                     <td>Directory Traversal (Relative and Absolute)</td>
-                    <td>See the Functionality Section File Processing</a></td>
-                    <td>See the Functionality Section File Processing</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1202">T1202 Indirect Command Execution</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
                     <td>Indirect command execution is used here because the vulnerable application is being used to as a
                         proxy to execute the file handling commands.</td>
                 </tr>
                 <tr>
                     <td>Symlink Attacks</td>
-                    <td>See the Functionality Section File Processing</a></td>
-                    <td>See the Functionality Section File Processing</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1202">T1202 Indirect Command Execution</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
                     <td>Indirect command execution is used here because the vulnerable application is being used to as a
                         proxy to execute the file handling commands.</td>
                 </tr>
                 <tr>
                     <td>Untrusted/Uncontrolled/Unquoted Search Path</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a></td>
                     <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a></td>
                     <td>N/A</td>
                     <td>A sub-technique can be chosen where appropriate.</td>
                 </tr>
                 <tr>
                     <td>Unrestricted File Upload</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1505/003">T1505.003 Server Software Component: Web
                             Shell</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
                     </td>
-                    <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Deserialization of Untrusted Data</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
                     </td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Infinite Loop</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
                             Application or System Exploitation</a></td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Cross-site Request Forgery (CSRF)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious
+                            Link</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1068">T1068 Exploitation for Privilege
                             Escalation</a></td>
                     <td>Depends on the functionality the vulnerability gives access to. See the <a
                             href="/center-for-threat-informed-defense/attack_to_cve/blob/master/methodology.md#functionality">Functionality
                             Section</a> for guidance on which techniques are appropriate.</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious
-                            Link</a></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Session Fixation</td>
+                    <td>N/A</td>
                     <td><a href="https://attack.mitre.org/techniques/T1563">T1563 Remote Service Session Hijacking</a>
                     </td>
-                    <td>N/A</td>
                     <td>N/A</td>
                     <td>Often can be used for Initial Access.</td>
                 </tr>
                 <tr>
                     <td>Uncontrolled Resource Consumption</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1499">T1499 Endpoint Denial of Service</a></td>
                     <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1499">T1499 Endpoint Denial of Service</a></td>
                     <td>N/A</td>
                     <td>A sub-technique may be chosen depending on the type of resource being consumed</td>
                 </tr>
                 <tr>
                     <td>Server-Side Request Forgery (SSRF)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1090">T1090 Proxy</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1135">T1135 Network Share Discovery</a>, <a
                             href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
                     <td>Tactic/Technique mismatch for the primary impact.</td>
                 </tr>
             </tbody>
