@@ -5,11 +5,13 @@
 <script>
   const Switcher = {
     template: `
-    <link href="{{url_prefix}}static/project-switcher.css" rel="stylesheet"></link>
     <div>
-    <p>project switcher</p>
+        <RelatedProjectSwitcherVue currentProjectId="mappings_explorer" theme="dark"/>
     </div>
   `,
+    components: {
+      RelatedProjectSwitcherVue: () => import (`../static/vendor/project-switcher/project-switcher.js`)
+    },
     delimiters: ["[[", "]]"],
     data() {
       return {
@@ -18,6 +20,9 @@
         notificationList: {},
         searchModel: "",
       };
+    },
+    props: {
+      url_prefix: String,
     },
   };
   Vue.createApp({
