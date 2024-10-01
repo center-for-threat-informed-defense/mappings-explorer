@@ -6,13 +6,14 @@
 <a href="{{url_prefix}}" class="logo d-flex align-items-center">
   <img src="{{url_prefix}}static/img/mappings_explorer_header_logo_h60.png" alt="Mappings Explorer" />
 </a>
-  <div class="mobile-nav-div">
+  <div class="mobile-nav-div" style="margin-left: auto;">
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <div class="project-switcher">
+    {#<div class="project-switcher">
       <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
-    </div>
+    </div>#}
   </div>
+  <div style="display: flex">
   <nav id="navbar" class="navbar">
     <ul>
       <li class="dropdown"><a href="{{url_prefix}}about/"><span>ABOUT</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -59,13 +60,17 @@
           </span>
         </div>
       </li>
-      <li style="padding-left: 10px;" class="project-switcher-lg">
+      {# <li style="padding-left: 10px;" class="project-switcher-lg">
         <div class="project-switcher">
           <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
         </div>
-      </li>
+      </li> #}
     </ul>
   </nav>
+  <div class="project-switcher">
+    <img src="{{url_prefix}}static/img/project-logos/related.svg" style="height: 40px; margin:auto;" alt="" />
+  </div>
+  </div>
 </div>
 <script>
   function navSearchWebsite(url) {

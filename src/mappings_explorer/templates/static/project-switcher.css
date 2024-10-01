@@ -42,6 +42,7 @@
     display: flex;
     gap: 10px;
     padding-bottom: 8px;
+    margin-top: 10px;
   }
   .project-switcher-expanded .heading-div img {
    height: 20px;
@@ -64,6 +65,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 0px;
     margin: 15px 0px;
+    margin-top: 5px;
   }
   .project-switcher-expanded .project-container {
     text-align: center;
@@ -119,7 +121,8 @@
     height: 14px;
     display: inline;
     margin: auto 0px;
-    margin-left: -20px;
+    margin-left: -10px;
+    width: 0px;
     transition: .5s;
   }
   .project-switcher-expanded .notification:hover {
@@ -130,6 +133,7 @@
     visibility: visible;
     opacity: 1;
     margin-left: 10px;
+    width: auto;
   }
   .project-switcher-expanded .error-text {
     font-style: italic;
@@ -139,5 +143,4 @@
   .project-switcher-expanded input {
     color: #0B2338;
     border: #0B2338 solid 1px;
-
   }

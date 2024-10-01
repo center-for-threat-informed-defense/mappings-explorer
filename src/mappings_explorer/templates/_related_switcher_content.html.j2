@@ -34,22 +34,27 @@
           </svg>
         </a>
       </div>
-      <div class="featured projects">
-          <h2>Most Relevant</h2>
-            <div class="project-grid">
-              <template v-for="project in projectList" :key="project">
-              <a v-if="project.featured" class="project-container" :href="project.url" target="_blank">
-                <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
-                <h3>[[project.label]]</h3>
-              </a>
-              </template>
-          </div>
-      </div>
+      <template v-if="currentProjectObj.featured_list">
+        <div class="featured projects">
+            <h2>Most Relevant</h2>
+              <div class="project-grid">
+                <template v-for="project in projectList" :key="project">
+                  <a v-if="currentProjectObj.featured_list.find(id => id === project.id)"
+                  class="project-container" :href="project.url" target="_blank">
+                    <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
+                    <h3>[[project.label]]</h3>
+                  </a>
+                </template>
+            </div>
+        </div>
+      </template>
+
       <div class="all projects">
           <h2>All Projects</h2>
           <div class="project-grid">
             <template v-for="project in projectList" :key="project">
-              <a v-if="!project.featured" class="project-container" :href="project.url" target="_blank">
+              <a v-if="!currentProjectObj.featured_list.find(id => id === project.id) && project.id !== currentProjectId"
+               class="project-container" :href="project.url" target="_blank">
                 <img :src="url_prefix + 'static/img/project-logos/' + project.imgsrc" alt="" />
                 <h3>[[project.label]]</h3>
               </a>
@@ -63,6 +68,8 @@
     delimiters: ["[[", "]]"],
     data() {
       return {
+        currentProjectId: "mappings_explorer",
+        currentProjectObj:{},
         projectList: {},
         fullProjectList: {},
         notificationList: {},
@@ -83,6 +90,7 @@
             this.projectList = json.projects;
             this.fullProjectList = json.projects;
             this.notificationList = json.notifications;
+            this.currentProjectObj = this.fullProjectList.find(p => p.id === this.currentProjectId)
           });
       }
     },
