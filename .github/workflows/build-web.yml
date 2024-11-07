@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
-        run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
+        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorerhed.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
       - name: Compress Artifacts
