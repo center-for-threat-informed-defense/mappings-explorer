@@ -96,6 +96,8 @@ all_attack_versions = [
     # "13.1",
     # "14.0",
     "14.1",
+    # "15.0",
+    "15.1",
 ]
 
 attack_domains = {
@@ -114,6 +116,8 @@ attack_domains = {
         # "13.1",
         # "14.0",
         "14.1",
+        # "15.0",
+        "15.1",
     ],
     "ICS": [
         "8.2",
@@ -130,6 +134,8 @@ attack_domains = {
         # "13.1",
         # "14.0",
         # "14.1",
+        # "15.0",
+        # "15.1",
     ],
     "Mobile": [
         "8.2",
@@ -146,6 +152,8 @@ attack_domains = {
         # "13.1",
         # "14.0",
         # "14.1",
+        # "15.0",
+        # "15.1",
     ],
 }
 
@@ -384,7 +392,38 @@ def load_projects():
         }
     }
     m365.has_non_mappable_comments = False
-    projects = [nist, cve, veris, azure, gcp, aws, m365]
+
+    hed = ExternalControl()
+    hed.id = "hed"
+    hed.label = "Hardware-Enabled Defense"
+    hed.description = """Microsoft 365 (M365) is a widely used Software as a Service
+        (SaaS) product family of productivity software, collaboration, and cloud-based
+        services. This project maps the security controls native to M365 product areas
+        to MITRE ATT&CK® providing resources to assess how to protect, detect, and
+        respond to real-world threats as described in the ATT&CK knowledge base."""
+
+    hed.attackDomains = ["Enterprise"]
+    hed.attackDomain = hed.attackDomains[0]
+    hed.attackVersions = ["15.1"]
+    hed.attackVersion = hed.attackVersions[0]
+    hed.versions = ["08.20.24"]
+    hed.validVersions = [
+        ("08.20.24", "15.1", "Enterprise"),
+    ]
+    hed.mappings = []
+    hed.resources = [
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
+        {
+            "link": "https://www.cisecurity.org/benchmark/microsoft_365",
+            "label": "CIS Microsoft 365 Benchmark (External link)",
+        },
+    ]
+    hed.has_non_mappable_comments = False
+
+    projects = [hed, nist, cve, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -1698,6 +1737,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         "13.1",
         "14.0",
         "14.1",
+        "15.0",
+        "15.1"
     ]
 
     attack_domain_versions_with_mappings = {}
@@ -1731,6 +1772,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "15.0",
+            "15.1",
         ],
         "ICS": [
             "8.2",
@@ -1747,6 +1790,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "15.0",
+            "15.1",
         ],
         "Mobile": [
             "8.2",
@@ -1760,6 +1805,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "15.0",
+            "15.1",
         ],
     }
 
@@ -1798,6 +1845,7 @@ def getIndexPages():
             or "/gcp/" in str(mappings_file)
             or "/cve/" in str(mappings_file)
             or "/m365/" in str(mappings_file)
+            or "/hed/" in str(mappings_file)
         )
         if (
             project_name_in_filepath
