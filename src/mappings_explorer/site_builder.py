@@ -404,11 +404,11 @@ def load_projects():
 
     hed.attackDomains = ["Enterprise"]
     hed.attackDomain = hed.attackDomains[0]
-    hed.attackVersions = ["15.1"]
+    hed.attackVersions = ["14.1"]
     hed.attackVersion = hed.attackVersions[0]
     hed.versions = ["08.20.24"]
     hed.validVersions = [
-        ("08.20.24", "15.1", "Enterprise"),
+        ("08.20.24", "14.1", "Enterprise"),
     ]
     hed.mappings = []
     hed.resources = [
