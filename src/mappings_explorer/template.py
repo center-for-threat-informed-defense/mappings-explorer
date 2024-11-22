@@ -93,7 +93,9 @@ def format_cell_value(id, value):
     if id == "comments":
         return value.strip()
     elif id == "references":
-        links = "".join([f'<li><a href="{x}">{x}</a></li>' for x in value])
+        links = "".join(
+            [f'<li><a href="{x}" target="_blank">{x}</a></li>' for x in value]
+        )
         return f"<ol>{links}</ol>"
     else:
         return value
