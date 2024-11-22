@@ -24,7 +24,7 @@
   <thead>
     <tr>
         {%- for header in headers %}
-            <th id={{id}} data-field={{header[0]}} data-sortable="true">{{header[1]}}</th>
+            <th id={{id}} data-field={{header[1]}} data-sortable="true">{{header[2]}}</th>
         {% endfor %}
       </tr>
   </thead>
@@ -33,14 +33,26 @@
     {%- for mapping in mappings[:table_max_count] %}
       <tr>
         {% for header in headers -%}
-            {%- if header[2] and header[3] -%}
-                <td><a href="{{header[3]}}{{mapping[header[2]] | replace(' ', '_') }}/">{{mapping[header[0]]}}</a></td>
-            {% endif -%}
-            {%- if header[2] and not header[3] -%}
-                <td><a href="{{mapping | build_capability_url(url_prefix, mapping[header[2]])}}">{{mapping[header[0]]}}</a></td>
-            {% endif -%}
-            {%- if not header[2] -%}
-                <td>{{mapping[header[0]]}}</td>
+            {%- if header[0] == ":tooltip:" -%}
+              <td class="center-tooltip">
+                <div class="info-tooltip">
+                  <span>{{ header[1] | format_cell_value(mapping[header[1]]) | safe }}</span>
+                </div>
+              </td>
+            {%- elif header[0] == ":pfx_link:" -%}
+              <td>
+                <a href="{{header[4]}}{{mapping[header[3]] | replace(' ', '_') }}/">
+                  {{ header[1] | format_cell_value(mapping[header[1]]) }}
+                </a>
+              </td>
+            {%- elif header[0] == ":link:" -%}
+              <td>
+                <a href="{{mapping | build_capability_url(url_prefix, mapping[header[3]])}}">
+                  {{ header[1] | format_cell_value(mapping[header[1]]) }}
+                </a>
+              </td>
+            {%- elif header[0] == ":text:" -%}
+              <td>{{ header[1] | format_cell_value(mapping[header[1]]) }}</td>
             {% endif -%}
         {% endfor -%}
       </tr>

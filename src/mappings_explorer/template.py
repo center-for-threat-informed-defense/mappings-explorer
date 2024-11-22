@@ -77,3 +77,26 @@ def data_size(value):
 
 
 _environment.filters["data_size"] = data_size
+
+
+def format_cell_value(id, value):
+    """
+    Formats table cell's value.
+
+    Args:
+        id; the column's identifier
+        value: the cell's value.
+
+    Returns:
+        A human-friendly string.
+    """
+    if id == "comments":
+        return value.strip()
+    elif id == "references":
+        links = "".join([f'<li><a href="{x}">{x}</a></li>' for x in value])
+        return f"<ol>{links}</ol>"
+    else:
+        return value
+
+
+_environment.filters["format_cell_value"] = format_cell_value

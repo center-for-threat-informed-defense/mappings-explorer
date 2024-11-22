@@ -3373,3 +3373,41 @@ section#methodology-overview h3,
 .mapping-projects-section.row {
   justify-content: center;
 }
+
+/*--------------------------------------------------------------
+# Mapping Capability ToolTip
+--------------------------------------------------------------*/
+.info-tooltip {
+  position: relative;
+  background-image: url(../static/img/info.svg);
+  background-size: contain;
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+
+.info-tooltip span {
+  position: absolute;
+  top: 22px;
+  right: 2px;
+  width: max-content;
+  max-width: 500px;
+  white-space: break-spaces;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  display: none;
+  z-index: 9;
+}
+
+.info-tooltip:hover span {
+  display: block;
+}
+
+.info-tooltip dl,
+.info-tooltip ol,
+.info-tooltip ul {
+  margin: 0px;
+}

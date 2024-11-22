@@ -844,30 +844,70 @@ def build_external_landing(
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
     capability_group_prefix = f"{external_prefix}capability-groups/"
     headers = [
-        ("capability_id", "Capability ID", "capability_id", external_prefix),
         (
+            ":pfx_link:",
+            "capability_id",
+            "Capability ID",
+            "capability_id",
+            external_prefix,
+        ),
+        (
+            ":pfx_link:",
             "capability_description",
             "Capability Description",
             "capability_id",
             external_prefix,
         ),
-        ("mapping_type", "Mapping Type"),
-        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
+        (":text:", "mapping_type", "Mapping Type"),
+        (
+            ":pfx_link:",
+            "attack_object_id",
+            "ATT&CK ID",
+            "attack_object_id",
+            attack_prefix,
+        ),
+        (
+            ":pfx_link:",
+            "attack_object_name",
+            "ATT&CK Name",
+            "attack_object_id",
+            attack_prefix,
+        ),
+        (":tooltip:", "comments", "Info"),
+        (":tooltip:", "references", "Sources"),
     ]
     if project.id == "azure" or project.id == "aws" or project.id == "gcp":
         headers = [
-            ("capability_id", "Capability ID", "capability_id", external_prefix),
             (
+                ":pfx_link:",
+                "capability_id",
+                "Capability ID",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link:",
                 "capability_description",
                 "Capability Description",
                 "capability_id",
                 external_prefix,
             ),
-            ("score_category", "Category"),
-            ("score_value", "Value"),
-            ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-            ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
+            (":text:", "score_category", "Category"),
+            (":text:", "score_value", "Value"),
+            (
+                ":pfx_link:",
+                "attack_object_id",
+                "ATT&CK ID",
+                "attack_object_id",
+                attack_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "attack_object_name",
+                "ATT&CK Name",
+                "attack_object_id",
+                attack_prefix,
+            ),
         ]
 
     # Resolve additional download artifacts
@@ -878,20 +918,27 @@ def build_external_landing(
             additional_artifacts = project_artifacts[attack_version]
 
     capability_group_headers = [
-        ("id", "ID", "id", capability_group_prefix),
-        ("label", "Capability Group Name", "id", capability_group_prefix),
-        ("num_mappings", "Number of Mappings"),
-        ("num_capabilities", "Number of Capabilities"),
+        (":pfx_link:", "id", "ID", "id", capability_group_prefix),
+        (":pfx_link:", "label", "Capability Group Name", "id", capability_group_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
+        (":text:", "num_capabilities", "Number of Capabilities"),
     ]
     non_mappable_headers = [
-        ("id", "Capability ID"),
-        ("label", "Capability Description"),
+        (":text:", "id", "Capability ID"),
+        (":text:", "label", "Capability Description"),
     ]
 
     if project.has_non_mappable_comments:
         non_mappable_headers = [
-            ("id", "Capability ID", "id", external_prefix),
-            ("label", "Capability Description", "id", external_prefix),
+            (":pfx_link:", "id", "id", "Capability ID", "id", external_prefix),
+            (
+                ":pfx_link:",
+                "id",
+                "label",
+                "Capability Description",
+                "id",
+                external_prefix,
+            ),
         ]
 
     project_id = project.id
@@ -970,9 +1017,9 @@ def build_external_landing(
         attack_domain=attack_domain,
     )
     capability_group_headers = [
-        ("id", "Capability ID", "id", external_prefix),
-        ("label", "Capability Name", "id", external_prefix),
-        ("num_mappings", "Number of Mappings"),
+        (":pfx_link:", "id", "Capability ID", "id", external_prefix),
+        (":pfx_link:", "label", "Capability Name", "id", external_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
     ]
     capability_group_dir = domain_dir / "capability-groups"
     previous_link = external_prefix
@@ -1488,9 +1535,9 @@ def build_technique_page(
         f"domain-{attack_domain.lower()}/techniques/"
     )
     technique_headers = [
-        ("id", "Technique ID", "id", attack_prefix),
-        ("label", "Technique Name", "id", attack_prefix),
-        ("num_mappings", "Number of Mappings"),
+        (":pfx_link:", "id", "Technique ID", "id", attack_prefix),
+        (":pfx_link:", "label", "Technique Name", "id", attack_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
     ]
     nav = breadcrumbs + [
         (f"{attack_prefix}", "ATT&CK Techniques"),
@@ -1500,15 +1547,28 @@ def build_technique_page(
         ),
     ]
     headers = [
-        ("capability_id", "Capability ID", "capability_id"),
+        (":link:", "capability_id", "Capability ID", "capability_id"),
         (
+            ":link:",
             "capability_description",
             "Capability Description",
             "capability_id",
         ),
-        ("mapping_type", "Mapping Type"),
-        ("attack_object_id", "ATT&CK ID", "attack_object_id", attack_prefix),
-        ("attack_object_name", "ATT&CK Name", "attack_object_id", attack_prefix),
+        (":text:", "mapping_type", "Mapping Type"),
+        (
+            ":pfx_link:",
+            "attack_object_id",
+            "ATT&CK ID",
+            "attack_object_id",
+            attack_prefix,
+        ),
+        (
+            ":pfx_link:",
+            "attack_object_name",
+            "ATT&CK Name",
+            "attack_object_id",
+            attack_prefix,
+        ),
     ]
     dir = parent_dir / technique.id
     dir.mkdir(parents=True, exist_ok=True)
@@ -1566,10 +1626,10 @@ def build_tactic_page(
     attack_prefix += "techniques/"
 
     headers = [
-        ("id", "Technique ID", "id", attack_prefix),
-        ("label", "Technique Name", "id", attack_prefix),
-        ("num_mappings", "Number of Mappings"),
-        ("num_subtechniques", "Number of Subtechniques"),
+        (":pfx_link:", "id", "Technique ID", "id", attack_prefix),
+        (":pfx_link:", "label", "Technique Name", "id", attack_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
+        (":text:", "num_subtechniques", "Number of Subtechniques"),
     ]
 
     dir = parent_dir / tactic.id
@@ -1622,14 +1682,14 @@ def build_technique_landing_page(
         f"domain-{attack_domain.lower()}/techniques/"
     )
     headers = [
-        ("id", "ATT&CK ID", "id", attack_prefix),
-        ("label", "ATT&CK Name", "id", attack_prefix),
-        ("num_mappings", "Number of Mappings"),
-        ("num_subtechniques", "Number of Subtechniques"),
+        (":pfx_link:", "id", "ATT&CK ID", "id", attack_prefix),
+        (":pfx_link:", "label", "ATT&CK Name", "id", attack_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
+        (":text:", "num_subtechniques", "Number of Subtechniques"),
     ]
     non_mappable_headers = [
-        ("id", "ATT&CK ID"),
-        ("label", "ATT&CK Name"),
+        (":text:", "id", "ATT&CK ID"),
+        (":text:", "label", "ATT&CK Name"),
         # ("description", "Description"),
     ]
     description = """Techniques represent 'how' an adversary achieves a tactical goal by
@@ -1678,9 +1738,9 @@ def build_technique_landing_page(
         f"domain-{attack_domain.lower()}/tactics/"
     )
     headers = [
-        ("id", "ATT&CK ID", "id", attack_prefix),
-        ("label", "ATT&CK Name", "id", attack_prefix),
-        ("num_techniques", "Number of Techniques"),
+        (":pfx_link:", "id", "ATT&CK ID", "id", attack_prefix),
+        (":pfx_link:", "label", "ATT&CK Name", "id", attack_prefix),
+        (":text:", "num_techniques", "Number of Techniques"),
     ]
     dir = parent_dir / "tactics"
     dir.mkdir(parents=True, exist_ok=True)
@@ -1738,7 +1798,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         "14.0",
         "14.1",
         "15.0",
-        "15.1"
+        "15.1",
     ]
 
     attack_domain_versions_with_mappings = {}
