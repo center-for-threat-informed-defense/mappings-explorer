@@ -521,7 +521,7 @@ def parse_capability_groups(
             "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    if project.id == "nist" or project.id == "cve":
+    if project.id == "nist" or project.id == "cve" or project.id == "hed":
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
         # descriptions as well
@@ -621,6 +621,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "NIST_800-53"
     elif project.id == "cve":
         folder_name = DATA_DIR
+    elif project.id == "hed":
+        folder_name = DATA_DIR / "SecurityStack" / "HED"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
