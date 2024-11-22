@@ -34,10 +34,12 @@
       <tr>
         {% for header in headers -%}
             {%- if header[0] == ":tooltip:" -%}
-              <td class="center-tooltip">
+              <td>
+                {%- if mapping[header[1]] -%}
                 <div class="info-tooltip">
                   <span>{{ header[1] | format_cell_value(mapping[header[1]]) | safe }}</span>
                 </div>
+                {% endif -%}
               </td>
             {%- elif header[0] == ":pfx_link:" -%}
               <td>
