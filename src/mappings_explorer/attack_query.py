@@ -289,6 +289,7 @@ def add_background_colors(attack_version_data):
         "azure": "Azure",
         "m365": "M365",
         "intel-vpro": "Intel vPro",
+        "kev": "Known Exploited Vulnerabilities",
     }
     max_score = 0
     min_score = 100000

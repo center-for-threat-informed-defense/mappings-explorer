@@ -427,7 +427,37 @@ def load_projects():
     ]
     intel_vpro.has_non_mappable_comments = False
 
-    projects = [intel_vpro, nist, cve, veris, azure, gcp, aws, m365]
+    kev = ExternalControl()
+    kev.id = "kev"
+    kev.label = "KEV"
+    kev.description = """Microsoft 365 (M365) is a widely used Software as a Service
+        (SaaS) product family of productivity software, collaboration, and cloud-based
+        services. This project maps the security controls native to M365 product areas
+        to MITRE ATT&CK® providing resources to assess how to protect, detect, and
+        respond to real-world threats as described in the ATT&CK knowledge base."""
+
+    kev.attackDomains = ["Enterprise"]
+    kev.attackDomain = kev.attackDomains[0]
+    kev.attackVersions = ["15.1"]
+    kev.attackVersion = kev.attackVersions[0]
+    kev.versions = ["09.10.2024"]
+    kev.validVersions = [
+        ("09.10.2024", "15.1", "Enterprise"),
+    ]
+    kev.mappings = []
+    kev.resources = [
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        },
+        {
+            "link": "https://www.cisecurity.org/benchmark/microsoft_365",
+            "label": "CIS Microsoft 365 Benchmark (External link)",
+        },
+    ]
+    kev.has_non_mappable_comments = False
+
+    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 

@@ -270,7 +270,7 @@ def get_stix_object(parsed_mappings, mapping, created_date):
         "m365",
         "intel-vpro",
     ]
-    if mapping_framwork == "cve":
+    if mapping_framwork == "cve" or mapping_framwork == "kev":
         return create_vulnerability_object(mapping, created_date)
     elif mapping_framwork in infrastructure_frameworks:
         return create_infrastructure_object(mapping, created_date)
