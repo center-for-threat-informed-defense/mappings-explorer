@@ -114,6 +114,7 @@ attack_domains = {
         # "13.1",
         # "14.0",
         "14.1",
+        "16.0"
     ],
     "ICS": [
         "8.2",
@@ -276,10 +277,11 @@ def load_projects():
         """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
-    aws.attackVersions = ["9.0"]
-    aws.versions = ["09.21.2021"]
+    aws.attackVersions = ["16.0", "9.0"]
+    aws.versions = ["12.12.2024", "09.21.2021"]
     aws.validVersions = [
         ("09.21.2021", "9.0", "Enterprise"),
+        ("12.12.2024", "16.0", "Enterprise"),
     ]
     aws.mappings = []
     aws.resources = [
@@ -384,7 +386,8 @@ def load_projects():
         }
     }
     m365.has_non_mappable_comments = False
-    projects = [nist, cve, veris, azure, gcp, aws, m365]
+    # projects = [nist, cve, veris, azure, gcp, aws, m365]
+    projects = [aws]
     return projects
 
 
@@ -728,6 +731,7 @@ def parse_capabilities(
             for m in mappings
             if (m["capability_id"] == id) and m["status"] == "non_mappable"
         ]
+        print(capability_non_mappables)
         capability_not_mappable = (
             len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
         )
@@ -1731,6 +1735,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0"
         ],
         "ICS": [
             "8.2",
@@ -1747,6 +1752,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0"
         ],
         "Mobile": [
             "8.2",
@@ -1760,6 +1766,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0"
         ],
     }
 
