@@ -731,7 +731,6 @@ def parse_capabilities(
             for m in mappings
             if (m["capability_id"] == id) and m["status"] == "non_mappable"
         ]
-        print(capability_non_mappables)
         capability_not_mappable = (
             len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
         )
