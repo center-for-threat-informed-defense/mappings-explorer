@@ -114,6 +114,8 @@ attack_domains = {
         # "13.1",
         # "14.0",
         "14.1",
+        # "16.0",
+        "16.1"
     ],
     "ICS": [
         "8.2",
@@ -276,10 +278,11 @@ def load_projects():
         """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
-    aws.attackVersions = ["9.0"]
-    aws.versions = ["09.21.2021"]
+    aws.attackVersions = ["16.1", "9.0"]
+    aws.versions = ["12.12.2024", "09.21.2021"]
     aws.validVersions = [
         ("09.21.2021", "9.0", "Enterprise"),
+        ("12.12.2024", "16.1", "Enterprise"),
     ]
     aws.mappings = []
     aws.resources = [
@@ -1731,6 +1734,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0",
+            "16.1"
         ],
         "ICS": [
             "8.2",
@@ -1747,6 +1752,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0",
+            "16.1"
         ],
         "Mobile": [
             "8.2",
@@ -1760,6 +1767,8 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "13.1",
             "14.0",
             "14.1",
+            "16.0",
+            "16.1"
         ],
     }
 
