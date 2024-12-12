@@ -1,66 +1,26 @@
 [
     {
-        "id": "INT-HEED-CRWD-FalconHeed",
-        "description": "<p>HEED integrates Intel® Processor Trace (Intel® PT) CPU telemetry to extend memory safety protections for coded injection techniques.  Intel CET delivers CPU lock-down capabilities on modern PCs. Together these capabilities help prevent attacks from redirecting the control flow of a program.</p>\n"
+        "id": "intel-pt",
+        "description": "<p>CrowdStrike's Hardware Enhanced Exploit Detection (HEED) is an advanced security feature that integrates Intel® Processor Trace (Intel® PT) technology to provide a higher level of visibility into complex attack techniques. By utilizing CPU telemetry, HEED enhances the real-time detection and analysis of sophisticated exploitation methods, particularly those involving coded injection attacks. These attacks often target software vulnerabilities in remote services, enabling adversaries to gain unauthorized access to internal systems.</p>\n"
     },
     {
-        "id": "INTPTT-INTVTX-INTVTD-INTBG-INTCET-WIN11-HWESP",
-        "description": "<p>HW Enforced stack protection (HWESP) relies on HVCI (Hypervisor Code Integrity) aka Virtualization Based Security which use Intel PTT, Intel VT-x, Intel VT-d and Intel BootGuard to ensure the OS components loaded are not tampered with. Additionally, it uses Intel Control Flow Enforcement Technology (Intel CET) to allow hardware to check that sensitive areas in the regions of memory (such as the stack) for processes are not tampered with by either injecting code or changing the control flow of the code or both.</p>\n"
+        "id": "intel-aes-ni",
+        "description": "<p>BitLocker uses TPM (Intel PTT) to save the volume encryption keys for full disk encryption (FDE), Intel AES-NI to accelerate the encryption/decryption process, and Intel BootGuard to ensure operating system components are not compromised during boot. BitLocker also adds pre-boot authentication to access the encryption keys used for FDE.</p>\n"
     },
     {
-        "id": "INTPTT-INTVTX-INTVTD-INTBG-INTISSR-WIN11-VBS-MI",
-        "description": "<p>Hypervisor-protected code integrity (HVCI) is the same as Memory Integrity with Virtualization-Based Security (VBS). This feature used to be called Device Guard. The isolated environment that allows for trusted execution is enabled by Intel VT-x, VT-x2 with Extended Page Tables, SMMUs (Intel VT-d), TPM 2.0 (Intel PTT), Windows SMM (Intel System Security Report), UEFI Secure Memory Overwrite Request (MOR) v2 (Intel PTT), Secure Boot (Intel Boot Guard), Hyper-V (Intel VT-x).</p>\n"
+        "id": "intel-txt",
+        "description": "<p>Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.</p>\n"
     },
     {
-        "id": "INTNX-WIN11-DEP",
-        "description": "<p>Data Execution Prevention (DEP) makes use of the Intel NX bit which helps implement the W XOR X or W ^ X memory access policy that marks memory pages exclusively either for writing or for execution but not both.</p>\n"
+        "id": "intel-ptt",
+        "description": "<p>The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.</p>\n"
     },
     {
-        "id": "INTPTT-INTAESNI-INTSK-INTBG-WIN11-BL",
-        "description": "<p>BitLocker uses Intel PTT (TPM 2.0) to save the volume encryption keys, Intel AES-NI to accelerate the encryption/decryption process, and Intel BootGuard to ensure operating system components are not compromised during boot.</p>\n"
+        "id": "intel-vt",
+        "description": "<p>Memory Integrity (MI) is a feature of Virtualization based Security (VBS) or Hypervisor-protected code integrity (HVCI) which provides an isolated environment that acts as a root-of-trust for the OS and its core components. It is enabled by Intel VT-x, VT-x2 with Extended Page Tables, SMMUs (Intel VT-d), TPM 2.0 (Intel PTT), and Secure Boot (Intel Boot Guard).</p>\n"
     },
     {
-        "id": "INTPTT-INTAESNI-INTSK-INTBG-WIN11-PDE",
-        "description": "<p>Windows 11 Personal Data Encryption uses Intel PTT (TPM), Intel AES-NI, Intel BootGuard to ensure operating system components are not compromised until the Windows Sign-in screen at which point Windows Hello for Business is used in conjunction with Microsoft Entra to authenticate the user and open the container with the encryption keys used to secure the user's personal data. Bitlocker features are used to then encrypt or decrypt that data utilizing those keys.</p>\n"
-    },
-    {
-        "id": "INTPTT-INTBG-WIN11-SB",
-        "description": "<p>Windows Secure Boot checks the UEFI firmware signature and checks whether the OS bootloader is signed before loading the operating system.</p>\n"
-    },
-    {
-        "id": "INTPTT-INTBG-INTVTX-WIN11-LSAPP",
-        "description": "<p>The LSA Process Protection mechanism requires UEFI Secure MOR v2 Protection (uses Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x).</p>\n"
-    },
-    {
-        "id": "INT-PTT-TXT-SG",
-        "description": "<p>System Guard leverages Intel's PTT and TXT provide secure methods to boot a system and verify the integrity of the operating system and loading mechanisms. Dynamic Root of Trust for Measurement (DRTM), DRTM lets the system freely boot into untrusted code initially, but shortly after launches the system into a trusted state by taking control of all CPUs and forcing them down a well-known and measured code path. This has the benefit of allowing untrusted early code to boot the system, but then being able to securely transition into a trusted and measured state. The ability to transition in real-time to a secure state justified the score of significant from untrustworthy code (e.g., bootkit, rootkit, firmware corruption, etc.).</p>\n"
-    },
-    {
-        "id": "INTPTT-INTVTX-INTBG-INTISSR-WIN11-CG",
-        "description": "<p>Credential Guard uses Intel PTT, Intel VT-x and Intel Boot Guard to protect the LSASS process and domain credentials used by it in Windows.</p>\n"
-    },
-    {
-        "id": "INTPTT-INTVTX-INTVTD-INTBG-INTISSR-WIN11-VBS-EN",
-        "description": "<p>The isolated environment for applications that run sensitive compute loads leverages Virtualization Enabled Security (VBS) that allows for trusted execution utilizes hardware features such as Intel VT-x, VT-x2 with Extended Page Tables, SMMUs (Intel VT-d), TPM 2.0 (Intel PTT), Secure Boot (Intel Boot Guard), Hyper-V (Intel VT-x).</p>\n"
-    },
-    {
-        "id": "INTPTT-INTVTX-INTVTD-INTBG-WIN11-VDBL",
-        "description": "<p>The Vulnerable Driver Blocklist uses Virtualization Based Security (VBS) Memory Integrity feature or HVCI, which in turn rely on Intel PTT, Intel VT-x, Intel VT-d and Intel BootGuard to create an isolated virtual environment for the kernel such that attacks from vulnerable drivers are prevented. It uses a deny list approach along with code signing checks to ensure vulnerable drivers are not modified and to prevent attacks against them.</p>\n"
-    },
-    {
-        "id": "INTPTT-INTVTX-INTVTD-INTVTRP-INTBG-INTISSR-WIN11-KDP",
-        "description": "<p>Windows Kernel Data Protection uses VBS (Intel PTT, Intel VT-x, Intel VT-d, Intel VT-rp, Intel ISSR and Intel BootGuard) to protect Kernel data structures and OS drivers from tampering.</p>\n"
-    },
-    {
-        "id": "INT-TDT-CRWD-AMS",
-        "description": "<p>CrowdStrike and Intel have co-engineered an advanced memory scanning (AMS) capability based on Intel Threat Detection Technology.</p>\n"
-    },
-    {
-        "id": "INT-TDT-Win11-DefAV",
-        "description": "<p>Intel TDT uses platform telemetry in the CPU to help profile exploits for behavioral detection. Windows 11 Defender Antivirus uses Intel® Threat Detection Technology (Intel® TDT) to help rapidly detect and respond to these threats.</p>\n"
-    },
-    {
-        "id": "INTPTT-INTVTX-INTVTIO-WIN11-Hello-ESS",
-        "description": "<p>Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated.</p>\n"
+        "id": "intel-tdt",
+        "description": "<p>Intel® Threat Detection Technology (TDT) with CrowdStrike's Accelerated Memory Scanning (AMS) provides security capabilities to enhance cybersecurity defenses. This dynamic solution improves CrowdStrike's Next-Generation Antivirus (NGAV) by enabling the detection of cyber threats earlier in the kill chain and in real time, with minimal impact on system performance.</p>\n"
     }
 ]
