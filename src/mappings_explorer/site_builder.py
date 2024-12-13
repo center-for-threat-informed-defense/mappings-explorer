@@ -415,11 +415,7 @@ def load_projects():
         {
             "link": "about/methodology/ssm-methodology/",
             "label": "Security Stack Mapping Methodology",
-        },
-        {
-            "link": "https://www.cisecurity.org/benchmark/microsoft_365",
-            "label": "CIS Microsoft 365 Benchmark (External link)",
-        },
+        }
     ]
     hed.has_non_mappable_comments = False
 
