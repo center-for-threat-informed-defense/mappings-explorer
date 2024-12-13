@@ -393,33 +393,33 @@ def load_projects():
     }
     m365.has_non_mappable_comments = False
 
-    hed = ExternalControl()
-    hed.id = "hed"
-    hed.label = "Hardware-Enabled Defense"
-    hed.description = """Microsoft 365 (M365) is a widely used Software as a Service
+    intel_vpro = ExternalControl()
+    intel_vpro.id = "intel-vpro"
+    intel_vpro.label = "Intel vPro"
+    intel_vpro.description = """Microsoft 365 (M365) is a widely used Software as a Service
         (SaaS) product family of productivity software, collaboration, and cloud-based
         services. This project maps the security controls native to M365 product areas
         to MITRE ATT&CK® providing resources to assess how to protect, detect, and
         respond to real-world threats as described in the ATT&CK knowledge base."""
 
-    hed.attackDomains = ["Enterprise"]
-    hed.attackDomain = hed.attackDomains[0]
-    hed.attackVersions = ["15.1"]
-    hed.attackVersion = hed.attackVersions[0]
-    hed.versions = ["08.20.2024"]
-    hed.validVersions = [
+    intel_vpro.attackDomains = ["Enterprise"]
+    intel_vpro.attackDomain = intel_vpro.attackDomains[0]
+    intel_vpro.attackVersions = ["15.1"]
+    intel_vpro.attackVersion = intel_vpro.attackVersions[0]
+    intel_vpro.versions = ["08.20.2024"]
+    intel_vpro.validVersions = [
         ("08.20.2024", "15.1", "Enterprise"),
     ]
-    hed.mappings = []
-    hed.resources = [
+    intel_vpro.mappings = []
+    intel_vpro.resources = [
         {
             "link": "about/methodology/ssm-methodology/",
             "label": "Security Stack Mapping Methodology",
         }
     ]
-    hed.has_non_mappable_comments = False
+    intel_vpro.has_non_mappable_comments = False
 
-    projects = [hed, nist, cve, veris, azure, gcp, aws, m365]
+    projects = [intel_vpro, nist, cve, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -517,7 +517,7 @@ def parse_capability_groups(
             "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    if project.id == "nist" or project.id == "cve" or project.id == "hed":
+    if project.id == "nist" or project.id == "cve" or project.id == "intel-vpro":
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
         # descriptions as well
@@ -617,8 +617,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "NIST_800-53"
     elif project.id == "cve":
         folder_name = DATA_DIR
-    elif project.id == "hed":
-        folder_name = DATA_DIR / "SecurityStack" / "HED"
+    elif project.id == "intel-vpro":
+        folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
@@ -871,14 +871,12 @@ def build_external_landing(
             "attack_object_id",
             attack_prefix,
         ),
-        (":tooltip:", "comments", "Info"),
-        (":tooltip:", "references", "Sources"),
     ]
     if (
         project.id == "azure"
         or project.id == "aws"
         or project.id == "gcp"
-        or project.id == "hed"
+        or project.id == "intel-vpro"
     ):
         headers = [
             (
@@ -911,6 +909,8 @@ def build_external_landing(
                 "attack_object_id",
                 attack_prefix,
             ),
+            (":tooltip:", "comments", "Info"),
+            (":tooltip:", "references", "Sources"),
         ]
 
     # Resolve additional download artifacts
@@ -1908,7 +1908,7 @@ def getIndexPages():
             or "/gcp/" in str(mappings_file)
             or "/cve/" in str(mappings_file)
             or "/m365/" in str(mappings_file)
-            or "/hed/" in str(mappings_file)
+            or "/intel-vpro/" in str(mappings_file)
         )
         if (
             project_name_in_filepath
