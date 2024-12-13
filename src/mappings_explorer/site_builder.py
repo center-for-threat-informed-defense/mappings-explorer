@@ -878,7 +878,12 @@ def build_external_landing(
         (":tooltip:", "comments", "Info"),
         (":tooltip:", "references", "Sources"),
     ]
-    if project.id == "azure" or project.id == "aws" or project.id == "gcp":
+    if (
+        project.id == "azure"
+        or project.id == "aws"
+        or project.id == "gcp"
+        or project.id == "hed"
+    ):
         headers = [
             (
                 ":pfx_link:",
