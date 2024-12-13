@@ -135,7 +135,7 @@ attack_domains = {
         # "14.0",
         # "14.1",
         # "15.0",
-        # "15.1",
+        "15.1",
     ],
     "Mobile": [
         "8.2",
@@ -153,7 +153,7 @@ attack_domains = {
         # "14.0",
         # "14.1",
         # "15.0",
-        # "15.1",
+        "15.1",
     ],
 }
 
@@ -404,11 +404,11 @@ def load_projects():
 
     hed.attackDomains = ["Enterprise"]
     hed.attackDomain = hed.attackDomains[0]
-    hed.attackVersions = ["14.1"]
+    hed.attackVersions = ["15.1"]
     hed.attackVersion = hed.attackVersions[0]
     hed.versions = ["08.20.2024"]
     hed.validVersions = [
-        ("08.20.2024", "14.1", "Enterprise"),
+        ("08.20.2024", "15.1", "Enterprise"),
     ]
     hed.mappings = []
     hed.resources = [
