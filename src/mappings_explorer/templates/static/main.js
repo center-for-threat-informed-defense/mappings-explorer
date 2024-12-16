@@ -204,4 +204,89 @@ document.addEventListener('DOMContentLoaded', () => {
       aos_init();
     });
 
+
+
+
   });
+
+
+/**
+ * Opens a table's info box.
+ * @remarks
+ *  This function is a bit of a hack meant to work around present limitations
+ *  in the chosen table library (Bootstrap).
+ * @param {HTMLElement} el
+ *  The invoking HTML element.
+ */
+function openInfoBox(el) {
+  // Assign id to button if one is not already assigned
+  if(!el.hasAttribute("id")) {
+    const _id = crypto.randomUUID().substring(0, 8);
+    el.setAttribute("id", `cell-${ _id }`);
+  }
+  const id = el.getAttribute("id");
+  // Select <tr>
+  let tr = el;
+  while(tr && tr.tagName !== "TR") {
+    tr = tr.parentElement;
+  }
+  // Select info box
+  let tdInfoBox;
+  let trInfoBox = tr.nextSibling;
+  // If content collapsed...
+  if(el.children.length === 0) {
+    // Remove active class from button
+    el.classList.remove("active");
+    // Select info box
+    if(!trInfoBox || !trInfoBox.classList.contains("info-box")) {
+      throw new Error("Cannot locate info box!");
+    }
+    tdInfoBox = trInfoBox.children[0];
+    // Select for content
+    let content = tdInfoBox.children;
+    for(let child of tdInfoBox.children) {
+      if(child.getAttribute("id") === id) {
+        content = child;
+        break;
+      }
+    }
+    if(!content) {
+      throw new Error("Cannot locate content!");
+    }
+    // Move content back
+    el.appendChild(content);
+    // Destroy info box, if empty
+    if(tdInfoBox.children.length === 0) {
+      trInfoBox.remove();
+    }
+    return;
+  }
+  // If content un-collapsed...
+  if(el.children.length === 1) {
+    // Assign active class to button
+    el.classList.add("active");
+    // Select content
+    const content = el.children[0];
+    if(!content.classList.contains("info-box-content")) {
+      throw new Error("Cannot locate content!");
+    }
+    // Apply id to content
+    content.setAttribute("id", id);
+    // Create info box, if none
+    if(!trInfoBox || !trInfoBox.classList.contains("info-box")) {
+      tdInfoBox = document.createElement("td");
+      tdInfoBox.setAttribute("colspan", "100%");
+      trInfoBox = document.createElement("tr");
+      trInfoBox.classList.add("info-box");
+      trInfoBox.appendChild(tdInfoBox);
+      tr.after(trInfoBox);
+    } else {
+      tdInfoBox = trInfoBox.children[0];
+    }
+    // Insert content
+    tdInfoBox.append(content);
+    return;
+  }
+  // Otherwise...
+  throw new Error("Invalid info box state!")
+}

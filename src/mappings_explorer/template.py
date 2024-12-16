@@ -102,3 +102,20 @@ def format_cell_value(id, value):
 
 
 _environment.filters["format_cell_value"] = format_cell_value
+
+
+def enable_info_box(info_box_headers, mapping=None):
+    if mapping is None:
+        return info_box_headers is not None and 0 < len(info_box_headers)
+    show = False
+    for header in info_box_headers:
+        if header[0] in mapping:
+            value = mapping[header[0]]
+            if isinstance(value, str):
+                show = show or value != ""
+            if isinstance(value, list):
+                show = show or 0 < len(value)
+    return show
+
+
+_environment.globals.update(enable_info_box=enable_info_box)

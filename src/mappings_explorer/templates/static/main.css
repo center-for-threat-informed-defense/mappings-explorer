@@ -3375,39 +3375,64 @@ section#methodology-overview h3,
 }
 
 /*--------------------------------------------------------------
-# Mapping Capability ToolTip
+# Mapping Capability Info Box
 --------------------------------------------------------------*/
-.info-tooltip {
+.info-box-open {
   position: relative;
-  background-image: url(../static/img/info.svg);
+  background-image: url(../static/img/add.svg);
   background-size: contain;
   display: block;
   position: relative;
   height: 20px;
   width: 20px;
   margin: auto;
+  cursor: pointer;
 }
 
-.info-tooltip span {
-  position: absolute;
-  top: 20px;
-  right: 2px;
-  width: max-content;
-  max-width: 500px;
-  white-space: break-spaces;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--color-primary);
+.info-box-open.active {
+  background-image: url(../static/img/remove.svg);
+  background-size: contain;
+}
+
+.info-box-open * {
   display: none;
-  z-index: 9;
 }
 
-.info-tooltip:hover span {
-  display: block;
+.info-box {
+  white-space: break-spaces;
 }
 
-.info-tooltip dl,
-.info-tooltip ol,
-.info-tooltip ul {
+.table-hover>tbody>tr.info-box:hover>* {
+  --bs-table-color-state: null;
+  --bs-table-bg-state: null;
+}
+
+.info-box td {
+  background: #eff1f4;
+}
+
+.info-box-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.info-box-content .title {
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 12px 0px;
+}
+
+.info-box-content .title:first-child {
+  margin-top: 0px;
+}
+
+.info-box-content .body {
+  margin: 0px;
+}
+
+.info-box-content dl,
+.info-box-content ol,
+.info-box-content ul {
   margin: 0px;
 }
