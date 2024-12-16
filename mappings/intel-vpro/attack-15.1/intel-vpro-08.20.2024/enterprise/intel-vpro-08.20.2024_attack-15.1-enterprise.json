@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "mapping_version": "1.0.0",
+        "mapping_version": "`1.0.0",
         "technology_domain": "enterprise",
         "attack_version": "15.1",
         "mapping_framework": "intel-vpro",
@@ -838,7 +838,7 @@
             "capability_group": "identity",
             "score_category": "protect",
             "score_value": "partial",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -858,7 +858,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1547",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\r\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -878,7 +878,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1547",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\r\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -898,7 +898,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1547",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\r\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -917,7 +917,7 @@
             "capability_group": "identity",
             "score_category": "protect",
             "score_value": "partial",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -936,7 +936,7 @@
             "capability_group": "identity",
             "score_category": "protect",
             "score_value": "partial",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -956,7 +956,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1003",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\r\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -976,7 +976,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1003",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\r\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\r\n\r\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -996,7 +996,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1003",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -1015,7 +1015,7 @@
             "capability_group": "identity",
             "score_category": "protect",
             "score_value": "partial",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -1035,7 +1035,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1056",
-            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.\n",
+            "comments": "The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.\n\nLSAPPL feature uses the TPM and Secure Boot to ensure that LSASS runs as a protected process and it is never turned off, checks that plugins and drivers for LSA are signed by Microsoft, and uses virtualization based security (HVCI uses Intel VT-x) to isolate the process and prevent code injection attacks against the security sensitive process.",
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/",
                 "https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/credentials-protection-and-management",
@@ -2231,11 +2231,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT) with CrowdStrike's Accelerated Memory Scanning (AMS) provides security capabilities to enhance cybersecurity defenses. This dynamic solution improves CrowdStrike's Next-Generation Antivirus (NGAV) by enabling the detection of cyber threats earlier in the kill chain and in real time, with minimal impact on system performance.\n\nExploits targeting authentication mechanisms, such as those using stolen credentials or bypassing traditional authentication processes, are common tactics for gaining unauthorized access to systems. Intel® TDT plays a crucial role by providing deep, real-time detection on program execution, memory access, and control flow at the hardware level. This data helps security teams detect abnormal behaviors, such as suspicious authentication attempts or unauthorized interactions that could indicate misuse of alternate authentication material.\n\nIn addition, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity. By combining Intel® TDT’s  with AMS’s memory scanning capabilities, this solution provides powerful defense against evasive exploits that attempt to abuse alternate authentication material, enhancing the protection of critical systems from advanced cyber threats.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2253,11 +2250,8 @@
             "related_score": "T1550",
             "comments": "Intel® Threat Detection Technology (TDT) combined with CrowdStrike's Accelerated  Memory Scanning (AMS) enhances cybersecurity defenses by enabling faster, real-time detection of Pass-the-Ticket (PTT) attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system impact.\n\nPass-the-Ticket (PTT) attacks involve attackers stealing and reusing Kerberos authentication tickets to gain unauthorized access to network resources. These attacks bypass traditional authentication mechanisms, making them a powerful tool for lateral movement within a network. Intel® TDT plays a critical role in identifying these threats by providing deep, real-time detection of program execution, memory access, and control flow at the hardware level. This telemetry allows security teams to quickly detect abnormal behaviors, such as suspicious use of Kerberos tickets or unauthorized interactions with authentication processes, which are indicative of PTT activity.\n\nAdditionally, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster, more efficient detection of malicious activity without compromising system performance. AMS is capable of identifying and preventing suspicious behavior, such as the running of executables masquerading as legitimate files, or the execution of potentially malicious code involved in PTT attacks.\n\nBy combining Intel® TDT’s real-time telemetry with AMS’s advanced memory scanning capabilities, this solution provides a powerful defense against evasive Pass-the-Ticket attacks.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2274,11 +2268,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Application Layer Protocol (ALP) attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nApplication Layer Protocol (ALP) attacks exploit vulnerabilities in protocols like HTTP, HTTPS, DNS, or SMB to manipulate network traffic or gain unauthorized access to systems. Intel® TDT plays a crucial role in identifying these attacks by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal behaviors within application protocols that could signal an ongoing attack.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, including code execution that targets application layer protocols or masquerades as legitimate processes.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2295,11 +2286,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of data encoding attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nData encoding attacks involve adversaries using techniques like base64 or other encoding methods to obfuscate malicious payloads or bypass security controls. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate encoded payloads or attempts to hide malicious activity.\n\nAMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, including encoded data execution or payloads attempting to masquerade as legitimate processes.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2317,11 +2305,8 @@
             "related_score": "T1059",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Windows Command Shell exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nWindows Command Shell exploits often involve adversaries using command-line interfaces (such as PowerShell or cmd.exe) to execute unauthorized commands, often bypassing traditional security controls. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate misuse of command shell functionality for malicious purposes.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as unauthorized command execution or attempts to exploit the Windows Command Shell for executing malicious code.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2339,10 +2324,8 @@
             "related_score": "T1134",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of \"Create Process with Token\" exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\n\"Create Process with Token\" exploits involve adversaries using the Windows API to create a process under the security context of another user, often leveraging stolen credentials or escalated privileges to execute malicious code. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate misuse of the “Create Process” API for unauthorized actions.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as the creation of unauthorized processes or attempts to misuse the “Create Process” function to bypass security controls and execute malicious code.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2359,10 +2342,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of \"Access Token Manipulation\" exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\n\"Create Process\" exploits involve adversaries using the Windows API to create a process under the security context of another user, often leveraging stolen credentials or escalated privileges to execute malicious code. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate misuse of the “Create Process” API for unauthorized actions.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as the creation of unauthorized processes or attempts for token manipulation that function to bypass security controls and execute malicious code.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2380,10 +2361,8 @@
             "related_score": "T1547",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Registry Run Key exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nRegistry Run Key exploits involve adversaries modifying the Windows registry, specifically adding malicious entries to auto-start processes upon system boot or user login. These attacks often enable persistence and are used to execute malicious code every time a system restarts, bypassing traditional security mechanisms. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate unauthorized changes to registry keys.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as unauthorized modifications to registry run keys or attempts to bypass security controls by executing malicious code during system startup.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2401,10 +2380,8 @@
             "related_score": "T1070",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of file deletion exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nFile deletion exploits involve adversaries using malicious techniques to delete critical files or system components, often to disrupt operations or cover their tracks after executing an attack. These actions may include removing logs, system configurations, or other files vital to the operation of security defenses. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate unauthorized file deletion actions.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as attempts to delete critical files or cover up traces of malicious activity, providing a proactive defense against attackers trying to evade detection through file manipulation.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2424,7 +2401,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2441,10 +2417,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of data staged attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nData staged attacks involve adversaries preparing stolen data or malicious payloads on a system, often in hidden or obfuscated locations, in anticipation of later exfiltration or execution. These attacks typically involve the collection, compression, or movement of data to make it easier to exfiltrate or deploy at a later stage, while avoiding detection by security tools. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors, such as suspicious file movements or data manipulation that could indicate data staging or preparation for exfiltration.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as the unauthorized preparation or obfuscation of data for exfiltration, providing proactive defense against evasive data staging techniques.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2463,7 +2437,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2483,7 +2456,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2503,7 +2475,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2521,10 +2492,8 @@
             "related_score": "T1056",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Keylogging exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nKeylogging attacks involve adversaries deploying malicious software that records keystrokes to capture sensitive information such as passwords, credit card numbers, and other private data. These attacks can run stealthily in the background, often evading detection by traditional security tools. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors, such as suspicious processes or unusual interactions with keyboard input buffers, which are indicative of keylogging activity.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized monitoring of keystrokes or attempts to exfiltrate captured data, providing proactive defense against evasive keylogging technique",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2541,10 +2510,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Input Capture exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nInput Capture attacks involve adversaries using malicious software to intercept or record user inputs, such as keystrokes, mouse clicks, or other device interactions. These attacks are often used to steal sensitive data, such as login credentials, personal information, or other private data. The captured input can then be exfiltrated or used for further exploitation. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that may indicate the interception of user input or manipulation of input devices.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as unauthorized monitoring or logging of user inputs, providing proactive defense against evasive input capture techniques.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2561,10 +2528,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Clipboard Data exploits. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nClipboard Data attacks involve adversaries gaining unauthorized access to the contents of the clipboard, often to steal sensitive information such as passwords, credit card details, or other personal data. These attacks exploit the clipboard functionality to extract or manipulate data copied by the user, and can be used to harvest information for further exploitation or exfiltration. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors, such as unauthorized access or modification of clipboard data.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, allowing for faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized reading or modification of clipboard contents, providing proactive defense against these stealthy data theft techniques.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2581,10 +2546,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of OS Credential Dumping exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nOS Credential Dumping attacks involve adversaries extracting and harvesting credentials (such as usernames and passwords) from an operating system’s memory or other storage locations. These credentials can then be used for lateral movement within the network, escalating privileges, or exfiltrating sensitive data. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling the detection of abnormal behaviors that indicate unauthorized credential access or attempts to dump sensitive information from memory.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, enabling faster and more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized credential extraction or memory dumping activities, providing proactive defense against these stealthy techniques used by attackers to gain access to critical systems.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2602,10 +2565,8 @@
             "related_score": "T1003",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated  Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Security Account Manager (SAM) Credential Dumping exploits. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nSAM Credential Dumping attacks involve adversaries targeting the Security Account Manager (SAM) database, which stores user account information and password hashes. Attackers use tools and techniques to dump this sensitive data from the system’s memory, enabling them to extract account credentials, escalate privileges, or move laterally within the network. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, allowing the detection of abnormal behaviors that signal unauthorized access to the SAM or attempts to extract user credentials from the system.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized access to the SAM database or credential dumping attempts, providing proactive defense against these stealthy techniques used by attackers to gain access to critical systems.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2621,12 +2582,10 @@
             "score_category": "detect",
             "score_value": "significant",
             "related_score": "T1543",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Windows Services Abuse\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Windows Services abuse. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nWindows Services abuse involves adversaries leveraging Windows services to maintain persistence, escalate privileges, or execute malicious code without detection. Attackers may exploit vulnerabilities in system services or misconfigurations to inject malicious code, modify service configurations, or elevate privileges. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, allowing the detection of abnormal behaviors that could indicate misuse of Windows services for malicious purposes.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized service modifications, service injection attempts, or privilege escalation via Windows services, providing proactive defense against these evasive techniques used by attackers to compromise critical systems.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Windows Services Abuse\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Windows Services abuse. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nWindows Services abuse involves adversaries leveraging Windows services to maintain persistence, escalate privileges, or execute malicious code without detection. Attackers may exploit vulnerabilities in system services or misconfigurations to inject malicious code, modify service configurations, or elevate privileges. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, allowing the detection of abnormal behaviors that could indicate misuse of Windows services for malicious purposes.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized service modifications, service injection attempts, or privilege escalation via Windows services, providing proactive defense against these evasive techniques used by attackers to compromise critical systems.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2643,10 +2602,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of \"Create or Modify System Process\" attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), allowing it to detect and mitigate cyber threats earlier in the kill chain while minimizing system performance impact.\n\n\"Create or Modify System Process\" attacks involve adversaries creating new processes or modifying existing system processes to execute malicious code, escalate privileges, or maintain persistence within the system. Attackers often exploit system vulnerabilities, misconfigurations, or weak security controls to alter process behaviors and bypass security defenses. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, allowing for rapid detection of abnormal behaviors that could indicate the creation or manipulation of system processes for malicious purposes.\n\nAdditionally, AMS offloads memory scanning tasks from the CPU to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as unauthorized process creation or modifications to critical system processes, providing proactive defense against attacks designed to compromise or manipulate essential system functions.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2663,10 +2620,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Data from Local System Exfiltration attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nData from Local System Exfiltration attacks involve adversaries attempting to steal sensitive data from local systems, often bypassing traditional security mechanisms to move files or information outside of the organization’s network. These attacks typically target stored data on endpoint devices, including user files, credentials, or other critical assets, and move it to unauthorized locations, such as external servers or cloud storage. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors indicative of data being transferred or copied from local systems.\n\nAdditionally, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized file transfers, abnormal data movement, or processes involved in data exfiltration, providing proactive defense against these evasive techniques and ensuring the protection of critical data from theft or leakage.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2683,10 +2638,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Automated Collection attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nAutomated Collection attacks involve adversaries using automated tools or scripts to systematically gather sensitive data from local systems, such as documents, credentials, or other valuable information. These attacks are often designed to collect large volumes of data without alerting security systems, preparing it for exfiltration or malicious use. Intel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, allowing security teams to quickly detect unusual patterns of data collection or manipulation that could indicate an ongoing attack.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as unauthorized collection of data or the use of automated tools to extract sensitive information, providing proactive defense against these stealthy techniques. This solution ensures that organizations can detect and mitigate automated collection attempts before sensitive data is compromised.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2702,12 +2655,10 @@
             "score_category": "detect",
             "score_value": "significant",
             "related_score": "T1036",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Right-to-Left Override Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Right-to-Left Override (RTLO) attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nRight-to-Left Override (RTLO) attacks exploit character encoding to manipulate the way text is displayed, often used to trick users into executing malicious files or to bypass security filters. In these attacks, attackers use the RTLO control character to reverse the visual display of text, such as making a file appear harmless by misleading the user about its true extension. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors, such as attempts to manipulate file names or execute commands through deceptive displays.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as the use of RTLO to obfuscate filenames or payloads that would otherwise be flagged by security systems, providing proactive defense against this evasive technique. This solution ensures that organizations can detect and prevent RTLO attacks before they successfully deceive users or bypass security measures.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Right-to-Left Override Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Right-to-Left Override (RTLO) attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nRight-to-Left Override (RTLO) attacks exploit character encoding to manipulate the way text is displayed, often used to trick users into executing malicious files or to bypass security filters. In these attacks, attackers use the RTLO control character to reverse the visual display of text, such as making a file appear harmless by misleading the user about its true extension. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors, such as attempts to manipulate file names or execute commands through deceptive displays.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as the use of RTLO to obfuscate filenames or payloads that would otherwise be flagged by security systems, providing proactive defense against this evasive technique. This solution ensures that organizations can detect and prevent RTLO attacks before they successfully deceive users or bypass security measures.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2724,10 +2675,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of masquerading attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nMasquerading attacks involve adversaries manipulating the appearance of files, processes, or system behaviors to make them appear legitimate, thereby evading detection by security tools and tricking users or administrators. Attackers commonly use masquerading techniques to disguise malicious files as trusted system files or applications. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow. This allows security teams to detect abnormal behaviors, such as suspicious processes, file names, or interactions that suggest a malicious actor is attempting to mask their activity.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors, such as files or processes that masquerade as legitimate system operations or applications, providing proactive defense against these evasive techniques.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2744,10 +2693,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of brute force attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nBrute force attacks involve adversaries attempting to gain unauthorized access to systems by systematically guessing passwords or encryption keys. These attacks often involve high volumes of login attempts or other forms of credential stuffing, exploiting weak or reused passwords. Intel® TDT plays a key role in identifying these attacks by providing real-time telemetry on program execution, memory access, and control flow, enabling security teams to detect abnormal behaviors such as unusually high login attempts, suspicious API calls, or rapid access attempts that may indicate brute force activity.\n\nAdditionally, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as repeated login failures, dictionary attacks, or other signs of brute force methods used to bypass security defenses.\n\nBy leveraging Intel® TDT and AMS's combined capabilities, organizations can detect and stop brute force attacks more efficiently, strengthening their defenses against unauthorized access and reducing the risk of compromise from credential-based threats.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2764,10 +2711,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of remote system discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nRemote system discovery attacks involve adversaries scanning networks to identify and map out systems, devices, and services that can be exploited for further compromise. Attackers use tools and techniques to probe remote systems, gathering information about network shares, open ports, running services, and active hosts. Intel® TDT plays a critical role in detecting these types of activities by providing real-time telemetry on program execution, memory access, and control flow, allowing security teams to quickly spot abnormal behaviors like unauthorized network scans, service discovery attempts, or unusual API calls related to system enumeration.\n\nAdditionally, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors, such as unauthorized scanning processes or attempts to interact with remote systems for reconnaissance purposes.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2784,10 +2729,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of non-application layer protocol attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nNon-application layer protocol attacks involve adversaries exploiting lower-level protocols (such as TCP, UDP, ICMP, or others) to interact directly with network services, bypassing the traditional application layer defenses. These attacks are often used for network reconnaissance, denial-of-service (DoS), or to exploit vulnerabilities in network infrastructure, without interacting with application-level protocols like HTTP, HTTPS, or FTP. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate malicious activity in these non-application layer protocols.\n\nAdditionally, AMS offloads the performance-intensive task of memory scanning from the CPU to the Intel® Integrated GPU, ensuring faster, more efficient detection of malicious activity without impacting system performance. AMS helps identify suspicious behaviors such as unauthorized network interactions, unusual traffic patterns, or attempts to exploit vulnerabilities in non-application layer protocols, providing proactive defense against these low-level network-based attacks.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2804,10 +2747,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of exfiltration over Command and Control (C2) channels. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nExfiltration over C2 involves adversaries using a Command and Control (C2) infrastructure to stealthily send sensitive data from compromised systems to an external server. This type of data exfiltration is often encrypted or obfuscated to avoid detection, and it may occur through various C2 protocols such as HTTP, DNS, or custom protocols. Intel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors that could indicate data being siphoned through C2 channels.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activity without degrading system performance. AMS helps identify suspicious behaviors such as unauthorized data transfers, unusual network connections, or attempts to evade security controls during data exfiltration via C2 channels, providing proactive defense against these covert data theft techniques.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2826,7 +2767,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2841,11 +2781,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Data Encrypted for Impact Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Data Encrypted for Impact attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nData Encrypted for Impact refers to the tactic used by adversaries to encrypt data or communication with the intent to cause operational disruption, evade detection, or increase the impact of a cyberattack. This can involve encrypting sensitive files to prevent access or exfiltration, or using encryption as a means to disguise malicious payloads, making it harder for security systems to detect or analyze the malicious data. Ransomware attacks, where data is encrypted and held hostage for a ransom, are a prime example of this tactic.\n\nIntel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow. This detailed telemetry helps security teams quickly detect suspicious behaviors, such as the use of encryption algorithms, unauthorized encryption of sensitive data, or abnormal interactions with file systems that could indicate an attempt to encrypt or obfuscate data for malicious purposes.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Data Encrypted for Impact Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Data Encrypted for Impact attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nData Encrypted for Impact refers to the tactic used by adversaries to encrypt data or communication with the intent to cause operational disruption, evade detection, or increase the impact of a cyberattack. This can involve encrypting sensitive files to prevent access or exfiltration, or using encryption as a means to disguise malicious payloads, making it harder for security systems to detect or analyze the malicious data. Ransomware attacks, where data is encrypted and held hostage for a ransom, are a prime example of this tactic.\n\nIntel® TDT plays a crucial role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow. This detailed telemetry helps security teams quickly detect suspicious behaviors, such as the use of encryption algorithms, unauthorized encryption of sensitive data, or abnormal interactions with file systems that could indicate an attempt to encrypt or obfuscate data for malicious purposes.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2864,7 +2803,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2883,7 +2821,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2902,7 +2839,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2917,11 +2853,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's AcceleratedMemory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Exploits from Remote Services. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nExploits from Remote Services involve adversaries targeting vulnerabilities in network-facing services such as RDP, SMB, or SSH, to execute malicious code remotely. These attacks can allow attackers to gain unauthorized access to systems, elevate privileges, or move laterally within a network, often bypassing perimeter defenses. Remote service exploits are frequently used in ransomware, espionage, and other forms of cyberattacks that target high-value systems or data.\n\nIntel® TDT plays a critical role in identifying these threats by providing deep, real-time telemetry on program execution, memory access, and control flow. This data allows security teams to quickly detect abnormal behaviors that indicate potential exploitation of remote services, such as suspicious command execution or unauthorized access to remote systems. By continuously monitoring these low-level activities, Intel® TDT helps identify attempts to exploit remote services, preventing malicious actions before they can cause significant damage.\n\n",
+            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's AcceleratedMemory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of Exploits from Remote Services. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nExploits from Remote Services involve adversaries targeting vulnerabilities in network-facing services such as RDP, SMB, or SSH, to execute malicious code remotely. These attacks can allow attackers to gain unauthorized access to systems, elevate privileges, or move laterally within a network, often bypassing perimeter defenses. Remote service exploits are frequently used in ransomware, espionage, and other forms of cyberattacks that target high-value systems or data.\n\nIntel® TDT plays a critical role in identifying these threats by providing deep, real-time telemetry on program execution, memory access, and control flow. This data allows security teams to quickly detect abnormal behaviors that indicate potential exploitation of remote services, such as suspicious command execution or unauthorized access to remote systems. By continuously monitoring these low-level activities, Intel® TDT helps identify attempts to exploit remote services, preventing malicious actions before they can cause significant damage.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2940,7 +2875,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2959,7 +2893,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2978,7 +2911,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -2997,7 +2929,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3017,7 +2948,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3036,7 +2966,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3055,7 +2984,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3072,10 +3000,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Non-Standard Port exploitation. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain while minimizing the impact on system performance.\n\nNon-Standard Port techniques involve adversaries using ports outside of the commonly recognized and secure range (e.g., ports 80 for HTTP, 443 for HTTPS) to communicate with compromised systems or exfiltrate data. These tactics help attackers avoid detection by security monitoring systems that primarily focus on well-known ports, making it harder for traditional security tools to identify malicious activities. By employing non-standard ports, attackers can bypass firewalls and network defenses, potentially facilitating covert communication or malicious data transfers.\n\nIntel® TDT plays a critical role in identifying these threats by providing real-time telemetry on program execution, memory access, and control flow at the hardware level. This telemetry enables the detection of abnormal behaviors, such as suspicious outbound network traffic on non-standard ports or unauthorized applications attempting to communicate over unusual protocols. By closely monitoring low-level activities, Intel® TDT helps security teams spot these covert methods of communication, preventing attackers from exploiting non-standard ports for command and control or data exfiltration.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3092,10 +3018,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), in combination with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling the detection of Unsecured Credentials in real time. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), allowing it to identify and mitigate cyber threats earlier in the attack chain, while maintaining minimal system impact.\n\nUnsecured Credentials are often exposed or misused by attackers who leverage weak storage or transmission methods to steal sensitive information. These credentials can be captured from insecure files, memory, or network traffic, allowing adversaries to gain unauthorized access to systems. Intel® TDT provides real-time telemetry, capturing detailed program execution data and memory access patterns to identify suspicious behavior that may signal the misuse or storage of unsecured credentials.\n\nAMS complements this by offloading intensive memory scanning tasks to the Intel® Integrated GPU, ensuring efficient detection without performance degradation. By quickly spotting unsecured credential usage or abnormal access patterns, this integrated approach enables proactive defense against attacks targeting sensitive authentication data.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3113,10 +3037,8 @@
             "related_score": "T1059",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling the real-time detection of Visual Basic (VB) Adversarial Techniques. This dynamic solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), providing early detection and mitigation of cyber threats, all while minimizing system performance impact.\n\nVisual Basic Adversarial Techniques involve attackers leveraging scripting or automation tools such as VBScript or Visual Basic for Applications (VBA) to execute malicious code. These techniques often bypass traditional security defenses by running within trusted applications (like Microsoft Office), enabling attackers to execute payloads without triggering alarms. Intel® TDT offers deep visibility into program execution, memory access, and control flow, enabling rapid identification of malicious activities or suspicious patterns indicative of VB-based exploits.\n\nAMS offloads memory scanning tasks to the Intel® Integrated GPU, ensuring that scanning does not compromise system performance while providing fast detection of these evasive techniques. By quickly identifying VB-based attacks, such as malicious macros or script injections, this combined solution strengthens defenses against adversaries using Visual Basic as an attack vector.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3134,10 +3056,8 @@
             "related_score": "T1136",
             "comments": "Intel® Threat Detection Technology (TDT), in conjunction with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling the detection of Local Account Creation techniques (T1136.001) in real time. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), allowing for faster detection and mitigation of threats earlier in the kill chain while minimizing system performance impact.\n\nLocal Account Creation involves adversaries creating new local accounts on compromised systems to maintain persistence or elevate privileges. These accounts are often used to bypass authentication mechanisms or provide unauthorized access to a system. Intel® TDT plays a key role by providing granular visibility into program execution, memory access, and control flow, enabling the detection of suspicious account creation or modifications. This real-time telemetry helps identify unusual behaviors, such as unauthorized attempts to create or modify local accounts.\n\nAMS offloads memory scanning from the CPU to the Intel® Integrated GPU, ensuring that detection remains fast and efficient, without compromising system performance. This combined solution provides a powerful defense against Local Account Creation techniques, helping organizations quickly identify and neutralize threats aimed at gaining unauthorized access through local accounts.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3154,10 +3074,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), in conjunction with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling the detection of Local Account Creation techniques (T1136.001) in real time. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), allowing for faster detection and mitigation of threats earlier in the kill chain while minimizing system performance impact.\n\nLocal Account Creation involves adversaries creating new local accounts on compromised systems to maintain persistence or elevate privileges. These accounts are often used to bypass authentication mechanisms or provide unauthorized access to a system. Intel® TDT plays a key role by providing granular visibility into program execution, memory access, and control flow, enabling the detection of suspicious account creation or modifications. This real-time telemetry helps identify unusual behaviors, such as unauthorized attempts to create or modify local accounts.\n\nAMS offloads memory scanning from the CPU to the Intel® Integrated GPU, ensuring that detection remains fast and efficient, without compromising system performance. This combined solution provides a powerful defense against Local Account Creation techniques, helping organizations quickly identify and neutralize threats aimed at gaining unauthorized access through local accounts.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3174,10 +3092,8 @@
             "score_value": "significant",
             "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System Binary Proxy Execution techniques. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), enabling the detection and mitigation of cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem Binary Proxy Execution (T1218) involves adversaries executing malicious code through legitimate system binaries or processes to evade detection. Attackers often use system tools like rundll32.exe, wmic.exe, or regsvr32.exe as proxies to launch malicious payloads, leveraging trusted binaries to bypass security controls. Intel® TDT provides deep visibility into program execution, memory access, and control flow, allowing security teams to detect abnormal behaviors, such as unusual interactions with trusted system binaries, that could indicate proxy execution or malicious activity.",
             "references": [
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=wizard-spider-sandworm&scenario=1",
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3196,7 +3112,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3215,7 +3130,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3234,7 +3148,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3253,7 +3166,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3272,7 +3184,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3291,7 +3202,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3310,7 +3220,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3330,7 +3239,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3349,7 +3257,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3364,11 +3271,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of attacks exploiting Native APIs. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain while minimizing system performance impact.\n\nNative API attacks involve adversaries using operating system-level APIs to execute malicious code, manipulate processes, or bypass security mechanisms. These attacks often leverage system calls to gain control over a system, execute commands, or escalate privileges. Intel® TDT provides deep, real-time telemetry on program execution, memory access, and control flow, helping security teams quickly identify suspicious API usage or abnormal behaviors that could indicate exploitation of Native APIs.\n\nAdditionally, AMS offloads the memory scanning workload to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity. This helps identify unusual interactions with Native APIs, allowing organizations to detect and mitigate sophisticated attacks before they can cause significant damage.",
+            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of attacks exploiting Native APIs. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain while minimizing system performance impact.\n\nNative API attacks involve adversaries using operating system-level APIs to execute malicious code, manipulate processes, or bypass security mechanisms. These attacks often leverage system calls to gain control over a system, execute commands, or escalate privileges. Intel® TDT provides deep, real-time telemetry on program execution, memory access, and control flow, helping security teams quickly identify suspicious API usage or abnormal behaviors that could indicate exploitation of Native APIs.\n\nAdditionally, AMS offloads the memory scanning workload to the Intel® Integrated GPU, enabling faster, more efficient detection of malicious activity. This helps identify unusual interactions with Native APIs, allowing organizations to detect and mitigate sophisticated attacks before they can cause significant damage.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3387,7 +3293,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3406,7 +3311,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3421,11 +3325,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of OS Credential Dumping attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), allowing it to detect and mitigate cyber threats earlier in the kill chain with minimal impact on system performance.\n\nOS Credential Dumping involves attackers extracting credentials from a system’s memory or storage, often to escalate privileges or move laterally within a network. This attack technique can target local accounts, domain accounts, or cached credentials. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors such as unauthorized access to sensitive credentials or attempts to dump password hashes.\n\nAdditionally, AMS offloads the memory scanning workload to the Intel® Integrated GPU, improving the speed and efficiency of malicious activity detection. This allows security teams to identify and block credential dumping attempts more effectively, reducing the risk of unauthorized access and maintaining the integrity of sensitive system information.",
+            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of OS Credential Dumping attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), allowing it to detect and mitigate cyber threats earlier in the kill chain with minimal impact on system performance.\n\nOS Credential Dumping involves attackers extracting credentials from a system’s memory or storage, often to escalate privileges or move laterally within a network. This attack technique can target local accounts, domain accounts, or cached credentials. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling rapid detection of abnormal behaviors such as unauthorized access to sensitive credentials or attempts to dump password hashes.\n\nAdditionally, AMS offloads the memory scanning workload to the Intel® Integrated GPU, improving the speed and efficiency of malicious activity detection. This allows security teams to identify and block credential dumping attempts more effectively, reducing the risk of unauthorized access and maintaining the integrity of sensitive system information.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3440,11 +3343,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Ingress Tool Transfer Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Ingress Tool Transfer (ITT) attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nIngress Tool Transfer involves adversaries transferring malicious tools or scripts into a compromised environment, often to establish footholds, escalate privileges, or execute additional stages of an attack. These tools can be transferred through various methods, such as file-sharing services, network shares, or utilizing external media like USB devices. In the context of a larger attack, this transfer is a critical phase that allows the attacker to introduce malicious payloads, enabling further exploitation of the system.\n\nIntel® TDT plays a crucial role in identifying these threats by providing deep, real-time telemetry on program execution, memory access, and control flow. This telemetry helps security teams rapidly detect abnormal behaviors, such as unauthorized file transfers, network communications, or tool downloads that could signal an ingress tool transfer. By monitoring these low-level activities, TDT makes it easier to identify the transfer of malicious files, scripts, or other tools commonly used to expand the attack surface.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against Ingress Tool Transfer Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Ingress Tool Transfer (ITT) attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, all while minimizing system performance impact.\n\nIngress Tool Transfer involves adversaries transferring malicious tools or scripts into a compromised environment, often to establish footholds, escalate privileges, or execute additional stages of an attack. These tools can be transferred through various methods, such as file-sharing services, network shares, or utilizing external media like USB devices. In the context of a larger attack, this transfer is a critical phase that allows the attacker to introduce malicious payloads, enabling further exploitation of the system.\n\nIntel® TDT plays a crucial role in identifying these threats by providing deep, real-time telemetry on program execution, memory access, and control flow. This telemetry helps security teams rapidly detect abnormal behaviors, such as unauthorized file transfers, network communications, or tool downloads that could signal an ingress tool transfer. By monitoring these low-level activities, TDT makes it easier to identify the transfer of malicious files, scripts, or other tools commonly used to expand the attack surface.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3463,7 +3365,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3482,7 +3383,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3501,7 +3401,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3521,7 +3420,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3540,7 +3438,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3555,11 +3452,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3574,11 +3470,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3593,11 +3488,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3612,11 +3506,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "\nIntel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
+            "comments": "Intel® Threat Detection Technology (TDT) and CrowdStrike's Accelerated Memory Scanning (AMS): Defending Against System, Owner, User, and Network Information Discovery Attacks\n\nIntel® Threat Detection Technology (TDT), combined with CrowdStrike's Advanced Memory Scanning (AMS), enhances cybersecurity defenses by enabling faster, real-time detection of System, Owner, User, and Network Information Discovery attacks. This integrated solution strengthens CrowdStrike’s Next-Generation Antivirus (NGAV), improving its ability to detect and mitigate cyber threats earlier in the kill chain, while minimizing system performance impact.\n\nSystem, Owner, User, and Network Information Discovery attacks involve adversaries attempting to collect detailed information about the system they’ve infiltrated. Attackers gather data about the operating system, local users, network configurations, system owner, active connections, and network shares. This information is typically used to plan further exploitation, lateral movement, and privilege escalation within the target network. By querying system properties, user accounts, and network settings, attackers gain the intelligence necessary for executing advanced attacks. Intel® TDT plays a crucial role by providing real-time telemetry on program execution, memory access, and control flow, enabling quick detection of abnormal activities like unauthorized information gathering from system and network resources.\n\nAdditionally, AMS offloads the memory scanning workload from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of suspicious activity without negatively impacting system performance. AMS is capable of identifying the unauthorized collection of system, user, or network-related data, helping to detect when attackers are gathering intelligence for the purpose of launching further attacks.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3631,11 +3524,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "CrowdStrike and Intel have co-engineered an Accelerated memory scanning (AMS) capability based on Intel Threat Detection Technology. \n\nThis dynamic solution enhances CrowdStrike's NGAV security by detecting cyber threats earlier in the kill chain and in real-time by offloading the Falcon sensor's performance-intensive memory scans from the CPU to the Intel® Integrated GPU.\n\nAMS is able to prevent the running of executables masquerading as other files, execution of potentially malicious files, and suspicious behavior patterns from occurring on endpoint systems (e.g., suspicious process, file, API call, etc.).\n",
+            "comments": "CrowdStrike and Intel have co-engineered an Accelerated memory scanning (AMS) capability based on Intel Threat Detection Technology. \n\nThis dynamic solution enhances CrowdStrike's NGAV security by detecting cyber threats earlier in the kill chain and in real-time by offloading the Falcon sensor's performance-intensive memory scans from the CPU to the Intel® Integrated GPU.\n\nAMS is able to prevent the running of executables masquerading as other files, execution of potentially malicious files, and suspicious behavior patterns from occurring on endpoint systems (e.g., suspicious process, file, API call, etc.).",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3654,7 +3546,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3673,7 +3564,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3688,11 +3578,10 @@
             "capability_group": "virus_threat_protection",
             "score_category": "detect",
             "score_value": "significant",
-            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Indicator Removal attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV) capabilities, improving its ability to detect and mitigate cyber threats earlier in the kill chain while minimizing system performance impact.\n\nIndicator Removal attacks involve adversaries attempting to erase or alter system logs, forensic artifacts, or other indicators of compromise (IOCs) to evade detection. By removing these telltale signs, attackers aim to avoid triggering security alerts and delay detection, allowing them to maintain persistent access to systems. Intel® TDT plays a critical role in identifying these evasive techniques by providing deep, real-time telemetry on program execution, memory access, and control flow. This telemetry allows security teams to detect abnormal behaviors, such as unauthorized manipulation of system logs or tampering with file systems, which are indicative of efforts to remove attack indicators.\n\nIn addition, AMS offloads memory scanning tasks from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activities without sacrificing system performance. AMS helps identify suspicious actions, such as attempts to alter or delete logs, modify file system attributes, or hide evidence of compromise in memory.\n\n",
+            "comments": "Intel® Threat Detection Technology (TDT), combined with CrowdStrike's Accelerated Memory Scanning (AMS), strengthens cybersecurity defenses by enabling faster, real-time detection of Indicator Removal attacks. This integrated solution enhances CrowdStrike’s Next-Generation Antivirus (NGAV) capabilities, improving its ability to detect and mitigate cyber threats earlier in the kill chain while minimizing system performance impact.\n\nIndicator Removal attacks involve adversaries attempting to erase or alter system logs, forensic artifacts, or other indicators of compromise (IOCs) to evade detection. By removing these telltale signs, attackers aim to avoid triggering security alerts and delay detection, allowing them to maintain persistent access to systems. Intel® TDT plays a critical role in identifying these evasive techniques by providing deep, real-time telemetry on program execution, memory access, and control flow. This telemetry allows security teams to detect abnormal behaviors, such as unauthorized manipulation of system logs or tampering with file systems, which are indicative of efforts to remove attack indicators.\n\nIn addition, AMS offloads memory scanning tasks from the CPU to the Intel® Integrated GPU, ensuring faster and more efficient detection of malicious activities without sacrificing system performance. AMS helps identify suspicious actions, such as attempts to alter or delete logs, modify file system attributes, or hide evidence of compromise in memory.",
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3711,7 +3600,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3730,7 +3618,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3750,7 +3637,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3770,7 +3656,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3789,7 +3674,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3808,7 +3692,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3827,7 +3710,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3846,7 +3728,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3865,7 +3746,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3884,7 +3764,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3904,7 +3783,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3924,7 +3802,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3943,7 +3820,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3962,7 +3838,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -3982,7 +3857,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -4002,7 +3876,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -4021,7 +3894,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -4040,7 +3912,6 @@
             "references": [
                 "https://attack.mitre.org/techniques/T1204/002/",
                 "https://www.crowdstrike.com/en-us/blog/falcon-enhances-fileless-attack-detection-with-accelerated-memory-scanning/",
-                "https://attackevals.mitre-engenuity.org/results/enterprise?vendor=crowdstrike&evaluation=apt29&scenario=2",
                 "https://www.intel.com/content/www/us/en/it-management/intel-it-best-practices/advancing-intels-security-posture-with-crowdstrike.html",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2022-09/intel-crowdstrike-solution-brief.pdf"
             ],
@@ -7457,7 +7328,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1552",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello helps protect against the risk of credentials being stored in files by eliminating the need for passwords. ",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello helps protect against the risk of credentials being stored in files by eliminating the need for passwords.",
             "references": [
                 "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/windows-hello-enhanced-sign-in-security",
                 "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/white-paper-intel-hardware-shield.pdf",
@@ -7476,7 +7347,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1056",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nIf the user is relying on passkeys instead of passwords, Hello will mitigate the risk by avoiding the use of credentials that can be captured. ",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nIf the user is relying on passkeys instead of passwords, Hello will mitigate the risk by avoiding the use of credentials that can be captured.",
             "references": [
                 "https://support.microsoft.com/en-us/windows/passkeys-overview-301c8944-5ea2-452b-9886-97e4d2ef4422",
                 "https://learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune",
@@ -7495,7 +7366,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1003",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nBy using Windows Hello, users can avoid using passwords, which reduces the risk of password hashes being synchronized and exploited through DC Sync attacks.\n\nWindows Hello stores credentials securely, making it harder for attackers to extract them even if they manage to perform a DC Sync attack. ",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nBy using Windows Hello, users can avoid using passwords, which reduces the risk of password hashes being synchronized and exploited through DC Sync attacks.\n\nWindows Hello stores credentials securely, making it harder for attackers to extract them even if they manage to perform a DC Sync attack.",
             "references": [
                 "https://support.microsoft.com/en-us/windows/passkeys-overview-301c8944-5ea2-452b-9886-97e4d2ef4422",
                 "https://learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune",
@@ -7723,7 +7594,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello uses passkeys that do not require the use passwords. ",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello uses passkeys that do not require the use passwords.",
             "references": [
                 "https://support.microsoft.com/en-us/windows/passkeys-overview-301c8944-5ea2-452b-9886-97e4d2ef4422",
                 "https://learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune",
@@ -7744,7 +7615,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1098",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello with Intune replaces the use of passwords with strong two-factor authentication on devices. This authentication consists of a user credential that’s tied to a device and uses a biometric or PIN. As long as appropriate policy controls are configured for Device Enrollment in  Intune, it makes it difficult for an adversary to gain control accounts.\n",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello with Intune replaces the use of passwords with strong two-factor authentication on devices. This authentication consists of a user credential that’s tied to a device and uses a biometric or PIN. As long as appropriate policy controls are configured for Device Enrollment in  Intune, it makes it difficult for an adversary to gain control accounts.",
             "references": [
                 "https://learn.microsoft.com/en-us/mem/intune/protect/windows-hello#create-a-windows-hello-for-business-policy-for-device-enrollment",
                 "https://learn.microsoft.com/en-us/mem/intune/protect/windows-hello",
@@ -7787,7 +7658,7 @@
             "score_category": "protect",
             "score_value": "significant",
             "related_score": "T1110",
-            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello utilizes passkeys which helps protect against the risk of credentials being stored in files by eliminating the need for passwords. \n",
+            "comments": "Windows Hello ESS authentication leverages virtual sandbox(Intel VT-X) to protect authentication data to significantly reduce the risk of brute force attacks on passwords, as biometrics typically require physical presence or biometric data that cannot be easily guessed or replicated. It uses the TPM (Intel PTT) to store authentication data including public/private key pairs. Windows Hello also includes Passkeys, a passwordless authentication option that generates public/private key pair with the public key shared with the service requiring authentication and the private key stored in the TPM, which is only released after authentication locally on the device using either a biometric factor such as fingerprint or a picture of the face or a PIN.\n\nWindows Hello utilizes passkeys which helps protect against the risk of credentials being stored in files by eliminating the need for passwords.",
             "references": [
                 "https://support.microsoft.com/en-us/windows/passkeys-overview-301c8944-5ea2-452b-9886-97e4d2ef4422",
                 "https://learn.microsoft.com/en-us/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune",
