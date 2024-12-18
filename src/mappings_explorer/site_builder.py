@@ -397,12 +397,12 @@ def load_projects():
     intel_vpro.id = "intel-vpro"
     intel_vpro.label = "Intel vPro"
     intel_vpro.description = """Advanced security features in Intel vPro hardware can be
-        leveraged with operating system (OS) and software security features across
-        system attack surfaces to optimize mitigations against cyber threats. This
-        project connects integrated hardware, OS, and security software capabilities of
-        standard enterprise-class systems to adversarial behaviors as described in MITRE
-        ATT&CK® to assist defenders in understanding how these capabilities can help
-        mitigate real-world adversary behaviors."""
+        leveraged by operating system (OS) and security software features across system
+        attack surfaces to optimize mitigations against cyber threats. This project
+        demonstrates the practical application of hardware features by capabilities in
+        Microsoft Windows 11 with Defender and CrowdStrike Falcon to assist defenders in
+        understanding how these integrated capabilities can help mitigate real-world
+        adversary behaviors as described in MITRE ATT&CK®."""
 
     intel_vpro.attackDomains = ["Enterprise"]
     intel_vpro.attackDomain = intel_vpro.attackDomains[0]
