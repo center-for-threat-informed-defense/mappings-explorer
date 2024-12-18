@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <h1 class="text-center">SECURITY STACK <span class="highlight">MAPPING METHODOLOGY</span></h1>
-                <h2 style="text-align: center;">For AWS, Azure, GCP, and M365 mapping frameworks.</h2>
+                <h2 style="text-align: center;">For AWS, Azure, GCP, Intel vPro, and M365 mapping frameworks. </h2>
             </div>
         </div>
     </div>
@@ -15,36 +15,18 @@
 
 <section class="services-cards gray-bg">
     <div class="container col-lg-8 offset-lg-2">
-
         <div class="section-header">
             <h2>Mapping Methodology</h2>
         </div>
-
-        <p>This document describes the methodology used to map security controls native to a technology platform to
-            ATT&amp;CK; and aims to provide the community a reusable method of using ATT&CK to determine the
-            capabilities of
-            a platform's security offerings.</p>
-        <p>ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world
-            observations. The ATT&CK knowledge base represents adversary goals as tactics and the specific behaviors
-            employed by adversaries to achieve those goals (how) as techniques and sub-techniques. The methodology
-            described below, utilizes the information in the ATT&CK knowledge base and its underlying data model to
-            understand, assess and record the real-world threats that security controls native to a technology platform
-            are able to mitigate.</p>
+        <p>This document describes the methodology used to map security capabilities native to a technology platform to ATT&CK; and aims to provide the community with a reusable method of using ATT&CK to determine the capabilities of a platform's security offerings.</p>
+        <p>ATT&CK is a globally accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&CK knowledge base represents adversary goals as tactics and the specific behaviors employed by adversaries to achieve those goals (how) as techniques and sub-techniques. The methodology described below utilizes the information in the ATT&CK knowledge base and its underlying data model to understand, assess and record the real-world threats that security capabilities native to a technology platform are able to mitigate.</p>
         <p>The methodology consists of the following steps:</p>
-
-
-
         <ol>
-            <li><strong>Identify Platform Security Controls</strong></li> - Identify the native security controls
-            available on the platform.</li>
-            <li><strong>Security Control Review</strong></li> - For each identified control, understand the security
-            capabilities it provides.</li>
-            <li><strong>Identify Mappable ATT&CK Techniques & Sub-techniques</strong></li> - Identify the ATT&CK
-            techniques and sub-techniques mappable to the control.</li>
-            <li><strong>Score Assessment</strong></li> - Assess the effectiveness of the type of protection the control
-            provides for the identified ATT&CK techniques and sub-techniques.</li>
-            <li><strong>Create a Mapping</strong></li> - Creating a mapping based on the information gathered from the
-            previous steps.</li>
+            <li><strong>Identify Platform Security Capabilities</strong></li> - Identify the native security capabilities available on the platform.</li>
+            <li><strong>Security Capability Review</strong></li> - For each identified capability, understand the security mitigations it provides.</li>
+            <li><strong>Identify Mappable ATT&CK Techniques & Sub-techniques</strong></li> - Identify the ATT&CK techniques and sub-techniques mappable to the capability.</li>
+            <li><strong>Score Assessment</strong></li> - Assess the effectiveness of the type of mitigation the capability provides for the identified ATT&CK techniques and sub-techniques.</li>
+            <li><strong>Create a Mapping</strong></li> - Create a mapping based on the information gathered from the previous steps.</li>
         </ol>
         <img class="img-fluid" src="{{url_prefix}}static/img/ssm_methodology.png">
     </div>
@@ -52,38 +34,27 @@
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
-            <h2><span class="highlight">Step 1:</span> Identify Platform Security Controls</h2>
+            <h2><span class="highlight">Step 1:</span> Identify Platform Security Capabilities</h2>
         </div>
-        <p>Cyber security has emerged as an essential component of technology platforms, and consequently vendors tend
-            to offer a variety of documentation on the security capabilities of their platform. Peruse the platform
-            documentation (e.g. security reference architectures, security benchmarks, security documentation of various
-            services, etc.) to identify the security controls offered by the platform for protecting workloads on the
-            platform. Keep the following in mind while selecting controls:</p>
+        <p>Cyber security has emerged as an essential component of technology platforms, and consequently vendors tend to offer a variety of documentation on the security capabilities of their platform. Examine the platform documentation (e.g., security reference architectures, security benchmarks, security documentation of various services) to identify the security capabilities offered by the platform for protecting workloads on the platform. Keep the following in mind while selecting capabilities:</p>
         <ul>
-            <li>The scope of the controls mapped by this project are the technical control types and do not include
-                administrative or physical control types.</li>
-            <li>The selected controls should be native to the platform, i.e. produced by the vendor themselves or
-                third-party controls branded by the vendor. For example, thirty-party security controls offered in cloud
-                marketplaces are considered out of scope.</li>
-            <li>The security controls selected to be mapped as part of this project tend to be controls that are
-                marketed as standalone security products available on the platform. The intent is not to provide a
-                mapping for all settings/features of individual platform services that are security related. This is a
-                non-trivial undertaking that may be explored at a later time.</li>
+            <li>The scope of the capabilities mapped by this project are technical in nature and do not include administrative or physical control types.</li>
+            <li>The selected capabilities should be native to the platform, i.e., produced by the vendor themselves or third-party capabilities branded by the vendor. For example, thirty-party security capabilities offered in cloud marketplaces are considered out of scope.</li>
+            <ul>
+                <li>Note: The Intel vPro mappings portray defensive capabilities available within enterprise hardware that are integrated with operating system and security software features.</li>
+            </ul>
+            <li>The security capabilities selected to be mapped tend to be capabilities that are marketed as standalone security products available on the platform. The intent is not to provide a mapping for all settings/features of individual platform services that are security related. This is a non-trivial undertaking that may be explored at a later time.</li>
         </ul>
     </div>
 </section>
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
-            <h2><span class="highlight">Step 2:</span> Security Control Review</h2>
+            <h2><span class="highlight">Step 2:</span> Security Capability Review</h2>
         </div>
-        <p>TFor each identified security control, consult the available documentation to understand its capabilities.
-            Gather the following facts about the security control that will later help in mapping the control to the set
-            of ATT&CK techniques and sub-techniques it is able to mitigate:</p>
+        <p>For each identified security capability, consult the available documentation to understand the mitigation abilities it provides. Gather the following facts about the security capability that will later help in mapping it to the set of ATT&CK techniques and sub-techniques it is able to mitigate:</p>
         <ul>
             <li>Category of security function provided by the control:
                 <ul>
@@ -92,129 +63,76 @@
                     <li>Respond: reduces or remediates the impact of a cybersecurity event.</li>
                 </ul>
             </li>
-            <li>The resource type(s) protected by the control (e.g. identity, storage, network, etc.).</li>
-            <li>If applicable, the list of operating systems supported by the control.</li>
-            <li>Temporal nature of the control's operation:
+            <li>The resource type(s) protected by the capability (e.g., identity, storage, network).</li>
+            <li>If applicable, the list of operating systems supported by the capability.</li>
+            <li>Temporal nature of the capability's operation:
                 <ul>
-                    <li>Does the control operate in real-time?</li>
-                    <li>Does the control operate periodically (hourly, daily, weekly, etc.)?</li>
-                    <li>Is the control event triggered? How often do these events occur?</li>
+                    <li>Does the capability operate in real-time?</li>
+                    <li>Does the capability operate periodically (e.g., hourly, daily, weekly)?</li>
+                    <li>Is the capability event triggered? How often do these events occur?</li>
                 </ul>
             </li>
-            <li>Specific threats cited in documentation that the control mitigates.</li>
+            <li>Specific threats cited in documentation that the capability mitigates.</li>
         </ul>
     </div>
 </section>
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
             <h2><span class="highlight">Step 3:</span> Identify Mappable ATT&CK Techniques & Sub-techniques</h2>
         </div>
-        <p>After understanding the capabilities of the security control and gathering the basic facts about its
-            operation, as identified in the previous step, review the ATT&CK matrix and identify the techniques and
-            sub-techniques the control is able to mitigate.</p>
+        <p>After understanding the types of mitigation provided by the security capability and gathering the basic facts about its operation, as identified in the previous step, review the ATT&CK matrix and identify the techniques and sub-techniques the capability is able to mitigate.</p>
         <p>The following may help with this process:</p>
         <p><strong>Identify ATT&CK Tactics in Scope</strong></p>
         <ul>
-            <li>The resource type(s) protected by the control, as identified in the previous step, can help narrow down
-                the ATT&amp;CK tactics which are in scope for this control.
+            <li>The resource type(s) protected by the capability, as identified in the previous step, can help narrow down the ATT&CK tactics which are in scope for this capability.
                 <ul>
-                    <li>Example: A control that protects identity related resources can help you focus your attention on
-                        ATT&amp;CK tactics relevant to identity, such as: Privilege Escalation and Credential Access.
-                    </li>
+                    <li>Example: A capability that protects identity related resources can help you focus your attention on ATT&CK tactics relevant to identity, such as: Privilege Escalation and Credential Access.</li>
                 </ul>
             </li>
-            <li><a href="https://attack.mitre.org/mitigations/enterprise/" rel="nofollow">ATT&amp;CK's mitigations</a>
-                which describe the configurations, tools or process that can prevent the successful execution of a set
-                of (sub-)techniques, can also be used to identify the ATT&amp;CK tactics that should be reviewed.
+            <li><a href="https://attack.mitre.org/mitigations/enterprise/" rel="nofollow">ATT&amp;CK's mitigations</a> which describe the configurations, tools or process that can prevent the successful execution of a set of (sub-)techniques, can also be used to identify the ATT&CK tactics that should be reviewed.
                 <ul>
-                    <li>Identify the ATT&amp;CK mitigations that provide similar capabilities as the security control.
-                        Each mitigation comes with the list of ATT&amp;CK (sub-)techniques that it is able to prevent
-                        its successful execution. The ATT&amp;CK tactics associated with these (sub-)techniques should
-                        be reviewed.</li>
+                    <li>Identify the ATT&CK mitigations that provide similar capabilities as the security capability. Each mitigation comes with the list of ATT&CK (sub-)techniques that it is able to prevent its successful execution. The ATT&CK tactics associated with these (sub-)techniques should be reviewed.</li>
                 </ul>
             </li>
-            <li>Use any examples of threats cited in the control documentation to also narrow down the ATT&amp;CK
-                tactics to review.</li>
+            <li>Use any examples of threats cited in the capability documentation to also narrow down the ATT&CK tactics to review.</li>
         </ul>
         <p><strong>Identify ATT&CK Techniques & Sub-techniques in Scope</strong></p>
         <ul>
-            <li>Review the description of each ATT&amp;CK technique to determine if the control is able to mitigate the
-                adversary behavior described in the technique.</li>
+            <li>Review the description of each ATT&CK technique to determine if the capability is able to mitigate the adversary behavior described in the technique.</li>
             <li>If the technique contains sub-techniques:
                 <ul>
-                    <li>For each sub-technique, review its description and procedure examples to determine if the
-                        control is able to mitigate the behavior described.</li>
-                    <li>Ensure the control supports the sub-technique platforms.</li>
-                    <li>If this control is a protective control, the sub-technique Mitigations section can be especially
-                        useful in determining if this sub-technique would be prevented by this control.</li>
-                    <li>If this control is a detective control, the sub-technique Detections section can be especially
-                        useful in determining if this sub-technique would be detected by this control.</li>
+                    <li>For each sub-technique, review its description and procedure examples to determine if the capability is able to mitigate the behavior described.</li>
+                    <li>Ensure the capability supports the sub-technique platforms.</li>
+                    <li>If this capability is a protective capability, the sub-technique Mitigations section can be especially useful in determining if this sub-technique would be prevented by this capability.</li>
+                    <li>If this capability is a detective capability, the sub-technique Detections section can be especially useful in determining if this sub-technique would be detected by this capability.</li>
                 </ul>
             </li>
-            <li>ATT&amp;CK currently does not provide guidance on how to respond to (sub-)techniques. Utilize the
-                (sub-)technique description and
-                procedure examples to determine if it should be in scope.</li>
+            <li>ATT&CK currently does not provide guidance on how to respond to (sub-)techniques. Utilize the (sub-)technique description and procedure examples to determine if it should be in scope.</li>
         </ul>
     </div>
 </section>
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
             <h2><span class="highlight">Step 4:</span> Score Assessments</h2>
         </div>
-        <p>After identifying the techniques and sub-techniques that are mappable to the control, use <a
-                href="../../scoring/">the scoring rubric</a>
-            to score the effectiveness of the security function (protect, detect, respond) provided by the control in
-            mitigating the behavior described by the ATT&CK entity.</p>
+        <p>After identifying the techniques and sub-techniques that are mappable to the capability, use <a href="../../scoring/">the scoring rubric</a>to score the effectiveness of the security function (protect, detect, respond) provided by the capability in mitigating the behavior described by the ATT&CK entity.</p>
     </div>
 </section>
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
             <h2><span class="highlight">Step 5:</span> Create a Mapping</h2>
         </div>
-        <p>The previous steps enabled you to gather the information required to create a mapping for a control. Use the
-            following guidelines to help you in the process of creating a
-            mapping:</p>
+        <p>The previous steps enabled you to gather the information required to create a mapping for a capability. Use the following guidelines to help you in the process of creating a mapping:</p>
         <ul>
-            <li>The mapping format promotes producing mappings that are self-contained, enabling a reader of the mapping
-                file to understand the basic functionality provided by the control and also the rational for selecting
-                the ATT&amp;CK techniques and sub-techniques it maps. Use the various comment and description fields to
-                communicate this information to readers.</li>
-            <li>Populate the tags field with tags that will enable you to categorize the control in different ways, for
-                example, by the resource(s) protected by the control. The tags field can then be utilized to visualize
-                multiple controls with the same tag.
-                <ul>
-                    <li>Do not include ATT&amp;CK information in the tag field. This information is already present in
-                        the techniques field of the YAML mapping file and the visualization tools also support grouping
-                        controls by ATT&amp;CK (sub-)techniques and therefore there is no need to duplicate the
-                        information in the tags field.</li>
-                    <li>The list of valid tags is maintained in the valid_tags.txt file contained in the mappings folder
-                        for each platform. (e.g. mappings/Azure/valid_tags.txt) file. Consult this file first and reuse
-                        existing tags where it makes sense. If you introduce a new tag, add it to this file.</li>
-                </ul>
-            </li>
-            <li>When scoring a control's effectiveness at mitigating a technique or sub-technique, you are encouraged to
-                include a comment along with the score that explains your assessment. Comments can be provided at
-                multiple levels: top level, per technique or per group of sub-techniques. Choose the level that makes
-                the most sense for a control, for example:
-                <ul>
-                    <li>If the score and rational applies to most techniques in scope of the mapping, rather than
-                        repeating the comment for each technique, add a comment using the top-level comment field of the
-                        mapping file.</li>
-                    <li>If the score and rational applies to multiple groups of sub-techniques for a technique, provide
-                        a comment along with the score at the technique level.</li>
-                    <li>If the score and rational is specific to a group of sub-techniques, provide a comment along with
-                        the score at the sub-techniques level.</li>
-                </ul>
-            </li>
+            <li>The mapping format promotes producing mappings that are self-contained, enabling a reader of the mapping file to understand the basic functionality provided by the capability and also the rational for selecting the ATT&CK techniques and sub-techniques it maps. Use the various comment and description fields to communicate this information to readers.</li>
+            <li>Populate the comments field with information that will enable understanding of the mapping. The comments field can designate what features of the capability are used, describe how the capability addresses the adversary behavior, and provide justification for the scoring assessment.
+            <li>Do not include ATT&CK information in the comments field or as references. This information is already present in the techniques field of the mapping and the website  provides grouping of mapped capabilities by ATT&CK (sub-)techniques and links to view the (sub-)techniques in ATT&CK.</li>
         </ul>
     </div>
 </section>
