@@ -5,7 +5,7 @@
     </a>
 {% endmacro %}
 
-{% macro table(headers, mappings, url_prefix, table_max_count, full_link, full_size, attack_version, attack_domain, previous_link) %}
+{% macro table(headers, info_box_headers, mappings, url_prefix, table_max_count, full_link, full_size, attack_version, attack_domain, previous_link) %}
 <div class="table-responsive table-outer">
 {% if mappings | length > table_max_count %}
 <p class="notice">
@@ -24,8 +24,11 @@
   <thead>
     <tr>
         {%- for header in headers %}
-            <th id={{id}} data-field={{header[0]}} data-sortable="true">{{header[1]}}</th>
+            <th id={{id}} data-field={{header[1]}} data-sortable="true">{{header[2]}}</th>
         {% endfor %}
+        {%- if enable_info_box(info_box_headers) %}
+            <th id={{id}} data-field=Notes data-sortable="true">Notes</th>
+        {% endif %}
       </tr>
   </thead>
   <tbody>
@@ -33,16 +36,34 @@
     {%- for mapping in mappings[:table_max_count] %}
       <tr>
         {% for header in headers -%}
-            {%- if header[2] and header[3] -%}
-                <td><a href="{{header[3]}}{{mapping[header[2]] | replace(' ', '_') }}/">{{mapping[header[0]]}}</a></td>
-            {% endif -%}
-            {%- if header[2] and not header[3] -%}
-                <td><a href="{{mapping | build_capability_url(url_prefix, mapping[header[2]])}}">{{mapping[header[0]]}}</a></td>
-            {% endif -%}
-            {%- if not header[2] -%}
-                <td>{{mapping[header[0]]}}</td>
-            {% endif -%}
+          {%- if header[0] == ":pfx_link:" -%}
+            <td>
+              <a href="{{header[4]}}{{mapping[header[3]] | replace(' ', '_') }}/">
+                {{ header[1] | format_cell_value(mapping[header[1]]) }}
+              </a>
+            </td>
+          {%- elif header[0] == ":link:" -%}
+            <td>
+              <a href="{{mapping | build_capability_url(url_prefix, mapping[header[3]])}}">
+                {{ header[1] | format_cell_value(mapping[header[1]]) }}
+              </a>
+            </td>
+          {%- elif header[0] == ":text:" -%}
+            <td>{{ header[1] | format_cell_value(mapping[header[1]]) }}</td>
+          {% endif -%}
         {% endfor -%}
+        {%- if enable_info_box(info_box_headers, mapping) -%}
+        <td>
+          <div class="info-box-open" onclick="openInfoBox(this)">
+            <div class="info-box-content">
+              {% for header in info_box_headers -%}
+                <div class="title">{{ header[1] }}</div>
+                <div class="body">{{ header[0] | format_cell_value(mapping[header[0]]) | safe }}</div>
+              {% endfor -%}
+            </div>
+          </div>
+        </td>
+        {% endif -%}
       </tr>
     {% endfor -%}
   {% else %}

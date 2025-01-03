@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="col-12">
-            {{ macros.table(headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
+            {{ macros.table(standard_headers, info_box_headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="col-12">
-            {{ macros.table(capability_group_headers, capability_group.capabilities, url_prefix, table_max_count, full_link, full_size) }}
+            {{ macros.table(capability_group_headers, undefined, capability_group.capabilities, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
   </section>

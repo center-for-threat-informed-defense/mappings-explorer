@@ -114,17 +114,15 @@ def create_df(parsed_mappings):
         "attack_object_name",
         "attack_version",
         "technology_domain",
+        "score_category",
+        "score_value",
+        "related_score",
         "references",
         "comments",
         "organization",
         "creation_date",
         "last_update",
     ]
-    if "technique_scores" in parsed_mappings["metadata"]["mapping_types"]:
-        score_columns = ["score_category", "score_value", "related_score"]
-        columns_order[
-            columns_order.index("technology_domain") + 1 : len(score_columns)
-        ] = score_columns
 
     return pd.DataFrame(data=mapping_objects, columns=columns_order)
 
@@ -263,7 +261,14 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
 
 def get_stix_object(parsed_mappings, mapping, created_date):
     mapping_framwork = parsed_mappings["metadata"]["mapping_framework"]
-    infrastructure_frameworks = ["nist_800_53", "aws", "gcp", "azure", "m365"]
+    infrastructure_frameworks = [
+        "nist_800_53",
+        "aws",
+        "gcp",
+        "azure",
+        "m365",
+        "intel-vpro",
+    ]
     if mapping_framwork == "cve":
         return create_vulnerability_object(mapping, created_date)
     elif mapping_framwork in infrastructure_frameworks:

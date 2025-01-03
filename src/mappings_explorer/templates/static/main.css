@@ -680,7 +680,7 @@ div.banner {
 }
 
 .services-list .title .stretched-link {
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: black;
 }
 
@@ -3372,4 +3372,67 @@ section#methodology-overview h3,
 --------------------------------------------------------------*/
 .mapping-projects-section.row {
   justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# Mapping Capability Info Box
+--------------------------------------------------------------*/
+.info-box-open {
+  position: relative;
+  background-image: url(../static/img/add.svg);
+  background-size: contain;
+  display: block;
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.info-box-open.active {
+  background-image: url(../static/img/remove.svg);
+  background-size: contain;
+}
+
+.info-box-open * {
+  display: none;
+}
+
+.info-box {
+  white-space: break-spaces;
+}
+
+.table-hover>tbody>tr.info-box:hover>* {
+  --bs-table-color-state: null;
+  --bs-table-bg-state: null;
+}
+
+.info-box td {
+  background: #eff1f4;
+}
+
+.info-box-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.info-box-content .title {
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 12px 0px;
+}
+
+.info-box-content .title:first-child {
+  margin-top: 0px;
+}
+
+.info-box-content .body {
+  margin: 0px;
+}
+
+.info-box-content dl,
+.info-box-content ol,
+.info-box-content ul {
+  margin: 0px;
 }
