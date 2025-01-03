@@ -398,8 +398,8 @@ def load_projects():
     intel_vpro.label = "Intel vPro"
     intel_vpro.description = """Advanced security features in Intel vPro hardware can be
         leveraged by operating system (OS) and security software features across system
-        attack surfaces to optimize mitigations against cyber threats. This project
-        demonstrates the practical application of hardware features by capabilities in
+        attack surfaces to optimize mitigations against cyber threats. These mappings
+        demonstrate the practical application of hardware features by capabilities in
         Microsoft Windows 11 with Defender and CrowdStrike Falcon to assist defenders in
         understanding how these integrated capabilities can help mitigate real-world
         adversary behaviors as described in MITRE ATT&CK®."""
@@ -879,7 +879,6 @@ def build_external_landing(
         project.id == "azure"
         or project.id == "aws"
         or project.id == "gcp"
-        or project.id == "intel-vpro"
         or project.id == "m365"
     ):
         standard_headers = [
@@ -897,6 +896,44 @@ def build_external_landing(
                 "capability_id",
                 external_prefix,
             ),
+            (":text:", "score_category", "Category"),
+            (":text:", "score_value", "Value"),
+            (
+                ":pfx_link:",
+                "attack_object_id",
+                "ATT&CK ID",
+                "attack_object_id",
+                attack_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "attack_object_name",
+                "ATT&CK Name",
+                "attack_object_id",
+                attack_prefix,
+            ),
+        ]
+        info_box_headers = [
+            ("comments", "Comments"),
+            ("references", "References"),
+        ]
+    if project.id == "intel-vpro":
+        standard_headers = [
+            (
+                ":pfx_link:",
+                "capability_id",
+                "Capability ID",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "capability_description",
+                "Capability Description",
+                "capability_id",
+                external_prefix,
+            ),
+            (":text:", "mapping_type", "Enables"),
             (":text:", "score_category", "Category"),
             (":text:", "score_value", "Value"),
             (
