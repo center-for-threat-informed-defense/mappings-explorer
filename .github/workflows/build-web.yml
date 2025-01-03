@@ -36,6 +36,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
+        # run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
         run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
@@ -49,11 +50,11 @@ jobs:
 
   # Publish to Azure blob only on PRs, not main.
   # azure_blob:
-  #   # if: github.ref_name != 'main'
+  #   if: github.ref_name != 'main'
   #   needs: web_site
   #   runs-on: ubuntu-latest
   #   env:
-  #     AZURE_STORAGE_ACCOUNT: mappingsexplorerhed
+  #     AZURE_STORAGE_ACCOUNT: mappingsexplorer
   #     AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
   #     BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
   #     STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
@@ -75,7 +76,7 @@ jobs:
   #       run: >
   #         staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
   #           --password $STATICRYPT_PASS --short \
-  #           --template-title "Mappings Explorer [HED] (branch: $BRANCH_NAME)" \
+  #           --template-title "Mappings Explorer (branch: $BRANCH_NAME)" \
   #           --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
   #           --template-color-primary "#6241c5" \
   #           --template-color-secondary "#b2b2b2" \
@@ -101,7 +102,7 @@ jobs:
   #             issue_number: context.issue.number,
   #             owner: context.repo.owner,
   #             repo: context.repo.repo,
-  #             body: `This PR has been published to https://mappingsexplorerhed.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
+  #             body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
   #           })
 
   github_pages:
