@@ -255,22 +255,24 @@ def load_projects():
 
     cve = ExternalControl()
     cve.id = "cve"
-    cve.label = "CVE"
+    cve.label = "Known Exploited Vulnerabilities"
     cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
         provides a catalog of publicly disclosed cybersecurity vulnerabilities, used
         throughout the cyber community to communicate consistent descriptions of
-        vulnerabilities. These mappings connect the adversary behaviors described in
-        MITRE ATT&CK® to characterize the impact of vulnerabilities from CVE,
-        establishing a critical connection between vulnerability management, threat
-        modeling, and compensating controls.
+        vulnerabilities. The Department of Homeland Security (DHS) Cybersecurity and
+        Infrastructure Security Agency (CISA) maintains an authoritative source of CVEs
+        exploited in the wild: the Known Exploited Vulnerabilities (KEV) Catalog. These
+        mappings use the behaviors described in MITRE ATT&CK® to connect KEVs to
+        publicly reported methods and impacts of adversary exploitation.
     """
 
     cve.attackDomains = ["Enterprise"]
     cve.attackDomain = cve.attackDomains[0]
-    cve.versions = ["10.21.2021"]
-    cve.attackVersions = ["9.0"]
+    cve.versions = ["12.10.2024", "10.21.2021"]
+    cve.attackVersions = ["15.1", "9.0"]
     cve.validVersions = [
         ("10.21.2021", "9.0", "Enterprise"),
+        ("12.10.2024", "15.1", "Enterprise"),
     ]
     cve.has_non_mappables = False
     cve.mappings = []
