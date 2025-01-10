@@ -1,0 +1,36 @@
+<div id="switcher-component">
+  <Switcher :url_prefix="'{{url_prefix}}'"></Switcher>
+</div>
+
+<script>
+  const Switcher = {
+    template: `
+    <div>
+        <RelatedProjectSwitcherVue currentProjectId="mappings_explorer" theme="dark"/>
+    </div>
+  `,
+    components: {
+      RelatedProjectSwitcherVue: () => import (`../static/vendor/project-switcher/project-switcher.js`)
+    },
+    delimiters: ["[[", "]]"],
+    data() {
+      return {
+        projectList: {},
+        fullProjectList: {},
+        notificationList: {},
+        searchModel: "",
+      };
+    },
+    props: {
+      url_prefix: String,
+    },
+  };
+  Vue.createApp({
+    components: {
+      Switcher
+    }
+  }).mount("#switcher-component");
+</script>
+<script>
+
+</script>
