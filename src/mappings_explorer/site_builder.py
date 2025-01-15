@@ -253,10 +253,10 @@ def load_projects():
         }
     }
 
-    cve = ExternalControl()
-    cve.id = "cve"
-    cve.label = "Known Exploited Vulnerabilities"
-    cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
+    kev = ExternalControl()
+    kev.id = "kev"
+    kev.label = "Known Exploited Vulnerabilities"
+    kev.description = """The Common Vulnerabilities and Exposures (CVE®) Program
         provides a catalog of publicly disclosed cybersecurity vulnerabilities, used
         throughout the cyber community to communicate consistent descriptions of
         vulnerabilities. The Department of Homeland Security (DHS) Cybersecurity and
@@ -266,20 +266,20 @@ def load_projects():
         publicly reported methods and impacts of adversary exploitation.
     """
 
-    cve.attackDomains = ["Enterprise"]
-    cve.attackDomain = cve.attackDomains[0]
-    cve.versions = ["12.10.2024", "10.21.2021"]
-    cve.attackVersions = ["15.1", "9.0"]
-    cve.validVersions = [
-        ("10.21.2021", "9.0", "Enterprise"),
+    kev.attackDomains = ["Enterprise", "Mobile"]
+    kev.attackDomain = kev.attackDomains[0]
+    kev.versions = ["12.10.2024"]
+    kev.attackVersions = ["15.1"]
+    kev.validVersions = [
+        ("12.10.2024", "15.1", "Mobile"),
         ("12.10.2024", "15.1", "Enterprise"),
     ]
-    cve.has_non_mappables = False
-    cve.mappings = []
-    cve.resources = [
+    kev.has_non_mappables = False
+    kev.mappings = []
+    kev.resources = [
         {
-            "link": "about/methodology/cve-methodology/",
-            "label": "CVE Mapping Methodology",
+            "link": "about/methodology/kev-methodology/",
+            "label": "KEV Mapping Methodology",
         },
     ]
 
@@ -558,7 +558,7 @@ def parse_capability_groups(
             "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    if project.id == "nist" or project.id == "cve" or project.id == "intel-vpro":
+    if project.id == "nist" or project.id == "kev" or project.id == "intel-vpro":
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
         # descriptions as well
@@ -656,7 +656,7 @@ def get_description_for_capability(
     """
     if project.id == "nist":
         folder_name = DATA_DIR / "NIST_800-53"
-    elif project.id == "cve":
+    elif project.id == "kev":
         folder_name = DATA_DIR
     elif project.id == "intel-vpro":
         folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
@@ -680,7 +680,7 @@ def get_description_for_capability(
                         get_nist_description(
                             project=project, version=version, capability=capability
                         )
-                    if project.id == "cve":
+                    if project.id == "kev":
                         get_cve_description(
                             project=project, version=version, capability=capability
                         )
@@ -698,7 +698,7 @@ def get_description_for_capability(
             get_nist_description(
                 project=project, version=version, capability=capability
             )
-        if project.id == "cve":
+        if project.id == "kev":
             get_cve_description(project=project, version=version, capability=capability)
 
 
@@ -758,7 +758,7 @@ def delete_all_descriptions(projects: list):
     for project in projects:
         for version in project.versions:
             file_name = f"{project.id}-{version}_descriptions.json"
-            if project.id == "cve":
+            if project.id == "kev":
                 dir = DATA_DIR
             if project.id == "nist":
                 dir = DATA_DIR / "NIST_800-53"
@@ -2068,7 +2068,7 @@ def getIndexPages():
             or "/aws/" in str(mappings_file)
             or "/azure/" in str(mappings_file)
             or "/gcp/" in str(mappings_file)
-            or "/cve/" in str(mappings_file)
+            or "/kev/" in str(mappings_file)
             or "/m365/" in str(mappings_file)
             or "/intel-vpro/" in str(mappings_file)
         )
@@ -2244,10 +2244,10 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
 
     build_about_page(
         url_prefix=url_prefix,
-        url_suffix="about/methodology/cve-methodology",
+        url_suffix="about/methodology/kev-methodology",
         breadcrumbs=methodology_breadcrumbs,
-        template_path="methodology/cve_methodology.html.j2",
-        title="CVE Mapping Methodology",
+        template_path="methodology/kev_methodology.html.j2",
+        title="KEV Mapping Methodology",
     )
 
     build_about_page(
