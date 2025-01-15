@@ -39,8 +39,6 @@ jobs:
         with:
           name: logs
           path: /home/runner/work/**/*.log
-      - name: Add Poetry to PATH
-        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
