@@ -206,12 +206,11 @@ def load_projects():
     veris.id = "veris"
     veris.label = "VERIS"
     veris.description = """The Vocabulary for Event Recording and Incident Sharing
-    (VERIS) provides a
-         common language for describing security incidents in a structured and
-         repeatable manner that allows for the analysis of data across a variety of
-         incidents. This project provides mappings to better connect the who, what, and
-         why captured in VERIS incident representation with the when and how described
-         in MITRE ATT&CK® adversary behavioral tactics and techniques."""
+    (VERIS) provides a common language for describing security incidents in a structured
+    and repeatable manner that allows for the analysis of data across a variety of
+    incidents. These mappings provide the context to better connect the who, what, and
+    why captured in VERIS incident representation with the when and how described in
+    MITRE ATT&CK® adversary behavioral tactics and techniques."""
     veris.versions = ["1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -251,12 +250,12 @@ def load_projects():
     cve.id = "cve"
     cve.label = "CVE"
     cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
-      provides a catalog of
-         publicly disclosed cybersecurity vulnerabilities,  used throughout the cyber
-         community to communicate consistent descriptions of vulnerabilities. This
-         project uses the adversary behaviors described in MITRE ATT&CK® to characterize
-         the impact of vulnerabilities from CVE, establishing a critical connection
-         between vulnerability management, threat modeling, and compensating controls.
+        provides a catalog of publicly disclosed cybersecurity vulnerabilities, used
+        throughout the cyber community to communicate consistent descriptions of
+        vulnerabilities. These mappings connect the adversary behaviors described in
+        MITRE ATT&CK® to characterize the impact of vulnerabilities from CVE,
+        establishing a critical connection between vulnerability management, threat
+        modeling, and compensating controls.
     """
 
     cve.attackDomains = ["Enterprise"]
@@ -279,10 +278,9 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
-      platform. This
-         project maps the security controls native to the (AWS) platform to
-         MITRE ATT&CK®, providing resources to assess how to protect, detect, and
-         respond to real-world threats as described in the ATT&CK knowledge base.
+      platform. These mappings connect the security controls native to the (AWS)
+      platformto MITRE ATT&CK®, providing resources to assess how to protect, detect,
+      and respond to real-world threats as described in the ATT&CK knowledge base.
         """
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
@@ -304,11 +302,10 @@ def load_projects():
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
-    azure.description = """Azure is a widely used cloud computing platform. This
-      project maps the
-         security controls native to the Azure platform to MITRE ATT&CK®, providing
-         resources to assess how to protect, detect, and respond to real-world threats
-         as described in the ATT&CK knowledge base."""
+    azure.description = """Azure is a widely used cloud computing platform. These
+    mappings connect the security controls native to the Azure platform to MITRE
+    ATT&CK®, providing resources to assess how to protect, detect, and respond to
+    real-world threats as described in the ATT&CK knowledge base."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
@@ -329,10 +326,9 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
-      platform. This
-         project maps the security controls native to the GCP platform to MITRE ATT&CK®
-         providing resources to assess how to protect, detect, and respond to real-world
-         threats as described in the ATT&CK knowledge base."""
+      platform. These mappings connect the security controls native to the GCP platform
+      to MITRE ATT&CK® providing resources to assess how to protect, detect, and respond
+      to real-world threats as described in the ATT&CK knowledge base."""
 
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
@@ -356,8 +352,8 @@ def load_projects():
     m365.label = "M365"
     m365.description = """Microsoft 365 (M365) is a widely used Software as a Service
         (SaaS) product family of productivity software, collaboration, and cloud-based
-        services. This project maps the security controls native to M365 product areas
-        to MITRE ATT&CK® providing resources to assess how to protect, detect, and
+        services. These mappings connect the security controls native to M365 product
+        areas to MITRE ATT&CK® providing resources to assess how to protect, detect, and
         respond to real-world threats as described in the ATT&CK knowledge base."""
 
     m365.attackDomains = ["Enterprise"]
