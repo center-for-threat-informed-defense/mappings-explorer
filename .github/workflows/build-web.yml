@@ -39,6 +39,8 @@ jobs:
         with:
           name: logs
           path: /home/runner/work/**/*.log
+      - name: Add Poetry to PATH
+        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
@@ -54,7 +56,7 @@ jobs:
           name: mapex-web
           path: output.zip
 
-  Publish to Azure blob only on PRs, not main.
+  #Publish to Azure blob only on PRs, not main.
   azure_blob:
     if: github.ref_name != 'main'
     needs: web_site
