@@ -284,6 +284,7 @@ def load_projects():
         {
             "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
             "label": "CISA Known Exploited Vulnerabilities Catalog",
+            "external": True,
         },
     ]
 
@@ -386,6 +387,7 @@ def load_projects():
         {
             "link": "https://www.cisecurity.org/benchmark/microsoft_365",
             "label": "CIS Microsoft 365 Benchmark (External link)",
+            "external": True,
         },
     ]
     artifact_prefix = "legacy/m365-12.11.2023_attack-14.1-enterprise_"
