@@ -278,8 +278,9 @@ def load_projects():
     kev.mappings = []
     kev.resources = [
         {
-            "link": "about/methodology/kev-methodology/",
-            "label": "KEV Mapping Methodology",
+            "link": "about/methodology/cve-methodology/",
+            "label": "CVE Mapping Methodology",
+        },
         },
     ]
 
@@ -2244,10 +2245,10 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
 
     build_about_page(
         url_prefix=url_prefix,
-        url_suffix="about/methodology/kev-methodology",
+        url_suffix="about/methodology/cve-methodology",
         breadcrumbs=methodology_breadcrumbs,
-        template_path="methodology/kev_methodology.html.j2",
-        title="KEV Mapping Methodology",
+        template_path="methodology/cve_methodology.html.j2",
+        title="CVE Mapping Methodology",
     )
 
     build_about_page(
