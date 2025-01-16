@@ -256,14 +256,14 @@ def load_projects():
     kev = ExternalControl()
     kev.id = "kev"
     kev.label = "Known Exploited Vulnerabilities"
-    kev.description = """The Common Vulnerabilities and Exposures (CVE®) Program
-        provides a catalog of publicly disclosed cybersecurity vulnerabilities, used
-        throughout the cyber community to communicate consistent descriptions of
-        vulnerabilities. The Department of Homeland Security (DHS) Cybersecurity and
-        Infrastructure Security Agency (CISA) maintains an authoritative source of CVEs
-        exploited in the wild: the Known Exploited Vulnerabilities (KEV) Catalog. These
-        mappings use the behaviors described in MITRE ATT&CK® to connect KEVs to
-        publicly reported methods and impacts of adversary exploitation.
+    kev.description = """The Known Exploited Vulnerabilities (KEV) Catalog is an
+        authoritative source of vulnerabilities exploited in the wild maintained by the
+        Department of Homeland Security (DHS) Cybersecurity and Infrastructure Security
+        Agency (CISA). Vulnerabilities in the KEV Catalog are contained in the Common
+        Vulnerabilities and Exposures (CVE®) List, which identifies and defines publicly
+        known cybersecurity vulnerabilities. These mappings use the behaviors described
+        in MITRE ATT&CK® to connect actively exploited CVEs – those contained in the KEV
+        Catalog - to publicly reported methods and impacts of adversary exploitation.
     """
 
     kev.attackDomains = ["Enterprise", "Mobile"]
@@ -281,6 +281,9 @@ def load_projects():
             "link": "about/methodology/cve-methodology/",
             "label": "CVE Mapping Methodology",
         },
+        {
+            "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+            "label": "CISA Known Exploited Vulnerabilities Catalog",
         },
     ]
 
