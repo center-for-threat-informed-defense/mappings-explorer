@@ -167,7 +167,7 @@ def load_projects():
     nist.description = """National Institute of Standards in Technology (NIST) Special
      Publication 800-53 provides a catalog of security and privacy controls for the
      protection of information systems and organizations from a diverse set of threats
-     and risks. This project provides resources for assessing security control coverage
+     and risks. These mappings provide resources for security control coverage
      against real-world threats as described in the MITRE ATT&CK® knowledge base and
      provide a foundation for integrating ATT&CK-based threat information into the
      risk management process."""
