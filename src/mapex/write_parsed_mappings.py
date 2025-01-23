@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 import yaml
 from loguru import logger
-from stix2validator import validate_instance
+from stix2validator import validate_instance, print_results
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
@@ -256,6 +256,7 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
             "Invalid STIX generated for {filepath}_json.json",
             filepath=filepath,
         )
+        print_results(validation_results)
         sys.exit(1)
 
 
