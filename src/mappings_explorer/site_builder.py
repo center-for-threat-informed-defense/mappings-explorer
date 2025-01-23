@@ -138,6 +138,8 @@ attack_domains = {
         # "14.1",
         # "15.0",
         "15.1",
+        # "16.0",
+        "16.1",
     ],
     "Mobile": [
         "8.2",
@@ -155,7 +157,8 @@ attack_domains = {
         # "14.0",
         # "14.1",
         # "15.0",
-        "15.1",
+        # "16.0",
+        "16.1",
     ],
 }
 
@@ -1861,6 +1864,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         "14.1",
         "15.0",
         "15.1",
+        "16.1",
     ]
 
     attack_domain_versions_with_mappings = {}
