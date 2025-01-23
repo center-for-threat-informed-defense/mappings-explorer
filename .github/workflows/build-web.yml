@@ -35,7 +35,7 @@ jobs:
             version: 1.8.5
       - name: Collect Error Logs
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: logs
           path: /home/runner/work/**/*.log
@@ -51,7 +51,7 @@ jobs:
       - name: Compress Artifacts
         run: zip -rq output.zip output/
       - name: Upload Web Site
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mapex-web
           path: output.zip
@@ -72,7 +72,7 @@ jobs:
           node-version: "19"
       - run: npm install -g staticrypt
       - name: Download Web Site
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: mapex-web
           path: .
