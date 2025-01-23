@@ -648,16 +648,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "action.malware.variety.Capture stored data",
-            "capability_description": "Capture data stored on system disk",
-            "mapping_type": "related_to",
-            "attack_object_id": "T1016.002",
-            "attack_object_name": "Wi-Fi Discovery",
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "complete"
-        },
-        {
             "capability_id": "action.malware.variety.Scan network",
             "capability_description": "Enumerating the state of the network",
             "mapping_type": "related_to",
@@ -968,16 +958,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "action.hacking.variety.Evade Defenses",
-            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
-            "mapping_type": "related_to",
-            "attack_object_id": "T1027.002",
-            "attack_object_name": "Obfuscated Files or Information: Software Packaging",
-            "capability_group": "action.hacking",
-            "references": [],
-            "status": "complete"
-        },
-        {
             "capability_id": "action.malware.variety.Disable controls",
             "capability_description": "Disable or interfere with security controls",
             "mapping_type": "related_to",
@@ -1004,16 +984,6 @@
             "attack_object_id": "T1027.003",
             "attack_object_name": "Obfuscated Files or Information: Steganography",
             "capability_group": "action.malware",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "action.hacking.variety.Evade Defenses",
-            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
-            "mapping_type": "related_to",
-            "attack_object_id": "T1027.004",
-            "attack_object_name": "Obfuscated Files or Information: Compile After Dilevery",
-            "capability_group": "action.hacking",
             "references": [],
             "status": "complete"
         },
@@ -11418,6 +11388,46 @@
             "status": "complete"
         },
         {
+            "capability_id": "attribute.integrity.variety.Modify configuration",
+            "capability_description": "Modified configuration or services",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_group": "attribute.integrity",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "attribute.integrity.variety.Modify privileges",
+            "capability_description": "Modified privileges or permissions",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_group": "attribute.integrity",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "attribute.integrity.variety.Modify configuration",
+            "capability_description": "Modified configuration or services",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1556.009",
+            "attack_object_name": "Conditional Access Policies",
+            "capability_group": "attribute.integrity",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "attribute.integrity.variety.Modify privileges",
+            "capability_description": "Modified privileges or permissions",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1556.009",
+            "attack_object_name": "Conditional Access Policies",
+            "capability_group": "attribute.integrity",
+            "references": [],
+            "status": "complete"
+        },
+        {
             "capability_id": "action.malware.variety.Disable controls",
             "capability_description": "Disable or interfere with security controls",
             "mapping_type": "related_to",
@@ -11698,11 +11708,141 @@
             "status": "complete"
         },
         {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1543.005",
+            "attack_object_name": "Create or Modify System Process: Container Service",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Abuse Elevation Control Mechanism: Temporary Elevated Cloud Access",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1548.006",
+            "attack_object_name": "Abuse Elevation Control Mechanism: TCC Manipulation",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1564.011",
+            "attack_object_name": "Ignore Process Interrupts",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1564.012",
+            "attack_object_name": "File/Path Exclusions",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1564.012",
+            "attack_object_name": "File/Path Exclusions",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Profile host",
+            "capability_description": "Enumerating the state of the current host",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1652",
+            "attack_object_name": "Device Driver Discovery",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1653",
+            "attack_object_name": "Power Settings",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Profile host",
+            "capability_description": "Enumerating the state of the current host",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1654",
+            "attack_object_name": "Log Enumeration",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Abuse of functionality",
+            "capability_description": "Abuse of functionality.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1665",
+            "attack_object_name": "Hide Infrastructure",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1666",
+            "attack_object_name": "Modify Cloud Resource Hierarchy",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
             "capability_id": "action.malware.variety.Evade Defenses",
             "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
             "mapping_type": "related_to",
             "attack_object_id": "T1622",
             "attack_object_name": "Debugger Evasion",
+            "capability_group": "action.malware",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.malware.variety.Backdoor",
+            "capability_description": "Malware creates a backdoor capability for hacking. Child of 'RAT' when combined with 'Trojan'. Child of 'Backdoor or C2'.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1546.017",
+            "attack_object_name": "Udev Rules",
             "capability_group": "action.malware",
             "references": [],
             "status": "complete"
@@ -11718,12 +11858,12 @@
             "status": "complete"
         },
         {
-            "capability_id": "action.malware.vector.remote injection",
-            "capability_description": null,
+            "capability_id": "action.social.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
             "mapping_type": "related_to",
-            "attack_object_id": "T1659",
-            "attack_object_name": "Content Injection",
-            "capability_group": "action.malware",
+            "attack_object_id": "T1656",
+            "attack_object_name": "Impersonation",
+            "capability_group": "action.social",
             "references": [],
             "status": "complete"
         },
@@ -12236,6 +12376,86 @@
             "capability_group": "value_chain.development",
             "references": [],
             "status": "non_mappable"
+        },
+        {
+            "capability_id": "action.malware.variety.Capture stored data",
+            "capability_description": "Capture data stored on system disk",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1016.002",
+            "attack_object_name": "Wi-Fi Discovery",
+            "capability_group": "action.malware",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1027.002",
+            "attack_object_name": "Obfuscated Files or Information: Software Packaging",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Evade Defenses",
+            "capability_description": "Modification of the action (rather than the system, as in 'Disable controls') to avoid detection.",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1027.004",
+            "attack_object_name": "Obfuscated Files or Information: Compile After Dilevery",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Use of stolen creds",
+            "capability_description": "Use of stolen or default authentication credentials (including credential stuffing)",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1558.005",
+            "attack_object_name": "Steal or Forge Kerberos Tickets: Ccache Files",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.variety.Hijack",
+            "capability_description": "To assume control over and steal functionality for an illicit purpose (e.g. Hijacking phone number intercept SMS verification codes)",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1574.014",
+            "attack_object_name": "AppDomainManager",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.hacking.vector.Partner",
+            "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1584.008",
+            "attack_object_name": "Network Devices",
+            "capability_group": "action.hacking",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.malware.vector.Partner",
+            "capability_description": "Partner connection or credential. (Indicates supply chain breach.)",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1584.008",
+            "attack_object_name": "Network Devices",
+            "capability_group": "action.malware",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "action.malware.vector.remote injection",
+            "capability_description": "Remotely injected by agent (i.e. via SQLi)",
+            "mapping_type": "related_to",
+            "attack_object_id": "T1659",
+            "attack_object_name": "Content Injection",
+            "capability_group": "action.malware",
+            "references": [],
+            "status": "complete"
         }
     ]
 }
