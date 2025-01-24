@@ -495,7 +495,7 @@ def parse_capability_groups(
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-        mapping["framework"] = project_id
+        mapping["framework"] = project.label
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
             g = CapabilityGroup()
