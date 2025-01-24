@@ -495,6 +495,7 @@ def parse_capability_groups(
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
+        mapping["framework"] = project_id
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
             g = CapabilityGroup()
@@ -1615,6 +1616,7 @@ def build_technique_page(
             "capability_id",
         ),
         (":text:", "mapping_type", "Mapping Type"),
+        (":text:", "framework", "Mapping Framework"),
         (
             ":pfx_link:",
             "attack_object_id",
