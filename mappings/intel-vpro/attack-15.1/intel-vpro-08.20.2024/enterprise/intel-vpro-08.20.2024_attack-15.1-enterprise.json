@@ -69,6 +69,90 @@
     },
     "mapping_objects": [
         {
+            "capability_id": "intel-ptt",
+            "capability_description": "Intel Platform Trust Technology",
+            "mapping_type": "win11-sgsl",
+            "attack_object_id": "T1542",
+            "attack_object_name": "Pre-OS Boot",
+            "capability_group": "trusted_computing",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.\r\n\r\nWhen the PC starts, the firmware checks the signature of each piece of boot software, including Unified Extensible Firmware Interface (UEFI) firmware drivers (also known as Option ROMs), Extensible Firmware Interface (EFI) applications, and the operating system. If the signatures are valid, the PC boots, and the firmware gives control to the operating system. Rollback protection also prevents the system from rolling back to older versions of firmware.\r\n\r\nSecure Boot employs Intel PTT (TPM) to thwart attacks that attempt to alter the signature policy at the boot level in real-time or modify components involved in the boot process before the boot process. Intel Boot Guard ensures the integrity of the boot-level code before it is executed on the processor, preventing the system from proceeding with malicious boot code.\r\n\r\nSecure Boot is able to address threats pre-os that change the signature of the loaded boot component.\r\n\r\nSystem Guard Secure Launch uses a technology called Dynamic Root of Trust Measurement (DRTM). It leverages Intel PTT (TPM) and TXT to provide secure methods to boot a system and verify the integrity of the operating system and loading mechanisms. System Guard Secure Launch ensures that the system can freely boot into untrusted code initially, but shortly after launches the system into a trusted state by taking control of all CPUs and forcing them down a well-known and measured code path. This has the benefit of allowing untrusted early code to boot the system but then being able to securely transition into a trusted and measured state. The ability to transition in real-time to a secure state justified the score of significant for this feature and its corresponding protection (E.g., bootkit, rootkit, firmware corruption, etc.).",
+            "references": [
+                "https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows",
+                "https://www.intel.com/content/www/us/en/developer/articles/tool/intel-trusted-execution-technology.html",
+                "https://www.microsoft.com/en-us/security/blog/2020/03/17/secured-core-pcs-a-brief-showcase-of-chip-to-cloud-security-against-kernel-attacks/?msockid=07bc2745a94165f41593324ba8c664ab",
+                "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/white-paper-intel-hardware-shield.pdf",
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process",
+                "https://www.microsoft.com/content/dam/microsoft/final/en-us/microsoft-brand/documents/MSFT-Windows11-Security-book_Sept2023.pdf?msockid=13b4f945a67b6ac00039eda4a7a26b00"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "intel-ptt",
+            "capability_description": "Intel Platform Trust Technology",
+            "mapping_type": "win11-sgsl",
+            "attack_object_id": "T1542.001",
+            "attack_object_name": "System Firmware",
+            "capability_group": "trusted_computing",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1542",
+            "comments": "Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.\r\n\r\nWhen the PC starts, the firmware checks the signature of each piece of boot software, including Unified Extensible Firmware Interface (UEFI) firmware drivers (also known as Option ROMs), Extensible Firmware Interface (EFI) applications, and the operating system. If the signatures are valid, the PC boots, and the firmware gives control to the operating system. Rollback protection also prevents the system from rolling back to older versions of firmware.\r\n\r\nSecure Boot employs Intel PTT (TPM) to thwart attacks that attempt to alter the signature policy at the boot level in real-time or modify components involved in the boot process before the boot process. Intel Boot Guard ensures the integrity of the boot-level code before it is executed on the processor, preventing the system from proceeding with malicious boot code.\r\n\r\nSecure Boot is able to address threats pre-os that change the signature of the loaded boot component.\r\n\r\nSystem Guard Secure Launch uses a technology called Dynamic Root of Trust Measurement (DRTM). It leverages Intel PTT (TPM) and TXT to provide secure methods to boot a system and verify the integrity of the operating system and loading mechanisms. System Guard Secure Launch ensures that the system can freely boot into untrusted code initially, but shortly after launches the system into a trusted state by taking control of all CPUs and forcing them down a well-known and measured code path. This has the benefit of allowing untrusted early code to boot the system but then being able to securely transition into a trusted and measured state. The ability to transition in real-time to a secure state justified the score of significant for this feature and its corresponding protection (E.g., bootkit, rootkit, firmware corruption, etc.).",
+            "references": [
+                "https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows",
+                "https://www.intel.com/content/www/us/en/developer/articles/tool/intel-trusted-execution-technology.html",
+                "https://www.microsoft.com/en-us/security/blog/2020/03/17/secured-core-pcs-a-brief-showcase-of-chip-to-cloud-security-against-kernel-attacks/?msockid=07bc2745a94165f41593324ba8c664ab",
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process#measured-boot",
+                "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/white-paper-intel-hardware-shield.pdf",
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process",
+                "https://www.microsoft.com/content/dam/microsoft/final/en-us/microsoft-brand/documents/MSFT-Windows11-Security-book_Sept2023.pdf?msockid=13b4f945a67b6ac00039eda4a7a26b00"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "intel-ptt",
+            "capability_description": "Intel Platform Trust Technology",
+            "mapping_type": "win11-sgsl",
+            "attack_object_id": "T1542.002",
+            "attack_object_name": "Component Firmware",
+            "capability_group": "trusted_computing",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1542",
+            "comments": "Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.\r\n\r\nWhen the PC starts, the firmware checks the signature of each piece of boot software, including Unified Extensible Firmware Interface (UEFI) firmware drivers (also known as Option ROMs), Extensible Firmware Interface (EFI) applications, and the operating system. If the signatures are valid, the PC boots, and the firmware gives control to the operating system. Rollback protection also prevents the system from rolling back to older versions of firmware.\r\n\r\nSecure Boot employs Intel PTT (TPM) to thwart attacks that attempt to alter the signature policy at the boot level in real-time or modify components involved in the boot process before the boot process. Intel Boot Guard ensures the integrity of the boot-level code before it is executed on the processor, preventing the system from proceeding with malicious boot code.\r\n\r\nSecure Boot is able to address threats pre-os that change the signature of the loaded boot component.\r\n\r\nSystem Guard Secure Launch uses a technology called Dynamic Root of Trust Measurement (DRTM). It leverages Intel PTT (TPM) and TXT to provide secure methods to boot a system and verify the integrity of the operating system and loading mechanisms. System Guard Secure Launch ensures that the system can freely boot into untrusted code initially, but shortly after launches the system into a trusted state by taking control of all CPUs and forcing them down a well-known and measured code path. This has the benefit of allowing untrusted early code to boot the system but then being able to securely transition into a trusted and measured state. The ability to transition in real-time to a secure state justified the score of significant for this feature and its corresponding protection (E.g., bootkit, rootkit, firmware corruption, etc.).",
+            "references": [
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process#measured-boot",
+                "https://www.microsoft.com/en-us/security/blog/2020/03/17/secured-core-pcs-a-brief-showcase-of-chip-to-cloud-security-against-kernel-attacks/?msockid=07bc2745a94165f41593324ba8c664ab",
+                "https://www.intel.com/content/www/us/en/developer/articles/tool/intel-trusted-execution-technology.html",
+                "https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows",
+                "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/white-paper-intel-hardware-shield.pdf",
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process",
+                "https://www.microsoft.com/content/dam/microsoft/final/en-us/microsoft-brand/documents/MSFT-Windows11-Security-book_Sept2023.pdf?msockid=13b4f945a67b6ac00039eda4a7a26b00"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "intel-ptt",
+            "capability_description": "Intel Platform Trust Technology",
+            "mapping_type": "win11-sgsl",
+            "attack_object_id": "T1495",
+            "attack_object_name": "Firmware Corruption",
+            "capability_group": "trusted_computing",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.\r\n\r\nWhen the PC starts, the firmware checks the signature of each piece of boot software, including Unified Extensible Firmware Interface (UEFI) firmware drivers (also known as Option ROMs), Extensible Firmware Interface (EFI) applications, and the operating system. If the signatures are valid, the PC boots, and the firmware gives control to the operating system. Rollback protection also prevents the system from rolling back to older versions of firmware.\r\n\r\nSecure Boot employs Intel PTT (TPM) to thwart attacks that attempt to alter the signature policy at the boot level in real-time or modify components involved in the boot process before the boot process. Intel Boot Guard ensures the integrity of the boot-level code before it is executed on the processor, preventing the system from proceeding with malicious boot code.\r\n\r\nSecure Boot is able to address threats pre-os that change the signature of the loaded boot component.\r\n\r\nSystem Guard Secure Launch uses a technology called Dynamic Root of Trust Measurement (DRTM). It leverages Intel PTT (TPM) and TXT to provide secure methods to boot a system and verify the integrity of the operating system and loading mechanisms. System Guard Secure Launch ensures that the system can freely boot into untrusted code initially, but shortly after launches the system into a trusted state by taking control of all CPUs and forcing them down a well-known and measured code path. This has the benefit of allowing untrusted early code to boot the system but then being able to securely transition into a trusted and measured state. The ability to transition in real-time to a secure state justified the score of significant for this feature and its corresponding protection (E.g., bootkit, rootkit, firmware corruption, etc.).",
+            "references": [
+                "https://www.microsoft.com/en-us/security/blog/2020/03/17/secured-core-pcs-a-brief-showcase-of-chip-to-cloud-security-against-kernel-attacks/?msockid=07bc2745a94165f41593324ba8c664ab",
+                "https://www.intel.com/content/www/us/en/developer/articles/tool/intel-trusted-execution-technology.html",
+                "https://learn.microsoft.com/en-us/windows/security/hardware-security/how-hardware-based-root-of-trust-helps-protect-windows",
+                "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/white-paper-intel-hardware-shield.pdf",
+                "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/secure-the-windows-10-boot-process",
+                "https://www.microsoft.com/content/dam/microsoft/final/en-us/microsoft-brand/documents/MSFT-Windows11-Security-book_Sept2023.pdf?msockid=13b4f945a67b6ac00039eda4a7a26b00"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "intel-aes-ni",
             "capability_description": "Intel Advanced Encryption Standard - New Instructions",
             "mapping_type": "win11-bl",
