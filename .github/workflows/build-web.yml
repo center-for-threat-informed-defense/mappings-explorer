@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
-        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorerfinsec.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
+        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
         # run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
@@ -58,11 +58,11 @@ jobs:
 
   #Publish to Azure blob only on PRs, not main.
   azure_blob:
-    # if: github.ref_name != 'main'
+    if: github.ref_name != 'main'
     needs: web_site
     runs-on: ubuntu-latest
     env:
-      AZURE_STORAGE_ACCOUNT: mappingsexplorerfinsec
+      AZURE_STORAGE_ACCOUNT: mappingsexplorer
       AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
@@ -110,7 +110,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `This PR has been published to https://mappingsexplorerfinsec.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
+              body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
             })
 
   # github_pages:
@@ -133,9 +133,9 @@ jobs:
   #   - name: Decompress Artifacts
   #     run: unzip -q output.zip
   #   - name: Upload artifact
-  #     uses: actions/upload-pages-artifact@v3
+  #     uses: actions/upload-pages-artifact@v1
   #     with:
   #       path: ./output
   #   - name: Deploy to GitHub Pages
   #     id: deployment
-  #     uses: actions/deploy-pages@v4
+  #     uses: actions/deploy-pages@v1
