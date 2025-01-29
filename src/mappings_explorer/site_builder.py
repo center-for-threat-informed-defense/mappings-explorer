@@ -495,7 +495,7 @@ def parse_capability_groups(
         mapping["mapping_type"] = replace_mapping_type(
             mapping, metadata["mapping_types"]
         )
-        mapping["framework"] = project.label
+        mapping["framework"] = project.id
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
             g = CapabilityGroup()
@@ -1529,6 +1529,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                         attack_domain=attack_domain,
                         technique=technique,
                         breadcrumbs=breadcrumbs,
+                        projects=projects,
                     )
 
             for technique in all_techniques:
@@ -1547,6 +1548,7 @@ def build_attack_pages(projects: list, url_prefix: str, breadcrumbs: list):
                         attack_domain=attack_domain,
                         technique=technique,
                         breadcrumbs=breadcrumbs,
+                        projects=projects,
                     )
             logger.trace("built all technique pages")
             for tactic in all_tactics:
@@ -1579,6 +1581,7 @@ def build_technique_page(
     attack_domain: str,
     technique: Technique,
     breadcrumbs: list,
+    projects: list,
 ):
     """Builds a technique page for a given technique
 
@@ -1616,7 +1619,6 @@ def build_technique_page(
             "capability_id",
         ),
         (":text:", "mapping_type", "Mapping Type"),
-        (":text:", "framework", "Mapping Framework"),
         (
             ":pfx_link:",
             "attack_object_id",
@@ -1641,6 +1643,12 @@ def build_technique_page(
     output_path = dir / "index.html"
     prev_page = parent_dir
     template = load_template("technique.html.j2")
+    split_mappings = []
+    for project in projects:
+        cutup = [m for m in technique.mappings if m.get("framework") == project.id]
+        split_mappings.append(
+            {"id": project.id, "label": project.label, "mappings": cutup}
+        )
     stream = template.stream(
         title=f"ATT&CK Technique {technique.id}",
         url_prefix=url_prefix,
@@ -1652,6 +1660,7 @@ def build_technique_page(
         technique=technique,
         prev_page=prev_page,
         mappings=technique.mappings,
+        split_mappings=split_mappings,
         subtechniques=technique.subtechniques,
         breadcrumbs=nav,
         previous_link=attack_prefix,
