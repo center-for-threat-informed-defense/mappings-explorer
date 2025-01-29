@@ -20,12 +20,12 @@
 
 /* Colors */
 :root {
-  --color-default: #212c5e;
-  --color-primary: #c2eaf6;
-  --color-secondary: #6241c5;
+  --color-default: #0D2F4F;
+  --color-primary: #87DEFF;
   --color-link: #005b94;
-  --color-text: #0b2338;
-  --color-purple: #bca9dd;
+  --color-text: #111921;
+  --color-highlighter: #FFF601;
+  --color-silver: #F1F3F4;
 }
 
 /* Smooth scroll behavior */
@@ -53,7 +53,7 @@ a {
 }
 
 a:hover {
-  color: #82cbed;
+  color: var(--color-primary);
   text-decoration: none;
   cursor: pointer !important;
 }
@@ -77,7 +77,7 @@ h6 {
 }
 
 span.highlight {
-  color: var(--color-secondary);
+  /* color: var(--color-secondary); */
 }
 
 table.table th a,
@@ -120,7 +120,7 @@ section.version-select {
   display: block;
   width: 60px;
   height: 2px;
-  background: var(--color-secondary);
+  background: var(--color-link);
   left: 0;
   right: 0;
   bottom: 0;
@@ -132,7 +132,7 @@ section.version-select {
 }
 
 .gray-bg {
-  background-color: #eff1f4;
+  background-color: var(--color-silver);
 }
 
 .white-bg {
@@ -272,7 +272,7 @@ section.version-select {
   transition: all 0.5s;
   z-index: 997;
   padding: 14px 0;
-  background: #212c5f;
+  background: var(--color-default);
   font-family: var(--font-primary);
 }
 
@@ -290,7 +290,7 @@ div.banner {
 }
 
 .banner.sticked {
-  top: 72px;
+  top: 50px;
 }
 
 .banner p {
@@ -312,7 +312,7 @@ div.banner {
 }
 
 .header.sticked {
-  background: #212c5ff8;
+  background: var(--color-default);
   padding: 10px 0;
 }
 
@@ -675,7 +675,7 @@ div.banner {
   padding-left: 20px;
   font-size: 15px;
   font-family: var(--font-default);
-  border-left: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-highlighter);
   margin: 25px 0;
 }
 
@@ -688,7 +688,7 @@ div.banner {
   padding-left: 20px;
   font-size: 15px;
   font-family: var(--font-default);
-  border-left: 3px solid var(--color-purple);
+  border-left: 3px solid var(--color-highlighter);
   margin: 20px 0;
 }
 
@@ -769,7 +769,7 @@ div.banner {
 .why-us h3 {
   font-size: 24px;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .why-us h4 {
@@ -787,7 +787,7 @@ div.banner {
 .why-us .swiper-button-prev:after,
 .why-us .swiper-button-next:after {
   font-size: 24px;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .why-us .swiper-button-prev {
@@ -804,7 +804,7 @@ div.banner {
 }
 
 .why-us .swiper-pagination .swiper-pagination-bullet {
-  background-color: var(--color-secondary);
+  background-color: var(--color-link);
 }
 
 .why-us .swiper-pagination .swiper-pagination-bullet-active {
@@ -994,15 +994,15 @@ section#user-stories button.accordion-button div {
 
 .version-select .btn-pill {
   font-family: var(--font-default);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 15px;
   letter-spacing: 1px;
   display: flex;
   padding: 12px 30px;
   border-radius: 50px;
-  transition: 0.5s;
-  color: white;
-  background: var(--color-secondary);
+  transition: 0.25s;
+  color: var(--color-text);
+  background: var(--color-primary);
   display: flex;
   width: max-content;
   margin-top: auto !important;
@@ -1010,7 +1010,8 @@ section#user-stories button.accordion-button div {
 }
 
 .version-select .btn-pill:hover {
-  background: #5c6fc6;
+  background: var(--color-link);
+  color: white;
 }
 
 /**
@@ -1077,8 +1078,8 @@ p.notice {
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  color: #fff;
-  background: #2aa5df;
+  color: var(--color-text);
+  background: var(--color-primary);
 }
 
 .call-to-action .cta-btn:hover {
@@ -1101,7 +1102,7 @@ p.notice {
 }
 
 .features h3 {
-  color: var(--color-secondary);
+  color: var(--color-link);
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
@@ -1152,7 +1153,7 @@ p.notice {
 }
 
 .features .details h4 {
-  color: var(--color-secondary);
+  color: var(--color-link);
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -1214,12 +1215,12 @@ p.notice {
 .recent-posts .post-box .meta .post-author {
   font-size: 15px;
   font-weight: 400;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .recent-posts .post-box .post-title {
   font-size: 18px;
-  color: var(--color-secondary);
+  color: var(--color-link);
   font-weight: 700;
   margin: 15px 0 0 0;
   position: relative;
@@ -1312,7 +1313,7 @@ p.notice {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 18px;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .team .team-member .member-info span {
@@ -1380,13 +1381,13 @@ p.notice {
 
 .services-cards li::marker,
 #use-cases ol li::marker {
-  color: var(--color-secondary);
+  color: var(--color-link);
   font-weight: 700;
 }
 
 .services-cards li::marker,
 .services-cards ol a {
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .services-cards:nth-child(even) {
@@ -1499,7 +1500,7 @@ p.notice {
 }
 
 .portfolio .portfolio-flters li {
-  color: var(--color-secondary);
+  color: var(--color-highlighter);
   cursor: pointer;
   display: inline-block;
   padding: 0;
@@ -1642,7 +1643,7 @@ p.notice {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .portfolio-details .portfolio-description p {
@@ -1823,7 +1824,7 @@ p.notice {
 }
 
 .blog .posts-list .title a {
-  color: var(--color-secondary);
+  color: var(--color-link);
   transition: 0.3s;
 }
 
@@ -1897,7 +1898,7 @@ p.notice {
   font-weight: 700;
   padding: 0;
   margin: 20px 0 0 0;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .blog .blog-details .content {
@@ -1935,7 +1936,7 @@ p.notice {
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-link);
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -2043,7 +2044,7 @@ p.notice {
   font-size: 22px;
   margin-bottom: 0px;
   padding: 0;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .blog .post-author .social-links {
@@ -2069,7 +2070,7 @@ p.notice {
   font-weight: 400;
   padding: 0;
   margin: 0;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .blog .sidebar .sidebar-item+.sidebar-item {
@@ -2129,7 +2130,7 @@ p.notice {
 }
 
 .blog .sidebar .categories ul a {
-  color: var(--color-secondary);
+  color: var(--color-link);
   font-size: 15px;
 }
 
@@ -2164,7 +2165,7 @@ p.notice {
 }
 
 .blog .sidebar .recent-posts h4 a {
-  color: var(--color-secondary);
+  color: var(--color-link);
   transition: 0.3s;
 }
 
@@ -2256,7 +2257,7 @@ p.notice {
 
 .blog .comments .comment h5 .reply {
   padding-left: 10px;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .blog .comments .comment h5 .reply i {
@@ -2319,7 +2320,7 @@ p.notice {
   border-radius: 4px;
   padding: 10px 20px;
   border: 0;
-  background-color: var(--color-secondary);
+  background-color: var(--color-link);
 }
 
 .blog .comments .reply-form .btn-primary:hover {
@@ -2347,7 +2348,7 @@ p.notice {
 }
 
 .blog .blog-pagination li a {
-  color: #2aa5df;
+  color: var(--color-primary);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -2492,14 +2493,14 @@ p.notice {
 
 .footer .footer-legal .copyright {
   text-align: center;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .footer .footer-legal .credits {
   padding-top: 4px;
   text-align: center;
   font-size: 13px;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 /* ----------------------- */
@@ -2573,8 +2574,8 @@ p.notice {
 }
 
 .custom-badge .purple {
-  background-color: #6241c5 !important;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-text);
   height: 100%;
   padding: 8px 10px;
   border-radius: 0 10px 10px 0;
@@ -2651,8 +2652,8 @@ p.notice {
   }
 
   .custom-badge .purple {
-    background-color: #eff1f4 !important;
-    color: var(--color-secondary);
+    background-color: var(--color-silver) !important;
+    color: var(--color-link);
     height: 100%;
     padding: 0;
     padding-left: 4px;
@@ -2701,7 +2702,7 @@ p.notice {
 
 .pagination>li>a {
   background-color: white;
-  color: var(--color-secondary);
+  color: var(--color-link);
 }
 
 .pagination>li>a:focus,
@@ -2715,14 +2716,14 @@ p.notice {
 
 .pagination>.active>a {
   color: white;
-  background-color: var(--color-secondary) !important;
-  border: solid 1px var(--color-secondary) !important;
+  background-color: var(--color-link) !important;
+  border: solid 1px var(--color-link) !important;
 }
 
 .pagination>.active>a:hover {
   color: white;
-  background-color: var(--color-secondary) !important;
-  border: solid 1px var(--color-secondary);
+  background-color: var(--color-link) !important;
+  border: solid 1px var(--color-link);
 }
 
 td a,
@@ -3137,7 +3138,7 @@ td a:hover {
 } */
 #methodology-overview ol ::marker {
   font-weight: 700;
-  color: var(--color-secondary);
+  color: var(--color-link);
   margin-right: 30px !important;
   width: 30px;
 }
