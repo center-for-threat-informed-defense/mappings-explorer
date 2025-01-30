@@ -1,7 +1,7 @@
 {% extends "base.html.j2" %} {% block content %}
 <div id="matrix-component">
   <Matrix :url_prefix="'{{url_prefix}}'" :all_attack_versions="{{all_attack_versions}}"
-    :all_attack_domains="{{attack_domains}}"
+    :all_attack_domains="{{attack_domains}}" :matrix_order="{{matrix_order}}"
     :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"></Matrix>
 </div>
 
@@ -19,7 +19,7 @@
                 View information about techniques, how techniques and tactics interact, and the
                 <a href="https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/" target="_blank">
                 Center for Threat-Informed Defense
-                </a>’s mappings coverage of
+                </a>'s mappings coverage of
                 <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
                 techniques in the Mappings Explorer matrix view below.
               </p>
@@ -240,14 +240,16 @@
         scrolledCompletelyToLeft: true,
         attackSelectOpen: false,
         domainSelectOpen: false,
-        description: ""
+        description: "",
+        matrixOrder: [],
       };
     },
     props: {
       url_prefix: String,
+      matrix_order: Object,
       all_attack_versions: Array,
       all_attack_domains: Object,
-      attack_domain_versions_with_mappings: Object
+      attack_domain_versions_with_mappings: Object,
     },
     computed: {
       attackDomains() {
@@ -327,7 +329,12 @@
         let tactics = Object.values(this.attackObjectDict).filter((value) => {
           return value.type === "tactic";
         });
-        tactics = tactics.map((tactic) => {
+        let sortedTactics = [];
+        this.matrixOrder.forEach((t) => {
+          tactic = tactics.find(tactic => tactic.id === t);
+          sortedTactics.push(tactic);
+        });
+        sortedTactics = sortedTactics.map((tactic) => {
           tactic.techniques = Object.values(this.attackObjectDict).filter(
             (value) => {
               return (
@@ -355,7 +362,7 @@
           });
           return { ...tactic };
         });
-        this.tactics = tactics;
+        this.tactics = sortedTactics;
       },
       handleClick(technique) {
         technique.open = !technique.open;
@@ -382,6 +389,11 @@
         else {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
+        }
+
+        if (this.selectedDomain && this.matrix_order) {
+          console.log("matrix order ", this.matrix_order)
+          this.matrixOrder = this.matrix_order[this.selectedDomain]
         }
       },
       handleOutsideClick() {
