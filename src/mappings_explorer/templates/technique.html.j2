@@ -22,6 +22,7 @@
     </div>
   </section>
   {% for item in split_mappings %}
+  {% if item.mappings|length > 0 %}
     <section class="mapping-table">
       <div class="container" data-aos="fade-up">
         <div class="row justify-content-left">
@@ -39,6 +40,7 @@
         </div>
       </div>
     </section>
+    {% endif %}
   {% endfor %}
   {% if subtechniques %}
   <section id="attack-table" class="mapping-table">
