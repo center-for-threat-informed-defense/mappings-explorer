@@ -327,7 +327,7 @@
         },
       getTactics() {
         if (this.selectedDomain && this.matrix_order) {
-          this.matrixOrder = this.matrix_order[this.selectedDomain]
+          this.matrixOrder = this.matrix_order[this.selectedDomain.toLowerCase()]
         }
         let tactics = Object.values(this.attackObjectDict).filter((value) => {
           return value.type === "tactic";

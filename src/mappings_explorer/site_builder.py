@@ -1943,7 +1943,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
     }
 
     matrix_order = {
-        "Enterprise": [
+        "enterprise": [
             "TA0043",
             "TA0042",
             "TA0001",
@@ -1959,7 +1959,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "TA0010",
             "TA0040",
         ],
-        "ICS": [
+        "ics": [
             "TA0108",
             "TA0104",
             "TA0110",
@@ -1973,7 +1973,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "TA0106",
             "TA0105",
         ],
-        "Mobile": [
+        "mobile": [
             "TA0027",
             "TA0041",
             "TA0028",
