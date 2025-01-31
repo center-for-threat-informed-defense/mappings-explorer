@@ -118,11 +118,10 @@ jobs:
     if: github.ref_name == 'main'
     needs: web_site
     runs-on: ubuntu-latest
-    env:
-      AZURE_STORAGE_ACCOUNT: mappingsexplorer
-      AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+    environment:
+      name: github-pages
+      url: $\{\{ steps.deployment.outputs.page_url \}\}
+
     steps:
     - name: Setup Pages
       uses: actions/configure-pages@v2
