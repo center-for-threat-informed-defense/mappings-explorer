@@ -326,6 +326,9 @@
           })
         },
       getTactics() {
+        if (this.selectedDomain && this.matrix_order) {
+          this.matrixOrder = this.matrix_order[this.selectedDomain]
+        }
         let tactics = Object.values(this.attackObjectDict).filter((value) => {
           return value.type === "tactic";
         });
@@ -389,11 +392,6 @@
         else {
           let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
-        }
-
-        if (this.selectedDomain && this.matrix_order) {
-          console.log("matrix order ", this.matrix_order)
-          this.matrixOrder = this.matrix_order[this.selectedDomain]
         }
       },
       handleOutsideClick() {
