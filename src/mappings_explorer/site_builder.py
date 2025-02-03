@@ -1942,6 +1942,55 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         ],
     }
 
+    matrix_order = {
+        "enterprise": [
+            "TA0043",
+            "TA0042",
+            "TA0001",
+            "TA0002",
+            "TA0003",
+            "TA0004",
+            "TA0005",
+            "TA0006",
+            "TA0007",
+            "TA0008",
+            "TA0009",
+            "TA0011",
+            "TA0010",
+            "TA0040",
+        ],
+        "ics": [
+            "TA0108",
+            "TA0104",
+            "TA0110",
+            "TA0111",
+            "TA0103",
+            "TA0102",
+            "TA0109",
+            "TA0100",
+            "TA0101",
+            "TA0107",
+            "TA0106",
+            "TA0105",
+        ],
+        "mobile": [
+            "TA0027",
+            "TA0041",
+            "TA0028",
+            "TA0029",
+            "TA0030",
+            "TA0031",
+            "TA0032",
+            "TA0033",
+            "TA0035",
+            "TA0037",
+            "TA0036",
+            "TA0034",
+            "TA0038",
+            "TA0039",
+        ],
+    }
+
     json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
     mappings_filepath = PUBLIC_DIR / "data"
     create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
@@ -1949,6 +1998,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
     template = load_template("matrix.html.j2")
     stream = template.stream(
         title="ATT&CK Matrix",
+        matrix_order=matrix_order,
         all_attack_versions=all_attack_versions,
         url_prefix=url_prefix,
         attack_domains=attack_domains,
@@ -2210,7 +2260,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--url-prefix",
-        default="http://localhost:5500/output/",
+        default="http://[::]:8000/",
         help="A prefix to apply to generated (default: /public)",
     )
     parser.add_argument(
@@ -2270,20 +2320,20 @@ def main():
     if reset_descriptions:
         delete_all_descriptions(projects=projects)
 
-    # build_external_pages(
-    #     projects=projects,
-    #     url_prefix=url_prefix,
-    #     breadcrumbs=breadcrumbs,
-    # )
+    build_external_pages(
+        projects=projects,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+    )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
     ]
     build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
-    # build_attack_pages(
-    #     projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
-    # )
-    # build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    # build_search_index(url_prefix, breadcrumbs)
+    build_attack_pages(
+        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    )
+    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
 
