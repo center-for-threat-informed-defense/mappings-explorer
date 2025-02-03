@@ -2373,7 +2373,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--url-prefix",
-        default="http://[::]:8000/",
+        default="http://localhost:5500/output/",
         help="A prefix to apply to generated (default: /public)",
     )
     parser.add_argument(
@@ -2433,20 +2433,20 @@ def main():
     if reset_descriptions:
         delete_all_descriptions(projects=projects)
 
-    build_external_pages(
-        projects=projects,
-        url_prefix=url_prefix,
-        breadcrumbs=breadcrumbs,
-    )
+    # build_external_pages(
+    #     projects=projects,
+    #     url_prefix=url_prefix,
+    #     breadcrumbs=breadcrumbs,
+    # )
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
     ]
     build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
-    build_attack_pages(
-        projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
-    )
-    build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
-    build_search_index(url_prefix, breadcrumbs)
+    # build_attack_pages(
+    #     projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
+    # )
+    # build_matrix(url_prefix=url_prefix, projects=projects, breadcrumbs=breadcrumbs)
+    # build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
 
