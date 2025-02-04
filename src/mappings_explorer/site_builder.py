@@ -286,7 +286,7 @@ def load_projects():
     aws.label = "AWS"
     aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
       platform. These mappings connect the security controls native to the (AWS)
-      platformto MITRE ATT&CK®, providing resources to assess how to protect, detect,
+      platform to MITRE ATT&CK®, providing resources to assess how to protect, detect,
       and respond to real-world threats as described in the ATT&CK knowledge base.
         """
     aws.attackDomains = ["Enterprise"]
