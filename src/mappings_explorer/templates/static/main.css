@@ -26,6 +26,7 @@
   --color-text: #111921;
   --color-highlighter: #FFF601;
   --color-silver: #F1F3F4;
+  --color-gray: #D4D4D3;
 }
 
 /* Smooth scroll behavior */
@@ -675,7 +676,7 @@ div.banner {
   padding-left: 20px;
   font-size: 15px;
   font-family: var(--font-default);
-  border-left: 2px solid var(--color-highlighter);
+  border-left: 2px solid var(--color-primary);
   margin: 25px 0;
 }
 
@@ -688,7 +689,7 @@ div.banner {
   padding-left: 20px;
   font-size: 15px;
   font-family: var(--font-default);
-  border-left: 3px solid var(--color-highlighter);
+  border-left: 3px solid var(--color-gray);
   margin: 20px 0;
 }
 
@@ -1500,7 +1501,7 @@ p.notice {
 }
 
 .portfolio .portfolio-flters li {
-  color: var(--color-highlighter);
+  color: var(--color-primary);
   cursor: pointer;
   display: inline-block;
   padding: 0;
