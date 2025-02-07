@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 import yaml
 from loguru import logger
-from stix2validator import validate_instance, print_results
+from stix2validator import print_results, validate_instance
 
 
 def write_parsed_mappings_json(parsed_mappings, filepath):
