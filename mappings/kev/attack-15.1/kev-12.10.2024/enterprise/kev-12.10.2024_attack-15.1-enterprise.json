@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "09/10/2024",
-        "last_update": "02/06/2025",
+        "last_update": "02/07/2025",
         "mapping_types": {
             "primary_impact": {
                 "name": "primary_impact",
@@ -1831,7 +1831,6 @@
             "capability_group": "input_validation",
             "comments": "CVE-2020-0069 is an insufficient input validation vulnerability in multiple MediaTek chipsets that, combined with missing SELinux restrictions in the Command Queue drivers' ioctl handlers, allows an adversary to perform an out-of-bounds write leading to privilege escalation.",
             "references": [
-                "https://www.cvedetails.com/cve/CVE-2020-0069/",
                 "https://secalerts.co/vulnerability/CVE-2020-0069"
             ],
             "status": "complete"
@@ -1845,7 +1844,6 @@
             "capability_group": "buffer_overflow",
             "comments": "CVE-2020-5735 is a stack-based buffer overflow vulnerability in Amcrest cameras and NVR that allows an authenticated remote attacker to possibly execute unauthorized code over port 37777 and crash the device.",
             "references": [
-                "https://www.cvedetails.com/cve/CVE-2020-5735/",
                 "https://www.tenable.com/security/research/tra-2020-20"
             ],
             "status": "complete"
@@ -1859,7 +1857,6 @@
             "capability_group": "buffer_overflow",
             "comments": "CVE-2020-5735 is a stack-based buffer overflow vulnerability in Amcrest cameras and NVR that allows an authenticated remote attacker to possibly execute unauthorized code over port 37777 and crash the device.",
             "references": [
-                "https://www.cvedetails.com/cve/CVE-2020-5735/",
                 "https://www.tenable.com/security/research/tra-2020-20"
             ],
             "status": "complete"
@@ -2455,7 +2452,6 @@
             "capability_group": "use_after_free",
             "comments": "The exploitation technique for this vulnerability is based on a vulnerability in Client software.  In the wild, this was seen to be exploited by a malicious excel file.\n\nThe observed goals of this exploit from Group 123 are remote access and data exfiltration.\n\nInstallation of the remote access software could allow for a number of different secondary impacts. See the MITRE ATT&CK reference on the DOGCALL software for more information.",
             "references": [
-                "https://attack.mitre.org/software/S0213/",
                 "https://cloud.google.com/blog/topics/threat-intelligence/attacks-leveraging-adobe-zero-day-cve-2018-4878-threat-attribution-attack-scenario-and-recommendations/",
                 "https://blog.talosintelligence.com/group-123-goes-wild/"
             ],
@@ -6813,7 +6809,6 @@
             "comments": "This vulnerability is exploited through an authentication bypass weakness in the web component of Ivanti Connect Secure and Ivanti Policy Secure. Remote attackers leverage this vulnerability to gain unauthorized access by bypassing control checks. ",
             "references": [
                 "https://www.helpnetsecurity.com/2024/01/11/cve-2023-46805-cve-2024-21887/",
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US"
             ],
             "status": "complete"
@@ -6828,7 +6823,6 @@
             "comments": "This vulnerability is exploited through an authentication bypass weakness in the web component of Ivanti Connect Secure and Ivanti Policy Secure. Remote attackers leverage this vulnerability to gain unauthorized access by bypassing control checks. ",
             "references": [
                 "https://www.helpnetsecurity.com/2024/01/11/cve-2023-46805-cve-2024-21887/",
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US"
             ],
             "status": "complete"
@@ -6843,7 +6837,6 @@
             "comments": "This vulnerability is exploited through an authentication bypass weakness in the web component of Ivanti Connect Secure and Ivanti Policy Secure. Remote attackers leverage this vulnerability to gain unauthorized access by bypassing control checks. ",
             "references": [
                 "https://www.helpnetsecurity.com/2024/01/11/cve-2023-46805-cve-2024-21887/",
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US"
             ],
             "status": "complete"
@@ -6858,7 +6851,6 @@
             "comments": "This vulnerability is exploited through an authentication bypass weakness in the web component of Ivanti Connect Secure and Ivanti Policy Secure. Remote attackers leverage this vulnerability to gain unauthorized access by bypassing control checks. ",
             "references": [
                 "https://www.helpnetsecurity.com/2024/01/11/cve-2023-46805-cve-2024-21887/",
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://forums.ivanti.com/s/article/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US"
             ],
             "status": "complete"
@@ -6872,7 +6864,6 @@
             "capability_group": "command_injection",
             "comments": "This vulnerability is exploited through a command injection weakness in the web components of Ivanti Connect Secure and Ivanti Policy Secure. Attackers leverage this vulnerability to achieve remote code execution by sending specially crafted requests to vulnerable instances, potentially without requiring authentication when combined with other vulnerabilities. This manipulation allows attackers to execute arbitrary commands on the appliance, potentially enabling further exploitation and system compromise.",
             "references": [
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ivanti-zero-day-exploitation",
                 "https://packetstormsecurity.com/files/176668/Ivanti-Connect-Secure-Unauthenticated-Remote-Code-Execution.html"
             ],
@@ -6887,7 +6878,6 @@
             "capability_group": "command_injection",
             "comments": "This vulnerability is exploited through a command injection weakness in the web components of Ivanti Connect Secure and Ivanti Policy Secure. Attackers leverage this vulnerability to achieve remote code execution by sending specially crafted requests to vulnerable instances, potentially without requiring authentication when combined with other vulnerabilities. This manipulation allows attackers to execute arbitrary commands on the appliance, potentially enabling further exploitation and system compromise.",
             "references": [
-                "https://attack.mitre.org/campaigns/C0029/",
                 "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ivanti-zero-day-exploitation",
                 "https://packetstormsecurity.com/files/176668/Ivanti-Connect-Secure-Unauthenticated-Remote-Code-Execution.html"
             ],
@@ -8438,8 +8428,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8456,8 +8445,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8474,8 +8462,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8492,8 +8479,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8510,8 +8496,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8528,8 +8513,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -8546,8 +8530,7 @@
                 "https://cybersecuritynews.com/ransomware-gangs-vmware-esxi-bypass-flaw/",
                 "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-april-2023/",
                 "https://www.darkreading.com/vulnerabilities-threats/microsoft-patches-97-cves-including-zero-day-wormable-bugs",
-                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28252"
+                "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-28252"
             ],
             "status": "complete"
         },
@@ -9030,8 +9013,7 @@
                 "https://googleprojectzero.github.io/0days-in-the-wild//0day-RCAs/2022/CVE-2022-24521.html",
                 "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24521",
                 "https://unit42.paloaltonetworks.com/cuba-ransomware-tropical-scorpius/",
-                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24521"
+                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/"
             ],
             "status": "complete"
         },
@@ -9048,8 +9030,7 @@
                 "https://googleprojectzero.github.io/0days-in-the-wild//0day-RCAs/2022/CVE-2022-24521.html",
                 "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24521",
                 "https://unit42.paloaltonetworks.com/cuba-ransomware-tropical-scorpius/",
-                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24521"
+                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/"
             ],
             "status": "complete"
         },
@@ -9066,8 +9047,7 @@
                 "https://googleprojectzero.github.io/0days-in-the-wild//0day-RCAs/2022/CVE-2022-24521.html",
                 "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-24521",
                 "https://unit42.paloaltonetworks.com/cuba-ransomware-tropical-scorpius/",
-                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-24521"
+                "https://securelist.com/windows-clfs-exploits-ransomware-cve-2022-24521/111580/"
             ],
             "status": "complete"
         },
@@ -9433,8 +9413,7 @@
             "capability_group": "xss",
             "comments": "This vulnerability is exploited by an adversary via a malicious e-mail containing a crafted SVG document. When a user views the e-mail, the remote attacker can load arbitrary JavaScript code on the victim's machine.  \n\nIn recent campaign Winter Vivern group exploited this vulnerability. The attack chains typically start with a phishing mail sent containing a Base64-encoded payload embedded in the HTML source code. The payload gets decoded and injects a remote javascript, checkupdate.js, in current user session.\n\nThe checkupdate.js script serves as a loader, enabling the execution of a final JavaScript payload which is designed to exfiltrate email messages. The attackers weaponized this XSS flaw to carry out their malicious activities, ultimately allowing them to harvest email messages from their victims' accounts to a C2 server. The attack chain requires minimal user interaction, the attack gets executed only in viewing the malicious email in a web browser.",
             "references": [
-                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5631"
+                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf"
             ],
             "status": "complete"
         },
@@ -9447,8 +9426,7 @@
             "capability_group": "xss",
             "comments": "This vulnerability is exploited by an adversary via a malicious e-mail containing a crafted SVG document. When a user views the e-mail, the remote attacker can load arbitrary JavaScript code on the victim's machine.  \n\nIn recent campaign Winter Vivern group exploited this vulnerability. The attack chains typically start with a phishing mail sent containing a Base64-encoded payload embedded in the HTML source code. The payload gets decoded and injects a remote javascript, checkupdate.js, in current user session.\n\nThe checkupdate.js script serves as a loader, enabling the execution of a final JavaScript payload which is designed to exfiltrate email messages. The attackers weaponized this XSS flaw to carry out their malicious activities, ultimately allowing them to harvest email messages from their victims' accounts to a C2 server. The attack chain requires minimal user interaction, the attack gets executed only in viewing the malicious email in a web browser.",
             "references": [
-                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5631"
+                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf"
             ],
             "status": "complete"
         },
@@ -9461,8 +9439,7 @@
             "capability_group": "xss",
             "comments": "This vulnerability is exploited by an adversary via a malicious e-mail containing a crafted SVG document. When a user views the e-mail, the remote attacker can load arbitrary JavaScript code on the victim's machine.  \n\nIn recent campaign Winter Vivern group exploited this vulnerability. The attack chains typically start with a phishing mail sent containing a Base64-encoded payload embedded in the HTML source code. The payload gets decoded and injects a remote javascript, checkupdate.js, in current user session.\n\nThe checkupdate.js script serves as a loader, enabling the execution of a final JavaScript payload which is designed to exfiltrate email messages. The attackers weaponized this XSS flaw to carry out their malicious activities, ultimately allowing them to harvest email messages from their victims' accounts to a C2 server. The attack chain requires minimal user interaction, the attack gets executed only in viewing the malicious email in a web browser.",
             "references": [
-                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5631"
+                "https://www.hivepro.com/wp-content/uploads/2023/10/Winter-Vivern-Capitalizes-on-Zero-Day-Flaw-in-Roundcube_TA2023436.pdf"
             ],
             "status": "complete"
         },
@@ -9475,8 +9452,7 @@
             "capability_group": "xss",
             "comments": "This vulnerability is exploited by an adversary via malicious links embedded in trustworthy websites to infiltrate victim systems. Successful exploitation grants the adversary the ability to execute arbitrary code on the impacted system. \n\nThe Russia-aligned hacking group TAG-70 has been attributed to exploiting this vulnerability. TAG-70 has used this vulnerability in an espionage campaign targeting European government and military agencies, as well as Iranian embassies in Russia, aiming to gather intelligence on European political and military activities. The campaign, active from early to mid-October 2023, is part of a broader pattern of Russian state-aligned cyber-espionage targeting email services.",
             "references": [
-                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-43770"
+                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage"
             ],
             "status": "complete"
         },
@@ -9489,8 +9465,7 @@
             "capability_group": "xss",
             "comments": "This vulnerability is exploited by an adversary via malicious links embedded in trustworthy websites to infiltrate victim systems. Successful exploitation grants the adversary the ability to execute arbitrary code on the impacted system. \n\nThe Russia-aligned hacking group TAG-70 has been attributed to exploiting this vulnerability. TAG-70 has used this vulnerability in an espionage campaign targeting European government and military agencies, as well as Iranian embassies in Russia, aiming to gather intelligence on European political and military activities. The campaign, active from early to mid-October 2023, is part of a broader pattern of Russian state-aligned cyber-espionage targeting email services.",
             "references": [
-                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-43770"
+                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage"
             ],
             "status": "complete"
         },
@@ -9504,8 +9479,7 @@
             "comments": "This vulnerability is exploited by an adversary via malicious links embedded in trustworthy websites to infiltrate victim systems. Successful exploitation grants the adversary the ability to execute arbitrary code on the impacted system. \n\nThe Russia-aligned hacking group TAG-70 has been attributed to exploiting this vulnerability. TAG-70 has used this vulnerability in an espionage campaign targeting European government and military agencies, as well as Iranian embassies in Russia, aiming to gather intelligence on European political and military activities. The campaign, active from early to mid-October 2023, is part of a broader pattern of Russian state-aligned cyber-espionage targeting email services.",
             "references": [
                 "https://hivepro.com/wp-content/uploads/2024/02/Roundcube-Webmail-Faces-Unrelenting-Exploitation_TA2024073.pdf?utm_sr=google&utm_cmd=organic&utm_ccn=(not%20set)&utm_ctr=(not%20provided)",
-                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-43770"
+                "https://therecord.media/russia-aligned-hackers-target-european-and-iranian-embassies-cyber-espionage"
             ],
             "status": "complete"
         },
@@ -9560,8 +9534,7 @@
                 "https://www.infosecurity-magazine.com/news/rce-vulnerability-in-cobalt-strike/",
                 "https://blog.eclecticiq.com/chinese-threat-actor-used-modified-cobalt-strike-variant-to-attack-taiwanese-critical-infrastructure",
                 "https://cybersecuritynews.com/c2-frameworks-rce-vulnerabilities/",
-                "https://www.cobaltstrike.com/blog/out-of-band-update-cobalt-strike-4-7-1",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-39197"
+                "https://www.cobaltstrike.com/blog/out-of-band-update-cobalt-strike-4-7-1"
             ],
             "status": "complete"
         },
@@ -9577,8 +9550,7 @@
                 "https://www.infosecurity-magazine.com/news/rce-vulnerability-in-cobalt-strike/",
                 "https://blog.eclecticiq.com/chinese-threat-actor-used-modified-cobalt-strike-variant-to-attack-taiwanese-critical-infrastructure",
                 "https://cybersecuritynews.com/c2-frameworks-rce-vulnerabilities/",
-                "https://www.cobaltstrike.com/blog/out-of-band-update-cobalt-strike-4-7-1",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-39197"
+                "https://www.cobaltstrike.com/blog/out-of-band-update-cobalt-strike-4-7-1"
             ],
             "status": "complete"
         },
@@ -9593,8 +9565,7 @@
             "references": [
                 "https://www.jpcert.or.jp/english/at/2023/at230021.html",
                 "https://socradar.io/mastodon-vulnerabilities-and-critical-zero-day-in-trendmicros-apex-one-fixed-cve-2023-41179-cve-2023-42451-cve-2023-42452/",
-                "https://thehackernews.com/2023/09/trend-micro-releases-urgent-fix-for.html",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-41179"
+                "https://thehackernews.com/2023/09/trend-micro-releases-urgent-fix-for.html"
             ],
             "status": "complete"
         },
@@ -9609,8 +9580,7 @@
             "references": [
                 "https://www.jpcert.or.jp/english/at/2023/at230021.html",
                 "https://socradar.io/mastodon-vulnerabilities-and-critical-zero-day-in-trendmicros-apex-one-fixed-cve-2023-41179-cve-2023-42451-cve-2023-42452/",
-                "https://thehackernews.com/2023/09/trend-micro-releases-urgent-fix-for.html",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-41179"
+                "https://thehackernews.com/2023/09/trend-micro-releases-urgent-fix-for.html"
             ],
             "status": "complete"
         },
@@ -9625,8 +9595,7 @@
             "references": [
                 "https://www.bleepingcomputer.com/news/security/barracuda-fixes-new-esg-zero-day-exploited-by-chinese-hackers/",
                 "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-bugs-in-chrome-and-excel-parsing-library/",
-                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7101"
+                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/"
             ],
             "status": "complete"
         },
@@ -9641,8 +9610,7 @@
             "references": [
                 "https://www.bleepingcomputer.com/news/security/barracuda-fixes-new-esg-zero-day-exploited-by-chinese-hackers/",
                 "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-bugs-in-chrome-and-excel-parsing-library/",
-                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7101"
+                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/"
             ],
             "status": "complete"
         },
@@ -9657,8 +9625,7 @@
             "references": [
                 "https://www.bleepingcomputer.com/news/security/barracuda-fixes-new-esg-zero-day-exploited-by-chinese-hackers/",
                 "https://www.bleepingcomputer.com/news/security/cisa-warns-of-actively-exploited-bugs-in-chrome-and-excel-parsing-library/",
-                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-7101"
+                "https://socradar.io/latest-zero-day-vulnerabilities-unc4841-targets-barracuda-esg-with-cve-2023-7102-apache-ofbiz-authentication-bypass-cve-2023-51467/"
             ],
             "status": "complete"
         },
@@ -9673,7 +9640,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9689,7 +9655,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9705,7 +9670,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9721,7 +9685,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9737,7 +9700,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9753,7 +9715,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9769,7 +9730,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9785,7 +9745,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9801,7 +9760,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -9817,7 +9775,6 @@
             "references": [
                 "https://censys.com/tracking-a-sugarcrm-zero-day/",
                 "https://attackerkb.com/topics/E486ui94II/cve-2023-22952",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22952",
                 "https://unit42.paloaltonetworks.com/sugarcrm-cloud-incident-black-hat/"
             ],
             "status": "complete"
@@ -10386,8 +10343,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10402,8 +10358,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10418,8 +10373,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10434,8 +10388,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10450,8 +10403,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10466,8 +10418,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10482,8 +10433,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10498,8 +10448,7 @@
             "references": [
                 "https://www.microsoft.com/en-us/security/blog/2023/07/11/storm-0978-attacks-reveal-financial-and-espionage-motives/",
                 "https://cybersecuritynews.com/romcom-office-0-day-ransomware/#google_vignette",
-                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-36884"
+                "https://unit42.paloaltonetworks.com/new-cve-2023-36584-discovered-in-attack-chain-used-by-russian-apt/"
             ],
             "status": "complete"
         },
@@ -10696,8 +10645,7 @@
             "comments": "This vulnerability is exploited by an adversary who has fully compromised ESXi host. The adversary can exploit the authentication bypass flaw, leading to a failure in authenticating host-to-guest operations. The threat group UNC3886 has exploited this vulnerability to deploy VirtualPita and VirtualPie backdoors on guest VMs by escalating privileges to root on compromised ESXi hosts. This allows for unauthenticated command execution and file transfer.",
             "references": [
                 "https://www.bleepingcomputer.com/news/security/chinese-hackers-used-vmware-esxi-zero-day-to-backdoor-vms/",
-                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-20867"
+                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years"
             ],
             "status": "complete"
         },
@@ -10711,8 +10659,7 @@
             "comments": "This vulnerability is exploited by an adversary who has fully compromised ESXi host. The adversary can exploit the authentication bypass flaw, leading to a failure in authenticating host-to-guest operations. The threat group UNC3886 has exploited this vulnerability to deploy VirtualPita and VirtualPie backdoors on guest VMs by escalating privileges to root on compromised ESXi hosts. This allows for unauthenticated command execution and file transfer.",
             "references": [
                 "https://www.bleepingcomputer.com/news/security/chinese-hackers-used-vmware-esxi-zero-day-to-backdoor-vms/",
-                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-20867"
+                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years"
             ],
             "status": "complete"
         },
@@ -10726,8 +10673,7 @@
             "comments": "This vulnerability is exploited by an adversary who has fully compromised ESXi host. The adversary can exploit the authentication bypass flaw, leading to a failure in authenticating host-to-guest operations. The threat group UNC3886 has exploited this vulnerability to deploy VirtualPita and VirtualPie backdoors on guest VMs by escalating privileges to root on compromised ESXi hosts. This allows for unauthenticated command execution and file transfer.",
             "references": [
                 "https://www.bleepingcomputer.com/news/security/chinese-hackers-used-vmware-esxi-zero-day-to-backdoor-vms/",
-                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-20867"
+                "https://www.darkreading.com/endpoint-security/chinese-spies-exploited-critical-vmware-bug-2-years"
             ],
             "status": "complete"
         },
@@ -11194,8 +11140,7 @@
             "comments": "This vulnerability is exploited when an authenticated user is convinced by an attacker to download and open a specially crafted file from a website, which grants the attacker access to the victim's computer. No articles have been released to the public showing that this vulnerability has been executed in the wild or provides any information on how an exploitation is carried out. ",
             "references": [
                 "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21971",
-                "https://www.securityweek.com/sap-vulnerability-exploited-attacks-after-details-disclosed-hacker-conferences/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21971"
+                "https://www.securityweek.com/sap-vulnerability-exploited-attacks-after-details-disclosed-hacker-conferences/"
             ],
             "status": "complete"
         },
@@ -11209,8 +11154,7 @@
             "comments": "This vulnerability is exploited when an authenticated user is convinced by an attacker to download and open a specially crafted file from a website, which grants the attacker access to the victim's computer. No articles have been released to the public showing that this vulnerability has been executed in the wild or provides any information on how an exploitation is carried out. ",
             "references": [
                 "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21971",
-                "https://www.securityweek.com/sap-vulnerability-exploited-attacks-after-details-disclosed-hacker-conferences/",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21971"
+                "https://www.securityweek.com/sap-vulnerability-exploited-attacks-after-details-disclosed-hacker-conferences/"
             ],
             "status": "complete"
         },
@@ -11251,8 +11195,7 @@
             "comments": "This integer overflow vulnerability is exploited by a remote attacker who has already compromised the renderer process of Google Chrome. Exploiting this vulnerability might lead to incorrect rendering, memory corruption, and arbitrary code execution that could grant the adversary unauthorized access to the system. \n\nExploitation in the wild techniques have not been publicly released to reduce further abuse. ",
             "references": [
                 "https://www.bleepingcomputer.com/news/security/google-patches-another-actively-exploited-chrome-zero-day/",
-                "https://thehackernews.com/2023/04/google-chrome-hit-by-second-zero-day.html",
-                "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-2136"
+                "https://thehackernews.com/2023/04/google-chrome-hit-by-second-zero-day.html"
             ],
             "status": "complete"
         },
