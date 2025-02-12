@@ -272,11 +272,11 @@ def load_projects():
 
     kev.attackDomains = ["Enterprise", "Mobile"]
     kev.attackDomain = kev.attackDomains[0]
-    kev.versions = ["12.10.2024"]
+    kev.versions = ["02.13.2025"]
     kev.attackVersions = ["15.1"]
     kev.validVersions = [
-        ("12.10.2024", "15.1", "Mobile"),
-        ("12.10.2024", "15.1", "Enterprise"),
+        ("02.13.2025", "15.1", "Mobile"),
+        ("02.13.2025", "15.1", "Enterprise"),
     ]
     kev.has_non_mappables = False
     kev.mappings = []
