@@ -262,9 +262,13 @@ def load_projects():
         Agency (CISA). Vulnerabilities in the KEV Catalog are contained in the Common
         Vulnerabilities and Exposures (CVE®) List, which identifies and defines publicly
         known cybersecurity vulnerabilities. These mappings use the behaviors described
-        in MITRE ATT&CK® to connect actively exploited CVEs – those contained in the KEV
-        Catalog - to publicly reported methods and impacts of adversary exploitation.
-    """
+        in MITRE ATT&CK® to connect known exploited CVEs to publicly reported methods
+        and impacts of adversary exploitation. Mapped ATT&CK techniques enable defenders
+        to take a threat-informed approach to vulnerability management. With knowledge
+        of mapped adversary behaviors, defenders will better understand how a
+        vulnerability can impact them, helping defenders integrate vulnerability
+        information into their risk models and identify appropriate compensating
+        security controls."""
 
     kev.attackDomains = ["Enterprise", "Mobile"]
     kev.attackDomain = kev.attackDomains[0]
