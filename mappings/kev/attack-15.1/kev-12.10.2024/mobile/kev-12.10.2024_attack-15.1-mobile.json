@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "09/10/2024",
-        "last_update": "02/07/2025",
+        "last_update": "02/11/2025",
         "mapping_types": {
             "primary_impact": {
                 "name": "primary_impact",
@@ -35,6 +35,20 @@
         }
     },
     "mapping_objects": [
+        {
+            "capability_id": "CVE-2021-38000",
+            "capability_description": "Google Chromium Intents Improper Input Validation Vulnerability",
+            "mapping_type": "exploitation_technique",
+            "attack_object_id": "T1660",
+            "attack_object_name": "Phishing",
+            "capability_group": "input_validation",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
+            "references": [
+                "https://issues.chromium.org/issues/40057279",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
+            ],
+            "status": "complete"
+        },
         {
             "capability_id": "CVE-2022-38181",
             "capability_description": "Arm Mali GPU Kernel Driver Use-After-Free Vulnerability",
@@ -123,8 +137,9 @@
             "attack_object_id": "T1437",
             "attack_object_name": "Application Layer Protocol",
             "capability_group": "input_validation",
-            "comments": "CVE-2021-38000 allows an adversary to redirect intent URLs and transfer execution to another application on the Android device.",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
             "references": [
+                "https://issues.chromium.org/issues/40057279",
                 "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
             ],
             "status": "complete"
@@ -136,8 +151,9 @@
             "attack_object_id": "T1658",
             "attack_object_name": "Exploitation for Client Execution",
             "capability_group": "input_validation",
-            "comments": "CVE-2021-38000 allows an adversary to redirect intent URLs and transfer execution to another application on the Android device.",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
             "references": [
+                "https://issues.chromium.org/issues/40057279",
                 "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
             ],
             "status": "complete"

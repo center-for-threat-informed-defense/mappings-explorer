@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "09/10/2024",
-        "last_update": "02/07/2025",
+        "last_update": "02/11/2025",
         "mapping_types": {
             "primary_impact": {
                 "name": "primary_impact",
@@ -69,6 +69,222 @@
     },
     "mapping_objects": [
         {
+            "capability_id": "CVE-2023-40044",
+            "capability_description": "Progress WS_FTP Server Deserialization of Untrusted Data Vulnerability",
+            "mapping_type": "secondary_impact",
+            "attack_object_id": "T1202",
+            "attack_object_name": "Indirect Command Execution",
+            "capability_group": "untrusted_data",
+            "comments": "Zero-day .NET deserialization vulnerability that allows an adversary to make an HTTP POST request to a vulnerable WS_FTP Server and execute commands.",
+            "references": [
+                "https://www.assetnote.io/resources/research/rce-in-progress-ws-ftp-ad-hoc-via-iis-http-modules-cve-2023-40044",
+                "https://www.tenable.com/blog/cve-2023-40044-cve-2023-42657-progress-software-patches-multiple-vulnerabilities-in-ws-ftp"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-40044",
+            "capability_description": "Progress WS_FTP Server Deserialization of Untrusted Data Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1071.002",
+            "attack_object_name": "File Transfer Protocols",
+            "capability_group": "untrusted_data",
+            "comments": "Zero-day .NET deserialization vulnerability that allows an adversary to make an HTTP POST request to a vulnerable WS_FTP Server and execute commands.",
+            "references": [
+                "https://www.assetnote.io/resources/research/rce-in-progress-ws-ftp-ad-hoc-via-iis-http-modules-cve-2023-40044",
+                "https://www.tenable.com/blog/cve-2023-40044-cve-2023-42657-progress-software-patches-multiple-vulnerabilities-in-ws-ftp"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-36804",
+            "capability_description": "Atlassian Bitbucket Server and Data Center Command Injection Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "command_injection",
+            "comments": "This vulnerability allows remote attackers with read permissions to a public or private Bitbucket repositories to execute arbitrary code by sending a malicious HTTP request.",
+            "references": [
+                "https://www.rapid7.com/blog/post/2022/09/20/cve-2022-36804-easily-exploitable-vulnerability-in-atlassian-bitbucket-server-and-data-center/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2021-26085",
+            "capability_description": "Atlassian Confluence Server Pre-Authorization Arbitrary File Read Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "access_ctrl",
+            "comments": "This vulnerability allows viewing of restricted resources via a pre-authorization arbitrary file read vulnerability.",
+            "references": [
+                "https://www.exploit-db.com/exploits/50377"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2015-3043",
+            "capability_description": "Adobe Flash Player Memory Corruption Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1499.004",
+            "attack_object_name": "Application or System Exploitation",
+            "capability_group": "memory_corruption",
+            "comments": "This vulnerability is exploited by a maliciously-crafted .swf file which can be run on a user system.",
+            "references": [
+                "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/vulnerability/4073/adobe-flash-player-memory-corruption-vulnerability-cve-2015-3043"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2015-3043",
+            "capability_description": "Adobe Flash Player Memory Corruption Vulnerability",
+            "mapping_type": "exploitation_technique",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "memory_corruption",
+            "comments": "This vulnerability is exploited by a maliciously-crafted .swf file which can be run on a user system.",
+            "references": [
+                "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/vulnerability/4073/adobe-flash-player-memory-corruption-vulnerability-cve-2015-3043"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-26369",
+            "capability_description": "Adobe Acrobat and Reader Out-of-Bounds Write Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1203",
+            "attack_object_name": "Exploitation for Client Execution",
+            "capability_group": "oob",
+            "comments": "This vulnerability is exploited through a user opening a malicious PDF file. ",
+            "references": [
+                "https://www.rapid7.com/db/vulnerabilities/adobe-acrobat-cve-2023-26369/",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2023/CVE-2023-26369.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2014-0546",
+            "capability_description": "Adobe Acrobat and Reader Sandbox Bypass Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1068",
+            "attack_object_name": "Exploitation for Privilege Escalation",
+            "capability_group": "sandbox_bypass",
+            "comments": "This vulnerability allows bypassing sandbox protection and run native code.",
+            "references": [
+                "https://securelist.com/cve-2014-0546-used-in-targeted-attacks-adobe-reader-update/65577/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2010-2883",
+            "capability_description": "Adobe Acrobat and Reader Stack-Based Buffer Overflow Vulnerability",
+            "mapping_type": "secondary_impact",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "buffer_overflow",
+            "comments": "This vulnerability is exploited by the user opening a malicious pdf file to achieve arbitrary code execution.",
+            "references": [
+                "https://www.exploit-db.com/exploits/16619"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2010-2883",
+            "capability_description": "Adobe Acrobat and Reader Stack-Based Buffer Overflow Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "buffer_overflow",
+            "comments": "This vulnerability is exploited by the user opening a malicious pdf file to achieve arbitrary code execution.",
+            "references": [
+                "https://www.exploit-db.com/exploits/16619"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-21608",
+            "capability_description": "Adobe Acrobat and Reader Use-After-Free Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1203",
+            "attack_object_name": "Exploitation for Client Execution",
+            "capability_group": "use_after_free",
+            "comments": "This vulnerability is exploited by having a user open a maliciously-crafted pdf file, which can result in arbitrary code execution.",
+            "references": [
+                "https://hacksys.io/blogs/adobe-reader-resetform-cagg-rce-cve-2023-21608"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-26359",
+            "capability_description": "Adobe ColdFusion Deserialization of Untrusted Data Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "untrusted_data",
+            "comments": "This vulnerability is utilized by exploiting a public-facing server.",
+            "references": [
+                "https://helpx.adobe.com/security/products/coldfusion/apsb23-25.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2013-0629",
+            "capability_description": "Adobe ColdFusion Directory Traversal Vulnerability",
+            "mapping_type": "secondary_impact",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "dir_traversal",
+            "comments": "This is an exploitation of a public-facing server due to password misconfiguration. Exploitation allows attackers to access restricted directories",
+            "references": [
+                "https://www.broadcom.com/support/security-center/attacksignatures/detail?asid=34403",
+                "https://www.exploit-db.com/exploits/24946"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2013-0629",
+            "capability_description": "Adobe ColdFusion Directory Traversal Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1202",
+            "attack_object_name": "Indirect Command Execution",
+            "capability_group": "dir_traversal",
+            "comments": "This is an exploitation of a public-facing server due to password misconfiguration. Exploitation allows attackers to access restricted directories",
+            "references": [
+                "https://www.broadcom.com/support/security-center/attacksignatures/detail?asid=34403",
+                "https://www.exploit-db.com/exploits/24946"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-24086",
+            "capability_description": "Adobe Commerce and Magento Open Source Improper Input Validation Vulnerability",
+            "mapping_type": "secondary_impact",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "input_validation",
+            "comments": "This vulnerability can be exploited via a public-facing e-commerce application in order to achieve remote code execution. To evade detection, the exploit segment responsible for downloading and executing the remote malicious PHP code is obfuscated.",
+            "references": [
+                "https://www.akamai.com/blog/security-research/new-sophisticated-magento-campaign-xurum-webshell#:~:text=In%20early%202022%2C%20the%20CVE",
+                "PHP%20code%20on%20susceptible%20targets.",
+                "https://sansec.io/research/magento-2-cve-2022-24086"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-24086",
+            "capability_description": "Adobe Commerce and Magento Open Source Improper Input Validation Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "input_validation",
+            "comments": "This vulnerability can be exploited via a public-facing e-commerce application in order to achieve remote code execution. To evade detection, the exploit segment responsible for downloading and executing the remote malicious PHP code is obfuscated.",
+            "references": [
+                "https://www.akamai.com/blog/security-research/new-sophisticated-magento-campaign-xurum-webshell#:~:text=In%20early%202022%2C%20the%20CVE,PHP%20code%20on%20susceptible%20targets.",
+                "https://sansec.io/research/magento-2-cve-2022-24086"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "CVE-2014-7169",
             "capability_description": "GNU Bourne-Again Shell (Bash) Arbitrary Code Execution Vulnerability",
             "mapping_type": "exploitation_technique",
@@ -180,7 +396,10 @@
             "attack_object_name": "JavaScript",
             "capability_group": "use_after_free",
             "comments": "CVE-2021-30554 allows an adversary to use JavaScript to exploit WebGL component of the Chromium browser that allows for execution of arbitrary code.",
-            "references": [],
+            "references": [
+                "https://attackerkb.com/topics/BAdojKKNTO/cve-2021-30554",
+                "https://thehackernews.com/2021/06/update-your-chrome-browser-to-patch-yet.html"
+            ],
             "status": "complete"
         },
         {
@@ -191,7 +410,10 @@
             "attack_object_name": "Exploitation for Client Execution",
             "capability_group": "use_after_free",
             "comments": "CVE-2021-30554 allows an adversary to use JavaScript to exploit WebGL component of the Chromium browser that allows for execution of arbitrary code.",
-            "references": [],
+            "references": [
+                "https://attackerkb.com/topics/BAdojKKNTO/cve-2021-30554",
+                "https://thehackernews.com/2021/06/update-your-chrome-browser-to-patch-yet.html"
+            ],
             "status": "complete"
         },
         {
@@ -242,7 +464,10 @@
             "attack_object_name": "Exploitation for Client Execution",
             "capability_group": "buffer_overflow",
             "comments": "CVE-2021-21148 allows an adversary to use JavaScript to exploit the Chromium browser V8 JavaScript engine which allows for a write into the heap.",
-            "references": [],
+            "references": [
+                "https://www.tenable.com/blog/cve-2021-21148-google-chrome-heap-buffer-overflow-vulnerability-exploited-in-the-wild",
+                "https://threatprotect.qualys.com/2021/02/08/google-chrome-heap-buffer-overflow-vulnerability-cve-2021-21148/"
+            ],
             "status": "complete"
         },
         {
@@ -2426,7 +2651,9 @@
             "attack_object_name": "Malicious File",
             "capability_group": "buffer_overflow",
             "comments": "This vulnerability is exploited via a malicious PDF file in order to execute arbitrary code.",
-            "references": [],
+            "references": [
+                "https://www.rapid7.com/db/modules/exploit/windows/fileformat/adobe_collectemailinfo/"
+            ],
             "status": "complete"
         },
         {
@@ -2963,8 +3190,11 @@
             "attack_object_id": "T1190",
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "input_validation",
-            "comments": "This vulnerability exploits a public-facing e-commerce application in order to achieve remote code execution.",
-            "references": [],
+            "comments": "This vulnerability can be exploited via a public-facing e-commerce application in order to achieve remote code execution. To evade detection, the exploit segment responsible for downloading and executing the remote malicious PHP code is obfuscated.",
+            "references": [
+                "https://www.akamai.com/blog/security-research/new-sophisticated-magento-campaign-xurum-webshell#:~:text=In%20early%202022%2C%20the%20CVE,PHP%20code%20on%20susceptible%20targets.",
+                "https://sansec.io/research/magento-2-cve-2022-24086"
+            ],
             "status": "complete"
         },
         {
@@ -3275,8 +3505,11 @@
             "attack_object_id": "T1190",
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "dir_traversal",
-            "comments": "This is an exploitation of a public-facing server due to password misconfiguration.",
-            "references": [],
+            "comments": "This is an exploitation of a public-facing server due to password misconfiguration. Exploitation allows attackers to access restricted directories.",
+            "references": [
+                "https://www.broadcom.com/support/security-center/attacksignatures/detail?asid=34403",
+                "https://www.exploit-db.com/exploits/24946"
+            ],
             "status": "complete"
         },
         {
@@ -3339,7 +3572,9 @@
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "untrusted_data",
             "comments": "This vulnerability is utilized by exploiting a public-facing server.",
-            "references": [],
+            "references": [
+                "https://helpx.adobe.com/security/products/coldfusion/apsb23-25.html"
+            ],
             "status": "complete"
         },
         {
@@ -3363,7 +3598,9 @@
             "attack_object_name": "Malicious File",
             "capability_group": "use_after_free",
             "comments": "This vulnerability is exploited by having a user open a maliciously-crafted pdf file, which can result in arbitrary code execution.",
-            "references": [],
+            "references": [
+                "https://hacksys.io/blogs/adobe-reader-resetform-cagg-rce-cve-2023-21608"
+            ],
             "status": "complete"
         },
         {
@@ -3400,7 +3637,9 @@
             "attack_object_name": "Malicious File",
             "capability_group": "other",
             "comments": "This vulnerability is exploited by having a user open a maliciously-crafted pdf file.",
-            "references": [],
+            "references": [
+                "https://www.tenable.com/plugins/nessus/30200"
+            ],
             "status": "complete"
         },
         {
@@ -3436,19 +3675,23 @@
             "attack_object_id": "T1204.002",
             "attack_object_name": "Malicious File",
             "capability_group": "buffer_overflow",
-            "comments": "This vulnerability is exploited by the user opening a malicious pdf file to achieve arbitrary code execution. No reporting found on in-the-wild impacts.",
-            "references": [],
+            "comments": "This vulnerability is exploited by the user opening a malicious pdf file to achieve arbitrary code execution.",
+            "references": [
+                "https://www.exploit-db.com/exploits/16619"
+            ],
             "status": "complete"
         },
         {
             "capability_id": "CVE-2014-0546",
             "capability_description": "Adobe Acrobat and Reader Sandbox Bypass Vulnerability",
-            "mapping_type": "exploitation_technique",
-            "attack_object_id": "T1204.002",
-            "attack_object_name": "Malicious File",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1497",
+            "attack_object_name": "Virtualization/Sandbox Evasion",
             "capability_group": "sandbox_bypass",
-            "comments": "This vulnerability is exploited by having a user open a maliciously crafted pdf file. ",
-            "references": [],
+            "comments": "This vulnerability allows bypassing sandbox protection and run native code.",
+            "references": [
+                "https://securelist.com/cve-2014-0546-used-in-targeted-attacks-adobe-reader-update/65577/"
+            ],
             "status": "complete"
         },
         {
@@ -3458,8 +3701,11 @@
             "attack_object_id": "T1204.002",
             "attack_object_name": "Malicious File",
             "capability_group": "oob",
-            "comments": "This vulnerability is exploited through a user opening a malicious PDF file. No reporting on impact from in-the-wild attacks found.",
-            "references": [],
+            "comments": "This vulnerability is exploited through a user opening a malicious PDF file. ",
+            "references": [
+                "https://www.rapid7.com/db/vulnerabilities/adobe-acrobat-cve-2023-26369/",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2023/CVE-2023-26369.html"
+            ],
             "status": "complete"
         },
         {
@@ -4813,8 +5059,10 @@
             "attack_object_id": "T1190",
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "access_ctrl",
-            "comments": "CVE-2021-26085 is a pre-authorization arbitrary file read vulnerability.",
-            "references": [],
+            "comments": "This vulnerability allows viewing of restricted resources via a pre-authorization arbitrary file read vulnerability.",
+            "references": [
+                "https://www.exploit-db.com/exploits/50377"
+            ],
             "status": "complete"
         },
         {
@@ -4839,7 +5087,9 @@
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "command_injection",
             "comments": "This vulnerability allows remote attackers with read permissions to a public or private Bitbucket repositories to execute arbitrary code by sending a malicious HTTP request.",
-            "references": [],
+            "references": [
+                "https://www.rapid7.com/blog/post/2022/09/20/cve-2022-36804-easily-exploitable-vulnerability-in-atlassian-bitbucket-server-and-data-center/"
+            ],
             "status": "complete"
         },
         {
@@ -5027,8 +5277,10 @@
             "attack_object_id": "T1190",
             "attack_object_name": "Exploit Public-Facing Application",
             "capability_group": "auth_bypass",
-            "comments": "CVE-2021-37415 is an authentication bypass vulnerability that allows a few REST-API URLs without authentication.",
-            "references": [],
+            "comments": "This vulnerability allows a few REST-API URLs without authentication.",
+            "references": [
+                "https://digital.nhs.uk/cyber-alerts/2021/cc-3985"
+            ],
             "status": "complete"
         },
         {
@@ -5317,8 +5569,11 @@
             "attack_object_id": "T1059",
             "attack_object_name": "Command and Scripting Interpreter",
             "capability_group": "untrusted_data",
-            "comments": "CVE-2023-40044 is a .NET deserialization vulnerability that allows an adversary to achieve remote code execution.",
-            "references": [],
+            "comments": "Zero-day .NET deserialization vulnerability that allows an adversary to make an HTTP POST request to a vulnerable WS_FTP Server and execute commands.",
+            "references": [
+                "https://www.assetnote.io/resources/research/rce-in-progress-ws-ftp-ad-hoc-via-iis-http-modules-cve-2023-40044",
+                "https://www.tenable.com/blog/cve-2023-40044-cve-2023-42657-progress-software-patches-multiple-vulnerabilities-in-ws-ftp"
+            ],
             "status": "complete"
         },
         {
