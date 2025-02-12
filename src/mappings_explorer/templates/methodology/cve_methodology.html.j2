@@ -753,138 +753,74 @@
                 <th>Notes</th>
             </tr>
             </thead>
-        <tbody>
-        <tr>
-            <td><p><strong>Internet-facing Host/System</strong> (e.g., webserver, website, database, service)</p></td>
-            <td><p><a href="https://attack.mitre.org/techniques/T1190">T1190</a> (Exploit Public-Facing Application); <a href="https://attack.mitre.org/techniques/T1211">T1211</a> (Exploitation for Defense Evasion)</p></td>
-            <td></td>
-        <td><p>Adversaries may attempt to exploit a weakness in an Internet-facing host or system, which may be a software bug, temporary glitch, or misconfiguration. Depending on the flaw being exploited, this may also involve <a href="https://attack.mitre.org/techniques/T1211">Exploitation for Defense Evasion</a>.</p></td>
-        </tr>
-        <tr>
-            <td><p><strong>Client Application</strong> (e.g., browser, office app)</p></td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p>
-        </td>
-        <td>
-        <p>Adversaries may exploit software vulnerabilities in client applications to execute code. For example, an application that fails to properly handle objects in memory may allow an attackeradversary to run arbitrary code in the context of the current user.</p>
-        </td>
-        </tr>
-        <tr>
-        <td></td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p>
-        </td>
-        <td>
-        <p>A user clicking a link may lead to other execution techniques such as exploitation of a browser or application vulnerability via Exploitation for Client Execution.</p>
-        </td>
-        </tr>
-        <tr>
-        <td></td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p>
-        </td>
-        <td>
-        <p>Malware may be written to compromise a vulnerable client application (the malware is executed by a user).</p>
-        </td>
-        </tr>
-        <tr>
-        <td></td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1189">T1189</a> (Drive-by Compromise)</p>
-        </td>
-        <td></td>
-        <td>
-        <p>Vulnerable web <strong>browsers</strong> are targets of drive-by compromises.</p>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <p><strong>Endpoint Security Solution</strong> (e.g., host-based firewall, AV software)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File); <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link); <a href="https://attack.mitre.org/techniques/T1566/001">T1566.001</a> (Phishing: Spearphishing Attachment); <a href="https://attack.mitre.org/techniques/T1566/002">T1566.002</a> (Phishing: Spearphishing Link);<a href="https://attack.mitre.org/techniques/T1566/003">T1566.003</a> (Phishing: Spearphishing via Service)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p>
-        </td>
-        <td>
-        <p>Vulnerable endpoint security solutions may enable users to execute malicious files (received as email attachments or via malicious links).</p>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <p><strong>Network-based Application</strong></p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1040">T1040</a> (Network Sniffing); <a href="https://attack.mitre.org/techniques/T1059">T1059</a> (Command and Scripting Interpreter)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p>
-        </td>
-        <td>
-        <p>Adversaries may sniff network traffic to capture insecure/unencrypted credentials. Adversaries may also execute commands and compromise an application through an interactive terminal or shell.</p>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <p><strong>Operating System</strong> (e.g., kernel, shell)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004</a> (Endpoint Denial of Service: Application or System Exploitation)</p>
-        </td>
-        <td>
-        <p>Vulnerabilities in the kernel, such as a race condition, can be exploited to elevate privilege or crash the system (DoS).</p>
-        </td>
-        </tr>
-        <tr>
-        <td></td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1091">T1091</a> (Replication Through Removeable Media)</p>
-        </td>
-        <td></td>
-        <td>
-        <p>An operating system vulnerability may allow code execution from removeable media (even without Autorun enabled).</p>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <p><strong>Internal Remote Service</strong> (e.g,. smb, netlogon, print spooler)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1210">T1210</a> (Exploitation of Remote Services)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/tactics/TA0008">TA0008</a> (Lateral Movement); <a href="https://attack.mitre.org/techniques/T1068">T1068</a> (Exploitation for Privilege Escalation)</p>
-        </td>
-        <td>
-        <p>Once inside a network, adversaries may exploit remote services to gain unauthorized access to other internal systems.</p>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <p><strong>External Remote Service</strong> (e.g., vpn, service, software)</p>
-        </td>
-        <td>
-        <p><a href="https://attack.mitre.org/techniques/T1078">T1078</a> (Valid Accounts); <a href="https://attack.mitre.org/techniques/T1133">T1133</a> (External Remote Service)</p>
-        </td>
-        <td></td>
-        <td>
-        <p>Adversaries may leverage external-facing remote services to initially access and/or persist within a network.</p>
-        </td>
-        </tr>
-        </tbody>
+            <tbody>
+                <tr>
+                    <td><p><strong>Internet-facing Host/System</strong> (e.g., webserver, website, database, service)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1190">T1190</a> (Exploit Public-Facing Application); <a href="https://attack.mitre.org/techniques/T1211">T1211</a> (Exploitation for Defense Evasion)</p></td>
+                    <td></td>
+                    <td><p>Adversaries may attempt to exploit a weakness in an Internet-facing host or system, which may be a software bug, temporary glitch, or misconfiguration. Depending on the flaw being exploited, this may also involve <a href="https://attack.mitre.org/techniques/T1211">Exploitation for Defense Evasion</a>.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Client Application</strong> (e.g., browser, office app)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p>Adversaries may exploit software vulnerabilities in client applications to execute code. For example, an application that fails to properly handle objects in memory may allow an attackeradversary to run arbitrary code in the context of the current user.</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>A user clicking a link may lead to other execution techniques such as exploitation of a browser or application vulnerability via Exploitation for Client Execution.</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>Malware may be written to compromise a vulnerable client application (the malware is executed by a user).</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1189">T1189</a> (Drive-by Compromise)</p></td>
+                    <td></td>
+                    <td><p>Vulnerable web <strong>browsers</strong> are targets of drive-by compromises.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Endpoint Security Solution</strong> (e.g., host-based firewall, AV software)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File); <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link); <a href="https://attack.mitre.org/techniques/T1566/001">T1566.001</a> (Phishing: Spearphishing Attachment); <a href="https://attack.mitre.org/techniques/T1566/002">T1566.002</a> (Phishing: Spearphishing Link);<a href="https://attack.mitre.org/techniques/T1566/003">T1566.003</a> (Phishing: Spearphishing via Service)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>Vulnerable endpoint security solutions may enable users to execute malicious files (received as email attachments or via malicious links).</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Network-based Application</strong></p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1040">T1040</a> (Network Sniffing); <a href="https://attack.mitre.org/techniques/T1059">T1059</a> (Command and Scripting Interpreter)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p>Adversaries may sniff network traffic to capture insecure/unencrypted credentials. Adversaries may also execute commands and compromise an application through an interactive terminal or shell.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Operating System</strong> (e.g., kernel, shell)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004</a> (Endpoint Denial of Service: Application or System Exploitation)</p></td>
+                    <td><p>Vulnerabilities in the kernel, such as a race condition, can be exploited to elevate privilege or crash the system (DoS).</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1091">T1091</a> (Replication Through Removeable Media)</p></td>
+                    <td></td>
+                    <td><p>An operating system vulnerability may allow code execution from removeable media (even without Autorun enabled).</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Internal Remote Service</strong> (e.g,. smb, netlogon, print spooler)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1210">T1210</a> (Exploitation of Remote Services)</p></td>
+                    <td><p><a href="https://attack.mitre.org/tactics/TA0008">TA0008</a> (Lateral Movement); <a href="https://attack.mitre.org/techniques/T1068">T1068</a> (Exploitation for Privilege Escalation)</p></td>
+                    <td><p>Once inside a network, adversaries may exploit remote services to gain unauthorized access to other internal systems.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>External Remote Service</strong> (e.g., vpn, service, software)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1078">T1078</a> (Valid Accounts); <a href="https://attack.mitre.org/techniques/T1133">T1133</a> (External Remote Service)</p></td>
+                    <td></td>
+                    <td><p>Adversaries may leverage external-facing remote services to initially access and/or persist within a network.</p></td>
+                </tr>
+            </tbody>
         </table>
         <h3>Methodology Notes</h3>
         <p>In this section, we summarize several of the points made above.</p>
