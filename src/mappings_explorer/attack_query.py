@@ -282,13 +282,13 @@ def add_background_colors(attack_version_data):
     """
     mapping_framework_id_to_name = {
         "nist_800_53": "NIST 800-53",
-        "cve": "CVE",
         "veris": "VERIS",
         "aws": "AWS",
         "gcp": "GCP",
         "azure": "Azure",
         "m365": "M365",
         "intel-vpro": "Intel vPro",
+        "kev": "Known Exploited Vulnerabilities",
     }
     max_score = 0
     min_score = 100000
@@ -307,7 +307,7 @@ def add_background_colors(attack_version_data):
             amount_mapped_capabilities = mapping_frameworks[mapping_framework][
                 mapping_framework_version
             ]
-            if mapping_framework == "cve":
+            if mapping_framework == "kev":
                 score += 1
                 mapped_capabilities.append(
                     f"{amount_mapped_capabilities} {mapping_framework_name}"

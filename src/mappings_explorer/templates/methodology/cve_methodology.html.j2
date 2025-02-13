@@ -16,99 +16,66 @@
     <div class="container col-lg-8 offset-lg-2">
 
         <div class="section-header">
-            <h2>Using MITRE ATT&CK® to Describe Vulnerabilities</h2>
+            <h2>Using MITRE ATT&CK® to Describe Vulnerability Impact</h2>
         </div>
 
-        <p><a href="https://attack.mitre.org/">ATT&CK</a> tactics and techniques can be used as a set of standard terms
-            to describe the exploitation process of a vulnerability. For example, to exploit a vulnerability where
-            credentials are sent in clear text, the following steps could be used:</p>
+        <p><a href="https://attack.mitre.org/">ATT&CK</a> tactics and techniques can be used as a set of standard terms to describe the exploitation process of a vulnerability. For example, to exploit a vulnerability where credentials are sent in clear text, the following steps could be used:</p>
         <ol>
             <li>Sniff the network <a href="https://attack.mitre.org/techniques/T1040/">T1040</a></li>
-            <li>Which gets you the unsecured credentials <a href="https://attack.mitre.org/techniques/T1552/">T1552</a>
-            </li>
-            <li>Which you can use to access a valid account <a
-                    href="https://attack.mitre.org/techniques/T1078/">T1078</a></li>
+            <li>Which gets you the unsecured credentials <a href="https://attack.mitre.org/techniques/T1552/">T1552</a></li>
+            <li>Which you can use to access a valid account <a href="https://attack.mitre.org/techniques/T1078/">T1078</a></li>
         </ol>
-        <p>Once the attacker has access to the valid account, there are too many paths they can take to list them all.
-        </p>
-        <p>When developing this methodology, we found that three steps in the attack is usually as far in the process as
-            can be reasonably described. We categorize these steps in the following way:</p>
+        <p>Once the attacker has access to the valid account, there are too many possible paths to list them all.</p>
+        <p>When developing this mapping methodology, we found that three steps of an associated attack were as many as could be reasonably described. We define these steps in the following way:</p>
         <ol>
-            <li><strong>Exploitation Technique</strong> - the method used to exploit the vulnerability (T1040 in the
-                example).</li>
-            <li><strong>Primary Impact</strong> - the initial benefit gained through exploitation of a vulnerability
-                (T1552 in the example).</li>
-            <li><strong>Secondary Impact</strong> - what the adversary can do by gaining the benefit of the primary
-                impact (T1078 in the example).</li>
+            <li><strong>Exploitation Technique</strong> - the method (technique) used to exploit the vulnerability (T1040 in the example).</li>
+            <li><strong>Primary Impact</strong> - the initial benefit (impact) gained through exploitation of the vulnerability (T1552 in the example).</li>
+            <li><strong>Secondary Impact</strong> - what the adversary can do by gaining the benefit of the primary impact (T1078 in the example).</li>
         </ol>
-        <p>Using these three categories, you can create a vulnerability impact description template such as:</p>
-        <blockquote>The vulnerability allows the attacker to use <em>[EXPLOITATION TECHNIQUE]</em> to gain <em>[Primary
-                Impact]</em>, which leads to <em>[Secondary Impact]</em>.</blockquote>
-        <img src="{{url_prefix}}static/img/cve_methodology.png" class="img-fluid"
-        alt="Vulnerability allows exploitation technique which enables impact and leads to secondary impact">
-        <p>ATT&CK will not always contain a technique for each of the categories. ATT&CK is written at a higher level of
-            abstraction than is often used to describe a vulnerability and ATT&CK requires examples where the technique
-            has been used in real-world attacks. For example, the primary impact of a vulnerability may be too low-level
-            to include an ATT&CK technique. In which case, you can use the secondary impact in place of the primary or
-            use one of the tactic-level techniques.</p>
+        <p>Using these three components, a vulnerability impact description template can be developed:</p>
+        <blockquote>The vulnerability allows the attacker to use <em>[EXPLOITATION TECHNIQUE]</em> to gain <em>[Primary Impact]</em>, which leads to <em>[Secondary Impact]</em>.</blockquote>
+        <img src="{{url_prefix}}static/img/cve_methodology.png" class="img-fluid" alt="Vulnerability allows exploitation technique which enables impact and leads to secondary impact">
+        <p>It may not be possible to identify an ATT&CK technique for each step of an attack. ATT&CK techniques may be written at a level of abstraction that does not match that of the vulnerability. Also, ATT&CK techniques are based on real-world attacks and not theoretical concepts.  For example, the primary impact of a vulnerability may be too low-level to include an ATT&CK technique. In which case, you can use the secondary impact in place of the primary or use one of the tactic-level techniques. Mappings with just one or two components can still be useful.</p>
     </div>
 </section>
 
 <section class="services-cards">
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-
         <div class="section-header">
             <h2><span class="highlight">Using</span> the Methodology</h2>
         </div>
+        <p>This mapping methodology establishes a starting point for connecting threat actor behavior to the potential exploitation and impact of vulnerabilities. The methodology does not cover all the ways that systems are exploited.</p>
         <p>We defined three methods to map ATT&CK techniques to vulnerabilities:</p>
         <ol>
-            <li><strong>Vulnerability Type</strong> – This method groups vulnerabilities with common vulnerability types
-                (e.g.,
-                cross-site scripting and SQL injection) that have common technique mappings.</li>
-            <li><strong>Functionality</strong> – This method groups common mappings based on the type of functionality
-                the attacker gains
-                access to by exploiting the vulnerability.</li>
-            <li><strong>Exploit Technique</strong> – This method groups common mappings depending on the method used to
-                exploit the
-                vulnerability.</li>
+            <li><strong>Vulnerability Type</strong> – This method groups vulnerabilities with common vulnerability types (e.g., cross-site scripting, SQL injection) with associated common technique mappings. Vulnerabilities of the same type will often have the same ATT&CK mapping.</li>
+            <li><strong>Functionality</strong> – This method groups common mappings based on the type of functionality the adversary gains access to by exploiting the vulnerability.</li>
+            <li><strong>Exploit Technique</strong> – This method groups common mappings depending on the technique used to exploit the vulnerability. Vulnerabilities of the same type can often be exploited in different ways; however, details of the vulnerability can lead to identification of a specific exploit method.</li>
         </ol>
-        <p>Only the vulnerability type method has mappings for all three categories. The functionality method has
-            mappings for primary and secondary impacts. The exploit techniques method only has mappings for the
-            exploitation technique categories.</p>
+        <p>Only the vulnerability type method has mappings for all three categories. The functionality method has mappings for primary and secondary impacts. The exploit techniques method only has mappings for the exploitation technique categories.</p>
         <p><strong>Vulnerability Type Method</strong></p>
-        <p>Vulnerabilities that have the same type often also have the same attack steps. This method maps ATT&CK
-            techniques to some of the more common vulnerability types. CWE-699 (Software Development) and CWE-1000
-            (Research Concepts) were used to select the vulnerability types, though the method sometimes creates its own
-            high-level categories for the sake of brevity.</p>
+        <p>Vulnerabilities that have the same type often also have the same attack steps. This method maps ATT&CK techniques to some of the more common vulnerability types. CWE-699 (Software Development) and CWE-1000 (Research Concepts) were used to select the vulnerability types, though the method sometimes creates its own high-level categories for the sake of brevity.</p>
         <p>The vulnerability type mappings can include the following technique categories:</p>
         <ol>
             <li>Exploitation Technique</li>
             <li>Primary Impact</li>
             <li>Secondary Impact</li>
         </ol>
-        <p>If one of these categories is not included in the mapping for a particular vulnerability type, use one of the
-            other methods to find the appropriate techniques.</p>
+        <p>If one of these categories is not included in the mapping for a particular vulnerability type, use one of the other methods to find the appropriate techniques.</p>
         <p><strong>Functionality Method</strong></p>
-        <p>For a vulnerability to be useful, it needs to provide the attacker with a capability they did not have
-            before. Attackers are often trying to gain access to the same functionality and thus, many vulnerabilities
-            can be grouped by functionality.</p>
+        <p>For a vulnerability to be useful, it needs to provide the adversary with a capability they did not have before. Adversaries are often trying to gain access to the same functionality and thus, many vulnerabilities can be grouped by functionality. </p>
         <p>This method includes the following technique categories:</p>
         <ol>
             <li>Primary Impact</li>
             <li>Secondary Impact</li>
         </ol>
-        <p>To find the exploitation technique for a vulnerability, use one of the other two mapping methods in this
-            document.</p>
+        <p>To find the exploitation technique for a vulnerability, use one of the other two mapping methods in this document.</p>
         <p><strong>Exploit Technique Method</strong></p>
-        <p>This method groups techniques by the common steps taken to exploit a vulnerability. Use this method when a
-            vulnerability type has too many possible exploitation scenarios to list in the Vulnerability Type method.
-        </p>
+        <p>This method groups techniques by the common steps taken to exploit a vulnerability. Use this method when a vulnerability type has too many possible exploitation scenarios to list in the Vulnerability Type method.</p>
         <p>This method includes the following technique categories:</p>
         <ol>
             <li>Exploitation Technique</li>
         </ol>
-        <p>To find the exploit technique for a vulnerability, use one of the other two mapping methods in this document.
-        </p>
+        <p>To find the exploit technique for a vulnerability, use one of the other two mapping methods in this document.</p>
     </div>
 </section>
 
@@ -118,54 +85,18 @@
         <div class="section-header">
             <h2><span class="highlight">Mapping & Methodology</span> Scope</h2>
         </div>
-        <p>In each method there are cases where we have not included a mapping for all available categories
-            (Exploitation Technique, Primary Impact, Secondary Impact). Technique mappings are only included for a
-            category when it is likely that different vulnerabilities in the group share that technique. For example,
-            vulnerabilities that modify memory (e.g., buffer overflows) share a common primary impact, but the secondary
-            impacts and exploitation techniques are so varied that the methodology does not include a mapping for those
-            categories.</p>
-        <img src="{{url_prefix}}static/img/cve_example_1.png" class="img-fluid"
-        alt="Vulnerability allows exploitation technique which enables impact and leads to what?">
-        <p>Some groupings will have more than one technique listed for a mapping category because there are common
-            variations within that grouping. In these cases, select only the techniques that apply to the vulnerability.
-            For example, the cross-site scripting (XSS) vulnerability type includes an option of <a
-                href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by
-                Compromise</a> or <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution:
-                Malicious Link</a> depending on whether the attacked is stored or
-            not.</p>
-        <p>This methodology establishes a starting point for vulnerability reporters and researchers to standardize the
-            way they describe some vulnerability data. The methodology does not cover all the ways that systems are
-            exploited.</p>
-        <p><strong>Example: <a
-                    href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17900">CVE-2018-17900</a></strong></p>
-        <blockquote>Yokogawa STARDOM Controllers FCJ, FCN-100, FCN-RTU, FCN-500, All versions R4.10 and prior, The web
-            application improperly protects credentials which could allow an attacker to obtain credentials for remote
-            access to controllers.</blockquote>
-        <p>To find the appropriate ATT&CK techniques, start by identifying the vulnerability type. For CVE-2018-17900,
-            the vulnerability is a credential management issue. Looking through the list of vulnerability types in the
-            methodology, the "General Credential Management Errors" vulnerability type appears to be the most
-            appropriate. Using one of the lower-level credential management vulnerability types is preferable but the
-            CVE record does not provide the level of detail need to do so.</p>
-        <p>The ”General Credential Management Errors” vulnerability type maps to <a
-                href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a> for the
-            primary impact and <a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a> for the
-            secondary impact. These mappings follow the description in
-            the CVE record. “improperly protects credentials which could allow an attacker to obtain credentials”
-            matches T1552 and “for remote access to controllers” matches T1078.</p>
-        <p>The ”General Credential Management Errors” vulnerability type does not have a mapping for the exploitation
-            technique because there are too many ways general credential management vulnerabilities can be exploited. To
-            find the exploitation technique for CVE-2018-17900, use the Exploit Technique section. The Exploit Technique
-            section documents a set of scenarios to help the user determine which exploitation technique(s) are
-            appropriate for the vulnerability. For CVE-2018-17900, the entry point is the web application so the
-            “Attacker exploits remote system application” scenario applies, which makes <a
-                href="https://attack.mitre.org/techniques/T1190">T1190 Exploit Public-Facing
-                Application</a> the exploitation technique for the vulnerability.</p>
-        <p>The description for CVE-2018-17900 can now be re-written using the ATT&CK standard.</p>
-        <img src="{{url_prefix}}static/img/cve_example_2.png" class="img-fluid"
-        alt="CVE-2018-1790 (Unsecure Credentials) allows T1190 (Exploit Public-Facing Application) which enables T1552 (Unsecured Credentials) and leads to T1078 (Valid Accounts)">
-        <blockquote>Yokogawa STARDOM Controllers FCJ, FCN-100, FCN-RTU, FCN-500, All versions R4.10 and prior, have
-            Unsecured Credentials which could allow an attacker to gain access to Valid Accounts by Exploiting the
-            Public-Facing Application.</blockquote>
+        <p>In each method there are cases where we have not included a mapping for all available categories (Exploitation Technique, Primary Impact, Secondary Impact). Technique mappings are only included for a category when it is likely that different vulnerabilities in the group share that technique. For example, vulnerabilities that modify memory (e.g., buffer overflows) share a common primary impact, but the secondary impacts and exploitation techniques are so varied that the methodology does not include a mapping for those categories.</p>
+        <img src="{{url_prefix}}static/img/cve_example_1.png" class="img-fluid" alt="Vulnerability allows exploitation technique which enables impact and leads to what?">
+        <p>Some groupings will have more than one technique listed for a mapping category because there are common variations within that grouping. In these cases, select only the techniques that apply to the vulnerability. For example, the cross-site scripting (XSS) vulnerability type includes an option of <a href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by Compromise</a> or <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious Link</a> depending on whether the attacked is stored or not.</p>
+        <p>This methodology establishes a starting point for vulnerability reporters and researchers to standardize the way they describe some vulnerability data. The methodology does not cover all the ways that systems are exploited.</p>
+        <p><strong>Example: <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17900">CVE-2018-17900</a></strong></p>
+        <blockquote>Yokogawa STARDOM Controllers FCJ, FCN-100, FCN-RTU, FCN-500, All versions R4.10 and prior, The web application improperly protects credentials which could allow an attacker to obtain credentials for remote access to controllers.</blockquote>
+        <p>To find the appropriate ATT&CK techniques, start by identifying the vulnerability type. For CVE-2018-17900, the vulnerability is a credential management issue. Looking through the list of vulnerability types in the methodology, the "General Credential Management Errors" vulnerability type appears to be the most appropriate. Using one of the lower-level credential management vulnerability types is preferable but the CVE record does not provide the level of detail need to do so.</p>
+        <p>The ”General Credential Management Errors” vulnerability type maps to <a href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a> for the primary impact and <a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a> for the secondary impact. These mappings follow the description in the CVE record: “improperly protects credentials which could allow an attacker to obtain credentials” matches T1552 and “for remote access to controllers” matches T1078.</p>
+        <p>The ”General Credential Management Errors” vulnerability type does not have a mapping for the exploitation technique because there are too many ways general credential management vulnerabilities can be exploited. To find the exploitation technique for CVE-2018-17900, use the Exploit Technique section. The Exploit Technique section documents a set of scenarios to help the user determine which exploitation technique(s) are appropriate for the vulnerability. For CVE-2018-17900, the entry point is the web application so the “Attacker exploits remote system application” scenario applies, which makes <a href="https://attack.mitre.org/techniques/T1190">T1190 Exploit Public-Facing Application</a> the exploitation technique for the vulnerability.</p>
+        <p>The description for CVE-2018-17900 can now be re-written using the ATT&CK standard. </p>
+        <img src="{{url_prefix}}static/img/cve_example_2.png" class="img-fluid" alt="CVE-2018-1790 (Unsecure Credentials) allows T1190 (Exploit Public-Facing Application) which enables T1552 (Unsecured Credentials) and leads to T1078 (Valid Accounts)">
+        <blockquote>Yokogawa STARDOM Controllers FCJ, FCN-100, FCN-RTU, FCN-500, All versions R4.10 and prior, have Unsecured Credentials which could allow an attacker to gain access to Valid Accounts by Exploiting the Public-Facing Application.</blockquote>
     </div>
 </section>
 
@@ -175,11 +106,7 @@
         <div class="section-header">
             <h2><span class="highlight">Vulnerability Type</span> Mappings</h2>
         </div>
-        <p>The vulnerability type section contains mappings for many of the common vulnerability types. Mappings for
-            vulnerability types are only included if that type has a common set of techniques used to exploit the
-            vulnerability or that can be executed when the vulnerability is exploited. Each vulnerability type will
-            include a one or more of the following where applicable, a primary and secondary impact and one or more
-            exploitation techniques.</p>
+        <p>The vulnerability type section contains mappings for many of the common vulnerability types. Mappings for vulnerability types are only included if that type has a common set of techniques used to exploit the vulnerability or that can be executed when the vulnerability is exploited. Each vulnerability type will include one or more of the following where applicable, a primary and secondary impact and one or more exploitation techniques. This table establishes a starting point for describing vulnerability data and does not cover all vulnerability types or all the ways that systems are exploited.</p>
         <table class="table">
             <thead>
                 <tr>
@@ -192,14 +119,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>General Improper Access Control</td>
-                    <td>N/A</td>
-                    <td>See the Functionality Section</a></td>
-                    <td>See the Functionality Section</a></td>
-                    <td>The impacts of authentication, authorization, and permissions errors generally depend on the
-                        functionality missing the authentication, authorization or permission.</td>
-                </tr>
-                <tr>
                     <td>Authentication Bypass by Capture-replay</td>
                     <td><a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a>
                     <td><a href="https://attack.mitre.org/techniques/T1190">T1190 Exploit
@@ -207,47 +126,6 @@
                     <td>N/A</td>
                     </td>
                     <td></td>
-                </tr>
-                <tr>
-                    <td>Improper Restriction of Excessive Authentication Attempts</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110/001">T1110.001 Brute Force: Password
-                            Guessing</a>
-                    <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
-                    </td>
-                    <td>N/A</td>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Overly Restrictive Account Lockout Mechanism</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
-                    <td>
-                        <ul>
-                            <li>Mobile - <a href="https://attack.mitre.org/techniques/T1446">T1446 Device Lockout</a>
-                            </li>
-                            <li>Others – <a href="https://attack.mitre.org/techniques/T1531">T1531 Account Access
-                                    Removal</a></li>
-                        </ul>
-                    </td>
-                    <td>N/A</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Use of Password Hash Instead of Password for Authentication</td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1550/002">T1550.002 Use Alternate Authentication
-                            Material: Pass the Hash</a>
-                    </td>
-                    <td>N/A</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>General Credential Management Errors</td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
-                    </td>
-                    <td>A sub-technique can be chosen where applicable.</td>
                 </tr>
                 <tr>
                     <td>Cleartext Transmission of Sensitive Information</td>
@@ -259,19 +137,63 @@
                     <td>A sub-technique can be chosen where applicable.</td>
                 </tr>
                 <tr>
-                    <td>Hard-coded Credentials</td>
+                    <td>Code Injection</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1078/001">T1078.001 Default Accounts</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
+                    </td>
+                    <td>N/A</td>
+                    <td>A sub-technique can be used depending on the type of injection.</td>
+                </tr>
+                <tr>
+                    <td>Cross-site Request Forgery (CSRF)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious
+                            Link</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1068">T1068 Exploitation for Privilege
+                            Escalation</a></td>
+                    <td>Depends on the functionality the vulnerability gives access to. See the <a
+                            href="/center-for-threat-informed-defense/attack_to_cve/blob/master/methodology.md#functionality">Functionality
+                            Section</a> for guidance on which techniques are appropriate.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cross-site Scripting (XSS)</td>
+                    <td>
+                        <ul>
+                            <li>Stored – <a href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by
+                                    Compromise</a></li>
+                            <li>Others – <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User
+                                    Execution: Malicious Link</a></li>
+                        </ul>
+                    </td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059/007">T1059.007 Command and Scripting
+                            Interpreter: JavaScript</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1185">T1185 Browser Session Hijacking</a></td>
+                    <td>There are lots of possible secondary impacts but most of them can be summed up by
+                        Browser Session Hijacking.</td>
+                </tr>
+                <tr>
+                    <td>Deserialization of Untrusted Data</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
+                    </td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Weak Password/Hashing</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
+                    <td>Directory Traversal (Relative and Absolute)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1202">T1202 Indirect Command Execution</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
+                    <td>See the Functionality Section File Processing</a></td>
+                    <td>Indirect command execution is used here because the vulnerable application is being used to as a
+                        proxy to execute the file handling commands.</td>
+                </tr>
+                <tr>
+                    <td>General Credential Management Errors</td>
                     <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1552">T1552 Unsecured Credentials</a></td>
                     <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
                     </td>
-                    <td></td>
+                    <td>A sub-technique can be chosen where applicable.</td>
                 </tr>
                 <tr>
                     <td>General Cryptographic Issues</td>
@@ -290,45 +212,37 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>XML External Entity (XXE)</td>
+                    <td>General Improper Access Control</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>.
+                    <td>See the Functionality Section</a></td>
+                    <td>See the Functionality Section</a></td>
+                    <td>The impacts of authentication, authorization, and permissions errors generally depend on the
+                        functionality missing the authentication, authorization or permission.</td>
+                </tr>
+                <tr>
+                    <td>Hard-coded Credentials</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1078/001">T1078.001 Default Accounts</a></td>
+                    <td>N/A</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Improper Restriction of Excessive Authentication Attempts</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110/001">T1110.001 Brute Force: Password
+                            Guessing</a>
+                    <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
                     </td>
-                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
-                            href="https://attack.mitre.org/techniques/T1046">T1046 Network Service Discovery</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>XML Entity Expansion (XEE)</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint</a>
-                        Denial of Service: Application or System Exploitation)</td>
-                    <td>N/A</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>URL Redirection to Untrusted Site ('Open Redirect')</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1566/002">T1566.002 Phishing: Spearphishing
-                            Link</a></td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1036">T1036 Masquerading</a></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Cross-site Scripting (XSS)</td>
-                    <td>
-                        <ul>
-                            <li>Stored – <a href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by
-                                    Compromise</a></li>
-                            <li>Others – <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User
-                                    Execution: Malicious Link</a></li>
-                        </ul>
                     </td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059/007">T1059.007 Command and Scripting
-                            Interpreter: JavaScript</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1557">T1557 Adversary-in-the-Browser</a></td>
-                    <td>There are lots of possible secondary impacts but most of them can be summed up by
-                        Adversary-in-the-Browser.</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Infinite Loop</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
+                            Application or System Exploitation</a></td>
+                    <td>N/A</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>OS Command Injection</td>
@@ -337,6 +251,36 @@
                     </td>
                     <td>N/A</td>
                     <td>Primary depends on the OS being attacked but is often T1059.004.</td>
+                </tr>
+                <tr>
+                    <td>Overly Restrictive Account Lockout Mechanism</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
+                    <td>
+                        <ul>
+                            <li>Mobile - <a href="https://attack.mitre.org/techniques/T1446">T1446 Device Lockout</a>
+                            </li>
+                            <li>Others – <a href="https://attack.mitre.org/techniques/T1531">T1531 Account Access
+                                    Removal</a></li>
+                        </ul>
+                    </td>
+                    <td>N/A</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Server-Side Request Forgery (SSRF)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1090">T1090 Proxy</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1135">T1135 Network Share Discovery</a>, <a
+                            href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a></td>
+                    <td>Tactic/Technique mismatch for the primary impact.</td>
+                </tr>
+                <tr>
+                    <td>Session Fixation</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1563">T1563 Remote Service Session Hijacking</a>
+                    </td>
+                    <td>N/A</td>
+                    <td>Often can be used for Initial Access.</td>
                 </tr>
                 <tr>
                     <td>SQL Injection</td>
@@ -354,22 +298,6 @@
                         listed and not all secondary impacts will always apply.</td>
                 </tr>
                 <tr>
-                    <td>Code Injection</td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
-                    </td>
-                    <td>N/A</td>
-                    <td>A sub-technique can be used depending on the type of injection.</td>
-                </tr>
-                <tr>
-                    <td>Directory Traversal (Relative and Absolute)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1202">T1202 Indirect Command Execution</a></td>
-                    <td>See the Functionality Section File Processing</a></td>
-                    <td>See the Functionality Section File Processing</a></td>
-                    <td>Indirect command execution is used here because the vulnerable application is being used to as a
-                        proxy to execute the file handling commands.</td>
-                </tr>
-                <tr>
                     <td>Symlink Attacks</td>
                     <td><a href="https://attack.mitre.org/techniques/T1202">T1202 Indirect Command Execution</a></td>
                     <td>See the Functionality Section File Processing</a></td>
@@ -378,11 +306,11 @@
                         proxy to execute the file handling commands.</td>
                 </tr>
                 <tr>
-                    <td>Untrusted/Uncontrolled/Unquoted Search Path</td>
+                    <td>Uncontrolled Resource Consumption</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1499">T1499 Endpoint Denial of Service</a></td>
                     <td>N/A</td>
-                    <td>A sub-technique can be chosen where appropriate.</td>
+                    <td>A sub-technique may be chosen depending on the type of resource being consumed</td>
                 </tr>
                 <tr>
                     <td>Unrestricted File Upload</td>
@@ -394,54 +322,53 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Deserialization of Untrusted Data</td>
+                    <td>Untrusted/Uncontrolled/Unquoted Search Path</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
-                    </td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a></td>
                     <td>N/A</td>
-                    <td></td>
+                    <td>A sub-technique can be chosen where appropriate.</td>
                 </tr>
                 <tr>
-                    <td>Infinite Loop</td>
-                    <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
-                            Application or System Exploitation</a></td>
-                    <td>N/A</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Cross-site Request Forgery (CSRF)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious
+                    <td>URL Redirection to Untrusted Site ('Open Redirect')</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1566/002">T1566.002 Phishing: Spearphishing
                             Link</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1068">T1068 Exploitation for Privilege
-                            Escalation</a></td>
-                    <td>Depends on the functionality the vulnerability gives access to. See the <a
-                            href="/center-for-threat-informed-defense/attack_to_cve/blob/master/methodology.md#functionality">Functionality
-                            Section</a> for guidance on which techniques are appropriate.</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1036">T1036 Masquerading</a></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Session Fixation</td>
+                    <td>Use of Password Hash Instead of Password for Authentication</td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1563">T1563 Remote Service Session Hijacking</a>
+                    <td><a href="https://attack.mitre.org/techniques/T1550/002">T1550.002 Use Alternate Authentication
+                            Material: Pass the Hash</a>
                     </td>
                     <td>N/A</td>
-                    <td>Often can be used for Initial Access.</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Uncontrolled Resource Consumption</td>
+                    <td>Weak Password/Hashing</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1110">T1110 Brute Force</a></td>
                     <td>N/A</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1499">T1499 Endpoint Denial of Service</a></td>
-                    <td>N/A</td>
-                    <td>A sub-technique may be chosen depending on the type of resource being consumed</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a>
+                    </td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Server-Side Request Forgery (SSRF)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Service</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1090">T1090 Proxy</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1135">T1135 Network Share Discovery</a>, <a
-                            href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a></td>
-                    <td>Tactic/Technique mismatch for the primary impact.</td>
+                    <td>XML Entity Expansion (XEE)</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint</a>
+                        Denial of Service: Application or System Exploitation)</td>
+                    <td>N/A</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>XML External Entity (XXE)</td>
+                    <td>N/A</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>.
+                    </td>
+                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
+                            href="https://attack.mitre.org/techniques/T1046">T1046 Network Service Discovery</a></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -452,10 +379,9 @@
     <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
 
         <div class="section-header">
-            <h2><span class="highlight">Functionality</span></h2>
+            <h2><span class="highlight">Functionality Method</span></h2>
         </div>
-        <p>This section provides ATT&CK technique mappings based on common functions an attacker may be trying to gain
-            access to.</p>
+        <p>The functionality section provides ATT&CK technique mappings based on common functions to which an adversary may be trying to gain access. Functionality represents the benefit the adversary can gain through exploitation of the vulnerability and what the adversary can do by gaining that benefit. As such, each functionality type will include primary and secondary impacts as applicable. This table provides some basic capabilities an adversary can try to gain. It does not cover all functionality types or all possible impacts.</p>
         <table class="table">
             <thead>
                 <tr>
@@ -467,8 +393,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Modify Configuration</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1632">T1632 Subvert Trust Controls</a></td>
+                    <td>Change ownership or permissions</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1222">T1222 File and Directory Permissions
+                            Modification</a></td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
@@ -479,20 +406,49 @@
                     <td></td>
                 </tr>
                 <tr>
+                    <td>Create/Upload file</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1505/003">T1505.003 Server Software Component: Web
+                            Shell</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
+                    </td>
+                    <td>The techniques mapped here are the ones most used when reporting vulnerabilities that create or
+                        upload files. There are likely other techniques that could apply.</td>
+                </tr>
+                <tr>
+                    <td>Delete files</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1485">T1485 Data Destruction</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
+                            Application or System Exploitation</a></td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td>Disable protections</td>
                     <td><a href="https://attack.mitre.org/techniques/T1562">T1562 Impair Defenses</a></td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Restart/Reboot</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1529">T1529 System Shutdown/Reboot</a></td>
+                    <td>Memory Modification (Memory Buffer Errors, Pointer Issues, Type Errors, etc.)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a>, <a
+                            href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
+                            Application or System Exploitation</a></td>
                     <td>N/A</td>
-                    <td></td>
+                    <td>"Hijack Execution Flow" is used here because exploitation for memory modification usually involves
+                        changing the execution flow of a process to execute the adversary's code.</td>
                 </tr>
                 <tr>
-                    <td>Read from Memory</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a></td>
+                    <td>Memory Read (Memory Buffer Errors, Pointer Issues, Type Errors, etc.)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
+                            href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
+                            Application or System Exploitation</a></td>
+                    <td><a href="https://attack.mitre.org/techniques/T1211">T1211 Exploitation for Defense Evasion</a>,
+                        <a href="https://attack.mitre.org/techniques/T1212">T1212 Exploitation for Credential Access</a>
+                    </td>
+                    <td>May need a sub-technique.</td>
+                </tr>
+                <tr>
+                    <td>Modify Configuration</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1632">T1632 Subvert Trust Controls</a></td>
                     <td>N/A</td>
                     <td></td>
                 </tr>
@@ -525,20 +481,16 @@
                         exhaustive.</td>
                 </tr>
                 <tr>
-                    <td>Delete files</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1485">T1485 Data Destruction</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
-                            Application or System Exploitation</a></td>
+                    <td>Read from Memory</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a></td>
+                    <td>N/A</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Create/Upload file</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1505/003">T1505.003 Server Software Component: Web
-                            Shell</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1059">T1059 Command and Scripting Interpreter</a>
-                    </td>
-                    <td>The techniques mapped here are the ones most used when reporting vulnerabilities that create or
-                        upload files. There are likely other techniques that could apply.</td>
+                    <td>Restart/Reboot</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1529">T1529 System Shutdown/Reboot</a></td>
+                    <td>N/A</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Write to existing file</td>
@@ -551,33 +503,6 @@
                     <td>The list of secondary impacts covers common techniques included in proof-of-concepts but is not
                         exhaustive.</td>
                 </tr>
-                <tr>
-                    <td>Change ownership or permissions</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1222">T1222 File and Directory Permissions
-                            Modification</a></td>
-                    <td>N/A</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Memory Modification (Memory Buffer Errors, Pointer Issues, Type Errors, etc.)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574 Hijack Execution Flow</a>, <a
-                            href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
-                            Application or System Exploitation</a></td>
-                    <td>N/A</td>
-                    <td>T1574 is not in the right tactic for this vulnerability. Propose adding it to Execution. "Hijack
-                        Execution Flow" is used here because exploitation for memory modification usually involves
-                        changing the execution flow of a process to execute the attacker’s code.</td>
-                </tr>
-                <tr>
-                    <td>Memory Read (Memory Buffer Errors, Pointer Issues, Type Errors, etc.)</td>
-                    <td><a href="https://attack.mitre.org/techniques/T1005">T1005 Data from Local System</a>, <a
-                            href="https://attack.mitre.org/techniques/T1499/004">T1499.004 Endpoint Denial of Service:
-                            Application or System Exploitation</a></td>
-                    <td><a href="https://attack.mitre.org/techniques/T1211">T1211 Exploitation for Defense Evasion</a>,
-                        <a href="https://attack.mitre.org/techniques/T1212">T1212 Exploitation for Credential Access</a>
-                    </td>
-                    <td>May need a sub-technique.</td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -589,56 +514,131 @@
         <div class="section-header">
             <h2><span class="highlight">Exploitation</span> Techniques</h2>
         </div>
-        <p>This section provides common mappings for exploit techniques to ATT&CK techniques. Use this list together
-            with the vulnerability type mappings section to determine the appropriate exploitation technique when not
-            specified in the vulnerability type mappings. This list can also be used independently to determine the
-            appropriate exploitation technique.</p>
+        <p>This section provides common mappings for exploit techniques to ATT&CK techniques. Use this list together with the vulnerability type mappings section to determine the appropriate exploitation technique when not specified in the vulnerability type mappings. This list can also be used independently to determine the appropriate exploitation technique. This can be used as a starting point for identifying exploit techniques. It does not cover all the ways that systems are exploited.</p>
+        <p>As shown in the previous section, some common vulnerability types can be exploited in many different ways. In this section, we show how it may be possible to map an exploit method of a vulnerability to an ATT&CK technique based on the associated vulnerable object (e.g., browser) and entry point of the potential compromise (e.g., user action). First, note the following:</p>
+        <ul>
+            <li>A vulnerability's exploit method technique is not necessarily the same technique that exploits the user/machine. For example, consider the vulnerability impact description associated with the initial example where it is Network Sniffing (T1040) that exploits the vulnerability and Valid Accounts (T1078) that exploits the user/machine.</li>
+            <li>Some vulnerabilities require no explicit exploitation. For example, hardcoded credentials or default credentials make systems vulnerable without explicit exploitation (i.e., off-network discovery of the credentials is not considered exploitation).</li>
+            <li>Because the context surrounding vulnerabilities varies, the *exploit method* of one vulnerability may map to the same ATT&CK technique as an *impact* of another vulnerability.</li>
+            <li>Exploitation methods can also be identified using keywords. Please see Keyword-based Mapping for details.
+        </ul>
         <p>Start by asking, "what steps are necessary to exploit this vulnerability?"</p>
         <ul>
-            <li>If the user executes a malicious file: <a href="https://attack.mitre.org/techniques/T1204/002">T1204.002
-                    User Execution: Malicious File</a>
+            <li>If the user executes a malicious file: <a href="https://attack.mitre.org/techniques/T1204/002">T1204.002 User Execution: Malicious File</a>
                 <ul>
                     <li>Where did this file come from?
                         <ul>
-                            <li>A malicious link: <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User
-                                    Execution: Malicious Link</a></li>
-                            <li>An email: <a href="https://attack.mitre.org/techniques/T1566/001">T1566.001 Phishing:
-                                    Spearphishing Attachment</a></li>
-                            <li>A third-party service: <a href="https://attack.mitre.org/techniques/T1566/003">T1566.003
-                                    Phishing: Spearphishing via Service</a></li>
-                            <li>Removable media: <a href="https://attack.mitre.org/techniques/T1091">T1091 Replication
-                                    Through Removable Media</a></li>
+                            <li>A malicious link: <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious Link</a></li>
+                            <li>An email: <a href="https://attack.mitre.org/techniques/T1566/001">T1566.001 Phishing: Spearphishing Attachment</a></li>
+                            <li>A third-party service: <a href="https://attack.mitre.org/techniques/T1566/003">T1566.003 Phishing: Spearphishing via Service</a></li>
+                            <li>Removable media: <a href="https://attack.mitre.org/techniques/T1091">T1091 Replication Through Removable Media</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li>If the user clicks a malicious link: <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001
-                    User Execution: Malicious Link</a>
+            <li>If the user clicks a malicious link: <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001 User Execution: Malicious Link</a>
                 <ul>
                     <li>Where did this link come from?
                         <ul>
-                            <li>An email: <a href="https://attack.mitre.org/techniques/T1566/002">T1566.002 Phishing:
-                                    Spearphishing Link</a></li>
-                            <li>A third-party service: <a href="https://attack.mitre.org/techniques/T1566/003">T1566.003
-                                    Phishing: Spearphishing via Service</a></li>
+                            <li>An email: <a href="https://attack.mitre.org/techniques/T1566/002">T1566.002 Phishing: Spearphishing Link</a></li>
+                            <li>A third-party service: <a href="https://attack.mitre.org/techniques/T1566/003">T1566.003 Phishing: Spearphishing via Service</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li>If the user visits a malicious website: <a href="https://attack.mitre.org/techniques/T1189">T1189
-                    Drive-by Compromise</a></li>
-            <li>If the attacker exploits remote system application: <a
-                    href="https://attack.mitre.org/techniques/T1190">T1190 Exploit Public-Facing Application</a></li>
-            <li>If the attacker exploits an external service: <a href="https://attack.mitre.org/techniques/T1133">T1133
-                    External Remote Services</a>, <a href="https://attack.mitre.org/techniques/T1210">T1210 Exploitation
-                    of Remote Services</a></li>
-            <li>If the attacker uses valid/default credentials: <a
-                    href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a></li>
-            <li>If the target uses hardcoded credentials: <a href="https://attack.mitre.org/techniques/T1078">T1078
-                    Valid Accounts</a></li>
-            <li>If the attacker "sniffs" unencrypted network traffic: <a
-                    href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a></li>
+            <li>If the user visits a malicious website: <a href="https://attack.mitre.org/techniques/T1189">T1189 Drive-by Compromise</a></li>
+            <li>If the adversary exploits remote system application: <a href="https://attack.mitre.org/techniques/T1190">T1190 Exploit Public-Facing Application</a></li>
+            <li>If the adversary exploits an external service: <a href="https://attack.mitre.org/techniques/T1133">T1133 External Remote Services</a>, <a href="https://attack.mitre.org/techniques/T1210">T1210 Exploitation of Remote Services</a></li>
+            <li>If the adversary uses valid/default credentials: <a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a></li>
+            <li>If the target uses hardcoded credentials: <a href="https://attack.mitre.org/techniques/T1078">T1078 Valid Accounts</a></li>
+            <li>If the adversary monitors or captures unencrypted network traffic: <a href="https://attack.mitre.org/techniques/T1040">T1040 Network Sniffing</a></li>
         </ul>
+        <p>Exploit methods based on vulnerable object and entry point are given below. Example impacts (not the only option) are also listed to illustrate the difference between exploiting a vulnerability and compromising a user/machine.</p>
+        <h3>Table 2. Derived Exploit Methods</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Vulnerable Object</th>
+                <th>Entry Point</th>
+                <th>Exploit Method</th>
+                <th>Example Impact</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>internet-facing host/system (webserver, website, database, service)</td>
+                    <td>internet</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1190">T1190</a> (Exploit Public-Facing Application)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1211">T1211</a> (Exploitation for Defense Evasion)</td>
+                </tr>
+                <tr>
+                    <td>network-based application</td>
+                    <td>network, commandline</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1140">T1140</a> (Network Sniffing); <a href="https://attack.mitre.org/techniques/T1059">T1059</a> (Command and Scripting Interpreter)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</td>
+                </tr>
+                <tr>
+                    <td>client application (browser, office app)</td>
+                    <td>remote system</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</td>
+                </tr>
+                <tr>
+                    <td>browser</td>
+                    <td>user action:visit website</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1189">T1189</a> (Drive-by Compromise)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>external remote service (vpn, service, software)</td>
+                    <td>external remote service</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1133">T1133</a> (External Remote Service)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>internal remote service (smb, netlogon, print spooler)</td>
+                    <td>internal remote service</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1210">T1210</a> (Exploitation of Remote Services)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>endpoint security solution; mail server</td>
+                    <td>user action:execute file (email/non-enterprise service)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>endpoint security solution; mail server</td>
+                    <td>user action:click link (email/non-enterprise service)</td>
+                    <td>T1204.001 (User Execution: Malicious Link)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>endpoint security solution</td>
+                    <td>user action:click link (non-enterprise service)</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1566/003">T1566.003</a> (Phishing: Spearphishing via Service)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>endpoint security solution; mail server</td>
+                    <td>user action:execute file</td>
+                    <td>T1566.001 (Phishing: Spearphishing Attachment)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>os; firmware</td>
+                    <td>user action:insert media</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1091">T1091</a> (Replication Through Removeable Media)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>os</td>
+                    <td>network</td>
+                    <td><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
@@ -648,12 +648,7 @@
         <div class="section-header">
             <h2><span class="highlight">Tactic Level</span> Techniques</h2>
         </div>
-        <p>When the three methods above (Vulnerability Type, Functionality, and Exploit Technique) don't support mapping
-            the exploit type or impacts of a vulnerability, consider focusing at a higher level in ATT&CK. For many
-            tactics within ATT&CK, there is a generic exploitation technique. When mapping techniques to
-            vulnerabilities, exploitation can be assumed so these techniques are not as useful in this context than for
-            other uses of ATT&CK. In this document, where possible, a more specific technique is used over the generic
-            exploitation techniques.</p>
+        <p>When the three methods above (Vulnerability Type, Functionality, and Exploit Technique) don't support mapping the exploit type or impacts of a vulnerability, consider focusing at a higher level in ATT&CK. For many tactics within ATT&CK, there is a generic exploitation technique. When mapping techniques to vulnerabilities, exploitation can be assumed so these techniques are not as useful in this context than for other uses of ATT&CK. In this document, where possible, a more specific technique is used over the generic exploitation techniques.</p>
         <table class="table">
             <thead>
                 <tr>
@@ -731,5 +726,113 @@
             relatively rare.</p>
     </div>
 </section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Affected Object Types</span></h2>
+        </div>
+
+        <p>Some common vulnerability types can be exploited in a variety of ways. In this section, we show how an exploit method can be mapped to an ATT&CK technique based on the type of the object that is affected - software, hardware, firmware, product, application, or code - what CVE refers to as “affected code bases.” Note the following:</p>
+        <ul>
+            <li>A vulnerability's exploit method technique is not necessarily the same technique that exploits the user/machine. For example, consider the vulnerability impact description associated with the initial example where it is <i>Network Sniffing (T1040)</i> that exploits the vulnerability and <i>Valid Accounts (T1078)</i> that exploits the user/machine.</li>
+            <li>Some vulnerabilities require no explicit exploitation. For example, hardcoded credentials or default credentials make systems vulnerable without explicit exploitation (off-network discovery of the credentials is not considered an exploitation method).</li>
+            <li>Because the context surrounding vulnerabilities varies, the <i>exploit method</i> of one vulnerability may map to the same ATT&CK technique as an <i>impact</i> of another vulnerability.</li>
+            <li>User actions that do not involve a vulnerability are outside the scope of the methodology. For example, <a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File) is only applicable when the file (malware) exploits a vulnerable object.</li>
+            <li>Exploitation methods can also be identified using keywords from the vulnerability description. Please see <a href="https://github.com/dzbeck/attack_to_cve/blob/restructure/updated-methodology.md#vulnerability-objectives">Vulnerability Objectives</a> for details.</li>
+        </ul>
+        <p>Exploit methods based on affected object type are given below. Where applicable, example impacts are given to illustrate the difference between exploiting the vulnerability and compromising the user/machine. Unless another source is cited, notes are based on ATT&CK technique descriptions.</p>
+        <h3>Table 2. Exploit Method Based on Affected Object Type</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Affected Object</th>
+                <th>Exploit Method</th>
+                <th>Example Impact</th>
+                <th>Notes</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><p><strong>Internet-facing Host/System</strong> (e.g., webserver, website, database, service)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1190">T1190</a> (Exploit Public-Facing Application); <a href="https://attack.mitre.org/techniques/T1211">T1211</a> (Exploitation for Defense Evasion)</p></td>
+                    <td></td>
+                    <td><p>Adversaries may attempt to exploit a weakness in an Internet-facing host or system, which may be a software bug, temporary glitch, or misconfiguration. Depending on the flaw being exploited, this may also involve <a href="https://attack.mitre.org/techniques/T1211">Exploitation for Defense Evasion</a>.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Client Application</strong> (e.g., browser, office app)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p>Adversaries may exploit software vulnerabilities in client applications to execute code. For example, an application that fails to properly handle objects in memory may allow an attackeradversary to run arbitrary code in the context of the current user.</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>A user clicking a link may lead to other execution techniques such as exploitation of a browser or application vulnerability via Exploitation for Client Execution.</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>Malware may be written to compromise a vulnerable client application (the malware is executed by a user).</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1189">T1189</a> (Drive-by Compromise)</p></td>
+                    <td></td>
+                    <td><p>Vulnerable web browsers are targets of drive-by compromises.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Endpoint Security Solution</strong> (e.g., host-based firewall, AV software)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1204/002">T1204.002</a> (User Execution: Malicious File); <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link); <a href="https://attack.mitre.org/techniques/T1566/001">T1566.001</a> (Phishing: Spearphishing Attachment); <a href="https://attack.mitre.org/techniques/T1566/002">T1566.002</a> (Phishing: Spearphishing Link);<a href="https://attack.mitre.org/techniques/T1566/003">T1566.003</a> (Phishing: Spearphishing via Service)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1203">T1203</a> (Exploitation for Client Execution)</p></td>
+                    <td><p>Vulnerable endpoint security solutions may enable users to execute malicious files (received as email attachments or via malicious links).</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Network-based Application</strong></p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1040">T1040</a> (Network Sniffing); <a href="https://attack.mitre.org/techniques/T1059">T1059</a> (Command and Scripting Interpreter)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p>Adversaries may sniff network traffic to capture insecure/unencrypted credentials. Adversaries may also execute commands and compromise an application through an interactive terminal or shell.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Operating System</strong> (e.g., kernel, shell)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1574">T1574</a> (Hijack Execution Flow)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1499/004">T1499.004</a> (Endpoint Denial of Service: Application or System Exploitation)</p></td>
+                    <td><p>Vulnerabilities in the kernel, such as a race condition, can be exploited to elevate privilege or crash the system (DoS).</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1091">T1091</a> (Replication Through Removeable Media)</p></td>
+                    <td></td>
+                    <td><p>An operating system vulnerability may allow code execution from removeable media (even without Autorun enabled).</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>Internal Remote Service</strong> (e.g,. smb, netlogon, print spooler)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1210">T1210</a> (Exploitation of Remote Services)</p></td>
+                    <td><p><a href="https://attack.mitre.org/tactics/TA0008">TA0008</a> (Lateral Movement); <a href="https://attack.mitre.org/techniques/T1068">T1068</a> (Exploitation for Privilege Escalation)</p></td>
+                    <td><p>Once inside a network, adversaries may exploit remote services to gain unauthorized access to other internal systems.</p></td>
+                </tr>
+                <tr>
+                    <td><p><strong>External Remote Service</strong> (e.g., vpn, service, software)</p></td>
+                    <td><p><a href="https://attack.mitre.org/techniques/T1078">T1078</a> (Valid Accounts); <a href="https://attack.mitre.org/techniques/T1133">T1133</a> (External Remote Service)</p></td>
+                    <td></td>
+                    <td><p>Adversaries may leverage external-facing remote services to initially access and/or persist within a network.</p></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Methodology Notes</h3>
+        <p>In this section, we summarize several of the points made above.</p>
+        <ul>
+            <li>Using ATT&CK should not require any more or less information than normally provided in a vulnerability record. Using ATT&CK enables you to <i>standardize</i> how you describe vulnerability information so that readers can leverage the resources built on top of ATT&CK.</li>
+            <li>The methodology focuses on Enterprise ATT&CK, but content from Mobile and ICS ATT&CK is included as needed. These techniques are identified with "Mobile-" and "ICS-" prefixes.</li>
+            <li>Technique mappings are only included for a vulnerability type when it is likely that different vulnerabilities in the group share that technique. For example, vulnerabilities that modify memory (e.g., buffer overflow) share a primary impact, but the secondary impacts and exploitation techniques are so varied that the methodology refers the user to standard exploit methods and objective-based mapping.</li>
+            <li>Some vulnerabilities require no explicit exploitation (i.e., their vulnerability impact description has no exploit method).</li>
+            <li>Some groupings will have more than one technique listed for a mapping category because there are common variations within that grouping. In these cases, select only the techniques that apply to the vulnerability. For example, the cross-site scripting (XSS) vulnerability type includes an option of <a href="https://attack.mitre.org/techniques/T1189">T1189</a> (Drive-by Compromise) or <a href="https://attack.mitre.org/techniques/T1204/001">T1204.001</a> (User Execution: Malicious Link) depending on whether the attacked is stored or not.</li>
+        </ul>
+    </div>
+</section>
+
 
 {% endblock content %}

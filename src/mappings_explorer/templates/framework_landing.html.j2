@@ -8,7 +8,7 @@
     {% include "_breadcrumbs.html.j2" %}
     <div class="row justify-content-left">
       <div class="col-lg-8 col-md-10 col-sm-12">
-        <h1><span class="highlight">{{control}}</span> MAPPINGS</h1>
+        <h1><span class="highlight">{{control}}</span></h1>
         <p>
           {{- description -}}
         </p>
@@ -22,9 +22,9 @@
           </p>
           {% if project.resources %}
           <p>
-            {% for resource in project.resources %}
-            <a class="link" href="{{url_prefix}}{{resource.link}}">
-              {{resource.label}}
+            {% for src in project.resources %}
+            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}">
+              {{src.label}}
             </a> {% if not loop.last %}|{% endif %}
             {% endfor %}
           </p>

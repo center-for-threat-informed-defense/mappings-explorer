@@ -253,31 +253,42 @@ def load_projects():
         }
     }
 
-    cve = ExternalControl()
-    cve.id = "cve"
-    cve.label = "CVE"
-    cve.description = """The Common Vulnerabilities and Exposures (CVE®) Program
-        provides a catalog of publicly disclosed cybersecurity vulnerabilities, used
-        throughout the cyber community to communicate consistent descriptions of
-        vulnerabilities. These mappings connect the adversary behaviors described in
-        MITRE ATT&CK® to characterize the impact of vulnerabilities from CVE,
-        establishing a critical connection between vulnerability management, threat
-        modeling, and compensating controls.
-    """
+    kev = ExternalControl()
+    kev.id = "kev"
+    kev.label = "Known Exploited Vulnerabilities"
+    kev.description = """The Known Exploited Vulnerabilities (KEV) Catalog is an
+        authoritative source of vulnerabilities exploited in the wild maintained by the
+        Department of Homeland Security (DHS) Cybersecurity and Infrastructure Security
+        Agency (CISA). Vulnerabilities in the KEV Catalog are contained in the Common
+        Vulnerabilities and Exposures (CVE®) List, which identifies and defines publicly
+        known cybersecurity vulnerabilities. These mappings use the behaviors described
+        in MITRE ATT&CK® to connect known exploited CVEs to publicly reported methods
+        and impacts of adversary exploitation. Mapped ATT&CK techniques enable defenders
+        to take a threat-informed approach to vulnerability management. With knowledge
+        of mapped adversary behaviors, defenders will better understand how a
+        vulnerability can impact them, helping defenders integrate vulnerability
+        information into their risk models and identify appropriate compensating
+        security controls."""
 
-    cve.attackDomains = ["Enterprise"]
-    cve.attackDomain = cve.attackDomains[0]
-    cve.versions = ["10.21.2021"]
-    cve.attackVersions = ["9.0"]
-    cve.validVersions = [
-        ("10.21.2021", "9.0", "Enterprise"),
+    kev.attackDomains = ["Enterprise", "Mobile"]
+    kev.attackDomain = kev.attackDomains[0]
+    kev.versions = ["02.13.2025"]
+    kev.attackVersions = ["15.1"]
+    kev.validVersions = [
+        ("02.13.2025", "15.1", "Mobile"),
+        ("02.13.2025", "15.1", "Enterprise"),
     ]
-    cve.has_non_mappables = False
-    cve.mappings = []
-    cve.resources = [
+    kev.has_non_mappables = False
+    kev.mappings = []
+    kev.resources = [
         {
             "link": "about/methodology/cve-methodology/",
             "label": "CVE Mapping Methodology",
+        },
+        {
+            "link": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+            "label": "CISA Known Exploited Vulnerabilities Catalog",
+            "external": True,
         },
     ]
 
@@ -380,6 +391,7 @@ def load_projects():
         {
             "link": "https://www.cisecurity.org/benchmark/microsoft_365",
             "label": "CIS Microsoft 365 Benchmark (External link)",
+            "external": True,
         },
     ]
     artifact_prefix = "legacy/m365-12.11.2023_attack-14.1-enterprise_"
@@ -427,7 +439,7 @@ def load_projects():
     ]
     intel_vpro.has_non_mappable_comments = False
 
-    projects = [intel_vpro, nist, cve, veris, azure, gcp, aws, m365]
+    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -526,7 +538,7 @@ def parse_capability_groups(
             "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    if project.id == "nist" or project.id == "cve" or project.id == "intel-vpro":
+    if project.id == "nist" or project.id == "kev" or project.id == "intel-vpro":
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
         # descriptions as well
@@ -624,7 +636,7 @@ def get_description_for_capability(
     """
     if project.id == "nist":
         folder_name = DATA_DIR / "NIST_800-53"
-    elif project.id == "cve":
+    elif project.id == "kev":
         folder_name = DATA_DIR
     elif project.id == "intel-vpro":
         folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
@@ -648,7 +660,7 @@ def get_description_for_capability(
                         get_nist_description(
                             project=project, version=version, capability=capability
                         )
-                    if project.id == "cve":
+                    if project.id == "kev":
                         get_cve_description(
                             project=project, version=version, capability=capability
                         )
@@ -666,7 +678,7 @@ def get_description_for_capability(
             get_nist_description(
                 project=project, version=version, capability=capability
             )
-        if project.id == "cve":
+        if project.id == "kev":
             get_cve_description(project=project, version=version, capability=capability)
 
 
@@ -726,7 +738,7 @@ def delete_all_descriptions(projects: list):
     for project in projects:
         for version in project.versions:
             file_name = f"{project.id}-{version}_descriptions.json"
-            if project.id == "cve":
+            if project.id == "kev":
                 dir = DATA_DIR
             if project.id == "nist":
                 dir = DATA_DIR / "NIST_800-53"
@@ -882,6 +894,11 @@ def build_external_landing(
         ),
     ]
     info_box_headers = []
+    if project.id == "kev":
+        info_box_headers = [
+            ("comments", "Comments"),
+            ("references", "References"),
+        ]
     if (
         project.id == "azure"
         or project.id == "aws"
@@ -2036,7 +2053,7 @@ def getIndexPages():
             or "/aws/" in str(mappings_file)
             or "/azure/" in str(mappings_file)
             or "/gcp/" in str(mappings_file)
-            or "/cve/" in str(mappings_file)
+            or "/kev/" in str(mappings_file)
             or "/m365/" in str(mappings_file)
             or "/intel-vpro/" in str(mappings_file)
         )
