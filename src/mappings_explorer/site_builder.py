@@ -296,10 +296,15 @@ def load_projects():
     aws.id = "aws"
     aws.label = "AWS"
     aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
-      platform. These mappings connect the security controls native to the (AWS)
-      platformto MITRE ATT&CK®, providing resources to assess how to protect, detect,
-      and respond to real-world threats as described in the ATT&CK knowledge base.
-        """
+        platform provided by Amazon. AWS offers a range of security capabilities to
+        protect cloud data, applications, and infrastructure from threats. These
+        mappings connect AWS security capabilities to adversary behaviors in MITRE
+        ATT&CK®, providing AWS users with a comprehensive view of how native AWS
+        security capabilities can be used to prevent, detect, and respond to prevalent
+        cloud threats. As a result, AWS users can now evaluate the effectiveness of
+        native security controls against specific ATT&CK techniques and take a
+        threat-informed approach to understand, prioritize, and mitigate adversary
+        behaviors that are most important for their environment."""
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
     aws.attackVersions = ["16.1", "9.0"]
@@ -320,10 +325,16 @@ def load_projects():
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
-    azure.description = """Azure is a widely used cloud computing platform. These
-    mappings connect the security controls native to the Azure platform to MITRE
-    ATT&CK®, providing resources to assess how to protect, detect, and respond to
-    real-world threats as described in the ATT&CK knowledge base."""
+    azure.description = """Microsoft Azure is a widely used cloud computing platform
+        provided by Microsoft. Azure offers a range of security capabilities to protect
+        cloud data, applications, and infrastructure from threats. These mappings
+        connect Azure security capabilities to adversary behaviors in MITRE ATT&CK®,
+        providing Azure users with a comprehensive view of how native Azure security
+        capabilities can be used to prevent, detect, and respond to prevalent cloud
+        threats. As a result, Azure users can now evaluate the effectiveness of native
+        security controls against specific ATT&CK techniques and take a threat-informed
+        approach to understand, prioritize, and mitigate adversary behaviors that are
+        most important for their environment."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
     azure.attackVersions = ["8.2"]
@@ -344,18 +355,24 @@ def load_projects():
     gcp.id = "gcp"
     gcp.label = "GCP"
     gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
-      platform. These mappings connect the security controls native to the GCP platform
-      to MITRE ATT&CK® providing resources to assess how to protect, detect, and respond
-      to real-world threats as described in the ATT&CK knowledge base."""
+        platform provided by Google. GCP offers a range of security capabilities to
+        protect cloud data, applications, and infrastructure from threats. These
+        mappings connect GCP security capabilities to adversary behaviors in MITRE
+        ATT&CK®, providing GCP users with a comprehensive view of how native GCP
+        security capabilities can be used to prevent, detect, and respond to prevalent
+        cloud threats. As a result, GCP users can now evaluate the effectiveness of
+        native security controls against specific ATT&CK techniques and take a
+        threat-informed approach to understand, prioritize, and mitigate adversary
+        behaviors that are most important for their environment."""
 
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
     gcp.attackVersions = ["16.1", "10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
-    gcp.versions = ["06.28.2022", "02.27.2025"]
+    gcp.versions = ["06.28.2022", "03.05.2025"]
     gcp.validVersions = [
         ("06.28.2022", "10.0", "Enterprise"),
-        ("02.27.2025", "16.1", "Enterprise"),
+        ("03.05.2025", "16.1", "Enterprise"),
     ]
     gcp.mappings = []
     gcp.resources = [
@@ -539,23 +556,25 @@ def parse_capability_groups(
             "mappings": [m for m in mappings if m["status"] != "non_mappable"],
         }
     )
-    if project.id == "nist" or project.id == "kev" or project.id == "intel-vpro":
+
+    if (
+        project.id == "nist"
+        or project.id == "kev"
+        or project.id == "intel-vpro"
+        or project.id == "gcp"
+    ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
         # descriptions as well
-        capabilities_to_get_description = (
-            project.capabilities
-            if not project.has_non_mappable_comments
-            else project.capabilities.extend(project.non_mappables)
-        )
+        if not project.has_non_mappable_comments:
+            capabilities_to_get_description = project.capabilities
+        else:
+            capabilities_to_get_description = (
+                project.capabilities + project.non_mappables
+            )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if (
-        project.id == "aws"
-        or project.id == "gcp"
-        or project.id == "azure"
-        or project.id == "m365"
-    ):
+    if project.id == "aws" or project.id == "azure" or project.id == "m365":
         get_security_stack_descriptions(project=project)
 
 
@@ -641,6 +660,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR
     elif project.id == "intel-vpro":
         folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
+    elif project.id == "gcp":
+        folder_name = DATA_DIR / "SecurityStack" / "GCP"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:

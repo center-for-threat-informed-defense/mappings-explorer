@@ -1,0 +1,234 @@
+[
+  {
+    "id": "access_transparency",
+    "description": "Access Transparency logs record the actions that Google personnel take when accessing customer content. Access Transparency log entries include details such as the affected resource and action, the time of the action, the reason for the action, and information about the accessor."
+  },
+  {
+    "id": "advanced_protection_program",
+    "description": "The Advanced Protection Program safeguards users with high visibility and sensitive information from targeted online attacks. Current capabilities include MFA, blocking harmful downloads while using chrome, and prevention of data requests from non-vetted apps. New protections are automatically added to defend against evolving threats."
+  },
+  {
+    "id": "artifact_analysis",
+    "description": "Artifact Analysis is a family of services that provide a single location for software composition analysis, metadata storage, and retrieval of artifacts such as system packages and container images. Scanning service detection points are built into a number of Google Cloud products such as Artifact Registry (and the deprecated Container Registry). This service was formerly known as Container Analysis. The new name does not change existing products or APIs, but reflects the product's expanding range of features beyond containers."
+  },
+  {
+    "id": "assured_oss",
+    "description": "Assured Open Source Software (OSS) provides access to a curated collection of open source software packages which are vetted by Google. This capability focuses on software development to protect code from vulnerabilities, helping to reduce the risk to the software supply chain."
+  },
+  {
+    "id": "assured_workloads",
+    "description": "Assured Workloads provides Google Cloud customers with the ability to apply security controls to an environment, in support of compliance requirements, without compromising the quality of their cloud experience. Customers should only use Assured Workloads if their Google Cloud use case is actively subject to regulatory compliance. \n\nAssured Workloads does not appear to provide specific mitigation for adversary behaviors. Rather, it focuses on enabling customers to apply other security controls in ways to support regulatory compliance. As a result, we have not mapped any ATT&CK techniques to this capability."
+  },
+  {
+    "id": "backup_and_dr_actifiogo",
+    "description": "Backup and DR-Actifio GO (formerly Actifio Go) is a backup and disaster recovery service that enables data protection and restoration across GCP environments and on-premises systems. It supports Google workloads such as Compute Engine and VMware Engine, as well as hybrid workloads like VMware, SAP HANA, Oracle and SQL Server, and others."
+  },
+  {
+    "id": "binary_authorization",
+    "description": "Binary Authorization is a security feature that provides software supply-chain security for container-based applications. This capability enforces policies to ensure only trusted container images are deployed."
+  },
+  {
+    "id": "certificate_authority_service",
+    "description": "Google Cloud Certificate Authority Service (CAS) is a highly available & scalable service that enables users to simplify, automate, and customize the deployment, management, and security of private certificate authorities (CA)."
+  },
+  {
+    "id": "chrome_enterprise_premium",
+    "description": "Chrome Enterprise Premium is Google Cloud's zero-trust solution that enables an organization's workforce to access web applications securely from anywhere. It integrates BeyondCorp Enterprise security features and context-aware access control with integrated threat and data protection, providing secure access to critical applications and services and increasing visibility into unsafe user activity."
+  },
+  {
+    "id": "cloud_armor",
+    "description": "Cloud Armor protects applications by providing Layer 7 filtering and by scrubbing incoming requests for common web attacks or other Layer 7 attributes to potentially block traffic before it reaches load balanced backend services or backend buckets."
+  },
+  {
+    "id": "cloud_asset_inventory",
+    "description": "Cloud Asset Inventory provides inventory services based on a time series database. Cloud Asset Inventory allows users to search asset metadata, export all asset metadata at a certain timestamp or export event change history during a specific timeframe, monitor asset changes by subscribing to real-time notifications, and analyze IAM policy to find out who has access to what."
+  },
+  {
+    "id": "cloud_cdn",
+    "description": "Cloud CDN (Content Delivery Network) uses Google's global edge network to serve content closer to users, which accelerates access to websites and applications. Cloud CDN works with external HTTP(S) Load Balancing to deliver content to users. The external HTTP(S) load balancer provides the frontend IP addresses and ports that receive requests and the backends that respond to the requests."
+  },
+  {
+    "id": "cloud_endpoints",
+    "description": "Cloud Endpoints provides features to help secure, monitor, and analyze APIs. It uses security features such as authentication and authorization and device verification to help protect data across users' mobile devices, desktops, laptops, and other endpoints."
+  },
+  {
+    "id": "cloud_hsm",
+    "description": "Google Cloud's Hardware Security Module (HSM) is a security feature available under Google Cloud Key Management Service that allows customers to host encryption keys and perform cryptographic operations in a FIPS 140-2 level 3 certified environment."
+  },
+  {
+    "id": "cloud_identity",
+    "description": "Cloud Identity is an Identity as a Service (IDaaS) and enterprise mobility management (EMM) product. It offers the identity services and endpoint administration that are available in Google Workspace as a stand-alone product. As an end-user, Cloud Identity protects user access with multi-factor authentication. As an administrator, one can use Cloud Identity to manage users, apps, and devices from a central location—the Google Admin console."
+  },
+  {
+    "id": "cloud_ids",
+    "description": "Cloud IDS is an intrusion detection service that inspects network traffic and triggers alerts to intrusions, malware, spyware, or other cyber-attacks. Cloud IDS' default ruleset is powered by Palo Alto Network's advanced threat detection technologies and the vendor's  latest set of threat signatures (e.g., antivirus, anti-spyware, or vulnerability signatures). Cloud IDS is dependent on Cloud logging feature to collect network telemetry. Further threat detection rules can be crafted to generate alerts based on network traffic (e.g., PCAP, Netflow)."
+  },
+  {
+    "id": "cloud_key_management",
+    "description": "A cloud-hosted key management service that allows a user manage symmetric and asymmetric cryptographic keys for cloud services the same way one does on-premises. It also manages encryption keys on Google cloud."
+  },
+  {
+    "id": "cloud_logging",
+    "description": "Cloud Logging is a managed service that allows user to store, search, analyze, monitor, and alert on logging data and events from Google Cloud and Amazon Web Services. Users can collect logging data from over 150 common application components, on-premises systems, and hybrid cloud systems.\n\nThis capability is considered not mappable because it does not provide mitigation of adversary techniques on its own. Some of the other security controls that this control maps to are Azure DNS Analytics, AWS CloudTrail, AWS S3, and AWS Audit Manager. The S3 server access logging feature was not mapped because it was deemed to be a data source that can be used with other detective controls rather than a security control in of itself."
+  },
+  {
+    "id": "cloud_nat",
+    "description": "Cloud NAT (Network Address Translation) allows resources within a cloud network that do not have external IP addresses to establish outbound connections to the internet. This capability does not appear to provide mitigation for any ATT&CK Techniques."
+  },
+  {
+    "id": "cloud_ngfw",
+    "description": "Cloud Next-Generation Firewall (NGFW)_ provides a fully distributed firewall service with advanced threat protection capabilities, micro-segmentation, and pervasive coverage to protect Google Cloud workloads from internal and external attacks."
+  },
+  {
+    "id": "cloud_storage",
+    "description": "Google's Cloud Storage is an object storage service that provides customers with replication, availability, access control, and data management. A feature to highlight is that Cloud Storage by default always encrypts data before it's written to disk on the server side."
+  },
+  {
+    "id": "cloud_vpn",
+    "description": "Cloud VPN securely connects on-prem/peer network to the Virtual Private Cloud (VPC) network through an IPsec VPN connection. Traffic traveling between the two networks is encrypted by one VPN gateway and then decrypted by the other VPN gateway, protecting data in transmission. Two VPC networks can be connected together by connecting two instances of Cloud VPN."
+  },
+  {
+    "id": "confidential_vm",
+    "description": "Confidential VM instances are a type of Compute Engine virtual machine. Confidential VM includes inline hardware-based memory encryption to help ensure data and applications cannot be read or modified during processing or while in use (i.e., data-in-use encryption)."
+  },
+  {
+    "id": "config_connector",
+    "description": "Config Connector is a Kubernetes addon that provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs. Many cloud-native development teams work with a mix of configuration systems, APIs, and tools to manage their infrastructure. This mix is often difficult to understand, leading to reduced velocity and expensive mistakes. Config Connector provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs. This capability was not mapped as it is not considered a security control but rather an alternative to deploying and managing Google Cloud."
+  },
+  {
+    "id": "data_catalog",
+    "description": "Google Cloud's Data Catalog enables customers to quickly query cloud assets, identify sensitive data, and automatically tag it for integration with Google Cloud's Data Loss Prevention (DLP) tool. \n\nThis capability is not mapped because the Data Catalog service is not considered a security control capable of defending against MITRE's ATT&CK techniques, and would require the use of a secondary product, such as DLP, for cyber defense."
+  },
+  {
+    "id": "deployment_manager",
+    "description": "Google Cloud's Deployment Manager is an infrastructure management service that enables users to build predictable cloud resources using static or dynamic configuration file templates. \n\nThis control was not mapped because Deployment Manager does not provide a security capability as a stand-alone tool and would require a third party tool (e.g., Terraform) to mitigate attacks such as denial of service."
+  },
+  {
+    "id": "gke_enterprise",
+    "description": "GKE Enterprise incorporates the Anthos Config Management feature to enable platform operators to automatically deploy shared environment configurations and enforce approved security policies across Kubernetes clusters on-premises, on Google Kubernetes Engine (GKE), and in other public cloud platforms. The integrated interface allows platform admins to configure services using a unified cloud operating model."
+  },
+  {
+    "id": "google_kubernetes_engine",
+    "description": "Google Kubernetes Engine (GKE) provides the ability to secure containers across many layers of the stack, to include container images, container runtime, cluster network, and access to cluster API."
+  },
+  {
+    "id": "google_secops",
+    "description": "Google Security Operations, formerly known as Chronicle, is Google Cloud's data aggregation platform and threat detection system. Google Security Operations collects massive amounts of security telemetry, detects malicious events, and reports based on known indicators of compromise. Threat detection rules are available out-of-the-box via Google SecOps Curated Detections with additional rules avialable from the Chronicle GitHub repo."
+  },
+  {
+    "id": "google_threat_intel",
+    "description": "Google Threat Intelligence is a cybersecurity service provided by Google that delivers human-curated intel about emerging cyber threats.\n\nThis service provides visibility into threats. It does not provide direct mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "hybrid_connectivity",
+    "description": "Google Cloud Hybrid Connectivity provides several options for connecting to Google Cloud with high-performance, guaranteed uptime, and flexible VPNs.\n\nThis is not a security capability on its own. Security capabilities that fall under the Hybrid Connectivity umbrella are mapped separately (e.g. Cloud VPN)."
+  },
+  {
+    "id": "identity_and_access_management",
+    "description": "Identity and Access Management (IAM) gives administrators fine-grained access control and visibility for centrally managing enterprise cloud resources. It gives more granular access to specific Google Cloud resources and prevents unwanted access to other resources. IAM lets users adopt the security principle of least privilege, granting only the necessary access to resources."
+  },
+  {
+    "id": "identity_aware_proxy",
+    "description": "Identity Aware Proxy (IAP) includes a number of features that can be used to protect access to Google Cloud hosted resources and applications hosted on Google. IAP lets users establish a central authorization layer for applications accessed by HTTPS, providing an application-level access control model instead of relying on network-level firewalls."
+  },
+  {
+    "id": "identity_platform",
+    "description": "Identity Platform is a customer identity and access management (CIAM) platform that helps organizations add identity and access management functionality to their applications, protect user accounts, and scale with confidence on Google Cloud."
+  },
+  {
+    "id": "managed_microsoft_ad",
+    "description": "Managed Microsoft AD runs actual Microsoft Active Directory domain controllers on Windows virtual machines to ensure application compatibility. The service creates and maintains the domain controllers for admins, reducing the maintenance tasks to manage."
+  },
+  {
+    "id": "mandiant_academy",
+    "description": "Mandiant Academy is a training program offered by Google Cloud that provides education in cybersecurity, threat intelligence, and incident response.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "mandiant_cyber_consult",
+    "description": "Mandiant Cybersecurity Consulting provides customized services designed to advance organizational cybersecurity programs, defenses, and operations.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "mandiant_detection_response",
+    "description": "Mandiant Managed Defense for Google Cloud provides a frontline team of experts for alert monitoring, triage, and investigation.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "mandiant_ir_services",
+    "description": "Mandiant Incident Response Services are cybersecurity experts available that provide assistance to prepare for and respond to breaches.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "mandiant_security_validation",
+    "description": "Mandiant Security Validation is a service offered by Google Cloud that tests and validate security controls and tools through deployed agents.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "packet_mirroring",
+    "description": "This control is a feature found under Virtual Private Cloud tool that provides users with the ability to duplicate traffic to enable cyber forensic investigations.\n\nThis tool provides the functional ability to clone traffic, but is not considered a stand-alone security control as it requires a secondary security tool (e.g., IDS/IPS) to enable cyber defense and digital forensics."
+  },
+  {
+    "id": "policy_intelligence",
+    "description": "Policy Intelligence helps enterprises understand and manage their policies to reduce their risk. By utilizing machine learning and analytics, policy intelligence provides more visibility and automation and  customers can increase their workload."
+  },
+  {
+    "id": "recaptcha_enterprise",
+    "description": "reCAPTCHA Enterprise is a bot blocker that protects websites from spam, abuse, and fraud. If suspicious activity is detected, reCAPTCHA can take action to prevent unauthorized access, such as presenting a challenge or blocking the interaction altogether."
+  },
+  {
+    "id": "resource_manager",
+    "description": "GCP provides resource containers such as organizations, folders, and projects that allow users to group and hierarchically organize other GCP resources. Resource Manager manages across this hierarchical organization and enables users to set up and manage security across GCP, through policies such as Identity and Access Management (IAM) and configuration settings and restrictions."
+  },
+  {
+    "id": "secret_manager",
+    "description": "Secret Manager allows the storage, management, and access of secrets as binary blobs or text strings. Secret Manager works well for storing configuration information such as database passwords, API keys, or TLS certificates needed by an application at runtime."
+  },
+  {
+    "id": "security_command_center",
+    "description": "Security Command Center (SCC) provides analysts with a centralized dashboard for cyber situational awareness by aggregating threat and vulnerability reports. SCC works by scanning for weaknesses or monitoring an organization's logging stream for anomalies (e.g., Google Workspace logs, containers, vulnerabilities in web applications, and hypervisor-level instrumentation). To further mitigate risks in the infrastructure, SCC easily integrates with other Google Cloud security solutions: Cloud DLP, Chronicle, Binary Authorization, Cloud Armor, and 3rd party solutions (e.g., SIEM, SOAR). The cyber-attacks in this solution are correlated to SCC's premium tier which included additional security features for: Event Threat Detection, Container Threat Detection, Virtual Machine Threat Detection, Web Security Scanner, and Security Health Analytics"
+  },
+  {
+    "id": "sensitive_data_protection",
+    "description": "Sensitive Data Protection, which includes Cloud Data Loss Prevention (Cloud DLP), is a sensitive data inspection, classification, and de-identification platform. The Cloud DLP API provides tools to detect, classify, and mask sensitive elements to help manage and protect data collected, stored, or used for business or analytics."
+  },
+  {
+    "id": "shielded_vm",
+    "description": "Shielded VMs are virtual machines (VMs) on Google Cloud hardened by a set of security controls that help defend against rootkits and bootkits. Shielded VMs leverage advanced platform security capabilities such as secure and measured boot, a virtual trusted platform module (vTPM), UEFI firmware, and integrity monitoring."
+  },
+  {
+    "id": "siemplify",
+    "description": "Siemplify is a security orchestration, automation and response (SOAR) provider that is unified with Google's Chronicle security control to provide an intuitive workbench that enables security teams to manage risk better and reduce the cost of addressing threats.\n\nSiemplify primarily acts as a layer for alerts generated by other controls to be collected and trigger mitigation and remediation actions to be taken by other controls provided by the Google Cloud Platform. On its own, Siemplify does not provide mitigation of ATT&CK techniques."
+  },
+  {
+    "id": "sw_supply_chain_security",
+    "description": "Software Supply Chain Security combines services to manage software supply chain security across the software development life cycle."
+  },
+  {
+    "id": "terraform_on_google_cloud",
+    "description": "Terraform is an open source tool that lets users provision Google Cloud resources with declarative configuration files—resources such as virtual machines, containers, storage, and networking. Terraform's infrastructure-as-code (IaC) approach supports DevOps best practices for change management, managing Terraform configuration files in source control to maintain an ideal provisioning state for testing and production environments.\n\nTerraform's primary function is to support the provisioning of Google resources with configuration management. While Terraform provides some security capabilities specific to Terraform processes (encryption between Terraform Clients, encrypting workspace variables, Isolation between Terraform executions and Cloud tenants) the capabilities do not necessarily mitigate threats across the entire organization. Therefore, this capablity has been identified as not mappable."
+  },
+  {
+    "id": "titan_security_key",
+    "description": "The Titan Security Key provides a tamper resistant hardware security key that is used for 2-factor authentication."
+  },
+  {
+    "id": "virus_total",
+    "description": "VirusTotal analyzes suspicious files, domains, IPs and URLs to detect malware and other breaches, automatically share them with the security community. It's a web-based scanner that utilizes over 70 antivirus scanners and URL/blacklisting services, among other tools, to extract signals from uploaded content."
+  },
+  {
+    "id": "vm_manager",
+    "description": "VM Manager is a suite of tools that can be used to manage operating systems for large virtual machine (VM) fleets running Windows and Linux on Compute Engine. VM Manager allows administrators to deploy patches and enforce specific security policies on VMs, including firewall rules, software package management, and other configuration settings."
+  },
+  {
+    "id": "vpc_service_controls",
+    "description": "VPC Service Controls define a security perimeter around Google Cloud resources to constrain data within a VPC and mitigate data exfiltration risks. VPC Service Controls can be used to define security policies that create perimeters for specific resources and data of services, prevent access to Google-managed services outside of a trusted perimeter, and block access to data from untrusted locations."
+  },
+  {
+    "id": "web_risk",
+    "description": "Web Risk is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites—such as phishing and deceptive sites—and sites that host malware or unwanted software. With the Web Risk, quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site."
+  },
+  {
+    "id": "mandiant_asm",
+    "description": "Mandiant Attack Surface Management (ASM) offers the adversary's view of an organization's attack surface through asset discovery, technology and service identification, and analysis of exploitable exposures."
+  },
+  {
+    "id": "mandiant_digital_threatmon",
+    "description": "Mandiant Digital Threat Monitoring searches the open, deep, and dark web for potential external threats, including malicious targeting, compromised credentials, and supply chain targeting."
+  }
+]
