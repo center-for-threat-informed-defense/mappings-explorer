@@ -301,7 +301,7 @@ def load_projects():
         mappings connect AWS security capabilities to adversary behaviors in MITRE
         ATT&CK®, providing AWS users with a comprehensive view of how native AWS
         security capabilities can be used to prevent, detect, and respond to prevalent
-        cloud threats. As a result, AWS users can now evaluate the effectiveness of
+        cloud threats. As a result, AWS users can evaluate the effectiveness of
         native security controls against specific ATT&CK techniques and take a
         threat-informed approach to understand, prioritize, and mitigate adversary
         behaviors that are most important for their environment."""
@@ -331,7 +331,7 @@ def load_projects():
         connect Azure security capabilities to adversary behaviors in MITRE ATT&CK®,
         providing Azure users with a comprehensive view of how native Azure security
         capabilities can be used to prevent, detect, and respond to prevalent cloud
-        threats. As a result, Azure users can now evaluate the effectiveness of native
+        threats. As a result, Azure users can evaluate the effectiveness of native
         security controls against specific ATT&CK techniques and take a threat-informed
         approach to understand, prioritize, and mitigate adversary behaviors that are
         most important for their environment."""
@@ -360,7 +360,7 @@ def load_projects():
         mappings connect GCP security capabilities to adversary behaviors in MITRE
         ATT&CK®, providing GCP users with a comprehensive view of how native GCP
         security capabilities can be used to prevent, detect, and respond to prevalent
-        cloud threats. As a result, GCP users can now evaluate the effectiveness of
+        cloud threats. As a result, GCP users can evaluate the effectiveness of
         native security controls against specific ATT&CK techniques and take a
         threat-informed approach to understand, prioritize, and mitigate adversary
         behaviors that are most important for their environment."""
