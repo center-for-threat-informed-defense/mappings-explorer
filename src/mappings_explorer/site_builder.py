@@ -1035,7 +1035,7 @@ def build_external_landing(
     project_id = project.id
     if project_id == "nist":
         project_id = "nist_800_53"
-    table_max_count = 500
+    table_max_count = 550
     stream = template.stream(
         title=project.label + " Landing",
         url_prefix=url_prefix,
