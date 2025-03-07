@@ -17,7 +17,7 @@
   },
   {
     "id": "assured_workloads",
-    "description": "Assured Workloads provides Google Cloud customers with the ability to apply security controls to an environment, in support of compliance requirements, without compromising the quality of their cloud experience. Customers should only use Assured Workloads if their Google Cloud use case is actively subject to regulatory compliance. \n\nAssured Workloads does not appear to provide specific mitigation for adversary behaviors. Rather, it focuses on enabling customers to apply other security controls in ways to support regulatory compliance. As a result, we have not mapped any ATT&CK techniques to this capability."
+    "description": "Assured Workloads provides Google Cloud customers with the ability to apply security controls to an environment, in support of compliance requirements, without compromising the quality of their cloud experience. Customers should only use Assured Workloads if their Google Cloud use case is actively subject to regulatory compliance."
   },
   {
     "id": "backup_and_dr_actifiogo",
@@ -69,15 +69,15 @@
   },
   {
     "id": "cloud_logging",
-    "description": "Cloud Logging is a managed service that allows user to store, search, analyze, monitor, and alert on logging data and events from Google Cloud and Amazon Web Services. Users can collect logging data from over 150 common application components, on-premises systems, and hybrid cloud systems.\n\nThis capability is considered not mappable because it does not provide mitigation of adversary techniques on its own. Some of the other security controls that this control maps to are Azure DNS Analytics, AWS CloudTrail, AWS S3, and AWS Audit Manager. The S3 server access logging feature was not mapped because it was deemed to be a data source that can be used with other detective controls rather than a security control in of itself."
+    "description": "Cloud Logging is a managed service that allows user to store, search, analyze, monitor, and alert on logging data and events from Google Cloud and Amazon Web Services. Users can collect logging data from over 150 common application components, on-premises systems, and hybrid cloud systems."
   },
   {
     "id": "cloud_nat",
-    "description": "Cloud NAT (Network Address Translation) allows resources within a cloud network that do not have external IP addresses to establish outbound connections to the internet. This capability does not appear to provide mitigation for any ATT&CK Techniques."
+    "description": "Cloud NAT (Network Address Translation) allows resources within a cloud network that do not have external IP addresses to establish outbound connections to the internet."
   },
   {
     "id": "cloud_ngfw",
-    "description": "Cloud Next-Generation Firewall (NGFW)_ provides a fully distributed firewall service with advanced threat protection capabilities, micro-segmentation, and pervasive coverage to protect Google Cloud workloads from internal and external attacks."
+    "description": "Cloud Next-Generation Firewall (NGFW)​ provides a fully distributed firewall service with advanced threat protection capabilities, micro-segmentation, and pervasive coverage to protect Google Cloud workloads from internal and external attacks."
   },
   {
     "id": "cloud_storage",
@@ -93,15 +93,15 @@
   },
   {
     "id": "config_connector",
-    "description": "Config Connector is a Kubernetes addon that provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs. Many cloud-native development teams work with a mix of configuration systems, APIs, and tools to manage their infrastructure. This mix is often difficult to understand, leading to reduced velocity and expensive mistakes. Config Connector provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs. This capability was not mapped as it is not considered a security control but rather an alternative to deploying and managing Google Cloud."
+    "description": "Config Connector is a Kubernetes addon that provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs. Many cloud-native development teams work with a mix of configuration systems, APIs, and tools to manage their infrastructure. This mix is often difficult to understand, leading to reduced velocity and expensive mistakes. Config Connector provides a method to configure many Google Cloud services and resources using Kubernetes tooling and APIs."
   },
   {
     "id": "data_catalog",
-    "description": "Google Cloud's Data Catalog enables customers to quickly query cloud assets, identify sensitive data, and automatically tag it for integration with Google Cloud's Data Loss Prevention (DLP) tool. \n\nThis capability is not mapped because the Data Catalog service is not considered a security control capable of defending against MITRE's ATT&CK techniques, and would require the use of a secondary product, such as DLP, for cyber defense."
+    "description": "Google Cloud's Data Catalog enables customers to quickly query cloud assets, identify sensitive data, and automatically tag it for integration with Google Cloud's Data Loss Prevention (DLP) tool."
   },
   {
     "id": "deployment_manager",
-    "description": "Google Cloud's Deployment Manager is an infrastructure management service that enables users to build predictable cloud resources using static or dynamic configuration file templates. \n\nThis control was not mapped because Deployment Manager does not provide a security capability as a stand-alone tool and would require a third party tool (e.g., Terraform) to mitigate attacks such as denial of service."
+    "description": "Google Cloud's Deployment Manager is an infrastructure management service that enables users to build predictable cloud resources using static or dynamic configuration file templates."
   },
   {
     "id": "gke_enterprise",
@@ -117,11 +117,11 @@
   },
   {
     "id": "google_threat_intel",
-    "description": "Google Threat Intelligence is a cybersecurity service provided by Google that delivers human-curated intel about emerging cyber threats.\n\nThis service provides visibility into threats. It does not provide direct mitigation of ATT&CK techniques."
+    "description": "Google Threat Intelligence is a cybersecurity service provided by Google that delivers human-curated intel about emerging cyber threats."
   },
   {
     "id": "hybrid_connectivity",
-    "description": "Google Cloud Hybrid Connectivity provides several options for connecting to Google Cloud with high-performance, guaranteed uptime, and flexible VPNs.\n\nThis is not a security capability on its own. Security capabilities that fall under the Hybrid Connectivity umbrella are mapped separately (e.g. Cloud VPN)."
+    "description": "Google Cloud Hybrid Connectivity provides several options for connecting to Google Cloud with high-performance, guaranteed uptime, and flexible VPNs."
   },
   {
     "id": "identity_and_access_management",
@@ -141,27 +141,35 @@
   },
   {
     "id": "mandiant_academy",
-    "description": "Mandiant Academy is a training program offered by Google Cloud that provides education in cybersecurity, threat intelligence, and incident response.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+    "description": "Mandiant Academy is a training program offered by Google Cloud that provides education in cybersecurity, threat intelligence, and incident response."
+  },
+  {
+    "id": "mandiant_asm",
+    "description": "Mandiant Attack Surface Management (ASM) offers the adversary's view of an organization's attack surface through asset discovery, technology and service identification, and analysis of exploitable exposures."
   },
   {
     "id": "mandiant_cyber_consult",
-    "description": "Mandiant Cybersecurity Consulting provides customized services designed to advance organizational cybersecurity programs, defenses, and operations.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+    "description": "Mandiant Cybersecurity Consulting provides customized services designed to advance organizational cybersecurity programs, defenses, and operations."
   },
   {
-    "id": "mandiant_detection_response",
-    "description": "Mandiant Managed Defense for Google Cloud provides a frontline team of experts for alert monitoring, triage, and investigation.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+    "id": "mandiant_managed_defense",
+    "description": "Mandiant Managed Defense for Google Cloud provides a frontline team of experts for alert monitoring, triage, and investigation."
+  },
+  {
+    "id": "mandiant_digital_threatmon",
+    "description": "Mandiant Digital Threat Monitoring searches the open, deep, and dark web for potential external threats, including malicious targeting, compromised credentials, and supply chain targeting."
   },
   {
     "id": "mandiant_ir_services",
-    "description": "Mandiant Incident Response Services are cybersecurity experts available that provide assistance to prepare for and respond to breaches.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+    "description": "Mandiant Incident Response Services are cybersecurity experts that provide assistance to prepare for and respond to breaches."
   },
   {
     "id": "mandiant_security_validation",
-    "description": "Mandiant Security Validation is a service offered by Google Cloud that tests and validate security controls and tools through deployed agents.\n\nThis is a service, not a technical capability. It does not directly provide mitigation of ATT&CK techniques."
+    "description": "Mandiant Security Validation is a service offered by Google Cloud that tests and validate security controls and tools through deployed agents."
   },
   {
     "id": "packet_mirroring",
-    "description": "This control is a feature found under Virtual Private Cloud tool that provides users with the ability to duplicate traffic to enable cyber forensic investigations.\n\nThis tool provides the functional ability to clone traffic, but is not considered a stand-alone security control as it requires a secondary security tool (e.g., IDS/IPS) to enable cyber defense and digital forensics."
+    "description": "This capability is a feature found under Virtual Private Cloud tool that provides users with the ability to duplicate traffic to enable cyber forensic investigations."
   },
   {
     "id": "policy_intelligence",
@@ -193,7 +201,7 @@
   },
   {
     "id": "siemplify",
-    "description": "Siemplify is a security orchestration, automation and response (SOAR) provider that is unified with Google's Chronicle security control to provide an intuitive workbench that enables security teams to manage risk better and reduce the cost of addressing threats.\n\nSiemplify primarily acts as a layer for alerts generated by other controls to be collected and trigger mitigation and remediation actions to be taken by other controls provided by the Google Cloud Platform. On its own, Siemplify does not provide mitigation of ATT&CK techniques."
+    "description": "Siemplify is a security orchestration, automation and response (SOAR) provider that is unified with Google's Chronicle security control to provide an intuitive workbench that enables security teams to manage risk better and reduce the cost of addressing threats."
   },
   {
     "id": "sw_supply_chain_security",
@@ -201,7 +209,7 @@
   },
   {
     "id": "terraform_on_google_cloud",
-    "description": "Terraform is an open source tool that lets users provision Google Cloud resources with declarative configuration files—resources such as virtual machines, containers, storage, and networking. Terraform's infrastructure-as-code (IaC) approach supports DevOps best practices for change management, managing Terraform configuration files in source control to maintain an ideal provisioning state for testing and production environments.\n\nTerraform's primary function is to support the provisioning of Google resources with configuration management. While Terraform provides some security capabilities specific to Terraform processes (encryption between Terraform Clients, encrypting workspace variables, Isolation between Terraform executions and Cloud tenants) the capabilities do not necessarily mitigate threats across the entire organization. Therefore, this capablity has been identified as not mappable."
+    "description": "Terraform is an open source tool that lets users provision Google Cloud resources with declarative configuration files—resources such as virtual machines, containers, storage, and networking. Terraform's infrastructure-as-code (IaC) approach supports DevOps best practices for change management, managing Terraform configuration files in source control to maintain an ideal provisioning state for testing and production environments."
   },
   {
     "id": "titan_security_key",
@@ -222,13 +230,5 @@
   {
     "id": "web_risk",
     "description": "Web Risk is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites—such as phishing and deceptive sites—and sites that host malware or unwanted software. With the Web Risk, quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site."
-  },
-  {
-    "id": "mandiant_asm",
-    "description": "Mandiant Attack Surface Management (ASM) offers the adversary's view of an organization's attack surface through asset discovery, technology and service identification, and analysis of exploitable exposures."
-  },
-  {
-    "id": "mandiant_digital_threatmon",
-    "description": "Mandiant Digital Threat Monitoring searches the open, deep, and dark web for potential external threats, including malicious targeting, compromised credentials, and supply chain targeting."
   }
 ]
