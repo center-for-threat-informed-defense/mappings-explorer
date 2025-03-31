@@ -97,9 +97,9 @@
 {% endif %}
 {% if capability_groups %}
 <section id="groups-table" class="mapping-table">
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="row justify-content-left">
-      <div class="col-12">
+      <div class="col-12" data-aos="fade-up">
         <h2>Capability Groups</h2>
         {{ macros.table(group_headers, undefined, capability_groups, url_prefix, table_max_count, full_link, full_size) }}
       </div>
@@ -107,9 +107,9 @@
 </section>
 {% endif %}
 <section id="all-mapping-table" class="mapping-table">
-  <div class="container" data-aos="fade-up">
+  <div class="container" ">
     <div class="row justify-content-left">
-      <div class="col-12">
+      <div class="col-12" data-aos="fade-up">
         <h2>All Mappings</h2>
         {{ macros.table(standard_headers, info_box_headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
       </div>
@@ -117,9 +117,9 @@
 </section>
 {% if project.has_non_mappables and non_mappables %}
 <section id="nonmappable-table" class="mapping-table">
-  <div class="container" data-aos="fade-up">
+  <div class="container">
     <div class="row justify-content-left">
-      <div class="col-12">
+      <div class="col-12" data-aos="fade-up">
         <div style="display: flex; margin-bottom: 15px;">
           <h2>Non-Mappable Capabilities</h2>
           <div class="tooltip-img">
