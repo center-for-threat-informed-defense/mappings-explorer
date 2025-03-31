@@ -1,0 +1,196 @@
+<template>
+  <section class="header-container gray-bg text-left">
+    <div class="container col-lg-8 offset-lg-2">
+
+    <div class="row mb-5 justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center"><span class="highlight">SCORING</span> RUBRIC</h1>
+        </div>
+    </div>
+    <div class="section-header">
+        <h2>Scoring Overview</h2>
+    </div>
+
+    <p>The AWS, Azure, GCP, Intel vPro, and M365 security framework mappings provide scoring assessments using the following scoring rubric. Scores are provided in three different categories: protect, detect and respond, for scoring the effectiveness of a security capability's ability to mitigate the threats described in the <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK® website</a>.</p>
+    <p>Both techniques and groups of sub-techniques are scored (consult the mapping format for how this is represented).</p>
+    <div style="margin-top: 30px">
+        <h3 class="uppercase">Guidelines for scoring techniques:</h3>
+        <ul>
+            <li>If a technique does not support sub-techniques, its score should reflect the capability's ability to mitigate the behavior described in the technique's description. The Technique's <em>Procedure Examples</em> section should also be reviewed to better understand how adversaries have utilized this technique to ensure that score assessments are grounded in real-world occurrences of the technique.</li>
+            <li>If a technique does support sub-techniques, the aggregate score of its sub-techniques should be included in the technique's score.</li>
+            <ul>
+                <li>For example, if the capability provides Significant protection for most of the technique's sub-techniques along with its procedure examples, it should be scored as Significant.</li>
+                <li>If it only provides Significant protection for a minority of a technique's sub-techniques, then this should adversely affect the score of the technique, irrespective of how well it mitigates the technique's procedure examples. The degree to which the technique's score is affected is left to the discretion of the assessor.</li>
+            </ul>
+        </ul>
+    </div>
+    <div style="margin-top: 30px">
+        <h3 class="uppercase">Guidelines for scoring sub-techniques:</h3>
+        <ul>
+            <li>Typically, the capability's effectiveness at mitigating the behavior described by a sub-technique is scored as Partial or Significant. If you are inclined to score a capability's effectiveness at mitigating the behavior described by a sub-technique as Minimal, carefully consider whether this capability would actually be a practical means of mitigating the sub-technique. Often, technically the capability can mitigate the sub-technique but in the real-world it wouldn't be used for that purpose. In that case, rather than including it in the mapping with a minimal score, the recommendation is to exclude it.</li>
+            <ul>
+                <li>Note: The Minimal score can and is often used to score at the technique level; a capability can provide, for example, significant protection against a sub-technique of the technique while not providing protection for a majority of its remaining sub-techniques. In this case, it is appropriate for the technique to be scored as Minimal.</li>
+            </ul>
+            <li>Sub-techniques of a technique that are specific to an operating system not supported by the platform should not adversely impact the score of the technique.</li>
+            <ul>
+                <li>Example: When scoring capabilities for the Azure platform, a majority of the sub-techniques for a particular technique are specific to the MacOS operating system. The capability being mapped does not support the MacOS operating system. In that case, since the MacOS operating system has minimal support on the Azure platform, these sub-techniques should be excluded from consideration when assessing the effectiveness of the capability.</li>
+            </ul>
+        </ul>
+    </div>
+    <div style="margin-top: 30px">
+        <h3 class="uppercase">Score Value Options:</h3>
+        <ul>
+            <li><strong>Minimal:</strong> The capability provides minimum mitigation of the ATT&CK (sub-)technique.</li>
+            <li><strong>Partial:</strong> The capability provides partial mitigation of the ATT&CK (sub-)technique.</li>
+            <li><strong>Significant:</strong> The capability provides significant mitigation of the ATT&CK (sub-)technique.</li>
+        </ul>
+        <p>To promote consistent assessments, the following scoring factors should be considered when assessing a capability's mitigation ability. This list of factors is only intended to illustrate some of the most common factors considered when scoring and is by no means exhaustive, contributions are welcome</p>
+    </div>
+    <div style="margin-top: 30px">
+        <h3 class="uppercase">Scoring Factors</h3>
+        <ul>
+            <li><strong>Coverage</strong></li>
+            <ul>
+                <li>Assesses the capability's ability to mitigate the behavior described in the description of the (sub-)technique while also considering the (sub-)technique's Procedure Examples section to ensure the score assessment is grounded in real-world occurrences of the (sub-)technique.</li>
+                <li>Coverage is a critical factor, typically if a capability provides minimal coverage, its score is assessed as Minimal irrespective of other score factors.</li>
+            </ul>
+            <li><strong>Temporal</strong></li>
+            <ul>
+                <li>Assesses how frequently the capability operates.</li>
+                <ul>
+                    <li>Is it real-time?</li>
+                    <li>Is it periodical? What's the period (minutes, hours, days)?</li>
+                    <li>Is it triggered by an external event? How often does the event occur?</li>
+                </ul>
+            </ul>
+            <li><strong>Accuracy</strong></li>
+            <ul>
+                <li>For detect capabilities, assesses the fidelity of the capability’s detection ability (i.e., false positive/false negative rates).</li>
+                <li>A capability may achieve a high accuracy score either from built-in intelligence that enables it to provide a low false-positive rate or the artifacts/behaviors that it detects do not appear frequently in the system and therefore naturally result in a low false-positive rate.</li>
+            </ul>
+        </ul>
+    </div>
+    <div style="margin-top: 30px;">
+        <h3><span class="highlight">PROTECT</span> SCORING</h3>
+        <p>The scoring rubric used to assess a security capability's ability to prevent or minimize the impact of the execution of an ATT&CK (sub-)technique is presented below:</p>
+        <div class="col-lg-10 offset-lg-1 mapping-table">
+            <div class="table-responsive table-outer">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Score</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Minimal</strong></td>
+                            <td>Low protect coverage factor irrespective of other score factors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partial</strong></td>
+                            <td>
+                                <p>Medium to high protect coverage factor </p>
+                                <p>Temporal factor of hours/days</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Significant</strong></td>
+                            <td>
+                                <p>High protect coverage factor</p>
+                                <p>Real-time, or near real-time (seconds, low minutes) temporal factor</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3><span class="highlight">DETECT</span> SCORING</h3>
+        <p>The scoring rubric used to assess a security capability's ability to detect the execution of an ATT&CK (sub-)technique is presented below:</p>
+        <div class="col-lg-10 offset-lg-1 mapping-table">
+            <div class="table-responsive table-outer">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Score</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Minimal</strong></td>
+                            <td>Low or uncertain detection coverage factor irrespective of other score factors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partial</strong></td>
+                            <td>
+                                <p>Medium to high detection coverage factor</p>
+                                <p>Temporal factor of hours/days</p>
+                                <p>Unknown or suboptimal accuracy and/or temporal score</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Significant</strong></td>
+                            <td>
+                                <p>High protect coverage factor</p>
+                                <p>Low false-positive/false-negative rates</p>
+                                <p>Real-time, or near real-time (seconds, low minutes) temporal factor</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h3><span class="highlight">RESPOND</span> SCORING</h3>
+        <p>Respond scoring assesses a security capability's ability to respond to the successful execution of an ATT&CK (sub-)technique. The score of this capability is determined by the type of response provided as described below:</p>
+        <div class="col-lg-10 offset-lg-1 mapping-table">
+            <div class="table-responsive table-outer">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Score</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Minimal</strong></td>
+                            <td>
+                                <p><strong>Data Enrichment/Forensics</strong></p>
+                                <p>The capability provides data enrichment/forensic intended to aid an analyst in responding to the ATT&CK (sub-)technique.</p>
+                                <p>Example(s): Label an event with ATT&CK details.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partial</strong></td>
+                            <td>
+                                <p><strong>Containment of an Incident</strong></p>
+                                <p>The capability contains the impact of the (sub-)technique by preventing it from growing or impacting other systems. Minimizes the impact of an incident but requires additional mitigation action to be performed to completely mitigate the threat.</p>
+                                <p>Example(s): Quarantine file, Account Disable</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Significant</strong></td>
+                            <td>
+                                <p><strong>Eradication</strong></p>
+                                <p>Mitigates the threat by removing it.</p>
+                                <p>Example(s): Force Account Password Change, Remove malware from storage, Terminate process and delete executable.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p>Note that the above scores are the maximum scores with respect to the type of response provided by the capability. The overall score can be adversely affected by the Coverage factor especially when regard to scoring techniques. For example, for a given technique, if a capability can eradicate a specific sub-technique but offers no response abilities for a majority of its remaining sub-techniques, then the Respond score for this parent technique should be Minimal and not Significant. This adverse impact of the Coverage factor on the score should be noted in the comment field for the score.</p>
+    </div>
+  </section>
+
+</template>
+
+<script setup>
+</script>
+
+<style scoped>
+
+</style>

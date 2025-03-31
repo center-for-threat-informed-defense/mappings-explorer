@@ -1,0 +1,162 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "mobile",
+        "attack_version": "15.1",
+        "mapping_framework": "kev",
+        "mapping_framework_version": "02/13/2025",
+        "author": null,
+        "contact": null,
+        "organization": null,
+        "creation_date": "09/10/2024",
+        "last_update": "02/11/2025",
+        "mapping_types": {
+            "primary_impact": {
+                "name": "primary_impact",
+                "description": ""
+            },
+            "secondary_impact": {
+                "name": "secondary_impact",
+                "description": ""
+            },
+            "exploitation_technique": {
+                "name": "exploitation_technique",
+                "description": ""
+            },
+            "uncategorized": {
+                "name": "uncategorized",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "buffer_overflow": "Buffer Overflow",
+            "input_validation": "Input Validation",
+            "use_after_free": "Use After Free"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "CVE-2021-38000",
+            "capability_description": "Google Chromium Intents Improper Input Validation Vulnerability",
+            "mapping_type": "exploitation_technique",
+            "attack_object_id": "T1660",
+            "attack_object_name": "Phishing",
+            "capability_group": "input_validation",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
+            "references": [
+                "https://issues.chromium.org/issues/40057279",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-38181",
+            "capability_description": "Arm Mali GPU Kernel Driver Use-After-Free Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1404",
+            "attack_object_name": "Exploitation for Privilege Escalation",
+            "capability_group": "use_after_free",
+            "comments": "This vulnerability was exploited in a targeted spyware campaign against individuals in Italy, Malaysia, and Kazakhstan. Threat actors used this vulnerability, along with other CVEs, to escalate privileges on Android devices via malicious apps. The campaign involved sending SMS messages with shortened links that redirected users to exploit-hosting web pages. Android users who accessed these links through the Samsung Internet Browser were redirected to Chrome using intent redirection to deliver an unspecified payload. ",
+            "references": [
+                "https://thehackernews.com/2023/03/spyware-vendors-caught-exploiting-zero.html",
+                "https://www.tomsguide.com/news/android-system-flaws-can-be-remotely-exploited-by-hackers-install-the-latest-updates-now",
+                "https://www.techradar.com/pro/security/android-has-a-worrying-security-flaw-so-users-need-to-update-now",
+                "https://therecord.media/spyware-google-italy-malaysia-kazakhstan-uae",
+                "https://therecord.media/google-zero-days-report-2022"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-38181",
+            "capability_description": "Arm Mali GPU Kernel Driver Use-After-Free Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1437.001",
+            "attack_object_name": "Web Protocols",
+            "capability_group": "use_after_free",
+            "comments": "This vulnerability was exploited in a targeted spyware campaign against individuals in Italy, Malaysia, and Kazakhstan. Threat actors used this vulnerability, along with other CVEs, to escalate privileges on Android devices via malicious apps. The campaign involved sending SMS messages with shortened links that redirected users to exploit-hosting web pages. Android users who accessed these links through the Samsung Internet Browser were redirected to Chrome using intent redirection to deliver an unspecified payload. ",
+            "references": [
+                "https://thehackernews.com/2023/03/spyware-vendors-caught-exploiting-zero.html",
+                "https://www.tomsguide.com/news/android-system-flaws-can-be-remotely-exploited-by-hackers-install-the-latest-updates-now",
+                "https://www.techradar.com/pro/security/android-has-a-worrying-security-flaw-so-users-need-to-update-now",
+                "https://therecord.media/spyware-google-italy-malaysia-kazakhstan-uae",
+                "https://therecord.media/google-zero-days-report-2022"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2022-38181",
+            "capability_description": "Arm Mali GPU Kernel Driver Use-After-Free Vulnerability",
+            "mapping_type": "exploitation_technique",
+            "attack_object_id": "T1660",
+            "attack_object_name": "Phishing",
+            "capability_group": "use_after_free",
+            "comments": "This vulnerability was exploited in a targeted spyware campaign against individuals in Italy, Malaysia, and Kazakhstan. Threat actors used this vulnerability, along with other CVEs, to escalate privileges on Android devices via malicious apps. The campaign involved sending SMS messages with shortened links that redirected users to exploit-hosting web pages. Android users who accessed these links through the Samsung Internet Browser were redirected to Chrome using intent redirection to deliver an unspecified payload. ",
+            "references": [
+                "https://thehackernews.com/2023/03/spyware-vendors-caught-exploiting-zero.html",
+                "https://www.tomsguide.com/news/android-system-flaws-can-be-remotely-exploited-by-hackers-install-the-latest-updates-now",
+                "https://www.techradar.com/pro/security/android-has-a-worrying-security-flaw-so-users-need-to-update-now",
+                "https://therecord.media/spyware-google-italy-malaysia-kazakhstan-uae",
+                "https://therecord.media/google-zero-days-report-2022"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-4863",
+            "capability_description": "Google Chromium WebP Heap-Based Buffer Overflow Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1658",
+            "attack_object_name": "Exploitation for Client Execution",
+            "capability_group": "buffer_overflow",
+            "comments": "This vulnerability has been exploited by a remote attacker to perform an out-of-bounds memory write via a crafted HTML page, allowing the attacker to execute arbitrary code. \n\nThis vulnerability impacts many browsers. It was part of a zero-click iMessage exploit chain named BLASTPASS, used by the NSO Group to deploy its Pegasus spyware onto fully patched iPhones running iOS 16.6. The flaw affects the libwebp library in Chromium-based software, including Microsoft Edge, and has been actively exploited in the wild.",
+            "references": [
+                "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2023/",
+                "https://www.techmonitor.ai/technology/cybersecurity/four-big-tech-browsers-hit-by-one-zero-day-vulnerability?cf-view",
+                "https://blog.cloudflare.com/uncovering-the-hidden-webp-vulnerability-cve-2023-4863/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2023-4863",
+            "capability_description": "Google Chromium WebP Heap-Based Buffer Overflow Vulnerability",
+            "mapping_type": "exploitation_technique",
+            "attack_object_id": "T1456",
+            "attack_object_name": "Drive-By Compromise",
+            "capability_group": "buffer_overflow",
+            "comments": "This vulnerability has been exploited by a remote attacker to perform an out-of-bounds memory write via a crafted HTML page, allowing the attacker to execute arbitrary code. \n\nThis vulnerability impacts many browsers. It was part of a zero-click iMessage exploit chain named BLASTPASS, used by the NSO Group to deploy its Pegasus spyware onto fully patched iPhones running iOS 16.6. The flaw affects the libwebp library in Chromium-based software, including Microsoft Edge, and has been actively exploited in the wild.",
+            "references": [
+                "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-october-2023/",
+                "https://www.techmonitor.ai/technology/cybersecurity/four-big-tech-browsers-hit-by-one-zero-day-vulnerability?cf-view",
+                "https://blog.cloudflare.com/uncovering-the-hidden-webp-vulnerability-cve-2023-4863/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2021-38000",
+            "capability_description": "Google Chromium Intents Improper Input Validation Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1437",
+            "attack_object_name": "Application Layer Protocol",
+            "capability_group": "input_validation",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
+            "references": [
+                "https://issues.chromium.org/issues/40057279",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CVE-2021-38000",
+            "capability_description": "Google Chromium Intents Improper Input Validation Vulnerability",
+            "mapping_type": "primary_impact",
+            "attack_object_id": "T1658",
+            "attack_object_name": "Exploitation for Client Execution",
+            "capability_group": "input_validation",
+            "comments": "This zero-day vulnerability allows an adversary to redirect intent URLs and transfer execution to another application on the Android device. Reports indicate that threat actors have exploited the vulnerability by sending exploit links to targeted Android users via Android messages.",
+            "references": [
+                "https://issues.chromium.org/issues/40057279",
+                "https://googleprojectzero.github.io/0days-in-the-wild/0day-RCAs/2021/CVE-2021-38000.html"
+            ],
+            "status": "complete"
+        }
+    ]
+}
