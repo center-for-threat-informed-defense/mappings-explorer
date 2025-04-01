@@ -1,0 +1,246 @@
+/*--------------------------------------------------------------
+# Fonts and Colors (CSS Variables)
+--------------------------------------------------------------*/
+:root {
+    --font-default: "Roboto Condensed", sans-serif;
+    --font-primary: "Roboto Condensed", sans-serif;
+    --font-secondary: "Roboto Condensed", sans-serif;
+  
+    --color-default: #212c5e;
+    --color-primary: #c2eaf6;
+    --color-secondary: #6241c5;
+    --color-link: #005b94;
+    --color-text: #0b2338;
+    --color-purple: #bca9dd;
+  }
+  
+  /* Smooth scroll behavior */
+  :root {
+    scroll-behavior: smooth;
+  }
+  
+  /*--------------------------------------------------------------
+  # General Styles
+  --------------------------------------------------------------*/
+  body {
+    font-family: var(--font-default);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer !important;
+  }
+  
+  a:hover {
+    color: #82cbed;
+    text-decoration: none;
+    cursor: pointer !important;
+  }
+  
+  a.search-icon {
+    padding: 0 !important;
+  }
+  
+  a.white-link {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 30px;
+  }
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 700;
+  }
+  h6 {
+    font-family: var(--font-primary);
+  }
+  
+  span.highlight {
+    color: var(--color-secondary);
+  }
+  
+  img.img-fluid {
+    margin-bottom: 1em;
+  }
+  
+
+/*--------------------------------------------------------------
+  # Sections & Section Header
+  --------------------------------------------------------------*/
+  section {
+    overflow: hidden;
+    padding: 80px 0;
+  }
+  
+  section.version-select {
+    overflow: visible;
+  }
+  
+  .section-header {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-header h2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--color-secondary);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .section-header p {
+    margin-bottom: 0;
+  }
+  
+  .gray-bg {
+    background-color: #eff1f4;
+  }
+  
+  .white-bg {
+    background-color: white;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Preloader
+  --------------------------------------------------------------*/
+  #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.6s ease-out;
+  }
+  
+  #preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid var(--color-primary);
+    border-top-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+  }
+  
+  @keyframes animate-preloader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  .header {
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 14px 0;
+    background: #212c5f;
+    font-family: var(--font-primary);
+  }
+  
+  div.banner {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-text) !important;
+    text-align: center;
+    display: block;
+    position: fixed;
+    top: 80px;
+    z-index: 10 !important;
+    transition: all 0.5s;
+  }
+  
+  .banner.sticked {
+    top: 72px;
+  }
+  
+  .banner p {
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 1280px) {
+    .header {
+      padding: 12px 0;
+    }
+  
+    div.banner {
+      top: 54px;
+    }
+  }
+  
+  .header.transparent-header {
+    background: none;
+  }
+  
+  .header.sticked {
+    background: #212c5ff8;
+    padding: 10px 0;
+  }
+  
+  .header #mapex_explorer_line_logo,
+  .footer #mapex_explorer_line_logo {
+    height: 30px;
+    width: auto;
+  }
+  
+  .header svg {
+    height: 30px;
+    width: auto;
+    margin-right: 12px;
+  }
+  
+  .header .logo img {
+    height: 30px;
+    margin-right: 12px;
+  }
+  
+  .header .logo h1 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    font-family: var(--font-primary);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  

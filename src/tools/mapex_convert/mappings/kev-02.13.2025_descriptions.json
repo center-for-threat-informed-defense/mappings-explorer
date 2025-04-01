@@ -1,0 +1,1198 @@
+[
+    {
+        "id": "CVE-2021-38000",
+        "description": "Insufficient validation of untrusted input in Intents in Google Chrome on Android prior to 95.0.4638.69 allowed a remote attacker to arbitrarily browser to a malicious URL via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2022-38181",
+        "description": "The Arm Mali GPU kernel driver allows unprivileged users to access freed memory because GPU memory operations are mishandled. This affects Bifrost r0p0 through r38p1, and r39p0; Valhall r19p0 through r38p1, and r39p0; and Midgard r4p0 through r32p0."
+    },
+    {
+        "id": "CVE-2023-4863",
+        "description": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)"
+    },
+    {
+        "id": "CVE-2024-20359",
+        "description": "A vulnerability in a legacy capability that allowed for the preloading of VPN clients and plug-ins and that has been available in Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an authenticated, local attacker to execute arbitrary code with root-level privileges. Administrator-level privileges are required to exploit this vulnerability.\r\n\r This vulnerability is due to improper validation of a file when it is read from system flash memory. An attacker could exploit this vulnerability by copying a crafted file to the disk0: file system of an affected device. A successful exploit could allow the attacker to execute arbitrary code on the affected device after the next reload of the device, which could alter system behavior. Because the injected code could persist across device reboots, Cisco has raised the Security Impact Rating (SIR) of this advisory from Medium to High."
+    },
+    {
+        "id": "CVE-2023-35081",
+        "description": "A path traversal vulnerability in Ivanti EPMM versions (11.10.x < 11.10.0.3,  11.9.x < 11.9.1.2 and 11.8.x < 11.8.1.2) allows an authenticated administrator to write arbitrary files onto the appliance."
+    },
+    {
+        "id": "CVE-2023-48788",
+        "description": "A improper neutralization of special elements used in an sql command ('sql injection') in Fortinet FortiClientEMS version 7.2.0 through 7.2.2, FortiClientEMS 7.0.1 through 7.0.10 allows attacker to execute unauthorized code or commands via specially crafted packets."
+    },
+    {
+        "id": "CVE-2024-20399",
+        "description": "A vulnerability in the CLI of Cisco NX-OS Software could allow an authenticated user in possession of Administrator credentials to execute arbitrary commands as root on the underlying operating system of an affected device.\r\n\r\nThis vulnerability is due to insufficient validation of arguments that are passed to specific configuration CLI commands. An attacker could exploit this vulnerability by including crafted input as the argument of an affected configuration CLI command. A successful exploit could allow the attacker to execute arbitrary commands on the underlying operating system with the privileges of root.\r\nNote: To successfully exploit this vulnerability on a Cisco NX-OS device, an attacker must have Administrator credentials. The following Cisco devices already allow administrative users to access the underlying operating system through the bash-shell feature, so, for these devices, this vulnerability does not grant any additional privileges:\r\n\r\nNexus 3000 Series Switches\r\nNexus 7000 Series Switches that are running Cisco NX-OS Software releases 8.1(1) and later\r\nNexus 9000 Series Switches in standalone NX-OS mode"
+    },
+    {
+        "id": "CVE-2021-22017",
+        "description": "Rhttproxy as used in vCenter Server contains a vulnerability due to improper implementation of URI normalization. A malicious actor with network access to port 443 on vCenter Server may exploit this issue to bypass proxy leading to internal endpoints being accessed."
+    },
+    {
+        "id": "CVE-2022-20703",
+        "description": "Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbitrary code Elevate privileges Execute arbitrary commands Bypass authentication and authorization protections Fetch and run unsigned software Cause denial of service (DoS) For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2024-37085",
+        "description": "VMware ESXi contains an authentication bypass vulnerability.\u00a0A malicious actor with sufficient Active Directory (AD) permissions can gain full access to an ESXi host that was previously  configured to use AD for user management https://blogs.vmware.com/vsphere/2012/09/joining-vsphere-hosts-to-active-directory.html  by re-creating the configured AD group ('ESXi Admins' by default) after it was deleted from AD."
+    },
+    {
+        "id": "CVE-2019-11634",
+        "description": "Citrix Workspace App before 1904 for Windows has Incorrect Access Control."
+    },
+    {
+        "id": "CVE-2015-5119",
+        "description": "Use-after-free vulnerability in the ByteArray class in the ActionScript 3 (AS3) implementation in Adobe Flash Player 13.x through 13.0.0.296 and 14.x through 18.0.0.194 on Windows and OS X and 11.x through 11.2.202.468 on Linux allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via crafted Flash content that overrides a valueOf function, as exploited in the wild in July 2015."
+    },
+    {
+        "id": "CVE-2022-41125",
+        "description": "Windows CNG Key Isolation Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2022-3038",
+        "description": "Use after free in Network Service in Google Chrome prior to 105.0.5195.52 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2021-22893",
+        "description": "Pulse Connect Secure 9.0R3/9.1R1 and higher is vulnerable to an authentication bypass vulnerability exposed by the Windows File Share Browser and Pulse Secure Collaboration features of Pulse Connect Secure that can allow an unauthenticated user to perform remote arbitrary code execution on the Pulse Connect Secure gateway. This vulnerability has been exploited in the wild."
+    },
+    {
+        "id": "CVE-2023-49103",
+        "description": "An issue was discovered in ownCloud owncloud/graphapi 0.2.x before 0.2.1 and 0.3.x before 0.3.1. The graphapi app relies on a third-party GetPhpInfo.php library that provides a URL. When this URL is accessed, it reveals the configuration details of the PHP environment (phpinfo). This information includes all the environment variables of the webserver. In containerized deployments, these environment variables may include sensitive data such as the ownCloud admin password, mail server credentials, and license key. Simply disabling the graphapi app does not eliminate the vulnerability. Additionally, phpinfo exposes various other potentially sensitive configuration details that could be exploited by an attacker to gather information about the system. Therefore, even if ownCloud is not running in a containerized environment, this vulnerability should still be a cause for concern. Note that Docker containers from before February 2023 are not vulnerable to the credential disclosure."
+    },
+    {
+        "id": "CVE-2023-46805",
+        "description": "An authentication bypass vulnerability in the web component of Ivanti ICS 9.x, 22.x and Ivanti Policy Secure allows a remote attacker to access restricted resources by bypassing control checks."
+    },
+    {
+        "id": "CVE-2020-8515",
+        "description": "DrayTek Vigor2960 1.3.1_Beta, Vigor3900 1.4.4_Beta, and Vigor300B 1.3.3_Beta, 1.4.2.1_Beta, and 1.4.4_Beta devices allow remote code execution as root (without authentication) via shell metacharacters to the cgi-bin/mainfunction.cgi URI. This issue has been fixed in Vigor3900/2960/300B v1.5.1."
+    },
+    {
+        "id": "CVE-2024-4671",
+        "description": "Use after free in Visuals in Google Chrome prior to 124.0.6367.201 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2021-27860",
+        "description": "A vulnerability in the web management interface of FatPipe WARP, IPVPN, and MPVPN software prior to versions 10.1.2r60p92 and 10.2.2r44p1 allows a remote, unauthenticated attacker to upload a file to any location on the filesystem. The FatPipe advisory identifier for this vulnerability is FPSA006."
+    },
+    {
+        "id": "CVE-2023-2136",
+        "description": "Integer overflow in Skia in Google Chrome prior to 112.0.5615.137 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2022-42948",
+        "description": "Cobalt Strike 4.7.1 fails to properly escape HTML tags when they are displayed on Swing components. By injecting crafted HTML code, it is possible to remotely execute code in the Cobalt Strike UI."
+    },
+    {
+        "id": "CVE-2021-39226",
+        "description": "Grafana is an open source data visualization platform. In affected versions unauthenticated and authenticated users are able to view the snapshot with the lowest database key by accessing the literal paths: /dashboard/snapshot/:key, or /api/snapshots/:key. If the snapshot \"public_mode\" configuration setting is set to true (vs default of false), unauthenticated users are able to delete the snapshot with the lowest database key by accessing the literal path: /api/snapshots-delete/:deleteKey. Regardless of the snapshot \"public_mode\" setting, authenticated users are able to delete the snapshot with the lowest database key by accessing the literal paths: /api/snapshots/:key, or /api/snapshots-delete/:deleteKey. The combination of deletion and viewing enables a complete walk through all snapshot data while resulting in complete snapshot data loss. This issue has been resolved in versions 8.1.6 and 7.5.11. If for some reason you cannot upgrade you can use a reverse proxy or similar to block access to the literal paths: /api/snapshots/:key, /api/snapshots-delete/:deleteKey, /dashboard/snapshot/:key, and /api/snapshots/:key. They have no normal function and can be disabled without side effects."
+    },
+    {
+        "id": "CVE-2018-4878",
+        "description": "A use-after-free vulnerability was discovered in Adobe Flash Player before 28.0.0.161. This vulnerability occurs due to a dangling pointer in the Primetime SDK related to media player handling of listener objects. A successful attack can lead to arbitrary code execution. This was exploited in the wild in January and February 2018."
+    },
+    {
+        "id": "CVE-2017-6742",
+        "description": "The Simple Network Management Protocol (SNMP) subsystem of Cisco IOS 12.0 through 12.4 and 15.0 through 15.6 and IOS XE 2.2 through 3.17 contains multiple vulnerabilities that could allow an authenticated, remote attacker to remotely execute code on an affected system or cause an affected system to reload. An attacker could exploit these vulnerabilities by sending a crafted SNMP packet to an affected system via IPv4 or IPv6. Only traffic directed to an affected system can be used to exploit these vulnerabilities. The vulnerabilities are due to a buffer overflow condition in the SNMP subsystem of the affected software. The vulnerabilities affect all versions of SNMP: Versions 1, 2c, and 3. To exploit these vulnerabilities via SNMP Version 2c or earlier, the attacker must know the SNMP read-only community string for the affected system. To exploit these vulnerabilities via SNMP Version 3, the attacker must have user credentials for the affected system. All devices that have enabled SNMP and have not explicitly excluded the affected MIBs or OIDs should be considered vulnerable. Cisco Bug IDs: CSCve54313."
+    },
+    {
+        "id": "CVE-2022-22954",
+        "description": "VMware Workspace ONE Access and Identity Manager contain a remote code execution vulnerability due to server-side template injection. A malicious actor with network access can trigger a server-side template injection that may result in remote code execution."
+    },
+    {
+        "id": "CVE-2018-13379",
+        "description": "An Improper Limitation of a Pathname to a Restricted Directory (\"Path Traversal\") in Fortinet FortiOS 6.0.0 to 6.0.4, 5.6.3 to 5.6.7 and 5.4.6 to 5.4.12 and FortiProxy 2.0.0, 1.2.0 to 1.2.8, 1.1.0 to 1.1.6, 1.0.0 to 1.0.7 under SSL VPN web portal allows an unauthenticated attacker to download system files via special crafted HTTP resource requests."
+    },
+    {
+        "id": "CVE-2017-9822",
+        "description": "DNN (aka DotNetNuke) before 9.1.1 has Remote Code Execution via a cookie, aka \"2017-08 (Critical) Possible remote code execution on DNN sites.\""
+    },
+    {
+        "id": "CVE-2023-20887",
+        "description": "Aria Operations for Networks contains a command injection vulnerability. A malicious actor with network access to VMware Aria Operations for Networks may be able to perform a command injection attack resulting in remote code execution."
+    },
+    {
+        "id": "CVE-2021-44077",
+        "description": "Zoho ManageEngine ServiceDesk Plus before 11306, ServiceDesk Plus MSP before 10530, and SupportCenter Plus before 11014 are vulnerable to unauthenticated remote code execution. This is related to /RestAPI URLs in a servlet, and ImportTechnicians in the Struts configuration."
+    },
+    {
+        "id": "CVE-2020-25506",
+        "description": "D-Link DNS-320 FW v2.06B01 Revision Ax is affected by command injection in the system_mgr.cgi component, which can lead to remote arbitrary code execution."
+    },
+    {
+        "id": "CVE-2021-22894",
+        "description": "A buffer overflow vulnerability exists in Pulse Connect Secure before 9.1R11.4 allows a remote authenticated attacker to execute arbitrary code as the root user via maliciously crafted meeting room."
+    },
+    {
+        "id": "CVE-2008-2992",
+        "description": "Stack-based buffer overflow in Adobe Acrobat and Reader 8.1.2 and earlier allows remote attackers to execute arbitrary code via a PDF file that calls the util.printf JavaScript function with a crafted format string argument, a related issue to CVE-2008-1104."
+    },
+    {
+        "id": "CVE-2021-42258",
+        "description": "BQE BillQuick Web Suite 2018 through 2021 before 22.0.9.1 allows SQL injection for unauthenticated remote code execution, as exploited in the wild in October 2021 for ransomware installation. SQL injection can, for example, use the txtID (aka username) parameter. Successful exploitation can include the ability to execute arbitrary code as MSSQLSERVER$ via xp_cmdshell."
+    },
+    {
+        "id": "CVE-2021-26084",
+        "description": "In affected versions of Confluence Server and Data Center, an OGNL injection vulnerability exists that would allow an unauthenticated attacker to execute arbitrary code on a Confluence Server or Data Center instance. The affected versions are before version 6.13.23, from version 6.14.0 before 7.4.11, from version 7.5.0 before 7.11.6, and from version 7.12.0 before 7.12.5."
+    },
+    {
+        "id": "CVE-2023-22527",
+        "description": "A template injection vulnerability on older versions of Confluence Data Center and Server allows an unauthenticated attacker to achieve RCE on an affected instance. Customers using an affected version must take immediate action.\n\nMost recent supported versions of Confluence Data Center and Server are not affected by this vulnerability as it was ultimately mitigated during regular version updates. However, Atlassian recommends that customers take care to install the latest version to protect their instances from non-critical vulnerabilities outlined in Atlassian\u2019s January Security Bulletin."
+    },
+    {
+        "id": "CVE-2023-29492",
+        "description": "Novi Survey before 8.9.43676 allows remote attackers to execute arbitrary code on the server in the context of the service account. This does not provide access to stored survey or response data."
+    },
+    {
+        "id": "CVE-2023-21608",
+        "description": "Adobe Acrobat Reader versions 22.003.20282 (and earlier), 22.003.20281 (and earlier) and 20.005.30418 (and earlier) are affected by a Use After Free vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file."
+    },
+    {
+        "id": "CVE-2021-4034",
+        "description": "A local privilege escalation vulnerability was found on polkit's pkexec utility. The pkexec application is a setuid tool designed to allow unprivileged users to run commands as privileged users according predefined policies. The current version of pkexec doesn't handle the calling parameters count correctly and ends trying to execute environment variables as commands. An attacker can leverage this by crafting environment variables in such a way it'll induce pkexec to execute arbitrary code. When successfully executed the attack can cause a local privilege escalation given unprivileged users administrative rights on the target machine."
+    },
+    {
+        "id": "CVE-2021-40449",
+        "description": "Win32k Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2010-0188",
+        "description": "Unspecified vulnerability in Adobe Reader and Acrobat 8.x before 8.2.1 and 9.x before 9.3.1 allows attackers to cause a denial of service (application crash) or possibly execute arbitrary code via unknown vectors."
+    },
+    {
+        "id": "CVE-2021-34523",
+        "description": "Microsoft Exchange Server Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-46604",
+        "description": "The Java OpenWire protocol marshaller is vulnerable to Remote Code \nExecution. This vulnerability may allow a remote attacker with network \naccess to either a Java-based OpenWire broker or client to run arbitrary\n shell commands by manipulating serialized class types in the OpenWire \nprotocol to cause either the client or the broker (respectively) to \ninstantiate any class on the classpath.\n\nUsers are recommended to upgrade\n both brokers and clients to version 5.15.16, 5.16.7, 5.17.6, or 5.18.3 \nwhich fixes this issue.\n\n"
+    },
+    {
+        "id": "CVE-2016-4117",
+        "description": "Adobe Flash Player 21.0.0.226 and earlier allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in May 2016."
+    },
+    {
+        "id": "CVE-2021-44228",
+        "description": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled. From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects."
+    },
+    {
+        "id": "CVE-2021-33739",
+        "description": "Microsoft DWM Core Library Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-20198",
+        "description": "Cisco is providing an update for the ongoing investigation into observed exploitation of the web UI feature in Cisco IOS XE Software. We are updating the list of fixed releases and adding the Software Checker. Our investigation has determined that the actors exploited two previously unknown issues. The attacker first exploited CVE-2023-20198 to gain initial access and issued a privilege 15 command to create a local user and password combination. This allowed the user to log in with normal user access. The attacker then exploited another component of the web UI feature, leveraging the new local user to elevate privilege to root and write the implant to the file system. Cisco has assigned CVE-2023-20273 to this issue. CVE-2023-20198 has been assigned a CVSS Score of 10.0. CVE-2023-20273 has been assigned a CVSS Score of 7.2. Both of these CVEs are being tracked by CSCwh87343."
+    },
+    {
+        "id": "CVE-2023-32315",
+        "description": "Openfire is an XMPP server licensed under the Open Source Apache License. Openfire's administrative console, a web-based application, was found to be vulnerable to a path traversal attack via the setup environment. This permitted an unauthenticated user to use the unauthenticated Openfire Setup Environment in an already configured Openfire environment to access restricted pages in the Openfire Admin Console reserved for administrative users. This vulnerability affects all versions of Openfire that have been released since April 2015, starting with version 3.10.0. The problem has been patched in Openfire release 4.7.5 and 4.6.8, and further improvements will be included in the yet-to-be released first version on the 4.8 branch (which is expected to be version 4.8.0). Users are advised to upgrade. If an Openfire upgrade isn\u2019t available for a specific release, or isn\u2019t quickly actionable, users may see the linked github advisory (GHSA-gw42-f939-fhvm) for mitigation advice."
+    },
+    {
+        "id": "CVE-2021-31166",
+        "description": "HTTP Protocol Stack Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2024-38112",
+        "description": "Windows MSHTML Platform Spoofing Vulnerability"
+    },
+    {
+        "id": "CVE-2013-0632",
+        "description": "administrator.cfc in Adobe ColdFusion 9.0, 9.0.1, 9.0.2, and 10 allows remote attackers to bypass authentication and possibly execute arbitrary code by logging in to the RDS component using the default empty password and leveraging this session to access the administrative web interface, as exploited in the wild in January 2013."
+    },
+    {
+        "id": "CVE-2021-44515",
+        "description": "Zoho ManageEngine Desktop Central is vulnerable to authentication bypass, leading to remote code execution on the server, as exploited in the wild in December 2021. For Enterprise builds 10.1.2127.17 and earlier, upgrade to 10.1.2127.18. For Enterprise builds 10.1.2128.0 through 10.1.2137.2, upgrade to 10.1.2137.3. For MSP builds 10.1.2127.17 and earlier, upgrade to 10.1.2127.18. For MSP builds 10.1.2128.0 through 10.1.2137.2, upgrade to 10.1.2137.3."
+    },
+    {
+        "id": "CVE-2024-34102",
+        "description": "Adobe Commerce versions 2.4.7, 2.4.6-p5, 2.4.5-p7, 2.4.4-p8 and earlier are affected by an Improper Restriction of XML External Entity Reference ('XXE') vulnerability that could result in arbitrary code execution. An attacker could exploit this vulnerability by sending a crafted XML document that references external entities. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2018-4939",
+        "description": "Adobe ColdFusion Update 5 and earlier versions, ColdFusion 11 Update 13 and earlier versions have an exploitable Deserialization of Untrusted Data vulnerability. Successful exploitation could lead to arbitrary code execution."
+    },
+    {
+        "id": "CVE-2020-8193",
+        "description": "Improper access control in Citrix ADC and Citrix Gateway versions before 13.0-58.30, 12.1-57.18, 12.0-63.21, 11.1-64.14 and 10.5-70.18 and Citrix SDWAN WAN-OP versions before 11.1.1a, 11.0.3d and 10.2.7 allows unauthenticated access to certain URL endpoints."
+    },
+    {
+        "id": "CVE-2024-24919",
+        "description": "Potentially allowing an attacker to read certain information on Check Point Security Gateways once connected to the internet and enabled with remote Access VPN or Mobile Access Software Blades. A Security fix that mitigates this vulnerability is available."
+    },
+    {
+        "id": "CVE-2021-42237",
+        "description": "Sitecore XP 7.5 Initial Release to Sitecore XP 8.2 Update-7 is vulnerable to an insecure deserialization attack where it is possible to achieve remote command execution on the machine. No authentication or special configuration is required to exploit this vulnerability."
+    },
+    {
+        "id": "CVE-2022-29464",
+        "description": "Certain WSO2 products allow unrestricted file upload with resultant remote code execution. The attacker must use a /fileupload endpoint with a Content-Disposition directory traversal sequence to reach a directory under the web root, such as a ../../../../repository/deployment/server/webapps directory. This affects WSO2 API Manager 2.2.0 up to 4.0.0, WSO2 Identity Server 5.2.0 up to 5.11.0, WSO2 Identity Server Analytics 5.4.0, 5.4.1, 5.5.0 and 5.6.0, WSO2 Identity Server as Key Manager 5.3.0 up to 5.11.0, WSO2 Enterprise Integrator 6.2.0 up to 6.6.0, WSO2 Open Banking AM 1.4.0 up to 2.0.0 and WSO2 Open Banking KM 1.4.0, up to 2.0.0."
+    },
+    {
+        "id": "CVE-2023-36844",
+        "description": "A PHP External Variable Modification vulnerability in J-Web of Juniper Networks Junos OS on EX Series allows an unauthenticated, network-based attacker to control certain, important environment variables.\n\nUsing a crafted request an attacker is able to modify \n\ncertain PHP environment variables\u00a0leading to partial loss of integrity,\u00a0which may allow chaining to other vulnerabilities.\nThis issue affects Juniper Networks Junos OS on EX Series:\n\n\n\n  *  All versions prior to 20.4R3-S9;\n  *  21.1 versions 21.1R1 and later;\n  *  21.2 versions prior to 21.2R3-S7;\n  *  21.3 versions \n\nprior to \n\n 21.3R3-S5;\n  *  21.4 versions \n\nprior to \n\n21.4R3-S5;\n  *  22.1 versions \n\nprior to \n\n22.1R3-S4;\n  *  22.2 versions \n\nprior to \n\n22.2R3-S2;\n  *  22.3 versions \n\nprior to 22.3R3-S1;\n  *  22.4 versions \n\nprior to \n\n22.4R2-S2, 22.4R3;\n  *  23.2 versions prior to \n\n23.2R1-S1, 23.2R2.\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2023-47565",
+        "description": "An OS command injection vulnerability has been found to affect legacy QNAP VioStor NVR models running QVR Firmware 4.x. If exploited, the vulnerability could allow authenticated users to execute commands via a network.\n\nWe have already fixed the vulnerability in the following versions:\n\nQVR Firmware 5.0.0\u00a0and later\n\n"
+    },
+    {
+        "id": "CVE-2022-26258",
+        "description": "D-Link DIR-820L 1.05B03 was discovered to contain remote command execution (RCE) vulnerability via HTTP POST to get set ccp."
+    },
+    {
+        "id": "CVE-2019-3396",
+        "description": "The Widget Connector macro in Atlassian Confluence Server before version 6.6.12 (the fixed version for 6.6.x), from version 6.7.0 before 6.12.3 (the fixed version for 6.12.x), from version 6.13.0 before 6.13.3 (the fixed version for 6.13.x), and from version 6.14.0 before 6.14.2 (the fixed version for 6.14.x), allows remote attackers to achieve path traversal and remote code execution on a Confluence Server or Data Center instance via server-side template injection."
+    },
+    {
+        "id": "CVE-2024-23692",
+        "description": "Rejetto HTTP File Server, up to and including version 2.3m, is vulnerable to a template injection vulnerability. This vulnerability allows a remote, unauthenticated attacker to execute arbitrary commands on the affected system by sending a specially crafted HTTP request. As of the CVE assignment date, Rejetto HFS 2.3m is no longer supported."
+    },
+    {
+        "id": "CVE-2023-6548",
+        "description": "Improper Control of Generation of Code ('Code Injection') in NetScaler ADC and NetScaler Gateway\u00a0allows an attacker with\u00a0access\u00a0to NSIP, CLIP or SNIP with management interface to perform\u00a0Authenticated (low privileged) remote code execution on Management Interface."
+    },
+    {
+        "id": "CVE-2023-38035",
+        "description": "A security vulnerability in MICS Admin Portal in Ivanti MobileIron Sentry versions 9.18.0 and below, which may allow an attacker to bypass authentication controls on the administrative interface due to an insufficiently restrictive Apache HTTPD configuration. "
+    },
+    {
+        "id": "CVE-2023-5217",
+        "description": "Heap buffer overflow in vp8 encoding in libvpx in Google Chrome prior to 117.0.5938.132 and libvpx 1.13.1 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2021-22204",
+        "description": "Improper neutralization of user data in the DjVu file format in ExifTool versions 7.44 and up allows arbitrary code execution when parsing the malicious image"
+    },
+    {
+        "id": "CVE-2024-4879",
+        "description": "ServiceNow has addressed an input validation vulnerability that was identified in Vancouver and Washington DC Now Platform releases. This vulnerability could enable an unauthenticated user to remotely execute code within the context of the Now Platform.\u00a0ServiceNow applied an update to hosted instances, and ServiceNow released the update to our partners and self-hosted customers. Listed below are the patches and hot fixes that address the vulnerability. If you have not done so already, we recommend applying security patches relevant to your instance as soon as possible."
+    },
+    {
+        "id": "CVE-2022-22047",
+        "description": "Windows Client Server Run-time Subsystem (CSRSS) Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2021-1497",
+        "description": "Multiple vulnerabilities in the web-based management interface of Cisco HyperFlex HX could allow an unauthenticated, remote attacker to perform command injection attacks against an affected device. For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2013-0629",
+        "description": "Adobe ColdFusion 9.0, 9.0.1, 9.0.2, and 10, when a password is not configured, allows attackers to access restricted directories via unspecified vectors, as exploited in the wild in January 2013."
+    },
+    {
+        "id": "CVE-2022-41073",
+        "description": "Windows Print Spooler Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2013-3346",
+        "description": "Adobe Reader and Acrobat 9.x before 9.5.5, 10.x before 10.1.7, and 11.x before 11.0.03 allow attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2013-2718, CVE-2013-2719, CVE-2013-2720, CVE-2013-2721, CVE-2013-2722, CVE-2013-2723, CVE-2013-2725, CVE-2013-2726, CVE-2013-2731, CVE-2013-2732, CVE-2013-2734, CVE-2013-2735, CVE-2013-2736, CVE-2013-3337, CVE-2013-3338, CVE-2013-3339, CVE-2013-3340, and CVE-2013-3341."
+    },
+    {
+        "id": "CVE-2012-0754",
+        "description": "Adobe Flash Player before 10.3.183.15 and 11.x before 11.1.102.62 on Windows, Mac OS X, Linux, and Solaris; before 11.1.111.6 on Android 2.x and 3.x; and before 11.1.115.6 on Android 4.x allows attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors."
+    },
+    {
+        "id": "CVE-2021-40539",
+        "description": "Zoho ManageEngine ADSelfService Plus version 6113 and prior is vulnerable to REST API authentication bypass with resultant remote code execution."
+    },
+    {
+        "id": "CVE-2015-0313",
+        "description": "Use-after-free vulnerability in Adobe Flash Player before 13.0.0.269 and 14.x through 16.x before 16.0.0.305 on Windows and OS X and before 11.2.202.442 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in February 2015, a different vulnerability than CVE-2015-0315, CVE-2015-0320, and CVE-2015-0322."
+    },
+    {
+        "id": "CVE-2023-38203",
+        "description": "Adobe ColdFusion versions 2018u17 (and earlier), 2021u7 (and earlier) and 2023u1 (and earlier) are affected by a Deserialization of Untrusted Data vulnerability that could result in Arbitrary code execution. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2024-30051",
+        "description": "Windows DWM Core Library Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-1389",
+        "description": "TP-Link Archer AX21 (AX1800) firmware versions before 1.1.4 Build 20230219 contained a command injection vulnerability in the country form of the /cgi-bin/luci;stok=/locale endpoint on the web management interface. Specifically, the country parameter of the write operation was not sanitized before being used in a call to popen(), allowing an unauthenticated attacker to inject commands, which would be run as root, with a simple POST request."
+    },
+    {
+        "id": "CVE-2022-3075",
+        "description": "Insufficient data validation in Mojo in Google Chrome prior to 105.0.5195.102 allowed a remote attacker who had compromised the renderer process to potentially perform a sandbox escape via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2022-30190",
+        "description": "A remote code execution vulnerability exists when MSDT is called using the URL protocol from a calling application such as Word. An attacker who successfully exploits this vulnerability can run arbitrary code with the privileges of the calling application. The attacker can then install programs, view, change, or delete data, or create new accounts in the context allowed by the user\u2019s rights.\nPlease see the\u00a0MSRC Blog Entry for important information about steps you can take to protect your system from this vulnerability."
+    },
+    {
+        "id": "CVE-2023-38205",
+        "description": "Adobe ColdFusion versions 2018u18 (and earlier), 2021u8 (and earlier) and 2023u2 (and earlier) are affected by an Improper Access Control vulnerability that could result in a Security feature bypass. An attacker could leverage this vulnerability to access the administration CFM and CFC endpoints. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2021-44168",
+        "description": "A download of code without integrity check vulnerability in the \"execute restore src-vis\" command of FortiOS before 7.0.3 may allow a local authenticated attacker to download arbitrary files on the device via specially crafted update packages."
+    },
+    {
+        "id": "CVE-2016-4437",
+        "description": "Apache Shiro before 1.2.5, when a cipher key has not been configured for the \"remember me\" feature, allows remote attackers to execute arbitrary code or bypass intended access restrictions via an unspecified request parameter."
+    },
+    {
+        "id": "CVE-2023-7101",
+        "description": "Spreadsheet::ParseExcel version 0.65 is a Perl module used for parsing Excel files. Spreadsheet::ParseExcel is vulnerable to an arbitrary code execution (ACE) vulnerability due to passing unvalidated input from a file into a string-type \u201ceval\u201d. Specifically, the issue stems from the evaluation of Number format strings (not to be confused with printf-style format strings) within the Excel parsing logic. \n"
+    },
+    {
+        "id": "CVE-2022-35405",
+        "description": "Zoho ManageEngine Password Manager Pro before 12101 and PAM360 before 5510 are vulnerable to unauthenticated remote code execution. (This also affects ManageEngine Access Manager Plus before 4303 with authentication.)"
+    },
+    {
+        "id": "CVE-2023-4966",
+        "description": "Sensitive information disclosure\u00a0in NetScaler ADC and NetScaler Gateway when configured as a\u00a0Gateway (VPN virtual server, ICA Proxy, CVPN, RDP Proxy)\u00a0or\u00a0AAA \u202fvirtual\u202fserver.\u00a0\n\n\n\n"
+    },
+    {
+        "id": "CVE-2022-21919",
+        "description": "Windows User Profile Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-3519",
+        "description": "Unauthenticated remote code execution\n"
+    },
+    {
+        "id": "CVE-2022-26134",
+        "description": "In affected versions of Confluence Server and Data Center, an OGNL injection vulnerability exists that would allow an unauthenticated attacker to execute arbitrary code on a Confluence Server or Data Center instance. The affected versions are from 1.3.0 before 7.4.17, from 7.13.0 before 7.13.7, from 7.14.0 before 7.14.3, from 7.15.0 before 7.15.2, from 7.16.0 before 7.16.4, from 7.17.0 before 7.17.4, and from 7.18.0 before 7.18.1."
+    },
+    {
+        "id": "CVE-2021-30554",
+        "description": "Use after free in WebGL in Google Chrome prior to 91.0.4472.114 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2023-49897",
+        "description": "An OS command injection vulnerability exists in AE1021PE firmware version 2.0.9 and earlier and AE1021 firmware version 2.0.9 and earlier. If this vulnerability is exploited, an arbitrary OS command may be executed by an attacker who can log in to the product."
+    },
+    {
+        "id": "CVE-2018-7600",
+        "description": "Drupal before 7.58, 8.x before 8.3.9, 8.4.x before 8.4.6, and 8.5.x before 8.5.1 allows remote attackers to execute arbitrary code because of an issue affecting multiple subsystems with default or common module configurations."
+    },
+    {
+        "id": "CVE-2023-21715",
+        "description": "Microsoft Publisher Security Feature Bypass Vulnerability"
+    },
+    {
+        "id": "CVE-2022-40684",
+        "description": "An authentication bypass using an alternate path or channel [CWE-288] in Fortinet FortiOS version 7.2.0 through 7.2.1 and 7.0.0 through 7.0.6, FortiProxy version 7.2.0 and version 7.0.0 through 7.0.6 and FortiSwitchManager version 7.2.0 and 7.0.0 allows an unauthenticated atttacker to perform operations on the administrative interface via specially crafted HTTP or HTTPS requests."
+    },
+    {
+        "id": "CVE-2023-34048",
+        "description": "vCenter Server contains an out-of-bounds write vulnerability in the implementation of the DCERPC protocol.\u00a0A malicious actor with network access to vCenter Server may trigger an out-of-bounds write potentially leading to remote code execution."
+    },
+    {
+        "id": "CVE-2023-28252",
+        "description": "Windows Common Log File System Driver Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-20269",
+        "description": "A vulnerability in the remote access VPN feature of Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to conduct a brute force attack in an attempt to identify valid username and password combinations or an authenticated, remote attacker to establish a clientless SSL VPN session with an unauthorized user.\r\n\r This vulnerability is due to improper separation of authentication, authorization, and accounting (AAA) between the remote access VPN feature and the HTTPS management and site-to-site VPN features. An attacker could exploit this vulnerability by specifying a default connection profile/tunnel group while conducting a brute force attack or while establishing a clientless SSL VPN session using valid credentials. A successful exploit could allow the attacker to achieve one or both of the following:\r\n\r \r Identify valid credentials that could then be used to establish an unauthorized remote access VPN session.\r Establish a clientless SSL VPN session (only when running Cisco ASA Software Release 9.16 or earlier).\r \r Notes:\r\n\r \r Establishing a client-based remote access VPN tunnel is not possible as these default connection profiles/tunnel groups do not and cannot have an IP address pool configured.\r This vulnerability does not allow an attacker to bypass authentication. To successfully establish a remote access VPN session, valid credentials are required, including a valid second factor if multi-factor authentication (MFA) is configured.\r \r Cisco will release software updates that address this vulnerability. There are workarounds that address this vulnerability."
+    },
+    {
+        "id": "CVE-2021-40655",
+        "description": "An informtion disclosure issue exists in D-LINK-DIR-605 B2 Firmware Version : 2.01MT. An attacker can obtain a user name and password by forging a post request to the / getcfg.php page"
+    },
+    {
+        "id": "CVE-2023-36845",
+        "description": "A PHP External Variable Modification vulnerability in J-Web of Juniper Networks Junos OS on EX Series \n\nand SRX Series \n\nallows an unauthenticated, network-based attacker to remotely execute code.\n\nUsing a crafted request which sets the variable PHPRC an attacker is able to modify the PHP execution environment allowing the injection und execution of code.\n\n\nThis issue affects Juniper Networks Junos OS on EX Series\n\n\nand \n\n\nSRX Series:\n\n\n\n  *  All versions prior to \n\n20.4R3-S9;\n  *  21.1 versions 21.1R1 and later;\n  *  21.2 versions prior to\u00a021.2R3-S7;\n  *  21.3 versions prior to\u00a021.3R3-S5;\n  *  21.4 versions prior to 21.4R3-S5;\n  *  22.1 versions \n\nprior to \n\n22.1R3-S4;\n  *  22.2 versions \n\nprior to \n\n22.2R3-S2;\n  *  22.3 versions \n\nprior to \n\n22.3R2-S2, 22.3R3-S1;\n  *  22.4 versions \n\nprior to \n\n22.4R2-S1, 22.4R3;\n  *  23.2 versions prior to 23.2R1-S1, 23.2R2.\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2022-29303",
+        "description": "SolarView Compact ver.6.00 was discovered to contain a command injection vulnerability via conf_mail.php."
+    },
+    {
+        "id": "CVE-2018-11776",
+        "description": "Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace."
+    },
+    {
+        "id": "CVE-2023-20273",
+        "description": "A vulnerability in the web UI feature of Cisco IOS XE Software could allow an authenticated, remote attacker to inject commands with the privileges of root. This vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by sending crafted input to the web UI. A successful exploit could allow the attacker to inject commands to the underlying operating system with root privileges."
+    },
+    {
+        "id": "CVE-2014-0496",
+        "description": "Use-after-free vulnerability in Adobe Reader and Acrobat 10.x before 10.1.9 and 11.x before 11.0.06 on Windows and Mac OS X allows attackers to execute arbitrary code via unspecified vectors."
+    },
+    {
+        "id": "CVE-2016-7855",
+        "description": "Use-after-free vulnerability in Adobe Flash Player before 23.0.0.205 on Windows and OS X and before 11.2.202.643 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in October 2016."
+    },
+    {
+        "id": "CVE-2020-17530",
+        "description": "Forced OGNL evaluation, when evaluated on raw user input in tag attributes, may lead to remote code execution. Affected software : Apache Struts 2.0.0 - Struts 2.5.25."
+    },
+    {
+        "id": "CVE-2021-31207",
+        "description": "Microsoft Exchange Server Security Feature Bypass Vulnerability"
+    },
+    {
+        "id": "CVE-2023-20109",
+        "description": "A vulnerability in the Cisco Group Encrypted Transport VPN (GET VPN) feature of Cisco IOS Software and Cisco IOS XE Software could allow an authenticated, remote attacker who has administrative control of either a group member or a key server to execute arbitrary code on an affected device or cause the device to crash.\r\n\r This vulnerability is due to insufficient validation of attributes in the Group Domain of Interpretation (GDOI) and G-IKEv2 protocols of the GET VPN feature. An attacker could exploit this vulnerability by either compromising an installed key server or modifying the configuration of a group member to point to a key server that is controlled by the attacker. A successful exploit could allow the attacker to execute arbitrary code and gain full control of the affected system or cause the affected system to reload, resulting in a denial of service (DoS) condition. For more information, see the Details [\"#details\"] section of this advisory."
+    },
+    {
+        "id": "CVE-2022-21999",
+        "description": "Windows Print Spooler Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2021-22005",
+        "description": "The vCenter Server contains an arbitrary file upload vulnerability in the Analytics service. A malicious actor with network access to port 443 on vCenter Server may exploit this issue to execute code on vCenter Server by uploading a specially crafted file."
+    },
+    {
+        "id": "CVE-2024-4761",
+        "description": "Out of bounds write in V8 in Google Chrome prior to 124.0.6367.207 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2015-3113",
+        "description": "Heap-based buffer overflow in Adobe Flash Player before 13.0.0.296 and 14.x through 18.x before 18.0.0.194 on Windows and OS X and before 11.2.202.468 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in June 2015."
+    },
+    {
+        "id": "CVE-2021-41379",
+        "description": "Windows Installer Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2021-37975",
+        "description": "Use after free in V8 in Google Chrome prior to 94.0.4606.71 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2021-36380",
+        "description": "Sunhillo SureLine before 8.7.0.1.1 allows Unauthenticated OS Command Injection via shell metacharacters in ipAddr or dnsAddr /cgi/networkDiag.cgi."
+    },
+    {
+        "id": "CVE-2023-34362",
+        "description": "In Progress MOVEit Transfer before 2021.0.6 (13.0.6), 2021.1.4 (13.1.4), 2022.0.4 (14.0.4), 2022.1.5 (14.1.5), and 2023.0.1 (15.0.1), a SQL injection vulnerability has been found in the MOVEit Transfer web application that could allow an unauthenticated attacker to gain access to MOVEit Transfer's database. Depending on the database engine being used (MySQL, Microsoft SQL Server, or Azure SQL), an attacker may be able to infer information about the structure and contents of the database, and execute SQL statements that alter or delete database elements. NOTE: this is exploited in the wild in May and June 2023; exploitation of unpatched systems can occur via HTTP or HTTPS. All versions (e.g., 2020.0 and 2019x) before the five explicitly mentioned versions are affected, including older unsupported versions."
+    },
+    {
+        "id": "CVE-2022-39197",
+        "description": "An XSS (Cross Site Scripting) vulnerability was found in HelpSystems Cobalt Strike through 4.7 that allowed a remote attacker to execute HTML on the Cobalt Strike teamserver. To exploit the vulnerability, one must first inspect a Cobalt Strike payload, and then modify the username field in the payload (or create a new payload with the extracted information and then modify that username field to be malformed)."
+    },
+    {
+        "id": "CVE-2019-0604",
+        "description": "A remote code execution vulnerability exists in Microsoft SharePoint when the software fails to check the source markup of an application package, aka 'Microsoft SharePoint Remote Code Execution Vulnerability'. This CVE ID is unique from CVE-2019-0594."
+    },
+    {
+        "id": "CVE-2022-37969",
+        "description": "Windows Common Log File System Driver Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2020-5902",
+        "description": "In BIG-IP versions 15.0.0-15.1.0.3, 14.1.0-14.1.2.5, 13.1.0-13.1.3.3, 12.1.0-12.1.5.1, and 11.6.1-11.6.5.1, the Traffic Management User Interface (TMUI), also referred to as the Configuration utility, has a Remote Code Execution (RCE) vulnerability in undisclosed pages."
+    },
+    {
+        "id": "CVE-2023-43770",
+        "description": "Roundcube before 1.4.14, 1.5.x before 1.5.4, and 1.6.x before 1.6.3 allows XSS via text/plain e-mail messages with crafted links because of program/lib/Roundcube/rcube_string_replacer.php behavior."
+    },
+    {
+        "id": "CVE-2021-26085",
+        "description": "Affected versions of Atlassian Confluence Server allow remote attackers to view restricted resources via a Pre-Authorization Arbitrary File Read vulnerability in the /s/ endpoint. The affected versions are before version 7.4.10, and from version 7.5.0 before 7.12.3."
+    },
+    {
+        "id": "CVE-2022-41128",
+        "description": "Windows Scripting Languages Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-20699",
+        "description": "Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbitrary code Elevate privileges Execute arbitrary commands Bypass authentication and authorization protections Fetch and run unsigned software Cause denial of service (DoS) For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2019-13608",
+        "description": "Citrix StoreFront Server before 1903, 7.15 LTSR before CU4 (3.12.4000), and 7.6 LTSR before CU8 (3.0.8000) allows XXE attacks."
+    },
+    {
+        "id": "CVE-2021-27065",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-24682",
+        "description": "An issue was discovered in the Calendar feature in Zimbra Collaboration Suite 8.8.x before 8.8.15 patch 30 (update 1), as exploited in the wild starting in December 2021. An attacker could place HTML containing executable JavaScript inside element attributes. This markup becomes unescaped, causing arbitrary markup to be injected into the document."
+    },
+    {
+        "id": "CVE-2015-7645",
+        "description": "Adobe Flash Player 18.x through 18.0.0.252 and 19.x through 19.0.0.207 on Windows and OS X and 11.x through 11.2.202.535 on Linux allows remote attackers to execute arbitrary code via a crafted SWF file, as exploited in the wild in October 2015."
+    },
+    {
+        "id": "CVE-2018-15982",
+        "description": "Flash Player versions 31.0.0.153 and earlier, and 31.0.0.108 and earlier have a use after free vulnerability. Successful exploitation could lead to arbitrary code execution."
+    },
+    {
+        "id": "CVE-2011-0611",
+        "description": "Adobe Flash Player before 10.2.154.27 on Windows, Mac OS X, Linux, and Solaris and 10.2.156.12 and earlier on Android; Adobe AIR before 2.6.19140; and Authplay.dll (aka AuthPlayLib.bundle) in Adobe Reader 9.x before 9.4.4 and 10.x through 10.0.1 on Windows, Adobe Reader 9.x before 9.4.4 and 10.x before 10.0.3 on Mac OS X, and Adobe Acrobat 9.x before 9.4.4 and 10.x before 10.0.3 on Windows and Mac OS X allow remote attackers to execute arbitrary code or cause a denial of service (application crash) via crafted Flash content; as demonstrated by a Microsoft Office document with an embedded .swf file that has a size inconsistency in a \"group of included constants,\" object type confusion, ActionScript that adds custom functions to prototypes, and Date objects; and as exploited in the wild in April 2011."
+    },
+    {
+        "id": "CVE-2021-21973",
+        "description": "The vSphere Client (HTML5) contains an SSRF (Server Side Request Forgery) vulnerability due to improper validation of URLs in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue by sending a POST request to vCenter Server plugin leading to information disclosure. This affects: VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2)."
+    },
+    {
+        "id": "CVE-2019-18935",
+        "description": "Progress Telerik UI for ASP.NET AJAX through 2019.3.1023 contains a .NET deserialization vulnerability in the RadAsyncUpload function. This is exploitable when the encryption keys are known due to the presence of CVE-2017-11317 or CVE-2017-11357, or other means. Exploitation can result in remote code execution. (As of 2020.1.114, a default setting prevents the exploit. In 2019.3.1023, but not earlier versions, a non-default setting can prevent exploitation.)"
+    },
+    {
+        "id": "CVE-2024-38080",
+        "description": "Windows Hyper-V Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2021-27059",
+        "description": "Microsoft Office Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-22948",
+        "description": "The vCenter Server contains an information disclosure vulnerability due to improper permission of files. A malicious actor with non-administrative access to the vCenter Server may exploit this issue to gain access to sensitive information."
+    },
+    {
+        "id": "CVE-2021-45382",
+        "description": "A Remote Command Execution (RCE) vulnerability exists in all series H/W revisions D-link DIR-810L, DIR-820L/LW, DIR-826L, DIR-830L, and DIR-836L routers via the DDNS function in ncc2 binary file. Note: DIR-810L, DIR-820L, DIR-830L, DIR-826L, DIR-836L, all hardware revisions, have reached their End of Life (\"EOL\") /End of Service Life (\"EOS\") Life-Cycle and as such this issue will not be patched."
+    },
+    {
+        "id": "CVE-2023-36884",
+        "description": "Windows Search Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2020-29557",
+        "description": "An issue was discovered on D-Link DIR-825 R1 devices through 3.0.1 before 2020-11-20. A buffer overflow in the web interface allows attackers to achieve pre-authentication remote code execution."
+    },
+    {
+        "id": "CVE-2023-28229",
+        "description": "Windows CNG Key Isolation Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-26369",
+        "description": "Acrobat Reader versions 23.003.20284 (and earlier), 20.005.30516 (and earlier) and 20.005.30514 (and earlier) are affected by an out-of-bounds write vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file."
+    },
+    {
+        "id": "CVE-2019-0211",
+        "description": "In Apache HTTP Server 2.4 releases 2.4.17 to 2.4.38, with MPM event, worker or prefork, code executing in less-privileged child processes or threads (including scripts executed by an in-process scripting interpreter) could execute arbitrary code with the privileges of the parent process (usually root) by manipulating the scoreboard. Non-Unix systems are not affected."
+    },
+    {
+        "id": "CVE-2021-27101",
+        "description": "Accellion FTA 9_12_370 and earlier is affected by SQL injection via a crafted Host header in a request to document_root.html. The fixed version is FTA_9_12_380 and later."
+    },
+    {
+        "id": "CVE-2021-42013",
+        "description": "It was found that the fix for CVE-2021-41773 in Apache HTTP Server 2.4.50 was insufficient. An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives. If files outside of these directories are not protected by the usual default configuration \"require all denied\", these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution. This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions."
+    },
+    {
+        "id": "CVE-2021-44529",
+        "description": "A code injection vulnerability in the Ivanti EPM Cloud Services Appliance (CSA) allows an unauthenticated user to execute arbitrary code with limited permissions (nobody)."
+    },
+    {
+        "id": "CVE-2023-27350",
+        "description": "This vulnerability allows remote attackers to bypass authentication on affected installations of PaperCut NG 22.0.5 (Build 63914). Authentication is not required to exploit this vulnerability. The specific flaw exists within the SetupCompleted class. The issue results from improper access control. An attacker can leverage this vulnerability to bypass authentication and execute arbitrary code in the context of SYSTEM. Was ZDI-CAN-18987."
+    },
+    {
+        "id": "CVE-2023-27997",
+        "description": "A heap-based buffer overflow vulnerability [CWE-122] in FortiOS version 7.2.4 and below, version 7.0.11 and below, version 6.4.12 and below, version 6.0.16 and below and FortiProxy version 7.2.3 and below, version 7.0.9 and below, version 2.0.12 and below, version 1.2 all versions, version 1.1 all versions SSL-VPN may allow a remote attacker to execute arbitrary code or commands via specifically crafted requests."
+    },
+    {
+        "id": "CVE-2022-26138",
+        "description": "The Atlassian Questions For Confluence app for Confluence Server and Data Center creates a Confluence user account in the confluence-users group with the username disabledsystemuser and a hardcoded password. A remote, unauthenticated attacker with knowledge of the hardcoded password could exploit this to log into Confluence and access all content accessible to users in the confluence-users group. This user account is created when installing versions 2.7.34, 2.7.35, and 3.0.2 of the app."
+    },
+    {
+        "id": "CVE-2021-21148",
+        "description": "Heap buffer overflow in V8 in Google Chrome prior to 88.0.4324.150 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2024-4947",
+        "description": "Type Confusion in V8 in Google Chrome prior to 125.0.6422.60 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2021-3129",
+        "description": "Ignition before 2.5.2, as used in Laravel and other products, allows unauthenticated remote attackers to execute arbitrary code because of insecure usage of file_get_contents() and file_put_contents(). This is exploitable on sites using debug mode with Laravel before 8.4.2."
+    },
+    {
+        "id": "CVE-2022-28810",
+        "description": "Zoho ManageEngine ADSelfService Plus before build 6122 allows a remote authenticated administrator to execute arbitrary operating OS commands as SYSTEM via the policy custom script feature. Due to the use of a default administrator password, attackers may be able to abuse this functionality with minimal effort. Additionally, a remote and partially authenticated attacker may be able to inject arbitrary commands into the custom script due to an unsanitized password field."
+    },
+    {
+        "id": "CVE-2024-5274",
+        "description": "Type Confusion in V8 in Google Chrome prior to 125.0.6422.112 allowed a remote attacker to execute arbitrary code inside a sandbox via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2020-3580",
+        "description": "Multiple vulnerabilities in the web services interface of Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to conduct cross-site scripting (XSS) attacks against a user of the web services interface of an affected device. The vulnerabilities are due to insufficient validation of user-supplied input by the web services interface of an affected device. An attacker could exploit these vulnerabilities by persuading a user of the interface to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the interface or allow the attacker to access sensitive, browser-based information. Note: These vulnerabilities affect only specific AnyConnect and WebVPN configurations. For more information, see the Vulnerable Products section."
+    },
+    {
+        "id": "CVE-2021-39144",
+        "description": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker has sufficient rights to execute commands of the host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose."
+    },
+    {
+        "id": "CVE-2023-0669",
+        "description": "Fortra (formerly, HelpSystems) GoAnywhere MFT suffers from a pre-authentication command injection vulnerability in the License Response Servlet due to deserializing an arbitrary attacker-controlled object. This issue was patched in version 7.1.2."
+    },
+    {
+        "id": "CVE-2024-4978",
+        "description": "Justice AV Solutions Viewer Setup 8.3.7.250-1 contains a malicious binary when executed and is signed with an unexpected authenticode signature. A remote, privileged threat actor may exploit this vulnerability to execute of unauthorized PowerShell commands."
+    },
+    {
+        "id": "CVE-2019-0708",
+        "description": "A remote code execution vulnerability exists in Remote Desktop Services formerly known as Terminal Services when an unauthenticated attacker connects to the target system using RDP and sends specially crafted requests, aka 'Remote Desktop Services Remote Code Execution Vulnerability'."
+    },
+    {
+        "id": "CVE-2020-0787",
+        "description": "An elevation of privilege vulnerability exists when the Windows Background Intelligent Transfer Service (BITS) improperly handles symbolic links, aka 'Windows Background Intelligent Transfer Service Elevation of Privilege Vulnerability'."
+    },
+    {
+        "id": "CVE-2021-37415",
+        "description": "Zoho ManageEngine ServiceDesk Plus before 11302 is vulnerable to authentication bypass that allows a few REST-API URLs without authentication."
+    },
+    {
+        "id": "CVE-2018-4990",
+        "description": "Adobe Acrobat and Reader versions 2018.011.20038 and earlier, 2017.011.30079 and earlier, and 2015.006.30417 and earlier have a Double Free vulnerability. Successful exploitation could lead to arbitrary code execution in the context of the current user."
+    },
+    {
+        "id": "CVE-2020-8196",
+        "description": "Improper access control in Citrix ADC and Citrix Gateway versions before 13.0-58.30, 12.1-57.18, 12.0-63.21, 11.1-64.14 and 10.5-70.18 and Citrix SDWAN WAN-OP versions before 11.1.1a, 11.0.3d and 10.2.7 resulting in limited information disclosure to low privileged users."
+    },
+    {
+        "id": "CVE-2021-34473",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2017-9805",
+        "description": "The REST Plugin in Apache Struts 2.1.1 through 2.3.x before 2.3.34 and 2.5.x before 2.5.13 uses an XStreamHandler with an instance of XStream for deserialization without any type filtering, which can lead to Remote Code Execution when deserializing XML payloads."
+    },
+    {
+        "id": "CVE-2019-3398",
+        "description": "Confluence Server and Data Center had a path traversal vulnerability in the downloadallattachments resource. A remote attacker who has permission to add attachments to pages and / or blogs or to create a new space or a personal space or who has 'Admin' permissions for a space can exploit this path traversal vulnerability to write files to arbitrary locations which can lead to remote code execution on systems that run a vulnerable version of Confluence Server or Data Center. All versions of Confluence Server from 2.0.0 before 6.6.13 (the fixed version for 6.6.x), from 6.7.0 before 6.12.4 (the fixed version for 6.12.x), from 6.13.0 before 6.13.4 (the fixed version for 6.13.x), from 6.14.0 before 6.14.3 (the fixed version for 6.14.x), and from 6.15.0 before 6.15.2 are affected by this vulnerability."
+    },
+    {
+        "id": "CVE-2009-4324",
+        "description": "Use-after-free vulnerability in the Doc.media.newPlayer method in Multimedia.api in Adobe Reader and Acrobat 9.x before 9.3, and 8.x before 8.2 on Windows and Mac OS X, allows remote attackers to execute arbitrary code via a crafted PDF file using ZLib compressed streams, as exploited in the wild in December 2009."
+    },
+    {
+        "id": "CVE-2022-23131",
+        "description": "In the case of instances where the SAML SSO authentication is enabled (non-default), session data can be modified by a malicious actor, because a user login stored in the session was not verified. Malicious unauthenticated actor may exploit this issue to escalate privileges and gain admin access to Zabbix Frontend. To perform the attack, SAML authentication is required to be enabled and the actor has to know the username of Zabbix user (or use the guest account, which is disabled by default)."
+    },
+    {
+        "id": "CVE-2022-22718",
+        "description": "Windows Print Spooler Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2023-5631",
+        "description": "\nRoundcube before 1.4.15, 1.5.x before 1.5.5, and 1.6.x before 1.6.4 allows stored XSS via an HTML e-mail message with a crafted SVG document because of program/lib/Roundcube/rcube_washtml.php behavior. This could allow a remote attacker\n\nto load arbitrary JavaScript code.\n\n\n\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2013-0640",
+        "description": "Adobe Reader and Acrobat 9.x before 9.5.4, 10.x before 10.1.6, and 11.x before 11.0.02 allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted PDF document, as exploited in the wild in February 2013."
+    },
+    {
+        "id": "CVE-2023-21674",
+        "description": "Windows Advanced Local Procedure Call (ALPC) Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2016-0984",
+        "description": "Use-after-free vulnerability in Adobe Flash Player before 18.0.0.329 and 19.x and 20.x before 20.0.0.306 on Windows and OS X and before 11.2.202.569 on Linux, Adobe AIR before 20.0.0.260, Adobe AIR SDK before 20.0.0.260, and Adobe AIR SDK & Compiler before 20.0.0.260 allows attackers to execute arbitrary code via unspecified vectors, a different vulnerability than CVE-2016-0973, CVE-2016-0974, CVE-2016-0975, CVE-2016-0982, and CVE-2016-0983."
+    },
+    {
+        "id": "CVE-2015-0310",
+        "description": "Adobe Flash Player before 13.0.0.262 and 14.x through 16.x before 16.0.0.287 on Windows and OS X and before 11.2.202.438 on Linux does not properly restrict discovery of memory addresses, which allows attackers to bypass the ASLR protection mechanism on Windows, and have an unspecified impact on other platforms, via unknown vectors, as exploited in the wild in January 2015."
+    },
+    {
+        "id": "CVE-2021-26858",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2023-36846",
+        "description": "A Missing Authentication for Critical Function vulnerability in Juniper Networks Junos OS on SRX Series allows an unauthenticated, network-based attacker to cause limited impact to the file system integrity.\n\n\n\nWith a specific request to user.php that doesn't require authentication an attacker is able to upload arbitrary files via J-Web, leading to a loss of \n\nintegrity\n\nfor a certain\u00a0\n\npart of the\u00a0file system, which may allow chaining to other vulnerabilities.\n\n\nThis issue affects Juniper Networks Junos OS on SRX Series:\n\n\n\n  *  All versions prior to 20.4R3-S8;\n  *  21.1 versions 21.1R1 and later;\n  *  21.2 versions prior to 21.2R3-S6;\n  *  21.3 versions \n\nprior to \n\n 21.3R3-S5;\n  *  21.4 versions \n\nprior to \n\n21.4R3-S5;\n  *  22.1 versions \n\nprior to \n\n22.1R3-S3;\n  *  22.2 versions \n\nprior to \n\n22.2R3-S2;\n  *  22.3 versions \n\nprior to \n\n22.3R2-S2, 22.3R3;\n  *  22.4 versions \n\nprior to \n\n22.4R2-S1, 22.4R3.\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2015-3043",
+        "description": "Adobe Flash Player before 13.0.0.281 and 14.x through 17.x before 17.0.0.169 on Windows and OS X and before 11.2.202.457 on Linux allows attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, as exploited in the wild in April 2015, a different vulnerability than CVE-2015-0347, CVE-2015-0350, CVE-2015-0352, CVE-2015-0353, CVE-2015-0354, CVE-2015-0355, CVE-2015-0360, CVE-2015-3038, CVE-2015-3041, and CVE-2015-3042."
+    },
+    {
+        "id": "CVE-2014-0546",
+        "description": "Adobe Reader and Acrobat 10.x before 10.1.11 and 11.x before 11.0.08 on Windows allow attackers to bypass a sandbox protection mechanism, and consequently execute native code in a privileged context, via unspecified vectors."
+    },
+    {
+        "id": "CVE-2020-8195",
+        "description": "Improper input validation in Citrix ADC and Citrix Gateway versions before 13.0-58.30, 12.1-57.18, 12.0-63.21, 11.1-64.14 and 10.5-70.18 and Citrix SDWAN WAN-OP versions before 11.1.1a, 11.0.3d and 10.2.7 resulting in limited information disclosure to low privileged users."
+    },
+    {
+        "id": "CVE-2023-41179",
+        "description": "A vulnerability in the 3rd party AV uninstaller module contained in Trend Micro Apex One (on-prem and SaaS), Worry-Free Business Security and Worry-Free Business Security Services could allow an attacker to manipulate the module to execute arbitrary commands on an affected installation.\r\n\r\nNote that an attacker must first obtain administrative console access on the target system in order to exploit this vulnerability."
+    },
+    {
+        "id": "CVE-2020-0069",
+        "description": "In the ioctl handlers of the Mediatek Command Queue driver, there is a possible out of bounds write due to insufficient input sanitization and missing SELinux restrictions. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android kernelAndroid ID: A-147882143References: M-ALPS04356754"
+    },
+    {
+        "id": "CVE-2023-36851",
+        "description": "A Missing Authentication for Critical Function vulnerability in Juniper Networks Junos OS on SRX Series allows an unauthenticated, network-based attacker to cause limited impact to the file system integrity.\n\n\n\nWith a specific request to \n\nwebauth_operation.php\n\nthat doesn't require authentication, an attacker is able to upload and download arbitrary files via J-Web, leading to a loss of \n\nintegrity\u00a0or confidentiality, which may allow chaining to other vulnerabilities.\n\n\nThis issue affects Juniper Networks Junos OS on SRX Series:\n\n\n\n  *  \n\n21.2 versions prior to 21.2R3-S8;\n  *  21.4 \n\nversions prior to \n\n21.4R3-S6;\n  *  22.1 \n\nversions prior to \n\n22.1R3-S5;\n  *  22.2 \n\nversions prior to \n\n22.2R3-S3;\n  *  22.3 \n\nversions prior to \n\n22.3R3-S2;\n  *  22.4 versions prior to 22,4R2-S2, 22.4R3;\n  *  23.2 versions prior to \n\n23.2R1-S2,\u00a023.2R2.\n\n\n"
+    },
+    {
+        "id": "CVE-2022-20708",
+        "description": "Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbitrary code Elevate privileges Execute arbitrary commands Bypass authentication and authorization protections Fetch and run unsigned software Cause denial of service (DoS) For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2014-6271",
+        "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgid modules in the Apache HTTP Server, scripts executed by unspecified DHCP clients, and other situations in which setting the environment occurs across a privilege boundary from Bash execution, aka \"ShellShock.\"  NOTE: the original fix for this issue was incorrect; CVE-2014-7169 has been assigned to cover the vulnerability that is still present after the incorrect fix."
+    },
+    {
+        "id": "CVE-2019-17558",
+        "description": "Apache Solr 5.0.0 to Apache Solr 8.3.1 are vulnerable to a Remote Code Execution through the VelocityResponseWriter. A Velocity template can be provided through Velocity templates in a configset `velocity/` directory or as a parameter. A user defined configset could contain renderable, potentially malicious, templates. Parameter provided templates are disabled by default, but can be enabled by setting `params.resource.loader.enabled` by defining a response writer with that setting set to `true`. Defining a response writer requires configuration API access. Solr 8.4 removed the params resource loader entirely, and only enables the configset-provided template rendering when the configset is `trusted` (has been uploaded by an authenticated user)."
+    },
+    {
+        "id": "CVE-2020-3452",
+        "description": "A vulnerability in the web services interface of Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to conduct directory traversal attacks and read sensitive files on a targeted system. The vulnerability is due to a lack of proper input validation of URLs in HTTP requests processed by an affected device. An attacker could exploit this vulnerability by sending a crafted HTTP request containing directory traversal character sequences to an affected device. A successful exploit could allow the attacker to view arbitrary files within the web services file system on the targeted device. The web services file system is enabled when the affected device is configured with either WebVPN or AnyConnect features. This vulnerability cannot be used to obtain access to ASA or FTD system files or underlying operating system (OS) files."
+    },
+    {
+        "id": "CVE-2021-26857",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-47966",
+        "description": "Multiple Zoho ManageEngine on-premise products, such as ServiceDesk Plus through 14003, allow remote code execution due to use of Apache Santuario xmlsec (aka XML Security for Java) 1.4.1, because the xmlsec XSLT features, by design in that version, make the application responsible for certain security protections, and the ManageEngine applications did not provide those protections. This affects Access Manager Plus before 4308, Active Directory 360 before 4310, ADAudit Plus before 7081, ADManager Plus before 7162, ADSelfService Plus before 6211, Analytics Plus before 5150, Application Control Plus before 10.1.2220.18, Asset Explorer before 6983, Browser Security Plus before 11.1.2238.6, Device Control Plus before 10.1.2220.18, Endpoint Central before 10.1.2228.11, Endpoint Central MSP before 10.1.2228.11, Endpoint DLP before 10.1.2137.6, Key Manager Plus before 6401, OS Deployer before 1.1.2243.1, PAM 360 before 5713, Password Manager Pro before 12124, Patch Manager Plus before 10.1.2220.18, Remote Access Plus before 10.1.2228.11, Remote Monitoring and Management (RMM) before 10.1.41. ServiceDesk Plus before 14004, ServiceDesk Plus MSP before 13001, SupportCenter Plus before 11026, and Vulnerability Manager Plus before 10.1.2220.18. Exploitation is only possible if SAML SSO has ever been configured for a product (for some products, exploitation requires that SAML SSO is currently active)."
+    },
+    {
+        "id": "CVE-2022-20821",
+        "description": "A vulnerability in the health check RPM of Cisco IOS XR Software could allow an unauthenticated, remote attacker to access the Redis instance that is running within the NOSi container. This vulnerability exists because the health check RPM opens TCP port 6379 by default upon activation. An attacker could exploit this vulnerability by connecting to the Redis instance on the open port. A successful exploit could allow the attacker to write to the Redis in-memory database, write arbitrary files to the container filesystem, and retrieve information about the Redis database. Given the configuration of the sandboxed container that the Redis instance runs in, a remote attacker would be unable to execute remote code or abuse the integrity of the Cisco IOS XR Software host system."
+    },
+    {
+        "id": "CVE-2023-35078",
+        "description": "An authentication bypass vulnerability in Ivanti EPMM allows unauthorized users to access restricted functionality or resources of the application without proper authentication."
+    },
+    {
+        "id": "CVE-2023-26360",
+        "description": "Adobe ColdFusion versions 2018 Update 15 (and earlier) and 2021 Update 5 (and earlier) are affected by an Improper Access Control vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2024-21762",
+        "description": "A out-of-bounds write in Fortinet FortiOS versions 7.4.0 through 7.4.2, 7.2.0 through 7.2.6, 7.0.0 through 7.0.13, 6.4.0 through 6.4.14, 6.2.0 through 6.2.15, 6.0.0 through 6.0.17, FortiProxy versions 7.4.0 through 7.4.2, 7.2.0 through 7.2.8, 7.0.0 through 7.0.14, 2.0.0 through 2.0.13, 1.2.0 through 1.2.13, 1.1.0 through 1.1.6, 1.0.0 through 1.0.7 allows attacker to execute unauthorized code or commands via specifically crafted requests"
+    },
+    {
+        "id": "CVE-2022-20701",
+        "description": "Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbitrary code Elevate privileges Execute arbitrary commands Bypass authentication and authorization protections Fetch and run unsigned software Cause denial of service (DoS) For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2021-21972",
+        "description": "The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2)."
+    },
+    {
+        "id": "CVE-2024-26169",
+        "description": "Windows Error Reporting Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2017-11292",
+        "description": "Adobe Flash Player version 27.0.0.159 and earlier has a flawed bytecode verification procedure, which allows for an untrusted value to be used in the calculation of an array index. This can lead to type confusion, and successful exploitation could lead to arbitrary code execution."
+    },
+    {
+        "id": "CVE-2022-22960",
+        "description": "VMware Workspace ONE Access, Identity Manager and vRealize Automation contain a privilege escalation vulnerability due to improper permissions in support scripts. A malicious actor with local access can escalate privileges to 'root'."
+    },
+    {
+        "id": "CVE-2022-34713",
+        "description": "Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2021-22986",
+        "description": "On BIG-IP versions 16.0.x before 16.0.1.1, 15.1.x before 15.1.2.1, 14.1.x before 14.1.4, 13.1.x before 13.1.3.6, and 12.1.x before 12.1.5.3 amd BIG-IQ 7.1.0.x before 7.1.0.3 and 7.0.0.x before 7.0.0.2, the iControl REST interface has an unauthenticated remote command execution vulnerability. Note: Software versions which have reached End of Software Development (EoSD) are not evaluated."
+    },
+    {
+        "id": "CVE-2023-40044",
+        "description": "\nIn WS_FTP Server versions prior to 8.7.4 and 8.8.2, a pre-authenticated attacker could leverage a .NET deserialization vulnerability in the Ad Hoc Transfer module to execute remote commands on the underlying WS_FTP Server operating system.\u00a0\u00a0\n\n"
+    },
+    {
+        "id": "CVE-2021-22900",
+        "description": "A vulnerability allowed multiple unrestricted uploads in Pulse Connect Secure before 9.1R11.4 that could lead to an authenticated administrator to perform a file write via a maliciously crafted archive upload in the administrator web interface."
+    },
+    {
+        "id": "CVE-2023-22515",
+        "description": "Atlassian has been made aware of an issue reported by a handful of customers where external attackers may have exploited a previously unknown vulnerability in publicly accessible Confluence Data Center and Server instances to create unauthorized Confluence administrator accounts and access Confluence instances. \r\n\r\nAtlassian Cloud sites are not affected by this vulnerability. If your Confluence site is accessed via an atlassian.net domain, it is hosted by Atlassian and is not vulnerable to this issue. "
+    },
+    {
+        "id": "CVE-2022-24521",
+        "description": "Windows Common Log File System Driver Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2020-8657",
+        "description": "An issue was discovered in EyesOfNetwork 5.3. The installation uses the same API key (hardcoded as EONAPI_KEY in include/api_functions.php for API version 2.4.2) by default for all installations, hence allowing an attacker to calculate/guess the admin access token."
+    },
+    {
+        "id": "CVE-2020-1472",
+        "description": "An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller, using the Netlogon Remote Protocol (MS-NRPC). An attacker who successfully exploited the vulnerability could run a specially crafted application on a device on the network.\nTo exploit the vulnerability, an unauthenticated attacker would be required to use MS-NRPC to connect to a domain controller to obtain domain administrator access.\nMicrosoft is addressing the vulnerability in a phased two-part rollout. These updates address the vulnerability by modifying how Netlogon handles the usage of Netlogon secure channels.\nFor guidelines on how to manage the changes required for this vulnerability and more information on the phased rollout, see  How to manage the changes in Netlogon secure channel connections associated with CVE-2020-1472 (updated September 28, 2020).\nWhen the second phase of Windows updates become available in Q1 2021, customers will be notified via a revision to this security vulnerability. If you wish to be notified when these updates are released, we recommend that you register for the security notifications mailer to be alerted of content changes to this advisory. See Microsoft Technical Security Notifications.\n"
+    },
+    {
+        "id": "CVE-2023-22952",
+        "description": "In SugarCRM before 12.0. Hotfix 91155, a crafted request can inject custom PHP code through the EmailTemplates because of missing input validation."
+    },
+    {
+        "id": "CVE-2021-27104",
+        "description": "Accellion FTA 9_12_370 and earlier is affected by OS command execution via a crafted POST request to various admin endpoints. The fixed version is FTA_9_12_380 and later."
+    },
+    {
+        "id": "CVE-2021-21975",
+        "description": "Server Side Request Forgery in vRealize Operations Manager API (CVE-2021-21975) prior to 8.4 may allow a malicious actor with network access to the vRealize Operations Manager API can perform a Server Side Request Forgery attack to steal administrative credentials."
+    },
+    {
+        "id": "CVE-2021-42321",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2024-27198",
+        "description": "In JetBrains TeamCity before 2023.11.4 authentication bypass allowing to perform admin actions was possible"
+    },
+    {
+        "id": "CVE-2020-0688",
+        "description": "A remote code execution vulnerability exists in Microsoft Exchange software when the software fails to properly handle objects in memory, aka 'Microsoft Exchange Memory Corruption Vulnerability'."
+    },
+    {
+        "id": "CVE-2013-0625",
+        "description": "Adobe ColdFusion 9.0, 9.0.1, and 9.0.2, when a password is not configured, allows remote attackers to bypass authentication and possibly execute arbitrary code via unspecified vectors, as exploited in the wild in January 2013."
+    },
+    {
+        "id": "CVE-2021-35394",
+        "description": "Realtek Jungle SDK version v2.x up to v3.4.14B provides a diagnostic tool called 'MP Daemon' that is usually compiled as 'UDPServer' binary. The binary is affected by multiple memory corruption vulnerabilities and an arbitrary command injection vulnerability that can be exploited by remote unauthenticated attackers."
+    },
+    {
+        "id": "CVE-2022-22947",
+        "description": "In spring cloud gateway versions prior to 3.1.1+ and 3.0.7+ , applications are vulnerable to a code injection attack when the Gateway Actuator endpoint is enabled, exposed and unsecured. A remote attacker could make a maliciously crafted request that could allow arbitrary remote execution on the remote host."
+    },
+    {
+        "id": "CVE-2012-0767",
+        "description": "Cross-site scripting (XSS) vulnerability in Adobe Flash Player before 10.3.183.15 and 11.x before 11.1.102.62 on Windows, Mac OS X, Linux, and Solaris; before 11.1.111.6 on Android 2.x and 3.x; and before 11.1.115.6 on Android 4.x allows remote attackers to inject arbitrary web script or HTML via unspecified vectors, aka \"Universal XSS (UXSS),\" as exploited in the wild in February 2012."
+    },
+    {
+        "id": "CVE-2021-28550",
+        "description": "Acrobat Reader DC versions versions 2021.001.20150 (and earlier), 2020.001.30020 (and earlier) and 2017.011.30194 (and earlier) are affected by a Use After Free vulnerability. An unauthenticated attacker could leverage this vulnerability to achieve arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file."
+    },
+    {
+        "id": "CVE-2023-38831",
+        "description": "RARLAB WinRAR before 6.23 allows attackers to execute arbitrary code when a user attempts to view a benign file within a ZIP archive. The issue occurs because a ZIP archive may include a benign file (such as an ordinary .JPG file) and also a folder that has the same name as the benign file, and the contents of the folder (which may include executable content) are processed during an attempt to access only the benign file. This was exploited in the wild in April through October 2023."
+    },
+    {
+        "id": "CVE-2024-5217",
+        "description": "ServiceNow has addressed an input validation vulnerability that was identified in the Washington DC, Vancouver, and earlier Now Platform releases. This vulnerability could enable an unauthenticated user to remotely execute code within the context of the Now Platform.\u00a0The vulnerability is addressed in the listed patches and hot fixes below, which were released during the June 2024 patching cycle. If you have not done so already, we recommend applying security patches relevant to your instance as soon as possible."
+    },
+    {
+        "id": "CVE-2023-33246",
+        "description": "For RocketMQ versions 5.1.0 and below, under certain conditions, there is a risk of remote command execution.\u00a0\n\nSeveral components of RocketMQ, including NameServer, Broker, and Controller, are leaked on the extranet and lack permission verification, an attacker can exploit this vulnerability by using the update configuration function to execute commands as the system users that RocketMQ is running as. Additionally, an attacker can achieve the same effect by forging the RocketMQ protocol content.\u00a0\n\nTo prevent these attacks, users are recommended to upgrade to version 5.1.1 or above\u00a0for using RocketMQ 5.x\u00a0or 4.9.6 or above for using RocketMQ 4.x .\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2022-22963",
+        "description": "In Spring Cloud Function versions 3.1.6, 3.2.2 and older unsupported versions, when using routing functionality it is possible for a user to provide a specially crafted SpEL as a routing-expression that may result in remote code execution and access to local resources."
+    },
+    {
+        "id": "CVE-2023-29298",
+        "description": "Adobe ColdFusion versions 2018u16 (and earlier), 2021u6 (and earlier) and 2023.0.0.330468 (and earlier) are affected by an Improper Access Control vulnerability that could result in a Security feature bypass. An attacker could leverage this vulnerability to access the administration CFM and CFC endpoints. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2023-29300",
+        "description": "Adobe ColdFusion versions 2018u16 (and earlier), 2021u6 (and earlier) and 2023.0.0.330468 (and earlier) are affected by a Deserialization of Untrusted Data vulnerability that could result in Arbitrary code execution. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2021-21166",
+        "description": "Data race in audio in Google Chrome prior to 89.0.4389.72 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2013-0631",
+        "description": "Adobe ColdFusion 9.0, 9.0.1, and 9.0.2 allows attackers to obtain sensitive information via unspecified vectors, as exploited in the wild in January 2013."
+    },
+    {
+        "id": "CVE-2020-15505",
+        "description": "A remote code execution vulnerability in MobileIron Core & Connector versions 10.3.0.3 and earlier, 10.4.0.0, 10.4.0.1, 10.4.0.2, 10.4.0.3, 10.5.1.0, 10.5.2.0 and 10.6.0.0; and Sentry versions 9.7.2 and earlier, and 9.8.0; and Monitor and Reporting Database (RDB) version 2.0.0.1 and earlier that allows remote attackers to execute arbitrary code via unspecified vectors."
+    },
+    {
+        "id": "CVE-2023-44487",
+        "description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023."
+    },
+    {
+        "id": "CVE-2024-4577",
+        "description": "In PHP versions\u00a08.1.* before 8.1.29, 8.2.* before 8.2.20, 8.3.* before 8.3.8, when using Apache and PHP-CGI on Windows, if the system is set up to use certain code pages, Windows may use \"Best-Fit\" behavior to replace characters in command line given to\u00a0Win32 API functions. PHP CGI module may misinterpret those characters as PHP options, which may allow a malicious user to pass options to PHP binary being run, and thus reveal the source code of scripts, run arbitrary PHP code on the server, etc."
+    },
+    {
+        "id": "CVE-2023-20867",
+        "description": "A fully compromised ESXi host can force VMware Tools to fail to authenticate host-to-guest operations, impacting the confidentiality and integrity of the guest virtual machine."
+    },
+    {
+        "id": "CVE-2022-36804",
+        "description": "Multiple API endpoints in Atlassian Bitbucket Server and Data Center 7.0.0 before version 7.6.17, from version 7.7.0 before version 7.17.10, from version 7.18.0 before version 7.21.4, from version 8.0.0 before version 8.0.3, from version 8.1.0 before version 8.1.3, and from version 8.2.0 before version 8.2.2, and from version 8.3.0 before 8.3.1 allows remote attackers with read permissions to a public or private Bitbucket repository to execute arbitrary code by sending a malicious HTTP request. This vulnerability was reported via our Bug Bounty Program by TheGrandPew."
+    },
+    {
+        "id": "CVE-2007-5659",
+        "description": "Multiple buffer overflows in Adobe Reader and Acrobat 8.1.1 and earlier allow remote attackers to execute arbitrary code via a PDF file with long arguments to unspecified JavaScript methods.  NOTE: this issue might be subsumed by CVE-2008-0655."
+    },
+    {
+        "id": "CVE-2023-26359",
+        "description": "Adobe ColdFusion versions 2018 Update 15 (and earlier) and 2021 Update 5 (and earlier) are affected by a Deserialization of Untrusted Data vulnerability that could result in arbitrary code execution in the context of the current user. Exploitation of this issue does not require user interaction."
+    },
+    {
+        "id": "CVE-2010-2883",
+        "description": "Stack-based buffer overflow in CoolType.dll in Adobe Reader and Acrobat 9.x before 9.4, and 8.x before 8.2.5 on Windows and Mac OS X, allows remote attackers to execute arbitrary code or cause a denial of service (application crash) via a PDF document with a long field in a Smart INdependent Glyphlets (SING) table in a TTF font, as exploited in the wild in September 2010. NOTE: some of these details are obtained from third party information."
+    },
+    {
+        "id": "CVE-2023-27524",
+        "description": "Session Validation attacks in Apache Superset versions up to and including 2.0.1. Installations that have not altered the default configured SECRET_KEY according to installation instructions allow for an attacker to authenticate and access unauthorized resources. This does not affect Superset administrators who have changed the default value for SECRET_KEY config.\n\nAll superset installations should always set a unique secure random SECRET_KEY. Your SECRET_KEY is used to securely sign all session cookies and encrypting sensitive information on the database.\nAdd a strong SECRET_KEY to your `superset_config.py` file like:\n\nSECRET_KEY = <YOUR_OWN_RANDOM_GENERATED_SECRET_KEY>\n\nAlternatively you can set it with `SUPERSET_SECRET_KEY` environment variable.\n"
+    },
+    {
+        "id": "CVE-2023-23397",
+        "description": "Microsoft Outlook Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2024-21893",
+        "description": "A server-side request forgery vulnerability in the SAML component of Ivanti Connect Secure (9.x, 22.x) and Ivanti Policy Secure (9.x, 22.x) and Ivanti Neurons for ZTA allows an attacker to access certain restricted resources without authentication."
+    },
+    {
+        "id": "CVE-2009-3953",
+        "description": "The U3D implementation in Adobe Reader and Acrobat 9.x before 9.3, 8.x before 8.2 on Windows and Mac OS X, and 7.x before 7.1.4 allows remote attackers to execute arbitrary code via malformed U3D data in a PDF document, related to a CLODProgressiveMeshDeclaration \"array boundary issue,\" a different vulnerability than CVE-2009-2994."
+    },
+    {
+        "id": "CVE-2022-26904",
+        "description": "Windows User Profile Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2016-1019",
+        "description": "Adobe Flash Player 21.0.0.197 and earlier allows remote attackers to cause a denial of service (application crash) or possibly execute arbitrary code via unspecified vectors, as exploited in the wild in April 2016."
+    },
+    {
+        "id": "CVE-2019-1653",
+        "description": "A vulnerability in the web-based management interface of Cisco Small Business RV320 and RV325 Dual Gigabit WAN VPN Routers could allow an unauthenticated, remote attacker to retrieve sensitive information. The vulnerability is due to improper access controls for URLs. An attacker could exploit this vulnerability by connecting to an affected device via HTTP or HTTPS and requesting specific URLs. A successful exploit could allow the attacker to download the router configuration or detailed diagnostic information. Cisco has released firmware updates that address this vulnerability."
+    },
+    {
+        "id": "CVE-2021-29256",
+        "description": ". The Arm Mali GPU kernel driver allows an unprivileged user to achieve access to freed memory, leading to information disclosure or root privilege escalation. This affects Bifrost r16p0 through r29p0 before r30p0, Valhall r19p0 through r29p0 before r30p0, and Midgard r28p0 through r30p0."
+    },
+    {
+        "id": "CVE-2021-41773",
+        "description": "A flaw was found in a change made to path normalization in Apache HTTP Server 2.4.49. An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives. If files outside of these directories are not protected by the usual default configuration \"require all denied\", these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution. This issue is known to be exploited in the wild. This issue only affects Apache 2.4.49 and not earlier versions. The fix in Apache HTTP Server 2.4.50 was found to be incomplete, see CVE-2021-42013."
+    },
+    {
+        "id": "CVE-2024-4358",
+        "description": "In Progress Telerik Report Server, version 2024 Q1 (10.0.24.305) or earlier, on IIS, an unauthenticated attacker can gain access to Telerik Report Server restricted functionality via an authentication bypass vulnerability."
+    },
+    {
+        "id": "CVE-2022-20700",
+        "description": "Multiple vulnerabilities in Cisco Small Business RV160, RV260, RV340, and RV345 Series Routers could allow an attacker to do any of the following: Execute arbitrary code Elevate privileges Execute arbitrary commands Bypass authentication and authorization protections Fetch and run unsigned software Cause denial of service (DoS) For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2021-1498",
+        "description": "Multiple vulnerabilities in the web-based management interface of Cisco HyperFlex HX could allow an unauthenticated, remote attacker to perform command injection attacks against an affected device. For more information about these vulnerabilities, see the Details section of this advisory."
+    },
+    {
+        "id": "CVE-2023-2868",
+        "description": "A remote command injection vulnerability exists in the Barracuda Email Security Gateway (appliance form factor only) product effecting versions 5.1.3.001-9.2.0.006. The vulnerability arises out of a failure to comprehensively sanitize the processing of .tar file (tape archives).\u00a0The vulnerability stems from incomplete input validation of a user-supplied .tar file as it pertains to the names of the files contained within the archive. As a consequence, a remote attacker can specifically format these file names in a particular manner that will result in remotely executing a system command through Perl's qx operator with the privileges of the Email Security Gateway product.\u00a0This issue was fixed as part of BNSF-36456 patch. This patch was automatically applied to all customer appliances."
+    },
+    {
+        "id": "CVE-2022-22965",
+        "description": "A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it."
+    },
+    {
+        "id": "CVE-2022-24086",
+        "description": "Adobe Commerce versions 2.4.3-p1 (and earlier) and 2.3.7-p2 (and earlier) are affected by an improper input validation vulnerability during the checkout process. Exploitation of this issue does not require user interaction and could result in arbitrary code execution."
+    },
+    {
+        "id": "CVE-2019-11510",
+        "description": "In Pulse Secure Pulse Connect Secure (PCS) 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4, an unauthenticated remote attacker can send a specially crafted URI to perform an arbitrary file reading vulnerability ."
+    },
+    {
+        "id": "CVE-2022-1040",
+        "description": "An authentication bypass vulnerability in the User Portal and Webadmin allows a remote attacker to execute code in Sophos Firewall version v18.5 MR3 and older."
+    },
+    {
+        "id": "CVE-2019-5591",
+        "description": "A Default Configuration vulnerability in FortiOS may allow an unauthenticated attacker on the same subnet to intercept sensitive information by impersonating the LDAP server."
+    },
+    {
+        "id": "CVE-2021-22899",
+        "description": "A command injection vulnerability exists in Pulse Connect Secure before 9.1R11.4 allows a remote authenticated attacker to perform remote code execution via Windows Resource Profiles Feature"
+    },
+    {
+        "id": "CVE-2012-2034",
+        "description": "Adobe Flash Player before 10.3.183.20 and 11.x before 11.3.300.257 on Windows and Mac OS X; before 10.3.183.20 and 11.x before 11.2.202.236 on Linux; before 11.1.111.10 on Android 2.x and 3.x; and before 11.1.115.9 on Android 4.x, and Adobe AIR before 3.3.0.3610, allows attackers to execute arbitrary code or cause a denial of service (memory corruption) via unspecified vectors, a different vulnerability than CVE-2012-2037."
+    },
+    {
+        "id": "CVE-2013-0641",
+        "description": "Buffer overflow in Adobe Reader and Acrobat 9.x before 9.5.4, 10.x before 10.1.6, and 11.x before 11.0.02 allows remote attackers to execute arbitrary code via a crafted PDF document, as exploited in the wild in February 2013."
+    },
+    {
+        "id": "CVE-2021-36934",
+        "description": "<p>An elevation of privilege vulnerability exists because of overly permissive Access Control Lists (ACLs) on multiple system files, including the Security Accounts Manager (SAM) database. An attacker who successfully exploited this vulnerability could run arbitrary code with SYSTEM privileges. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.</p>\n<p>An attacker must have the ability to execute code on a victim system to exploit this vulnerability.</p>\n<p>After installing this security update, you <em>must</em> manually delete all shadow copies of system files, including the SAM database, to fully mitigate this vulnerabilty. <strong>Simply installing this security update will not fully mitigate this vulnerability.</strong> See <a href=\"https://support.microsoft.com/topic/1ceaa637-aaa3-4b58-a48b-baf72a2fa9e7\">KB5005357- Delete Volume Shadow Copies</a>.</p>\n"
+    },
+    {
+        "id": "CVE-2018-6789",
+        "description": "An issue was discovered in the base64d function in the SMTP listener in Exim before 4.90.1. By sending a handcrafted message, a buffer overflow may happen. This can be used to execute code remotely."
+    },
+    {
+        "id": "CVE-2023-42793",
+        "description": "In JetBrains TeamCity before 2023.05.4 authentication bypass leading to RCE on TeamCity Server was possible"
+    },
+    {
+        "id": "CVE-2014-7169",
+        "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgid modules in the Apache HTTP Server, scripts executed by unspecified DHCP clients, and other situations in which setting the environment occurs across a privilege boundary from Bash execution.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2014-6271."
+    },
+    {
+        "id": "CVE-2021-26855",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-1388",
+        "description": "On F5 BIG-IP 16.1.x versions prior to 16.1.2.2, 15.1.x versions prior to 15.1.5.1, 14.1.x versions prior to 14.1.4.6, 13.1.x versions prior to 13.1.5, and all 12.1.x and 11.6.x versions, undisclosed requests may bypass iControl REST authentication. Note: Software versions which have reached End of Technical Support (EoTS) are not evaluated"
+    },
+    {
+        "id": "CVE-2022-41033",
+        "description": "Windows COM+ Event System Service Elevation of Privilege Vulnerability"
+    },
+    {
+        "id": "CVE-2021-22205",
+        "description": "An issue has been discovered in GitLab CE/EE affecting all versions starting from 11.9. GitLab was not properly validating image files that were passed to a file parser which resulted in a remote command execution."
+    },
+    {
+        "id": "CVE-2010-1297",
+        "description": "Adobe Flash Player before 9.0.277.0 and 10.x before 10.1.53.64; Adobe AIR before 2.0.2.12610; and Adobe Reader and Acrobat 9.x before 9.3.3, and 8.x before 8.2.3 on Windows and Mac OS X, allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via crafted SWF content, related to authplay.dll and the ActionScript Virtual Machine 2 (AVM2) newfunction instruction, as exploited in the wild in June 2010."
+    },
+    {
+        "id": "CVE-2009-1862",
+        "description": "Unspecified vulnerability in Adobe Reader and Acrobat 9.x through 9.1.2, and Adobe Flash Player 9.x through 9.0.159.0 and 10.x through 10.0.22.87, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via (1) a crafted Flash application in a .pdf file or (2) a crafted .swf file, related to authplay.dll, as exploited in the wild in July 2009."
+    },
+    {
+        "id": "CVE-2015-8651",
+        "description": "Integer overflow in Adobe Flash Player before 18.0.0.324 and 19.x and 20.x before 20.0.0.267 on Windows and OS X and before 11.2.202.559 on Linux, Adobe AIR before 20.0.0.233, Adobe AIR SDK before 20.0.0.233, and Adobe AIR SDK & Compiler before 20.0.0.233 allows attackers to execute arbitrary code via unspecified vectors."
+    },
+    {
+        "id": "CVE-2014-8439",
+        "description": "Adobe Flash Player before 13.0.0.258 and 14.x and 15.x before 15.0.0.239 on Windows and OS X and before 11.2.202.424 on Linux, Adobe AIR before 15.0.0.293, Adobe AIR SDK before 15.0.0.302, and Adobe AIR SDK & Compiler before 15.0.0.302 allow attackers to execute arbitrary code or cause a denial of service (invalid pointer dereference) via unspecified vectors."
+    },
+    {
+        "id": "CVE-2023-22518",
+        "description": "All versions of Confluence Data Center and Server are affected by this unexploited vulnerability. This Improper Authorization vulnerability allows an unauthenticated attacker to reset Confluence and create a Confluence instance administrator account. Using this account, an attacker can then perform all administrative actions that are available to\u00a0Confluence instance administrator leading to - but not limited to - full loss of confidentiality, integrity and availability.\u00a0\n\nAtlassian Cloud sites are not affected by this vulnerability. If your Confluence site is accessed via an atlassian.net domain, it is hosted by Atlassian and is not vulnerable to this issue."
+    },
+    {
+        "id": "CVE-2023-6549",
+        "description": "Improper Restriction of Operations within the Bounds of a Memory Buffer in NetScaler ADC and NetScaler Gateway allows Unauthenticated Denial of Service and\u00a0Out-Of-Bounds Memory Read\n"
+    },
+    {
+        "id": "CVE-2019-19781",
+        "description": "An issue was discovered in Citrix Application Delivery Controller (ADC) and Gateway 10.5, 11.1, 12.0, 12.1, and 13.0. They allow Directory Traversal."
+    },
+    {
+        "id": "CVE-2016-1010",
+        "description": "Integer overflow in Adobe Flash Player before 18.0.0.333 and 19.x through 21.x before 21.0.0.182 on Windows and OS X and before 11.2.202.577 on Linux, Adobe AIR before 21.0.0.176, Adobe AIR SDK before 21.0.0.176, and Adobe AIR SDK & Compiler before 21.0.0.176 allows attackers to execute arbitrary code via unspecified vectors, a different vulnerability than CVE-2016-0963 and CVE-2016-0993."
+    },
+    {
+        "id": "CVE-2021-21206",
+        "description": "Use after free in Blink in Google Chrome prior to 89.0.4389.128 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page."
+    },
+    {
+        "id": "CVE-2008-0655",
+        "description": "Multiple unspecified vulnerabilities in Adobe Reader and Acrobat before 8.1.2 have unknown impact and attack vectors."
+    },
+    {
+        "id": "CVE-2022-35914",
+        "description": "/vendor/htmlawed/htmlawed/htmLawedTest.php in the htmlawed module for GLPI through 10.0.2 allows PHP code injection."
+    },
+    {
+        "id": "CVE-2010-2861",
+        "description": "Multiple directory traversal vulnerabilities in the administrator console in Adobe ColdFusion 9.0.1 and earlier allow remote attackers to read arbitrary files via the locale parameter to (1) CFIDE/administrator/settings/mappings.cfm, (2) logging/settings.cfm, (3) datasources/index.cfm, (4) j2eepackaging/editarchive.cfm, and (5) enter.cfm in CFIDE/administrator/."
+    },
+    {
+        "id": "CVE-2019-11580",
+        "description": "Atlassian Crowd and Crowd Data Center had the pdkinstall development plugin incorrectly enabled in release builds. Attackers who can send unauthenticated or authenticated requests to a Crowd or Crowd Data Center instance can exploit this vulnerability to install arbitrary plugins, which permits remote code execution on systems running a vulnerable version of Crowd or Crowd Data Center. All versions of Crowd from version 2.1.0 before 3.0.5 (the fixed version for 3.0.x), from version 3.1.0 before 3.1.6 (the fixed version for 3.1.x), from version 3.2.0 before 3.2.8 (the fixed version for 3.2.x), from version 3.3.0 before 3.3.5 (the fixed version for 3.3.x), and from version 3.4.0 before 3.4.4 (the fixed version for 3.4.x) are affected by this vulnerability."
+    },
+    {
+        "id": "CVE-2021-45046",
+        "description": "It was found that the fix to address CVE-2021-44228 in Apache Log4j 2.15.0 was incomplete in certain non-default configurations. This could allows attackers with control over Thread Context Map (MDC) input data when the logging configuration uses a non-default Pattern Layout with either a Context Lookup (for example, $${ctx:loginId}) or a Thread Context Map pattern (%X, %mdc, or %MDC) to craft malicious input data using a JNDI Lookup pattern resulting in an information leak and remote code execution in some environments and local code execution in all environments. Log4j 2.16.0 (Java 8) and 2.12.2 (Java 7) fix this issue by removing support for message lookup patterns and disabling JNDI functionality by default."
+    },
+    {
+        "id": "CVE-2022-41328",
+        "description": "A improper limitation of a pathname to a restricted directory vulnerability ('path traversal') [CWE-22] in Fortinet FortiOS version 7.2.0 through 7.2.3, 7.0.0 through 7.0.9 and before 6.4.11 allows a privileged attacker to read and write files on the underlying Linux system via crafted CLI commands."
+    },
+    {
+        "id": "CVE-2022-26500",
+        "description": "Improper limitation of path names in Veeam Backup & Replication 9.5U3, 9.5U4,10.x, and 11.x allows remote authenticated users access to internal API functions that allows attackers to upload and execute arbitrary code."
+    },
+    {
+        "id": "CVE-2022-0028",
+        "description": "A PAN-OS URL filtering policy misconfiguration could allow a network-based attacker to conduct reflected and amplified TCP denial-of-service (RDoS) attacks. The DoS attack would appear to originate from a Palo Alto Networks PA-Series (hardware), VM-Series (virtual) and CN-Series (container) firewall against an attacker-specified target. To be misused by an external attacker, the firewall configuration must have a URL filtering profile with one or more blocked categories assigned to a source zone that has an external facing interface. This configuration is not typical for URL filtering and, if set, is likely unintended by the administrator. If exploited, this issue would not impact the confidentiality, integrity, or availability of our products. However, the resulting denial-of-service (DoS) attack may help obfuscate the identity of the attacker and implicate the firewall as the source of the attack. We have taken prompt action to address this issue in our PAN-OS software. All software updates for this issue are expected to be released no later than the week of August 15, 2022. This issue does not impact Panorama M-Series or Panorama virtual appliances. This issue has been resolved for all Cloud NGFW and Prisma Access customers and no additional action is required from them."
+    },
+    {
+        "id": "CVE-2020-12812",
+        "description": "An improper authentication vulnerability in SSL VPN in FortiOS 6.4.0, 6.2.0 to 6.2.3, 6.0.9 and below may result in a user being able to log in successfully without being prompted for the second factor of authentication (FortiToken) if they changed the case of their username."
+    },
+    {
+        "id": "CVE-2018-0296",
+        "description": "A vulnerability in the web interface of the Cisco Adaptive Security Appliance (ASA) could allow an unauthenticated, remote attacker to cause an affected device to reload unexpectedly, resulting in a denial of service (DoS) condition. It is also possible on certain software releases that the ASA will not reload, but an attacker could view sensitive system information without authentication by using directory traversal techniques. The vulnerability is due to lack of proper input validation of the HTTP URL. An attacker could exploit this vulnerability by sending a crafted HTTP request to an affected device. An exploit could allow the attacker to cause a DoS condition or unauthenticated disclosure of information. This vulnerability applies to IPv4 and IPv6 HTTP traffic. This vulnerability affects Cisco ASA Software and Cisco Firepower Threat Defense (FTD) Software that is running on the following Cisco products: 3000 Series Industrial Security Appliance (ISA), ASA 1000V Cloud Firewall, ASA 5500 Series Adaptive Security Appliances, ASA 5500-X Series Next-Generation Firewalls, ASA Services Module for Cisco Catalyst 6500 Series Switches and Cisco 7600 Series Routers, Adaptive Security Virtual Appliance (ASAv), Firepower 2100 Series Security Appliance, Firepower 4100 Series Security Appliance, Firepower 9300 ASA Security Module, FTD Virtual (FTDv). Cisco Bug IDs: CSCvi16029."
+    },
+    {
+        "id": "CVE-2018-15961",
+        "description": "Adobe ColdFusion versions July 12 release (2018.0.0.310739), Update 6 and earlier, and Update 14 and earlier have an unrestricted file upload vulnerability. Successful exploitation could lead to arbitrary code execution."
+    },
+    {
+        "id": "CVE-2022-42475",
+        "description": "A heap-based buffer overflow vulnerability [CWE-122]\u00a0in FortiOS SSL-VPN 7.2.0 through 7.2.2, 7.0.0 through 7.0.8, 6.4.0 through 6.4.10, 6.2.0 through 6.2.11, 6.0.15 and earlier  and FortiProxy SSL-VPN 7.2.0 through 7.2.1, 7.0.7 and earlier may allow a remote unauthenticated attacker to execute arbitrary code or commands via specifically crafted requests."
+    },
+    {
+        "id": "CVE-2023-27532",
+        "description": "Vulnerability in Veeam Backup & Replication component allows encrypted credentials stored in the configuration database to be obtained. This may lead to gaining access to the backup infrastructure hosts."
+    },
+    {
+        "id": "CVE-2009-3960",
+        "description": "Unspecified vulnerability in BlazeDS 3.2 and earlier, as used in LiveCycle 8.0.1, 8.2.1, and 9.0, LiveCycle Data Services 2.5.1, 2.6.1, and 3.0, Flex Data Services 2.0.1, and ColdFusion 7.0.2, 8.0, 8.0.1, and 9.0, allows remote attackers to obtain sensitive information via vectors that are associated with a request, and related to injected tags and external entity references in XML documents."
+    },
+    {
+        "id": "CVE-2023-7024",
+        "description": "Heap buffer overflow in WebRTC in Google Chrome prior to 120.0.6099.129 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page. (Chromium security severity: High)"
+    },
+    {
+        "id": "CVE-2022-21971",
+        "description": "Windows Runtime Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2022-26501",
+        "description": "Veeam Backup & Replication 10.x and 11.x has Incorrect Access Control (issue 1 of 2)."
+    },
+    {
+        "id": "CVE-2021-27102",
+        "description": "Accellion FTA 9_12_411 and earlier is affected by OS command execution via a local web service call. The fixed version is FTA_9_12_416 and later."
+    },
+    {
+        "id": "CVE-2017-5638",
+        "description": "The Jakarta Multipart parser in Apache Struts 2 2.3.x before 2.3.32 and 2.5.x before 2.5.10.1 has incorrect exception handling and error-message generation during file-upload attempts, which allows remote attackers to execute arbitrary commands via a crafted Content-Type, Content-Disposition, or Content-Length HTTP header, as exploited in the wild in March 2017 with a Content-Type header containing a #cmd= string."
+    },
+    {
+        "id": "CVE-2021-27103",
+        "description": "Accellion FTA 9_12_411 and earlier is affected by SSRF via a crafted POST request to wmProgressstat.html. The fixed version is FTA_9_12_416 and later."
+    },
+    {
+        "id": "CVE-2011-2462",
+        "description": "Unspecified vulnerability in the U3D component in Adobe Reader and Acrobat 10.1.1 and earlier on Windows and Mac OS X, and Adobe Reader 9.x through 9.4.6 on UNIX, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via unknown vectors, as exploited in the wild in December 2011."
+    },
+    {
+        "id": "CVE-2020-5735",
+        "description": "Amcrest cameras and NVR are vulnerable to a stack-based buffer overflow over port 37777. An authenticated remote attacker can abuse this issue to crash the device and possibly execute arbitrary code."
+    },
+    {
+        "id": "CVE-2024-20353",
+        "description": "A vulnerability in the management and VPN web servers for Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.\r\n\r This vulnerability is due to incomplete error checking when parsing an HTTP header. An attacker could exploit this vulnerability by sending a crafted HTTP request to a targeted web server on a device. A successful exploit could allow the attacker to cause a DoS condition when the device reloads."
+    },
+    {
+        "id": "CVE-2012-5054",
+        "description": "Integer overflow in the copyRawDataTo method in the Matrix3D class in Adobe Flash Player before 11.4.402.265 allows remote attackers to execute arbitrary code via malformed arguments."
+    },
+    {
+        "id": "CVE-2023-36847",
+        "description": "A Missing Authentication for Critical Function vulnerability in Juniper Networks Junos OS on EX Series allows an unauthenticated, network-based attacker to cause limited impact to the file system integrity.\n\n\n\n\n\nWith a specific request to installAppPackage.php that doesn't require authentication an attacker is able to upload arbitrary files via J-Web, leading to a loss of \n\nintegrity\n\nfor a certain \n\npart of the file system, which may allow chaining to other vulnerabilities.\n\n\nThis issue affects Juniper Networks Junos OS on EX Series:\n\n\n\n  *  All versions prior to 20.4R3-S8;\n  *  21.1 versions 21.1R1 and later;\n  *  21.2 versions prior to 21.2R3-S6;\n  *  21.3 versions \n\nprior to \n\n 21.3R3-S5;\n  *  21.4 versions \n\nprior to \n\n21.4R3-S4;\n  *  22.1 versions \n\nprior to \n\n22.1R3-S3;\n  *  22.2 versions \n\nprior to \n\n22.2R3-S1;\n  *  22.3 versions \n\nprior to \n\n22.3R2-S2, 22.3R3;\n  *  22.4 versions \n\nprior to \n\n22.4R2-S1, 22.4R3.\n\n\n\n\n"
+    },
+    {
+        "id": "CVE-2021-21017",
+        "description": "Acrobat Reader DC versions versions 2020.013.20074 (and earlier), 2020.001.30018 (and earlier) and 2017.011.30188 (and earlier) are affected by a heap-based buffer overflow vulnerability. An unauthenticated attacker could leverage this vulnerability to achieve arbitrary code execution in the context of the current user. Exploitation of this issue requires user interaction in that a victim must open a malicious file."
+    },
+    {
+        "id": "CVE-2017-11882",
+        "description": "Microsoft Office 2007 Service Pack 3, Microsoft Office 2010 Service Pack 2, Microsoft Office 2013 Service Pack 1, and Microsoft Office 2016 allow an attacker to run arbitrary code in the context of the current user by failing to properly handle objects in memory, aka \"Microsoft Office Memory Corruption Vulnerability\". This CVE ID is unique from CVE-2017-11884."
+    },
+    {
+        "id": "CVE-2021-35464",
+        "description": "ForgeRock AM server before 7.0 has a Java deserialization vulnerability in the jato.pageSession parameter on multiple pages. The exploitation does not require authentication, and remote code execution can be triggered by sending a single crafted /ccversion/* request to the server. The vulnerability exists due to the usage of Sun ONE Application Framework (JATO) found in versions of Java 8 or earlier"
+    },
+    {
+        "id": "CVE-2022-41082",
+        "description": "Microsoft Exchange Server Remote Code Execution Vulnerability"
+    },
+    {
+        "id": "CVE-2024-21887",
+        "description": "A command injection vulnerability in web components of Ivanti Connect Secure (9.x, 22.x) and Ivanti Policy Secure (9.x, 22.x)  allows an authenticated administrator to send specially crafted requests and execute arbitrary commands on the appliance."
+    },
+    {
+        "id": "CVE-2012-1535",
+        "description": "Unspecified vulnerability in Adobe Flash Player before 11.3.300.271 on Windows and Mac OS X and before 11.2.202.238 on Linux allows remote attackers to execute arbitrary code or cause a denial of service (application crash) via crafted SWF content, as exploited in the wild in August 2012 with SWF content in a Word document."
+    }
+]
