@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const { data: frameworks } = await useFetch('/frameworks.json')
+const { data: frameworks } = await useFetch('/api/frameworks')
 
 // Lookup framework using the route param
 const framework = computed(() =>
@@ -22,18 +22,15 @@ const loadMappings = async () => {
   const projectId = framework.value.id
   const controlVersion = `${projectId}-${selectedVersion.value}`
 
-  const path = `/data/${projectId}/attack-${attackVersion.value}/${controlVersion}/${domain.value}/${controlVersion}_attack-${attackVersion.value}-${domain.value}.json`
+  // const path = `/data/${projectId}/attack-${attackVersion.value}/${controlVersion}/${domain.value}/${controlVersion}_attack-${attackVersion.value}-${domain.value}.json`
 
-  try {
-    const resp = await fetch(path)
-    const data = await resp.json()
-    mappings.value = data.mapping_objects || []
-  } catch (err) {
-    console.error('Error loading mapping file:', err)
-    mappings.value = []
-  } finally {
-    loading.value = false
+  const { data } = await useFetch(`/api/loadMappings`, {
+  params: {
+    path: `data/${projectId}/attack-${attackVersion.value}/${controlVersion}/${domain.value}/${controlVersion}_attack-${attackVersion.value}-${domain.value}.json`
   }
+})
+
+mappings.value = data.value?.mapping_objects || []
 }
 
 // Load initial mappings (optional: only if framework exists)
@@ -77,9 +74,10 @@ if (framework.value) {
               <p v-for="ext in ['json','yaml','csv','xlsx','stix.json','navigator_layer.json']" :key="ext">
                 <a
                   class="link"
-                  :href="selectedVersion && attackVersion ? `/data/${framework.id}/attack-${attackVersion}/${selectedVersion}/${domain}/${selectedVersion}_attack-${attackVersion}-${domain}_${ext}` : '#'"
+                  :href="`/external/${route.params.id}`"
                   download
                 >
+                <!-- TODO have this download the correct generated files i.e. something like :href="selectedVersion && attackVersion ? `/data/${framework.id}/attack-${attackVersion}/${selectedVersion}/${domain}/${selectedVersion}_attack-${attackVersion}-${domain}.${ext}` : '#'" -->
                   <i class="bi bi-download"></i>
                   {{ ext.toUpperCase().replace('_', ' ').replace('.JSON', '').replace('.LAYER', '') }}
                 </a>

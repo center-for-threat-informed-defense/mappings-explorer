@@ -69,4 +69,10 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 - Clean up some of the CSS
 - Mobile Support
 - Mappings/Capabilities data
+    - Right now, the data on the frameworks pages are loaded through a fake "api" which accesses the mappings data in public/data
+        - using this api "hack" allows us to have the data in the 
+    - Some of the scripts need to be ported over for this
+    - In future work we might want to have the client side generate a page for each mapping (these would not be prerendered like the other pages though)
+        - There are a few ways we can look into doing this. For example, the prerender does not generate data which is directly accessed from public (e.g. how the the mappings table is rendered right now--you can see that on the prerendered frameworks pages, like `.output/external/gcp/index.vue`, the framework data is prerendered but not the mappings)
+
 
