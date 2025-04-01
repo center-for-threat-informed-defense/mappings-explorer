@@ -1,60 +1,94 @@
-<!-- TODO: Fix this file -->
 <template>
-  <section id="user-stories" class="gray-bg">
-    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
-      <div class="section-header">
-        <h2>User Stories</h2>
-        <p>
-        This section describes user stories for the Mappings Explorer website based on the roles identified
-          above. These user stories are expressed as the who, what, and why, with a short exploration of how a
-          user story may be achieved. This is not meant to be a comprehensive list, but rather examples to
-          demonstrate how Mappings Explorer could be used.
-        </p>
-      </div>
-      <div class="accordion accordion-flush" id="stories-accordion">
-        <template v-for="story in stories" :key="story.id">
-          <div class="accordion-item">
-            <h2 class="accordion-header" :id="`stories-head-${story.id}`">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                :data-bs-target="`#stories-body-${story.id}`" :aria-controls="`stories-body-${story.id}`">
-                <div>
-                  <span class="highlight">As a {{ story.role }},</span> {{ story.title }}
-                </div>
-              </button>
-            </h2>
-            <div :id="`stories-body-${story.id}`" class="accordion-collapse collapse" :aria-labelledby="`stories-head-${story.id}`"
-              data-bs-parent="#stories-accordion">
-              <div class="accordion-body">
-                {{ story.body }}
-              </div>
-            </div>
+      <div class="accordion">
+        <div
+          v-for="(item, index) in items"
+          :key="index"
+          class="accordion-item"
+        >
+          <div
+            class="accordion-header"
+            @click="toggle(index)"
+            :aria-expanded="isOpen(index).toString()"
+          >
+            <p> 
+              <span class="highlight">As a {{ item.role.trim() }}, </span>
+              <span>{{ item.title }}</span>
+            </p>
+            <i
+              :class="['bi', isOpen(index) ? 'bi-chevron-up' : 'bi-chevron-down', 'accordion-icon']"
+            ></i>
           </div>
-        </template>
+          <div
+            v-show="isOpen(index)"
+            class="accordion-body"
+          >
+            {{ item.body }}
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
 </template>
 
-<script setup>
-const stories = [
-  {
-    id: 1,
-    role: 'IR professional',
-    title: 'I want to ensure I have a complete picture of an active security incident.',
-    body: 'Use Mappings Explorer as a joint framework to comprehensively describe security events at a flexible level...'
+<script>
+export default {
+  props: {
+    items: {
+      type: Array,
+      required: true
+    }
   },
-  {
-    id: 2,
-    role: 'CISO',
-    title: 'I want to understand gaps that exist in mitigation strategies to better assess enterprise risk.',
-    body: 'Use the mapped security controls and capabilities to determine which mitigation strategies are most effective...'
+  data() {
+    return {
+      openIndex: null
+    };
   },
-  // Add all other stories here...
-]
+  methods: {
+    toggle(index) {
+      this.openIndex = this.openIndex === index ? null : index;
+    },
+    isOpen(index) {
+      return this.openIndex === index;
+    }
+  }
+};
 </script>
 
 <style scoped>
-.accordion-button div {
-  font-weight: 700;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px; 
+  width: 100%;
+  background-color: white;
+}
+
+.accordion-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion-body {
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+}
+
+.accordion-header:hover .accordion-icon {
+  transform: scale(1.1);
 }
 </style>

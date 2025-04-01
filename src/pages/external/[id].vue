@@ -120,7 +120,7 @@ if (framework.value) {
     <section v-if="framework && mappings?.length" class="mapping-table">
       <div class="container">
         <div class="row justify-content-left">
-          <div class="col-12" data-aos="fade-up">
+          <div class="col-12" >
             <h2>ALL MAPPINGS</h2>
             <table class="table table-bordered">
               <thead>

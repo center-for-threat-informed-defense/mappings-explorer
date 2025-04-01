@@ -1,0 +1,1689 @@
+{
+    "metadata": {
+        "framework_id": "VERIS",
+        "attack_version": "12.1",
+        "mappings_version": "2.0",
+        "veris_version": "1.3.7"
+    },
+    "attack_to_veris": {
+        "T1626": {
+            "name": "Abuse Elevation Control Mechanism",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.hacking.variety.Exploit misconfig",
+                "action.malware.variety.Client-side attack"
+            ]
+        },
+        "T1626.001": {
+            "name": "Abuse Elevation Control Mechanism: Device Administrator Permissions",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Client-side attack"
+            ]
+        },
+        "T1640": {
+            "name": "Account Access Removal",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "attribute.availability.variety.Destruction",
+                "attribute.availability.variety.Interruption",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1437": {
+            "name": "Application Layer Protocol",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1532": {
+            "name": "Archive Collected Data",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Modify data"
+            ]
+        },
+        "T1398": {
+            "name": "Boot or Logon Initialization Scripts",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.Backdoor or C2",
+                "attribute.integrity.variety.Modify configuration",
+                "attribute.integrity.variety.Modify privileges"
+            ]
+        },
+        "T1623": {
+            "name": "Command and Scripting Interpreter",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.hacking.vector.Command shell",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1623.001": {
+            "name": "Command and Scripting Interpreter: Unix Shell",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.hacking.vector.Command shell",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1624": {
+            "name": "Event Triggered Execution",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "attribute.integrity.variety.Alter behavior"
+            ]
+        },
+        "T1624.001": {
+            "name": "Event Triggered Execution: Broadcast Receivers",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "attribute.integrity.variety.Alter behavior"
+            ]
+        },
+        "T1636": {
+            "name": "Protected User Data",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1636.001": {
+            "name": "Protected User Data: Calendar Entries",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1636.002": {
+            "name": "Protected User Data: Call Log",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1636.003": {
+            "name": "Protected User Data: Contact List",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1636.004": {
+            "name": "Protected User Data: SMS Messages",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1603": {
+            "name": "Scheduled Task/Job",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1541": {
+            "name": "Foreground Persistence",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality"
+            ]
+        },
+        "T1629.001": {
+            "name": "Impair Defenses: Prevent Application Removal",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality"
+            ]
+        },
+        "T1629.002": {
+            "name": "Impair Defenses: Device Lockout",
+            "veris": [
+                "action.hacking.variety.Abuse of functionality",
+                "attribute.availability.variety.Interruption",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1521": {
+            "name": "Encrypted Channel",
+            "veris": [
+                "action.hacking.variety.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1521.001": {
+            "name": "Encrypted Channel: Symmetric Cryptography",
+            "veris": [
+                "action.hacking.variety.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1521.002": {
+            "name": "Encrypted Channel: Asymmetric Cryptography",
+            "veris": [
+                "action.hacking.variety.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1642": {
+            "name": "Endpoint Denial of Service",
+            "veris": [
+                "action.hacking.variety.DoS",
+                "action.malware.variety.DoS",
+                "attribute.availability.variety.Degradation",
+                "attribute.availability.variety.Loss"
+            ]
+        },
+        "T1464": {
+            "name": "Network Denial of Service",
+            "veris": [
+                "action.hacking.variety.DoS",
+                "action.malware.variety.DoS",
+                "attribute.availability.variety.Degradation",
+                "attribute.availability.variety.Loss"
+            ]
+        },
+        "T1627": {
+            "name": "Execution Guardrails",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.hacking.variety.Profile host",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1627.001": {
+            "name": "Execution Guardrails: GeoFencing",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.hacking.variety.Profile host",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1628": {
+            "name": "Hide Artifacts",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1628.001": {
+            "name": "Hide Artifacts: Suppress Application Icon",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1628.002": {
+            "name": "Hide Artifacts: User Evasion",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1630": {
+            "name": "Indicator Removal on Host",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.integrity.variety.Log tampering",
+                "attribute.integrity.variety.Modify data"
+            ]
+        },
+        "T1406": {
+            "name": "Obfuscated Files or Information",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.availability.variety.Obscuration"
+            ]
+        },
+        "T1406.001": {
+            "name": "Obfuscated Files or Information: Steganography",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.availability.variety.Obscuration"
+            ]
+        },
+        "T1406.002": {
+            "name": "Obfuscated Files or Information: Software Packing",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.availability.variety.Obscuration"
+            ]
+        },
+        "T1644": {
+            "name": "Out of Band Data",
+            "veris": [
+                "action.hacking.variety.Evade Defenses",
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.C2",
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1404": {
+            "name": "Exploitation for Privilege Escalation",
+            "veris": [
+                "action.hacking.variety.Exploit misconfig",
+                "action.hacking.variety.Exploit vuln",
+                "action.hacking.variety.Fuzz testing"
+            ]
+        },
+        "T1428": {
+            "name": "Exploitation of Remote Services",
+            "veris": [
+                "action.hacking.variety.Exploit misconfig",
+                "action.malware.variety.Exploit vuln"
+            ]
+        },
+        "T1625": {
+            "name": "Hijack Execution Flow",
+            "veris": [
+                "action.hacking.variety.Hijack",
+                "action.hacking.variety.Unknown"
+            ]
+        },
+        "T1625.001": {
+            "name": "System Runtime API Hijacking",
+            "veris": [
+                "action.hacking.variety.Hijack",
+                "action.hacking.variety.Unknown"
+            ]
+        },
+        "T1635.001": {
+            "name": "URI Hijacking",
+            "veris": [
+                "action.hacking.variety.Hijack",
+                "action.hacking.variety.Use of stolen creds",
+                "action.malware.variety.MitM"
+            ]
+        },
+        "T1638": {
+            "name": "Adversary-in-the-Middle",
+            "veris": [
+                "action.hacking.variety.MitM",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1426": {
+            "name": "System Information Discovery",
+            "veris": [
+                "action.hacking.variety.Profile host"
+            ]
+        },
+        "T1418": {
+            "name": "Software Discovery",
+            "veris": [
+                "action.hacking.variety.Profile host"
+            ]
+        },
+        "T1418.001": {
+            "name": "Software Discovery: Security Software Discovery",
+            "veris": [
+                "action.hacking.variety.Profile host"
+            ]
+        },
+        "T1424": {
+            "name": "Process Discovery",
+            "veris": [
+                "action.hacking.variety.Profile host"
+            ]
+        },
+        "T1422": {
+            "name": "System Network Configuration Discovery",
+            "veris": [
+                "action.hacking.variety.Scan network"
+            ]
+        },
+        "T1421": {
+            "name": "System Network Connections Discovery",
+            "veris": [
+                "action.hacking.variety.Scan network"
+            ]
+        },
+        "T1423": {
+            "name": "Network Service Scanning",
+            "veris": [
+                "action.hacking.variety.Scan network"
+            ]
+        },
+        "T1631": {
+            "name": "Process Injection",
+            "veris": [
+                "action.hacking.variety.Other"
+            ]
+        },
+        "T1631.001": {
+            "name": "Ptrace System Calls",
+            "veris": [
+                "action.hacking.variety.Other"
+            ]
+        },
+        "T1577": {
+            "name": "Compromise Application Executable",
+            "veris": [
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.Backdoor",
+                "action.malware.variety.Trojan",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1645": {
+            "name": "Compromise Client Software Binary",
+            "veris": [
+                "action.hacking.vector.Backdoor",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1637": {
+            "name": "Dynamic Resolution ",
+            "veris": [
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1637.001": {
+            "name": "Dynamic Resolution: Domain Generation Algorithms",
+            "veris": [
+                "action.hacking.vector.Backdoor",
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1481": {
+            "name": "Web Service",
+            "veris": [
+                "action.hacking.vector.Backdoor"
+            ]
+        },
+        "T1481.001": {
+            "name": "Web Service: Drop Dead Resolver",
+            "veris": [
+                "action.hacking.vector.Backdoor"
+            ]
+        },
+        "T1481.002": {
+            "name": "Web Service: Biderectional Communication",
+            "veris": [
+                "action.hacking.vector.Backdoor"
+            ]
+        },
+        "T1481.003": {
+            "name": "Web Service: One-Way Communication",
+            "veris": [
+                "action.hacking.vector.Backdoor"
+            ]
+        },
+        "T1474": {
+            "name": "Supply Chain Compromise",
+            "veris": [
+                "action.hacking.vector.Partner"
+            ]
+        },
+        "T1474.001": {
+            "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools",
+            "veris": [
+                "action.hacking.vector.Partner",
+                "action.social.vector.Software"
+            ]
+        },
+        "T1474.002": {
+            "name": "Supply Chain Compromise: Compromise Hardware Supply Chain",
+            "veris": [
+                "action.hacking.vector.Partner",
+                "action.social.vector.Phone",
+                "attribute.integrity.variety.Hardware tampering"
+            ]
+        },
+        "T1474.003": {
+            "name": "Supply Chain Compromise: Compromise Software Supply Chain",
+            "veris": [
+                "action.hacking.vector.Partner",
+                "action.social.vector.Software"
+            ]
+        },
+        "T1641.001": {
+            "name": "Data Manipulation: Transmitted Data Manipulation",
+            "veris": [
+                "action.hacking.vector.Other network service",
+                "action.malware.variety.Modify data",
+                "attribute.integrity.variety.Modify data"
+            ]
+        },
+        "T1437.001": {
+            "name": "Application Layer Protocol: Web Protocols",
+            "veris": [
+                "action.malware.variety.C2"
+            ]
+        },
+        "T1643": {
+            "name": "Generate Traffic from Victim",
+            "veris": [
+                "action.malware.variety.C2",
+                "attribute.integrity.variety.Misrepresentation"
+            ]
+        },
+        "T1604": {
+            "name": "Proxy Through Victim",
+            "veris": [
+                "action.malware.variety.C2",
+                "value_chain.non-distribution services.variety.Proxy"
+            ]
+        },
+        "T1582": {
+            "name": "SMS Control",
+            "veris": [
+                "action.malware.variety.C2",
+                "action.malware.vector.Instant messaging",
+                "action.social.variety.Pretexting",
+                "action.social.vector.SMS",
+                "attribute.integrity.variety.Misrepresentation"
+            ]
+        },
+        "T1429": {
+            "name": "Audio Capture",
+            "veris": [
+                "action.malware.variety.Capture app data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1512": {
+            "name": "Video Capture",
+            "veris": [
+                "action.malware.variety.Capture app data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1513": {
+            "name": "Screen Capture ",
+            "veris": [
+                "action.malware.variety.Capture app data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1517": {
+            "name": "Access Notifications",
+            "veris": [
+                "action.malware.variety.Capture stored data",
+                "action.social.vector.Email",
+                "action.social.vector.SMS",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1634": {
+            "name": "Credentials from Password Stores",
+            "veris": [
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1634.001": {
+            "name": "Credentials from Password Stores: Keychain",
+            "veris": [
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1533": {
+            "name": "Data from Local System",
+            "veris": [
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1420": {
+            "name": "File and Directory Discovery",
+            "veris": [
+                "action.malware.variety.Capture stored data"
+            ]
+        },
+        "T1409": {
+            "name": "Stored Application Data",
+            "veris": [
+                "action.malware.variety.Capture stored data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1633": {
+            "name": "Virtualization /Sandbox Evasion",
+            "veris": [
+                "action.malware.variety.Disable controls"
+            ]
+        },
+        "T1633.001": {
+            "name": "Virtualization /Sandbox Evasion: System Checks",
+            "veris": [
+                "action.malware.variety.Disable controls"
+            ]
+        },
+        "T1629": {
+            "name": "Impair Defenses",
+            "veris": [
+                "action.malware.variety.Disable controls",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1629.003": {
+            "name": "Impair Defenses: Disable of Modify Tools",
+            "veris": [
+                "action.malware.variety.Disable controls",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1632": {
+            "name": "Subvert Trust Controls",
+            "veris": [
+                "action.malware.variety.Disable controls",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1632.001": {
+            "name": "Subvert Trust Controls: Code Signing Policy Modification",
+            "veris": [
+                "action.malware.variety.Disable controls",
+                "attribute.integrity.variety.Modify configuration"
+            ]
+        },
+        "T1617": {
+            "name": "Hooking",
+            "veris": [
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1630.001": {
+            "name": "Indicator Removal on Host: Uninstall Malicious Application",
+            "veris": [
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.integrity.variety.Modify data"
+            ]
+        },
+        "T1630.002": {
+            "name": "Indicator Removal on Host: File Deletion",
+            "veris": [
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.availability.variety.Destruction",
+                "attribute.availability.variety.Loss",
+                "attribute.integrity.variety.Modify data"
+            ]
+        },
+        "T1630.003": {
+            "name": "Indicator Removal on Host: Disguise Root/Jailbreak Indicators",
+            "veris": [
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses",
+                "attribute.integrity.variety.Modify data"
+            ]
+        },
+        "T1544": {
+            "name": "Ingress Tool Transfer",
+            "veris": [
+                "action.malware.variety.Evade Defenses",
+                "action.social.variety.Evade Defenses"
+            ]
+        },
+        "T1639": {
+            "name": "Exfiltration over Alternative Protocol",
+            "veris": [
+                "action.malware.variety.Export data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1639.001": {
+            "name": "Exfiltration over Unencrypted Non-C2 Channel",
+            "veris": [
+                "action.malware.variety.Export data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1646": {
+            "name": "Exfiltration over C2 Channel",
+            "veris": [
+                "action.malware.variety.Export data",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1414": {
+            "name": "Clipboard Data",
+            "veris": [
+                "action.malware.variety.In-memory",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1641": {
+            "name": "Data Manipulation",
+            "veris": [
+                "action.malware.variety.Modify data"
+            ]
+        },
+        "T1471": {
+            "name": "Data Encrypted for Impact",
+            "veris": [
+                "action.malware.variety.Ransomware",
+                "attribute.availability.variety.Interruption",
+                "attribute.availability.variety.Loss",
+                "attribute.availability.variety.Obscuration"
+            ]
+        },
+        "T1417": {
+            "name": "Input Capture",
+            "veris": [
+                "action.malware.variety.Spyware/Keylogger",
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1458": {
+            "name": "Replication Through Removable Media",
+            "veris": [
+                "action.malware.variety.Worm",
+                "action.malware.vector.Removable media",
+                "action.social.vector.Removable media",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1407": {
+            "name": "Download New Code at Runtime",
+            "veris": [
+                "action.malware.vector.Software update",
+                "attribute.integrity.variety.Software installation"
+            ]
+        },
+        "T1456": {
+            "name": "Drive-By Compromise",
+            "veris": [
+                "action.malware.vector.Web application - drive-by",
+                "action.social.vector.Web application",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1461": {
+            "name": "Lockscreen Bypass",
+            "veris": [
+                "action.social.vector.In-person",
+                "value_chain.distribution.variety.Phone"
+            ]
+        },
+        "T1616": {
+            "name": "Call Control",
+            "veris": [
+                "attribute.availability.variety.Interruption",
+                "attribute.integrity.variety.Alter behavior",
+                "attribute.integrity.variety.Misrepresentation"
+            ]
+        },
+        "T1635": {
+            "name": "Steal Application Access Token",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure",
+                "value_chain.targeting.variety.Lost or stolen credentials"
+            ]
+        },
+        "T1417.001": {
+            "name": "Input Capture: Keylogging",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1417.002": {
+            "name": "Input Capture: GUI Input Capture",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1430": {
+            "name": "Location Tracking",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1430.001": {
+            "name": "Location Tracking: Remote Device Management Services",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1430.002": {
+            "name": "Location Tracking: Impersonate SS7 Nodes",
+            "veris": [
+                "attribute.confidentiality.\"\".data_disclosure"
+            ]
+        },
+        "T1575": {
+            "name": "Native API",
+            "veris": [
+                "value_chain.distribution.variety.Phone"
+            ]
+        }
+    },
+    "veris_to_attack": {
+        "action": {
+            "hacking": {
+                "variety": {
+                    "Abuse of functionality": {
+                        "T1626": {
+                            "name": "Abuse Elevation Control Mechanism"
+                        },
+                        "T1626.001": {
+                            "name": "Abuse Elevation Control Mechanism: Device Administrator Permissions"
+                        },
+                        "T1640": {
+                            "name": "Account Access Removal"
+                        },
+                        "T1437": {
+                            "name": "Application Layer Protocol"
+                        },
+                        "T1532": {
+                            "name": "Archive Collected Data"
+                        },
+                        "T1398": {
+                            "name": "Boot or Logon Initialization Scripts"
+                        },
+                        "T1623": {
+                            "name": "Command and Scripting Interpreter"
+                        },
+                        "T1623.001": {
+                            "name": "Command and Scripting Interpreter: Unix Shell"
+                        },
+                        "T1624": {
+                            "name": "Event Triggered Execution"
+                        },
+                        "T1624.001": {
+                            "name": "Event Triggered Execution: Broadcast Receivers"
+                        },
+                        "T1636": {
+                            "name": "Protected User Data"
+                        },
+                        "T1636.001": {
+                            "name": "Protected User Data: Calendar Entries"
+                        },
+                        "T1636.002": {
+                            "name": "Protected User Data: Call Log"
+                        },
+                        "T1636.003": {
+                            "name": "Protected User Data: Contact List"
+                        },
+                        "T1636.004": {
+                            "name": "Protected User Data: SMS Messages"
+                        },
+                        "T1603": {
+                            "name": "Scheduled Task/Job"
+                        },
+                        "T1541": {
+                            "name": "Foreground Persistence"
+                        },
+                        "T1629.001": {
+                            "name": "Impair Defenses: Prevent Application Removal"
+                        },
+                        "T1629.002": {
+                            "name": "Impair Defenses: Device Lockout"
+                        }
+                    },
+                    "Backdoor": {
+                        "T1521": {
+                            "name": "Encrypted Channel"
+                        },
+                        "T1521.001": {
+                            "name": "Encrypted Channel: Symmetric Cryptography"
+                        },
+                        "T1521.002": {
+                            "name": "Encrypted Channel: Asymmetric Cryptography"
+                        }
+                    },
+                    "DoS": {
+                        "T1642": {
+                            "name": "Endpoint Denial of Service"
+                        },
+                        "T1464": {
+                            "name": "Network Denial of Service"
+                        }
+                    },
+                    "Evade Defenses": {
+                        "T1627": {
+                            "name": "Execution Guardrails"
+                        },
+                        "T1627.001": {
+                            "name": "Execution Guardrails: GeoFencing"
+                        },
+                        "T1628": {
+                            "name": "Hide Artifacts"
+                        },
+                        "T1628.001": {
+                            "name": "Hide Artifacts: Suppress Application Icon"
+                        },
+                        "T1628.002": {
+                            "name": "Hide Artifacts: User Evasion"
+                        },
+                        "T1630": {
+                            "name": "Indicator Removal on Host"
+                        },
+                        "T1406": {
+                            "name": "Obfuscated Files or Information"
+                        },
+                        "T1406.001": {
+                            "name": "Obfuscated Files or Information: Steganography"
+                        },
+                        "T1406.002": {
+                            "name": "Obfuscated Files or Information: Software Packing"
+                        },
+                        "T1644": {
+                            "name": "Out of Band Data"
+                        }
+                    },
+                    "Exploit misconfig": {
+                        "T1626": {
+                            "name": "Abuse Elevation Control Mechanism"
+                        },
+                        "T1404": {
+                            "name": "Exploitation for Privilege Escalation"
+                        },
+                        "T1428": {
+                            "name": "Exploitation of Remote Services"
+                        }
+                    },
+                    "Exploit vuln": {
+                        "T1404": {
+                            "name": "Exploitation for Privilege Escalation"
+                        }
+                    },
+                    "Fuzz testing": {
+                        "T1404": {
+                            "name": "Exploitation for Privilege Escalation"
+                        }
+                    },
+                    "Hijack": {
+                        "T1625": {
+                            "name": "Hijack Execution Flow"
+                        },
+                        "T1625.001": {
+                            "name": "System Runtime API Hijacking"
+                        },
+                        "T1635.001": {
+                            "name": "URI Hijacking"
+                        }
+                    },
+                    "MitM": {
+                        "T1638": {
+                            "name": "Adversary-in-the-Middle"
+                        }
+                    },
+                    "Profile host": {
+                        "T1426": {
+                            "name": "System Information Discovery"
+                        },
+                        "T1418": {
+                            "name": "Software Discovery"
+                        },
+                        "T1418.001": {
+                            "name": "Software Discovery: Security Software Discovery"
+                        },
+                        "T1627": {
+                            "name": "Execution Guardrails"
+                        },
+                        "T1627.001": {
+                            "name": "Execution Guardrails: Geofencing"
+                        },
+                        "T1424": {
+                            "name": "Process Discovery"
+                        }
+                    },
+                    "Scan network": {
+                        "T1422": {
+                            "name": "System Network Configuration Discovery"
+                        },
+                        "T1421": {
+                            "name": "System Network Connections Discovery"
+                        },
+                        "T1423": {
+                            "name": "Network Service Scanning"
+                        }
+                    },
+                    "Use of stolen creds": {
+                        "T1635.001": {
+                            "name": "Steal Application Access Token: URI Hijacking"
+                        }
+                    },
+                    "Other": {
+                        "T1631": {
+                            "name": "Process Injection"
+                        },
+                        "T1631.001": {
+                            "name": "Ptrace System Calls"
+                        }
+                    },
+                    "Unknown": {
+                        "T1625": {
+                            "name": "Hijack Execution Flow"
+                        },
+                        "T1625.001": {
+                            "name": "System Runtime API Hijacking"
+                        }
+                    }
+                },
+                "vector": {
+                    "Backdoor": {
+                        "T1437": {
+                            "name": "Application Layer Protocol"
+                        },
+                        "T1398": {
+                            "name": "Boot or Logon Initialization Scripts"
+                        },
+                        "T1577": {
+                            "name": "Compromise Application Executable"
+                        },
+                        "T1645": {
+                            "name": "Compromise Client Software Binary"
+                        },
+                        "T1637": {
+                            "name": "Dynamic Resolution "
+                        },
+                        "T1637.001": {
+                            "name": "Dynamic Resolution: Domain Generation Algorithms"
+                        },
+                        "T1481": {
+                            "name": "Web Service"
+                        },
+                        "T1481.001": {
+                            "name": "Web Service: Drop Dead Resolver"
+                        },
+                        "T1481.002": {
+                            "name": "Web Service: Biderectional Communication"
+                        },
+                        "T1481.003": {
+                            "name": "Web Service: One-Way Communication"
+                        },
+                        "T1644": {
+                            "name": "Out of Band Data"
+                        }
+                    },
+                    "Command shell": {
+                        "T1623": {
+                            "name": "Command and Scripting Interpreter"
+                        },
+                        "T1623.001": {
+                            "name": "Command and Scripting Interpreter: Unix Shell"
+                        }
+                    },
+                    "Partner": {
+                        "T1474": {
+                            "name": "Supply Chain Compromise"
+                        },
+                        "T1474.001": {
+                            "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools"
+                        },
+                        "T1474.002": {
+                            "name": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+                        },
+                        "T1474.003": {
+                            "name": "Supply Chain Compromise: Compromise Software Supply Chain"
+                        }
+                    },
+                    "Other network service": {
+                        "T1641.001": {
+                            "name": "Data Manipulation: Transmitted Data Manipulation"
+                        }
+                    }
+                }
+            },
+            "malware": {
+                "variety": {
+                    "Backdoor": {
+                        "T1577": {
+                            "name": "Compromise Application Executable"
+                        }
+                    },
+                    "Backdoor or C2": {
+                        "T1398": {
+                            "name": "Boot or Logon Initialization Scripts"
+                        }
+                    },
+                    "C2": {
+                        "T1437": {
+                            "name": "Application Layer Protocol"
+                        },
+                        "T1437.001": {
+                            "name": "Application Layer Protocol: Web Protocols"
+                        },
+                        "T1637": {
+                            "name": "Dynamic Resolution "
+                        },
+                        "T1637.001": {
+                            "name": "Dynamic Resolution: Domain Generation Algorithms"
+                        },
+                        "T1521": {
+                            "name": "Encrypted Channel"
+                        },
+                        "T1521.001": {
+                            "name": "Encrypted Channel: Symmetric Cryptography"
+                        },
+                        "T1521.002": {
+                            "name": "Encrypted Channel: Asymmetric Cryptography"
+                        },
+                        "T1643": {
+                            "name": "Generate Traffic from Victim"
+                        },
+                        "T1644": {
+                            "name": "Out of Band Data"
+                        },
+                        "T1604": {
+                            "name": "Proxy Through Victim"
+                        },
+                        "T1582": {
+                            "name": "SMS Control"
+                        }
+                    },
+                    "Capture app data": {
+                        "T1429": {
+                            "name": "Audio Capture"
+                        },
+                        "T1512": {
+                            "name": "Video Capture"
+                        },
+                        "T1513": {
+                            "name": "Screen Capture "
+                        }
+                    },
+                    "Capture stored data": {
+                        "T1517": {
+                            "name": "Access Notifications"
+                        },
+                        "T1634": {
+                            "name": "Credentials from Password Stores"
+                        },
+                        "T1634.001": {
+                            "name": "Credentials from Password Stores: Keychain"
+                        },
+                        "T1533": {
+                            "name": "Data from Local System"
+                        },
+                        "T1636": {
+                            "name": "Protected User Data"
+                        },
+                        "T1636.001": {
+                            "name": "Protected User Data: Calendar Entries"
+                        },
+                        "T1636.002": {
+                            "name": "Protected User Data: Call Log"
+                        },
+                        "T1636.003": {
+                            "name": "Protected User Data: Contact List"
+                        },
+                        "T1636.004": {
+                            "name": "Protected User Data: SMS Messages"
+                        },
+                        "T1420": {
+                            "name": "File and Directory Discovery"
+                        },
+                        "T1409": {
+                            "name": "Stored Application Data"
+                        }
+                    },
+                    "Client-side attack": {
+                        "T1626": {
+                            "name": "Abuse Elevation Control Mechanism"
+                        },
+                        "T1626.001": {
+                            "name": "Abuse Elevation Control Mechanism: Device Administrator Permissions"
+                        }
+                    },
+                    "Disable controls": {
+                        "T1633": {
+                            "name": "Virtualization /Sandbox Evasion"
+                        },
+                        "T1633.001": {
+                            "name": "Virtualization /Sandbox Evasion: System Checks"
+                        },
+                        "T1629": {
+                            "name": "Impair Defenses"
+                        },
+                        "T1629.003": {
+                            "name": "Impair Defenses: Disable of Modify Tools"
+                        },
+                        "T1632": {
+                            "name": "Subvert Trust Controls"
+                        },
+                        "T1632.001": {
+                            "name": "Subvert Trust Controls: Code Signing Policy Modification"
+                        }
+                    },
+                    "DoS": {
+                        "T1642": {
+                            "name": "Endpoint Denial of Service"
+                        },
+                        "T1464": {
+                            "name": "Network Denial of Service"
+                        }
+                    },
+                    "Evade Defenses": {
+                        "T1627": {
+                            "name": "Execution Guardrails"
+                        },
+                        "T1627.001": {
+                            "name": "Execution Guardrails: GeoFencing"
+                        },
+                        "T1628": {
+                            "name": "Hide Artifacts"
+                        },
+                        "T1628.001": {
+                            "name": "Hide Artifacts: Suppress Application Icon"
+                        },
+                        "T1628.002": {
+                            "name": "Hide Artifacts: User Evasion"
+                        },
+                        "T1630": {
+                            "name": "Indicator Removal on Host"
+                        },
+                        "T1406": {
+                            "name": "Obfuscated Files or Information"
+                        },
+                        "T1406.001": {
+                            "name": "Obfuscated Files or Information: Steganography"
+                        },
+                        "T1406.002": {
+                            "name": "Obfuscated Files or Information: Software Packing"
+                        },
+                        "T1644": {
+                            "name": "Out of Band Data"
+                        },
+                        "T1617": {
+                            "name": "Hooking"
+                        },
+                        "T1630.001": {
+                            "name": "Indicator Removal on Host: Uninstall Malicious Application"
+                        },
+                        "T1630.002": {
+                            "name": "Indicator Removal on Host: File Deletion"
+                        },
+                        "T1630.003": {
+                            "name": "Indicator Removal on Host: Disguise Root/Jailbreak Indicators"
+                        },
+                        "T1544": {
+                            "name": "Ingress Tool Transfer"
+                        }
+                    },
+                    "Exploit vuln": {
+                        "T1428": {
+                            "name": "Exploitation of Remote Services"
+                        }
+                    },
+                    "Export data": {
+                        "T1639": {
+                            "name": "Exfiltration over Alternative Protocol"
+                        },
+                        "T1639.001": {
+                            "name": "Exfiltration over Unencrypted Non-C2 Channel"
+                        },
+                        "T1646": {
+                            "name": "Exfiltration over C2 Channel"
+                        }
+                    },
+                    "In-memory": {
+                        "T1414": {
+                            "name": "Clipboard Data"
+                        }
+                    },
+                    "MitM": {
+                        "T1635.001": {
+                            "name": "URI Hijacking"
+                        }
+                    },
+                    "Modify data": {
+                        "T1532": {
+                            "name": "Archive Collected Data"
+                        },
+                        "T1641": {
+                            "name": "Data Manipulation"
+                        },
+                        "T1641.001": {
+                            "name": "Data Manipulation: Transmitted Data Manipulation"
+                        }
+                    },
+                    "Ransomware": {
+                        "T1471": {
+                            "name": "Data Encrypted for Impact"
+                        }
+                    },
+                    "Spyware/Keylogger": {
+                        "T1417": {
+                            "name": "Input Capture"
+                        }
+                    },
+                    "Trojan": {
+                        "T1577": {
+                            "name": "Compromise Application Executable"
+                        }
+                    },
+                    "Worm": {
+                        "T1458": {
+                            "name": "Replication Through Removable Media"
+                        }
+                    }
+                },
+                "vector": {
+                    "Instant messaging": {
+                        "T1582": {
+                            "name": "SMS Control"
+                        }
+                    },
+                    "Removable media": {
+                        "T1458": {
+                            "name": "Replication Through Removable Media"
+                        }
+                    },
+                    "Software update": {
+                        "T1407": {
+                            "name": "Download New Code at Runtime"
+                        }
+                    },
+                    "Web application - drive-by": {
+                        "T1456": {
+                            "name": "Drive-By Compromise"
+                        }
+                    }
+                }
+            },
+            "social": {
+                "variety": {
+                    "Evade Defenses": {
+                        "T1627": {
+                            "name": "Execution Guardrails"
+                        },
+                        "T1627.001": {
+                            "name": "Execution Guardrails: GeoFencing"
+                        },
+                        "T1628": {
+                            "name": "Hide Artifacts"
+                        },
+                        "T1628.001": {
+                            "name": "Hide Artifacts: Suppress Application Icon"
+                        },
+                        "T1628.002": {
+                            "name": "Hide Artifacts: User Evasion"
+                        },
+                        "T1630": {
+                            "name": "Indicator Removal on Host"
+                        },
+                        "T1406": {
+                            "name": "Obfuscated Files or Information"
+                        },
+                        "T1406.001": {
+                            "name": "Obfuscated Files or Information: Steganography"
+                        },
+                        "T1406.002": {
+                            "name": "Obfuscated Files or Information: Software Packing"
+                        },
+                        "T1644": {
+                            "name": "Out of Band Data"
+                        },
+                        "T1617": {
+                            "name": "Hooking"
+                        },
+                        "T1630.001": {
+                            "name": "Indicator Removal on Host: Uninstall Malicious Application"
+                        },
+                        "T1630.002": {
+                            "name": "Indicator Removal on Host: File Deletion"
+                        },
+                        "T1630.003": {
+                            "name": "Indicator Removal on Host: Disguise Root/Jailbreak Indicators"
+                        },
+                        "T1544": {
+                            "name": "Ingress Tool Transfer"
+                        }
+                    },
+                    "Pretexting": {
+                        "T1582": {
+                            "name": "SMS Control"
+                        }
+                    }
+                },
+                "vector": {
+                    "Email": {
+                        "T1517": {
+                            "name": "Access Notifications"
+                        }
+                    },
+                    "In-person": {
+                        "T1461": {
+                            "name": "Lockscreen Bypass"
+                        }
+                    },
+                    "Phone": {
+                        "T1474.002": {
+                            "name": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+                        }
+                    },
+                    "Removable media": {
+                        "T1458": {
+                            "name": "Replication Through Removable Media"
+                        }
+                    },
+                    "SMS": {
+                        "T1517": {
+                            "name": "Access Notifications"
+                        },
+                        "T1582": {
+                            "name": "SMS Control"
+                        }
+                    },
+                    "Software": {
+                        "T1474.003": {
+                            "name": "Supply Chain Compromise: Compromise Software Supply Chain"
+                        },
+                        "T1474.001": {
+                            "name": "Supply Chain Compromise: Compromise Software Dependencies and Development Tools"
+                        }
+                    },
+                    "Web application": {
+                        "T1456": {
+                            "name": "Drive-By Compromise"
+                        }
+                    }
+                }
+            }
+        },
+        "attribute": {
+            "integrity": {
+                "variety": {
+                    "Alter behavior": {
+                        "T1616": {
+                            "name": "Call Control"
+                        },
+                        "T1624": {
+                            "name": "Event Triggered Execution"
+                        },
+                        "T1624.001": {
+                            "name": "Event Triggered Execution: Broadcast Receivers"
+                        }
+                    },
+                    "Hardware tampering": {
+                        "T1474.002": {
+                            "name": "Supply Chain Compromise: Compromise Hardware Supply Chain"
+                        }
+                    },
+                    "Log tampering": {
+                        "T1630": {
+                            "name": "Indicator Removal on Host"
+                        }
+                    },
+                    "Misrepresentation": {
+                        "T1643": {
+                            "name": "Generate Traffic from Victim"
+                        },
+                        "T1582": {
+                            "name": "SMS Control"
+                        },
+                        "T1616": {
+                            "name": "Call Control"
+                        }
+                    },
+                    "Modify configuration": {
+                        "T1640": {
+                            "name": "Account Access Removal"
+                        },
+                        "T1398": {
+                            "name": "Boot or Logon Initialization Scripts"
+                        },
+                        "T1577": {
+                            "name": "Compromise Application Executable"
+                        },
+                        "T1645": {
+                            "name": "Compromise Client Software Binary"
+                        },
+                        "T1629": {
+                            "name": "Impair Defenses"
+                        },
+                        "T1629.003": {
+                            "name": "Impair Defenses: Disable of Modify Tools"
+                        },
+                        "T1629.002": {
+                            "name": "Impair Defenses: Device Lockout"
+                        },
+                        "T1632": {
+                            "name": "Subvert Trust Controls"
+                        },
+                        "T1632.001": {
+                            "name": "Subvert Trust Controls: Code Signing Policy Modification"
+                        }
+                    },
+                    "Modify data": {
+                        "T1641.001": {
+                            "name": "Data Manipulation: Transmitted Data Manipulation"
+                        },
+                        "T1630": {
+                            "name": "Indicator Removal on Host"
+                        },
+                        "T1630.001": {
+                            "name": "Indicator Removal on Host: Uninstall Malicious Application"
+                        },
+                        "T1630.002": {
+                            "name": "Indicator Removal on Host: File Deletion"
+                        },
+                        "T1630.003": {
+                            "name": "Indicator Removal on Host: Disguise Root/Jailbreak Indicators"
+                        }
+                    },
+                    "Modify privileges": {
+                        "T1398": {
+                            "name": "Boot or Logon Initialization Scripts"
+                        }
+                    },
+                    "Software installation": {
+                        "T1407": {
+                            "name": "Download New Code at Runtime"
+                        }
+                    }
+                }
+            },
+            "confidentiality": {
+                "\"\"": {
+                    "data_disclosure": {
+                        "T1517": {
+                            "name": "Access Notifications"
+                        },
+                        "T1635": {
+                            "name": "Steal Application Access Token"
+                        },
+                        "T1646": {
+                            "name": "Exfiltration Over C2 Channel"
+                        },
+                        "T1639": {
+                            "name": "Exfiltration Over Alternative Protocol"
+                        },
+                        "T1639.001": {
+                            "name": "Exfiltration Over Unencrypted Non-C2 Protocol"
+                        },
+                        "T1638": {
+                            "name": "Adversary-in-the-Middle"
+                        },
+                        "T1429": {
+                            "name": "Audio Capture"
+                        },
+                        "T1414": {
+                            "name": "Clipboard Data"
+                        },
+                        "T1634": {
+                            "name": "Credentials from Password Store"
+                        },
+                        "T1634.001": {
+                            "name": "Credentials from Password Store: Keychain"
+                        },
+                        "T1533": {
+                            "name": "Data from Local System"
+                        },
+                        "T1417": {
+                            "name": "Input Capture"
+                        },
+                        "T1417.001": {
+                            "name": "Input Capture: Keylogging"
+                        },
+                        "T1417.002": {
+                            "name": "Input Capture: GUI Input Capture"
+                        },
+                        "T1430": {
+                            "name": "Location Tracking"
+                        },
+                        "T1430.001": {
+                            "name": "Location Tracking: Remote Device Management Services"
+                        },
+                        "T1430.002": {
+                            "name": "Location Tracking: Impersonate SS7 Nodes"
+                        },
+                        "T1636": {
+                            "name": "Protected User Data"
+                        },
+                        "T1636.001": {
+                            "name": "Protected User Data: Calendar Entries"
+                        },
+                        "T1636.002": {
+                            "name": "Protected User Data: Call Log"
+                        },
+                        "T1636.003": {
+                            "name": "Protected User Data: Contact List"
+                        },
+                        "T1636.004": {
+                            "name": "Protected User Data: SMS Messages"
+                        },
+                        "T1513": {
+                            "name": "Screen Capture"
+                        },
+                        "T1409": {
+                            "name": "Stored Application Data"
+                        },
+                        "T1512": {
+                            "name": "Video Capture"
+                        }
+                    }
+                }
+            },
+            "availability": {
+                "variety": {
+                    "Degradation": {
+                        "T1642": {
+                            "name": "Endpoint Denial of Service"
+                        },
+                        "T1464": {
+                            "name": "Network Denial of Service"
+                        }
+                    },
+                    "Destruction": {
+                        "T1640": {
+                            "name": "Account Access Removal"
+                        },
+                        "T1630.002": {
+                            "name": "Indicator Removal on Host: File Deletion"
+                        }
+                    },
+                    "Interruption": {
+                        "T1629.002": {
+                            "name": "Impair Defenses: Device Lockout"
+                        },
+                        "T1640": {
+                            "name": "Account Access Removal"
+                        },
+                        "T1616": {
+                            "name": "Call Control"
+                        },
+                        "T1471": {
+                            "name": "Data Encrypted for Impact"
+                        }
+                    },
+                    "Loss": {
+                        "T1471": {
+                            "name": "Data Encrypted for Impact"
+                        },
+                        "T1642": {
+                            "name": "Endpoint Denial of Service"
+                        },
+                        "T1464": {
+                            "name": "Network Denial of Service"
+                        },
+                        "T1630.002": {
+                            "name": "Indicator Removal on Host: File Deletion"
+                        }
+                    },
+                    "Obscuration": {
+                        "T1406": {
+                            "name": "Obfuscated Files or Information"
+                        },
+                        "T1406.001": {
+                            "name": "Obfuscated Files or Information: Steganography"
+                        },
+                        "T1406.002": {
+                            "name": "Obfuscated Files or Information: Software Packaging"
+                        },
+                        "T1471": {
+                            "name": "Data Encrypted for Impact"
+                        }
+                    }
+                }
+            }
+        },
+        "value_chain": {
+            "distribution": {
+                "variety": {
+                    "Phone": {
+                        "T1456": {
+                            "name": "Drive-By Compromise"
+                        },
+                        "T1461": {
+                            "name": "Lockscreen Bypass"
+                        },
+                        "T1458": {
+                            "name": "Replication Through Removable Media"
+                        },
+                        "T1623": {
+                            "name": "Command and Scripting Interpreter"
+                        },
+                        "T1623.001": {
+                            "name": "Command and Scripting Interpreter: Unix Shell"
+                        },
+                        "T1575": {
+                            "name": "Native API"
+                        },
+                        "T1603": {
+                            "name": "Scheduled Task/Job"
+                        }
+                    }
+                }
+            },
+            "non-distribution services": {
+                "variety": {
+                    "Proxy": {
+                        "T1604": {
+                            "name": "Proxy Through Victim"
+                        }
+                    }
+                }
+            },
+            "targeting": {
+                "variety": {
+                    "Lost or stolen credentials": {
+                        "T1635": {
+                            "name": "Steal Application Access Token"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -7,13 +7,13 @@
           <div class="col-md-5 hero-left d-flex align-items-center">
             <div class="hero-left-content">
               <img id="mapex_explorer_logo" src="/img/mappings_explorer_logo_h214.png" alt="Mappings Explorer" />
-              <blockquote data-aos="fade-up" data-aos-delay="100">
+              <blockquote>
                 <p>
                   Mappings Explorer enables cyber defenders to understand how security controls and capabilities map onto the adversary behaviors catalogued in the
                   <a href="https://attack.mitre.org/" target="_blank" class="white-link">MITRE ATT&CK®</a> knowledge base. These mappings form a bridge between the threat-informed approach to cybersecurity and the traditional security controls perspective. 
                 </p>
               </blockquote>
-              <NuxtLink to="/about/" class="btn-get-started mt-3" data-aos="fade-up" data-aos-delay="200">
+              <NuxtLink to="/about/" class="btn-get-started mt-3">
                 Learn More
               </NuxtLink>
             </div>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": "intel-pt",
+        "description": "<p>Intel Processor Trace (Intel PT) technology integrated with CrowdStrike Falcon Hardware Enhanced Exploit Detection (HEED) advanced security provides a higher level of visibility into complex attack techniques.</p>\n"
+    },
+    {
+        "id": "intel-aes-ni",
+        "description": "<p>BitLocker uses TPM (Intel PTT) to save the volume encryption keys for full disk encryption (FDE), Intel AES-NI to accelerate the encryption/decryption process, and Intel BootGuard to ensure operating system components are not compromised during boot. BitLocker also adds pre-boot authentication to access the encryption keys used for FDE.</p>\n"
+    },
+    {
+        "id": "intel-txt",
+        "description": "<p>Windows Secure Boot leverages Intel PTT (TPM) to safeguard settings stored in UEFI, while Intel Boot Guard prevents unauthorized modifications to UEFI firmware. It verifies the signatures of the UEFI firmware, bootloader, and boot drivers before loading the operating system.</p>\n"
+    },
+    {
+        "id": "intel-ptt",
+        "description": "<p>The LSA Process Protection mechanism requires TPM (Intel PTT), Secure Boot (uses Intel PTT and Intel BootGuard), and HVCI (uses Intel VT-x). The Local Security Authority (LSA) process, which includes the Local Security Authority Server Service (LSASS) validates users for local and remote authentications and enforces local security policies.</p>\n"
+    },
+    {
+        "id": "intel-vt",
+        "description": "<p>Memory Integrity (MI) is a feature of Virtualization based Security (VBS) or Hypervisor-protected code integrity (HVCI) which provides an isolated environment that acts as a root-of-trust for the OS and its core components. It is enabled by Intel VT-x, VT-x2 with Extended Page Tables, SMMUs (Intel VT-d), TPM 2.0 (Intel PTT), and Secure Boot (Intel Boot Guard).</p>\n"
+    },
+    {
+        "id": "intel-tdt",
+        "description": "<p>Intel Threat Detection Technology (TDT) with CrowdStrike Falcon Accelerated Memory Scanning (AMS) provides security capabilities to enhance cybersecurity defenses. This dynamic solution improves CrowdStrike's Next-Generation Antivirus (NGAV) by enabling the detection of cyber threats earlier in the kill chain and in real time, with minimal impact on system performance.</p>\n"
+    }
+]

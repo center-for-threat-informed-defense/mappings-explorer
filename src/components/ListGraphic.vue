@@ -10,7 +10,6 @@
             v-for="(element, index) in elements"
             :key="index"
             class="col"
-            data-aos="fade-up"
           >
             <div class="element-card d-flex flex-column h-100 p-4">
               <div class="d-flex align-items-center mb-2">
@@ -65,12 +64,9 @@
   
   <style scoped>
   .element-card {
-    border: 1px solid #ddd;
     padding: 20px;
     border-radius: 4px;
-    background: #fafafa;
     text-align: center;
-    background: #fff;
     border: none;
     display: flex;
     flex-direction: column;
