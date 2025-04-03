@@ -58,7 +58,7 @@ jobs:
 
   #Publish to Azure blob only on PRs, not main.
   azure_blob:
-    if: github.ref_name != 'main'
+    # if: github.ref_name != 'main'
     needs: web_site
     runs-on: ubuntu-latest
     env:
