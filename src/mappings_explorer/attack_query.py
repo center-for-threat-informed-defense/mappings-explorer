@@ -289,6 +289,7 @@ def add_background_colors(attack_version_data):
         "m365": "M365",
         "intel-vpro": "Intel vPro",
         "kev": "Known Exploited Vulnerabilities",
+        "cri_profile": "CRI Profile"
     }
     max_score = 0
     min_score = 100000

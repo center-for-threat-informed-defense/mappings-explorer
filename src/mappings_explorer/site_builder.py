@@ -463,7 +463,36 @@ def load_projects():
         }
     ]
     intel_vpro.has_non_mappable_comments = False
-    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
+
+    cri_profile = ExternalControl()
+    cri_profile.id = "cri_profile"
+    cri_profile.label = "CRI Profile"
+    cri_profile.description = """Advanced security features in Intel vPro hardware can be
+        leveraged by operating system (OS) and security software features across system
+        attack surfaces to optimize mitigations against cyber threats. These mappings
+        demonstrate the practical application of hardware features by capabilities in
+        Microsoft Windows 11 with Defender and CrowdStrike Falcon to assist defenders in
+        understanding how these integrated capabilities can help mitigate real-world
+        adversary behaviors as described in MITRE ATT&CK®."""
+
+    cri_profile.attackDomains = ["Enterprise"]
+    cri_profile.attackDomain = cri_profile.attackDomains[0]
+    cri_profile.attackVersions = ["16.1"]
+    cri_profile.attackVersion = cri_profile.attackVersions[0]
+    cri_profile.versions = ["v2"]
+    cri_profile.validVersions = [
+        ("v2", "16.1", "Enterprise"),
+    ]
+    cri_profile.mappings = []
+    cri_profile.resources = [
+        {
+            "link": "about/methodology/ssm-methodology/",
+            "label": "Security Stack Mapping Methodology",
+        }
+    ]
+    cri_profile.has_non_mappable_comments = False
+
+    projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 

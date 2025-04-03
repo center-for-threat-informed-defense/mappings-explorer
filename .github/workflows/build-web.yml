@@ -44,8 +44,8 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
-        # run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
-        run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
+        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorerfinsec.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
+        # run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
       - name: Compress Artifacts
@@ -57,85 +57,85 @@ jobs:
           path: output.zip
 
   #Publish to Azure blob only on PRs, not main.
-  # azure_blob:
-  #   if: github.ref_name != 'main'
-  #   needs: web_site
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     AZURE_STORAGE_ACCOUNT: mappingsexplorer
-  #     AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
-  #     BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-  #     STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
-  #   steps:
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: "18"
-  #     - run: npm install -g staticrypt
-  #     - name: Download Web Site
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: mapex-web
-  #         path: .
-  #     - name: Decompress Artifacts
-  #       run: unzip -q output.zip
-  #     - env:
-  #         STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
-  #         NODE_OPTIONS: --max-old-space-size=8192
-  #       run: >
-  #         staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
-  #           --password $STATICRYPT_PASS --short \
-  #           --template-title "Mappings Explorer (branch: $BRANCH_NAME)" \
-  #           --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
-  #           --template-color-primary "#6241c5" \
-  #           --template-color-secondary "#b2b2b2" \
-  #           --template-button "Log In" \
-  #           -r output/
-  #     - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
-  #       run: test -d encrypted
-  #     - name: Copy encrypted HTML files
-  #       run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
-  #     - name: Set the branch name
-  #       run: mv output "$BRANCH_NAME"
-  #     - name: Install Azure CLI
-  #       run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-  #     - name: Delete old blobs
-  #       run: az storage blob delete-batch -s '$web' --pattern "$BRANCH_NAME/*"
-  #     - name: Upload to blob storage
-  #       run: az storage blob upload-batch -s . --pattern "$BRANCH_NAME/*" -d '$web'
-  #     - uses: actions/github-script@v6
-  #       if: github.event_name == 'pull_request'
-  #       with:
-  #         script: |
-  #           github.rest.issues.createComment({
-  #             issue_number: context.issue.number,
-  #             owner: context.repo.owner,
-  #             repo: context.repo.repo,
-  #             body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
-  #           })
-
-  github_pages:
-    # This job only runs when committing or merging to main branch.
-    if: github.ref_name == 'main'
+  azure_blob:
+    if: github.ref_name != 'main'
     needs: web_site
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+    env:
+      AZURE_STORAGE_ACCOUNT: mappingsexplorerfinsec
+      AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
     steps:
-    - name: Setup Pages
-      uses: actions/configure-pages@v2
-    - name: Download Web Site
-      uses: actions/download-artifact@v4
-      with:
-        name: mapex-web
-        path: .
-    - name: Decompress Artifacts
-      run: unzip -q output.zip
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./output
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "19"
+      - run: npm install -g staticrypt
+      - name: Download Web Site
+        uses: actions/download-artifact@v4
+        with:
+          name: mapex-web
+          path: .
+      - name: Decompress Artifacts
+        run: unzip -q output.zip
+      - env:
+          STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+          NODE_OPTIONS: --max-old-space-size=8192
+        run: >
+          staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
+            --password $STATICRYPT_PASS --short \
+            --template-title "Mappings Explorer (branch: $BRANCH_NAME)" \
+            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
+            --template-color-primary "#6241c5" \
+            --template-color-secondary "#b2b2b2" \
+            --template-button "Log In" \
+            -r output/
+      - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
+        run: test -d encrypted
+      - name: Copy encrypted HTML files
+        run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
+      - name: Set the branch name
+        run: mv output "$BRANCH_NAME"
+      - name: Install Azure CLI
+        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Delete old blobs
+        run: az storage blob delete-batch -s '$web' --pattern "$BRANCH_NAME/*"
+      - name: Upload to blob storage
+        run: az storage blob upload-batch -s . --pattern "$BRANCH_NAME/*" -d '$web'
+      - uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `This PR has been published to https://mappingsexplorerfinsec.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
+            })
+
+  # github_pages:
+  #   # This job only runs when committing or merging to main branch.
+  #   if: github.ref_name == 'main'
+  #   needs: web_site
+  #   runs-on: ubuntu-latest
+  #   environment:
+  #     name: github-pages
+  #     url: $\{\{ steps.deployment.outputs.page_url \}\}
+
+  #   steps:
+  #   - name: Setup Pages
+  #     uses: actions/configure-pages@v2
+  #   - name: Download Web Site
+  #     uses: actions/download-artifact@v4
+  #     with:
+  #       name: mapex-web
+  #       path: .
+  #   - name: Decompress Artifacts
+  #     run: unzip -q output.zip
+  #   - name: Upload artifact
+  #     uses: actions/upload-pages-artifact@v3
+  #     with:
+  #       path: ./output
+  #   - name: Deploy to GitHub Pages
+  #     id: deployment
+  #     uses: actions/deploy-pages@v4
