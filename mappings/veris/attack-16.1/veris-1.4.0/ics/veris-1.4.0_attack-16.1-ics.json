@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "01/23/2025",
-        "last_update": "01/23/2025",
+        "last_update": "04/03/2025",
         "mapping_types": {
             "related_to": {
                 "name": "related-to",
@@ -2131,16 +2131,6 @@
             "status": "non_mappable"
         },
         {
-            "capability_id": "Action.Hacking.Variety.Cache poisoning",
-            "capability_description": "Cache poisoning. Child of 'Exploit vuln'.",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.hacking",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
             "capability_id": "Action.Hacking.Variety.Cryptanalysis",
             "capability_description": "Cryptanalysis. Child of 'Exploit vuln'.",
             "mapping_type": null,
@@ -2293,16 +2283,6 @@
         {
             "capability_id": "Action.Hacking.Variety.Offline cracking",
             "capability_description": "Offline password or key cracking (e.g., rainbow tables, Hashcat, JtR)",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.hacking",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Action.Hacking.Variety.OS commanding",
-            "capability_description": "OS commanding. Child of 'Exploit vuln'.",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
@@ -2651,16 +2631,6 @@
             "status": "non_mappable"
         },
         {
-            "capability_id": "Action.Hacking.Vector.VPN",
-            "capability_description": "VPN",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.hacking",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
             "capability_id": "Action.Malware.Variety.Adminware",
             "capability_description": "System or network utilities (e.g., PsTools, Netcat)",
             "mapping_type": null,
@@ -2673,16 +2643,6 @@
         {
             "capability_id": "Action.Malware.Variety.Adware",
             "capability_description": "Adware",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Action.Malware.Variety.AitM",
-            "capability_description": "Adversary-in-the-Middle attack. Child of 'Exploit vuln'.",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
@@ -2891,28 +2851,8 @@
             "status": "non_mappable"
         },
         {
-            "capability_id": "Action.Malware.Vector.Email",
-            "capability_description": "Email. Parent to 'Email attachment', 'Email autoexecute', 'Email link', 'Email unknown'",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
             "capability_id": "Action.Malware.Vector.Email autoexecute",
             "capability_description": "Email via automatic execution. Child of 'Email'",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Action.Malware.Vector.Email link",
-            "capability_description": "Email via embedded link. Child of 'Email'",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
@@ -2973,26 +2913,6 @@
         {
             "capability_id": "Action.Malware.Vector.Remote injection",
             "capability_description": "Remotely injected by agent (i.e. via SQLi)",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Action.Malware.Vector.Removable media",
-            "capability_description": "Removable storage media or devices",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "action.malware",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Action.Malware.Vector.Software update",
-            "capability_description": "Included in automated software update",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
@@ -3191,28 +3111,8 @@
             "status": "non_mappable"
         },
         {
-            "capability_id": "Attribute.Availability.Variety.Destruction",
-            "capability_description": "Destruction",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "attribute.availability",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
             "capability_id": "Attribute.Availability.Variety.Obscuration",
             "capability_description": "Conversion or obscuration (ransomware)",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "attribute.availability",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Attribute.Availability.Variety.Other",
-            "capability_description": "Other",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
@@ -3263,16 +3163,6 @@
         {
             "capability_id": "Attribute.Integrity.Variety.Modify privileges",
             "capability_description": "Modified privileges or permissions",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "attribute.integrity",
-            "references": [],
-            "status": "non_mappable"
-        },
-        {
-            "capability_id": "Attribute.Integrity.Variety.Other",
-            "capability_description": "Other",
             "mapping_type": null,
             "attack_object_id": null,
             "attack_object_name": null,
