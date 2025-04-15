@@ -176,7 +176,7 @@ def load_projects():
      risk management process."""
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
-        "14.1",
+        "16.1" "14.1",
         "12.1",
         "10.1",
         "9.0",
@@ -193,6 +193,7 @@ def load_projects():
         ("rev5", "12.1", "Enterprise"),
         ("rev4", "14.1", "Enterprise"),
         ("rev5", "14.1", "Enterprise"),
+        ("rev5", "16.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
