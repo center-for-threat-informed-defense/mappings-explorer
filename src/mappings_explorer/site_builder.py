@@ -180,7 +180,8 @@ def load_projects():
     environments. """
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
-        "16.1" "14.1",
+        "16.1",
+        "14.1",
         "12.1",
         "10.1",
         "9.0",
