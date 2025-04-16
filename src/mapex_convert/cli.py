@@ -133,7 +133,9 @@ def parse_nist_mappings():
         # checking if it is a file
         if os.path.isfile(file):
             # read un-parsed mappings
+            print("reading ", filename)
             dataframe = read_excel_file(file)
+            print("done read ", filename)
 
             # parse mappings
             attack_version = filename[
