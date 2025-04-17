@@ -168,14 +168,19 @@ def load_projects():
     nist.id = "nist"
     nist.label = "NIST 800-53"
     nist.description = """National Institute of Standards in Technology (NIST) Special
-     Publication 800-53 provides a catalog of security and privacy controls for the
-     protection of information systems and organizations from a diverse set of threats
-     and risks. These mappings provide resources for security control coverage
-     against real-world threats as described in the MITRE ATT&CK® knowledge base and
-     provide a foundation for integrating ATT&CK-based threat information into the
-     risk management process."""
+    Publication 800-53 provides a catalog of security and privacy controls for the
+    protection of information systems and organizations from a diverse set of threats
+    and risks. These mappings provide resources for assessing security control coverage
+    of real-world threats as described in the MITRE ATT&CK® knowledge base and provide
+    a foundation for integrating ATT&CK-based threat intelligence into the risk
+    management process. Shared understanding of how the implementation of NIST 800-53
+    security controls in an environment can mitigate adversary techniques of interest is
+    an important step to bring security operations teams and risk management teams
+    together to build a structured, threat-informed approach to securing systems and
+    environments. """
     nist.versions = ["rev5", "rev4"]
     nist.attackVersions = [
+        "16.1",
         "14.1",
         "12.1",
         "10.1",
@@ -193,6 +198,7 @@ def load_projects():
         ("rev5", "12.1", "Enterprise"),
         ("rev4", "14.1", "Enterprise"),
         ("rev5", "14.1", "Enterprise"),
+        ("rev5", "16.1", "Enterprise"),
     ]
     nist.attackDomains = ["Enterprise"]
     nist.has_non_mappables = False
