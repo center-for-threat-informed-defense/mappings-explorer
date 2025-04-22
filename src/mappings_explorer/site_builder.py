@@ -1039,6 +1039,11 @@ def build_external_landing(
             ("comments", "Comments"),
             ("references", "References"),
         ]
+    if project.id == "cri_profile":
+        info_box_headers = [
+            ("comments", "Comments"),
+            ("references", "References"),
+        ]
 
     # Resolve additional download artifacts
     additional_artifacts = []
