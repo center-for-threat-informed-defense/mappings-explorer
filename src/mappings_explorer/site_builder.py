@@ -598,6 +598,7 @@ def parse_capability_groups(
         or project.id == "intel-vpro"
         or project.id == "gcp"
         or project.id == "azure"
+        or project.id == "cri_profile"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -700,6 +701,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "SecurityStack" / "GCP"
     elif project.id == "azure":
         folder_name = DATA_DIR / "SecurityStack" / "Azure"
+    elif project.id == "cri_profile":
+        folder_name = DATA_DIR / "cri_profile"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
@@ -1042,7 +1045,6 @@ def build_external_landing(
     if project.id == "cri_profile":
         info_box_headers = [
             ("comments", "Comments"),
-            ("references", "References"),
         ]
 
     # Resolve additional download artifacts
