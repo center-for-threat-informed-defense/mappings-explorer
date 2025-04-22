@@ -102,16 +102,16 @@ all_attack_versions = [
 
 attack_domains = {
     "Enterprise": [
-        # "8.2",
-        # "9.0",
-        # "10.0",
-        # "10.1",
-        # "11.0",
-        # "11.1",
-        # "11.2",
-        # "11.3",
-        # "12.0",
-        # "12.1",
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
         # "13.0",
         # "13.1",
         # "14.0",
@@ -492,10 +492,7 @@ def load_projects():
     ]
     cri_profile.has_non_mappable_comments = False
 
-    projects = [
-        cri_profile,
-        #  intel_vpro, nist, kev, veris, azure, gcp, aws, m365
-    ]
+    projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 
