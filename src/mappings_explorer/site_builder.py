@@ -2312,7 +2312,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         url_suffix="about/methodology/nist-methodology",
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/nist_methodology.html.j2",
-        title="NIST 800-53 Mapping Methodology",
+        title="Control Framework Mapping Methodology",
     )
 
     build_about_page(

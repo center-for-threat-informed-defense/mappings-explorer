@@ -20,9 +20,10 @@
         </div>
 
         <p>
-            Scoping decisions for mapping NIST 800-53 Rev. 4 & Rev. 5 controls are documented below.
-            The mapping methodology for NIST 800-53 Rev. 5 controls builds upon and refines the
-            overall NIST SP 800-53 framework mapping methodology.
+        Scoping decisions for mapping NIST SP 800-53 Rev. 4 & Rev. 5 Security and Privacy Controls
+        for Information Systems and Organizations are documented below. These scoping decisions were
+         used for security control review and selection for mapping according to the
+         <a href="about/methodology/nist-methodology/">NIST 800-53 Mapping Methodology</a>.
         </p>
     </div>
 </section>
@@ -42,23 +43,18 @@
                 techniques, and sub-techniques.</dd>
             <dt>Mitigation vs. Monitoring</dt>
             <dd>Controls that may only monitor adversary behaviors are out of scope. The focus of this effort is on
-                technical controls that mitigate adversary techniques and sub-techniques. For example, IR-5 Incident
-                Monitoring would be out-of-scope as this does not serve as a mitigation, but rather detection of
-                security incident occurrence. However, RA-4 Vulnerability Scanning is in scope as it can lead to
-                findings which allow for remediation prior to exploitation (e.g., apply patches, remove vulnerable
-                software) thereby mitigating attacks. Consideration is not given for the potential that an adversary
-                might be dissuaded or change their tactics to try and avoid detection if they thought activity was being
-                monitored.</dd>
+                technical controls that mitigate adversary techniques and sub-techniques. For example, IR-05 Incident
+                Monitoring would be out-of-scope as this does not serve as a mitigation, but rather tracking and
+                documenting security incident occurrence. However, RA-05 Vulnerability Monitoring and Scanning is
+                in scope as it calls for remediation of vulnerabilities thereby mitigating attacks. Consideration
+                is not given for the potential that an adversary might be dissuaded or change their tactics to try
+                and avoid detection if they thought activity was being monitored.</dd>
             <dt>Controls vs. Control Enhancements</dt>
             <dd>This effort maps at the control level and does not map to specific control enhancements.</dd>
             <dt>Implicit vs. Explicit Mitigation</dt>
-            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data
-                backups) and controls that support those mitigations rather than other, non-technical methods of
-                mitigation (e.g., put system in a locked room, write a backup policy). </dd>
-            <dt>Network Infrastructure Devices</dt>
-            <dd><a href="https://attack.mitre.org/resources/versions/">ATT&CK v8</a> released on October 27, 2020,
-                introduces techniques for adversary behavior on Network Infrastructure Devices, such as switches and
-                routers. These have not been included in the control mappings.</dd>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices,
+                perform data backups) and controls that support those mitigations rather than other, non-technical
+                methods of mitigation (e.g., permit physical access to systems, develop a backup policy).</dd>
             <dt><a href="https://attack.mitre.org/mitigations/M1056">Pre-compromise Mitigation</a></dt>
             <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to
                 techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource
