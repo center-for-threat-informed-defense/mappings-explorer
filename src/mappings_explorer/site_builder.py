@@ -493,6 +493,7 @@ def load_projects():
         {
             "link": "https://cyberriskinstitute.org/the-profile/",
             "label": "The CRI Profile",
+            "external": True,
         },
     ]
     cri_profile.has_non_mappable_comments = False
