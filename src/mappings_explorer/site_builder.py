@@ -467,13 +467,14 @@ def load_projects():
     cri_profile = ExternalControl()
     cri_profile.id = "cri_profile"
     cri_profile.label = "CRI Profile"
-    cri_profile.description = """Advanced security features in Intel vPro hardware can be
-        leveraged by operating system (OS) and security software features across system
-        attack surfaces to optimize mitigations against cyber threats. These mappings
-        demonstrate the practical application of hardware features by capabilities in
-        Microsoft Windows 11 with Defender and CrowdStrike Falcon to assist defenders in
-        understanding how these integrated capabilities can help mitigate real-world
-        adversary behaviors as described in MITRE ATT&CK®."""
+    cri_profile.description = """The CRI Profile is a control framework to develop and
+    assess cybersecurity and resiliency programs, produced by and for the global
+    financial sector and maintained by the Cyber Risk Institute (CRI). These mappings
+    connect the security capability coverage of the CRI Profile's Diagnostic Statements
+    with threat mitigation of real-world adversarial behaviors as described in MITRE
+    ATT&CK. The connection of ATT&CK with the CRI Profile control program framework
+    empowers threat-informed analysis and decision-making for cybersecurity control
+    program design and implementation by the financial services sector. """
 
     cri_profile.attackDomains = ["Enterprise"]
     cri_profile.attackDomain = cri_profile.attackDomains[0]
@@ -486,9 +487,13 @@ def load_projects():
     cri_profile.mappings = []
     cri_profile.resources = [
         {
-            "link": "about/methodology/ssm-methodology/",
-            "label": "Security Stack Mapping Methodology",
-        }
+            "link": "about/methodology/nist-methodology/",
+            "label": "Control Framework Mapping Methodology",
+        },
+        {
+            "link": "https://cyberriskinstitute.org/the-profile/",
+            "label": "The CRI Profile",
+        },
     ]
     cri_profile.has_non_mappable_comments = False
 
