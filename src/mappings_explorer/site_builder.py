@@ -491,7 +491,7 @@ def load_projects():
             "label": "Mapping Methodology",
         },
         {
-            "link": "about/methodology/cri_profile_scope/",
+            "link": "about/methodology/cri-profile-scope/",
             "label": "Mapping Scope",
         },
         {
