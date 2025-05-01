@@ -488,7 +488,11 @@ def load_projects():
     cri_profile.resources = [
         {
             "link": "about/methodology/nist-methodology/",
-            "label": "Control Framework Mapping Methodology",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/cri_profile_scope/",
+            "label": "Mapping Scope",
         },
         {
             "link": "https://cyberriskinstitute.org/the-profile/",
@@ -2322,6 +2326,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/nist_scope.html.j2",
         title="NIST 800-53 Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/cri-profile-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/cri_profile_scope.html.j2",
+        title="CRI Profile Mapping Scope",
     )
 
     build_about_page(
