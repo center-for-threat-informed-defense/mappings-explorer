@@ -487,7 +487,7 @@ def load_projects():
     cri_profile.mappings = []
     cri_profile.resources = [
         {
-            "link": "about/methodology/nist-methodology/",
+            "link": "about/methodology/",
             "label": "Mapping Methodology",
         },
         {
