@@ -23,7 +23,7 @@
           {% if project.resources %}
           <p>
             {% for src in project.resources %}
-            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}">
+            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}" {{ 'target="_blank"' if src.external else '' }}>
               {{src.label}}
             </a> {% if not loop.last %}|{% endif %}
             {% endfor %}

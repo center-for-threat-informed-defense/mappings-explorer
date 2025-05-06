@@ -496,7 +496,7 @@ def load_projects():
         },
         {
             "link": "https://cyberriskinstitute.org/the-profile/",
-            "label": "The CRI Profile",
+            "label": "The CRI Profile (External link)",
             "external": True,
         },
     ]
