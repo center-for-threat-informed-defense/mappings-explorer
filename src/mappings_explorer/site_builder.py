@@ -480,9 +480,9 @@ def load_projects():
     cri_profile.attackDomain = cri_profile.attackDomains[0]
     cri_profile.attackVersions = ["16.1"]
     cri_profile.attackVersion = cri_profile.attackVersions[0]
-    cri_profile.versions = ["v2"]
+    cri_profile.versions = ["v2.1"]
     cri_profile.validVersions = [
-        ("v2", "16.1", "Enterprise"),
+        ("v2.1", "16.1", "Enterprise"),
     ]
     cri_profile.mappings = []
     cri_profile.resources = [
