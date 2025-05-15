@@ -38,13 +38,7 @@
             <dt>Operational vs. Policy and Procedural Controls</dt>
             <dd>This effort is focused on the technical and operational elements of The CRI Profile and did not take into account the management elements that are often focused on organization specific policies and procedures. This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques. </dd>
             <dt>Mitigation vs. Monitoring</dt>
-            <dd>Controls that may only monitor adversary behaviors are out of scope. The focus of this effort is on
-                technical controls that mitigate adversary techniques and sub-techniques. For example, IR-05 Incident
-                Monitoring would be out-of-scope as this does not serve as a mitigation, but rather tracking and
-                documenting security incident occurrence. However, RA-05 Vulnerability Monitoring and Scanning is
-                in scope as it calls for remediation of vulnerabilities thereby mitigating attacks. Consideration
-                is not given for the potential that an adversary might be dissuaded or change their tactics to try
-                and avoid detection if they thought activity was being monitored.</dd>
+            <dd>Capabilities that may only monitor adversary behaviors are out of scope. The focus of this effort is on technical capabilities that mitigate adversary techniques and sub-techniques. Consideration is not given for the potential that an adversary might be dissuaded or change their tactics to try and avoid detection if they thought activity was being monitored.</dd>
             <dt>Diagnostic Statements vs. Function, Category, and Subcategory</dt>
             <dd>This effort maps at the diagnostic statement level and does not map at the function, category, or subcategory level, although consideration was given to each diagnostic statement's grouping by function, category, and subcategory.</dd>
             <dt>Implicit vs. Explicit Mitigation</dt>
@@ -119,12 +113,12 @@
             <tr>
                 <td>Identify: Risk Assessment (ID.RA)</td>
                 <td>Partial</td>
-                <td>Diagnostic statements for security testing and remediation before implementation or following changes, thereby mitigating attacks, are in scope.</td>
+                <td>Diagnostic statements for remediation of identified vulnerabilities before implementation or following changes are in scope.</td>
             </tr>
             <tr>
                 <td>Identify: Improvement (ID.IM)</td>
-                <td>No</td>
-                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for data protection are in scope.</td>
             </tr>
             <tr>
                 <td>Protect: Identity Management, Authentication, and Access Control (PR.AA)</td>
@@ -158,8 +152,8 @@
             </tr>
             <tr>
                 <td>Detect: Adverse Event Analysis (DE.AE)</td>
-                <td>Partial</td>
-                <td>Diagnostic statements providing operational and technical controls to prevent execution of adversary techniques are in scope.</td>
+                <td>No</td>
+                <td>Incident analysis elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
             </tr>
             <tr>
                 <td>Respond: Incident Management (RS.MA)</td>
@@ -193,8 +187,8 @@
             </tr>
             <tr>
                 <td>Extend: Procurement Planning and Due Diligence (EX.DD)</td>
-                <td>No</td>
-                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for third-party systems and software are in scope.</td>
             </tr>
             <tr>
                 <td>Extend: Third-Party Contracts and Agreements (EX.CN)</td>
@@ -203,8 +197,8 @@
             </tr>
             <tr>
                 <td>Extend: Monitoring and Managing Suppliers (EX.MM)</td>
-                <td>No</td>
-                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for third-party systems and software are in scope.</td>
             </tr>
             <tr>
                 <td>Extend: Relationship Termination (EX.TR)</td>
