@@ -343,9 +343,10 @@ def load_projects():
         most important for their environment."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
-    azure.attackVersions = ["8.2"]
-    azure.versions = ["06.29.2021"]
+    azure.attackVersions = ["16.1", "8.2"]
+    azure.versions = ["04.26.2025", "06.29.2021"]
     azure.validVersions = [
+        ("04.26.2025", "16.1", "Enterprise"),
         ("06.29.2021", "8.2", "Enterprise"),
     ]
     azure.mappings = []
@@ -463,7 +464,9 @@ def load_projects():
     ]
     intel_vpro.has_non_mappable_comments = False
 
-    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
+    projects = [azure]
+
+    # projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -580,7 +583,7 @@ def parse_capability_groups(
             )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if project.id == "aws" or project.id == "azure" or project.id == "m365":
+    if project.id == "aws" or project.id == "m365":
         get_security_stack_descriptions(project=project)
 
 
