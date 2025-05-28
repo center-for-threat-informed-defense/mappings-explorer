@@ -793,6 +793,22 @@
             "status": "complete"
         },
         {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "This control can detect file obfuscation.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware",
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware-code-samples"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "alerts_for_windows_machines",
             "capability_description": "Alerts for Windows Machines",
             "mapping_type": "technique_scores",
@@ -852,6 +868,22 @@
             "score_value": "minimal",
             "related_score": "T1027",
             "comments": "This control may quarantine and/or delete malware that has been packed by well known software packing utilities. These utilities can provide signatures that apply to a variety of malware.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1027.002",
+            "attack_object_name": "Software Packing",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "related_score": "T1027",
+            "comments": "This control may detect malware that has been packed by well known software packing utilities. These utilities can provide signatures that apply to a variety of malware.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
             ],
@@ -1510,6 +1542,21 @@
             "score_category": "protect",
             "score_value": "partial",
             "comments": "This control can protect web applications from network service scanning by an adversary. Because this protection is specific to web applications (although frequent targets) and not other application types enumerated in the procedure examples of this technique (e.g. Active Directory), it has been scored as Partial.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "azure_web_application_firewall",
+            "capability_description": "Azure Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1046",
+            "attack_object_name": "Network Service Discovery",
+            "capability_group": "azure_web_application_firewall",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This control can detect network service scanning of web applications by an adversary. Because this detection is specific to web applications (although frequent targets) and not other application types enumerated in the procedure examples of this technique (e.g. Active Directory), it has been scored as Partial.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
             ],
@@ -2699,6 +2746,21 @@
             "status": "complete"
         },
         {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1068",
+            "attack_object_name": "Exploitation for Privilege Escalation",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This control may alert on detection of new privileged containers and high privilege roles.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "vulnerability_management",
             "capability_description": "Microsoft Defender for Cloud: Vulnerability Management",
             "mapping_type": "technique_scores",
@@ -3020,6 +3082,21 @@
             "status": "complete"
         },
         {
+            "capability_id": "azure_web_application_firewall",
+            "capability_description": "Azure Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1071",
+            "attack_object_name": "Application Layer Protocol",
+            "capability_group": "azure_web_application_firewall",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "This control can detect one of the sub-techniques of this technique while not providing detection for the remaining, resulting in a Minimal overall score.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "azure_network_watcher_traffic_analytics",
             "capability_description": "Azure Network Watcher: Traffic Analytics",
             "mapping_type": "technique_scores",
@@ -3107,6 +3184,22 @@
             "score_value": "partial",
             "related_score": "T1071",
             "comments": "This control can protect web applications from protocol attacks that may be indicative of adversary activity.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "azure_web_application_firewall",
+            "capability_description": "Azure Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1071.001",
+            "attack_object_name": "Web Protocols",
+            "capability_group": "azure_web_application_firewall",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1071",
+            "comments": "This control can detect protocol attacks targeting web applications that may be indicative of adversary activity.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
             ],
@@ -3686,6 +3779,21 @@
             "status": "complete"
         },
         {
+            "capability_id": "defender_for_storage",
+            "capability_description": "Microsoft Defender for Cloud: Defender for Storage",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1080",
+            "attack_object_name": "Taint Shared Content",
+            "capability_group": "defender_for_storage",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "When a file is suspected to contain malware, Security Center displays an alert and can optionally email the storage owner for approval to delete the suspicious file.\"  This delete response capability leads to a Response type of Eradication although it is specific to Azure Blob, Azure Files and Azure Data Lake Storage storage types resulting in an overall score of Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurestorage\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1082\tSystem Information Discovery\talerts_for_windows_machines\tdetect\tminimal\tThis control may detect local reconnaissance activity specific to using the systeminfo commands. The following alerts may be generated: \"Detected possible local reconnaissance activity\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdocker_host_hardening\tMicrosoft Defender for Cloud: Docker Host Hardening\ttechnique_scores\tT1083\tFile and Directory Discovery\tdocker_host_hardening\tprotect\tminimal\tThis control may provide recommendations to ensure sensitive host system directories are not mounted in the container. \thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/harden-docker-hosts\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_role_based_access_control\tAzure Role-Based Access Control\ttechnique_scores\tT1087\tAccount Discovery\tazure_role_based_access_control\tprotect\tminimal\tThis control only provides protection for one of this technique's sub-techniques while not providing any protection for its procedure examples nor its remaining sub-technqiues and therefore its coverage score factor is Minimal, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/role-based-access-control/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1087\tAccount Discovery\talerts_for_windows_machines\tdetect\tpartial\tThis control provides partial detection for some of this technique's sub-techniques and procedure examples resulting in a Partial Coverage score and consequently an overall score of Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_resource_manager\tMicrosoft Defender for Resource Manager\ttechnique_scores\tT1087\tAccount Discovery\tdefender_for_resource_manager\tdetect\tminimal\tThis control may alert on Azure cloud account discovery activity but may not provide alerts for other account types or undocumented exploitation toolkits. Consequently, its Coverage  score is Minimal resulting in an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-resource-manager-introduction,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-resourcemanager\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1087\tAccount Discovery\tdefender_for_app_service\tdetect\tminimal\tThis control only covers one platform and procedure for one of this technique's sub-techniques, and minimal coverage of its procedure examples resulting in a Minimal overall score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction,https://azure.microsoft.com/en-us/services/app-service/,https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1087.001\tLocal Account\talerts_for_windows_machines\tdetect\tpartial\tThis control may detect when the local administrators group is enumerated or when mulitiple domain accounts are queried. The following alerts may be generated: \"Multiple Domain Accounts Queried\", \"Local Administrators group members were enumerated\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1087.001\tLocal Account\tdefender_for_app_service\tdetect\tminimal\tThis control analyzes host data to detect execution of known malicious PowerShell PowerSploit cmdlets. This covers execution of this sub-technique via the Get-ProcessTokenGroup module on Windows, but does not address other procedures or platforms, and temporal factor is unknown, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1087.002\tDomain Account\talerts_for_windows_machines\tdetect\tpartial\tThis control may detect when the local administrators group is enumerated or when mulitiple domain accounts are queried. The following alerts may be generated: \"Multiple Domain Accounts Queried\", \"Local Administrators group members were enumerated\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_role_based_access_control\tAzure Role-Based Access Control\ttechnique_scores\tT1087.004\tCloud Account\tazure_role_based_access_control\tprotect\tpartial\tThis control can be used to implement the least-privilege principle for account management  and thereby limit the accounts that can be used for account discovery.\thttps://learn.microsoft.com/en-us/azure/role-based-access-control/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_resource_manager\tMicrosoft Defender for Resource Manager\ttechnique_scores\tT1087.004\tCloud Account\tdefender_for_resource_manager\tdetect\tpartial\tThis control may alert on Account Discovery of  Cloud Accounts activity generated by specific toolkits, such as MicroBurst, PowerZure, etc. It may not generate alerts on undocumented discovery techniques or exploitation toolkits. The following alerts may be  generated: \"PowerZure exploitation toolkit used to enumerate storage containers, shares, and tables\", \"PowerZure exploitation toolkit used to enumerate resources\", \"MicroBurst exploitation toolkit used to enumerate resources in your subscriptions\", \"Azurite toolkit run detected\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-resource-manager-introduction\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1090\tProxy\tazure_network_security_groups\tprotect\tpartial\tThis control can restrict ports and inter-system / inter-enclave connections as described by the Proxy related sub-techniques although it doesn't provide protection for domain-fronting.  It furthermore provides partial protection of this technique's procedure examples resulting in an overall Partial score.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview,https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works,https://learn.microsoft.com/en-us/azure/defender-for-cloud/prepare-deprecation-log-analytics-mma-agent#feature-functionality\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_watcher_traffic_analytics\tAzure Network Watcher: Traffic Analytics\ttechnique_scores\tT1090\tProxy\tazure_network_watcher_traffic_analytics\tdetect\tpartial\tThis control can detect anomalous traffic between systems and external networks.\thttps://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_dns\tAlerts for DNS\ttechnique_scores\tT1090\tProxy\talerts_for_dns\tdetect\tminimal\tCan detect DNS activity to anonymity networks e.g. TOR.  Because this detection is specific to DNS, its coverage score is Minimal resulting in an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-dns\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1090.001\tInternal Proxy\tazure_network_security_groups\tprotect\tpartial\tThis control can restrict access between systems, enclaves, and workloads thereby mitigating these proxy related sub-techniques.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_watcher_traffic_analytics\tAzure Network Watcher: Traffic Analytics\ttechnique_scores\tT1090.001\tInternal Proxy\tazure_network_watcher_traffic_analytics\tdetect\tpartial\tThis control can detect abuse of internal proxies.\thttps://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics?tabs=Americas\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1090.002\tExternal Proxy\tazure_network_security_groups\tprotect\tpartial\tThis control can restrict access between systems, enclaves, and workloads thereby mitigating these proxy related sub-techniques.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_watcher_traffic_analytics\tAzure Network Watcher: Traffic Analytics\ttechnique_scores\tT1090.002\tExternal Proxy\tazure_network_watcher_traffic_analytics\tdetect\tpartial\tThis control can detect abuse of external proxies.\thttps://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics?tabs=Americas\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNew\tai_threat_protection\tMicrosoft Defender for Cloud: AI Threat Protection\ttechnique_scores\tT1090.003\tMulti-hop Proxy\tai_threat_protection\tdetect\tpartial\tThis capability can detect (alert: AI.Azure_AccessFromAnonymizedIP) when an AI is accessed from a Tor network IP.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-ai-workloads\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1090.003\tMulti-hop Proxy\tazure_network_security_groups\tprotect\tpartial\tThis control can restrict access between systems, enclaves, and workloads thereby mitigating these proxy related sub-techniques.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_watcher_traffic_analytics\tAzure Network Watcher: Traffic Analytics\ttechnique_scores\tT1090.003\tMulti-hop Proxy\tazure_network_watcher_traffic_analytics\tdetect\tpartial\tThis control can detect abuse of multi-hop proxies.\thttps://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics?tabs=Americas\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1095\tNon-Application Layer Protocol\tazure_network_security_groups\tprotect\tpartial\tThis control can be used to restrict access to trusted networks and protocols.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview,https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works,https://learn.microsoft.com/en-us/azure/defender-for-cloud/prepare-deprecation-log-analytics-mma-agent#feature-functionality\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_firewall\tAzure Firewall\ttechnique_scores\tT1095\tNon-Application Layer Protocol\tazure_firewall\tprotect\tpartial\t\"This control's threat intelligence-based filtering feature can be enabled to alert and deny traffic from/to known malicious IP addresses and domains. The IP addresses and domains are sourced from the Microsoft Threat Intelligence feed.  Because this protection is limited to known malicious IP addresses and domains and does not provide protection from such attacks from unknown domains and IP addresses, this is scored as partial coverage resulting in an overall Partial score.\nFurthermore, it can be used to filter non-application layer protocol traffic such as ICMP.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/firewall/overview"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "azure_role_based_access_control",
             "capability_description": "Azure Role-Based Access Control",
             "mapping_type": "technique_scores",
@@ -3939,6 +4047,22 @@
             "status": "complete"
         },
         {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1105",
+            "attack_object_name": "Ingress Tool Transfer",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "This control may scan created files for malware. This control is dependent on a signature being available.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware",
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware-code-samples"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "alerts_for_windows_machines",
             "capability_description": "Alerts for Windows Machines",
             "mapping_type": "technique_scores",
@@ -3967,6 +4091,21 @@
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction",
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurestorage"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_storage",
+            "capability_description": "Microsoft Defender for Cloud: Defender for Storage",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1105",
+            "attack_object_name": "Ingress Tool Transfer",
+            "capability_group": "defender_for_storage",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "When a file is suspected to contain malware, Security Center displays an alert and can optionally email the storage owner for approval to delete the suspicious file.\"  This delete response capability leads to a Response type of Eradication although it is specific to Azure Blob, Azure Files and Azure Data Lake Storage storage types resulting in an overall score of Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurestorage\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1105\tIngress Tool Transfer\tdefender_for_app_service\tdetect\tpartial\tThis control detects binary downloads via certutil, monitors for FTP access from IP addresses found in threat intelligence, monitors for references to suspicious domain names and file downloads from known malware sources, and monitors processes for downloads from raw-data websites like Pastebin. Temporal factor is unknown.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction,https://azure.microsoft.com/en-us/services/app-service/,https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_policy\tAzure Policy\ttechnique_scores\tT1110\tBrute Force\tazure_policy\tprotect\tpartial\tThis control can protect against brute force attacks.\thttps://learn.microsoft.com/en-us/azure/governance/policy/overview,https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1110\tBrute Force\tai_security_recommendations\tprotect\tminimal\tThis control's \"Authentication to Linux machines should require SSH keys\" recommendation can  lead to obviating SSH Brute Force password attacks.  Because this is specific to Linux, the coverage score is Minimal leading to an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1110\tBrute Force\talerts_for_windows_machines\tdetect\tpartial\tThis control provides detection for some of this technique's sub-techniques and procedure examples resulting  in a Partial Coverage score and consequently an overall score of Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tjust-in-time_vm_access\tMicrosoft Defender for Cloud: Just-in-Time VM Access\ttechnique_scores\tT1110\tBrute Force\tjust-in-time_vm_access\tprotect\tsignificant\tThis control can be configured to completely block inbound access to selected ports until access is requested. This prevents any attempt at brute forcing a protocol, such as RDP or SSH, unless the attacker has the credentials and permissions to request such access. Even if permission has been granted to an authorized user to access the virtual machine, a list of authorized IP addresses for that access can be configured.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-usage?tabs=jit-config-asc%2Cjit-request-api,https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1110\tBrute Force\talerts_for_linux_machines\tdetect\tpartial\tThis control provides partial coverage for most of this technique's sub-techniques and procedures.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_azure_network_layer\tAlerts for Azure Network Layer\ttechnique_scores\tT1110\tBrute Force\talerts_for_azure_network_layer\tdetect\tsignificant\tThis control can identify multiple connection attempts by external IPs, which may be indicative of Brute Force attempts, though not T1110.002, which is performed offline. It provides significant detection from most of this technique's sub-techniques and  procedure examples resulting in an overall score of Significant.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurenetlayer\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNew\tdefender_for_open_source_databases\tMicrosoft Defender for Open-Source Relational Databases\ttechnique_scores\tT1110\tBrute Force\tdefender_for_open_source_databases\tdetect\tpartial\tThis control can detect attempted or successful brute force attacks.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-open-source-relational-databases\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tadvanced_threat_protection_for_azure_sql_database\tAdvanced Threat Protection for Azure SQL Database\ttechnique_scores\tT1110\tBrute Force\tadvanced_threat_protection_for_azure_sql_database\tdetect\tminimal\tThis control covers the majority of sub-techniques for this parent technique and may cover both successful and unsuccessful brute force attacks. This control only provides alerts for a set of Azure database offerings. Databases that have been deployed to endpoints within Azure or third-party databases deployed to Azure do not generate alerts for this control.\thttps://learn.microsoft.com/en-us/azure/azure-sql/database/threat-detection-overview,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-sql-db-and-warehouse\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1110.001\tPassword Guessing\tai_security_recommendations\tprotect\tminimal\tThis control's \"Authentication to Linux machines should require SSH keys\" can obviate SSH Brute Force password attacks.  Because this is specific to Linux, the coverage score is Minimal leading to an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1110.001\tPassword Guessing\talerts_for_windows_machines\tdetect\tsignificant\tThis control may detect successful and failed brute force attempts with logic that factors the IP, time between attempts, and other suspicious activity. The following alerts may be generated: \"A logon from a malicious IP has been detected\", \"A logon from a malicious IP has been detected. [seen multiple times]\", \"Successful brute force attack\", \"Suspicious authentication activity\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1110.001\tPassword Guessing\talerts_for_linux_machines\tdetect\tpartial\tThis control may alert on multiple successful and failed brute force attempts against SSH. There are no alerts for other methods of logging into Linux machines.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tjust-in-time_vm_access\tMicrosoft Defender for Cloud: Just-in-Time VM Access\ttechnique_scores\tT1110.001\tPassword Guessing\tjust-in-time_vm_access\tprotect\tsignificant\tThis control can be configured to completely block inbound access to selected ports until access is requested. This prevents any attempt at brute forcing a protocol, such as RDP or SSH, unless the attacker has the credentials and permissions to request such access. Even if permission has been granted to an authorized user to access the virtual machine, a list of authorized IP addresses for that access can be configured.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview?tabs=defender-for-container-arch-aks\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tadvanced_threat_protection_for_azure_sql_database\tAdvanced Threat Protection for Azure SQL Database\ttechnique_scores\tT1110.001\tPassword Guessing\tadvanced_threat_protection_for_azure_sql_database\tdetect\tminimal\tThis control may alert on repeated sign in attempts to the resource and successful logins from a suspicious location, IP address, or a user that does not commonly log in to the resource.  Because this control is specific to Azure database offerings, the detection coverage is Minimal.\thttps://learn.microsoft.com/en-us/azure/azure-sql/database/threat-detection-overview?view=azuresql\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_azure_network_layer\tAlerts for Azure Network Layer\ttechnique_scores\tT1110.001\tPassword Guessing\talerts_for_azure_network_layer\tdetect\tsignificant\tThis control can identify multiple connection attempts by external IPs, which may be indicative of Brute Force attempts, though not T1110.002, which is performed offline.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-azure-network-layer\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_policy\tAzure Policy\ttechnique_scores\tT1110.001\tPassword Guessing\tazure_policy\tprotect\tpartial\tThis control may provide recommendations to implement multi-factor authentication, implement password security policies, and replacing password authentication with more secure authentication methods. This control can affect Azure, Azure cloud application, and endpoint credentials.\thttps://learn.microsoft.com/en-us/azure/governance/policy/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1110.003\tPassword Spraying\tai_security_recommendations\tprotect\tminimal\tThis control's \"Authentication to Linux machines should require SSH keys\" can obviate SSH Brute Force password attacks.  Because this is specific to Linux, the coverage score is Minimal leading to an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1110.003\tPassword Spraying\talerts_for_windows_machines\tdetect\tsignificant\tThis control may detect successful and failed brute force attempts with logic that factors the IP, time between attempts, and other suspicious activity. The following alerts may be generated: \"A logon from a malicious IP has been detected\", \"A logon from a malicious IP has been detected. [seen multiple times]\", \"Successful brute force attack\", \"Suspicious authentication activity\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1110.003\tPassword Spraying\talerts_for_linux_machines\tdetect\tpartial\tThis control may alert on multiple successful and failed brute force attempts against SSH. There are no alerts for other methods of logging into Linux machines.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tjust-in-time_vm_access\tMicrosoft Defender for Cloud: Just-in-Time VM Access\ttechnique_scores\tT1110.003\tPassword Spraying\tjust-in-time_vm_access\tprotect\tsignificant\tThis control can be configured to completely block inbound access to selected ports until access is requested. This prevents any attempt at brute forcing a protocol, such as RDP or SSH, unless the attacker has the credentials and permissions to request such access. Even if permission has been granted to an authorized user to access the virtual machine, a list of authorized IP addresses for that access can be configured.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview?tabs=defender-for-container-arch-aks\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tadvanced_threat_protection_for_azure_sql_database\tAdvanced Threat Protection for Azure SQL Database\ttechnique_scores\tT1110.003\tPassword Spraying\tadvanced_threat_protection_for_azure_sql_database\tdetect\tminimal\tThis control may alert on repeated sign in attempts to the resource and successful logins from a suspicious location, IP address, or a user that does not commonly log in to the resource.  Because this control is specific to Azure database offerings, the detection coverage is Minimal.\thttps://learn.microsoft.com/en-us/azure/azure-sql/database/threat-detection-overview?view=azuresql\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_azure_network_layer\tAlerts for Azure Network Layer\ttechnique_scores\tT1110.003\tPassword Spraying\talerts_for_azure_network_layer\tdetect\tsignificant\tThis control can identify multiple connection attempts by external IPs, which may be indicative of Brute Force attempts, though not T1110.002, which is performed offline.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-azure-network-layer\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_policy\tAzure Policy\ttechnique_scores\tT1110.003\tPassword Spraying\tazure_policy\tprotect\tpartial\tThis control may provide recommendations to implement multi-factor authentication, implement password security policies, and replacing password authentication with more secure authentication methods. This control can affect Azure, Azure cloud application, and endpoint credentials.\thttps://learn.microsoft.com/en-us/azure/governance/policy/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1110.004\tCredential Stuffing\tai_security_recommendations\tprotect\tminimal\tThis control's \"Authentication to Linux machines should require SSH keys\" can obviate SSH Brute Force password attacks.  Because this is specific to Linux, the coverage score is Minimal leading to an overall Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1110.004\tCredential Stuffing\talerts_for_windows_machines\tdetect\tsignificant\tThis control may detect successful and failed brute force attempts with logic that factors the IP, time between attempts, and other suspicious activity. The following alerts may be generated: \"A logon from a malicious IP has been detected\", \"A logon from a malicious IP has been detected. [seen multiple times]\", \"Successful brute force attack\", \"Suspicious authentication activity\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1110.004\tCredential Stuffing\talerts_for_linux_machines\tdetect\tpartial\tThis control may alert on multiple successful and failed brute force attempts against SSH. There are no alerts for other methods of logging into Linux machines.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tjust-in-time_vm_access\tMicrosoft Defender for Cloud: Just-in-Time VM Access\ttechnique_scores\tT1110.004\tCredential Stuffing\tjust-in-time_vm_access\tprotect\tsignificant\tThis control can be configured to completely block inbound access to selected ports until access is requested. This prevents any attempt at brute forcing a protocol, such as RDP or SSH, unless the attacker has the credentials and permissions to request such access. Even if permission has been granted to an authorized user to access the virtual machine, a list of authorized IP addresses for that access can be configured.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview?tabs=defender-for-container-arch-aks\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tadvanced_threat_protection_for_azure_sql_database\tAdvanced Threat Protection for Azure SQL Database\ttechnique_scores\tT1110.004\tCredential Stuffing\tadvanced_threat_protection_for_azure_sql_database\tdetect\tminimal\tThis control may alert on repeated sign in attempts to the resource and successful logins from a suspicious location, IP address, or a user that does not commonly log in to the resource.  Because this control is specific to Azure database offerings, the detection coverage is Minimal.\thttps://learn.microsoft.com/en-us/azure/azure-sql/database/threat-detection-overview?view=azuresql\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_azure_network_layer\tAlerts for Azure Network Layer\ttechnique_scores\tT1110.004\tCredential Stuffing\talerts_for_azure_network_layer\tdetect\tsignificant\tThis control can identify multiple connection attempts by external IPs, which may be indicative of Brute Force attempts, though not T1110.002, which is performed offline.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-azure-network-layer\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_policy\tAzure Policy\ttechnique_scores\tT1110.004\tCredential Stuffing\tazure_policy\tprotect\tpartial\tThis control may provide recommendations to implement multi-factor authentication, implement password security policies, and replacing password authentication with more secure authentication methods. This control can affect Azure, Azure cloud application, and endpoint credentials.\thttps://learn.microsoft.com/en-us/azure/governance/policy/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1112\tModify Registry\talerts_for_windows_machines\tdetect\tpartial\tThis control may detect several methods used to modify the registry for purposes of persistence, privilege elevation, and execution. The following alerts may be generated: \"Detected change to a registry key that can be abused to bypass UAC\", \"Detected enabling of the WDigest UseLogonCredential registry key\", \"Detected suppression of legal notice displayed to users at logon\", \"Suspicious WindowPosition registry value detected\", \"Windows registry persistence method detected\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_azure_sql_databases\tMicrosoft Defender for Azure SQL Databases\ttechnique_scores\tT1112\tModify Registry\tdefender_for_azure_sql_databases\tprotect\tminimal\tThis control may scan for any stored procedures that can access the Registry and checks that permission to execute those stored procedures have been revoked from all users (other than dbo).\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-sql-introduction\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1113\tScreen Capture\talerts_for_linux_machines\tdetect\tpartial\tThis control may alert on usage of a screenshot tool. Documentation is not provided on the logic for determining a screenshot tool.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1113\tScreen Capture\tdefender_for_app_service\tdetect\tminimal\tThis control analyzes host data to detect execution of known malicious PowerShell PowerSploit cmdlets. This covers execution of this technique via the Get-TimedScreenshot module on Windows, but does not address other procedures or platforms, and temporal factor is unknown, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction,https://azure.microsoft.com/en-us/services/app-service/,https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1123\tAudio Capture\tdefender_for_app_service\tdetect\tminimal\tThis control analyzes host data to detect execution of known malicious PowerShell PowerSploit cmdlets. This covers execution of this technique via the Get-MicrophoneAudio module on Windows, but does not address other procedures or platforms, and temporal factor is unknown, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction,https://azure.microsoft.com/en-us/services/app-service/,https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_security_groups\tAzure Network Security Groups\ttechnique_scores\tT1133\tExternal Remote Services\tazure_network_security_groups\tprotect\tpartial\tThis control can be used to restrict direct access to remote service gateways and concentrators that typically accompany external remote services.  This can be circumvented though if an adversary is able to compromise a trusted host and use it to access the external remote service. This results in an overall partial (coverage) score.\thttps://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview,https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works,https://learn.microsoft.com/en-us/azure/defender-for-cloud/prepare-deprecation-log-analytics-mma-agent#feature-functionality\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_network_watcher_traffic_analytics\tAzure Network Watcher: Traffic Analytics\ttechnique_scores\tT1133\tExternal Remote Services\tazure_network_watcher_traffic_analytics\tdetect\tpartial\tThis control can identify anomalous access to external remote services.\thttps://learn.microsoft.com/en-us/azure/network-watcher/traffic-analytics\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_policy\tAzure Policy\ttechnique_scores\tT1133\tExternal Remote Services\tazure_policy\tprotect\tpartial\tThis control may provide recommendations to secure external remote services, such as restricting SSH access, enabling multi-factor authentication for VPN access, and auditing external remote services that are not necessary or updated.\thttps://learn.microsoft.com/en-us/azure/governance/policy/overview,https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies#api-for-fhir\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_firewall\tAzure Firewall\ttechnique_scores\tT1133\tExternal Remote Services\tazure_firewall\tprotect\tpartial\tThis control can limit access to external remote services to the minimum necessary.\thttps://learn.microsoft.com/en-us/azure/firewall/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1133\tExternal Remote Services\tai_security_recommendations\tprotect\tpartial\tThis control's \"Management ports should be closed on your virtual machines\" recommendation can lead to reducing the attack surface of your Azure VMs by recommending closing management ports.  Because this is a recommendation, its score is limited to Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tjust-in-time_vm_access\tMicrosoft Defender for Cloud: Just-in-Time VM Access\ttechnique_scores\tT1133\tExternal Remote Services\tjust-in-time_vm_access\tprotect\tsignificant\tThis control can be configured to completely block inbound access to selected ports until access is requested. This prevents any attempt at utilizing external remote services, such as RDP or a VPN, unless the attacker has the credentials and permissions to request such access. Even if permission has been granted to an authorized user to access the virtual machine, a list of authorized IP addresses for that access can be configured.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-usage?tabs=jit-config-asc%2Cjit-request-api,https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_azure_network_layer\tAlerts for Azure Network Layer\ttechnique_scores\tT1133\tExternal Remote Services\talerts_for_azure_network_layer\tdetect\tpartial\tThis control can potentially identify malicious use of remote services via alerts such as \"Suspicious incoming RDP network activity\" and \"Suspicious Incoming SSH network activity\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-azurenetlayer\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNew\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1134\tAccess Token Manipulation\talerts_for_windows_machines\tdetect\tpartial\tThis control can detect when commands associated with this technique are executed, such as runas.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tdefender_for_app_service\tMicrosoft Defender for Cloud: Defender for App Service\ttechnique_scores\tT1134\tAccess Token Manipulation\tdefender_for_app_service\tdetect\tminimal\tThis control analyzes host data to detect execution of known malicious PowerShell PowerSploit cmdlets. This covers execution of this technique via the Invoke-TokenManipulation module on Windows, but does not address other procedures or platforms, and temporal factor is unknown, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-app-service-introduction,https://azure.microsoft.com/en-us/services/app-service/,https://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_role_based_access_control\tAzure Role-Based Access Control\ttechnique_scores\tT1136\tCreate Account\tazure_role_based_access_control\tprotect\tminimal\tThis control only provides protection for one of this technique's sub-techniques while not providing any protection for the remaining and therefore its coverage score factor is Minimal, resulting in a Minimal score.\thttps://learn.microsoft.com/en-us/azure/role-based-access-control/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1136\tCreate Account\tai_security_recommendations\tprotect\tminimal\tThis control's \"Immutable (read-only) root filesystem should be enforced for containers\" recommendation can mitigate a sub-technique of this technique.  Due to its Minimal coverage, its score is assessed as Minimal.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1136\tCreate Account\talerts_for_windows_machines\tdetect\tminimal\tThis control's detection is specific to a minority of this technique's sub-techniques resulting in a Minimal Coverage score and consequently an overall score of Minimal.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1136\tCreate Account\talerts_for_linux_machines\tdetect\tminimal\tThis control is only relevant for Linux endpoints, and it provides partial coverage for the only sub-technique relevant on Linux endpoints, Local Account.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tai_security_recommendations\tMicrosoft Defender for Cloud: AI Security Recommendations\ttechnique_scores\tT1136.001\tLocal Account\tai_security_recommendations\tprotect\tpartial\tThis control's \"Immutable (read-only) root filesystem should be enforced for containers\" recommendation can lead to preventing system files from being modified in Kubernetes containers thereby mitigating this sub-technique since adding an account (on Linux) requires modifying system files.  Because this is a recommendation, its score is capped at Partial.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/recommendations-reference-ai\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_windows_machines\tAlerts for Windows Machines\ttechnique_scores\tT1136.001\tLocal Account\talerts_for_windows_machines\tdetect\tpartial\tThis control may detect when an account is created with an account name that closely resembles a standard Windows account or group name. This may be an account created by an attacker to blend into the environment. The following alerts may be generated: \"Suspicious Account Creation Detected\".\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/plan-defender-for-servers,https://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-windows-machines\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\talerts_for_linux_machines\tAlerts for Linux Machines\ttechnique_scores\tT1136.001\tLocal Account\talerts_for_linux_machines\tdetect\tpartial\tThis control may alert on usage of the useradd command to create new users and the creation of local user accounts with suspicious similarity to other account names.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/alerts-reference#alerts-linux\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tazure_role_based_access_control\tAzure Role-Based Access Control\ttechnique_scores\tT1136.003\tCloud Account\tazure_role_based_access_control\tprotect\tpartial\tThis control can be used to implement the least-privilege principle for account management  and thereby limit the number of accounts that can create accounts.\thttps://learn.microsoft.com/en-us/azure/role-based-access-control/overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tfile_integrity_monitoring\tMicrosoft Defender for Cloud: File Integrity Monitoring\ttechnique_scores\tT1137\tOffice Application Startup\tfile_integrity_monitoring\tdetect\tminimal\tThis control can detect peristence via office application startup.\thttps://learn.microsoft.com/en-us/azure/defender-for-cloud/file-integrity-monitoring-overview\t\t\t\t\t\t\t\t\t\t\r\nFinal Draft\tNo change\tfile_integrity_monitoring\tMicrosoft Defender for Cloud: File Integrity Monitoring\ttechnique_scores\tT1137.002\tOffice Test\tfile_integrity_monitoring\tdetect\tpartial\t\"This control may detect changes to the Windows registry to establish persistence with the Office Test sub-technique. The specificity of registry keys involved may reduce the false positive rate. This control at worst scans for changes on an hourly basis.\n",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/file-integrity-monitoring-overview"
             ],
             "status": "complete"
         },
@@ -4114,6 +4253,21 @@
             "status": "complete"
         },
         {
+            "capability_id": "azure_web_application_firewall",
+            "capability_description": "Azure Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1190",
+            "attack_object_name": "Exploit Public-Facing Application",
+            "capability_group": "azure_web_application_firewall",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "This control can detect common web application attack vectors.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/web-application-firewall/overview"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "azure_update_manager",
             "capability_description": "Azure Update Manager",
             "mapping_type": "technique_scores",
@@ -4246,6 +4400,21 @@
             "score_category": "protect",
             "score_value": "minimal",
             "comments": "This control may provide provide information about vulnerabilities within container images. The limited scope of containers and registries that are applicable to this control contribute to the lower score.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1190",
+            "attack_object_name": "Exploit Public-Facing Application",
+            "capability_group": "defender_for_containers",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "This control may alert on publicly exposed Kubernetes services. This may provide context on services that should be patched or hardened for public access.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
             ],
@@ -4629,6 +4798,22 @@
             "score_value": "minimal",
             "related_score": "T1204",
             "comments": "This control monitors activity in cloud services and on virtual machines to block malware execution. This is dependent on a signature being available. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "related_score": "T1204",
+            "comments": "This control monitors activity in cloud services and on virtual machines to detect malware execution. This is dependent on a signature being available. ",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
             ],
@@ -6393,6 +6578,36 @@
             "status": "complete"
         },
         {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This control may scan and alert on import or creation of container images with known vulnerabilities or a possible expanded surface area for exploitation.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This control may alert on containers with sensitive volume mounts, unneeded privileges, or running an image with digital currency mining software.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "alerts_for_linux_machines",
             "capability_description": "Alerts for Linux Machines",
             "mapping_type": "technique_scores",
@@ -7745,6 +7960,22 @@
             "score_value": "significant",
             "related_score": "T1552",
             "comments": "This capability can detect anomalous usage of APIs.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-apis-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_apis",
+            "capability_description": "Microsoft Defender for Cloud: Microsoft Defender for APIs",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1552.007",
+            "attack_object_name": "Container API",
+            "capability_group": "defender_for_apis",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1552",
+            "comments": "This capability can support configuration of APIs to protect against access to unsecured credentials.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-apis-introduction"
             ],
@@ -9257,6 +9488,22 @@
             "status": "complete"
         },
         {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "This control can detect phishing.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware",
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware-code-samples"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "defender_for_app_service",
             "capability_description": "Microsoft Defender for Cloud: Defender for App Service",
             "mapping_type": "technique_scores",
@@ -9285,6 +9532,22 @@
             "score_value": "minimal",
             "related_score": "T1566",
             "comments": "This control may quarantine and/or delete any spearphishing attachment that has been downloaded and matches a malware signature. Customized malware without a matching signature may not generate an alert.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "microsoft_antimalware_for_azure",
+            "capability_description": "Microsoft Antimalware for Azure",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "microsoft_antimalware_for_azure",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1566",
+            "comments": "This control may detect any spearphishing attachment that has been downloaded and matches a malware signature. Customized malware without a matching signature may not generate an alert.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/security/fundamentals/antimalware"
             ],
@@ -10446,6 +10709,21 @@
             "capability_id": "defender_for_containers",
             "capability_description": "Microsoft Defender for Containers",
             "mapping_type": "technique_scores",
+            "attack_object_id": "T1609",
+            "attack_object_name": "Container Administration Command",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "This capability can detect abuse of container administration services.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
             "attack_object_id": "T1610",
             "attack_object_name": "Deploy Container",
             "capability_group": "defender_for_containers",
@@ -10461,12 +10739,42 @@
             "capability_id": "defender_for_containers",
             "capability_description": "Microsoft Defender for Containers",
             "mapping_type": "technique_scores",
+            "attack_object_id": "T1610",
+            "attack_object_name": "Deploy Container",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "This capability can detect unauthorized deployment of containers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
             "attack_object_id": "T1611",
             "attack_object_name": "Escape to Host",
             "capability_group": "defender_for_containers",
             "score_category": "protect",
             "score_value": "partial",
             "comments": "This capability can protect against escape to host attacks.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1611",
+            "attack_object_name": "Escape to Host",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This capability can detect escape to host.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
             ],
@@ -10507,12 +10815,42 @@
             "capability_id": "defender_for_containers",
             "capability_description": "Microsoft Defender for Containers",
             "mapping_type": "technique_scores",
+            "attack_object_id": "T1612",
+            "attack_object_name": "Build Image on Host",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "This capability can detect building a container image on the host.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
             "attack_object_id": "T1613",
             "attack_object_name": "Container and Resource Discovery",
             "capability_group": "defender_for_containers",
             "score_category": "protect",
             "score_value": "significant",
             "comments": "This capability can protect against container discovery.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1613",
+            "attack_object_name": "Container and Resource Discovery",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "This capability can detect container discovery.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
             ],
@@ -10561,6 +10899,21 @@
             "score_category": "protect",
             "score_value": "significant",
             "comments": "This capability can protect against cloud object storage (blob) discovery.",
+            "references": [
+                "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "defender_for_containers",
+            "capability_description": "Microsoft Defender for Containers",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1619",
+            "attack_object_name": "Cloud Storage Object Discovery",
+            "capability_group": "defender_for_containers",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "This capability can detect cloud storage object (blob) discovery.",
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-containers-introduction"
             ],
@@ -10837,8 +11190,8 @@
             "capability_id": "file_integrity_monitoring",
             "capability_description": "Microsoft Defender for Cloud: File Integrity Monitoring",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1053.002",
-            "attack_object_name": "At",
+            "attack_object_id": "T1053.001",
+            "attack_object_name": "At (Linux)",
             "capability_group": "file_integrity_monitoring",
             "score_category": "detect",
             "score_value": "partial",
@@ -10847,7 +11200,8 @@
             "references": [
                 "https://learn.microsoft.com/en-us/azure/defender-for-cloud/file-integrity-monitoring-overview"
             ],
-            "status": "complete"
+            "status": "complete",
+            "attack_version": "[UNKNOWN_VERSION]"
         },
         {
             "capability_id": "alerts_for_linux_machines",
