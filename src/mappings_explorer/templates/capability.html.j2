@@ -10,8 +10,8 @@
       {% include "_breadcrumbs.html.j2" %}
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ capability.id }}</span> Mappings</h1>
-          <p style="">{{description | safe}}</p>
+          <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ capability.id }}</span></h1>
+          {{description | safe}}
         </div>
         <p class="pt-2">
           {{capability.non_mappable_comment or "" }}
