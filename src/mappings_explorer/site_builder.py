@@ -568,7 +568,7 @@ def parse_capability_groups(
         or project.id == "kev"
         or project.id == "intel-vpro"
         or project.id == "gcp"
-        or project.id == "azure"
+        or (project.id == "azure" and project_version == "04.26.2025")
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -581,7 +581,10 @@ def parse_capability_groups(
             )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if project.id == "aws" or project.id == "m365":
+    if (
+        project.id == "aws"
+        or project.id == "m365"
+    ):
         get_security_stack_descriptions(project=project)
 
 
