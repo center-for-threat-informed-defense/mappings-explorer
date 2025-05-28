@@ -346,8 +346,8 @@ def load_projects():
     azure.attackVersions = ["16.1", "8.2"]
     azure.versions = ["04.26.2025", "06.29.2021"]
     azure.validVersions = [
-        ("04.26.2025", "16.1", "Enterprise"),
         ("06.29.2021", "8.2", "Enterprise"),
+        ("04.26.2025", "16.1", "Enterprise"),
     ]
     azure.mappings = []
     azure.resources = [
