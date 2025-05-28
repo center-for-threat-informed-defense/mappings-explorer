@@ -464,8 +464,9 @@ def load_projects():
     ]
     intel_vpro.has_non_mappable_comments = False
 
-    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
+    projects = [azure]
 
+    # projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -570,7 +571,6 @@ def parse_capability_groups(
         or project.id == "kev"
         or project.id == "intel-vpro"
         or project.id == "gcp"
-        or project.id == "azure"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -671,8 +671,6 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
     elif project.id == "gcp":
         folder_name = DATA_DIR / "SecurityStack" / "GCP"
-    elif project.id == "azure":
-        folder_name = DATA_DIR / "SecurityStack" / "AZURE"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
