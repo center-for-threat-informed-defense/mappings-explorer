@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/17/2021
 name: Role Based Access Control
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -31,7 +31,7 @@ techniques:
           - category: Protect
             value: Partial
             comments: >-
-              This control can be used to implement the least-privilege principle for account management 
+              This control can be used to implement the least-privilege principle for account management
               and thereby limit the accounts that can be used for account discovery.
   - id: T1078
     name: Valid Accounts
@@ -51,7 +51,7 @@ techniques:
           - category: Protect
             value: Partial
             comments: >-
-              This control can be used to implement the least-privilege principle for account management 
+              This control can be used to implement the least-privilege principle for account management
               and thereby limit what an adversary can do with a valid account.
   - id: T1136
     name: Create Account
@@ -70,7 +70,7 @@ techniques:
           - category: Protect
             value: Partial
             comments: >-
-              This control can be used to implement the least-privilege principle for account management 
+              This control can be used to implement the least-privilege principle for account management
               and thereby limit the number of accounts that can create accounts.
   - id: T1098
     name: Account Manipulation
@@ -90,7 +90,7 @@ techniques:
           - category: Protect
             value: Partial
             comments: >-
-              This control can be used to implement the least-privilege principle for account management 
+              This control can be used to implement the least-privilege principle for account management
               and thereby limit the number of accounts that can modify accounts.
   - id: T1578
     name: Modify Cloud Compute Infrastructure
@@ -114,7 +114,7 @@ techniques:
           - category: Protect
             value: Partial
             comments: >-
-              This control can be used to implement the least-privilege principle for account management 
+              This control can be used to implement the least-privilege principle for account management
               and thereby limit the number of accounts that can perform these privileged operations.
   - id: T1580
     name: Cloud Infrastructure Discovery

@@ -2,10 +2,10 @@ version: 1
 ATT&CK version: 9
 creation date: 06/07/2021
 name: AWS Identity and Access Management
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
-tags: 
+tags:
   - Identity
   - Credentials
 description: >-
@@ -29,7 +29,7 @@ techniques:
             value: Partial
             comments: >-
               This control may mitigate the impact of compromised valid accounts by enabling
-              fine-grained access policies and implementing least-privilege policies. MFA 
+              fine-grained access policies and implementing least-privilege policies. MFA
               can provide protection against an adversary that obtains valid credentials by
               requiring the adversary to complete an additional authentication process before
               access is permitted.
@@ -74,7 +74,7 @@ techniques:
               This control may mitigate against application access token theft if the application is
               configured to retrieve temporary security credentials using an IAM role. This
               recommendation is a best practice for IAM but must be explicitly implemented by the
-              application developer. 
+              application developer.
   - id: T1110
     name: Brute Force
     technique-scores:

@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/17/2021
 name: Conditional Access
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -20,7 +20,7 @@ techniques:
       - category: Protect
         value: Significant
         comments: >-
-          Conditional Access can be used to enforce MFA for users which provides significant protection against 
+          Conditional Access can be used to enforce MFA for users which provides significant protection against
           password compromises, requiring an adversary to complete an additional authentication method before
           their access is permitted.
     sub-techniques-scores:
@@ -38,7 +38,7 @@ techniques:
             value: Significant
             comments: >-
               Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a
-              password compromise, requiring an adversary to complete an additional authentication method before 
+              password compromise, requiring an adversary to complete an additional authentication method before
               their access is permitted.
   - id: T1078
     name: Valid Accounts

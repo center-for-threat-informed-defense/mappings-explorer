@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 08/04/2021
 name: AWS CloudWatch
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 tags:
@@ -11,7 +11,7 @@ description: >
   AWS CloudWatch monitors resources, applications, and services to collect and track metrics in
   real-time. These metrics provide visibility into resource utilization, performance, and health.
   AWS CloudWatch integrates with over 70 AWS services including Amazon EC2, Amazon S3, and Amazon
-  ECS among others. 
+  ECS among others.
 techniques:
   - id: T1496
     name: Resource Hijacking
@@ -63,7 +63,7 @@ techniques:
           node_memory_utilization
 
           This mapping is given a score of Partial because it is not possible to differentiate
-          between an authorized and unauthorized increase in resource utilization. 
+          between an authorized and unauthorized increase in resource utilization.
   - id: T1610
     name: Deploy Container
     technique-scores:
@@ -73,12 +73,12 @@ techniques:
           AWS CloudWatch provides various metrics including CPU utilization, connections, disk
           space, memory, bytes sent/received, and the number of running containers among others. The
           following metric could be used to detect if an adversary deployed a new container in the
-          environment. 
+          environment.
 
           node_number_of_running_containers
 
           This mapping is given a score of Partial because it is not possible to differentiate
-          between an authorized and unauthorized deployment of a new container.  
+          between an authorized and unauthorized deployment of a new container.
   - id: T1040
     name: Network Sniffing
     technique-scores:
