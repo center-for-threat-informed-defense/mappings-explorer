@@ -343,10 +343,11 @@ def load_projects():
         most important for their environment."""
     azure.attackDomains = ["Enterprise"]
     azure.attackDomain = azure.attackDomains[0]
-    azure.attackVersions = ["8.2"]
-    azure.versions = ["06.29.2021"]
+    azure.attackVersions = ["16.1", "8.2"]
+    azure.versions = ["04.26.2025", "06.29.2021"]
     azure.validVersions = [
         ("06.29.2021", "8.2", "Enterprise"),
+        ("04.26.2025", "16.1", "Enterprise"),
     ]
     azure.mappings = []
     azure.resources = [
@@ -462,7 +463,6 @@ def load_projects():
         }
     ]
     intel_vpro.has_non_mappable_comments = False
-
     projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
@@ -568,6 +568,7 @@ def parse_capability_groups(
         or project.id == "kev"
         or project.id == "intel-vpro"
         or project.id == "gcp"
+        or project.id == "azure"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -580,7 +581,7 @@ def parse_capability_groups(
             )
         for capability in capabilities_to_get_description:
             get_description_for_capability(capability, project, project_version)
-    if project.id == "aws" or project.id == "azure" or project.id == "m365":
+    if project.id == "aws" or project.id == "m365":
         get_security_stack_descriptions(project=project)
 
 
@@ -668,6 +669,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
     elif project.id == "gcp":
         folder_name = DATA_DIR / "SecurityStack" / "GCP"
+    elif project.id == "azure":
+        folder_name = DATA_DIR / "SecurityStack" / "Azure"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
