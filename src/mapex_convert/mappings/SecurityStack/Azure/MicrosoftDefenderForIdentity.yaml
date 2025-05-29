@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/21/2021
 name: Microsoft Defender for Identity
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -33,7 +33,7 @@ techniques:
           - category: Detect
             value: Significant
             comments: >-
-              The following alert of this control is able to detect domain account discovery: 
+              The following alert of this control is able to detect domain account discovery:
               "Account enumeration reconnaissance (external ID 2003)".  This shouldn't occur
               frequently and therefore the false positive rate should be minimal.
 
@@ -102,7 +102,7 @@ techniques:
           attacker attempting to exploit CVE-2018-8626, a remote code execution vulnerability exists
           in Windows Domain Name System (DNS) servers.  In this detection, a Defender for Identity
           security alert is triggered when DNS queries suspected of exploiting the CVE-2018-8626
-          security vulnerability are made against a domain controller in the network.  
+          security vulnerability are made against a domain controller in the network.
 
           Likewise this controls "Suspected SMB packet manipulation (CVE-2020-0796 exploitation)"
           alert can detect a remote code execution vulnerability with SMBv3.
@@ -115,7 +115,7 @@ techniques:
       - category: Detect
         value: Partial
         comments: >-
-          This control provides partial detection for some of this technique's sub-techniques 
+          This control provides partial detection for some of this technique's sub-techniques
           (due to unknown false-positive/true-positive rate), resulting in a Partial score.
     sub-techniques-scores:
       - sub-techniques:
@@ -205,7 +205,7 @@ techniques:
               detect when an attacker use tools to enumerate service accounts and their respective
               SPNs (Service principal names), request a Kerberos service ticket for the services,
               capture the Ticket Granting Service (TGS) tickets from memory and extract their
-              hashes, and save them for later use in an offline brute force attack.  
+              hashes, and save them for later use in an offline brute force attack.
 
               Similarly its "Suspected AS-REP Roasting attack (external ID 2412)" alert is able to detect
               AS-REP Roasting sub-technique.
@@ -228,8 +228,8 @@ techniques:
         value: Minimal
         comments: >-
           This control's "Suspicious VPN connection (external ID 2025)" alert utilizes machine learning
-          models to learn  normal VPN connections for a user and detect deviations from the norm. 
-          This detection is specific to VPN traffic and therefore its overall coverage is Minimal. 
+          models to learn  normal VPN connections for a user and detect deviations from the norm.
+          This detection is specific to VPN traffic and therefore its overall coverage is Minimal.
   - id: T1555
     name: Credentials from Password Stores
     technique-scores:
@@ -408,7 +408,7 @@ techniques:
           Adding users is done to gain access to more resources, and gain persistency.  This
           detection relies on profiling the group modification activities of users, and alerting
           when an abnormal addition to a sensitive group is observed. Defender for Identity profiles
-          continuously. 
+          continuously.
 
           This alert provides Partial coverage of this technique with a reduced false-positive rate
           by utilizing machine learning models.

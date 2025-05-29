@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/31/2021
 name: Azure Policy
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -117,7 +117,7 @@ techniques:
               This control may provide recommendations to enable other Azure controls that provide
               information on potentially exploitable SQL stored procedures. Recommendations to
               reduce unnecessary privileges from accounts and stored procedures can mitigate
-              exploitable of this technique.  
+              exploitable of this technique.
   - id: T1068
     name: Exploitation for Privilege Escalation
     technique-scores:
@@ -250,7 +250,7 @@ techniques:
             value: Minimal
             comments: >-
               This control may provide recommendations to restrict public SSH access and enable
-              usage of SSH keys. 
+              usage of SSH keys.
   - id: T1530
     name: Data from Cloud Storage Object
     technique-scores:
@@ -258,7 +258,7 @@ techniques:
         value: Partial
         comments: >-
           This control may provide recommendations to enable Azure Defender for Storage and other
-          security controls to prevent access to data from cloud storage objects. 
+          security controls to prevent access to data from cloud storage objects.
   - id: T1071
     name: Application Layer Protocol
     technique-scores:

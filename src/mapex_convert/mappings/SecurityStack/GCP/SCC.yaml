@@ -3,7 +3,7 @@ ATT&CK version: 10
 creation date: 05/03/2022
 last update: 05/10/2022
 name: Security Command Center
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: GCP
 tags:
@@ -211,7 +211,7 @@ techniques:
           cleartext. Adversaries may use this traffic mirroring services to sniff traffic and
           intercept unencrypted credentials. This technique was graded as partial due to the low
           protect coverage when transmitting passwords in clear-text and there is more information
-          that could be gathered during a network sniffing attacks. 
+          that could be gathered during a network sniffing attacks.
   - id: T1190
     name: Exploit Public-Facing Application
     technique-scores:
@@ -223,7 +223,7 @@ techniques:
           Insecure Deserialization). Adversaries may exploit these web app weaknesses in a
           cloud-based environment to compromise the underlying instance or container. This technique
           was graded as significant due to the high detect coverage against varying forms of this
-          attack.  
+          attack.
   - id: T1078.001
     name: Default Accounts
     technique-scores:
@@ -330,7 +330,7 @@ comments: >-
 
 
   SCC also provides users with compliance mappings that scan environments against violations
-  according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001. 
+  according to PCI-DSS v3.2.1, OWASP Top Ten, NIST 800-53, and ISO 27001.
 
 
   To improve cyber-situational awareness and detection against various threats, SCC ingests logging
@@ -344,7 +344,7 @@ comments: >-
   full list of automated actions can be found on GCP's GitHub.
 
 
-  Reference: https://github.com/GoogleCloudPlatform/security-response-automation 
+  Reference: https://github.com/GoogleCloudPlatform/security-response-automation
 references:
   - 'https://cloud.google.com/security-command-center/docs/concepts-security-command-center-overview'
   - 'https://github.com/GoogleCloudPlatform/security-analytics'

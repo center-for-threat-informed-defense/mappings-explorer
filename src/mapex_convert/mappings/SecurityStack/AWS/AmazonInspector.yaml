@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 05/07/2021
 name: Amazon Inspector
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 tags:
@@ -11,7 +11,7 @@ description: >-
   applications in AWS. It supports assessment packages for CVEs, CIS Benchmarks (various Windows and
   Linux platforms), Best Practices (Linux only), and Network Reachability. The result of running an
   assessment is a list of findings that can be used to inform decision-making processes that improve
-  the security of applications.  
+  the security of applications.
 techniques:
   - id: T1189
     name: Drive-by Compromise
@@ -212,7 +212,7 @@ techniques:
           information and binaries. Amazon Inspector does not directly protect against system
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Due to this and the fact the security
-          control is only supported for Linux platforms, the score is Minimal. 
+          control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1222.002
@@ -227,7 +227,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this the score is capped at
-              Partial. 
+              Partial.
   - id: T1562
     name: Impair Defenses
     technique-scores:
@@ -241,7 +241,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1562.001
@@ -262,7 +262,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this and the fact the security
-              control is only supported for Linux platforms, the score is Minimal. 
+              control is only supported for Linux platforms, the score is Minimal.
   - id: T1070
     name: Indicator Removal on Host
     technique-scores:
@@ -276,7 +276,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1070.002
@@ -299,7 +299,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this and the fact the security
-              control is only supported for Linux platforms, the score is Minimal. 
+              control is only supported for Linux platforms, the score is Minimal.
   - id: T1599
     name: Network Boundary Bridging
     technique-scores:
@@ -313,7 +313,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1599.001
@@ -330,7 +330,7 @@ techniques:
               inform decisions around hardening the system. Furthermore, Amazon Inspector only
               supports a subset of the sub-techniques for this technique. Due to these things and
               the fact the security control is only supported for Linux platforms, the score is
-              Minimal. 
+              Minimal.
   - id: T1003
     name: OS Credential Dumping
     technique-scores:
@@ -344,7 +344,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1003.007
@@ -361,7 +361,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this and the fact the security
-              control is only supported for Linux platforms, the score is Minimal. 
+              control is only supported for Linux platforms, the score is Minimal.
   - id: T1053
     name: Scheduled Task/Job
     technique-scores:
@@ -375,7 +375,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1053.001
@@ -394,7 +394,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this and the fact the security
-              control is only supported for Linux platforms, the score is Minimal. 
+              control is only supported for Linux platforms, the score is Minimal.
   - id: T1489
     name: Service Stop
     technique-scores:
@@ -407,7 +407,7 @@ techniques:
           information and binaries. Amazon Inspector does not directly protect against system
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Due to this and the fact the security
-          control is only supported for Linux platforms, the score is Minimal. 
+          control is only supported for Linux platforms, the score is Minimal.
   - id: T1529
     name: System Shutdown/Reboot
     technique-scores:
@@ -420,7 +420,7 @@ techniques:
           information and binaries. Amazon Inspector does not directly protect against system
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Due to this and the fact the security
-          control is only supported for Linux platforms, the score is Minimal. 
+          control is only supported for Linux platforms, the score is Minimal.
   - id: T1548
     name: Abuse Elevation Control Mechanism
     technique-scores:
@@ -434,7 +434,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1548.003
@@ -449,7 +449,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this and the fact the security
-              control is only supported for Linux platforms, the score is Minimal. 
+              control is only supported for Linux platforms, the score is Minimal.
   - id: T1037
     name: Boot or Logon Initialization Scripts
     technique-scores:
@@ -463,7 +463,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1037.004
@@ -478,7 +478,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this, the score is capped at
-              Partial. 
+              Partial.
   - id: T1543
     name: Create or Modify System Process
     technique-scores:
@@ -492,7 +492,7 @@ techniques:
           modifications rather it just checks to see if security controls are in place which can
           inform decisions around hardening the system. Furthermore, Amazon Inspector only supports
           a subset of the sub-techniques for this technique. Due to these things and the fact the
-          security control is only supported for Linux platforms, the score is Minimal. 
+          security control is only supported for Linux platforms, the score is Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1543.002
@@ -507,7 +507,7 @@ techniques:
               information and binaries. Amazon Inspector does not directly protect against system
               modifications rather it just checks to see if security controls are in place which can
               inform decisions around hardening the system. Due to this, the score is capped at
-              Partial. 
+              Partial.
   - id: T1046
     name: Network Service Scanning
     technique-scores:
@@ -518,7 +518,7 @@ techniques:
           cloud/network components are vulnerable (e.g., publicly accessible from the Internet).
           Amazon Inspector does not directly protect cloud/network components rather reports on
           vulnerabilities that it identifies which can then be used to securely configure the
-          cloud/network components. Due to this, the score is capped at Partial. 
+          cloud/network components. Due to this, the score is capped at Partial.
   - id: T1595
     name: Active Scanning
     technique-scores:
@@ -529,7 +529,7 @@ techniques:
           cloud/network components are vulnerable (e.g., publicly accessible from the Internet).
           Amazon Inspector does not directly protect cloud/network components rather reports on
           vulnerabilities that it identifies which can then be used to securely configure the
-          cloud/network components. Due to this, the score is capped at Partial. 
+          cloud/network components. Due to this, the score is capped at Partial.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1595.001
@@ -544,7 +544,7 @@ techniques:
               cloud/network components are vulnerable (e.g., publicly accessible from the Internet).
               Amazon Inspector does not directly protect cloud/network components rather reports on
               vulnerabilities that it identifies which can then be used to securely configure the
-              cloud/network components. Due to this, the score is capped at Partial. 
+              cloud/network components. Due to this, the score is capped at Partial.
 comments: >-
   The CIS Benchmarks assessment package is considered out of scope because a separate project will
   be responsible for mapping CIS Benchmarks and ATT&CK.

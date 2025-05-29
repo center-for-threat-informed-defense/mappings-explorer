@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 04/02/2021
 name: Docker Host Hardening
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -50,7 +50,7 @@ techniques:
         value: Minimal
         comments: >-
           This control may provide recommendations on how to reduce the surface area and mechanisms
-          by which an attacker could escalate privileges. 
+          by which an attacker could escalate privileges.
   - id: T1040
     name: Network Sniffing
     technique-scores:
@@ -59,7 +59,7 @@ techniques:
         comments: >-
           This control may recommend usage of TLS to encrypt communication between the Docker daemon
           and clients. This can prevent possible leakage of sensitive information through network
-          sniffing. 
+          sniffing.
   - id: T1083
     name: File and Directory Discovery
     technique-scores:
@@ -67,7 +67,7 @@ techniques:
         value: Minimal
         comments: >-
           This control may provide recommendations to ensure sensitive host system directories are
-          not mounted in the container. 
+          not mounted in the container.
   - id: T1021
     name: Remote Services
     technique-scores:

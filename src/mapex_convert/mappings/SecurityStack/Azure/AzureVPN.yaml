@@ -2,14 +2,14 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/05/2021
 name: Azure VPN Gateway
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
   - Network
 description: >-
   A VPN gateway is a specific type of virtual network gateway that is used to send encrypted traffic
-  between an Azure virtual network and an on-premises location over the public Internet. 
+  between an Azure virtual network and an on-premises location over the public Internet.
 
   You can also use a VPN gateway to send encrypted traffic between Azure virtual networks over the
   Microsoft network.
@@ -43,7 +43,7 @@ techniques:
       - category: Protect
         value: Partial
         comments: >-
-          This control provides significant protection against one sub-technique (Transmitted Data Manipulation) 
+          This control provides significant protection against one sub-technique (Transmitted Data Manipulation)
           of this technique while not providing protection for its remaining sub-techniques resulting in overall
           score of Partial.
     sub-techniques-scores:
