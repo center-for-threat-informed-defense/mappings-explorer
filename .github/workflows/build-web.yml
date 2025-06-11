@@ -120,7 +120,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: $\{\{ steps.deployment.outputs.page_url \}\}
 
     steps:
     - name: Setup Pages
@@ -133,9 +133,9 @@ jobs:
     - name: Decompress Artifacts
       run: unzip -q output.zip
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v1
       with:
         path: ./output
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v1

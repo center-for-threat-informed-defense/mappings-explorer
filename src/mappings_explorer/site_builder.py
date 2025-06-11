@@ -463,7 +463,46 @@ def load_projects():
         }
     ]
     intel_vpro.has_non_mappable_comments = False
-    projects = [intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
+
+    cri_profile = ExternalControl()
+    cri_profile.id = "cri_profile"
+    cri_profile.label = "CRI Profile"
+    cri_profile.description = """The CRI Profile is a control framework to develop and
+    assess cybersecurity and resiliency programs, produced by and for the global
+    financial sector and maintained by the Cyber Risk Institute (CRI). These mappings
+    connect the security capability coverage of the CRI Profile's Diagnostic Statements
+    with threat mitigation of real-world adversarial behaviors as described in MITRE
+    ATT&CK. The connection of ATT&CK with the CRI Profile control program framework
+    empowers threat-informed analysis and decision-making for cybersecurity control
+    program design and implementation by the financial services sector. """
+
+    cri_profile.attackDomains = ["Enterprise"]
+    cri_profile.attackDomain = cri_profile.attackDomains[0]
+    cri_profile.attackVersions = ["16.1"]
+    cri_profile.attackVersion = cri_profile.attackVersions[0]
+    cri_profile.versions = ["v2.1"]
+    cri_profile.validVersions = [
+        ("v2.1", "16.1", "Enterprise"),
+    ]
+    cri_profile.mappings = []
+    cri_profile.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/cri-profile-scope/",
+            "label": "Mapping Scope",
+        },
+        {
+            "link": "https://cyberriskinstitute.org/the-profile/",
+            "label": "The CRI Profile (External link)",
+            "external": True,
+        },
+    ]
+    cri_profile.has_non_mappable_comments = False
+
+    projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects
 
 
@@ -569,6 +608,7 @@ def parse_capability_groups(
         or project.id == "intel-vpro"
         or project.id == "gcp"
         or project.id == "azure"
+        or project.id == "cri_profile"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -671,6 +711,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "SecurityStack" / "GCP"
     elif project.id == "azure":
         folder_name = DATA_DIR / "SecurityStack" / "Azure"
+    elif project.id == "cri_profile":
+        folder_name = DATA_DIR / "cri_profile"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
@@ -1009,6 +1051,10 @@ def build_external_landing(
         info_box_headers = [
             ("comments", "Comments"),
             ("references", "References"),
+        ]
+    if project.id == "cri_profile":
+        info_box_headers = [
+            ("comments", "Comments"),
         ]
 
     # Resolve additional download artifacts
@@ -2001,55 +2047,6 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         ],
     }
 
-    matrix_order = {
-        "enterprise": [
-            "TA0043",
-            "TA0042",
-            "TA0001",
-            "TA0002",
-            "TA0003",
-            "TA0004",
-            "TA0005",
-            "TA0006",
-            "TA0007",
-            "TA0008",
-            "TA0009",
-            "TA0011",
-            "TA0010",
-            "TA0040",
-        ],
-        "ics": [
-            "TA0108",
-            "TA0104",
-            "TA0110",
-            "TA0111",
-            "TA0103",
-            "TA0102",
-            "TA0109",
-            "TA0100",
-            "TA0101",
-            "TA0107",
-            "TA0106",
-            "TA0105",
-        ],
-        "mobile": [
-            "TA0027",
-            "TA0041",
-            "TA0028",
-            "TA0029",
-            "TA0030",
-            "TA0031",
-            "TA0032",
-            "TA0033",
-            "TA0035",
-            "TA0037",
-            "TA0036",
-            "TA0034",
-            "TA0038",
-            "TA0039",
-        ],
-    }
-
     json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
     mappings_filepath = PUBLIC_DIR / "data"
     create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
@@ -2057,7 +2054,6 @@ def build_matrix(url_prefix, projects, breadcrumbs):
     template = load_template("matrix.html.j2")
     stream = template.stream(
         title="ATT&CK Matrix",
-        matrix_order=matrix_order,
         all_attack_versions=all_attack_versions,
         url_prefix=url_prefix,
         attack_domains=attack_domains,
@@ -2271,7 +2267,7 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         url_suffix="about/methodology/nist-methodology",
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/nist_methodology.html.j2",
-        title="NIST 800-53 Mapping Methodology",
+        title="Control Framework Mapping Methodology",
     )
 
     build_about_page(
@@ -2280,6 +2276,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/nist_scope.html.j2",
         title="NIST 800-53 Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/cri-profile-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/cri_profile_scope.html.j2",
+        title="CRI Profile Mapping Scope",
     )
 
     build_about_page(

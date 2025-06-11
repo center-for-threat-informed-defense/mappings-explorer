@@ -1,0 +1,211 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container aos-init aos-animate">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">The CRI Profile <span class="highlight">MAPPING SCOPE</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Scope Overview</h2>
+        </div>
+
+        <p>
+            Scoping decisions for mapping <a href="https://cyberriskinstitute.org/the-profile/" target="_blank">
+            The CRI Profile</a> diagnostic statements are documented below. These scoping decisions were used for
+            diagnostic statement review and selection for mapping according to the
+            <a href="about/methodology/">Mapping Methodology</a>.
+        </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">General</span> Scoping Decisions</h2>
+        </div>
+        <dl>
+            <dt>Operational vs. Policy and Procedural Controls</dt>
+            <dd>This effort is focused on the technical and operational elements of The CRI Profile and did not take into account the management elements that are often focused on organization specific policies and procedures. This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques. </dd>
+            <dt>Mitigation vs. Monitoring</dt>
+            <dd>Capabilities that may only monitor adversary behaviors are out of scope. The focus of this effort is on technical capabilities that mitigate adversary techniques and sub-techniques. Consideration is not given for the potential that an adversary might be dissuaded or change their tactics to try and avoid detection if they thought activity was being monitored.</dd>
+            <dt>Diagnostic Statements vs. Function, Category, and Subcategory</dt>
+            <dd>This effort maps at the diagnostic statement level and does not map at the function, category, or subcategory level, although consideration was given to each diagnostic statement's grouping by function, category, and subcategory.</dd>
+            <dt>Implicit vs. Explicit Mitigation</dt>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data backups) and capabilities that support those mitigations rather than other, non-technical methods of mitigation (e.g., block physical access to systems, develop a backup policy).</dd>
+            <dt><a href="https://attack.mitre.org/mitigations/M1056/" target="_blank">Pre-compromise Mitigation</a></dt>
+            <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques, and are considered out of scope.</dd>
+        </dl>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">Diagnostic Statement</span> Scoping Decisions</h2>
+        </div>
+
+        <p>
+            The CRI Profile scoping decisions are captured below at the function and category level along with our rationale for diagnostic statements in those categories being in or out of scope:
+        </p>
+        <table class="table">
+            <tr>
+                <th>Function: Category</th>
+                <th>In Scope</th>
+                <th>Rationale</th>
+            </tr>
+            <tr>
+                <td>Govern: Organizational Context (GV.OC)</td>
+                <td>No</td>
+                <td>Management elements for establishing organizational circumstances are not in scope. </td>
+            </tr>
+           <tr>
+                <td>Govern: Risk Management Strategy (GV.RM)</td>
+                <td>No</td>
+                <td>Management elements for organizational strategies are not in scope. </td>
+            </tr>
+            <tr>
+                <td>Govern: Roles, Responsibilities, and Authorities (GV.RR)</td>
+                <td>No</td>
+                <td>Management elements focused on organization specific roles, responsibilities, and authorities are not in scope. </td>
+            </tr>
+            <tr>
+                <td>Govern: Policies, Processes, and Procedures (GV.PO)</td>
+                <td>No</td>
+                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Govern: Oversight (GV.OV)</td>
+                <td>No</td>
+                <td>Management elements for organizational strategy are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Govern: Supply Chain Risk Management (GV.SC)</td>
+                <td>No</td>
+                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Govern: Independent Risk Management Function (GV.IR)</td>
+                <td>No</td>
+                <td>Management elements for establishing organizational guidelines are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Govern: Independent Audit Function (GV.AU)</td>
+                <td>No</td>
+                <td>Management elements for establishing organizational guidelines are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Identify: Asset Management (ID.AM)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements involving operational and technical controls for data protection and lifecycle management are in scope.</td>
+            </tr>
+            <tr>
+                <td>Identify: Risk Assessment (ID.RA)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements for remediation of identified vulnerabilities before implementation or following changes are in scope.</td>
+            </tr>
+            <tr>
+                <td>Identify: Improvement (ID.IM)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for data protection are in scope.</td>
+            </tr>
+            <tr>
+                <td>Protect: Identity Management, Authentication, and Access Control (PR.AA)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for identification and authentication of network and system users and devices are in scope.</td>
+            </tr>
+            <tr>
+                <td>Protect: Awareness and Training (PR.AT)</td>
+                <td>No</td>
+                <td>Awareness and training activities are not applicable as they are for general security awareness training and not specific threat mitigations.</td>
+            </tr>
+            <tr>
+                <td>Protect: Data Security (PR.DS)</td>
+                <td>Yes</td>
+                <td>Diagnostic statements providing operational and technical controls for data protection are in scope.</td>
+            </tr>
+            <tr>
+                <td>Protect: Platform Security (PR.PS)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for hardware, software, and systems are in scope.</td>
+            </tr>
+            <tr>
+                <td>Protect: Technology Infrastructure Resilience (PR.IR)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for hardware, software, and systems are in scope.</td>
+            </tr>
+            <tr>
+                <td>Detect: Continuous Monitoring (DE.CM)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for protecting assets are in scope.</td>
+            </tr>
+            <tr>
+                <td>Detect: Adverse Event Analysis (DE.AE)</td>
+                <td>No</td>
+                <td>Incident analysis elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Respond: Incident Management (RS.MA)</td>
+                <td>No</td>
+                <td>Response elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Respond: Incident Analysis (RS.AN)</td>
+                <td>No</td>
+                <td>Response elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Respond: Incident Response Reporting and Communication (RS.CO)</td>
+                <td>No</td>
+                <td>Response elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Respond: Incident Mitigation (RS.MI)</td>
+                <td>No</td>
+                <td>Response elements are not applicable as they do not provide mitigations of specific threats but rather provide actions for detected security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Recover: Incident Recovery Plan Execution (RC.RP)</td>
+                <td>No</td>
+                <td>Recover elements are not applicable as they do not provide mitigations of specific threats but rather provide restoration actions after security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Recover: Incident Recovery Communication (RC.CO)</td>
+                <td>No</td>
+                <td>Recover elements are not applicable as they do not provide mitigations of specific threats but rather provide restoration actions after security incident occurrences.</td>
+            </tr>
+            <tr>
+                <td>Extend: Procurement Planning and Due Diligence (EX.DD)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for third-party systems and software are in scope.</td>
+            </tr>
+            <tr>
+                <td>Extend: Third-Party Contracts and Agreements (EX.CN)</td>
+                <td>No</td>
+                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+            </tr>
+            <tr>
+                <td>Extend: Monitoring and Managing Suppliers (EX.MM)</td>
+                <td>Partial</td>
+                <td>Diagnostic statements providing operational and technical controls for third-party systems and software are in scope.</td>
+            </tr>
+            <tr>
+                <td>Extend: Relationship Termination (EX.TR)</td>
+                <td>No</td>
+                <td>Management elements focused on organization specific policies and procedures are not in scope.</td>
+            </tr>
+        </table>
+    </div>
+</section>
+{% endblock content %}

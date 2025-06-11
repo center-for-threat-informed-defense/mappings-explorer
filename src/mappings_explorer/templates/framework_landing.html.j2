@@ -14,16 +14,14 @@
         </p>
         <div class="section-details">
           <p>
-            {% if versions|length > 1%}
             <span>{{control}} Versions: <strong>{{ versions|join(', ') }}</strong></span>
-            {% endif %}
             <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
             <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
           </p>
           {% if project.resources %}
           <p>
             {% for src in project.resources %}
-            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}">
+            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}" {{ 'target="_blank"' if src.external else '' }}>
               {{src.label}}
             </a> {% if not loop.last %}|{% endif %}
             {% endfor %}

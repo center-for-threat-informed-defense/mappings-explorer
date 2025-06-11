@@ -19,11 +19,10 @@
             <h2>Methodology Overview</h2>
         </div>
 
-        <p>This page describes the methodology used to map security controls native to a technology platform to
-            <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
-            and aims to provide the community a reusable method of using ATT&CK to determine the
-            capabilities of
-            a platform's security offerings.
+        <p>This page describes the methodology used to map security controls native to a mapping framework or technology
+            platform to <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>.
+            This methodology is based upon our experience mapping frameworks and platforms and aims to provide the community
+            with a reusable method of using ATT&CK to determine the capabilities of security offerings.
         </p>
         <p>ATT&CK is a globally-accessible knowledge base of adversary tactics and techniques based on real-world
             observations. The ATT&CK knowledge base represents adversary goals as tactics and the specific behaviors
@@ -31,6 +30,9 @@
             described below, utilizes the information in the ATT&CK knowledge base and its underlying data model to
             understand, assess and record the real-world threats that security controls native to a technology platform
             are able to mitigate.</p>
+        <p>Much like an ATT&CK mitigation, a mapping between a security control and an ATT&CK technique or sub-technique
+            means that the security control may prevent successful execution of the technique or sub-technique. Each security
+            control is examined in the context of ATT&CK mitigations and each specific technique.</p>
         <p>The methodology consists of the following steps:</p>
         <ol>
             <li>
@@ -47,19 +49,19 @@
                 mappable to the control.
             </li>
             <li>
-                <h3><a href="#step4">Score Assessment</a></h3> - Assess the effectiveness of the type of protection the
-                control provides for the
-                identified ATT&CK techniques and sub-techniques.*
+                <h3><a href="#step4">Score Assessment*</a></h3> - Assess the effectiveness of the type of protection the
+                control provides for the identified ATT&CK techniques and sub-techniques.
             </li>
             <li>
                 <h3><a href="#step5">Create a Mapping</a></h3> - Creating a mapping based on the information gathered
                 from the previous steps.
             </li>
         </ol>
-        <p>* Scoring assessments have been performed for cloud security capability mappings to record the category of
-            ATT&CK coverage provided by a
-            control (protect, detect, or response) along with an assessment of its effectiveness (minimal, partial, or
-            significant). </p>
+        <p>* Scoring assessments have been performed for technology platform capability mappings (e.g., M365) to record
+            the category of ATT&CK coverage provided by a control (protect, detect, or response) along with an assessment
+            of its effectiveness (minimal, partial, or significant). Control effectiveness for security control frameworks
+            (e.g., NIST 800-53) are not defined; controls are either mapped or not mapped as mitigations of a given
+            technique or sub-technique.</p>
     </div>
 </section>
 
@@ -71,20 +73,20 @@
         </div>
 
         <p>Cyber security has emerged as an essential component of technology platforms, and consequently vendors tend
-            to offer a variety of documentation on the security capabilities of their platform. Peruse the platform
+            to offer a variety of documentation on the security capabilities of their platform. Review the platform
             documentation (e.g. security reference architectures, security benchmarks, security documentation of various
             services, etc.) to identify the security controls offered by the platform for protecting workloads on the
             platform. Keep the following in mind while selecting controls:</p>
         <ul>
             <li>The scope of the controls mapped by this project are the technical control types and do not include
                 administrative or physical control types.</li>
-            <li>The selected controls should be native to the platform, i.e. produced by the vendor themselves or
+            <li>Controls that may only monitor adversary behaviors are typically out of scope. The focus is on controls
+                that mitigate adversary techniques and sub-techniques.</li>
+            <li>The selected controls should be native to the platform, i.e., produced by the vendor themselves or
                 third-party controls branded by the vendor. For example, thirty-party security controls offered in cloud
                 marketplaces are considered out of scope.</li>
-            <li>The security controls selected to be mapped as part of this project tend to be controls that are
-                marketed as standalone security products available on the platform. The intent is not to provide a
-                mapping for all settings/features of individual platform services that are security related. This is a
-                non-trivial undertaking that may be explored at a later time.</li>
+            <li>The intent is not to provide a mapping for all settings/features of individual platform services that
+                are security related. This is a non-trivial undertaking that may be explored at a later time.</li>
         </ul>
     </div>
 </section>
@@ -97,7 +99,11 @@
         </div>
 
         <p>For each identified security control, consult the available documentation to understand its capabilities.
-            Gather the following facts about the security control that will later help in mapping the control to the set
+            It is necessary to understand and identify the security concepts and technologies that can be used to
+            prevent a given action from being successfully executed. Examine the context of the mitigation provided
+            by the control.</p>
+
+        <p>Gathering the following facts about the security control will later help in mapping the control to the set
             of ATT&CK techniques and sub-techniques it is able to mitigate:</p>
 
         <ul>
@@ -133,7 +139,7 @@
 
         <p>The following may help with this process:</p>
 
-        <h3>Identify ATT&CK Tactics in Scope</h3>
+        <h3>Identify ATT&CK Tactics and Mitigations</h3>
         <ul>
             <li>The resource type(s) protected by the control, as identified in the previous step, can help narrow down
                 the ATT&CK tactics which are in scope for this control.</li>
@@ -153,7 +159,7 @@
                 review.</li>
         </ul>
 
-        <h3>Identify ATT&CK Techniques & Sub-techniques in Scope</h3>
+        <h3>Identify ATT&CK Techniques & Sub-techniques</h3>
         <ul>
             <li>Review the description of each ATT&CK technique to determine if the control is able to mitigate the
                 adversary behavior described in the technique.</li>
@@ -190,7 +196,8 @@
             of the capability.
         </p>
 
-        <p>Currently, the cloud security capability mappings provide these scoring assessments. </p>
+        <p>Currently, AWS, Azure, GCP, Intel vPro, and M365 security capability mappings provide these scoring assessments.
+            Scoring assessments for security control framework mappings (e.g., NIST 800-53, The CRI Profile) are not defined.</p>
     </div>
 </section>
 
@@ -223,6 +230,7 @@
 
         <ul>
             <li><strong>CVE:</strong> <a href="./cve-methodology/">Methodology</a></li>
+            <li><strong>CRI Profile:</strong> <a href="./cri-profile-scope/">Scope</a></li>
             <li><strong>NIST 800-53:</strong> <a href="./nist-methodology/">Methodology</a> | <a
                     href="./nist-scope/">Scope</a></li>
             <li><strong>Security Stack Mappings:</strong> <a href="./ssm-methodology/">Methodology</a></li>
