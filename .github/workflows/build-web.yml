@@ -124,7 +124,7 @@ jobs:
 
     steps:
     - name: Setup Pages
-      uses: actions/configure-pages@v2
+      uses: actions/configure-pages@v5
     - name: Download Web Site
       uses: actions/download-artifact@v4
       with:
@@ -133,9 +133,9 @@ jobs:
     - name: Decompress Artifacts
       run: unzip -q output.zip
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./output
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v1
+      uses: actions/deploy-pages@v4
