@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 04/07/2021
 name: Alerts for Azure Cosmos DB
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -43,7 +43,7 @@ techniques:
           This control triggers an alert when an unusually large amount of data is extracted from/by
           an account compared to recent activity. False positives are fairly likely and extraction
           in quantities below the control's threshold is not detected, so score is Minimal. Neither
-          of the sub-techniques are relevant in this context, since they are repository-specific. 
+          of the sub-techniques are relevant in this context, since they are repository-specific.
           Relevant alert is "Unusual amount of data extracted from a Cosmos DB account"
 comments: >-
   This control is still in preview, so its coverage will likely expand in the future. This mapping

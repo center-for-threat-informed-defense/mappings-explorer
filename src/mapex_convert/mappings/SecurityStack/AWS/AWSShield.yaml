@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 06/14/2021
 name: AWS Shield
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 tags:
@@ -39,7 +39,7 @@ techniques:
               undisclosed combination of traffic signatures, anomaly algorithms, and other analysis
               techniques to detect malicious traffic in real-time. AWS Shield Advance identifies
               anomalies in network traffic to flag attempted attacks and execute inline mitigations
-              to resolve the issue. 
+              to resolve the issue.
   - id: T1499
     name: Endpoint Denial of Service
     technique-scores:
@@ -57,7 +57,7 @@ techniques:
             comments: >-
               AWS Shield Standard provides protection and response to these Denial of Service
               attacks in real time by using a network traffic baseline and identifying anomalies
-              among other techniques. 
+              among other techniques.
       - sub-techniques:
           - id: T1499.003
             name: Application Exhaustion Flood

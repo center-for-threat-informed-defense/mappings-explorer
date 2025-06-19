@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 04/16/2021
 name: Azure Sentinel
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -40,7 +40,7 @@ techniques:
             comments: >-
               The following Azure Sentinel Hunting queries can identify potential compromise of
               domain accounts based on access attempts and/or account usage:
-              "Suspicious Windows Login outside normal hours", "User account added or removed from 
+              "Suspicious Windows Login outside normal hours", "User account added or removed from
               security group by an unauthorized user", "User Account added to Built in Domain Local
               or Global Group", "User Login IP Address Teleportation", "User made Owner of multiple
               teams", "Tracking Privileged Account Rare Activity", "New Admin account activity which
@@ -450,7 +450,7 @@ techniques:
           The following Azure Sentinel Analytics queries can identify potentially malicious use of
           command and scripting interpreters that does not map directly to one/more sub-techniques:
           "New CloudShell User" can identify potentially malicious use of CloudShell, "Rare and
-          Potentially high-risk Office operations" can identify specific rare mailbox-related 
+          Potentially high-risk Office operations" can identify specific rare mailbox-related
           ccount and permission changes via execution.
     sub-techniques-scores:
       - sub-techniques:

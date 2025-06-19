@@ -3,7 +3,7 @@ ATT&CK version: 10
 creation date: 03/03/2022
 last update: 04/18/2022
 name: Chronicle
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: GCP
 tags:
@@ -53,7 +53,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on scheduled tasks using the command line
-          (e.g., "schtasks /create"). 
+          (e.g., "schtasks /create").
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -237,7 +237,7 @@ techniques:
       - category: Detect
         value: Minimal
         comments: >-
-          Chronicle is able to trigger an alert based on RDP logons from non-private IP ranges. 
+          Chronicle is able to trigger an alert based on RDP logons from non-private IP ranges.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -251,7 +251,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on successful and failed changes to
-          SID-History. 
+          SID-History.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -286,7 +286,7 @@ techniques:
       - category: Detect
         value: Minimal
         comments: >-
-          Chronicle is able to trigger an alert based on Custom Role changes.  
+          Chronicle is able to trigger an alert based on Custom Role changes.
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
 
@@ -313,7 +313,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on processes, such as  VPC Network Firewall
-          rule changes. 
+          rule changes.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -340,7 +340,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert to notify personnel of GCP resources (e.g., storage
-          buckets) that are publicly accessible to unauthenticated users. 
+          buckets) that are publicly accessible to unauthenticated users.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -354,7 +354,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on system events, such as deletion of cloud
-          audit logs. 
+          audit logs.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -396,7 +396,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert for suspicious events related to the API (e.g., "API
-          keys created for a project"). 
+          keys created for a project").
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -497,7 +497,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on  suspicious modifications to the
-          infrastructure, such as: new task scheduling to execute programs. 
+          infrastructure, such as: new task scheduling to execute programs.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -575,7 +575,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on adversary methods of obtaining credentials
-          or collecting information (e.g., web skimming attacks). 
+          or collecting information (e.g., web skimming attacks).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -589,7 +589,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on adversary methods of obtaining credentials
-          or collecting information (e.g., web skimming attacks). 
+          or collecting information (e.g., web skimming attacks).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -603,7 +603,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on adversary methods of obtaining credentials
-          or collecting information (e.g., web skimming attacks). 
+          or collecting information (e.g., web skimming attacks).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -631,7 +631,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on suspicious modifications to the network
-          infrastructure. 
+          infrastructure.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -724,7 +724,7 @@ techniques:
       - category: Detect
         value: Minimal
         comments: >-
-          Chronicle attempts to identify remote 
+          Chronicle attempts to identify remote
 
           systems via ping sweep. This technique was scored as minimal based on low or uncertain
           detection coverage factor.
@@ -772,7 +772,7 @@ techniques:
           a malicious links).
 
 
-          This technique was scored as minimal based on low or uncertain detection coverage factor. 
+          This technique was scored as minimal based on low or uncertain detection coverage factor.
 
 
           https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/proxy/microsoft_teams_phishing_email.yaral
@@ -801,7 +801,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle can trigger an alert based on delivery of encrypted or encoded payloads with
-          uncompiled code. 
+          uncompiled code.
 
 
           This technique was scored as minimal based on low detection coverage factor.
@@ -913,7 +913,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on suspicious system events IDs (e.g.,
-          anonymous users changing machine passwords). 
+          anonymous users changing machine passwords).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -954,7 +954,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle triggers an alert based on webshell connections which are used to establish
-          persistent access to a compromised machine [backdoor]. 
+          persistent access to a compromised machine [backdoor].
 
 
           For example: Detect webshell dropped into a keystore folder on the WebLogic server
@@ -1093,7 +1093,7 @@ techniques:
         comments: >-
           Chronicle is able to trigger alerts based off suspicious activity on a Linux host that
           could indicate a bind or reverse shell with Netcat tool.  Note: This rule requires
-          installation of auditbeat on the host machine to properly function. 
+          installation of auditbeat on the host machine to properly function.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1190,7 +1190,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based off system processes that indicate when backup
-          catalogs are deleted from a windows machine. 
+          catalogs are deleted from a windows machine.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1271,7 +1271,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based off suspicious system events, such as
-          modifications to Windows password policies (event ID 643 or 4739). 
+          modifications to Windows password policies (event ID 643 or 4739).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1300,7 +1300,7 @@ techniques:
         comments: >-
           Chronicle is able to trigger an alert based on system process modifications to existing
           Windows services which could indicate a malicious payload (e.g.,
-          "C:\\Windows\\System32\\sc.exe", "C:\\Windows\\System32\\cmd.exe"). 
+          "C:\\Windows\\System32\\sc.exe", "C:\\Windows\\System32\\cmd.exe").
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1330,7 +1330,7 @@ techniques:
           Chronicle is able to detect suspicious command-line process attempted to escalate
           privileges. For example: access credential material stored in the procecss memory of the
           Local Security Authority Subsystem Service (LSASS) on Windows machines (e.g.,
-          lsass\.exe). 
+          lsass\.exe).
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1345,7 +1345,7 @@ techniques:
         comments: >-
           Chronicle is able to trigger an alert based off suspicious  system processes, for example:
           detects Windows command line executable started from Microsoft's Word or Excel (e.g..,
-          ".*\\WINWORD\.EXE", ".*\\EXCEL\.EXE"). 
+          ".*\\WINWORD\.EXE", ".*\\EXCEL\.EXE").
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1478,7 +1478,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alert based on suspicious system events used to evade
-          defenses, such as deletion of Windows security event logs. 
+          defenses, such as deletion of Windows security event logs.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1493,7 +1493,7 @@ techniques:
         comments: >-
           Chronicle is able to trigger an alerts based off command-line arguments and suspicious
           system process that could indicate abuse of Windows system service to execute malicious
-          commands or code (e.g., "*\\execute\.bat"). 
+          commands or code (e.g., "*\\execute\.bat").
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1507,7 +1507,7 @@ techniques:
         value: Minimal
         comments: >-
           Chronicle is able to trigger an alerts based off command-line arguments and suspicious
-          system process that could indicate abuse of system services. 
+          system process that could indicate abuse of system services.
 
 
           This technique was scored as minimal based on low or uncertain detection coverage factor.
@@ -1624,11 +1624,11 @@ techniques:
           https://github.com/chronicle/detection-rules/blob/783e0e5947774785db1c55041b70176deeca6f46/soc_prime_rules/threat_hunting/process_creation/wmi_spawning_windows_powershell.yaral
 comments: >-
   This mapping is given a score of minimal due to low threat detection fidelity from specific
-  (sub-)techniques found in MITRE’s ATT&CK framework. 
+  (sub-)techniques found in MITRE’s ATT&CK framework.
 
 
   Chronicle is able to ingest and aggregate raw logs from multiple data formats, to include: json,
-  csv, xml, and syslog. 
+  csv, xml, and syslog.
 references:
   - 'https://cloud.google.com/chronicle/docs/overview'
   - 'https://github.com/chronicle/detection-rules'

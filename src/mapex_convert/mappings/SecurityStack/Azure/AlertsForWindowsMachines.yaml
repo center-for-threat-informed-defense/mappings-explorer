@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 04/05/2021
 name: Alerts for Windows Machines
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -21,7 +21,7 @@ techniques:
         value: Partial
         comments: >-
           This control is able to detect some of this technique's sub-techniques resulting in a Partial
-          Coverage score and consequently an overall score of Partial. 
+          Coverage score and consequently an overall score of Partial.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1078.003
@@ -34,7 +34,7 @@ techniques:
             comments: >-
               This control may detect suspicious activity from existing Windows accounts and logons
               from suspicious IP addresses. The following alerts may be generated:
-              "A logon from a malicious IP has been detected", "A logon from a malicious IP has been detected. 
+              "A logon from a malicious IP has been detected", "A logon from a malicious IP has been detected.
               [seen multiple times]".
   - id: T1059
     name: Command and Scripting Interpreter
@@ -58,10 +58,10 @@ techniques:
               These detections include usage of suspicious arguments, dynamic script construction,
               and shellcode on the commandline. The following alerts may be generated:
               "Detected anomalous mix of upper and lower case characters in command-line", "Detected
-              encoded executable in command line data", "Detected obfuscated command line", "Detected 
+              encoded executable in command line data", "Detected obfuscated command line", "Detected
               suspicious combination of HTA and PowerShell", "Detected suspicious commandline arguments",
               "Detected suspicious commandline used to start all executables in a directory", "Detected
-              suspicious credentials in commandline", "Dynamic PS script construction", "Suspicious 
+              suspicious credentials in commandline", "Dynamic PS script construction", "Suspicious
               PowerShell Activity Detected", "Suspicious PowerShell cmdlets executed", "Suspicious command
               execution".
   - id: T1204
@@ -70,7 +70,7 @@ techniques:
       - category: Detect
         value: Partial
         comments: >-
-          This control provides detection for one of the two sub-techniques of this technique, 
+          This control provides detection for one of the two sub-techniques of this technique,
           Malicious File, resulting in a Partial Coverage score and consequently an overall score of Partial.
     sub-techniques-scores:
       - sub-techniques:
@@ -99,7 +99,7 @@ techniques:
         scores:
           - category: Detect
             value: Partial
-            comments: >- 
+            comments: >-
               This control may detect when the Registry is leveraged to gain persistence. The following alerts
               may be generated: "Windows registry persistence method detected".
   - id: T1136
@@ -222,9 +222,9 @@ techniques:
               Injection attacks are specifically cited as a detection focus for Fileless Attack
               Detection, which is part of this control, with even more specific references to
               Process Hollowing, executable image injection, and threads started in a dynamically
-              allocated code segment. Detection is periodic at an unknown rate. The following 
+              allocated code segment. Detection is periodic at an unknown rate. The following
               alerts may be generated:
-              "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+              "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
               attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1203
     name: Exploitation for Client Execution
@@ -235,7 +235,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1212
     name: Exploitation for Credential Access
@@ -246,7 +246,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1211
     name: Exploitation for Defense Evasion
@@ -257,7 +257,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1068
     name: Exploitation for Privilege Escalation
@@ -268,7 +268,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1210
     name: Exploitation of Remote Services
@@ -279,7 +279,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1190
     name: Exploit Public-Facing Application
@@ -290,7 +290,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1189
     name: Drive-by Compromise
@@ -301,7 +301,7 @@ techniques:
           This control's Fileless Attack Detection identifies shellcode executing within process
           memory, including shellcode executed as a payload in the exploitation of a software
           vulnerability. Detection is periodic at an unknown rate. The following alerts may be generated:
-          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless 
+          "Fileless attack technique detected", "Fileless attack behavior detected", "Fileless
           attack toolkit detected", "Suspicious SVCHOST process executed".
   - id: T1140
     name: Deobfuscate/Decode Files or Information
@@ -321,7 +321,7 @@ techniques:
         value: Minimal
         comments: >-
           This control provides minimal detection for some of this technique's sub-techniques resulting in
-          an overall score of Minimal. 
+          an overall score of Minimal.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1222.001
@@ -380,7 +380,7 @@ techniques:
             value: Partial
             comments: >-
               This control may detect when critical services have been disabled, such as Windows
-              Security Center. This control may also detect when IIS logging has been disabled. The 
+              Security Center. This control may also detect when IIS logging has been disabled. The
               following alerts may be generated:
               "Detected the disabling of critical services", "Detected actions indicative of disabling
               and deleting IIS log files".
@@ -390,7 +390,7 @@ techniques:
       - category: Detect
         value: Minimal
         comments: >-
-          This control's detection is specific to a minority of this technique's sub-techniques and procedure examples 
+          This control's detection is specific to a minority of this technique's sub-techniques and procedure examples
           resulting in a Minimal Coverage score and consequently an overall score of Minimal.
     sub-techniques-scores:
       - sub-techniques:
@@ -463,7 +463,7 @@ techniques:
       - category: Detect
         value: Partial
         comments: >-
-          This control provides detection for some of this technique's sub-techniques and procedure examples resulting 
+          This control provides detection for some of this technique's sub-techniques and procedure examples resulting
           in a Partial Coverage score and consequently an overall score of Partial.
     sub-techniques-scores:
       - sub-techniques:
@@ -488,9 +488,9 @@ techniques:
       - category: Detect
         value: Minimal
         comments: >-
-          This control provides detection for a minority of this technique's sub-techniques and procedure examples 
+          This control provides detection for a minority of this technique's sub-techniques and procedure examples
           resulting in a Minimal Coverage score and consequently an overall score of Minimal.  Furthermore, its detection
-          capability relies on detecting the usage of specific tools (e.g. sqldumper.exe) further adversely impacting 
+          capability relies on detecting the usage of specific tools (e.g. sqldumper.exe) further adversely impacting
           its score.
     sub-techniques-scores:
       - sub-techniques:
@@ -560,7 +560,7 @@ techniques:
       - category: Detect
         value: Partial
         comments: >-
-          This control provides partial detection for some of this technique's sub-techniques 
+          This control provides partial detection for some of this technique's sub-techniques
           resulting in a Partial Coverage score and consequently an overall score of Partial.
     sub-techniques-scores:
       - sub-techniques:
@@ -573,7 +573,7 @@ techniques:
               This control may detect RDP hijacking through use of the tscon.exe binary. The following alerts
               may be generated:
               "Suspect integrity level indicative of RDP hijacking", "Suspect service installation".
-            
+
   - id: T1105
     name: Ingress Tool Transfer
     technique-scores:
