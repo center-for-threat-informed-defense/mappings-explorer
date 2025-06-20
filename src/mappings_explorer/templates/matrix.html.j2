@@ -270,11 +270,9 @@
     },
     methods: {
       downloadJson(file, filename){
-      console.log("At top of download json");
         fetch(file)
           .then((response) => response.json())
           .then((json) => {
-            console.log("got response ", json)
             json = JSON.stringify(json);
             let blob = new Blob([json], {
               type: 'application/json'
