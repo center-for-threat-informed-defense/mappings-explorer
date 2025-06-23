@@ -7,7 +7,7 @@
 Mappings Explorer enables cyber defenders to understand how security controls and
 capabilities map onto the adversary behaviors catalogued in the [MITRE
 ATT&CK®](https://attack.mitre.org/) knowledge base. The [Center for Threat-Informed
-Defense](https://mitre-engenuity.org/cybersecurity/center-for-threat-informed-defense/) created
+Defense](https://ctid.mitre.org/) created
 these open source mappings to serve as a bridge between the threat-informed defense and
 other cyberdefense paradigms such as security controls and vulnerability management.
 
@@ -37,12 +37,12 @@ advance threat-informed defense.
   and download our ATT&CK mappings.
 - **Recommend new mappings projects.** Is there a security control framework (or other
   security capability) that is not in Mappings Explorer but should be? [Let us
-  know.](mailto:ctid@mitre-engenuity.org?subject=Mappings%20Explorer%20framework%20request)
+  know.](mailto:ctid@mitre.org?subject=Mappings%20Explorer%20framework%20request)
 - **Create new mappings.** The Mappings Editor is released as a public beta; you may try
   using it to create your own mappings data. The mappings data can be used internally
   inside your organization, or if you think the public would benefit, please [get in
   touch with
-  us]((mailto:ctid@mitre-engenuity.org?subject=Mappings%20Explorer%20framework%20submission))
+  us]((mailto:ctid@mitre.org?subject=Mappings%20Explorer%20framework%20submission))
   to discuss merging your work into our public repository.
 
 ## Use Cases
@@ -72,12 +72,12 @@ Please see the guidance for contributors if are you interested in
 
 Please submit [issues](https://github.com/center-for-threat-informed-defense/mappings-explorer/issues) for
 any technical questions/concerns or contact
-[ctid@mitre-engenuity.org](mailto:ctid@mitre-engenuity.org?subject=Question%20about%20Mappings%20Explorer)
+[ctid@mitre.org](mailto:ctid@mitre.org?subject=Question%20about%20Mappings%20Explorer)
 directly for more general inquiries.
 
 ## Notice
 
-© 2024 MITRE Engenuity. Approved for public release. Document number(s) CT0104.
+© 2024 MITRE. Approved for public release. Document number(s) CT0104.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
 file except in compliance with the License. You may obtain a copy of the License at

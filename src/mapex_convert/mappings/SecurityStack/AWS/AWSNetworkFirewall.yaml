@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 06/09/2021
 name: AWS Network Firewall
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 tags:
@@ -70,7 +70,7 @@ techniques:
           Network Firewall could block the source of the denial of service attack. This mapping is
           given a score of Partial because it only supports a subset of the sub-techniques (3 of 4)
           and because the source of the attack would have to be known before rules could be put in
-          place to protect against it. 
+          place to protect against it.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1499.001
@@ -90,7 +90,7 @@ techniques:
               resources (e.g., allow lists) as well as which protocol traffic is permitted. That is,
               the AWS Network Firewall could block the source of the denial of service attack. This
               mapping is given a score of Partial because the source of the attack would have to be
-              known before rules could be put in place to protect against it. 
+              known before rules could be put in place to protect against it.
   - id: T1048
     name: Exfiltration Over Alternative Protocol
     technique-scores:
@@ -104,7 +104,7 @@ techniques:
           addresses and domains that might be used to receive exfiltrated data. This mapping is
           given a score of Partial because the known-bad IP addresses and domains would need to be
           known in advance and AWS Network Firewall wouldn't have deep packet inspection visibility
-          into encrypted non-C2 protocols. 
+          into encrypted non-C2 protocols.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1048.002
@@ -124,7 +124,7 @@ techniques:
               addresses and domains that might be used to receive exfiltrated data. This mapping is
               given a score of Partial because the known-bad IP addresses and domains would need to
               be known in advance and AWS Network Firewall wouldn't have deep packet inspection
-              visibility into encrypted non-C2 protocols. 
+              visibility into encrypted non-C2 protocols.
   - id: T1187
     name: Forced Authentication
     technique-scores:
@@ -136,7 +136,7 @@ techniques:
           functionality can be used to block SMB and WebDAV traffic from exiting the network which
           can protect against adversaries from forcing authentication over SMB and WebDAV. This
           mapping is given a score of Significant because AWS Network Firewall can block this
-          traffic or restrict where it can go to. 
+          traffic or restrict where it can go to.
   - id: T1498
     name: Network Denial of Service
     technique-scores:
@@ -148,7 +148,7 @@ techniques:
           functionality can be used to block the sources of smaller-scale network denial of service
           attacks. While AWS Network Firewall supports both all sub-techniques (2 of 2), this
           mapping is given a score of Minimal because often times it is necessary to block the
-          traffic at an Internet Service Provider or Content Provider Network level. 
+          traffic at an Internet Service Provider or Content Provider Network level.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1498.001
@@ -164,7 +164,7 @@ techniques:
               functionality can be used to block the sources of smaller-scale network denial of
               service attacks. This mapping is given a score of Minimal because often times it is
               necessary to block the traffic at an Internet Service Provider or Content Provider
-              Network level. 
+              Network level.
   - id: T1095
     name: Non-Application Layer Protocol
     technique-scores:
@@ -303,7 +303,7 @@ techniques:
           functionality can be used to block communication with known fallback channels by filtering
           based on known bad IP addresses and domains. This mapping is given a score of Partial
           because it only protects against known fallback channels and not channels yet to be
-          identified. 
+          identified.
   - id: T1104
     name: Multi-Stage Channels
     technique-scores:
@@ -315,7 +315,7 @@ techniques:
           functionality can be used to block communication with known command and control channels
           by filtering based on known bad IP addresses and domains. This mapping is given a score of
           Partial because it only protects against known channels and not channels yet to be
-          identified. 
+          identified.
   - id: T1046
     name: Network Service Scanning
     technique-scores:
@@ -327,7 +327,7 @@ techniques:
           functionality can be used to restrict access to the endpoints within the virtual private
           cloud and protect against network service scanning. This mapping is given a score of
           Partial because it only protects against network service scanning attacks that originate
-          from outside the firewall and not from within network protected by the firewall. 
+          from outside the firewall and not from within network protected by the firewall.
   - id: T1595
     name: Active Scanning
     technique-scores:
@@ -340,7 +340,7 @@ techniques:
           cloud and protect against active scanning. While this mapping supports al sub-techniques
           (2 of 2), this mapping is given a score of Partial because it only protects against active
           scanning attacks that originate from outside the firewall and not from within network
-          protected by the firewall. 
+          protected by the firewall.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1595.001
@@ -356,7 +356,7 @@ techniques:
               functionality can be used to restrict access to the endpoints within the virtual
               private cloud and protect against active scanning. This mapping is given a score of
               Partial because it only protects against active scanning attacks that originate from
-              outside the firewall and not from within network protected by the firewall. 
+              outside the firewall and not from within network protected by the firewall.
   - id: T1571
     name: Non-Standard Port
     technique-scores:
@@ -367,7 +367,7 @@ techniques:
           network protocol as well as perform deep packet inspection on the payload. This
           functionality can be used to restrict which protocols and port numbers are allowed through
           the firewall and prevent adversaries from using non-standard ports. As a result, this
-          mapping is given a score of Significant. 
+          mapping is given a score of Significant.
   - id: T1542
     name: Pre-OS Boot
     technique-scores:
@@ -405,7 +405,7 @@ techniques:
           exfiltrate data as well as prevent resources from communicating with known-bad IP
           addresses and domains that might be used to receive exfiltrated data. This mapping is
           given a score of Partial because the known-bad IP addresses and domains would need to be
-          known in advance. 
+          known in advance.
   - id: T1018
     name: Remote System Discovery
     technique-scores:
@@ -416,7 +416,7 @@ techniques:
           network protocol as well as perform deep packet inspection on the payload. This
           functionality can be used to block adversaries from discovering endpoints behind the
           firewall. This mapping is given a score of Partial because it does not protect against
-          discovering endpoints within the network and behind the firewall. 
+          discovering endpoints within the network and behind the firewall.
   - id: T1133
     name: External Remote Services
     technique-scores:
@@ -444,7 +444,7 @@ techniques:
           cloud and protect against adversaries gathering information about the network. While this
           mapping supports most of the sub-techniques (4 of 6), it is only given a score of Partial
           because it only protects against attempts to gather information via scanning that
-          originate from outside the firewall and it does not protect against phishing. 
+          originate from outside the firewall and it does not protect against phishing.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1590.001
@@ -465,7 +465,7 @@ techniques:
               private cloud and protect against adversaries gathering information about the network.
               This mapping is given a score of Partial because it only protects against attempts to
               gather information via scanning that originate from outside the firewall and it does
-              not protect against phishing. 
+              not protect against phishing.
 references:
   - >-
     https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html

@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/15/2021
 name: Cloud App Security Policies
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -19,7 +19,7 @@ techniques:
         value: Partial
         comments: >-
           This control can identify anomalous behavior such as geographically impossible logins and
-          out-of-character activity. 
+          out-of-character activity.
 
           Relevant alerts include "Activity from anonymous IP address" , "Activity from infrequent
           country", "Activity from suspicious IP address", "Impossible Travel", and "Activity
@@ -37,7 +37,7 @@ techniques:
             value: Partial
             comments: >-
               This control can identify anomalous behavior such as geographically impossible logins
-              and out-of-character activity. 
+              and out-of-character activity.
 
               Relevant alerts include "Activity from anonymous IP address" , "Activity from
               infrequent country", "Activity from suspicious IP address", "Impossible Travel", and
@@ -117,7 +117,7 @@ techniques:
         value: Partial
         comments: >-
           This control can detect potentially risky apps. Relevant alerts include "Misleading
-          publisher name for an Oauth app" and "Misleading OAuth app name". 
+          publisher name for an Oauth app" and "Misleading OAuth app name".
   - id: T1526
     name: Cloud Service Discovery
     technique-scores:
@@ -261,7 +261,7 @@ techniques:
           This control can identify anomalous admin activity.
 
           Relevant alerts include "Multiple storage deletion activities", "Multiple VM creation
-          activities", and "Suspicious creation activity for cloud region". 
+          activities", and "Suspicious creation activity for cloud region".
     sub-techniques-scores:
       - sub-techniques:
           - id: T1578.004

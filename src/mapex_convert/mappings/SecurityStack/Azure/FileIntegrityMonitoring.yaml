@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 1/21/2021
 name: File Integrity Monitoring
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -16,7 +16,7 @@ description: >
   File integrity monitoring (FIM), also known as change monitoring, examines operating system
   files, Windows registries, application software, Linux system files, and more, for changes that
   might indicate an attack. File Integrity Monitoring (FIM) informs you when changes occur to
-  sensitive areas in your resources, so you can investigate and address unauthorized activity. 
+  sensitive areas in your resources, so you can investigate and address unauthorized activity.
 techniques:
   - id: T1053
     name: Scheduled Task/Job
@@ -40,7 +40,7 @@ techniques:
             value: Partial
             comments: >
               This control may detect changes to the Windows registry upon creation or modification of scheduled tasks.
-              This control may also detect changes to files used by cron or systemd to create/modify scheduled tasks. 
+              This control may also detect changes to files used by cron or systemd to create/modify scheduled tasks.
               The specificity of registry keys and files used in creation or modification of these scheduled tasks may
               reduce the false positive rate. This control at worst scans for changes on an hourly basis.
   - id: T1098
@@ -124,7 +124,7 @@ techniques:
             value: Partial
             comments: >
               This control may detect changes to the Windows registry upon creation or modification of Windows services.
-              This control may also detect changes to files used by systemd to create/modify systemd services. 
+              This control may also detect changes to files used by systemd to create/modify systemd services.
               The specificity of registry keys and files used in creation or modification of these scheduled tasks may
               reduce the false positive rate. This control at worst scans for changes on an hourly basis.
   - id: T1546
@@ -161,7 +161,7 @@ techniques:
           - category: Detect
             value: Partial
             comments: >
-              This control may detect changes to the Windows registry or files that indicate event triggered execution. 
+              This control may detect changes to the Windows registry or files that indicate event triggered execution.
               The specificity of registry keys and files used in creation or modification of these scheduled tasks may
               reduce the false positive rate. This control at worst scans for changes on an hourly basis.
       - sub-techniques:
@@ -191,8 +191,8 @@ techniques:
             value: Partial
             comments: >
               This control may detect changes to the ld.so.preload file which may indicate an attempt to
-              hijack execution flow. This sub-technique may also be utilized through an environment 
-              variable which this control may not detect. This control at worst scans for changes on an 
+              hijack execution flow. This sub-technique may also be utilized through an environment
+              variable which this control may not detect. This control at worst scans for changes on an
               hourly basis.
   - id: T1137
     name: Office Application Startup
@@ -234,7 +234,7 @@ techniques:
           - category: Detect
             value: Partial
             comments: >
-              This control may detect changes to the sudoers file which may indicate privilege 
+              This control may detect changes to the sudoers file which may indicate privilege
               escalation. This control at worst scans for changes on an hourly basis.
   - id: T1556
     name: Modify Authentication Process
@@ -287,7 +287,7 @@ techniques:
               This control can be used to detect the Windows Security Support Provider (SSP) DLLs
               variation of this sub-technique by monitoring the Registry keys used to register these
               DLLs.  These keys should change infrequently and therefore false positives should be
-              minimal. 
+              minimal.
   - id: T1222
     name: File and Directory Permissions Modification
     technique-scores:
@@ -304,7 +304,7 @@ techniques:
             value: Partial
             comments: >-
               This control can detect changes to the permissions of Windows and Linux files and can
-              be used to detect modifications to sensitive directories and files that shouldn't 
+              be used to detect modifications to sensitive directories and files that shouldn't
               change frequently. This control at worst scans for changes on an hourly basis.
   - id: T1562
     name: Impair Defenses
@@ -358,7 +358,7 @@ techniques:
               Windows Subject Interface Packages (SIPs). Because this sub-technique can be
               accomplished without modifying the Registry via DLL Search Order Hijacking, it has
               been scored as Partial. The related Registry keys should not change often and therefore
-              the false positive rate should be minimal. This control at worst scans for changes on an 
+              the false positive rate should be minimal. This control at worst scans for changes on an
               hourly basis.
       - sub-techniques:
           - id: T1553.004
@@ -373,7 +373,7 @@ techniques:
               positive rate is minimal. This control at worst scans for changes on an hourly basis.
 comments: >
   The techniques included in this mapping result in Windows Registry or file system artifacts
-  being created or modified which can be detected by this control.  
+  being created or modified which can be detected by this control.
 
   The detection score for most techniques included in this mapping was scored as Significant and
   where there are exceptions, comments have been provided. This Significant score assessment  was

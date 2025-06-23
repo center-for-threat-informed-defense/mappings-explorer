@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/08/2021
 name: Azure Alerts for Network Layer
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -23,7 +23,7 @@ techniques:
         comments: >-
           This control can identify multiple connection attempts by external IPs, which may be
           indicative of Brute Force attempts, though not T1110.002, which is performed offline.
-          It provides significant detection from most of this technique's sub-techniques and 
+          It provides significant detection from most of this technique's sub-techniques and
           procedure examples resulting in an overall score of Significant.
     sub-techniques-scores:
       - sub-techniques:
@@ -46,7 +46,7 @@ techniques:
         value: Minimal
         comments: >-
           This control can identify connections to known malicious sites. Scored minimal since the
-          malicious sites must be on block list. 
+          malicious sites must be on block list.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1071.004
@@ -62,7 +62,7 @@ techniques:
             value: Minimal
             comments: >-
               This control can identify connections to known malicious sites. Scored minimal since
-              the malicious sites must be on a block list. 
+              the malicious sites must be on a block list.
   - id: T1133
     name: External Remote Services
     technique-scores:

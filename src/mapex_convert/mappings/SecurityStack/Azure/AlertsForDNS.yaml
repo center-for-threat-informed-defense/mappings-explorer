@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/11/2021
 name: Alerts for DNS
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -38,7 +38,7 @@ techniques:
     technique-scores:
       - category: Detect
         value: Minimal
-        comments: Can detect potential DNS protocol misuse/anomalies. 
+        comments: Can detect potential DNS protocol misuse/anomalies.
                   Technique coverage is restricted to DNS and therefore results in a Minimal score.
     sub-techniques-scores:
       - sub-techniques:
@@ -60,14 +60,14 @@ techniques:
     technique-scores:
       - category: Detect
         value: Minimal
-        comments: Can detect DNS activity to anonymity networks e.g. TOR.  Because this detection is specific to DNS, 
+        comments: Can detect DNS activity to anonymity networks e.g. TOR.  Because this detection is specific to DNS,
                   its coverage score is Minimal resulting in an overall Minimal score.
   - id: T1048
     name: Exfiltration Over Alternative Protocol
     technique-scores:
       - category: Detect
         value: Minimal
-        comments: Can detect anomalous use of DNS.  Because this detection is specific to DNS, 
+        comments: Can detect anomalous use of DNS.  Because this detection is specific to DNS,
                   its coverage score is Minimal resulting in an overall Minimal score.
 references:
   - https://docs.microsoft.com/en-us/azure/security-center/defender-for-dns-introduction

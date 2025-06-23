@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/20/2021
 name: Azure AD Multi-Factor Authentication
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -17,10 +17,10 @@ description: >-
   an additional form of identification, such as to enter a code on their cellphone or to provide a
   fingerprint scan.
 
-  If you only use a password to authenticate a user, it leaves an insecure vector for attack. If 
-  the password is weak or has been exposed elsewhere, is it really the user signing in with the 
+  If you only use a password to authenticate a user, it leaves an insecure vector for attack. If
+  the password is weak or has been exposed elsewhere, is it really the user signing in with the
   username and password, or is it an attacker? When you require a second form of authentication,
-  security is increased as this additional factor isn't something that's easy for an attacker to 
+  security is increased as this additional factor isn't something that's easy for an attacker to
   obtain or duplicate.
 techniques:
   - id: T1110
@@ -65,7 +65,7 @@ techniques:
               requiring the adversary to complete an additional authentication process before access
               is permitted.  This is an incomplete protection measure though as the adversary may
               also have obtained credentials enabling bypassing the additional authentication
-              method. 
+              method.
 comments: >-
   Note that MFA that is triggered in response to privileged operations (such as assigning a user a
   privileged role) are considered functionality of the Azure AD Privileged Identity Management
