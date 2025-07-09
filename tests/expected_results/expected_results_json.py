@@ -42,7 +42,7 @@ expected_security_stack_mapping_json = {
         "attack_version": "9.0",
         "technology_domain": "enterprise",
         "author": "",
-        "contact": "ctid@mitre-engenuity.org",
+        "contact": "ctid@mitre.org",
         "creation_date": "09/21/2021",
         "last_update": "09/21/2021",
         "organization": "",

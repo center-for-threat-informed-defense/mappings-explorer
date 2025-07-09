@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 06/26/2021
 name: Amazon Virtual Private Cloud
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 tags:
@@ -74,7 +74,7 @@ techniques:
       - category: Protect
         value: Partial
         comments: >-
-          VPC security groups and network access control lists (NACLs) can limit access to external remote services 
+          VPC security groups and network access control lists (NACLs) can limit access to external remote services
           to the minimum necessary.
   - id: T1205
     name: Traffic Signaling
@@ -97,7 +97,7 @@ techniques:
               VPC security groups and network access control lists (NACLs) can protect against this sub-technique by
               enforcing limited access to only required ports.  Consequently, even if the adversary is able to utilize
               port knocking to open additional ports at the host level, it is still blocked at the security group or NACL
-              level. 
+              level.
   - id: T1046
     name: Network Service Scanning
     technique-scores:
@@ -125,7 +125,7 @@ techniques:
           VPC security groups and network access control lists (NACLs) can be used to restrict external network access to the
           minimum required and can therefore mitigate an adversary utilizing a fallback or alternative communication
           channels.  In environments where unrestricted Internet access is required, security groups and NACLs can still be
-          used to block known malicious endpoints.  Because in such environments the protection is limited to known 
+          used to block known malicious endpoints.  Because in such environments the protection is limited to known
           malicious IP addresses and domains and does not provide protection from such attacks from unknown domains and
           IP addresses, this is scored as partial coverage resulting in an overall Partial score.
   - id: T1095
@@ -137,7 +137,7 @@ techniques:
           VPC security groups and network access control lists (NACLs) can be used to restrict external network access to the
           minimum required and can therefore mitigate adversary attempts to utilize non-application layer protocols for
           communication.  In environments where unrestricted Internet access is required, security groups and NACLs can still
-          be used to block known malicious endpoints.  Because in such environments the protection is limited to known 
+          be used to block known malicious endpoints.  Because in such environments the protection is limited to known
           malicious IP addresses and domains and does not provide protection from such attacks from unknown domains and
           IP addresses, this is scored as partial coverage resulting in an overall Partial score.
   - id: T1571
@@ -263,7 +263,7 @@ techniques:
       - category: Protect
         value: Minimal
         comments: >-
-          VPC security groups and network access control lists (NACLs) can provide partial protection coverage of Pre-OS Boot 
+          VPC security groups and network access control lists (NACLs) can provide partial protection coverage of Pre-OS Boot
           mechanisms that utilize TFTP boot resulting in an overall score of Minimal.
     sub-techniques-scores:
       - sub-techniques:

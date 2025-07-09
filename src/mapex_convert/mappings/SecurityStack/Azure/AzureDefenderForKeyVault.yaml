@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 8.2
 creation date: 03/01/2021
 name: Azure Defender for Key Vault
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: Azure
 tags:
@@ -37,10 +37,10 @@ techniques:
           can be treated as a store for passwords, keys, and certificates. The coverage of this
           control could be deemed high for cloud credential and secret storage within Key Vault but
           is not applicable to traditional password stores, such as password managers, keychain, or
-          web browsers. 
+          web browsers.
 comments: >-
   This control provides alerts for suspicious activity for Azure Key Vault. Documentation has been
-  offered on how to respond to alerts but no specific tool or feature is offered for response. 
+  offered on how to respond to alerts but no specific tool or feature is offered for response.
 references:
   - 'https://docs.microsoft.com/en-us/azure/security-center/defender-for-key-vault-introduction'
   - 'https://docs.microsoft.com/en-us/azure/security-center/alerts-reference#alerts-azurekv'

@@ -2,7 +2,7 @@ version: 1
 ATT&CK version: 9
 creation date: 04/19/2021
 name: Amazon GuardDuty
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: AWS
 description: >-
@@ -596,7 +596,7 @@ techniques:
           GuardDuty provides multiple finding types that flag malicious activity against resources.
           These findings focus on API calls that look suspicious and although they do not flag events
           such as Defacement specifically, it can be inferred that these findings can result in mitigating
-          this technique's negative impact. With this assumption the score is capped at Partial. 
+          this technique's negative impact. With this assumption the score is capped at Partial.
     sub-techniques-scores:
       - sub-techniques:
           - id: T1491.002

@@ -3,7 +3,7 @@ ATT&CK version: 10
 creation date: 04/27/2022
 last update: 05/13/2022
 name: AnthosConfigManagement
-contact: ctid@mitre-engenuity.org
+contact: ctid@mitre.org
 organization: Center for Threat Informed Defense (CTID)
 platform: GCP
 tags:
@@ -35,7 +35,7 @@ techniques:
           Prevent configuration drift with continuous monitoring of your cluster state, using the
           declarative model to apply policies that enforce compliance. This control can periodically
           check the integrity of images and containers used in cloud deployments to ensure that
-          adversaries cannot implant malicious code to gain access to an environment. 
+          adversaries cannot implant malicious code to gain access to an environment.
       - category: Detect
         value: Partial
   - id: T1609
@@ -47,7 +47,7 @@ techniques:
           Anthos Config Management lets you create and manage Kubernetes objects across multiple
           clusters at once. PodSecurityPolicies can be enforced to prevent Pods from using the root
           Linux user and prevents pods from running privileged containers. In hindsight this can
-          ensure containers are not running as root by default. 
+          ensure containers are not running as root by default.
   - id: T1610
     name: Deploy Container
     technique-scores:
@@ -59,7 +59,7 @@ techniques:
           against violations during development and test time, as well as runtime violations. This
           control can be used to block adversaries that try to deploy new containers with malware or
           configurations policies that are not in compliance with security policies already
-          defined. 
+          defined.
   - id: T1613
     name: Container and Resource Discovery
     technique-scores:
