@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0](https://github.com/center-for-threat-informed-defense/mappings-explorer/compare/mappings_explorer-v1.1.0...mappings_explorer-v1.2.0) (2025-07-11)
+
+
+### Features
+
+* **MAPEX-287:** add openmark tags to base template ([b9a1261](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/b9a12613b4fe05408fa33abd887b370d1c650663))
+* **MAPEX-289:** handle domain changes ([ae65a48](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/ae65a48e060853707330a60b370c3deb22d7407d))
+* **MAPEX-289:** handle domain changes ([d3207e8](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/d3207e8343168ee5960af9d1061a6dab8853764f))
+* **MAPEX-289:** pass in matrix order ([bdbac10](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/bdbac10e14f9c143e3f72d93db1fc333cdff5777))
+* **MAPEX-289:** revert build ([83b6155](https://github.com/center-for-threat-informed-defense/mappings-explorer/commit/83b6155b94ae8053812ccf0c2eb87936e0502ef1))
+
 ## [1.1.0](https://github.com/center-for-threat-informed-defense/mappings-explorer/compare/mappings_explorer-v1.0.0...mappings_explorer-v1.1.0) (2024-04-15)
 
 
