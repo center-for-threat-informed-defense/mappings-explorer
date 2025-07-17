@@ -453,6 +453,7 @@ def format_attack_data(attack_data, attack_domain):
                 if attack_object_type == "subtechnique"
                 else ""
             )
+            attack_platform = attack_object.get("x_mitre_platforms")
             attack_data_dict[attack_object_id] = {
                 "name": attack_object_name,
                 "type": attack_object_type,
@@ -462,6 +463,7 @@ def format_attack_data(attack_data, attack_domain):
                 "background_color": "",
                 "id": attack_object_id,
                 "mapping_frameworks": {},
+                "platforms": attack_platform,
             }
 
     return attack_data_dict

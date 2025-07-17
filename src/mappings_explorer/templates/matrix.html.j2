@@ -2,6 +2,7 @@
 <div id="matrix-component">
   <Matrix :url_prefix="'{{url_prefix}}'" :all_attack_versions="{{all_attack_versions}}"
     :all_attack_domains="{{attack_domains}}" :matrix_order="{{matrix_order}}"
+    :platform_options="{{platform_options}}"
     :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"></Matrix>
 </div>
 
@@ -92,6 +93,25 @@
                     </div>
                   </div>
                 </div>
+                 <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
+                  <p>Platform</p>
+                  <div class="form-control select" @click="platformSelectOpen = !platformSelectOpen">
+                    <span class="selected-item">[[ selectedPlatform ]]</span>
+                  </div>
+                  <div v-if="platformSelectOpen" class="dropdown-items">
+                    <div
+                      :class="{
+                        'dropdown-item': true,
+                        'selected-option': selectedPlatform.toLowerCase() === platform.toLowerCase()
+                      }"
+                      v-for="platform in attackPlatforms"
+                      :key="platform"
+                      @click="selectedPlatform = platform; getAttackObjectDict(); platformSelectOpen = false;"
+                    >
+                      <span class="dropdown-item-text">[[ platform ]]</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -101,7 +121,7 @@
           <div class="container" data-aos="fade-up">
             <div class="row justify-content-left">
               <div class="col-12">
-                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MAPPINGS MATRIX</h2>
+                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]]  <span>[[selectedPlatform]]</span> MAPPINGS MATRIX</h2>
                 <div class="matrix-table-container">
                   <div class="row">
                     <div class="col-md-12" style="display: flex">
@@ -236,10 +256,12 @@
         attackObjectDict: {},
         techniqueHovered: "",
         selectedDomain: "Enterprise",
+        selectedPlatform: "Windows",
         scrolledCompletelyToRight: false,
         scrolledCompletelyToLeft: true,
         attackSelectOpen: false,
         domainSelectOpen: false,
+        platformSelectOpen: false,
         description: "",
         matrixOrder: [],
       };
@@ -249,6 +271,7 @@
       matrix_order: Object,
       all_attack_versions: Array,
       all_attack_domains: Object,
+      platform_options: Object,
       attack_domain_versions_with_mappings: Object,
     },
     computed: {
@@ -265,6 +288,11 @@
       attackVersions() {
         if (this.all_attack_versions) {
           return this.all_attack_domains[this.selectedDomain];
+        }
+      },
+      attackPlatforms() {
+        if (this.platform_options) {
+          return this.platform_options[this.selectedDomain.toLowerCase()];
         }
       },
     },
@@ -342,7 +370,8 @@
             (value) => {
               return (
                 value.type === "technique" &&
-                value.tactics.includes(tactic.short_name)
+                value.tactics.includes(tactic.short_name) &&
+                (value.platforms && this.selectedPlatform  && value.platforms.includes(this.selectedPlatform))
               );
             }
           );
@@ -354,7 +383,8 @@
             ).filter((value) => {
               return (
                 value.type === "subtechnique" &&
-                value.technique === technique.id
+                value.technique === technique.id &&
+                (value.platforms && this.selectedPlatform  && value.platforms.includes(this.selectedPlatform))
               );
             });
             technique.subtechniques = technique.subtechniques.map((subtechnique) => {
@@ -363,9 +393,15 @@
             });
             return { ...technique };
           });
-          return { ...tactic };
+
+          if (tactic.techniques.length > 0) {
+            return { ...tactic };
+          }
+          else {
+            return {};
+          }
         });
-        this.tactics = sortedTactics;
+        this.tactics = sortedTactics.filter((t) => t.id)
       },
       handleClick(technique) {
         technique.open = !technique.open;
@@ -383,20 +419,28 @@
           this.selectedAttackVersion = url.searchParams.get('attack-version');
         }
         else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}&platform=${this.selectedPlatform.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         }
         if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())) {
           this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
         }
         else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}&platform=${this.selectedPlatform.toLowerCase()}`
+          window.history.pushState({ path: newurl }, '', newurl);
+        }
+        if (url.searchParams.has('platform') && this.attackPlatforms.find(platform => platform.toLowerCase() === url.searchParams.get('platform').toLowerCase())) {
+          this.selectedPlatform = this.attackPlatforms.find(platform => platform.toLowerCase() === url.searchParams.get('platform').toLowerCase());
+        }
+        else {
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}&platform=${this.selectedPlatform.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         }
       },
       handleOutsideClick() {
         this.attackSelectOpen = false;
         this.domainSelectOpen = false;
+        this.platformSelectOpen = false;
       },
       setMatrixColumnAmount(){
         let matrixWidth = document.getElementById("matrix-table-scrollable").clientWidth;

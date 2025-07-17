@@ -32,7 +32,6 @@ from .attack_setup import (
     Technique,
     all_attack_versions,
     attack_domains,
-    matrix_order,
 )
 
 
@@ -1481,7 +1480,25 @@ def build_matrix(url_prefix, projects, breadcrumbs):
     nav = breadcrumbs + [
         (f"{url_prefix}attack/matrix/", "ATT&CK Matrix"),
     ]
-
+    all_attack_versions = [
+        "8.2",
+        "9.0",
+        "10.0",
+        "10.1",
+        "11.0",
+        "11.1",
+        "11.2",
+        "11.3",
+        "12.0",
+        "12.1",
+        "13.0",
+        "13.1",
+        "14.0",
+        "14.1",
+        "15.0",
+        "15.1",
+        "16.1",
+    ]
     attack_domain_versions_with_mappings = {}
     for project in projects:
         for valid_version in project.validVersions:
@@ -1497,6 +1514,136 @@ def build_matrix(url_prefix, projects, breadcrumbs):
                     valid_version[1]
                 )
 
+    attack_domains = {
+        "Enterprise": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+            "15.0",
+            "15.1",
+            "16.0",
+            "16.1",
+        ],
+        "ICS": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.0",
+            "11.1",
+            "11.2",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+            "15.0",
+            "15.1",
+            "16.0",
+            "16.1",
+        ],
+        "Mobile": [
+            "8.2",
+            "9.0",
+            "10.0",
+            "10.1",
+            "11.3",
+            "12.0",
+            "12.1",
+            "13.0",
+            "13.1",
+            "14.0",
+            "14.1",
+            "15.0",
+            "15.1",
+            "16.0",
+            "16.1",
+        ],
+    }
+    matrix_order = {
+        "enterprise": [
+            "TA0043",
+            "TA0042",
+            "TA0001",
+            "TA0002",
+            "TA0003",
+            "TA0004",
+            "TA0005",
+            "TA0006",
+            "TA0007",
+            "TA0008",
+            "TA0009",
+            "TA0011",
+            "TA0010",
+            "TA0040",
+        ],
+        "ics": [
+            "TA0108",
+            "TA0104",
+            "TA0110",
+            "TA0111",
+            "TA0103",
+            "TA0102",
+            "TA0109",
+            "TA0100",
+            "TA0101",
+            "TA0107",
+            "TA0106",
+            "TA0105",
+        ],
+        "mobile": [
+            "TA0027",
+            "TA0041",
+            "TA0028",
+            "TA0029",
+            "TA0030",
+            "TA0031",
+            "TA0032",
+            "TA0033",
+            "TA0035",
+            "TA0037",
+            "TA0036",
+            "TA0034",
+            "TA0038",
+            "TA0039",
+        ],
+    }
+    platform_options = {
+        "enterprise": [
+            "All",
+            "PRE",
+            "Windows",
+            "macOS",
+            "Linux",
+            "Cloud Office Suite",
+            "Cloud Identity Provider",
+            "Cloud SaaS",
+            "Cloud IaaS",
+            "Network Devices",
+            "Containers",
+            "ESXi",
+        ],
+        "ics": ["All"],
+        "mobile": [
+            "All",
+            "Android",
+            "iOS",
+        ],
+    }
+
     json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
     mappings_filepath = PUBLIC_DIR / "data"
     create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
@@ -1510,6 +1657,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         attack_domains=attack_domains,
         attack_domain_versions_with_mappings=attack_domain_versions_with_mappings,
         breadcrumbs=nav,
+        platform_options=platform_options,
     )
     stream.dump(str(output_path))
     logger.info("Done building ATT&CK matrix")
