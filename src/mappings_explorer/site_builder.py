@@ -401,11 +401,12 @@ def load_projects():
 
     m365.attackDomains = ["Enterprise"]
     m365.attackDomain = m365.attackDomains[0]
-    m365.attackVersions = ["14.1"]
+    m365.attackVersions = ["16.1", "14.1"]
     m365.attackVersion = m365.attackVersions[0]
-    m365.versions = ["12.11.2023"]
+    m365.versions = ["07.18.2025", "12.11.2023"]
     m365.validVersions = [
         ("12.11.2023", "14.1", "Enterprise"),
+        ("07.18.2025", "16.1", "Enterprise"),
     ]
     m365.mappings = []
     m365.resources = [
