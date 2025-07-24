@@ -25,6 +25,1000 @@
     },
     "mapping_objects": [
         {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis2 licensing'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1110",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1586",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1621",
+            "attack_object_name": "Multi-Factor Authentication Request Generation",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
+            "references": [
+                "['https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions']"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074",
+            "attack_object_name": "Data Staged",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides the ability to restrict file downloads for a limited set of applications and therefore its overall Coverage score is minimal.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074.001",
+            "attack_object_name": "Local Data Staging",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1074",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074.002",
+            "attack_object_name": "Remote Data Staging",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1074",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides minimal protection for this technique's procedure examples along and also only protects one of its sub-techniques resulting in an overall Minimal score.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "This control can protect against the abuse of valid cloud accounts by requiring MFA or blocking access altogether based on signals such as the user's IP location information, device compliance state, risky sign-in/user state (through integration with Azure AD Identity Protection).  Additionally, session controls that can limit what a valid user can do within an app can also be triggered based on the aforementioned triggers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Conditional Access can be used to enforce MFA for users which provides significant protection against  password compromises, requiring an adversary to complete an additional authentication method before their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides the ability to restrict an adversary from collecting valuable information for a limited set of applications (SharePoint, Exchange, OneDrive) and therefore its overall Coverage score is minimal.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint with no ability to download, print, or sync files.  Furthermore, with its integration with Microsoft Cloud App Security, it can even restrict  cut, copy and paste operations.  This can impede an adversary's ability to collect valuable information and/or files from the application.   This protection is partial as it doesn't prohibit an adversary from potentially viewing sensitive information and manually collecting it, for example simply writing down information by hand.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "Conditional Access, when granting (risky) users access to cloud storage, specifically OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to exfiltrate data from OneDrive.  The protection coverage provided by this control is Minimal as it doesn't provide protection for other storage services available on Azure such as the Azure Storage service.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074",
+            "attack_object_name": "Data Staged",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides the ability to restrict file downloads for a limited set of applications and therefore its overall Coverage score is minimal.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074.001",
+            "attack_object_name": "Local Data Staging",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1074",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1074.002",
+            "attack_object_name": "Remote Data Staging",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1074",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides minimal protection for this technique's procedure examples along and also only protects one of its sub-techniques resulting in an overall Minimal score.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1078",
+            "comments": "This control can protect against the abuse of valid cloud accounts by requiring MFA or blocking access altogether based on signals such as the user's IP location information, device compliance state, risky sign-in/user state (through integration with Azure AD Identity Protection).  Additionally, session controls that can limit what a valid user can do within an app can also be triggered based on the aforementioned triggers.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "Conditional Access can be used to enforce MFA for users which provides significant protection against  password compromises, requiring an adversary to complete an additional authentication method before their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1110",
+            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control only provides the ability to restrict an adversary from collecting valuable information for a limited set of applications (SharePoint, Exchange, OneDrive) and therefore its overall Coverage score is minimal.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1213.002",
+            "attack_object_name": "Sharepoint",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint with no ability to download, print, or sync files.  Furthermore, with its integration with Microsoft Cloud App Security, it can even restrict  cut, copy and paste operations.  This can impede an adversary's ability to collect valuable information and/or files from the application.   This protection is partial as it doesn't prohibit an adversary from potentially viewing sensitive information and manually collecting it, for example simply writing down information by hand.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "Conditional Access, when granting (risky) users access to cloud storage, specifically OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to exfiltrate data from OneDrive.  The protection coverage provided by this control is Minimal as it doesn't provide protection for other storage services available on Azure such as the Azure Storage service.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "This control only protects cloud accounts and therefore its overall coverage is minimal resulting in a Minimal respond score for this technique.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "This control only protects cloud accounts and therefore its overall coverage is minimal resulting in a Minimal respond score for this technique.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Security controls like Azure AD Identity Protection can raise a user's risk level asynchronously after they have used a valid account to access organizational data.  This CAE control can respond to this change in the users risky state to terminate the user's access within minutes or enforce an additional authentication method such as MFA.   This mitigates the impact of an adversary using a valid account.  This is control only forces the user to re-authenticate and doesn't resolve the usage of a valid account (i.e. password change) and is therefore a containment type of response. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "Security controls like Azure AD Identity Protection can raise a user's risk level asynchronously after they have used a valid account to access organizational data.  This CAE control can respond to this change in the users risky state to terminate the user's access within minutes or enforce an additional authentication method such as MFA.   This mitigates the impact of an adversary using a valid account.  This is control only forces the user to re-authenticate and doesn't resolve the usage of a valid account (i.e. password change) and is therefore a containment type of response. ",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1496.001",
+            "attack_object_name": "Compute Hijacking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1496",
+            "comments": "In the event that a session is hijacked, continuous access evaluation can be used to terminate the session, potentially before any malicious actions can occur.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1496.004",
+            "attack_object_name": "Cloud Service Hijacking",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1496",
+            "comments": "In the event that a session is hijacked, continuous access evaluation can be used to terminate the session, potentially before any malicious actions can occur.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CA-E3",
+            "capability_description": "Conditional Access",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1557.004",
+            "attack_object_name": "Evil Twin",
+            "capability_group": "entra-id",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1557",
+            "comments": "Conditional Access policies can restrict devices, potentially stopping them from connecting to an Evil Twin network.",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1098.006",
+            "attack_object_name": "Additional Container Cluster Roles",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1098",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation ']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114",
+            "attack_object_name": "Email Collection",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1114.002",
+            "attack_object_name": "Remote Email Collection",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1114",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1134.001",
+            "attack_object_name": "Token Impersonation/Theft",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1134",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1531",
+            "attack_object_name": "Account Access Removal",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1539",
+            "attack_object_name": "Steal Web Session Cookie",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1548",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1548.006",
+            "attack_object_name": "TCC Manipulation",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1548",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1556",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide'",
+                " 'https://learn.microsoft.com/en-us/entra/identity-platform/app-resilience-continuous-access-evaluation?tabs=dotnet'",
+                " 'https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement'",
+                " 'https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585",
+            "attack_object_name": "Establish Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585.002",
+            "attack_object_name": "Email Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1585",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1585.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1585",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586",
+            "attack_object_name": "Compromise Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.002",
+            "attack_object_name": "Email Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "related_score": "T1586",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "EID-CAE-E3",
+            "capability_description": "Continuous Access Evaluation",
+            "mapping_type": "technique_score",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "entra-id",
+            "score_category": "detect",
+            "score_value": "significant",
+            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
+            "references": [
+                "['https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide']"
+            ],
+            "status": "final_draft"
+        },
+        {
             "capability_id": "PUR-AUS-E5",
             "capability_description": "Audit Solutions",
             "mapping_type": "technique_score",
@@ -7643,945 +8637,6 @@
             "references": [
                 "https://learn.microsoft.com/en-us/purview/privileged-access-management"
             ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1059.009",
-            "attack_object_name": "Cloud API",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1059",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis2 licensing",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074",
-            "attack_object_name": "Data Staged",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides the ability to restrict file downloads for a limited set of applications and therefore its overall Coverage score is minimal.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074",
-            "attack_object_name": "Data Staged",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides the ability to restrict file downloads for a limited set of applications and therefore its overall Coverage score is minimal.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074.001",
-            "attack_object_name": "Local Data Staging",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1074",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074.001",
-            "attack_object_name": "Local Data Staging",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1074",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074.002",
-            "attack_object_name": "Remote Data Staging",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1074",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1074.002",
-            "attack_object_name": "Remote Data Staging",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1074",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint and OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint/OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to collect and stage files.  This offers minimal coverage as it requires the target application to support such a feature that can be triggered by this control and to date only a few (Office) applications support this.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides minimal protection for this technique's procedure examples along and also only protects one of its sub-techniques resulting in an overall Minimal score.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides minimal protection for this technique's procedure examples along and also only protects one of its sub-techniques resulting in an overall Minimal score.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "comments": "This control only protects cloud accounts and therefore its overall coverage is minimal resulting in a Minimal respond score for this technique.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "comments": "This control only protects cloud accounts and therefore its overall coverage is minimal resulting in a Minimal respond score for this technique.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1078",
-            "comments": "This control can protect against the abuse of valid cloud accounts by requiring MFA or blocking access altogether based on signals such as the user's IP location information, device compliance state, risky sign-in/user state (through integration with Azure AD Identity Protection).  Additionally, session controls that can limit what a valid user can do within an app can also be triggered based on the aforementioned triggers.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1078",
-            "comments": "This control can protect against the abuse of valid cloud accounts by requiring MFA or blocking access altogether based on signals such as the user's IP location information, device compliance state, risky sign-in/user state (through integration with Azure AD Identity Protection).  Additionally, session controls that can limit what a valid user can do within an app can also be triggered based on the aforementioned triggers.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "respond",
-            "score_value": "partial",
-            "related_score": "T1078",
-            "comments": "Security controls like Azure AD Identity Protection can raise a user's risk level asynchronously after they have used a valid account to access organizational data.  This CAE control can respond to this change in the users risky state to terminate the user's access within minutes or enforce an additional authentication method such as MFA.   This mitigates the impact of an adversary using a valid account.  This is control only forces the user to re-authenticate and doesn't resolve the usage of a valid account (i.e. password change) and is therefore a containment type of response. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "respond",
-            "score_value": "partial",
-            "related_score": "T1078",
-            "comments": "Security controls like Azure AD Identity Protection can raise a user's risk level asynchronously after they have used a valid account to access organizational data.  This CAE control can respond to this change in the users risky state to terminate the user's access within minutes or enforce an additional authentication method such as MFA.   This mitigates the impact of an adversary using a valid account.  This is control only forces the user to re-authenticate and doesn't resolve the usage of a valid account (i.e. password change) and is therefore a containment type of response. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.003",
-            "attack_object_name": "Additional Cloud Roles",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1098",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1098.006",
-            "attack_object_name": "Additional Container Cluster Roles",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1098",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation "
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110",
-            "attack_object_name": "Brute Force",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Conditional Access can be used to enforce MFA for users which provides significant protection against  password compromises, requiring an adversary to complete an additional authentication method before their access is permitted.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110",
-            "attack_object_name": "Brute Force",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "comments": "Conditional Access can be used to enforce MFA for users which provides significant protection against  password compromises, requiring an adversary to complete an additional authentication method before their access is permitted.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110",
-            "attack_object_name": "Brute Force",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110",
-            "attack_object_name": "Brute Force",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.001",
-            "attack_object_name": "Password Guessing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.001",
-            "attack_object_name": "Password Guessing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.001",
-            "attack_object_name": "Password Guessing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1110",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.002",
-            "attack_object_name": "Password Cracking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.002",
-            "attack_object_name": "Password Cracking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.002",
-            "attack_object_name": "Password Cracking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1110",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.003",
-            "attack_object_name": "Password Spraying",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.003",
-            "attack_object_name": "Password Spraying",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.003",
-            "attack_object_name": "Password Spraying",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1110",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.004",
-            "attack_object_name": "Credential Stuffing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.004",
-            "attack_object_name": "Credential Stuffing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "significant",
-            "related_score": "T1110",
-            "comments": "Conditional Access can be used to enforce MFA for users which can significantly reduce the impact of a password compromise, requiring an adversary to complete an additional authentication method before  their access is permitted.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1110.004",
-            "attack_object_name": "Credential Stuffing",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1110",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1114",
-            "attack_object_name": "Email Collection",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1114.002",
-            "attack_object_name": "Remote Email Collection",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1114",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1134.001",
-            "attack_object_name": "Token Impersonation/Theft",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1134",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1531",
-            "attack_object_name": "Account Access Removal",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1539",
-            "attack_object_name": "Steal Web Session Cookie",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1548.005",
-            "attack_object_name": "Temporary Elevated Cloud Access",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1548",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1548.006",
-            "attack_object_name": "TCC Manipulation",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1548",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1556.006",
-            "attack_object_name": "Multi-Factor Authentication",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1556",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide",
-                "https://learn.microsoft.com/en-us/entra/identity-platform/app-resilience-continuous-access-evaluation?tabs=dotnet",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-risks",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-continuous-access-evaluation"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1585",
-            "attack_object_name": "Establish Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1585.002",
-            "attack_object_name": "Email Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1585",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1585.003",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1585",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1586",
-            "attack_object_name": "Compromise Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1586.002",
-            "attack_object_name": "Email Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1586",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1586.003",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1586",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1586.003",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1586",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1586.003",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "related_score": "T1586",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1621",
-            "attack_object_name": "Multi-Factor Authentication Request Generation",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "comments": "Multiple conditions along can be combined to create fine-grained and specific policies that partially enforce access controls to account resources that adversaries may attempt to abuse: conditional access to Cloud APIs, blocking legacy authentication, requiring multi-factor authentication for users, block access by location, block access to unsupported devices, failed login attempts, account lockout policies, etc.. These features may require Microsoft Entra ID P2.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policy-common?tabs=secure-foundation",
-                "https://learn.microsoft.com/en-us/entra/id-protection/concept-identity-protection-policies",
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-conditions"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1651",
-            "attack_object_name": "Cloud Administration Command",
-            "capability_group": "entra-id",
-            "score_category": "detect",
-            "score_value": "significant",
-            "comments": "Entra ID's continuous access evaluation is a security control implemented by enabling services to subscribe to critical Microsoft Entra events. Those events can then be evaluated and enforced near real time. This process enables tenant users lose access to organizational SharePoint Online files, email, calendar, or tasks, and Teams from Microsoft 365 client apps within minutes after a critical event is detected. The following events are currently evaluated:\n\nUser Account is deleted or disabled\nPassword for a user is changed or reset\nMultifactor authentication is enabled for the user\nAdministrator explicitly revokes all refresh tokens for a user\nHigh user risk detected by Microsoft Entra ID Protection\n\nLicense Requirements:\nContinuous access evaluation will be included in all versions of Microsoft 365. \n",
-            "references": [
-                "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/zero-trust-continuous-access-evaluation-microsoft-365?view=o365-worldwide"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213",
-            "attack_object_name": "Data from Information Repositories",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides the ability to restrict an adversary from collecting valuable information for a limited set of applications (SharePoint, Exchange, OneDrive) and therefore its overall Coverage score is minimal.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213",
-            "attack_object_name": "Data from Information Repositories",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "This control only provides the ability to restrict an adversary from collecting valuable information for a limited set of applications (SharePoint, Exchange, OneDrive) and therefore its overall Coverage score is minimal.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213.002",
-            "attack_object_name": "Sharepoint",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1213",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint with no ability to download, print, or sync files.  Furthermore, with its integration with Microsoft Cloud App Security, it can even restrict  cut, copy and paste operations.  This can impede an adversary's ability to collect valuable information and/or files from the application.   This protection is partial as it doesn't prohibit an adversary from potentially viewing sensitive information and manually collecting it, for example simply writing down information by hand.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1213.002",
-            "attack_object_name": "Sharepoint",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1213",
-            "comments": "Conditional Access (CA), when granting (risky) users access to Office applications like SharePoint can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to SharePoint with no ability to download, print, or sync files.  Furthermore, with its integration with Microsoft Cloud App Security, it can even restrict  cut, copy and paste operations.  This can impede an adversary's ability to collect valuable information and/or files from the application.   This protection is partial as it doesn't prohibit an adversary from potentially viewing sensitive information and manually collecting it, for example simply writing down information by hand.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "Conditional Access, when granting (risky) users access to cloud storage, specifically OneDrive, can restrict what they can do in these applications using its app-enforced restrictions.   For example, it can enforce that users on unmanaged devices will have browser-only access to OneDrive with no ability to download, print, or sync files.  This can impede an adversary's ability to exfiltrate data from OneDrive.  The protection coverage provided by this control is Minimal as it doesn't provide protection for other storage services available on Azure such as the Azure Storage service.",
-            "references": [
-                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1496.001",
-            "attack_object_name": "Compute Hijacking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1496",
-            "comments": "In the event that a session is hijacked, continuous access evaluation can be used to terminate the session, potentially before any malicious actions can occur.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1496.004",
-            "attack_object_name": "Cloud Service Hijacking",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1496",
-            "comments": "In the event that a session is hijacked, continuous access evaluation can be used to terminate the session, potentially before any malicious actions can occur.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "EID-CA-E3",
-            "capability_description": "Conditional Access",
-            "mapping_type": "technique_score",
-            "attack_object_id": "T1557.004",
-            "attack_object_name": "Evil Twin",
-            "capability_group": "entra-id",
-            "score_category": "protect",
-            "score_value": "partial",
-            "related_score": "T1557",
-            "comments": "Conditional Access policies can restrict devices, potentially stopping them from connecting to an Evil Twin network.",
-            "references": [],
             "status": "complete"
         },
         {
