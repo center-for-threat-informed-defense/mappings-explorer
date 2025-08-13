@@ -1,3 +1,17 @@
+import json
+import os
+
+import requests
+from loguru import logger
+from mapex_convert.read_files import (
+    read_yaml_file,
+)
+
+from .template import (
+    DATA_DIR,
+)
+
+
 class ExternalControl:
     id = ""
     label = ""
@@ -405,3 +419,199 @@ def load_projects():
         m365,
     ]
     return projects
+
+
+def get_security_stack_descriptions(project: ExternalControl):
+    """Pull capability descriptions from data files for security stack projects
+
+    Args:
+        project: project to provide descriptions for
+    """
+    root = DATA_DIR / "SecurityStack"
+    data_dir = os.listdir(root)
+    for dir in data_dir:
+        if dir.lower() == project.id:
+            rootdir = root / dir
+
+    capabilities = project.capabilities
+    # if the project has non mappable comments and we are therefore building the
+    # capability page even though it is non_mappable, get non_mappable capabilities'
+    # descriptions as well
+    if project.has_non_mappable_comments:
+        capabilities.extend(project.non_mappables)
+
+    # iterate through mappings files
+    for file in os.listdir(rootdir):
+        data = read_yaml_file(rootdir / file)
+        id = data.get("id", None)
+        name = data["name"]
+        description = data["description"]
+        for c in capabilities:
+            matchId = c.id == id
+            matchName = c.id.lower().replace(" ", "_") == name.lower().replace(" ", "_")
+            if matchId or matchName:
+                c.description = description
+                c.label = data["name"]
+                break
+
+
+def get_cve_description(project: ExternalControl, version: str, capability: Capability):
+    """Query CVE endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+        capability: object that needs a description
+    """
+    root = DATA_DIR
+    file_name = f"{project.id}-{version}_descriptions.json"
+    try:
+        response = requests.get(
+            "https://cveawg.mitre.org/api/cve/" + capability.id
+        ).json()
+        descriptions = response["containers"]["cna"]["descriptions"]
+        capability.description = descriptions[0]["value"]
+    except Exception:
+        logger.exception(
+            "Error loading description for CVE capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
+    with open(root / file_name, "w") as outfile:
+        outfile.write(json_object)
+
+
+def get_description_for_capability(
+    capability: Capability, project: ExternalControl, version: str
+):
+    """Pull description for each capability either from saved capability file
+    or direct another method to query for a description
+
+    Args:
+        capability: object that needs a description
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+    """
+    if project.id == "nist":
+        folder_name = DATA_DIR / "NIST_800-53"
+    elif project.id == "kev":
+        folder_name = DATA_DIR
+    elif project.id == "intel-vpro":
+        folder_name = DATA_DIR / "SecurityStack" / "INTEL_VPRO"
+    elif project.id == "gcp":
+        folder_name = DATA_DIR / "SecurityStack" / "GCP"
+    elif project.id == "azure":
+        folder_name = DATA_DIR / "SecurityStack" / "Azure"
+    elif project.id == "cri_profile":
+        folder_name = DATA_DIR / "cri_profile"
+    file_name = folder_name / f"{project.id}-{version}_descriptions.json"
+    if os.path.isfile(file_name):
+        try:
+            with open(file_name, "r") as openfile:
+                json_object = json.load(openfile)
+                obj = [
+                    obj["description"]
+                    for obj in json_object
+                    if obj["id"] == capability.id
+                ]
+                if len(obj) > 0:
+                    capability.description = obj[0]
+                else:
+                    logger.trace(
+                        "Getting description for capability {c_id}", c_id=capability.id
+                    )
+                    if project.id == "nist":
+                        get_nist_description(
+                            project=project, version=version, capability=capability
+                        )
+                    if project.id == "kev":
+                        get_cve_description(
+                            project=project, version=version, capability=capability
+                        )
+        except Exception:
+            logger.exception(
+                "Error loading description for capability {c_id}",
+                c_id=capability.id,
+            )
+    else:
+        # if description file doesn't already exist, create it
+        with open(file_name, "w") as outfile:
+            json.dump([], outfile)
+        # then query for capability description
+        if project.id == "nist":
+            get_nist_description(
+                project=project, version=version, capability=capability
+            )
+        if project.id == "kev":
+            get_cve_description(project=project, version=version, capability=capability)
+
+
+def get_nist_description(
+    project: ExternalControl, version: str, capability: Capability
+):
+    """Query NIST endpoint to get a description for the given capability and save it to
+    the description file
+
+    Args:
+        project: project where capability is from
+        version: version of the project to query for
+        capability: object that needs a description
+    """
+    root = DATA_DIR / "NIST_800-53"
+    file_name = f"{project.id}-{version}_descriptions.json"
+
+    rev5_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_5_1_1/element/"
+    rev4_link = "https://csrc.nist.gov/extensions/nudp/services/json/nudp/framework/version/sp_800_53_4_0_0/element/"
+    link = ""
+    if version == "rev4":
+        link = rev4_link
+    else:
+        link = rev5_link
+
+    try:
+        id = capability.id
+        if len(id) < 5 and version != "rev4":
+            id = capability.id[0:3] + "0" + capability.id[3:4]
+        response = requests.get(link + id + "/graph").json()
+        elements = response["response"]["elements"]
+        element_array = elements[0]["elements"][0]["elements"]
+        for item in element_array:
+            if item["elementTypeIdentifier"] == "discussion":
+                capability.description = item["text"]
+    except Exception:
+        logger.exception(
+            "Error loading description for NIST capability {c_id}", c_id=capability.id
+        )
+    entry = {"id": capability.id, "description": capability.description}
+    entries = []
+    with open(root / file_name, "r") as openfile:
+        entries = json.load(openfile)
+    entries.append(entry)
+    json_object = json.dumps(entries, indent=4)
+    with open(root / file_name, "w") as outfile:
+        outfile.write(json_object)
+
+
+def delete_all_descriptions(projects: list):
+    """Delete the description files to have them be refreshed if --reset-descriptions
+    flag is turned on
+
+    Args:
+        projects: list of projects to delete description files for
+    """
+    for project in projects:
+        for version in project.versions:
+            file_name = f"{project.id}-{version}_descriptions.json"
+            if project.id == "kev":
+                dir = DATA_DIR
+            if project.id == "nist":
+                dir = DATA_DIR / "NIST_800-53"
+
+            if os.path.exists(dir / file_name):
+                logger.trace("deleting descriptions file {file}", file=dir / file_name)
+                os.remove(dir / file_name)
