@@ -503,7 +503,32 @@ def load_projects():
     ]
     cri_profile.has_non_mappable_comments = False
 
-    projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
+    csa_ccm = ExternalControl()
+    csa_ccm.id = "csa_ccm"
+    csa_ccm.label = "CSA CCM for Cloud Security Alliance Cloud COntrols Matrix"
+    csa_ccm.description = """TODO: add description here"""
+    csa_ccm.attackDomains = ["Enterprise"]
+    csa_ccm.attackDomain = csa_ccm.attackDomains[0]
+    csa_ccm.attackVersions = ["16.1"]
+    csa_ccm.attackVersion = csa_ccm.attackVersions[0]
+    csa_ccm.versions = ["v4"]
+    csa_ccm.validVersions = [
+        ("v4", "16.1", "Enterprise"),
+    ]
+    csa_ccm.mappings = []
+
+    projects = [
+        csa_ccm,
+        cri_profile,
+        intel_vpro,
+        nist,
+        kev,
+        veris,
+        azure,
+        gcp,
+        aws,
+        m365,
+    ]
     return projects
 
 
