@@ -1299,6 +1299,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         "15.0",
         "15.1",
         "16.1",
+        "17.1",
     ]
 
     attack_domain_versions_with_mappings = {}
@@ -1336,6 +1337,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "15.1",
             "16.0",
             "16.1",
+            "17.1",
         ],
         "ICS": [
             "8.2",
@@ -1356,6 +1358,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "15.1",
             "16.0",
             "16.1",
+            "17.1",
         ],
         "Mobile": [
             "8.2",
@@ -1373,6 +1376,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "15.1",
             "16.0",
             "16.1",
+            "17.1",
         ],
     }
     matrix_order = {
