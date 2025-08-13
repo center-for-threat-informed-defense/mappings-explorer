@@ -400,9 +400,9 @@ def load_projects():
     csa_ccm.attackDomain = csa_ccm.attackDomains[0]
     csa_ccm.attackVersions = ["16.1"]
     csa_ccm.attackVersion = csa_ccm.attackVersions[0]
-    csa_ccm.versions = ["v4"]
+    csa_ccm.versions = ["4.1"]
     csa_ccm.validVersions = [
-        ("v4", "16.1", "Enterprise"),
+        ("4.1", "16.1", "Enterprise"),
     ]
     csa_ccm.mappings = []
 
