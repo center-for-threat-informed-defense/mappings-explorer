@@ -397,8 +397,5 @@ def load_projects():
     ]
     cri_profile.has_non_mappable_comments = False
 
-    # projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
-    projects = [
-        cri_profile,
-    ]
+    projects = [cri_profile, intel_vpro, nist, kev, veris, azure, gcp, aws, m365]
     return projects

@@ -29,13 +29,13 @@ all_attack_versions = [
     "11.3",
     "12.0",
     "12.1",
-    # "13.0",
-    # "13.1",
-    # "14.0",
+    "13.0",
+    "13.1",
+    "14.0",
     "14.1",
-    # "15.0",
+    "15.0",
     "15.1",
-    # "16.0",
+    "16.0",
     "16.1",
 ]
 
@@ -57,11 +57,11 @@ attack_domains = {
         "14.1",
         # "15.0",
         "15.1",
-        # "16.0",
+        "16.0",
         "16.1",
     ],
     "ICS": [
-        "8.2",
+        # "8.2",
         "9.0",
         "10.0",
         "10.1",
@@ -77,11 +77,11 @@ attack_domains = {
         # "14.1",
         # "15.0",
         "15.1",
-        # "16.0",
+        "16.0",
         "16.1",
     ],
     "Mobile": [
-        "8.2",
+        # "8.2",
         "9.0",
         "10.0",
         "10.1",
@@ -147,5 +147,26 @@ matrix_order = {
         "TA0034",
         "TA0038",
         "TA0039",
+    ],
+}
+
+platform_options = {
+    "enterprise": [
+        "PRE",
+        "Windows",
+        "macOS",
+        "Linux",
+        "Cloud Office Suite",
+        "Cloud Identity Provider",
+        "Cloud SaaS",
+        "Cloud IaaS",
+        "Network Devices",
+        "Containers",
+        "ESXi",
+    ],
+    "ics": [],
+    "mobile": [
+        "Android",
+        "iOS",
     ],
 }

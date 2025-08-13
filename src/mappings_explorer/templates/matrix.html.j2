@@ -95,20 +95,21 @@
                 </div>
                  <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>Platform</p>
-                  <div class="form-control select" @click="platformSelectOpen = !platformSelectOpen">
+                  <div class="form-control select dropdown-xl" @click="platformSelectOpen = !platformSelectOpen">
                     <span class="selected-item">[[ selectedPlatform ]]</span>
                   </div>
-                  <div v-if="platformSelectOpen" class="dropdown-items">
+                  <div v-if="platformSelectOpen" class="dropdown-items dropdown-xl">
                     <div
                       :class="{
                         'dropdown-item': true,
                         'selected-option': selectedPlatform.toLowerCase() === platform.toLowerCase()
                       }"
+                      style="width=300px"
                       v-for="platform in attackPlatforms"
                       :key="platform"
                       @click="selectedPlatform = platform; getAttackObjectDict(); platformSelectOpen = false;"
                     >
-                      <span class="dropdown-item-text">[[ platform ]]</span>
+                      <span class="dropdown-item-text" style="width=300px">[[ platform ]]</span>
                     </div>
                   </div>
                 </div>
@@ -371,7 +372,8 @@
               return (
                 value.type === "technique" &&
                 value.tactics.includes(tactic.short_name) &&
-                (value.platforms && this.selectedPlatform  && value.platforms.includes(this.selectedPlatform))
+                (this.selectedPlatform.toLowerCase() === "all" ||
+                (value.platforms && this.selectedPlatform  && value.platforms.includes(this.selectedPlatform.replace("Cloud ", ""))))
               );
             }
           );
