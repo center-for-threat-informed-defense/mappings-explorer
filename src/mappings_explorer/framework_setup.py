@@ -402,7 +402,7 @@ def load_projects():
     csa_ccm.attackVersion = csa_ccm.attackVersions[0]
     csa_ccm.versions = ["4.1"]
     csa_ccm.validVersions = [
-        ("4.1", "16.1", "Enterprise"),
+        ("4.1", "17.1", "Enterprise"),
     ]
     csa_ccm.mappings = []
 
