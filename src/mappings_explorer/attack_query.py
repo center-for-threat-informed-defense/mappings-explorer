@@ -290,6 +290,7 @@ def add_background_colors(attack_version_data):
         "intel-vpro": "Intel vPro",
         "kev": "Known Exploited Vulnerabilities",
         "cri_profile": "CRI Profile",
+        "csa_ccm": "CSA CCM for Cloud Security Alliance Cloud Controls Matrix",
     }
     max_score = 0
     min_score = 100000
