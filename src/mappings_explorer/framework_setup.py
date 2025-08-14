@@ -394,7 +394,7 @@ def load_projects():
 
     csa_ccm = ExternalControl()
     csa_ccm.id = "csa_ccm"
-    csa_ccm.label = "CSA CCM for Cloud Security Alliance Cloud Controls Matrix"
+    csa_ccm.label = "CSA CCM"
     csa_ccm.description = """TODO: add description here"""
     csa_ccm.attackDomains = ["Enterprise"]
     csa_ccm.attackDomain = csa_ccm.attackDomains[0]
