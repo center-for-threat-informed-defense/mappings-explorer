@@ -1466,6 +1466,7 @@ def getIndexPages():
             or "/m365/" in str(mappings_file)
             or "/intel-vpro/" in str(mappings_file)
             or "/cri_profile/" in str(mappings_file)
+            or "/csa_ccm/" in str(mappings_file)
         )
         if (
             project_name_in_filepath
