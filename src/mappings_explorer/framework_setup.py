@@ -395,7 +395,15 @@ def load_projects():
     csa_ccm = ExternalControl()
     csa_ccm.id = "csa_ccm"
     csa_ccm.label = "CSA CCM"
-    csa_ccm.description = """TODO: add description here"""
+    csa_ccm.description = """The Cloud Security Alliance (CSA) Cloud Controls Matrix
+     (CCM) provides fundamental security principles, controls, and control criteria to
+     guide cloud service providers (CSPs) and cloud service customers (CSCs) to secure,
+     systematically assess, and manage cloud computing environments. This mapping
+     connects this shared security responsibility model (SSRM) of the CSA CCM with
+     threat mitigation of adversary behaviors as described in MITRE ATT&CK. This
+     connection provides a quantifiable demonstration of how these capabilities can
+     provide threat-informed defenses and serve as a foundation for threat-based cyber
+     assessments."""
     csa_ccm.attackDomains = ["Enterprise"]
     csa_ccm.attackDomain = csa_ccm.attackDomains[0]
     csa_ccm.attackVersions = ["17.1"]
@@ -405,6 +413,22 @@ def load_projects():
         ("4.1", "17.1", "Enterprise"),
     ]
     csa_ccm.mappings = []
+    csa_ccm.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        # TODO: add new methodology page
+        # {
+        #     "link": "about/methodology/cri-profile-scope/",
+        #     "label": "Mapping Scope",
+        # },
+        {
+            "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
+            "label": "CSA CCM (External link)",
+            "external": True,
+        },
+    ]
 
     projects = [
         csa_ccm,

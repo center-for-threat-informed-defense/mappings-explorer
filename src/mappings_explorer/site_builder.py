@@ -115,6 +115,7 @@ def parse_capability_groups(
                 count=len(filtered_mappings),
                 g_label=g.label,
             )
+            # TODO: add capability descriptions
     parse_capabilities(
         mappings, project, project_version, attack_version, attack_domain
     )
