@@ -35,7 +35,8 @@
             "memory_corruption": "Memory Corruption",
             "out_of_bounds": "Out-of-Bounds (Read and Write)",
             "security_feature_bypass": "Security Feature Bypass",
-            "improper_access_control": "Improper Access Control"
+            "improper_access_control": "Improper Access Control",
+            "type_confusion": "Type Confusion"
         }
     },
     "mapping_objects": [
@@ -118,7 +119,7 @@
             "mapping_type": "exploitation_technique",
             "attack_object_id": "T1456",
             "attack_object_name": "Drive-By Compromise",
-            "capability_group": "Type Confusion",
+            "capability_group": "type_confusion",
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
@@ -133,7 +134,7 @@
             "mapping_type": "exploitation_technique",
             "attack_object_id": "T1658",
             "attack_object_name": "Exploitation for Client Execution",
-            "capability_group": "Type Confusion",
+            "capability_group": "type_confusion",
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
@@ -148,7 +149,7 @@
             "mapping_type": "primary_impact",
             "attack_object_id": "T1623",
             "attack_object_name": "Command and Scripting Interpreter",
-            "capability_group": "Type Confusion",
+            "capability_group": "type_confusion",
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
