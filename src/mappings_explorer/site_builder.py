@@ -278,9 +278,11 @@ def load_projects():
 
     kev.attackDomains = ["Enterprise", "Mobile"]
     kev.attackDomain = kev.attackDomains[0]
-    kev.versions = ["02.13.2025"]
-    kev.attackVersions = ["15.1"]
+    kev.versions = ["07.28.2025", "02.13.2025"]
+    kev.attackVersions = ["16.1", "15.1"]
     kev.validVersions = [
+        ("07.28.2025", "16.1", "Mobile"),
+        ("07.28.2025", "16.1", "Enterprise"),
         ("02.13.2025", "15.1", "Mobile"),
         ("02.13.2025", "15.1", "Enterprise"),
     ]
