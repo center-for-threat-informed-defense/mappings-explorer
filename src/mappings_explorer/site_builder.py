@@ -736,10 +736,10 @@ def get_description_for_capability(
                         get_nist_description(
                             project=project, version=version, capability=capability
                         )
-                    # if project.id == "kev":
-                    #     get_cve_description(
-                    #         project=project, version=version, capability=capability
-                    #     )
+                    if project.id == "kev":
+                        get_cve_description(
+                            project=project, version=version, capability=capability
+                        )
         except Exception:
             logger.exception(
                 "Error loading description for capability {c_id}",
