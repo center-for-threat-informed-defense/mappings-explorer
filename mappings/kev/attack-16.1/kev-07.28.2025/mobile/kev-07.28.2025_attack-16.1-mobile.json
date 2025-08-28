@@ -29,14 +29,42 @@
             }
         },
         "capability_groups": {
+            "access_ctrl":	"Improper Access Control",
+            "auth_bypass":	"Authentication Bypass",
+            "auth_missing":	"Missing Authentication",
             "buffer_overflow": "Buffer Overflow",
-            "input_validation": "Input Validation",
-            "use_after_free": "Use After Free",
+            "code_execution": "Code Execution",
+            "code_injection": "Code Injection",
+            "command_execution": "Command Execution",
+            "command_injection": "Command Injection",
+            "default_cfg": "Default Configuration",
+            "dir_traversal": "Directory Traversal (Relative and Absolute)",
+            "dos":	"Denial of Service",
+            "feature_bypass": "Security Feature Bypass",
+            "hardcoded_creds":	"Hard-coded Credentials",
+            "inject":	"Other Injection",
+            "input_validation":	"Input Validation",
+            "int_overflow":	"Integer Overflow",
             "memory_corruption": "Memory Corruption",
-            "out_of_bounds": "Out-of-Bounds (Read and Write)",
-            "security_feature_bypass": "Security Feature Bypass",
-            "improper_access_control": "Improper Access Control",
-            "type_confusion": "Type Confusion"
+            "memory_mgmt":	"Memory Management",
+            "oob":	"Out-of-Bounds (Read and Write)",
+            "other":	"Other",
+            "pointer_deref":	"Pointer Dereference",
+            "pointer_vuln":	"Other Pointer Vulnerability",
+            "priv_escalation":	"Privilege Escalation",
+            "priv_mgmt":	"Improper Privilege Management",
+            "race_condition":	"Race Condition",
+            "resource_mgmt":	"Resource Management",
+            "sandbox_bypass":	"Sandbox Bypass or Escape",
+            "spoofing_vuln":	"Spoofing Vulnerability",
+            "sql_injection":	"SQL Injection",
+            "ssrf":	"Server-Side Request Forgery (SSRF)",
+            "type_confusion":	"Type Confusion",
+            "unrestricted_upload":	"Unrestricted File Upload",
+            "untrusted_data":	"Deserialization of Untrusted Data",
+            "use_after_free":	"Use After Free",
+            "xss": "Cross-site Scripting (XSS)",
+            "xxe": "XML External Entity (XXE)"
         }
     },
     "mapping_objects": [
@@ -49,7 +77,7 @@
             "capability_group": "improper_access_control",
             "references": [
                 "https://docs.qualcomm.com/product/publicresources/securitybulletin/june-2025-bulletin.html",
-                " https://thehackernews.com/2025/08/google-fixes-3-android-vulnerabilities.html"
+                "https://thehackernews.com/2025/08/google-fixes-3-android-vulnerabilities.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -63,7 +91,7 @@
             "capability_group": "improper_access_control",
             "references": [
                 "https://docs.qualcomm.com/product/publicresources/securitybulletin/june-2025-bulletin.html",
-                " https://thehackernews.com/2025/08/google-fixes-3-android-vulnerabilities.html"
+                "https://thehackernews.com/2025/08/google-fixes-3-android-vulnerabilities.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -78,7 +106,7 @@
             "comments": "This vulnerability enables remote threat actors to escape the browser sandbox by leveraging a specially crafted HTML page.",
             "references": [
                 "https://www.secpod.com/blog/joint-threat-to-safari-and-chrome-users-patch-cve-2025-6558-now/",
-                " https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
+                "https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -93,7 +121,7 @@
             "comments": "This vulnerability enables remote threat actors to escape the browser sandbox by leveraging a specially crafted HTML page.",
             "references": [
                 "https://www.secpod.com/blog/joint-threat-to-safari-and-chrome-users-patch-cve-2025-6558-now/",
-                " https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
+                "https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -108,7 +136,7 @@
             "comments": "This vulnerability enables remote threat actors to escape the browser sandbox by leveraging a specially crafted HTML page.",
             "references": [
                 "https://www.secpod.com/blog/joint-threat-to-safari-and-chrome-users-patch-cve-2025-6558-now/",
-                " https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
+                "https://socprime.com/blog/cve-2025-6558-google-chrome-vulnerability/ https://thehackernews.com/2025/07/urgent-google-releases-critical-chrome.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -123,7 +151,7 @@
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
-                " https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
+                "https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -138,7 +166,7 @@
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
-                " https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
+                "https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -153,7 +181,7 @@
             "comments": "Victims are tricked into visiting malicious web pages crafted to trigger memory corruption, which can lead to arbitrary code execution.",
             "references": [
                 "https://www.secpod.com/blog/google-issues-emergency-fix-for-actively-exploited-chrome-zero-day-cve-2025-6554/",
-                " https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
+                "https://thehackernews.com/2025/07/google-patches-critical-zero-day-flaw.html https://www.menlosecurity.com/blog/chrome-zero-day-why-browser-security-is-no-longer-optional?utm_source=feedly"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -168,7 +196,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -183,7 +211,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025",
@@ -199,7 +227,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -214,7 +242,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -229,7 +257,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -244,7 +272,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -259,7 +287,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -303,7 +331,7 @@
             "comments": "Out of bounds write exists in FreeType that has been exploited through malicious font files, causing the application to crash. ",
             "references": [
                 "https://thehackernews.com/2025/05/google-fixes-actively-exploited-android.html",
-                " https://github.com/zhuowei/CVE-2025-27363-proof-of-concept; https://www.helpnetsecurity.com/2025/05/07/actively-exploited-freetype-flaw-fixed-in-android-cve-2025-27363/"
+                "https://github.com/zhuowei/CVE-2025-27363-proof-of-concept; https://www.helpnetsecurity.com/2025/05/07/actively-exploited-freetype-flaw-fixed-in-android-cve-2025-27363/"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -318,9 +346,9 @@
             "comments": "A zero-click attack leveraging this vulnerability involves sending a maliciously crafted photo or video in an iCloud link via the Messages app. Reports indicate that the targeted devices are then compromised with Paragon's Graphite spyware.",
             "references": [
                 "https://support.apple.com/en-us/124925",
-                " https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
-                " https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
-                " https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
+                "https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
+                "https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
+                "https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -335,9 +363,9 @@
             "comments": "A zero-click attack leveraging this vulnerability involves sending a maliciously crafted photo or video in an iCloud link via the Messages app. Reports indicate that the targeted devices are then compromised with Paragon's Graphite spyware.",
             "references": [
                 "https://support.apple.com/en-us/124925",
-                " https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
-                " https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
-                " https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
+                "https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
+                "https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
+                "https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -352,9 +380,9 @@
             "comments": "A zero-click attack leveraging this vulnerability involves sending a maliciously crafted photo or video in an iCloud link via the Messages app. Reports indicate that the targeted devices are then compromised with Paragon's Graphite spyware.",
             "references": [
                 "https://support.apple.com/en-us/124925",
-                " https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
-                " https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
-                " https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
+                "https://securityaffairs.com/181394/security/apple-addressed-the-seventh-actively-exploited-zero-day.html",
+                "https://www.helpnetsecurity.com/2025/06/13/ios-zero-click-attacks-used-to-deliver-graphite-spyware-cve-2025-43200/",
+                "https://thehackernews.com/2025/06/apple-zero-click-flaw-in-messages.html"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -425,7 +453,7 @@
             "comments": "Attackers with physical access to Apple systems were able to bypass USB restricted mode via a maliciously crafted photo or video to conduct targeted surveillance.",
             "references": [
                 "https://www.securityweek.com/apple-confirms-usb-restricted-mode-exploited-in-extremely-sophisticated-attack/",
-                " https://support.apple.com/en-us/122174"
+                "https://support.apple.com/en-us/122174"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -440,7 +468,7 @@
             "comments": "Attackers with physical access to Apple systems were able to bypass USB restricted mode via a maliciously crafted photo or video to conduct targeted surveillance.",
             "references": [
                 "https://www.securityweek.com/apple-confirms-usb-restricted-mode-exploited-in-extremely-sophisticated-attack/",
-                " https://support.apple.com/en-us/122174"
+                "https://support.apple.com/en-us/122174"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -455,7 +483,7 @@
             "comments": "Attackers with physical access to Apple systems were able to bypass USB restricted mode via a maliciously crafted photo or video to conduct targeted surveillance.",
             "references": [
                 "https://www.securityweek.com/apple-confirms-usb-restricted-mode-exploited-in-extremely-sophisticated-attack/",
-                " https://support.apple.com/en-us/122174"
+                "https://support.apple.com/en-us/122174"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -470,7 +498,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -485,7 +513,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025",
@@ -501,7 +529,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -516,7 +544,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -531,7 +559,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -546,7 +574,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
@@ -561,7 +589,7 @@
             "comments": "A strategic zero-click iMessage exploit chain (CVE-2025-31200 / 31201) has been reported as compromising targeted devices with Paragon's Graphite spyware. Observed impacts include Secure Enclave key exfiltration, silent wallet theft, C2 infrastructure, and persistent C2 communication.",
             "references": [
                 "https://www.helpnetsecurity.com/2025/04/17/apple-plugs-zero-days-holes-used-in-targeted-iphone-attacks-cve-2025-31200-cve-2025-31201/ ",
-                " https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
+                "https://otx.alienvault.com/pulse/68535107fa6c00d6f9ffbc84"
             ],
             "status": "complete",
             "mapping_framework_version": "7/28/2025"
