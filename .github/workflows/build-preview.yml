@@ -98,7 +98,7 @@ jobs:
       - name: Delete old blobs
         run: az storage blob delete-batch -s '$web' --pattern "$BRANCH_NAME/*"
       - name: Upload to blob storage
-        run: az storage blob upload-batch -s . --pattern "$BRANCH_NAME/*"" -d '$web'
+        run: az storage blob upload-batch -s . --pattern "$BRANCH_NAME/*" -d '$web'
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
