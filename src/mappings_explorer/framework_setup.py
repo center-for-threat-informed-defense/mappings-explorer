@@ -421,11 +421,10 @@ def load_projects():
             "link": "about/methodology/",
             "label": "Mapping Methodology",
         },
-        # TODO: add new methodology page
-        # {
-        #     "link": "about/methodology/cri-profile-scope/",
-        #     "label": "Mapping Scope",
-        # },
+        {
+            "link": "about/methodology/csa-ccm-scope/",
+            "label": "Mapping Scope",
+        },
         {
             "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
             "label": "CSA CCM (External link)",

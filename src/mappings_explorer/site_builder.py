@@ -1673,6 +1673,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
 
     build_about_page(
         url_prefix=url_prefix,
+        url_suffix="about/methodology/csa-ccm-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/csa_ccm_scope.html.j2",
+        title="CSA CCM Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
         url_suffix="about/methodology/ssm-methodology",
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/ssm_methodology.html.j2",
