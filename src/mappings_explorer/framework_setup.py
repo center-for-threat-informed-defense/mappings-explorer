@@ -431,6 +431,7 @@ def load_projects():
             "external": True,
         },
     ]
+    csa_ccm.has_non_mappable_comments = False
 
     projects = [
         csa_ccm,
@@ -535,6 +536,8 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "SecurityStack" / "Azure"
     elif project.id == "cri_profile":
         folder_name = DATA_DIR / "cri_profile"
+    elif project.id == "csa_ccm":
+        folder_name = DATA_DIR / "csa_ccm"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if os.path.isfile(file_name):
         try:
