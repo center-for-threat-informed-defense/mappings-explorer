@@ -94,17 +94,17 @@ jobs:
       - name: Set the branch name
         run: mv output $BRANCH_NAME
       - name: Install Azure CLI
-        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+        run: pip install azure-cli==2.76.0
       - name: Delete old blobs
         run: |
           az storage blob delete-batch \
             --source '$web' \
-            --pattern "${{ env.BRANCH_NAME }}/*"
+            --pattern '${{ env.BRANCH_NAME }}/*'
       - name: Upload to blob storage
         run: |
           az storage blob upload-batch \
             --source . \
-            --pattern "${{ env.BRANCH_NAME }}/*" \
+            --pattern '${{ env.BRANCH_NAME }}/*' \
             -d '$web'
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
