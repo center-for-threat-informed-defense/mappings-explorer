@@ -81,7 +81,7 @@ jobs:
         run: >
           staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
             --password $STATICRYPT_PASS --short \
-            --template-title "Mappings Explorer (branch: $BRANCH_NAME)" \
+            --template-title "Mappings Explorer (branch: ${{ env.BRANCH_NAME }})" \
             --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
             --template-color-primary "#6241c5" \
             --template-color-secondary "#b2b2b2" \
@@ -96,9 +96,16 @@ jobs:
       - name: Install Azure CLI
         run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       - name: Delete old blobs
-        run: az storage blob delete-batch -s '$web' --pattern "$BRANCH_NAME/*"
+        run: |
+          az storage blob delete-batch \
+            --source '$web' \
+            --pattern "${{ env.BRANCH_NAME }}/*"
       - name: Upload to blob storage
-        run: az storage blob upload-batch -s . --pattern "$BRANCH_NAME/*" -d '$web'
+        run: |
+          az storage blob upload-batch \
+            --source . \
+            --pattern "${{ env.BRANCH_NAME }}/*" \
+            -d '$web'
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
