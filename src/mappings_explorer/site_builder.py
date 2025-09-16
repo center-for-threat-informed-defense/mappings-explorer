@@ -386,6 +386,11 @@ def build_external_landing(
         info_box_headers = [
             ("comments", "Comments"),
         ]
+    if project.id == "csa_ccm":
+        info_box_headers = [
+            ("comments", "Comments"),
+            ("references", "References"),
+        ]
 
     # Resolve additional download artifacts
     additional_artifacts = []
