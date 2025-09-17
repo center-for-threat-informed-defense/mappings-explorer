@@ -135,6 +135,7 @@ def parse_capability_groups(
         or project.id == "gcp"
         or project.id == "azure"
         or project.id == "cri_profile"
+        or project.id == "csa_ccm"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -389,7 +390,6 @@ def build_external_landing(
     if project.id == "csa_ccm":
         info_box_headers = [
             ("comments", "Comments"),
-            ("references", "References"),
         ]
 
     # Resolve additional download artifacts
