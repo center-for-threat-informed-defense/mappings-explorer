@@ -50,6 +50,7 @@ class CapabilityGroup:
     mappings = []
     capabilities = []
     num_capabilities = 0
+    description = ""
 
 
 def load_projects():
@@ -433,19 +434,19 @@ def load_projects():
     ]
     csa_ccm.has_non_mappable_comments = False
 
-    projects = [
-        csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
-        veris,
-        azure,
-        gcp,
-        aws,
-        m365,
-    ]
-    return projects
+    # projects = [
+    #     csa_ccm,
+    #     cri_profile,
+    #     intel_vpro,
+    #     nist,
+    #     kev,
+    #     veris,
+    #     azure,
+    #     gcp,
+    #     aws,
+    #     m365,
+    # ]
+    return [csa_ccm]
 
 
 def get_security_stack_descriptions(project: ExternalControl):
@@ -514,7 +515,10 @@ def get_cve_description(project: ExternalControl, version: str, capability: Capa
 
 
 def get_description_for_capability(
-    capability: Capability, project: ExternalControl, version: str
+    capability: Capability,
+    group: CapabilityGroup,
+    project: ExternalControl,
+    version: str,
 ):
     """Pull description for each capability either from saved capability file
     or direct another method to query for a description
@@ -539,6 +543,9 @@ def get_description_for_capability(
     elif project.id == "csa_ccm":
         folder_name = DATA_DIR / "csa_ccm"
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
+    if group:
+        file_name = folder_name / f"{project.id}-{version}_group_descriptions.json"
+
     if os.path.isfile(file_name):
         try:
             with open(file_name, "r") as openfile:
@@ -548,8 +555,10 @@ def get_description_for_capability(
                     for obj in json_object
                     if obj["id"] == capability.id
                 ]
-                if len(obj) > 0:
+                if len(obj) > 0 and capability:
                     capability.description = obj[0]
+                elif len(obj) > 0 and group:
+                    group.description = obj[0]
                 else:
                     logger.trace(
                         "Getting description for capability {c_id}", c_id=capability.id
@@ -565,7 +574,7 @@ def get_description_for_capability(
         except Exception:
             logger.exception(
                 "Error loading description for capability {c_id}",
-                c_id=capability.id,
+                c_id=capability,
             )
     else:
         # if description file doesn't already exist, create it

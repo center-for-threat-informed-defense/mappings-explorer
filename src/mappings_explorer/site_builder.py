@@ -147,7 +147,18 @@ def parse_capability_groups(
                 project.capabilities + project.non_mappables
             )
         for capability in capabilities_to_get_description:
-            get_description_for_capability(capability, project, project_version)
+            get_description_for_capability(
+                capability=capability,
+                group={},
+                project=project,
+                version=project_version,
+            )
+
+        for group in project.capability_groups:
+            get_description_for_capability(
+                capability={}, group=group, project=project, version=project_version
+            )
+
     if project.id == "aws" or project.id == "m365":
         get_security_stack_descriptions(project=project)
 
@@ -661,7 +672,7 @@ def build_capability_group(
         capability_group_name=capability_group.label,
         capability_group=capability_group,
         project=project,
-        description=project.description,
+        description=capability_group.description,
         control_version=project_version,
         versions=project.versions,
         attack_version=attack_version,
