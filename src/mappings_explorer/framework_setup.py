@@ -542,6 +542,7 @@ def get_description_for_capability(
         folder_name = DATA_DIR / "cri_profile"
     elif project.id == "csa_ccm":
         folder_name = DATA_DIR / "csa_ccm"
+
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if group:
         file_name = folder_name / f"{project.id}-{version}_group_descriptions.json"
@@ -559,6 +560,8 @@ def get_description_for_capability(
                     capability.description = obj[0]
                 elif len(obj) > 0 and group:
                     group.description = obj[0]
+                    if not group.description:
+                        group.description = "testing testing..."
                 else:
                     logger.trace(
                         "Getting description for capability {c_id}", c_id=capability.id
