@@ -383,11 +383,7 @@ def build_external_landing(
             ("comments", "Comments"),
             ("references", "References"),
         ]
-    if project.id == "cri_profile":
-        info_box_headers = [
-            ("comments", "Comments"),
-        ]
-    if project.id == "csa_ccm":
+    if project.id == "cri_profile" or project.id == "csa_ccm":
         info_box_headers = [
             ("comments", "Comments"),
         ]
