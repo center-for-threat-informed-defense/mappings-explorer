@@ -1,0 +1,153 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container aos-init aos-animate">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">The CSA CCM <span class="highlight">MAPPING SCOPE</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Scope Overview</h2>
+        </div>
+
+        <p>
+            Scoping decisions for mapping the <a href="http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4" target="_blank">Cloud Security Alliance (CSA) Cloud Controls Matrix (CCM)</a> are documented below. These scoping decisions were used for control review and selection for mapping according to the <a href="about/methodology/">Mapping Methodology</a>.
+        </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">General</span> Scoping Decisions</h2>
+        </div>
+        <dl>
+            <dt>Operational vs. Policy and Procedural Controls</dt>
+            <dd>This effort is focused on the technical and operational elements of the CSA CCM and did not take into account the management elements that are often focused on organization specific policies and procedures. This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques.</dd>
+            <dt>Mitigation vs. Monitoring</dt>
+            <dd>Capabilities that may only monitor adversary behaviors are out of scope. The focus of this effort is on technical capabilities that mitigate adversary techniques and sub-techniques. Consideration is not given for the potential that an adversary might be dissuaded or change their tactics to try and avoid detection if they thought activity was being monitored.</dd>
+            <dt>Controls vs. Control Domain</dt>
+            <dd>This effort maps at the control level. Consideration was given to each control's control domain grouping for context. </dd>
+            <dt>Implicit vs. Explicit Mitigation</dt>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data backups) and capabilities that support those mitigations rather than other, non-technical methods of mitigation (e.g., permit physical access to systems, develop a backup policy).</dd>
+            <dt><a href="https://attack.mitre.org/mitigations/M1056" target="_blank">Pre-compromise Mitigation</a></dt>
+            <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques, and are considered out of scope.</dd>
+        </dl>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2><span class="highlight">CSA CCM Control</span> Scoping Decisions</h2>
+        </div>
+
+        <p>
+            The CSA CCM scoping decisions are captured below at the function and category level along with our rationale for controls in those categories being in or out of scope:
+        </p>
+        <table class="table">
+            <tr>
+                <th>Function: Category</th>
+                <th>In Scope</th>
+                <th>Rationale</th>
+            </tr>
+            <tr>
+                <td>Audit and Assurance (A&A)</td>
+                <td>No</td>
+                <td>A&A controls are not applicable as they do not provide mitigations of specific threats.</td>
+            </tr>
+            <tr>
+                <td>Application and Interface Security (AIS)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Business Continuity Management and Operational Resilience (BCR)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Change Control and Configuration Management (CCC)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Cryptography, Encryption, and Key Management (CEK)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Datacenter Security (DCS)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Data Security and Privacy Lifecycle Management (DSP)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Governance, Risk, and Compliance (GRC)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Human Resources (HRS)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Identity and Access Management (IAM)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Interoperability and Portability (IPY)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Infrastructure and Virtualization Security (IVS)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Logging and Monitoring (LOG)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Security Incident Management, E-Discovery, and Cloud Forensics (SEF)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Supply Chain Management, Transparency, and Accountability (STA)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Threat and Vulnerability Management (TVM)</td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Universal Endpoint Management (UEM) </td>
+                <td>Partial</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</section>
+{% endblock content %}
