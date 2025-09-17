@@ -2129,7 +2129,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. \nAdversaries may manipulate software dependencies and development tools prior to receipt by a final consumer for the purpose of data or system compromise. A vulnerability scanner can be used to identify any third-party issues as outlined in the implementation guidelines.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2140,7 +2140,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may attempt to exploit default admin or user accounts in cloud services, SaaS platforms, or cloud-deployed databases that weren't properly secured during setup.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2151,7 +2151,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Deprecated hash functions (MD5, SHA1) and weak key derivation make password cracking significantly faster, enabling successful brute force attacks . ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2162,7 +2162,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may search compromised services or applications to find and obtain insecurely stored API keys for SaaS services or cloud storage encryption keys. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2173,7 +2173,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may passively sniff network traffic to capture traffic between microservices, API calls to SaaS platforms, or data transfers between on-premises and IaaS resources that lack proper TLS encryption. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2184,7 +2184,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may modify access tokens to operate under a different user or system security context to perform actions and bypass access controls. For example, replaying or tampering with a JSON Web Token (JWT) access control token to elevate privileges or abusing JWT invalidation. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2195,7 +2195,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may attempt to bypass access controls and elevate privileges to gain unauthorized access. Therefore, testing for improper privilege escalation, such as scenarios where a user can act without authentication or gain administrative rights while logged in as a standard user, can help mitigate these risks.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2206,7 +2206,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production. It emphasizes testing for risks such as injection attacks and session hijacking, and recommends alignment with industry standards like the OWASP Top 10 to enhance application security. Adversaries may attempt to bypass access controls and elevate privileges to gain unauthorized access. Therefore, testing for improper privilege escalation, such as scenarios where a user bypasses access control checks by modifying the URL, can help mitigate these risks.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2217,7 +2217,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. Adversaries may attempt to access the Cloud Instance Metadata API to collect credentials and other sensitive data. Testing for the unnecessary use of metadata services or restricting and disabling insecure versions of metadata services that are in use may prevent adversary use of this technique. Additionally, adversaries may exploit a Server-Side Request Forgery (SSRF) vulnerability in a public facing web proxy that allows them to gain access to the sensitive information via a request to the Instance Metadata API.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2228,7 +2228,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. With proper permissions (often via use of credentials such as Application Access Token and Web Session Cookie), adversaries may abuse cloud APIs to invoke various functions that execute malicious actions.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2239,7 +2239,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. Adversaries may attempt to exploit a weakness in an Internet-facing host or application by using techniques such as as SQL injection, command injections, Cross-site scripting (XSS), and Cross-Site Request Forgery (CSRF). ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2250,7 +2250,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. Adversaries may attempt to exploit a weakness in an Internet-facing host or application by using techniques such as as SQL injection, command injections, Cross-site scripting (XSS), and Cross-Site Request Forgery (CSRF). ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2261,7 +2261,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. An adversary may steal web application or service session cookies and use them to gain access to web applications, internet services, or cloud services, as an authenticated user without needing credentials.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2272,7 +2272,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. An adversary may steal web application or service session cookies and use them to gain access to web applications, internet services, or cloud services, as an authenticated user without needing credentials.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2283,7 +2283,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. Adversaries can use stolen session cookies to authenticate to web applications and services. Authentication cookies are commonly used in web applications, including cloud-based services, after a user has authenticated to the service so credentials are not passed and re-authentication does not need to occur as frequently. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2294,7 +2294,7 @@
             "capability_group": "AIS",
             "comments": "The control describes multiple testing approaches with automated tools to identify vulnerabilities from development through production. The control outlines testing for injection attacks, session hijacking, and aligning with industry standards like OWASP Top 10 to ensure applications are secure. Adversaries may forge web cookies that can be used to gain access to web applications or Internet services. Web applications and services (hosted in cloud SaaS environments or on-premise servers) often use session cookies to authenticate and authorize user access.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-07",
@@ -2305,7 +2305,7 @@
             "capability_group": "AIS",
             "comments": "The control requires prioritized remediation based on risk assessment and CVSS scores, automated patch management, and integration of remediation tools into CI/CD pipelines to address vulnerabilities as early as possible in the development lifecycle.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-07",
@@ -2316,7 +2316,7 @@
             "capability_group": "AIS",
             "comments": "The control requires prioritized remediation based on risk assessment and CVSS scores, automated patch management, and integration of remediation tools into CI/CD pipelines to address vulnerabilities as early as possible in the development lifecycle.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-07",
@@ -2327,7 +2327,7 @@
             "capability_group": "AIS",
             "comments": "The control requires prioritized remediation based on risk assessment and CVSS scores, automated patch management, and integration of remediation tools into CI/CD pipelines to address vulnerabilities as early as possible in the development lifecycle.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-07",
@@ -2338,7 +2338,7 @@
             "capability_group": "AIS",
             "comments": "The control requires prioritized remediation based on risk assessment and CVSS scores, automated patch management, and integration of remediation tools into CI/CD pipelines to address vulnerabilities as early as possible in the development lifecycle.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-07",
@@ -2349,7 +2349,7 @@
             "capability_group": "AIS",
             "comments": "The control requires prioritized remediation based on risk assessment and CVSS scores, automated patch management, and integration of remediation tools into CI/CD pipelines to address vulnerabilities as early as possible in the development lifecycle.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-02",
@@ -2492,7 +2492,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify and remediate vulnerabilities or weaknesses that can be exploited. Web shells provide attackers with unauthorized and persistent remote control over a compromised web server, allowing them to execute commands, manipulate files, and steal data. A web application is compromised when an attacker exploits a vulnerability to upload a malicious script, which then acts as a backdoor for ongoing malicious activity. Remediating the vulnerabilities that allow an attacker to upload a web shell can help mitigate this technique.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2503,7 +2503,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services or processes can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment.\n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2514,7 +2514,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage compromised software-as-a-service (SaaS) applications to complete resource-intensive tasks, which may impact hosted service availability. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2525,7 +2525,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may attempt to cause a denial of service (DoS) by reflecting a high-volume of network traffic to a target. This type of Network DoS takes advantage of a third-party server intermediary that hosts and will respond to a given spoofed source IP address.\n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2536,7 +2536,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may attempt to cause a denial of service (DoS) by directly sending a high-volume of network traffic to a target. This DoS attack may also reduce the availability and functionality of the targeted system(s) and network. Direct Network Floods are when one or more systems are used to send a high-volume of network packets towards the targeted service's network. Almost any network protocol may be used for flooding.\n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2547,7 +2547,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may delete or remove built-in data and turn off services designed to aid in the recovery of a corrupted system to prevent recovery. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2558,7 +2558,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may target resource intensive features of applications to cause a denial of service (DoS), denying availability to those applications. For example, specific features in web applications may be highly resource intensive. Repeated requests to those features may be able to exhaust system resources and deny access to the application or the server itself.\n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2569,7 +2569,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may target the different network services provided by systems to conduct a denial of service (DoS). Adversaries often target the availability of DNS and web services, however others have been targeted as well. Web server software can be attacked through a variety of means, some of which apply generally while others are specific to the software being used to provide the service.\n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2580,7 +2580,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users. Endpoint DoS can be performed by exhausting the system resources those services are hosted on or exploiting the system to cause a persistent crash condition. Example services include websites, email services, DNS, and web-based applications. \n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2591,7 +2591,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2602,7 +2602,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may modify the lifecycle policies of a cloud storage bucket to destroy all objects stored within. Cloud storage buckets often allow users to set lifecycle policies to automate the migration, archival, or deletion of objects after a set period of time If a threat actor has sufficient permissions to modify these policies, they may be able to delete all objects at once. \n\nThis control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2613,7 +2613,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2624,7 +2624,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on. Example resources include DNS, and web-based services and applications that provide resources to the utility services. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2635,7 +2635,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage the compute resources of co-opted systems to complete resource-intensive tasks, which may impact system and/or hosted service availability. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2646,7 +2646,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage the resources of co-opted systems to complete resource-intensive tasks, which may impact system and/or hosted service availability. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2657,7 +2657,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage the network bandwidth resources of co-opted systems to complete resource-intensive tasks, which may impact system and/or hosted service availability. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-18",
@@ -2668,7 +2668,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may shutdown/reboot systems to interrupt access to, or aid in the destruction of, those systems. This control establishes and regularly evaluates processes, procedures, and technical measures to ensure continuous operations of the datacenter, mitigating attacker techniques such as denial‑of‑service and other availability‑impacting attacks that seek to disrupt business and operational continuity. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2679,7 +2679,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may shutdown/reboot systems to interrupt access to, or aid in the destruction of, those systems.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2690,7 +2690,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage the network bandwidth resources of co-opted systems to complete resource-intensive tasks, which may impact system and/or hosted service availability.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2701,7 +2701,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may leverage the resources of co-opted systems to complete resource-intensive tasks, which may impact system and/or hosted service availability.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2712,7 +2712,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may attempt to cause a denial of service (DoS) by reflecting a high-volume of network traffic to a target. This type of Network DoS takes advantage of a third-party server intermediary that hosts and will respond to a given spoofed source IP address.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2723,7 +2723,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users.  Direct Network Floods are when one or more systems are used to send a high-volume of network packets towards the targeted service's network. Almost any network protocol may be used for flooding. Stateless protocols such as UDP or ICMP are commonly used but stateful protocols such as TCP can be used as well.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2734,7 +2734,7 @@
             "capability_group": "AIS",
             "comments": "Adversaries may exploit software vulnerabilities that can cause an application or system to crash and deny availability to users. Some systems may automatically restart critical applications and services when crashes occur, but they can likely be re-exploited to cause a persistent denial of service (DoS) condition. The control outlines several testing approaches, which could help mitigate this technique, including the use of automated tools, to identify vulnerabilities throughout the software development lifecycle from development to production.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -2745,7 +2745,7 @@
             "capability_group": "AIS",
             "comments": "Adversaries may target resource intensive features of applications to cause a denial of service (DoS), denying availability to those applications. For example, specific features in web applications may be highly resource intensive. Repeated requests to those features may be able to exhaust system resources and deny access to the application or the server itself. The control outlines several testing approaches, including the use of automated tools, to identify and remediate vulnerabilities or weaknesses that can be exploited such as the use of the application exhaustion flood technique to exhaust system resources and deny access to the web application for others.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2756,7 +2756,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may perform Network Denial of Service (DoS) attacks to degrade or block the availability of targeted resources to users. Network DoS can be performed by exhausting the network bandwidth services rely on. Example resources include DNS, and web-based services and applications that provide resources to the utility services.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2767,7 +2767,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may target the different network services provided by systems to conduct a denial of service (DoS). Adversaries often target the availability of DNS and web services, however others have been targeted as well. Web server software can be attacked through a variety of means, some of which apply generally while others are specific to the software being used to provide the service.\n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-15",
@@ -2778,7 +2778,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services or processes can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment. \n\nThis control requires securing, monitoring, maintaining, and regularly testing utility services (e.g., power, HVAC, communications) to ensure ongoing effectiveness, mitigating attacker techniques such as disruption of infrastructure, exploitation of unmonitored service failures, and availability attacks that can compromise system resilience.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-09",
@@ -2789,7 +2789,7 @@
             "capability_group": "DCS",
             "comments": "This control enforces equipment identification as part of connection authentication, mitigating attacker techniques such as device spoofing, rogue device connections, and unauthorized network access through unverified or compromised hardware. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent can help with blocking this technique. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent may help in blocking this technique.\n\nAdversaries may bridge network boundaries by modifying a network device’s Network Address Translation (NAT) configuration, effectively compromising the device. Malicious modifications to NAT may enable an adversary to bypass restrictions on traffic routing that otherwise separate trusted and untrusted networks. \n\nUpon identifying a compromised network device being used to bridge a network boundary, block the malicious packets using an unaffected network device in path, such as a firewall or a router that has not been compromised. Continue to monitor for additional activity and to ensure that the blocks are indeed effective.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-09",
@@ -2800,7 +2800,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may bridge network boundaries by compromising perimeter network devices or internal devices responsible for network segmentation. Breaching these devices may enable an adversary to bypass restrictions on traffic routing that otherwise separate trusted and untrusted networks.\n\nThis control enforces equipment identification as part of connection authentication, mitigating attacker techniques such as device spoofing, rogue device connections, and unauthorized network access through unverified or compromised hardware. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent can help with blocking this technique. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent may help in blocking this technique. \n\nUpon identifying a compromised network device being used to bridge a network boundary, block the malicious packets using an unaffected network device in path, such as a firewall or a router that has not been compromised. Continue to monitor for additional activity and to ensure that the blocks are indeed effective.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-09",
@@ -2811,7 +2811,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may physically introduce computer accessories, networking hardware, or other computing devices into a system or network that can be used as a vector to gain access. This control enforces equipment identification as part of connection authentication, mitigating attacker techniques such as device spoofing, rogue device connections, and unauthorized network access through unverified or compromised hardware. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent can help with blocking this technique. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent may help in blocking this technique. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DCS-09",
@@ -2822,7 +2822,7 @@
             "capability_group": "DCS",
             "comments": "An adversary may use legitimate remote access hardware to establish an interactive command and control channel to target systems within networks. Remote access hardware may be physically installed and used post-compromise as an alternate communications channel for redundant access or as a way to establish an interactive remote session with the target system. This control enforces equipment identification as part of connection authentication, mitigating attacker techniques such as device spoofing, rogue device connections, and unauthorized network access through unverified or compromised hardware. Blocking unknown devices and accessories by endpoint security configuration and monitoring agent can help with blocking this technique. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DSP-04",
@@ -3151,7 +3151,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may attempt to exfiltrate data via a physical medium, such as removable drives. This control ensures that storage media is securely and irreversibly sanitized using industry‑accepted methods to prevent data recovery, thereby mitigating attacker techniques such as data remanence exploitation, forensic recovery, and unauthorized access to residual sensitive information from discarded or repurposed devices.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "DSP-02",
@@ -3162,7 +3162,7 @@
             "capability_group": "DCS",
             "comments": "Adversaries may may attempt to connect and distribute malware via removable storage. In initial access, this may occur through manual manipulation of the media, modification of systems used to initially format the media, or modification to the media's firmware itself. This control ensures that storage media is securely and irreversibly sanitized using industry‑accepted methods to prevent data recovery, thereby mitigating attacker techniques such as data remanence exploitation, forensic recovery, and unauthorized access to residual sensitive information from discarded or repurposed devices.",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-05",
@@ -3173,7 +3173,7 @@
             "capability_group": "AIS",
             "comments": "The control outlines several testing approaches, including the use of automated tools, to identify and remediate vulnerabilities or weaknesses that can be exploited. Attackers may use an existing, legitimate external Web service to exfiltrate data rather than their primary command and control channel. Regular testing should identify data exfiltration paths through applications and testing cloud APIs and web applications for unauthorized data access exfiltration. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3184,7 +3184,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3195,7 +3195,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries can steal application access tokens as a means of acquiring credentials. Application access tokens are used to make authorized API requests on behalf of a user or service and are commonly used as a way to access resources in cloud and container-based applications. The SSDLC process should ensure that applications APIs, and applications access tokens are securely created and protected in their cloud environments. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3206,7 +3206,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries can steal and use application access tokens as a means of acquiring credentials. Application access tokens are used to make authorized API requests on behalf of a user or service and are commonly used as a way to access resources in cloud and container-based applications. The SSDLC process should ensure that applications APIs, and applications access tokens are securely designed, developed, and protected in their cloud environments. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3217,7 +3217,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries can steal application access tokens as a means of acquiring credentials. Application access tokens are used to make authorized API requests on behalf of a user or service and are commonly used as a way to access resources in cloud and container-based applications. The SSDLC process should ensure that applications APIs, and applications access tokens are securely designed, developed, and protected in their cloud environments. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3228,7 +3228,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. By stealing alternate authentication material, adversaries are able to bypass system access controls and authenticate to systems without knowing the plaintext password or any additional authentication factors. The use of secure coding techniques to implement token binding allows applications and services to cryptographically bind their security tokens to the TLS layer to mitigate token theft. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3239,7 +3239,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Secure coding and secure configurations can prevent the exploit of known web application vulnerabilities used by attackers to access stored credentials. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3250,7 +3250,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries may manipulate source code in open-source dependencies for the purpose of compromise to add malicious code to users of the dependency. SSDLC should validate open-source components to prevent the use of malicious or vulnerable dependencies. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3261,7 +3261,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries may attempt to access the Cloud Instance Metadata API to collect credentials and other sensitive data. The SSDLC process should ensure that applications and APIs are securely designed, developed, and operated in their cloud environments. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3272,7 +3272,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries may query and search through compromised applications to find and obtain insecurely stored credentials. Secure coding practices and secure credential handling may prevent hardcoded/insecurely stored credentials and ensure the that those cloud accounts are not compromised. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3283,7 +3283,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries may query and search through compromised applications to find and obtain insecurely stored credentials. Secure coding practices and secure credential handling may prevent hardcoded/insecurely stored credentials and ensure the use of proper encryption for credentials and application data. ",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3294,7 +3294,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries will use T1059 for various command injection attacks through web application interfaces. Securing serverless functions, cloud APIs, and web applications from command injection can help in mitigating this technique. \n",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "AIS-04",
@@ -3305,7 +3305,7 @@
             "capability_group": "AIS",
             "comments": "This control requires both Cloud Service Providers and customers to implement a Secure Software Development Lifecycle (SSDLC) with security practices throughout the entire application development process to protect cloud-based applications from cyber threats. Adversaries will use T1190 to exploit vulnerabilities in web applications internet-facing host or system to initially access a network. Proper input validation and secure coding practices can prevent exploitation of web application vulnerabilities. \n\n",
             "references": [],
-            "status": "final_draft"
+            "status": "complete"
         },
         {
             "capability_id": "HRS-03",
