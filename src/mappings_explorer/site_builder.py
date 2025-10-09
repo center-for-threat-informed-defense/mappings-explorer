@@ -215,11 +215,15 @@ def load_projects():
     veris.id = "veris"
     veris.label = "VERIS"
     veris.description = """The Vocabulary for Event Recording and Incident Sharing
-    (VERIS) provides a common language for describing security incidents in a structured
-    and repeatable manner that allows for the analysis of data across a variety of
-    incidents. These mappings provide the context to better connect the who, what, and
-    why captured in VERIS incident representation with the when and how described in
-    MITRE ATT&CK® adversary behavioral tactics and techniques."""
+     (VERIS) provides a common language for describing security incidents in a
+     structured and repeatable manner that allows for the analysis of data across a
+     variety of incidents. These mappings provide the context to better connect the who,
+     what, and why captured in VERIS incident representation with the when and how
+     described in MITRE ATT&CK® adversary behavioral tactics, techniques, and procedures
+     (TTPs). This connection empowers defenders with the ability to efficiently connect
+     adversary TTPs to their real-world impact, and facilitates the linkage of
+     ATT&CK-based threat intelligence with VERIS-based incident reports for more
+     actionable insights."""
     veris.versions = ["1.4.0", "1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
@@ -396,10 +400,13 @@ def load_projects():
     m365.id = "m365"
     m365.label = "M365"
     m365.description = """Microsoft 365 (M365) is a widely used Software as a Service
-        (SaaS) product family of productivity software, collaboration, and cloud-based
-        services. These mappings connect the security controls native to M365 product
-        areas to MITRE ATT&CK® providing resources to assess how to protect, detect, and
-        respond to real-world threats as described in the ATT&CK knowledge base."""
+     (SaaS) product family of productivity software, collaboration, and cloud-based
+     services. These mappings connect the security controls native to M365 product areas
+     to MITRE ATT&CK® providing resources to assess how to protect, detect, and respond
+     to real-world threats as described in the ATT&CK knowledge base. As a result, M365
+     users can evaluate the effectiveness of native security controls against specific
+     ATT&CK techniques and take a threat-informed approach to understand, prioritize,
+     and mitigate adversary behaviors that are most important for their environment."""
 
     m365.attackDomains = ["Enterprise"]
     m365.attackDomain = m365.attackDomains[0]
