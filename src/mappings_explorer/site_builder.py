@@ -24,6 +24,7 @@ from .framework_setup import (
     ExternalControl,
     load_projects,
     get_description_for_capability,
+    get_description_for_capability_group,
     get_security_stack_descriptions,
     delete_all_descriptions,
 )
@@ -149,14 +150,14 @@ def parse_capability_groups(
         for capability in capabilities_to_get_description:
             get_description_for_capability(
                 capability=capability,
-                group={},
                 project=project,
                 version=project_version,
             )
-
         for group in project.capability_groups:
-            get_description_for_capability(
-                capability={}, group=group, project=project, version=project_version
+            get_description_for_capability_group(
+                group=group,
+                project=project,
+                version=project_version,
             )
 
     if project.id == "aws" or project.id == "m365":

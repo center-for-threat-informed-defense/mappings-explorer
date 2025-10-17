@@ -514,19 +514,17 @@ def get_cve_description(project: ExternalControl, version: str, capability: Capa
         outfile.write(json_object)
 
 
-def get_description_for_capability(
-    capability: Capability,
-    group: CapabilityGroup,
+def get_description_location(
     project: ExternalControl,
     version: str,
+    group: bool,
 ):
-    """Pull description for each capability either from saved capability file
-    or direct another method to query for a description
+    """Get descriptions from saved files
 
     Args:
-        capability: object that needs a description
         project: project where capability is from
         version: version of the project to query for (always constant for CVE)
+        group: whether or not the description is for a capability group
     """
     if project.id == "nist":
         folder_name = DATA_DIR / "NIST_800-53"
@@ -547,6 +545,54 @@ def get_description_for_capability(
     if group:
         file_name = folder_name / f"{project.id}-{version}_group_descriptions.json"
 
+    return file_name
+
+
+def get_description_for_capability_group(
+    group: CapabilityGroup,
+    project: ExternalControl,
+    version: str,
+):
+    """Pull description for each capability either from saved capability file
+    or direct another method to query for a description
+
+    Args:
+        capability: object that needs a description
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+    """
+    file_name = get_description_location(project=project, version=version, group=True)
+    if os.path.isfile(file_name):
+        try:
+            with open(file_name, "r") as openfile:
+                json_object = json.load(openfile)
+                obj = [
+                    obj["description"] for obj in json_object if obj["id"] == group.id
+                ]
+                if len(obj) > 0:
+                    group.description = obj[0]
+
+        except Exception:
+            logger.exception(
+                "Error loading description for capability {c_id}",
+                c_id=group.id,
+            )
+
+
+def get_description_for_capability(
+    capability: Capability,
+    project: ExternalControl,
+    version: str,
+):
+    """Pull description for each capability either from saved capability file
+    or direct another method to query for a description
+
+    Args:
+        capability: object that needs a description
+        project: project where capability is from
+        version: version of the project to query for (always constant for CVE)
+    """
+    file_name = get_description_location(project=project, version=version, group=False)
     if os.path.isfile(file_name):
         try:
             with open(file_name, "r") as openfile:
@@ -556,12 +602,8 @@ def get_description_for_capability(
                     for obj in json_object
                     if obj["id"] == capability.id
                 ]
-                if len(obj) > 0 and capability:
+                if len(obj) > 0:
                     capability.description = obj[0]
-                elif len(obj) > 0 and group:
-                    group.description = obj[0]
-                    if not group.description:
-                        group.description = "testing testing..."
                 else:
                     logger.trace(
                         "Getting description for capability {c_id}", c_id=capability.id
@@ -577,7 +619,7 @@ def get_description_for_capability(
         except Exception:
             logger.exception(
                 "Error loading description for capability {c_id}",
-                c_id=capability,
+                c_id=capability.id,
             )
     else:
         # if description file doesn't already exist, create it
