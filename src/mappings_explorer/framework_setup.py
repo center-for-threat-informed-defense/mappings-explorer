@@ -434,19 +434,19 @@ def load_projects():
     ]
     csa_ccm.has_non_mappable_comments = False
 
-    # projects = [
-    #     csa_ccm,
-    #     cri_profile,
-    #     intel_vpro,
-    #     nist,
-    #     kev,
-    #     veris,
-    #     azure,
-    #     gcp,
-    #     aws,
-    #     m365,
-    # ]
-    return [csa_ccm]
+    projects = [
+        csa_ccm,
+        cri_profile,
+        intel_vpro,
+        nist,
+        kev,
+        veris,
+        azure,
+        gcp,
+        aws,
+        m365,
+    ]
+    return projects
 
 
 def get_security_stack_descriptions(project: ExternalControl):
