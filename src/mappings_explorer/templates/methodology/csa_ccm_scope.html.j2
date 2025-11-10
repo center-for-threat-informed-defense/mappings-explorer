@@ -33,13 +33,13 @@
         </div>
         <dl>
             <dt>Operational vs. Policy and Procedural Controls</dt>
-            <dd>This effort is focused on the technical and operational elements of the CSA CCM and did not take into account the management elements that are often focused on organization specific policies and procedures. This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques.</dd>
+            <dd>This effort is focused on the technical and operational elements of the CSA CCM and did not take into account the management elements that are often focused on organization specific policies and procedures (e.g., -01 controls). This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques.</dd>
             <dt>Mitigation vs. Monitoring</dt>
             <dd>Capabilities that may only monitor adversary behaviors are out of scope. The focus of this effort is on technical capabilities that mitigate adversary techniques and sub-techniques. Consideration is not given for the potential that an adversary might be dissuaded or change their tactics to try and avoid detection if they thought activity was being monitored.</dd>
             <dt>Controls vs. Control Domain</dt>
-            <dd>This effort maps at the control level. Consideration was given to each control's control domain grouping for context. </dd>
+            <dd>This effort maps at the control level. Consideration was given to each control's cloud security domain grouping for context.</dd>
             <dt>Implicit vs. Explicit Mitigation</dt>
-            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data backups) and capabilities that support those mitigations rather than other, non-technical methods of mitigation (e.g., permit physical access to systems, develop a backup policy).</dd>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data backups) and capabilities that support those mitigations rather than other, non-technical methods of mitigation (e.g., restrict physical access to systems, develop a backup policy).</dd>
             <dt><a href="https://attack.mitre.org/mitigations/M1056" target="_blank">Pre-compromise Mitigation</a></dt>
             <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques, and are considered out of scope.</dd>
         </dl>
@@ -54,7 +54,7 @@
         </div>
 
         <p>
-            The CSA CCM scoping decisions are captured below at the function and category level along with our rationale for controls in those categories being in or out of scope:
+            The CSA CCM scoping decisions are captured below at the cloud security domain level along with our rationale for controls in those domains being in or out of scope. Each CCM domain defines a category and controls fall under those categories. Mappings are at the control level.
         </p>
         <table class="table">
             <tr>
@@ -65,87 +65,87 @@
             <tr>
                 <td>Audit and Assurance (A&A)</td>
                 <td>No</td>
-                <td>A&A controls are not applicable as they do not provide mitigations of specific threats.</td>
+                <td>A&A controls are not applicable as they are designed for audit management, not for providing mitigations of specific threats.</td>
             </tr>
             <tr>
                 <td>Application and Interface Security (AIS)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>AIS controls for mitigating risks to cloud landscapes during application design and development are in scope.</td>
             </tr>
             <tr>
                 <td>Business Continuity Management and Operational Resilience (BCR)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>BCR control for data backup in scope. Controls for policy and procedural management are out of scope.</td>
             </tr>
             <tr>
                 <td>Change Control and Configuration Management (CCC)</td>
-                <td>Partial</td>
-                <td></td>
+                <td>No</td>
+                <td>CCC controls are not applicable as they provide policy and procedural management controls and are not mitigations for specific threats.</td>
             </tr>
             <tr>
                 <td>Cryptography, Encryption, and Key Management (CEK)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>CEK control for providing cryptographic protection of data at-rest and in-transit is in scope. Policy and procedural management controls are out of scope.</td>
             </tr>
             <tr>
                 <td>Datacenter Security (DCS)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>DCS controls related to data resiliency and authentication integrity are in scope. Controls for physical safeguarding of assets are out of scope.</td>
             </tr>
             <tr>
                 <td>Data Security and Privacy Lifecycle Management (DSP)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>DSP controls for implementation of security over the data lifecycle are in scope. Controls for policy, procedure, and governance are out of scope.</td>
             </tr>
             <tr>
                 <td>Governance, Risk, and Compliance (GRC)</td>
-                <td>Partial</td>
-                <td></td>
+                <td>No</td>
+                <td>GRC controls are not applicable as they are composed of policy and procedural controls which are out of scope.</td>
             </tr>
             <tr>
                 <td>Human Resources (HRS)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>HRS controls are not applicable as they are composed of policy and procedural management controls which are out of scope.</td>
             </tr>
             <tr>
                 <td>Identity and Access Management (IAM)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>IAM controls for implementation of security principles for managing identities and access to security functions and data are in scope. The control for policy and procedure is out of scope.</td>
             </tr>
             <tr>
                 <td>Interoperability and Portability (IPY)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>IPY controls for implementation of security controls for the safe and secure exchange of data are in scope. Control for policy, procedure, and contractual obligations are out of scope.</td>
             </tr>
             <tr>
                 <td>Infrastructure and Virtualization Security (IVS)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>IVS controls implementing controls to secure infrastructure and virtualization technologies are in scope. Controls for policy, procedure, and documentation are out of scope.</td>
             </tr>
             <tr>
                 <td>Logging and Monitoring (LOG)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>LOG controls for implementing controls to provide security of logs and records are in scope. Controls for policy, procedure, and monitoring are out of scope.</td>
             </tr>
             <tr>
                 <td>Security Incident Management, E-Discovery, and Cloud Forensics (SEF)</td>
-                <td>Partial</td>
-                <td></td>
+                <td>No</td>
+                <td>SEF controls are for incident management and response, which are not applicable as they do not provide mitigation of threats.</td>
             </tr>
             <tr>
                 <td>Supply Chain Management, Transparency, and Accountability (STA)</td>
-                <td>Partial</td>
-                <td></td>
+                <td>No</td>
+                <td>STA controls are not applicable as they are for policy, procedure, and documentation requirements, not mitigations for specific threats.</td>
             </tr>
             <tr>
                 <td>Threat and Vulnerability Management (TVM)</td>
                 <td>Partial</td>
-                <td></td>
+                <td>TVM controls for implementation of measures to mitigate security threats in cloud environments are in scope. Controls for policy, procedure, and reporting are out of scope.</td>
             </tr>
             <tr>
                 <td>Universal Endpoint Management (UEM) </td>
                 <td>Partial</td>
-                <td></td>
+                <td>UEM controls implementing security controls to mitigate risks associated with endpoints are in scope. Controls for policy, procedure, and documentation are out of scope.</td>
             </tr>
         </table>
     </div>
