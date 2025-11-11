@@ -433,6 +433,7 @@ def load_projects():
         },
     ]
     csa_ccm.has_non_mappable_comments = False
+    csa_ccm.has_non_mappables = False
 
     projects = [
         csa_ccm,
