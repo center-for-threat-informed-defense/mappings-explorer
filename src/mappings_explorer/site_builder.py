@@ -4,32 +4,27 @@ import os
 import shutil
 import zipfile
 
-import requests
 from loguru import logger
 from lunr import lunr
-from mapex_convert.read_files import (
-    read_yaml_file,
-)
 
 from .attack_query import create_attack_jsons, get_attack_data, load_tactic_structure
+from .attack_setup import Tactic, Technique, all_attack_versions, attack_domains
+from .framework_setup import (
+    Capability,
+    CapabilityGroup,
+    ExternalControl,
+    delete_all_descriptions,
+    get_description_for_capability,
+    get_description_for_capability_group,
+    get_security_stack_descriptions,
+    load_projects,
+)
 from .template import (
     PUBLIC_DIR,
     ROOT_DIR,
     TEMPLATE_DIR,
     load_template,
 )
-from .framework_setup import (
-    Capability,
-    CapabilityGroup,
-    ExternalControl,
-    load_projects,
-    get_description_for_capability,
-    get_description_for_capability_group,
-    get_security_stack_descriptions,
-    delete_all_descriptions,
-)
-
-from .attack_setup import Tactic, Technique, all_attack_versions, attack_domains
 
 
 def replace_mapping_type(mapping: dict, type_list: list):
