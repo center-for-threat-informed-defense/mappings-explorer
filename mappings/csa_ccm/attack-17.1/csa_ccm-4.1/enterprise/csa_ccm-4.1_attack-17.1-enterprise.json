@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "07/29/2025",
-        "last_update": "12/10/2025",
+        "last_update": "12/23/2025",
         "mapping_types": {
             "mitigates": {
                 "name": "mitigates",
@@ -49,6 +49,105 @@
             "attack_object_name": "User Execution",
             "capability_group": "AIS",
             "comments": "This control implements measures to secure APIs. Using application control and monitoring for and blocking malicious API calls can help prevent user execution of malware via APIs in cloud consoles.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-16",
+            "capability_description": "Supply Chain Data Security Assessment",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1176",
+            "attack_object_name": "Software Extensions",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-16",
+            "capability_description": "Supply Chain Data Security Assessment",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195.002",
+            "attack_object_name": "Compromise Software Supply Chain",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-16",
+            "capability_description": "Supply Chain Data Security Assessment",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195.001",
+            "attack_object_name": "Compromise Software Dependencies and Development Tools",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-16",
+            "capability_description": "Supply Chain Data Security Assessment",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195",
+            "attack_object_name": "Supply Chain Compromise",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to:\n\"(c) documentation and testing of the specific technical controls implemented to support the product or service (e.g., identity and access management, network design and security)\"\n\"(e) software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nCode Signing can ensure the authenticity and integrity of software by digitally signing executables, scripts, and other code artifacts.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1190",
+            "attack_object_name": "Exploit Public-Facing Application",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to:\n\"(c) documentation and testing of the specific technical controls implemented to support the product or service (e.g., identity and access management, network design and security)\"\n\"(e) software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code on public-facing applications or systems. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1210",
+            "attack_object_name": "Exploitation of Remote Services",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to:\n\"(c) documentation and testing of the specific technical controls implemented to support the product or service (e.g., identity and access management, network design and security)\"\nNetwork design and security testing (segmentation, secure protocols, egress controls) limit an adversary’s ability to move laterally or exfiltrate via compromised software components through SMB and RDP as well as applications that may be used within internal networks such as MySQL and web server services.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1176",
+            "attack_object_name": "Software Extensions",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code from known installed software extensions on endpoints. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195.001",
+            "attack_object_name": "Compromise Software Dependencies and Development Tools",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
             "references": [],
             "status": "complete"
         },
@@ -1959,17 +2058,6 @@
             "capability_id": "IAM-06",
             "capability_description": "User Access Provisioning",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1593.003",
-            "attack_object_name": "Code Repositories",
-            "capability_group": "IAM",
-            "comments": "This control describes the implementation of a secure and controlled user access provisioning process. Proper user account management reduces the attack surface by limiting unauthorized access to data, assets, and systems. Managing account access authorizations can reduce the risk of privilege escalation by ensuring accounts cannot perform unauthorized actions. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "IAM-06",
-            "capability_description": "User Access Provisioning",
-            "mapping_type": "mitigates",
             "attack_object_id": "T1213.002",
             "attack_object_name": "Sharepoint",
             "capability_group": "IAM",
@@ -3752,6 +3840,61 @@
             "capability_id": "TVM-06",
             "capability_description": "External Library Vulnerabilities",
             "mapping_type": "mitigates",
+            "attack_object_id": "T1574.001",
+            "attack_object_name": "DLL",
+            "capability_group": "TVM",
+            "comments": "This control requires both CSP and CSC to independently manage third-party and open-source libraries by maintaining accurate inventories, integrating with vulnerability databases, automating patching and updates, using dependency and scanning tools to mitigate risks from library vulnerabilities.\nFor this specific technique, leveraging the program sxstrace.exe that is included with Windows along with manual inspection, to check manifest files for side-loading vulnerabilities in software with the use of vulnerable DLLs. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "TVM-06",
+            "capability_description": "External Library Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1574",
+            "attack_object_name": "Hijack Execution Flow",
+            "capability_group": "TVM",
+            "comments": "This control requires both CSP and CSC to independently manage third-party and open-source libraries by maintaining accurate inventories, integrating with vulnerability databases, automating patching and updates, using dependency and scanning tools to mitigate risks from library vulnerabilities.\nFor this specific technique, leveraging the program sxstrace.exe that is included with Windows along with manual inspection, to check manifest files for side-loading vulnerabilities in software with the use of vulnerable DLLs. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "TVM-06",
+            "capability_description": "External Library Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1176",
+            "attack_object_name": "Software Extensions",
+            "capability_group": "TVM",
+            "comments": "This control requires both CSP and CSC to independently manage third-party and open-source libraries by maintaining accurate inventories, integrating with vulnerability databases, automating patching and updates, using dependency and scanning tools to mitigate risks from library vulnerabilities.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "TVM-06",
+            "capability_description": "External Library Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204.003",
+            "attack_object_name": "Malicious Image",
+            "capability_group": "TVM",
+            "comments": "This control requires both CSP and CSC to independently manage third-party and open-source libraries by maintaining accurate inventories, integrating with vulnerability databases, automating patching and updates, using dependency and scanning tools to mitigate risks from library vulnerabilities.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "TVM-06",
+            "capability_description": "External Library Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "TVM",
+            "comments": "This control requires both CSP and CSC to independently manage third-party and open-source libraries by maintaining accurate inventories, integrating with vulnerability databases, automating patching and updates, using dependency and scanning tools to mitigate risks from library vulnerabilities.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "TVM-06",
+            "capability_description": "External Library Vulnerabilities",
+            "mapping_type": "mitigates",
             "attack_object_id": "T1195.002",
             "attack_object_name": "Compromise Software Supply Chain",
             "capability_group": "TVM",
@@ -4632,28 +4775,6 @@
             "capability_id": "I&S-05",
             "capability_description": "Production and Non-Production Environments",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1593.003",
-            "attack_object_name": "Code Repositories",
-            "capability_group": "I&S",
-            "comments": "This control maintains separation of production and non-production environments, which can prevent the introduction of exploitable weaknesses and avoid exposure of sensitive information. Application developers uploading to public code repositories should be careful to avoid publishing sensitive information such as credentials and API keys.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "I&S-05",
-            "capability_description": "Production and Non-Production Environments",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1593",
-            "attack_object_name": "Search Open Websites/Domains",
-            "capability_group": "I&S",
-            "comments": "This control maintains separation of production and non-production environments, which can prevent the introduction of exploitable weaknesses and avoid exposure of sensitive information. Application developers uploading to public code repositories should be careful to avoid publishing sensitive information such as credentials and API keys.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "I&S-05",
-            "capability_description": "Production and Non-Production Environments",
-            "mapping_type": "mitigates",
             "attack_object_id": "T1078",
             "attack_object_name": "Valid Accounts",
             "capability_group": "I&S",
@@ -5098,6 +5219,28 @@
             "attack_object_name": "Data Destruction",
             "capability_group": "BCR",
             "comments": "Adversaries may destroy, overwrite, or delete data and files in cloud storage objects and other cloud resources. Periodically backing up data stored in the cloud; ensuring backup confidentiality, integrity, and availability; and verifying data restoration from backup provides data protection and allows for quick recovery from data destruction attacks.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195.002",
+            "attack_object_name": "Compromise Software Supply Chain",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "STA-10",
+            "capability_description": "Supply Chain Risk Management",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1195",
+            "attack_object_name": "Supply Chain Compromise",
+            "capability_group": "STA",
+            "comments": "The mitigative applications of this control relate to (e) \"software supply chain risk management practices for ensuring software integrity, traceability, and provenance (e.g., software build practices, component management, and use of Software Bill of Materials (SBOMs))\" \nSBOMs are known to provide transparency into software components, which may enable the identification of vulnerable software libraries, components, or code and mitigate the injection or execution of vulnerable or malicious code. ",
             "references": [],
             "status": "complete"
         },
@@ -5712,17 +5855,6 @@
             "mapping_type": "mitigates",
             "attack_object_id": "T1021.008",
             "attack_object_name": "Direct Cloud VM Connections",
-            "capability_group": "IAM",
-            "comments": "This control focuses on the secure deprovisioning of user access by automating account removal, detecting and revoking inactive accounts. These mitigative actions reduce the risk of lingering or inappropriate access following employee termination, role changes, or security incidents.\n\n",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "IAM-07",
-            "capability_description": "User Access Changes and Revocation",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1593.003",
-            "attack_object_name": "Code Repositories",
             "capability_group": "IAM",
             "comments": "This control focuses on the secure deprovisioning of user access by automating account removal, detecting and revoking inactive accounts. These mitigative actions reduce the risk of lingering or inappropriate access following employee termination, role changes, or security incidents.\n\n",
             "references": [],
@@ -7668,6 +7800,17 @@
             "capability_id": "UEM-14",
             "capability_description": "Third-Party Endpoint Security Posture",
             "mapping_type": "mitigates",
+            "attack_object_id": "T1204.003",
+            "attack_object_name": "Malicious Image",
+            "capability_group": "UEM",
+            "comments": "This control provides for the implementation of best practices for third-party endpoint management. \nSeveral cloud service providers support content trust models that require container images be signed by trusted sources. Malicious images can be prevented from running by implementing application control, script blocking, and other runtime execution prevention mechanisms from untrusted sources .",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "UEM-14",
+            "capability_description": "Third-Party Endpoint Security Posture",
+            "mapping_type": "mitigates",
             "attack_object_id": "T1204",
             "attack_object_name": "User Execution",
             "capability_group": "UEM",
@@ -9080,7 +9223,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-03",
@@ -9090,7 +9233,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-04",
@@ -9100,7 +9243,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-04",
@@ -9110,7 +9253,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-04",
@@ -9120,7 +9263,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-18",
@@ -9130,7 +9273,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-19",
@@ -9140,7 +9283,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-16",
@@ -9150,7 +9293,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-17",
@@ -9160,7 +9303,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-13",
@@ -9170,7 +9313,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-14",
@@ -9180,7 +9323,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-11",
@@ -9190,7 +9333,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-12",
@@ -9200,7 +9343,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-10",
@@ -9210,7 +9353,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-06",
@@ -9220,7 +9363,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-05",
@@ -9230,7 +9373,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-13",
@@ -9240,7 +9383,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-04",
@@ -9250,7 +9393,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-10",
@@ -9260,7 +9403,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-08",
@@ -9270,7 +9413,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-02",
@@ -9280,7 +9423,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-03",
@@ -9290,7 +9433,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-04",
@@ -9300,7 +9443,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-02",
@@ -9310,7 +9453,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-12",
@@ -9320,7 +9463,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-07",
@@ -9330,7 +9473,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-06",
@@ -9340,7 +9483,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-02",
@@ -9350,7 +9493,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-01",
@@ -9360,7 +9503,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-12",
@@ -9370,7 +9513,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-11",
@@ -9380,7 +9523,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-09",
@@ -9390,7 +9533,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "TVM-01",
@@ -9400,17 +9543,7 @@
             "attack_object_name": null,
             "capability_group": "TVM",
             "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "STA-16",
-            "capability_description": "Supply Chain Data Security Assessment",
-            "mapping_type": "non_mappable",
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "STA",
-            "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-15",
@@ -9420,7 +9553,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-01",
@@ -9430,7 +9563,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-04",
@@ -9440,7 +9573,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-05",
@@ -9450,7 +9583,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-06",
@@ -9460,7 +9593,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-02",
@@ -9470,7 +9603,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-07",
@@ -9480,7 +9613,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-08",
@@ -9490,7 +9623,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-09",
@@ -9500,17 +9633,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "STA-10",
-            "capability_description": "Supply Chain Risk Management",
-            "mapping_type": "non_mappable",
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "STA",
-            "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-12",
@@ -9520,7 +9643,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-13",
@@ -9530,7 +9653,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-14",
@@ -9540,7 +9663,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "STA-03",
@@ -9550,7 +9673,7 @@
             "attack_object_name": null,
             "capability_group": "STA",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-09",
@@ -9560,7 +9683,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-04",
@@ -9570,7 +9693,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-05",
@@ -9580,7 +9703,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-06",
@@ -9590,7 +9713,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-07",
@@ -9600,7 +9723,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-08",
@@ -9610,7 +9733,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-01",
@@ -9620,7 +9743,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "SEF-03",
@@ -9630,7 +9753,7 @@
             "attack_object_name": null,
             "capability_group": "SEF",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-11",
@@ -9640,7 +9763,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-12",
@@ -9650,7 +9773,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-13",
@@ -9660,7 +9783,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-09",
@@ -9670,7 +9793,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-14",
@@ -9680,7 +9803,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-07",
@@ -9690,7 +9813,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-05",
@@ -9700,7 +9823,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-06",
@@ -9710,7 +9833,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-03",
@@ -9720,7 +9843,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "LOG-01",
@@ -9730,7 +9853,7 @@
             "attack_object_name": null,
             "capability_group": "LOG",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "I&S-08",
@@ -9740,7 +9863,7 @@
             "attack_object_name": null,
             "capability_group": "I&S",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "I&S-02",
@@ -9750,7 +9873,7 @@
             "attack_object_name": null,
             "capability_group": "I&S",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "I&S-01",
@@ -9760,7 +9883,7 @@
             "attack_object_name": null,
             "capability_group": "I&S",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "IPY-01",
@@ -9770,7 +9893,7 @@
             "attack_object_name": null,
             "capability_group": "IPY",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "IAM-01",
@@ -9780,7 +9903,7 @@
             "attack_object_name": null,
             "capability_group": "IAM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-09",
@@ -9790,7 +9913,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-18",
@@ -9800,7 +9923,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-06",
@@ -9810,7 +9933,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-05",
@@ -9820,7 +9943,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-01",
@@ -9830,7 +9953,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-19",
@@ -9840,7 +9963,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-10",
@@ -9850,7 +9973,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-08",
@@ -9860,7 +9983,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-11",
@@ -9870,7 +9993,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-12",
@@ -9880,7 +10003,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-13",
@@ -9890,7 +10013,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-14",
@@ -9900,7 +10023,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-17",
@@ -9910,7 +10033,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-16",
@@ -9920,7 +10043,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-06",
@@ -9930,7 +10053,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-07",
@@ -9940,7 +10063,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-05",
@@ -9950,7 +10073,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-01",
@@ -9960,7 +10083,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DCS-02",
@@ -9970,7 +10093,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "AIS-01",
@@ -9980,7 +10103,7 @@
             "attack_object_name": null,
             "capability_group": "AIS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "AIS-03",
@@ -9990,7 +10113,7 @@
             "attack_object_name": null,
             "capability_group": "AIS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-01",
@@ -10000,7 +10123,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-02",
@@ -10010,7 +10133,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-05",
@@ -10020,7 +10143,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-06",
@@ -10030,7 +10153,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-07",
@@ -10040,7 +10163,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-08",
@@ -10050,7 +10173,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-09",
@@ -10060,7 +10183,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-10",
@@ -10070,7 +10193,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-11",
@@ -10080,7 +10203,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-12",
@@ -10090,7 +10213,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-13",
@@ -10100,7 +10223,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-01",
@@ -10110,7 +10233,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-02",
@@ -10120,7 +10243,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-03",
@@ -10130,7 +10253,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-04",
@@ -10140,7 +10263,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-05",
@@ -10150,7 +10273,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-06",
@@ -10160,7 +10283,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-07",
@@ -10170,7 +10293,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "GRC-08",
@@ -10180,7 +10303,7 @@
             "attack_object_name": null,
             "capability_group": "GRC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-01",
@@ -10190,7 +10313,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-02",
@@ -10200,7 +10323,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-07",
@@ -10210,7 +10333,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-08",
@@ -10220,7 +10343,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-09",
@@ -10230,7 +10353,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-15",
@@ -10240,7 +10363,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-20",
@@ -10250,7 +10373,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CEK-21",
@@ -10260,7 +10383,7 @@
             "attack_object_name": null,
             "capability_group": "CEK",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-01",
@@ -10270,7 +10393,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-03",
@@ -10280,7 +10403,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-05",
@@ -10290,7 +10413,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-06",
@@ -10300,7 +10423,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-07",
@@ -10310,7 +10433,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-08",
@@ -10320,7 +10443,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "CCC-09",
@@ -10330,7 +10453,7 @@
             "attack_object_name": null,
             "capability_group": "CCC",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-01",
@@ -10340,7 +10463,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-02",
@@ -10350,7 +10473,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-03",
@@ -10360,7 +10483,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-04",
@@ -10370,7 +10493,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-05",
@@ -10380,7 +10503,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-06",
@@ -10390,7 +10513,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-07",
@@ -10400,7 +10523,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-09",
@@ -10410,7 +10533,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-10",
@@ -10420,7 +10543,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "BCR-11",
@@ -10430,7 +10553,7 @@
             "attack_object_name": null,
             "capability_group": "BCR",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-01",
@@ -10440,7 +10563,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-02",
@@ -10450,7 +10573,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-03",
@@ -10460,7 +10583,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-04",
@@ -10470,7 +10593,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-05",
@@ -10480,7 +10603,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "A&A-06",
@@ -10490,7 +10613,7 @@
             "attack_object_name": null,
             "capability_group": "A&A",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-03",
@@ -10500,7 +10623,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "HRS-04",
@@ -10510,7 +10633,7 @@
             "attack_object_name": null,
             "capability_group": "HRS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-14",
@@ -10520,7 +10643,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-13",
@@ -10530,7 +10653,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-12",
@@ -10540,7 +10663,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-11",
@@ -10550,7 +10673,7 @@
             "attack_object_name": null,
             "capability_group": "DSP",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "DSP-03",
@@ -10560,7 +10683,7 @@
             "attack_object_name": null,
             "capability_group": "DCS",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         },
         {
             "capability_id": "UEM-03",
@@ -10570,7 +10693,7 @@
             "attack_object_name": null,
             "capability_group": "UEM",
             "references": [],
-            "status": "complete"
+            "status": "non_mappable"
         }
     ]
 }
