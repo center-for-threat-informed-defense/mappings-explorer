@@ -270,6 +270,7 @@ def get_stix_object(parsed_mappings, mapping, created_date):
         "m365",
         "intel-vpro",
         "cri_profile",
+        "csa_ccm",
     ]
     if mapping_framwork == "cve" or mapping_framwork == "kev":
         return create_vulnerability_object(mapping, created_date)

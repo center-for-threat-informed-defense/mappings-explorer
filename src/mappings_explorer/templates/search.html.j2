@@ -65,7 +65,7 @@
           </form>
         </div>
         <section>
-          <div class="container" data-aos="fade-up" v-if="resultsLength">
+          <div class="container" v-if="resultsLength">
             <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"
               <span v-if="selectedAttackVersion !== 'All Versions'">ATT&CK v[[selectedAttackVersion]]</span>
               <span v-else> All ATT&CK Versions</span>
@@ -142,7 +142,7 @@
               </ul>
             </nav>
           </div>
-          <div class="container" data-aos="fade-up" v-else>
+          <div class="container" v-else>
             <h2>No Pages Match Search "[[ searchString ]]"</h2>
           </div>
         </section>

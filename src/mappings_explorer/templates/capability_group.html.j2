@@ -11,17 +11,13 @@
       <div class="row justify-content-left">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <h1 style="text-transform: uppercase;"> {{project.label}} <span class="highlight">{{ capability_group_name }}</span> Capability Group</h1>
-          {#{% for paragraph in description %}
-            <p>
-              {{- paragraph -}}
-            </p>
-          {% endfor %}#}
+          <p>{{description | safe}}</p>
         </div>
       </div>
     </div>
   </section>
   <section id="attack-table" class="mapping-table">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       <div class="row justify-content-left">
         <div class="row" style="padding: 0;">
           <div class="col-xl-4 col-lg-12">
@@ -38,7 +34,7 @@
     </div>
   </section>
   <section id="mapping-table" class="mapping-table">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       <div class="row justify-content-left">
         <div class="row" style="padding: 0;">
           <div class="col-xl-4 col-lg-12">
