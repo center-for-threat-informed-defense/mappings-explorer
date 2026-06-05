@@ -45,19 +45,19 @@
               <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                 <p>ATT&CK Version</p>
                 <div class="form-control select" @click="attackSelectOpen = !attackSelectOpen">
-                  <span class="selected-item">[[ selectedAttackVersion ]]</span>
+                  <span class="selected-item">[[ selectedtargetVersion ]]</span>
                 </div>
                 <div v-if="attackSelectOpen" class="dropdown-items">
                   <div
                     :class="{
                       'dropdown-item': true,
-                      'selected-option': selectedAttackVersion === attackVersion
+                      'selected-option': selectedtargetVersion === targetVersion
                     }"
-                    v-for="attackVersion in attackVersionsInResults"
-                    :key="attackVersion"
-                    @click="selectedAttackVersion = attackVersion; pageNum = 1; attackSelectOpen = false;"
+                    v-for="targetVersion in targetVersionsInResults"
+                    :key="targetVersion"
+                    @click="selectedtargetVersion = targetVersion; pageNum = 1; attackSelectOpen = false;"
                   >
-                    <span class="dropdown-item-text">[[ attackVersion ]]</span>
+                    <span class="dropdown-item-text">[[ targetVersion ]]</span>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@
         <section>
           <div class="container" v-if="resultsLength">
             <h2>PAGES FOR "[[ searchString.toUpperCase() ]]"
-              <span v-if="selectedAttackVersion !== 'All Versions'">ATT&CK v[[selectedAttackVersion]]</span>
+              <span v-if="selectedtargetVersion !== 'All Versions'">ATT&CK v[[selectedtargetVersion]]</span>
               <span v-else> All ATT&CK Versions</span>
             </h2>
             <div
@@ -155,7 +155,7 @@
     data() {
       return {
         attackSelectOpen: false,
-        attackVersionsInResults: [],
+        targetVersionsInResults: [],
         index: undefined,
         itemsPerPage: 10,
         itemPerPageOptions: [10, 25, 50, 100],
@@ -164,7 +164,7 @@
         results: {},
         searchModel: "",
         searchString: "",
-        selectedAttackVersion: undefined,
+        selectedtargetVersion: undefined,
         webPages: undefined,
       };
     },
@@ -184,9 +184,9 @@
       },
       displayedResults(){
         if(this.results?.results){
-          if(this.selectedAttackVersion !== "All Versions"){
+          if(this.selectedtargetVersion !== "All Versions"){
             let filteredResults = this.results.results.filter(result => {
-              return this.getStringFromUrl(result.ref, "attack-") === this.selectedAttackVersion;
+              return this.getStringFromUrl(result.ref, "attack-") === this.selectedtargetVersion;
             });
             return filteredResults;
           }
@@ -204,18 +204,18 @@
       /**
        * create an array with all attack versions that appear in the results
        */
-      getAttackVersionsInResults(){
-        let attackVersions = [];
+      gettargetVersionsInResults(){
+        let targetVersions = [];
         if (this.results.results.length) {
           this.results.results.forEach(result => {
-            let attackVersion = this.getStringFromUrl(result.ref, "attack-");
-            !attackVersions.includes(attackVersion) && attackVersions.push(attackVersion);
+            let targetVersion = this.getStringFromUrl(result.ref, "attack-");
+            !targetVersions.includes(targetVersion) && targetVersions.push(targetVersion);
           })
-          this.attackVersionsInResults = attackVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
+          this.targetVersionsInResults = targetVersions.sort((a, b) => parseFloat(a) - parseFloat(b));
           // if the selected Attack version is not yet set, set to the most recent
           // attack version that appears in the results
-          !this.selectedAttackVersion && this.setSelectedAttackVersion();
-          this.attackVersionsInResults.push("All Versions");
+          !this.selectedtargetVersion && this.setSelectedtargetVersion();
+          this.targetVersionsInResults.push("All Versions");
           }
       },
 
@@ -318,13 +318,13 @@
           this.searchModel = search;
           document.getElementById("nav-search-input").value = search;
           this.results = this.searchIndex(this.searchString);
-          this.getAttackVersionsInResults();
+          this.gettargetVersionsInResults();
         }
       },
 
-      setSelectedAttackVersion(){
-        let attackVersionNumbers = this.attackVersionsInResults.map(Number);
-        this.selectedAttackVersion = Math.max(...attackVersionNumbers).toString();
+      setSelectedtargetVersion(){
+        let targetVersionNumbers = this.targetVersionsInResults.map(Number);
+        this.selectedtargetVersion = Math.max(...targetVersionNumbers).toString();
       },
 
     },

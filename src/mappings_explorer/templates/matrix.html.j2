@@ -26,7 +26,7 @@
             </div>
             <div
               class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20"
-              v-if="attack_domain_versions_with_mappings[selectedDomain].includes(selectedAttackVersion)"
+              v-if="attack_domain_versions_with_mappings[selectedDomain].includes(selectedtargetVersion)"
             >
               <h6>Download Mapping Artifacts:</h6>
               <div class="downloads">
@@ -34,8 +34,8 @@
                   <a
                     class="link"
                     @click="downloadJson(
-                    url_prefix + 'static/matrices/' + selectedDomain.toLowerCase() + '/' + selectedAttackVersion + '/' + selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json',
-                    selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json'
+                    url_prefix + 'static/matrices/' + selectedDomain.toLowerCase() + '/' + selectedtargetVersion + '/' + selectedDomain.toLowerCase() + '-' + selectedtargetVersion + '_navigator_layer.json',
+                    selectedDomain.toLowerCase() + '-' + selectedtargetVersion + '_navigator_layer.json'
                   )">
                     <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
                     Navigator Layers
@@ -55,20 +55,20 @@
                 <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>ATT&CK Version</p>
                   <div class="form-control select" @click="attackSelectOpen = !attackSelectOpen">
-                    <span class="selected-item">[[ selectedAttackVersion ]]</span>
+                    <span class="selected-item">[[ selectedtargetVersion ]]</span>
                   </div>
                   <div v-if="attackSelectOpen" class="dropdown-items">
                     <div
                       :class="{
                         'dropdown-item': true,
-                        'invalid-option': !attack_domain_versions_with_mappings[selectedDomain].includes(attackVersion),
-                        'selected-option': selectedAttackVersion === attackVersion
+                        'invalid-option': !attack_domain_versions_with_mappings[selectedDomain].includes(targetVersion),
+                        'selected-option': selectedtargetVersion === targetVersion
                       }"
-                      v-for="attackVersion in attackVersions"
-                      :key="attackVersion"
-                      @click="selectedAttackVersion = attackVersion; getAttackObjectDict(); attackSelectOpen = false;"
+                      v-for="targetVersion in targetVersions"
+                      :key="targetVersion"
+                      @click="selectedtargetVersion = targetVersion; getAttackObjectDict(); attackSelectOpen = false;"
                     >
-                      <span class="dropdown-item-text">[[ attackVersion ]]</span>
+                      <span class="dropdown-item-text">[[ targetVersion ]]</span>
                     </div>
                   </div>
                 </div>
@@ -81,7 +81,7 @@
                     <div
                       :class="{
                         'dropdown-item': true,
-                        'invalid-option': !attack_domain_versions_with_mappings[domain].includes(selectedAttackVersion),
+                        'invalid-option': !attack_domain_versions_with_mappings[domain].includes(selectedtargetVersion),
                         'selected-option': selectedDomain === domain
                       }"
                       v-for="domain in attackDomains"
@@ -101,7 +101,7 @@
           <div class="container">
             <div class="row justify-content-left">
               <div class="col-12">
-                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MAPPINGS MATRIX</h2>
+                <h2>ATT&CK v[[selectedtargetVersion]] [[selectedDomain.toUpperCase()]] MAPPINGS MATRIX</h2>
                 <div class="matrix-table-container">
                   <div class="row">
                     <div class="col-md-12" style="display: flex">
@@ -115,7 +115,7 @@
                       <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
                         <div v-for="tactic in tactics" class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding tactic-box">
                           <div class="tactic-header">
-                            <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/tactics/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
+                            <a :href="url_prefix + 'attack/attack-' + selectedtargetVersion + '/domain-' + selectedDomain.toLowerCase() + '/tactics/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
                             <br/>
                             ([[ tactic.id ]])
                           </div>
@@ -159,7 +159,7 @@
                                 >
                                   <a
                                     v-if="technique.score > 0"
-                                    :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id"
+                                    :href="url_prefix + 'attack/attack-' + selectedtargetVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id"
                                     @mouseenter="techniqueHovered = technique"
                                   >
                                     [[  technique.name  ]]
@@ -189,7 +189,7 @@
                                   :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
                                 >
                                   <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
-                                    <a v-if="subtechnique.score >0" :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                    <a v-if="subtechnique.score >0" :href="url_prefix + 'attack/attack-' + selectedtargetVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
                                     <span v-else>[[ subtechnique.name ]]</span>
                                     <br/>
                                     ( [[ subtechnique.id ]] )
@@ -232,7 +232,7 @@
         amountMatrixColsShown: undefined,
         tactics: [],
         selectedTechnique: {},
-        selectedAttackVersion: "16.1",
+        selectedtargetVersion: "16.1",
         attackObjectDict: {},
         techniqueHovered: "",
         selectedDomain: "Enterprise",
@@ -256,13 +256,13 @@
         if (this.all_attack_domains) {
           return Object.keys(this.all_attack_domains).filter((domain) => {
             return this.all_attack_domains[domain].includes(
-              this.selectedAttackVersion
+              this.selectedtargetVersion
             );
           });
         }
         return [];
       },
-      attackVersions() {
+      targetVersions() {
         if (this.all_attack_versions) {
           return this.all_attack_domains[this.selectedDomain];
         }
@@ -300,8 +300,8 @@
       },
       getAttackObjectDict() {
         attack_object_file = `${this.url_prefix
-          }static/matrices/${this.selectedDomain.toLowerCase()}/${this.selectedAttackVersion
-          }/${this.selectedDomain.toLowerCase()}-${this.selectedAttackVersion
+          }static/matrices/${this.selectedDomain.toLowerCase()}/${this.selectedtargetVersion
+          }/${this.selectedDomain.toLowerCase()}-${this.selectedtargetVersion
           }_matrix_data.json`;
         fetch(attack_object_file)
           .then((response) => response.json())
@@ -313,7 +313,7 @@
       },
       getDescription() {
        attack_object_file = `${this.url_prefix
-          }data/attack/${this.selectedDomain.toLowerCase()}-attack-${this.selectedAttackVersion
+          }data/attack/${this.selectedDomain.toLowerCase()}-attack-${this.selectedtargetVersion
           }.json`;
         fetch(attack_object_file)
           .then((response) => response.json())
@@ -379,18 +379,18 @@
       },
       setVersionsAccoringToQueryParams() {
         const url = new URL(window.location.href)
-        if (url.searchParams.has('attack-version') && this.attackVersions.includes(url.searchParams.get('attack-version'))) {
-          this.selectedAttackVersion = url.searchParams.get('attack-version');
+        if (url.searchParams.has('attack-version') && this.targetVersions.includes(url.searchParams.get('attack-version'))) {
+          this.selectedtargetVersion = url.searchParams.get('attack-version');
         }
         else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedtargetVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         }
         if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())) {
           this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
         }
         else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedtargetVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         }
       },
@@ -409,15 +409,15 @@
       }
     },
     watch: {
-      selectedAttackVersion: {
+      selectedtargetVersion: {
         handler(newValue) {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedtargetVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         },
       },
       selectedDomain: {
         handler(newValue) {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
+          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedtargetVersion}&domain=${this.selectedDomain.toLowerCase()}`
           window.history.pushState({ path: newurl }, '', newurl);
         },
       },

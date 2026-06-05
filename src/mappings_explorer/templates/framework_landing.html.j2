@@ -15,7 +15,7 @@
         <div class="section-details">
           <p>
             <span>{{control}} Versions: <strong>{{ versions|join(', ') }}</strong></span>
-            <span>ATT&CK Versions: <strong>{{ attackVersions|join(', ') }}</strong></span>
+            <span>ATT&CK Versions: <strong>{{ targetVersions|join(', ') }}</strong></span>
             <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
           </p>
           {% if project.resources %}
@@ -88,7 +88,7 @@
     </div>
   </div>
 </section>
-{% if (attackVersions|length > 1 or domains|length > 1) %}
+{% if (targetVersions|length > 1 or domains|length > 1) %}
 {% block set_version %}
 {% include "_set_versions.html.j2" %}
 {% endblock set_version %}

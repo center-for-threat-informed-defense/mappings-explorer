@@ -17,13 +17,31 @@ class ExternalControl:
     label = ""
     description = ""
     resources = []
+
+    # Source framework metadata
     version = ""
     versions = []
+
+    # Generic target metadata used for either ATT&CK or another framework
+    mapping_target_type = "attack"
+    target_id = "attack"
+    target_label = "MITRE ATT&CK"
+    targetVersion = ""
+    targetVersions = []
+    targetDomain = ""
+    targetDomains = []
+    validVersions = []
+
+    # Backward-compatible aliases for existing ATT&CK-centric code paths
     attackVersion = ""
     attackVersions = []
     attackDomain = ""
     attackDomains = []
-    validVersions = []
+
+    # Mapping object field names for the target side of the relationship
+    mapping_object_id_field = "attack_object_id"
+    mapping_object_name_field = "attack_object_name"
+
     capability_groups = []
     mappings = []
     capabilities = []
@@ -57,6 +75,11 @@ def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
     nist.label = "NIST 800-53"
+    nist.mapping_target_type = "attack"
+    nist.target_id = "attack"
+    nist.target_label = "MITRE ATT&CK"
+    nist.mapping_object_id_field = "attack_object_id"
+    nist.mapping_object_name_field = "attack_object_name"
     nist.description = """National Institute of Standards in Technology (NIST) Special
     Publication 800-53 provides a catalog of security and privacy controls for the
     protection of information systems and organizations from a diverse set of threats
@@ -69,7 +92,7 @@ def load_projects():
     together to build a structured, threat-informed approach to securing systems and
     environments. """
     nist.versions = ["rev5", "rev4"]
-    nist.attackVersions = [
+    nist.targetVersions = [
         "16.1",
         "14.1",
         "12.1",
@@ -77,6 +100,9 @@ def load_projects():
         "9.0",
         "8.2",
     ]
+    nist.attackVersions = nist.targetVersions
+    nist.targetVersion = nist.targetVersions[0]
+    nist.attackVersion = nist.targetVersion
     nist.validVersions = [
         ("rev4", "8.2", "Enterprise"),
         ("rev5", "8.2", "Enterprise"),
@@ -90,9 +116,11 @@ def load_projects():
         ("rev5", "14.1", "Enterprise"),
         ("rev5", "16.1", "Enterprise"),
     ]
-    nist.attackDomains = ["Enterprise"]
+    nist.targetDomains = ["Enterprise"]
+    nist.attackDomains = nist.targetDomains
     nist.has_non_mappables = False
-    nist.attackDomain = nist.attackDomains[0]
+    nist.targetDomain = nist.targetDomains[0]
+    nist.attackDomain = nist.targetDomain
     nist.resources = [
         {
             "link": "about/methodology/nist-methodology/",
@@ -104,6 +132,11 @@ def load_projects():
     veris = ExternalControl()
     veris.id = "veris"
     veris.label = "VERIS"
+    veris.mapping_target_type = "attack"
+    veris.target_id = "attack"
+    veris.target_label = "MITRE ATT&CK"
+    veris.mapping_object_id_field = "attack_object_id"
+    veris.mapping_object_name_field = "attack_object_name"
     veris.description = """The Vocabulary for Event Recording and Incident Sharing
     (VERIS) provides a common language for describing security incidents in a structured
     and repeatable manner that allows for the analysis of data across a variety of
@@ -111,13 +144,18 @@ def load_projects():
     why captured in VERIS incident representation with the when and how described in
     MITRE ATT&CK® adversary behavioral tactics and techniques."""
     veris.versions = ["1.4.0", "1.3.7", "1.3.5"]
-    veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
-    veris.attackDomain = veris.attackDomains[0]
-    veris.attackVersions = [
+    veris.targetDomains = ["Enterprise", "ICS", "Mobile"]
+    veris.attackDomains = veris.targetDomains
+    veris.targetDomain = veris.targetDomains[0]
+    veris.attackDomain = veris.targetDomain
+    veris.targetVersions = [
         "16.1",
         "12.1",
         "9.0",
     ]
+    veris.attackVersions = veris.targetVersions
+    veris.targetVersion = veris.targetVersions[0]
+    veris.attackVersion = veris.targetVersion
     veris.validVersions = [
         ("1.3.5", "9.0", "Enterprise"),
         ("1.3.7", "12.1", "ICS"),
@@ -152,6 +190,11 @@ def load_projects():
     kev = ExternalControl()
     kev.id = "kev"
     kev.label = "Known Exploited Vulnerabilities"
+    kev.mapping_target_type = "attack"
+    kev.target_id = "attack"
+    kev.target_label = "MITRE ATT&CK"
+    kev.mapping_object_id_field = "attack_object_id"
+    kev.mapping_object_name_field = "attack_object_name"
     kev.description = """The Known Exploited Vulnerabilities (KEV) Catalog is an
         authoritative source of vulnerabilities exploited in the wild maintained by the
         Department of Homeland Security (DHS) Cybersecurity and Infrastructure Security
@@ -166,11 +209,16 @@ def load_projects():
         information into their risk models and identify appropriate compensating
         security controls."""
 
-    kev.attackDomains = ["Enterprise", "Mobile"]
-    kev.attackDomain = kev.attackDomains[0]
+    kev.targetDomains = ["Enterprise", "Mobile"]
+    kev.attackDomains = kev.targetDomains
+    kev.targetDomain = kev.targetDomains[0]
+    kev.attackDomain = kev.targetDomain
     kev.versions = ["02.13.2025"]
     kev.versions = ["07.28.2025", "02.13.2025"]
-    kev.attackVersions = ["16.1", "15.1"]
+    kev.targetVersions = ["16.1", "15.1"]
+    kev.attackVersions = kev.targetVersions
+    kev.targetVersion = kev.targetVersions[0]
+    kev.attackVersion = kev.targetVersion
     kev.validVersions = [
         ("07.28.2025", "16.1", "Mobile"),
         ("07.28.2025", "16.1", "Enterprise"),
@@ -194,6 +242,11 @@ def load_projects():
     aws = ExternalControl()
     aws.id = "aws"
     aws.label = "AWS"
+    aws.mapping_target_type = "attack"
+    aws.target_id = "attack"
+    aws.target_label = "MITRE ATT&CK"
+    aws.mapping_object_id_field = "attack_object_id"
+    aws.mapping_object_name_field = "attack_object_name"
     aws.description = """Amazon Web Services (AWS) is a widely used cloud computing
         platform provided by Amazon. AWS offers a range of security capabilities to
         protect cloud data, applications, and infrastructure from threats. These
@@ -204,9 +257,14 @@ def load_projects():
         native security controls against specific ATT&CK techniques and take a
         threat-informed approach to understand, prioritize, and mitigate adversary
         behaviors that are most important for their environment."""
-    aws.attackDomains = ["Enterprise"]
-    aws.attackDomain = aws.attackDomains[0]
-    aws.attackVersions = ["16.1", "9.0"]
+    aws.targetDomains = ["Enterprise"]
+    aws.attackDomains = aws.targetDomains
+    aws.targetDomain = aws.targetDomains[0]
+    aws.attackDomain = aws.targetDomain
+    aws.targetVersions = ["16.1", "9.0"]
+    aws.attackVersions = aws.targetVersions
+    aws.targetVersion = aws.targetVersions[0]
+    aws.attackVersion = aws.targetVersion
     aws.versions = ["12.12.2024", "09.21.2021"]
     aws.validVersions = [
         ("09.21.2021", "9.0", "Enterprise"),
@@ -224,6 +282,11 @@ def load_projects():
     azure = ExternalControl()
     azure.id = "azure"
     azure.label = "Azure"
+    azure.mapping_target_type = "attack"
+    azure.target_id = "attack"
+    azure.target_label = "MITRE ATT&CK"
+    azure.mapping_object_id_field = "attack_object_id"
+    azure.mapping_object_name_field = "attack_object_name"
     azure.description = """Microsoft Azure is a widely used cloud computing platform
         provided by Microsoft. Azure offers a range of security capabilities to protect
         cloud data, applications, and infrastructure from threats. These mappings
@@ -234,9 +297,14 @@ def load_projects():
         security controls against specific ATT&CK techniques and take a threat-informed
         approach to understand, prioritize, and mitigate adversary behaviors that are
         most important for their environment."""
-    azure.attackDomains = ["Enterprise"]
-    azure.attackDomain = azure.attackDomains[0]
-    azure.attackVersions = ["16.1", "8.2"]
+    azure.targetDomains = ["Enterprise"]
+    azure.attackDomains = azure.targetDomains
+    azure.targetDomain = azure.targetDomains[0]
+    azure.attackDomain = azure.targetDomain
+    azure.targetVersions = ["16.1", "8.2"]
+    azure.attackVersions = azure.targetVersions
+    azure.targetVersion = azure.targetVersions[0]
+    azure.attackVersion = azure.targetVersion
     azure.versions = ["04.26.2025", "06.29.2021"]
     azure.validVersions = [
         ("06.29.2021", "8.2", "Enterprise"),
@@ -254,6 +322,11 @@ def load_projects():
     gcp = ExternalControl()
     gcp.id = "gcp"
     gcp.label = "GCP"
+    gcp.mapping_target_type = "attack"
+    gcp.target_id = "attack"
+    gcp.target_label = "MITRE ATT&CK"
+    gcp.mapping_object_id_field = "attack_object_id"
+    gcp.mapping_object_name_field = "attack_object_name"
     gcp.description = """Google Cloud Platform (GCP) is a widely used cloud computing
         platform provided by Google. GCP offers a range of security capabilities to
         protect cloud data, applications, and infrastructure from threats. These
@@ -265,10 +338,14 @@ def load_projects():
         threat-informed approach to understand, prioritize, and mitigate adversary
         behaviors that are most important for their environment."""
 
-    gcp.attackDomains = ["Enterprise"]
-    gcp.attackDomain = gcp.attackDomains[0]
-    gcp.attackVersions = ["16.1", "10.0"]
-    gcp.attackVersion = gcp.attackVersions[0]
+    gcp.targetDomains = ["Enterprise"]
+    gcp.attackDomains = gcp.targetDomains
+    gcp.targetDomain = gcp.targetDomains[0]
+    gcp.attackDomain = gcp.targetDomain
+    gcp.targetVersions = ["16.1", "10.0"]
+    gcp.attackVersions = gcp.targetVersions
+    gcp.targetVersion = gcp.targetVersions[0]
+    gcp.attackVersion = gcp.targetVersion
     gcp.versions = ["06.28.2022", "03.06.2025"]
     gcp.validVersions = [
         ("06.28.2022", "10.0", "Enterprise"),
@@ -286,16 +363,25 @@ def load_projects():
     m365 = ExternalControl()
     m365.id = "m365"
     m365.label = "M365"
+    m365.mapping_target_type = "attack"
+    m365.target_id = "attack"
+    m365.target_label = "MITRE ATT&CK"
+    m365.mapping_object_id_field = "attack_object_id"
+    m365.mapping_object_name_field = "attack_object_name"
     m365.description = """Microsoft 365 (M365) is a widely used Software as a Service
         (SaaS) product family of productivity software, collaboration, and cloud-based
         services. These mappings connect the security controls native to M365 product
         areas to MITRE ATT&CK® providing resources to assess how to protect, detect, and
         respond to real-world threats as described in the ATT&CK knowledge base."""
 
-    m365.attackDomains = ["Enterprise"]
-    m365.attackDomain = m365.attackDomains[0]
-    m365.attackVersions = ["16.1", "14.1"]
-    m365.attackVersion = m365.attackVersions[0]
+    m365.targetDomains = ["Enterprise"]
+    m365.attackDomains = m365.targetDomains
+    m365.targetDomain = m365.targetDomains[0]
+    m365.attackDomain = m365.targetDomain
+    m365.targetVersions = ["16.1", "14.1"]
+    m365.attackVersions = m365.targetVersions
+    m365.targetVersion = m365.targetVersions[0]
+    m365.attackVersion = m365.targetVersion
     m365.versions = ["07.18.2025", "12.11.2023"]
     m365.validVersions = [
         ("12.11.2023", "14.1", "Enterprise"),
@@ -333,6 +419,11 @@ def load_projects():
     intel_vpro = ExternalControl()
     intel_vpro.id = "intel-vpro"
     intel_vpro.label = "Intel vPro"
+    intel_vpro.mapping_target_type = "attack"
+    intel_vpro.target_id = "attack"
+    intel_vpro.target_label = "MITRE ATT&CK"
+    intel_vpro.mapping_object_id_field = "attack_object_id"
+    intel_vpro.mapping_object_name_field = "attack_object_name"
     intel_vpro.description = """Advanced security features in Intel vPro hardware can be
         leveraged by operating system (OS) and security software features across system
         attack surfaces to optimize mitigations against cyber threats. These mappings
@@ -341,10 +432,14 @@ def load_projects():
         understanding how these integrated capabilities can help mitigate real-world
         adversary behaviors as described in MITRE ATT&CK®."""
 
-    intel_vpro.attackDomains = ["Enterprise"]
-    intel_vpro.attackDomain = intel_vpro.attackDomains[0]
-    intel_vpro.attackVersions = ["15.1"]
-    intel_vpro.attackVersion = intel_vpro.attackVersions[0]
+    intel_vpro.targetDomains = ["Enterprise"]
+    intel_vpro.attackDomains = intel_vpro.targetDomains
+    intel_vpro.targetDomain = intel_vpro.targetDomains[0]
+    intel_vpro.attackDomain = intel_vpro.targetDomain
+    intel_vpro.targetVersions = ["15.1"]
+    intel_vpro.attackVersions = intel_vpro.targetVersions
+    intel_vpro.targetVersion = intel_vpro.targetVersions[0]
+    intel_vpro.attackVersion = intel_vpro.targetVersion
     intel_vpro.versions = ["08.20.2024"]
     intel_vpro.validVersions = [
         ("08.20.2024", "15.1", "Enterprise"),
@@ -361,6 +456,11 @@ def load_projects():
     cri_profile = ExternalControl()
     cri_profile.id = "cri_profile"
     cri_profile.label = "CRI Profile"
+    cri_profile.mapping_target_type = "attack"
+    cri_profile.target_id = "attack"
+    cri_profile.target_label = "MITRE ATT&CK"
+    cri_profile.mapping_object_id_field = "attack_object_id"
+    cri_profile.mapping_object_name_field = "attack_object_name"
     cri_profile.description = """The CRI Profile is a control framework to develop and
     assess cybersecurity and resiliency programs, produced by and for the global
     financial sector and maintained by the Cyber Risk Institute (CRI). These mappings
@@ -370,10 +470,14 @@ def load_projects():
     empowers threat-informed analysis and decision-making for cybersecurity control
     program design and implementation by the financial services sector. """
 
-    cri_profile.attackDomains = ["Enterprise"]
-    cri_profile.attackDomain = cri_profile.attackDomains[0]
-    cri_profile.attackVersions = ["16.1"]
-    cri_profile.attackVersion = cri_profile.attackVersions[0]
+    cri_profile.targetDomains = ["Enterprise"]
+    cri_profile.attackDomains = cri_profile.targetDomains
+    cri_profile.targetDomain = cri_profile.targetDomains[0]
+    cri_profile.attackDomain = cri_profile.targetDomain
+    cri_profile.targetVersions = ["16.1"]
+    cri_profile.attackVersions = cri_profile.targetVersions
+    cri_profile.targetVersion = cri_profile.targetVersions[0]
+    cri_profile.attackVersion = cri_profile.targetVersion
     cri_profile.versions = ["v2.1"]
     cri_profile.validVersions = [
         ("v2.1", "16.1", "Enterprise"),
@@ -399,6 +503,11 @@ def load_projects():
     csa_ccm = ExternalControl()
     csa_ccm.id = "csa_ccm"
     csa_ccm.label = "CSA CCM"
+    csa_ccm.mapping_target_type = "attack"
+    csa_ccm.target_id = "attack"
+    csa_ccm.target_label = "MITRE ATT&CK"
+    csa_ccm.mapping_object_id_field = "attack_object_id"
+    csa_ccm.mapping_object_name_field = "attack_object_name"
     csa_ccm.description = """The Cloud Security Alliance (CSA) Cloud Controls Matrix
      (CCM) provides fundamental security principles, controls, and control criteria to
      guide cloud service providers (CSPs) and cloud service customers (CSCs) to secure,
@@ -408,10 +517,14 @@ def load_projects():
      connection provides a quantifiable demonstration of how these capabilities can
      provide threat-informed defenses and serve as a foundation for threat-based cyber
      assessments."""
-    csa_ccm.attackDomains = ["Enterprise"]
-    csa_ccm.attackDomain = csa_ccm.attackDomains[0]
-    csa_ccm.attackVersions = ["17.1"]
-    csa_ccm.attackVersion = csa_ccm.attackVersions[0]
+    csa_ccm.targetDomains = ["Enterprise"]
+    csa_ccm.attackDomains = csa_ccm.targetDomains
+    csa_ccm.targetDomain = csa_ccm.targetDomains[0]
+    csa_ccm.attackDomain = csa_ccm.targetDomain
+    csa_ccm.targetVersions = ["17.1"]
+    csa_ccm.attackVersions = csa_ccm.targetVersions
+    csa_ccm.targetVersion = csa_ccm.targetVersions[0]
+    csa_ccm.attackVersion = csa_ccm.targetVersion
     csa_ccm.versions = ["4.1"]
     csa_ccm.validVersions = [
         ("4.1", "17.1", "Enterprise"),

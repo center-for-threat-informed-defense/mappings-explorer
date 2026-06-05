@@ -12,7 +12,7 @@
             <div class="custom-select" id="attack_version">
             <select name="attack-version" id="attack_version_select">
               <option value="0">Select version:</option>
-              {% for v in attackVersions %}
+              {% for v in targetVersions %}
                 <option>{{v}}</option>
               {% endfor %}
             </select>
@@ -206,7 +206,7 @@ function setValue(id, value){
    if no versions specified, click on first available attack value
    and corresponding control will automatically get set */
 function parseParams() {
-  let attackVersion = '';
+  let targetVersion = '';
   let controlVersion = '';
   let attackDomain = '';
   let uri = window.location.pathname;
@@ -216,9 +216,9 @@ function parseParams() {
     if (attackDomain) {
       setValue("attack_domain", attackDomain)
     }
-    attackVersion = params[params.length - 3].split("-")[1];
-    if (attackVersion) {
-      setValue("attack_version", attackVersion)
+    targetVersion = params[params.length - 3].split("-")[1];
+    if (targetVersion) {
+      setValue("attack_version", targetVersion)
     }
   }
   else {

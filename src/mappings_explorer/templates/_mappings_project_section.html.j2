@@ -8,7 +8,7 @@
                 </blockquote>
                 <div class="section-details">
                 <p>
-                    <span>ATT&CK {{ 'Versions' if framework.attackVersions|length > 1 else 'Version' }} <strong>{{framework.attackVersions |join(', ')}}</strong></span>
+                    <span>ATT&CK {{ 'Versions' if framework.targetVersions|length > 1 else 'Version' }} <strong>{{framework.targetVersions |join(', ')}}</strong></span>
                     <span>ATT&CK {{ 'Domains' if framework.attackDomains|length > 1 else 'Domain' }} <strong>{{framework.attackDomains |join(', ')}}</strong></span>
                 </p>
                 <a href="{{url_prefix}}external/{{framework.id}}/" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>

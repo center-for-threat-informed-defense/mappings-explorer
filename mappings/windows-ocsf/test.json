@@ -1,0 +1,29 @@
+[
+  {
+    "source_capability_description": "System.TimeCreated",
+    "source_capability_id": "time",
+    "mapping_type": "maps_to",
+    "target_capability_group": "System",
+    "target_capability_description": "Process Activity",
+    "target_capability_id": "System.ProcessActivity",
+    "status": "complete"
+  },
+  {
+    "source_capability_description": "System.Computer",
+    "source_capability_id": "device.hostname",
+    "mapping_type": "maps_to",
+    "target_capability_group": "System",
+    "target_capability_description": "Process Activity",
+    "target_capability_id": "System.ProcessActivity",
+    "status": "complete"
+  },
+  {
+    "source_capability_description": "EventData.UserId",
+    "source_capability_id": "user.uid",
+    "mapping_type": "maps_to",
+    "target_capability_group": "System",
+    "target_capability_description": "Process Activity",
+    "target_capability_id": "System.ProcessActivity",
+    "status": "complete"
+  }
+]
