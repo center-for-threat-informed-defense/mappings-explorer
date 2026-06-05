@@ -110,10 +110,11 @@ def load_projects():
     incidents. These mappings provide the context to better connect the who, what, and
     why captured in VERIS incident representation with the when and how described in
     MITRE ATT&CK® adversary behavioral tactics and techniques."""
-    veris.versions = ["1.4.0", "1.3.7", "1.3.5"]
+    veris.versions = ["1.4.1", "1.4.0", "1.3.7", "1.3.5"]
     veris.attackDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomain = veris.attackDomains[0]
     veris.attackVersions = [
+        "19.1",
         "16.1",
         "12.1",
         "9.0",
@@ -126,6 +127,7 @@ def load_projects():
         ("1.4.0", "16.1", "Mobile"),
         ("1.4.0", "16.1", "ICS"),
         ("1.4.0", "16.1", "Enterprise"),
+        ("1.4.1", "19.1", "Enterprise"),
     ]
     veris.mappings = []
     veris.resources = [
@@ -436,16 +438,16 @@ def load_projects():
     csa_ccm.has_non_mappables = False
 
     projects = [
-        csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
+        # csa_ccm,
+        # cri_profile,
+        # intel_vpro,
+        # nist,
+        # kev,
         veris,
-        azure,
-        gcp,
-        aws,
-        m365,
+        # azure,
+        # gcp,
+        # aws,
+        # m365,
     ]
     return projects
 
