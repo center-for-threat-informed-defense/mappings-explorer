@@ -1,84 +1,84 @@
 {% import "./macros.html.j2" as macros %}
 {% extends "base.html.j2" %}
 {% block content %}
-{#{% include "_banner.html.j2" %}#}
 
 <section id="header-container" class="header-container">
   <div class="container" id="my_view">
     {% include "_breadcrumbs.html.j2" %}
     <div class="row justify-content-left">
       <div class="col-lg-8 col-md-10 col-sm-12">
-        <h1><span class="highlight">{{control}}</span></h1>
+        <h1><span class="highlight">{{ control }}</span></h1>
         <p>
           {{- description -}}
         </p>
         <div class="section-details">
           <p>
-            <span>{{control}} Versions: <strong>{{ versions|join(', ') }}</strong></span>
-            <span>ATT&CK Versions: <strong>{{ targetVersions|join(', ') }}</strong></span>
-            <span>ATT&CK Domain: <strong>{{ domains|join(', ') }}</strong></span>
+            <span>{{ control }} Versions: <strong>{{ versions|join(', ') }}</strong></span>
+            <span>{{ target_version_label }}s: <strong>{{ targetVersions|join(', ') }}</strong></span>
+            <span>{{ target_domain_label }}s: <strong>{{ domains|join(', ') }}</strong></span>
           </p>
           {% if project.resources %}
           <p>
             {% for src in project.resources %}
-            <a class="link" href="{{ '' if src.external else url_prefix }}{{src.link}}" {{ 'target="_blank"' if src.external else '' }}>
-              {{src.label}}
-            </a> {% if not loop.last %}|{% endif %}
+            <a class="link" href="{{ '' if src.external else url_prefix }}{{ src.link }}" {{ 'target="_blank"' if src.external else '' }}>
+              {{ src.label }}
+            </a>{% if not loop.last %} | {% endif %}
             {% endfor %}
           </p>
           {% endif %}
-          </p>
         </div>
       </div>
+
       <div class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20">
         <h6>Download Mapping Artifacts:</h6>
         <div class="downloads">
+          {% set mapping_dir = url_prefix ~ 'data/' ~ project_id ~ '/' ~ project.target_id ~ '-' ~ target_version ~ '/' ~ project_id ~ '-' ~ project_version ~ '/' ~ target_domain.lower() ~ '/' %}
+          {% set mapping_file_base = project_id ~ '-' ~ project_version ~ '_' ~ project.target_id ~ '-' ~ target_version ~ '-' ~ target_domain.lower() %}
+
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_json.json">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}.json">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               JSON
             </a>
           </p>
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.yaml">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}.yaml">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               YAML
             </a>
           </p>
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.csv">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}.csv">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               CSV
             </a>
           </p>
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}.xlsx">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}.xlsx">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               Excel
             </a>
           </p>
+
+          {% if project.target_id == 'attack' %}
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_stix.json">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}_stix.json">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               STIX Bundles
             </a>
           </p>
           <p>
-            <a class="link" download
-              href="{{url_prefix}}data/{{project_id}}/attack-{{attack_version}}/{{project_id}}-{{project_version}}/{{attack_domain.lower()}}/{{project_id}}-{{project_version}}_attack-{{attack_version}}-{{attack_domain.lower()}}_navigator_layer.json">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+            <a class="link" download href="{{ mapping_dir }}{{ mapping_file_base }}_navigator_layer.json">
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               Navigator Layers
             </a>
           </p>
+          {% endif %}
+
           {% for artifact in additional_artifacts %}
           <p>
             <a class="link" download href="{{ url_prefix }}{{ artifact.link }}">
-              <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;" /></span>
+              <span><img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;" /></span>
               {{ artifact.label }}
             </a>
           </p>
@@ -88,11 +88,13 @@
     </div>
   </div>
 </section>
-{% if (targetVersions|length > 1 or domains|length > 1) %}
+
+{% if targetVersions|length > 1 or domains|length > 1 %}
 {% block set_version %}
 {% include "_set_versions.html.j2" %}
 {% endblock set_version %}
 {% endif %}
+
 {% if capability_groups %}
 <section id="groups-table" class="mapping-table">
   <div class="container">
@@ -102,8 +104,10 @@
         {{ macros.table(group_headers, undefined, capability_groups, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
+  </div>
 </section>
 {% endif %}
+
 <section id="all-mapping-table" class="mapping-table">
   <div class="container">
     <div class="row justify-content-left">
@@ -112,7 +116,9 @@
         {{ macros.table(standard_headers, info_box_headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
+  </div>
 </section>
+
 {% if project.has_non_mappables and non_mappables %}
 <section id="nonmappable-table" class="mapping-table">
   <div class="container">
@@ -121,14 +127,16 @@
         <div style="display: flex; margin-bottom: 15px;">
           <h2>Non-Mappable Capabilities</h2>
           <div class="tooltip-img">
-            <img src="{{url_prefix}}static/img/info-black.svg" alt="" />
-            <span class="tooltip-text">Non-mappable capabilities are either out of scope or unable to be mapped to any
-              ATT&CK objects</span>
+            <img src="{{ url_prefix }}static/img/info-black.svg" alt="" />
+            <span class="tooltip-text">
+              Non-mappable capabilities are either out of scope or unable to be mapped to any {{ target_label }} objects
+            </span>
           </div>
         </div>
         {{ macros.table(non_mappable_headers, undefined, non_mappables, url_prefix, table_max_count, full_link, full_size) }}
       </div>
     </div>
+  </div>
 </section>
 {% endif %}
 

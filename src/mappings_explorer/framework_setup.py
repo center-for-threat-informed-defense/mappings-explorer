@@ -42,6 +42,15 @@ class ExternalControl:
     mapping_object_id_field = "attack_object_id"
     mapping_object_name_field = "attack_object_name"
 
+    # Generic display labels for templates/pages
+    target_version_label = "ATT&CK Version"
+    target_domain_label = "ATT&CK Domain"
+    target_object_id_label = "ATT&CK ID"
+    target_object_name_label = "ATT&CK Name"
+
+    # Whether target objects should link to generated target-side pages
+    has_target_pages = True
+
     capability_groups = []
     mappings = []
     capabilities = []
@@ -213,7 +222,6 @@ def load_projects():
     kev.attackDomains = kev.targetDomains
     kev.targetDomain = kev.targetDomains[0]
     kev.attackDomain = kev.targetDomain
-    kev.versions = ["02.13.2025"]
     kev.versions = ["07.28.2025", "02.13.2025"]
     kev.targetVersions = ["16.1", "15.1"]
     kev.attackVersions = kev.targetVersions
@@ -548,17 +556,43 @@ def load_projects():
     csa_ccm.has_non_mappable_comments = False
     csa_ccm.has_non_mappables = False
 
+    windows = ExternalControl()
+    windows.id = "windows"
+    windows.label = "Windows"
+    windows.mapping_target_type = "ocsf"
+    windows.target_id = "ocsf"
+    windows.target_label = "Open Cybersecurity Schema Framework"
+    windows.mapping_object_id_field = "target_id"
+    windows.mapping_object_name_field = "target_capability_description"
+    windows.target_version_label = "OCSF Version"
+    windows.target_domain_label = "OCSF Domain"
+    windows.target_object_id_label = "OCSF Target ID"
+    windows.target_object_name_label = "OCSF Capability"
+    windows.has_target_pages = False
+    windows.description = """The OCSF categories organize event classes, each aligned with a specific domain or area of focus."""
+    windows.targetVersions = ["1.8.0"]
+    windows.targetVersion = windows.targetVersions[0]
+    windows.versions = ["1.0"]
+    windows.targetDomains = ["ocsf"]
+    windows.targetDomain = windows.targetDomains[0]
+    windows.validVersions = [("1.0", "1.8.0", "ocsf")]
+    windows.mappings = []
+    windows.resources = []
+    windows.has_non_mappables = False
+    windows.has_non_mappable_comments = False
+
     projects = [
-        csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
-        veris,
-        azure,
-        gcp,
-        aws,
+        # csa_ccm,
+        # cri_profile,
+        # intel_vpro,
+        # nist,
+        # kev,
+        # veris,
+        # azure,
+        # gcp,
+        # aws,
         m365,
+        windows,
     ]
     return projects
 
@@ -576,13 +610,9 @@ def get_security_stack_descriptions(project: ExternalControl):
             rootdir = root / dir
 
     capabilities = project.capabilities
-    # if the project has non mappable comments and we are therefore building the
-    # capability page even though it is non_mappable, get non_mappable capabilities'
-    # descriptions as well
     if project.has_non_mappable_comments:
         capabilities.extend(project.non_mappables)
 
-    # iterate through mappings files
     for file in os.listdir(rootdir):
         data = read_yaml_file(rootdir / file)
         id = data.get("id", None)
@@ -736,10 +766,8 @@ def get_description_for_capability(
                 c_id=capability.id,
             )
     else:
-        # if description file doesn't already exist, create it
         with open(file_name, "w") as outfile:
             json.dump([], outfile)
-        # then query for capability description
         if project.id == "nist":
             get_nist_description(
                 project=project, version=version, capability=capability
