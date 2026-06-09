@@ -1632,6 +1632,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "16.0",
             "16.1",
             "17.1",
+            "19.1",
         ],
         "ICS": [
             "8.2",
@@ -1653,6 +1654,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "16.0",
             "16.1",
             "17.1",
+            "19.1",
         ],
         "Mobile": [
             "8.2",
@@ -1671,6 +1673,7 @@ def build_matrix(url_prefix, projects, breadcrumbs):
             "16.0",
             "16.1",
             "17.1",
+            "19.1",
         ],
     }
     matrix_order = {

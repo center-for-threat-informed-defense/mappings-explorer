@@ -152,12 +152,14 @@ def load_projects():
     incidents. These mappings provide the context to better connect the who, what, and
     why captured in VERIS incident representation with the when and how described in
     MITRE ATT&CK® adversary behavioral tactics and techniques."""
-    veris.versions = ["1.4.0", "1.3.7", "1.3.5"]
+    veris.versions = ["1.4.1", "1.4.0", "1.3.7", "1.3.5"]
     veris.targetDomains = ["Enterprise", "ICS", "Mobile"]
     veris.attackDomains = veris.targetDomains
     veris.targetDomain = veris.targetDomains[0]
     veris.attackDomain = veris.targetDomain
     veris.targetVersions = [
+    veris.attackVersions = [
+        "19.1",
         "16.1",
         "12.1",
         "9.0",
@@ -173,6 +175,7 @@ def load_projects():
         ("1.4.0", "16.1", "Mobile"),
         ("1.4.0", "16.1", "ICS"),
         ("1.4.0", "16.1", "Enterprise"),
+        ("1.4.1", "19.1", "Enterprise"),
     ]
     veris.mappings = []
     veris.resources = [
