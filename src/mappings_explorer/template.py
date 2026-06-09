@@ -1,4 +1,5 @@
 from pathlib import Path
+from urllib.parse import quote
 
 from jinja2 import Environment, FileSystemLoader, Template, runtime
 from jinja_markdown import MarkdownExtension
@@ -32,10 +33,19 @@ def build_capability_url(mapping: dict, url_prefix: str, id: str):
     Returns:
         url pointing to the capability referenced in mapping
     """
+    target_framework = mapping.get("target_framework", "attack")
+    target_version = mapping.get("target_version") or mapping.get("attack_version")
+    target_domain = mapping.get("target_domain") or mapping.get("attack_domain")
+
+    capability_slug = quote(str(id).replace(" ", "_"))
+    project_version = str(mapping["project_version"]).replace("/", ".")
+
     return (
-        f"{url_prefix}external/{mapping['project']}/attack-{mapping['attack_version']}/"
-        f"domain-{mapping['attack_domain'].lower()}/{mapping['project']}-"
-        f"{mapping['project_version']}/{id.replace(' ', '_')}/"
+        f"{url_prefix}external/{mapping['project']}/"
+        f"{target_framework}-{target_version}/"
+        f"domain-{str(target_domain).lower()}/"
+        f"{mapping['project']}-{project_version}/"
+        f"{capability_slug}/"
     )
 
 

@@ -568,14 +568,14 @@ def load_projects():
     windows.target_domain_label = "OCSF Domain"
     windows.target_object_id_label = "OCSF Target ID"
     windows.target_object_name_label = "OCSF Capability"
-    windows.has_target_pages = False
+    windows.has_target_pages = True
     windows.description = """The OCSF categories organize event classes, each aligned with a specific domain or area of focus."""
     windows.targetVersions = ["1.8.0"]
     windows.targetVersion = windows.targetVersions[0]
     windows.versions = ["1.0"]
-    windows.targetDomains = ["ocsf"]
+    windows.targetDomains = ["OCSF"]
     windows.targetDomain = windows.targetDomains[0]
-    windows.validVersions = [("1.0", "1.8.0", "ocsf")]
+    windows.validVersions = [("1.0", "1.8.0", "OCSF")]
     windows.mappings = []
     windows.resources = []
     windows.has_non_mappables = False

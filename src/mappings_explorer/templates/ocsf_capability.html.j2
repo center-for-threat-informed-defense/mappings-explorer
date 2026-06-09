@@ -1,0 +1,57 @@
+{% import "./macros.html.j2" as macros %}
+{% extends "base.html.j2" %}
+
+{% block content %}
+<div id="my_view">
+  <section id="header-container" class="header-container">
+    <div class="container">
+      {% include "_breadcrumbs.html.j2" %}
+      <div class="row justify-content-left">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h1>OCSF <span class="highlight">{{ capability.id }}</span></h1>
+          <p>{{ capability.label }}</p>
+          <div class="section-details">
+            <p>
+              <span>{{ target_version_label }}: <strong>{{ target_version }}</strong></span>
+              <span>{{ target_domain_label }}: <strong>{{ target_domain }}</strong></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mappings-table" class="mapping-table">
+    <div class="container">
+      <div class="row justify-content-left">
+        <div class="row" style="padding: 0;">
+          <div class="col-xl-4 col-lg-12">
+            <h2 style="width: max-content">Mappings</h2>
+          </div>
+          <div class="col-xl-8 col-lg-12 badges">
+            {% include "_badge_section.html.j2" %}
+          </div>
+        </div>
+        <div class="col-12">
+          {{ macros.table(standard_headers, info_box_headers, mappings, url_prefix, table_max_count, full_link, full_size) }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if split_mappings %}
+  <section id="framework-mapping-table" class="mapping-table">
+    <div class="container">
+      <div class="row justify-content-left">
+        {% for framework in split_mappings if framework.mappings %}
+        <div class="col-12" style="margin-bottom: 2rem;">
+          <h2>{{ framework.label }}</h2>
+          {{ macros.table(standard_headers, info_box_headers, framework.mappings, url_prefix, table_max_count, full_link, full_size) }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</div>
+{% endblock content %}

@@ -28,6 +28,15 @@ from .template import (
 )
 
 
+class TargetObject:
+    id = ""
+    label = ""
+    description = ""
+    group = ""
+    mappings = []
+    num_mappings = 0
+
+
 def is_attack_project(project: ExternalControl) -> bool:
     return project.target_id == "attack"
 
@@ -72,6 +81,30 @@ def get_external_base_url(
     )
 
 
+def get_target_object_prefix(
+    project: ExternalControl,
+    url_prefix: str,
+    target_version: str,
+    target_domain: str,
+):
+    if not project.has_target_pages:
+        return None
+
+    if project.target_id == "attack":
+        return (
+            f"{url_prefix}attack/attack-{target_version}/"
+            f"domain-{target_domain.lower()}/techniques/"
+        )
+
+    if project.target_id == "ocsf":
+        return (
+            f"{url_prefix}ocsf/ocsf-{target_version}/"
+            f"domain-{target_domain.lower()}/capabilities/"
+        )
+
+    return None
+
+
 def replace_mapping_type(mapping: dict, type_list: dict):
     """Replace the mapping_type value with the more descriptive name found in mappings
     file metadata
@@ -96,17 +129,14 @@ def replace_mapping_type(mapping: dict, type_list: dict):
 def normalize_mapping_object(project: ExternalControl, mapping: dict, metadata: dict):
     normalized = dict(mapping)
 
-    normalized["capability_id"] = (
-        mapping.get("capability_id")
-        or mapping.get("source_capability_id")
+    normalized["capability_id"] = mapping.get("capability_id") or mapping.get(
+        "source_capability_id"
     )
-    normalized["capability_description"] = (
-        mapping.get("capability_description")
-        or mapping.get("source_capability_description")
-    )
-    normalized["capability_group"] = (
-        mapping.get("capability_group")
-        or mapping.get("source_capability_group")
+    normalized["capability_description"] = mapping.get(
+        "capability_description"
+    ) or mapping.get("source_capability_description")
+    normalized["capability_group"] = mapping.get("capability_group") or mapping.get(
+        "source_capability_group"
     )
 
     normalized["target_object_id"] = (
@@ -120,6 +150,13 @@ def normalize_mapping_object(project: ExternalControl, mapping: dict, metadata: 
         or mapping.get(project.mapping_object_name_field)
         or mapping.get("attack_object_name")
         or mapping.get("target_capability_description")
+    )
+
+    normalized["target_object_group"] = mapping.get(
+        "target_object_group"
+    ) or mapping.get("target_capability_group")
+    normalized["target_capability_id"] = (
+        mapping.get("target_capability_id") or normalized["target_object_id"]
     )
 
     normalized["mapping_type"] = replace_mapping_type(
@@ -291,6 +328,7 @@ def parse_capabilities(
                 mapping["project_version"] = project_version
                 mapping["target_version"] = target_version
                 mapping["target_domain"] = target_domain
+                mapping["target_framework"] = project.target_id
                 if is_attack_project(project):
                     mapping["attack_version"] = target_version
                     mapping["attack_domain"] = target_domain
@@ -354,21 +392,21 @@ def build_external_landing(
     )
     capability_group_prefix = f"{external_prefix}capability-groups/"
 
-    attack_prefix = None
-    if is_attack_project(project) and project.has_target_pages:
-        attack_prefix = (
-            f"{url_prefix}attack/attack-{target_version}/"
-            f"domain-{target_domain.lower()}/techniques/"
-        )
+    target_prefix = get_target_object_prefix(
+        project=project,
+        url_prefix=url_prefix,
+        target_version=target_version,
+        target_domain=target_domain,
+    )
 
     def target_header(field, label):
-        if attack_prefix:
+        if target_prefix:
             return (
                 ":pfx_link:",
                 field,
                 label,
                 field,
-                attack_prefix,
+                target_prefix,
             )
         return (":text:", field, label)
 
@@ -842,7 +880,9 @@ def parse_techniques(
         if len(m) > 0:
             m = m[len(m) - 1]
             mappings = m["mappings"]
-            all_ids = [m["attack_object_id"] for m in mappings if m.get("attack_object_id")]
+            all_ids = [
+                m["attack_object_id"] for m in mappings if m.get("attack_object_id")
+            ]
             attack_ids = list(set(all_ids))
             for id in attack_ids:
                 if id in [t.id for t in techniques]:
@@ -1279,6 +1319,251 @@ def build_technique_landing_page(
     logger.trace("Built techniques and tactics landing pages ")
 
 
+def parse_target_objects(
+    target_id: str,
+    target_version: str,
+    target_domain: str,
+    projects: list,
+):
+    objects = []
+
+    for project in projects:
+        if project.target_id != target_id:
+            continue
+
+        version_matches = [
+            m
+            for m in project.mappings
+            if m["target_version"] == target_version
+            and m["target_domain"] == target_domain
+        ]
+        if not version_matches:
+            continue
+
+        mappings = version_matches[-1]["mappings"]
+        object_ids = []
+        for mapping in mappings:
+            object_id = mapping.get("target_object_id")
+            if object_id and object_id not in object_ids:
+                object_ids.append(object_id)
+
+        for object_id in object_ids:
+            existing = next((o for o in objects if o.id == object_id), None)
+            object_mappings = [
+                m for m in mappings if m.get("target_object_id") == object_id
+            ]
+
+            if existing:
+                existing.mappings.extend(object_mappings)
+                existing.num_mappings = len(existing.mappings)
+            else:
+                obj = TargetObject()
+                obj.id = object_id
+                obj.label = object_mappings[0].get("target_object_name") or object_id
+                obj.description = object_mappings[0].get("target_object_name") or ""
+                obj.group = object_mappings[0].get("target_object_group", "")
+                obj.mappings = object_mappings
+                obj.num_mappings = len(object_mappings)
+                objects.append(obj)
+
+    objects.sort(key=lambda o: o.id.lower())
+    return objects
+
+
+def build_ocsf_landing_page(
+    url_prefix: str,
+    parent_dir: os.path,
+    target_version: str,
+    target_domain: str,
+    capabilities: list,
+    breadcrumbs: list,
+):
+    dir = parent_dir / "capabilities"
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("ocsf_landing.html.j2")
+
+    capability_prefix = (
+        f"{url_prefix}ocsf/ocsf-{target_version}/"
+        f"domain-{target_domain.lower()}/capabilities/"
+    )
+
+    standard_headers = [
+        (":pfx_link:", "id", "OCSF ID", "id", capability_prefix),
+        (":pfx_link:", "label", "OCSF Capability", "id", capability_prefix),
+        (":text:", "num_mappings", "Number of Mappings"),
+    ]
+
+    nav = breadcrumbs + [
+        (capability_prefix, "OCSF Capabilities"),
+    ]
+
+    stream = template.stream(
+        title="OCSF Capabilities",
+        description="OCSF capabilities that have mappings from framework capabilities.",
+        url_prefix=url_prefix,
+        target_version=target_version,
+        target_domain=target_domain,
+        target_label="Open Cybersecurity Schema Framework",
+        target_version_label="OCSF Version",
+        target_domain_label="OCSF Domain",
+        standard_headers=standard_headers,
+        mappings=capabilities,
+        breadcrumbs=nav,
+        previous_link="",
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
+        versions=[],
+        control="",
+        control_version="",
+    )
+    stream.dump(str(output_path))
+
+
+def build_ocsf_capability_page(
+    url_prefix: str,
+    parent_dir: os.path,
+    target_version: str,
+    target_domain: str,
+    capability: TargetObject,
+    breadcrumbs: list,
+    projects: list,
+):
+    capability_prefix = (
+        f"{url_prefix}ocsf/ocsf-{target_version}/"
+        f"domain-{target_domain.lower()}/capabilities/"
+    )
+
+    standard_headers = [
+        (":link:", "capability_id", "Capability ID", "capability_id"),
+        (
+            ":link:",
+            "capability_description",
+            "Capability Description",
+            "capability_id",
+        ),
+        (":text:", "mapping_type", "Mapping Type"),
+        (
+            ":pfx_link:",
+            "target_object_id",
+            "OCSF ID",
+            "target_object_id",
+            capability_prefix,
+        ),
+        (
+            ":pfx_link:",
+            "target_object_name",
+            "OCSF Capability",
+            "target_object_id",
+            capability_prefix,
+        ),
+    ]
+
+    info_box_headers = [
+        ("comments", "Comments"),
+        ("references", "References"),
+    ]
+
+    dir = parent_dir / capability.id
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("ocsf_capability.html.j2")
+
+    split_mappings = []
+    for project in projects:
+        cutup = [m for m in capability.mappings if m.get("framework") == project.id]
+        if cutup:
+            split_mappings.append(
+                {"id": project.id, "label": project.label, "mappings": cutup}
+            )
+
+    nav = breadcrumbs + [
+        (capability_prefix, "OCSF Capabilities"),
+        (
+            f"{capability_prefix}{capability.id}/",
+            f"{capability.id} {capability.label}",
+        ),
+    ]
+
+    stream = template.stream(
+        title=f"OCSF Capability {capability.id}",
+        url_prefix=url_prefix,
+        target_version=target_version,
+        target_domain=target_domain,
+        target_label="Open Cybersecurity Schema Framework",
+        target_version_label="OCSF Version",
+        target_domain_label="OCSF Domain",
+        standard_headers=standard_headers,
+        info_box_headers=info_box_headers,
+        capability=capability,
+        prev_page=parent_dir,
+        mappings=capability.mappings,
+        split_mappings=split_mappings,
+        breadcrumbs=nav,
+        previous_link=capability_prefix,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
+        versions=[],
+        control="",
+        control_version="",
+    )
+    stream.dump(str(output_path))
+
+
+def build_ocsf_pages(projects: list, url_prefix: str, breadcrumbs: list):
+    ocsf_projects = [p for p in projects if p.target_id == "ocsf"]
+    if not ocsf_projects:
+        return
+
+    version_domain_pairs = set()
+    for project in ocsf_projects:
+        for valid_version in project.validVersions:
+            version_domain_pairs.add((valid_version[1], valid_version[2]))
+
+    for target_version, target_domain in sorted(version_domain_pairs):
+        logger.info(f"Creating pages for OCSF {target_version} {target_domain}...")
+
+        capabilities = parse_target_objects(
+            target_id="ocsf",
+            target_version=target_version,
+            target_domain=target_domain,
+            projects=ocsf_projects,
+        )
+
+        root_dir = (
+            PUBLIC_DIR
+            / "ocsf"
+            / f"ocsf-{target_version}"
+            / f"domain-{target_domain.lower()}"
+        )
+        root_dir.mkdir(parents=True, exist_ok=True)
+
+        build_ocsf_landing_page(
+            url_prefix=url_prefix,
+            parent_dir=root_dir,
+            target_version=target_version,
+            target_domain=target_domain,
+            capabilities=capabilities,
+            breadcrumbs=breadcrumbs,
+        )
+
+        capability_dir = root_dir / "capabilities"
+        for capability in capabilities:
+            build_ocsf_capability_page(
+                url_prefix=url_prefix,
+                parent_dir=capability_dir,
+                target_version=target_version,
+                target_domain=target_domain,
+                capability=capability,
+                breadcrumbs=breadcrumbs,
+                projects=ocsf_projects,
+            )
+
+        logger.info(f"Built pages for OCSF {target_version} {target_domain}")
+
+
 def build_matrix(url_prefix, projects, breadcrumbs):
     projects = [p for p in projects if is_attack_project(p)]
 
@@ -1479,22 +1764,24 @@ def getIndexPages():
         if not mapping_framework:
             continue
 
-        framework_version = metadata.get("mapping_framework_version", "").replace("/", ".")
-        target_version = metadata.get("target_version") or metadata.get("attack_version")
+        framework_version = metadata.get("mapping_framework_version", "").replace(
+            "/", "."
+        )
+        target_version = metadata.get("target_version") or metadata.get(
+            "attack_version"
+        )
         target_id = metadata.get("target_id") or (
             "attack" if metadata.get("attack_version") else "ocsf"
         )
         domain = metadata.get("technology_domain", "").lower()
 
         for raw_mapping in mappings.get("mapping_objects", []):
-            capability_id = (
-                raw_mapping.get("capability_id")
-                or raw_mapping.get("source_capability_id")
+            capability_id = raw_mapping.get("capability_id") or raw_mapping.get(
+                "source_capability_id"
             )
-            capability_name = (
-                raw_mapping.get("capability_description")
-                or raw_mapping.get("source_capability_description")
-            )
+            capability_name = raw_mapping.get(
+                "capability_description"
+            ) or raw_mapping.get("source_capability_description")
 
             if capability_id:
                 capability_url = (
@@ -1528,6 +1815,28 @@ def getIndexPages():
                                 "url": attack_url,
                                 "id": attack_object_id,
                                 "name": attack_object_name or attack_object_id,
+                            }
+                        )
+
+            if target_id == "ocsf":
+                ocsf_object_id = raw_mapping.get("target_id") or raw_mapping.get(
+                    "target_object_id"
+                )
+                ocsf_object_name = raw_mapping.get(
+                    "target_capability_description"
+                ) or raw_mapping.get("target_object_name")
+                if ocsf_object_id:
+                    ocsf_url = (
+                        f"ocsf/ocsf-{target_version}/"
+                        f"domain-{domain}/"
+                        f"capabilities/{ocsf_object_id}"
+                    )
+                    if not any(page["url"] == ocsf_url for page in pages):
+                        pages.append(
+                            {
+                                "url": ocsf_url,
+                                "id": ocsf_object_id,
+                                "name": ocsf_object_name or ocsf_object_id,
                             }
                         )
     return pages
@@ -1771,9 +2080,17 @@ def main():
         url_prefix=url_prefix,
         breadcrumbs=breadcrumbs,
     )
+
     breadcrumbs = [
         (f"{url_prefix}", "Home"),
     ]
+
+    build_ocsf_pages(
+        projects=projects,
+        url_prefix=url_prefix,
+        breadcrumbs=breadcrumbs,
+    )
+
     build_about_pages(url_prefix=url_prefix, breadcrumbs=breadcrumbs)
     build_attack_pages(
         projects=projects, url_prefix=url_prefix, breadcrumbs=breadcrumbs
