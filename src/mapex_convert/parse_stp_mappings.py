@@ -52,6 +52,13 @@ from mitreattack.stix20 import MitreAttackData
 DATA_COMPONENT_COLUMN_INDEX = 2  # Column C (0-based) in the STP consolidated workbook.
 TECHNIQUES_COLUMN_NAME = "ATT&CK Techniques"
 TECHNIQUE_COLUMN_NAME = "ATT&CK Technique"
+ANALYTIC_COLUMN_NAME = "ATT&CK Analytic"
+DETECTION_STRATEGY_COLUMN_NAME = "ATT&CK Detection Strategy"
+CHAIN_COLUMN_NAMES = (
+    ANALYTIC_COLUMN_NAME,
+    DETECTION_STRATEGY_COLUMN_NAME,
+    TECHNIQUE_COLUMN_NAME,
+)
 NORMALIZED_DATA_COMPONENT_COLUMN_NAME = "ATT&CK Data Component (normalized)"
 NORMALIZATION_METHOD_COLUMN_NAME = "Normalization method"
 DEFENSIVE_MAPPINGS_SHEET = "defensive mappings"
@@ -63,7 +70,6 @@ LOG_SOURCE_ATTACK_ALIASES = {
     "sysmon": "wineventlog:sysmon",
 }
 
-# Event IDs missing from ATT&CK analytics exports but known to map to data components.
 SUPPLEMENTAL_EVENT_TO_DATACOMPONENT: dict[tuple[str, str], tuple[str, ...]] = {
     ("wineventlog:security", "4625"): ("User Account Authentication",),
     ("wineventlog:security", "4634"): ("Logon Session Metadata",),
@@ -129,7 +135,6 @@ SUPPLEMENTAL_EVENT_TO_DATACOMPONENT: dict[tuple[str, str], tuple[str, ...]] = {
     ("wineventlog:sysmon", "29"): ("File Modification",),
 }
 
-# Fallback substring rules when event-ID lookup does not match.
 DESCRIPTION_TO_DATACOMPONENT: tuple[tuple[str, str], ...] = (
     ("audit log was cleared", "Application Log Content"),
     ("event logging service was stopped", "Application Log Content"),
@@ -160,11 +165,6 @@ DESCRIPTION_TO_DATACOMPONENT: tuple[tuple[str, str], ...] = (
     ("firewall", "Application Log Content"),
     ("domain policy changed", "User Account Modification"),
 )
-
-
-# ---------------------------------------------------------------------------
-# Data component normalization (event descriptions -> official ATT&CK names)
-# ---------------------------------------------------------------------------
 
 
 @dataclass
@@ -360,11 +360,6 @@ def build_normalization_context_from_xlsx(analytics_xlsx: Path) -> Normalization
     )
 
 
-# ---------------------------------------------------------------------------
-# ATT&CK STIX traversal: data component -> analytic -> strategy -> technique
-# ---------------------------------------------------------------------------
-
-
 def get_technique_id(
     mitre_attack_data: MitreAttackData, technique_entry: dict
 ) -> str | None:
@@ -492,6 +487,51 @@ def get_techniques_for_datacomponent(
     return sorted(technique_ids)
 
 
+def get_mapping_chains_for_datacomponent(
+    mitre_attack_data: MitreAttackData,
+    datacomponent_stix_id: str,
+    datacomponent_to_analytics: dict[str, set[str]],
+    analytic_to_strategies: dict[str, set[str]],
+) -> list[dict[str, str]]:
+    """
+    Resolve a data component to full defensive-mapping chains.
+
+    Each chain records analytic, detection strategy, and technique ATT&CK IDs.
+    """
+    chains: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+
+    for analytic_stix_id in datacomponent_to_analytics.get(datacomponent_stix_id, set()):
+        analytic_attack_id = mitre_attack_data.get_attack_id(analytic_stix_id) or ""
+        for strategy_stix_id in analytic_to_strategies.get(analytic_stix_id, set()):
+            detection_strategy_attack_id = (
+                mitre_attack_data.get_attack_id(strategy_stix_id) or ""
+            )
+            for technique_entry in mitre_attack_data.get_techniques_detected_by_detection_strategy(
+                strategy_stix_id
+            ):
+                technique_id = get_technique_id(mitre_attack_data, technique_entry)
+                if not technique_id:
+                    continue
+                chain_key = (
+                    analytic_attack_id,
+                    detection_strategy_attack_id,
+                    technique_id,
+                )
+                if chain_key in seen:
+                    continue
+                seen.add(chain_key)
+                chains.append(
+                    {
+                        ANALYTIC_COLUMN_NAME: analytic_attack_id,
+                        DETECTION_STRATEGY_COLUMN_NAME: detection_strategy_attack_id,
+                        TECHNIQUE_COLUMN_NAME: technique_id,
+                    }
+                )
+
+    return sorted(chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES))
+
+
 def map_data_component_name_to_techniques(
     mitre_attack_data: MitreAttackData,
     data_component_name: Any,
@@ -525,6 +565,59 @@ def map_data_component_name_to_techniques(
     )
 
 
+def resolve_mapping_chains_for_datacomponent_names(
+    data_component_names: list[str],
+    mitre_attack_data: MitreAttackData | None,
+    mapping_chains_by_datacomponent_name: dict[str, list[dict[str, str]]] | None,
+    name_to_stix_id: dict[str, str],
+    datacomponent_to_analytics: dict[str, set[str]],
+    analytic_to_strategies: dict[str, set[str]],
+) -> list[dict[str, str]]:
+    """Union mapping chains across one or more normalized data component names."""
+    chains: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+
+    for data_component_name in data_component_names:
+        normalized_name = data_component_name.strip().lower()
+        if not normalized_name:
+            continue
+
+        if mapping_chains_by_datacomponent_name is not None:
+            component_chains = mapping_chains_by_datacomponent_name.get(normalized_name, [])
+        else:
+            datacomponent_stix_id = name_to_stix_id.get(normalized_name)
+            if not datacomponent_stix_id:
+                continue
+            component_chains = get_mapping_chains_for_datacomponent(
+                mitre_attack_data,  # type: ignore[arg-type]
+                datacomponent_stix_id,
+                datacomponent_to_analytics,
+                analytic_to_strategies,
+            )
+
+        for chain in component_chains:
+            chain_key = tuple(chain[column] for column in CHAIN_COLUMN_NAMES)
+            if chain_key in seen:
+                continue
+            seen.add(chain_key)
+            chains.append(chain)
+
+    return sorted(chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES))
+
+
+def technique_ids_from_mapping_chains(
+    mapping_chains: list[dict[str, str]],
+) -> list[str]:
+    """Extract sorted unique technique IDs from mapping chains."""
+    return sorted(
+        {
+            chain[TECHNIQUE_COLUMN_NAME]
+            for chain in mapping_chains
+            if chain.get(TECHNIQUE_COLUMN_NAME)
+        }
+    )
+
+
 def resolve_techniques_for_datacomponent_names(
     data_component_names: list[str],
     mitre_attack_data: MitreAttackData | None,
@@ -534,24 +627,23 @@ def resolve_techniques_for_datacomponent_names(
     analytic_to_strategies: dict[str, set[str]],
 ) -> list[str]:
     """Union technique IDs across one or more normalized data component names."""
-    technique_ids: set[str] = set()
-    for data_component_name in data_component_names:
-        normalized_name = data_component_name.strip().lower()
-        if not normalized_name:
-            continue
-        if techniques_by_datacomponent_name is not None:
-            technique_ids.update(techniques_by_datacomponent_name.get(normalized_name, set()))
-            continue
-        technique_ids.update(
-            map_data_component_name_to_techniques(
-                mitre_attack_data,  # type: ignore[arg-type]
-                data_component_name,
-                name_to_stix_id,
-                datacomponent_to_analytics,
-                analytic_to_strategies,
-            )
-        )
-    return sorted(technique_ids)
+    if techniques_by_datacomponent_name is not None:
+        technique_ids: set[str] = set()
+        for data_component_name in data_component_names:
+            normalized_name = data_component_name.strip().lower()
+            if normalized_name:
+                technique_ids.update(techniques_by_datacomponent_name.get(normalized_name, set()))
+        return sorted(technique_ids)
+
+    mapping_chains = resolve_mapping_chains_for_datacomponent_names(
+        data_component_names,
+        mitre_attack_data,
+        None,
+        name_to_stix_id,
+        datacomponent_to_analytics,
+        analytic_to_strategies,
+    )
+    return technique_ids_from_mapping_chains(mapping_chains)
 
 
 # ---------------------------------------------------------------------------
@@ -559,40 +651,78 @@ def resolve_techniques_for_datacomponent_names(
 # ---------------------------------------------------------------------------
 
 
+def _empty_mapping_chain() -> dict[str, str]:
+    return {column: "" for column in CHAIN_COLUMN_NAMES}
+
+
 def format_techniques_in_dataframe(
     result: pd.DataFrame,
-    techniques_by_row: list[list[str]],
+    mapping_chains_by_row: list[list[dict[str, str]]],
     technique_format: str,
 ) -> pd.DataFrame:
     """
-    Attach mapped techniques to the dataframe in the requested Excel layout.
+    Attach mapped defensive chains to the dataframe in the requested Excel layout.
 
-    - rows: one output row per technique (single ATT&CK Technique column)
-    - columns: one column per technique slot (ATT&CK Technique 1, 2, ...)
-    - combined: all techniques in one comma-separated ATT&CK Techniques cell
+    Each chain includes analytic, detection strategy, and technique ATT&CK IDs.
+
+    - rows: one output row per chain (analytic + detection strategy + technique)
+    - columns: one technique column slot per mapped technique
+    - combined: comma-separated IDs per chain object type
     """
     if technique_format == "combined":
-        result[TECHNIQUES_COLUMN_NAME] = [", ".join(technique_ids) for technique_ids in techniques_by_row]
+        result[ANALYTIC_COLUMN_NAME] = [
+            ", ".join(
+                sorted({chain[ANALYTIC_COLUMN_NAME] for chain in chains if chain[ANALYTIC_COLUMN_NAME]})
+            )
+            for chains in mapping_chains_by_row
+        ]
+        result[DETECTION_STRATEGY_COLUMN_NAME] = [
+            ", ".join(
+                sorted(
+                    {
+                        chain[DETECTION_STRATEGY_COLUMN_NAME]
+                        for chain in chains
+                        if chain[DETECTION_STRATEGY_COLUMN_NAME]
+                    }
+                )
+            )
+            for chains in mapping_chains_by_row
+        ]
+        result[TECHNIQUES_COLUMN_NAME] = [
+            ", ".join(technique_ids_from_mapping_chains(chains))
+            for chains in mapping_chains_by_row
+        ]
         return result
 
     if technique_format == "columns":
-        max_techniques = max((len(technique_ids) for technique_ids in techniques_by_row), default=0)
-        for index in range(max_techniques):
-            column_name = f"{TECHNIQUE_COLUMN_NAME} {index + 1}"
-            result[column_name] = [
-                technique_ids[index] if index < len(technique_ids) else ""
-                for technique_ids in techniques_by_row
+        max_chains = max((len(chains) for chains in mapping_chains_by_row), default=0)
+        for index in range(max_chains):
+            slot = index + 1
+            result[f"{ANALYTIC_COLUMN_NAME} {slot}"] = [
+                chains[index][ANALYTIC_COLUMN_NAME] if index < len(chains) else ""
+                for chains in mapping_chains_by_row
+            ]
+            result[f"{DETECTION_STRATEGY_COLUMN_NAME} {slot}"] = [
+                chains[index][DETECTION_STRATEGY_COLUMN_NAME] if index < len(chains) else ""
+                for chains in mapping_chains_by_row
+            ]
+            result[f"{TECHNIQUE_COLUMN_NAME} {slot}"] = [
+                chains[index][TECHNIQUE_COLUMN_NAME] if index < len(chains) else ""
+                for chains in mapping_chains_by_row
             ]
         return result
 
     if technique_format == "rows":
         result["_source_row_index"] = range(len(result))
-        result["_technique_ids"] = [
-            technique_ids if technique_ids else [""]
-            for technique_ids in techniques_by_row
+        result["_mapping_chains"] = [
+            chains if chains else [_empty_mapping_chain()]
+            for chains in mapping_chains_by_row
         ]
-        exploded = result.explode("_technique_ids", ignore_index=True)
-        return exploded.rename(columns={"_technique_ids": TECHNIQUE_COLUMN_NAME})
+        exploded = result.explode("_mapping_chains", ignore_index=True)
+        chain_columns = pd.json_normalize(exploded["_mapping_chains"])
+        for column in CHAIN_COLUMN_NAMES:
+            exploded[column] = chain_columns.get(column, "")
+        return exploded.drop(columns=["_mapping_chains"])
 
     raise ValueError(
         f"Unsupported technique_format {technique_format!r}; "
@@ -604,6 +734,8 @@ SOURCE_ROW_INDEX_COLUMN = "_source_row_index"
 LOG_SOURCE_COLUMN_NAME = "Log Source"
 EVENT_ID_COLUMN_NAME = "EventID"
 DATA_COMPONENT_COLUMN_NAME = "ATT&CK Data Component"
+LARGE_EXPORT_ROW_WARNING = 50_000
+LARGE_EXPORT_GROUPING_SKIP = 100_000
 
 
 def resolve_data_component_column_name(dataframe: pd.DataFrame) -> str:
@@ -675,8 +807,9 @@ def sort_dataframe_for_grouping(dataframe: pd.DataFrame, group_by: str) -> pd.Da
 
     if SOURCE_ROW_INDEX_COLUMN in dataframe.columns:
         sort_columns.append(SOURCE_ROW_INDEX_COLUMN)
-    if TECHNIQUE_COLUMN_NAME in dataframe.columns:
-        sort_columns.append(TECHNIQUE_COLUMN_NAME)
+    for column in CHAIN_COLUMN_NAMES:
+        if column in dataframe.columns:
+            sort_columns.append(column)
 
     if not sort_columns:
         return dataframe
@@ -735,29 +868,28 @@ def apply_excel_row_grouping(
 # ---------------------------------------------------------------------------
 
 
-def add_techniques_column(
+def map_source_rows(
     dataframe: pd.DataFrame,
     mitre_attack_data: MitreAttackData | None,
-    data_component_column: str | int = DATA_COMPONENT_COLUMN_INDEX,
+    data_component_column: str | int,
     *,
-    techniques_by_datacomponent_name: dict[str, set[str]] | None = None,
+    mapping_chains_by_datacomponent_name: dict[str, list[dict[str, str]]] | None = None,
     normalization_context: NormalizationContext | None = None,
-    technique_format: str = "rows",
-) -> pd.DataFrame:
+) -> tuple[list[list[dict[str, str]]], list[str], list[str], pd.DataFrame]:
     """
-    Return a copy of the dataframe with normalized data components and mapped techniques.
+    Map each source spreadsheet row to defensive chains and collect per-row summary stats.
 
-    When `normalization_context` is provided, raw spreadsheet values are normalized to
-    official ATT&CK data component names before technique mapping.
+    Returns mapping chains per row (analytic -> detection strategy -> technique),
+    normalized component labels, normalization methods, and a summary dataframe.
     """
     name_to_stix_id: dict[str, str] = {}
     datacomponent_to_analytics: dict[str, set[str]] = {}
     analytic_to_strategies: dict[str, set[str]] = {}
 
-    if techniques_by_datacomponent_name is None:
+    if mapping_chains_by_datacomponent_name is None:
         if mitre_attack_data is None:
             raise ValueError(
-                "mitre_attack_data is required when techniques_by_datacomponent_name is not provided"
+                "mitre_attack_data is required when mapping_chains_by_datacomponent_name is not provided"
             )
         name_to_stix_id = build_datacomponent_name_to_stix_id(mitre_attack_data)
         datacomponent_to_analytics = build_datacomponent_to_analytic_ids(mitre_attack_data)
@@ -765,9 +897,10 @@ def add_techniques_column(
             mitre_attack_data
         )
 
-    techniques_by_row: list[list[str]] = []
+    mapping_chains_by_row: list[list[dict[str, str]]] = []
     normalized_components_by_row: list[str] = []
     normalization_methods_by_row: list[str] = []
+    summary_rows: list[dict[str, Any]] = []
     unmatched_data_components: set[str] = set()
 
     for _, row in dataframe.iterrows():
@@ -790,17 +923,19 @@ def add_techniques_column(
                 if text:
                     normalized_datacomponents = [text]
 
-        technique_ids = resolve_techniques_for_datacomponent_names(
+        mapping_chains = resolve_mapping_chains_for_datacomponent_names(
             normalized_datacomponents,
             mitre_attack_data,
-            techniques_by_datacomponent_name,
+            mapping_chains_by_datacomponent_name,
             name_to_stix_id,
             datacomponent_to_analytics,
             analytic_to_strategies,
         )
+        technique_ids = technique_ids_from_mapping_chains(mapping_chains)
 
-        techniques_by_row.append(technique_ids)
-        normalized_components_by_row.append("; ".join(normalized_datacomponents))
+        mapping_chains_by_row.append(mapping_chains)
+        normalized_label = "; ".join(normalized_datacomponents)
+        normalized_components_by_row.append(normalized_label)
         normalization_methods_by_row.append(normalization_method)
 
         raw_text = (
@@ -812,6 +947,25 @@ def add_techniques_column(
         if raw_text and not technique_ids and normalization_method == "unmapped":
             unmatched_data_components.add(raw_text)
 
+        event_id = row.get(EVENT_ID_COLUMN_NAME, "")
+        if event_id is not None and not (isinstance(event_id, float) and pd.isna(event_id)):
+            event_id_text = str(int(float(event_id))) if str(event_id).strip() else ""
+        else:
+            event_id_text = ""
+
+        summary_rows.append(
+            {
+                LOG_SOURCE_COLUMN_NAME: str(row.get(LOG_SOURCE_COLUMN_NAME, "")).strip(),
+                EVENT_ID_COLUMN_NAME: event_id_text,
+                DATA_COMPONENT_COLUMN_NAME: raw_text,
+                NORMALIZED_DATA_COMPONENT_COLUMN_NAME: normalized_label,
+                NORMALIZATION_METHOD_COLUMN_NAME: normalization_method,
+                "Technique Count": len(technique_ids),
+                "Chain Count": len(mapping_chains),
+                "Mapped": "Yes" if technique_ids else "No",
+            }
+        )
+
     if unmatched_data_components:
         print(
             "Warning: could not normalize "
@@ -822,11 +976,218 @@ def add_techniques_column(
         if len(unmatched_data_components) > 20:
             print(f"  ... and {len(unmatched_data_components) - 20} more")
 
+    return (
+        mapping_chains_by_row,
+        normalized_components_by_row,
+        normalization_methods_by_row,
+        pd.DataFrame(summary_rows),
+    )
+
+
+def build_unmapped_summary_sheets(summary_dataframe: pd.DataFrame) -> dict[str, pd.DataFrame]:
+    """Build overview and breakdown sheets for unmapped / mapping coverage reporting."""
+    total_rows = len(summary_dataframe)
+    mapped_rows = int((summary_dataframe["Mapped"] == "Yes").sum())
+    unmapped_rows = total_rows - mapped_rows
+    unmapped_values = int(
+        summary_dataframe.loc[
+            summary_dataframe[NORMALIZATION_METHOD_COLUMN_NAME] == "unmapped",
+            DATA_COMPONENT_COLUMN_NAME,
+        ]
+        .astype(str)
+        .str.strip()
+        .replace("", pd.NA)
+        .dropna()
+        .nunique()
+    )
+    normalized_without_techniques = int(
+        (
+            (summary_dataframe["Mapped"] == "No")
+            & (summary_dataframe[NORMALIZATION_METHOD_COLUMN_NAME] != "unmapped")
+        ).sum()
+    )
+
+    overview = pd.DataFrame(
+        {
+            "Metric": [
+                "Total source rows",
+                "Rows with mapped techniques",
+                "Rows without mapped techniques",
+                "Rows mapped (%)",
+                "Rows without techniques (%)",
+                "Unique unmapped column C values",
+                "Rows normalized but with zero techniques",
+            ],
+            "Count": [
+                total_rows,
+                mapped_rows,
+                unmapped_rows,
+                round((mapped_rows / total_rows) * 100, 2) if total_rows else 0,
+                round((unmapped_rows / total_rows) * 100, 2) if total_rows else 0,
+                unmapped_values,
+                normalized_without_techniques,
+            ],
+        }
+    )
+
+    by_method = (
+        summary_dataframe.groupby(NORMALIZATION_METHOD_COLUMN_NAME, dropna=False)
+        .agg(
+            Rows=(NORMALIZATION_METHOD_COLUMN_NAME, "size"),
+            Mapped_Rows=("Mapped", lambda values: int((values == "Yes").sum())),
+        )
+        .reset_index()
+        .rename(
+            columns={
+                NORMALIZATION_METHOD_COLUMN_NAME: "Normalization Method",
+                "Mapped_Rows": "Mapped Rows",
+            }
+        )
+    )
+    by_method["Unmapped Rows"] = by_method["Rows"] - by_method["Mapped Rows"]
+    by_method["Mapped (%)"] = (
+        (by_method["Mapped Rows"] / by_method["Rows"] * 100).round(2)
+    )
+
+    unmapped_value_counts = (
+        summary_dataframe.loc[summary_dataframe["Mapped"] == "No", DATA_COMPONENT_COLUMN_NAME]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+    )
+    unmapped_values_table = (
+        unmapped_value_counts[unmapped_value_counts != ""]
+        .value_counts()
+        .rename_axis(DATA_COMPONENT_COLUMN_NAME)
+        .reset_index(name="Row Count")
+    )
+
+    by_log_source = (
+        summary_dataframe.groupby(LOG_SOURCE_COLUMN_NAME, dropna=False)
+        .agg(
+            Rows=(LOG_SOURCE_COLUMN_NAME, "size"),
+            Mapped_Rows=("Mapped", lambda values: int((values == "Yes").sum())),
+        )
+        .reset_index()
+        .rename(
+            columns={
+                LOG_SOURCE_COLUMN_NAME: "Log Source",
+                "Mapped_Rows": "Mapped Rows",
+            }
+        )
+    )
+    by_log_source["Unmapped Rows"] = by_log_source["Rows"] - by_log_source["Mapped Rows"]
+    by_log_source["Mapped (%)"] = (
+        (by_log_source["Mapped Rows"] / by_log_source["Rows"] * 100).round(2)
+    )
+
+    by_event = (
+        summary_dataframe.groupby(
+            [LOG_SOURCE_COLUMN_NAME, EVENT_ID_COLUMN_NAME], dropna=False
+        )
+        .agg(
+            Rows=(EVENT_ID_COLUMN_NAME, "size"),
+            Mapped_Rows=("Mapped", lambda values: int((values == "Yes").sum())),
+        )
+        .reset_index()
+        .rename(columns={"Mapped_Rows": "Mapped Rows"})
+    )
+    by_event["Unmapped Rows"] = by_event["Rows"] - by_event["Mapped Rows"]
+    by_event["Mapped (%)"] = (by_event["Mapped Rows"] / by_event["Rows"] * 100).round(2)
+    by_event = by_event.sort_values(
+        ["Unmapped Rows", "Rows"], ascending=[False, False]
+    ).reset_index(drop=True)
+
+    return {
+        "Overview": overview,
+        "By Normalization Method": by_method,
+        "Unmapped Values": unmapped_values_table,
+        "By Log Source": by_log_source,
+        "By Event ID": by_event,
+    }
+
+
+def alternate_output_path(path: Path, attempt: int) -> Path:
+    """Return an alternate output path when the target file is locked."""
+    if attempt == 0:
+        return path
+    return path.with_name(f"{path.stem}_{attempt}{path.suffix}")
+
+
+def write_excel_path_with_fallback(
+    path: Path, write: Any, *, label: str = "output"
+) -> Path:
+    """
+    Write an Excel file, retrying with a numbered suffix if the target is locked.
+
+    On Windows this usually means the workbook is open in Excel.
+    """
+    for attempt in range(10):
+        candidate = alternate_output_path(path, attempt)
+        try:
+            write(candidate)
+            if candidate != path:
+                print(
+                    f"Warning: could not write {label} to {path} "
+                    f"(file may be open in Excel); wrote to {candidate}"
+                )
+            return candidate
+        except PermissionError:
+            continue
+        except OSError as exc:
+            if getattr(exc, "winerror", None) == 32:
+                continue
+            raise
+    raise PermissionError(
+        f"Could not write {label} to {path} or alternate paths; "
+        "close the workbook in Excel or pass an explicit output path."
+    )
+
+
+def write_unmapped_summary_excel(
+    output_path: Path, summary_dataframe: pd.DataFrame
+) -> Path:
+    """Write unmapped mapping statistics to a multi-sheet Excel workbook."""
+
+    def write(path: Path) -> None:
+        sheets = build_unmapped_summary_sheets(summary_dataframe)
+        with pd.ExcelWriter(path, engine="openpyxl") as writer:
+            for sheet_name, sheet_dataframe in sheets.items():
+                sheet_dataframe.to_excel(writer, sheet_name=sheet_name, index=False)
+
+    return write_excel_path_with_fallback(output_path, write, label="unmapped summary")
+
+
+def add_techniques_column(
+    dataframe: pd.DataFrame,
+    mitre_attack_data: MitreAttackData | None,
+    data_component_column: str | int = DATA_COMPONENT_COLUMN_INDEX,
+    *,
+    mapping_chains_by_datacomponent_name: dict[str, list[dict[str, str]]] | None = None,
+    normalization_context: NormalizationContext | None = None,
+    technique_format: str = "rows",
+) -> pd.DataFrame:
+    """
+    Return a copy of the dataframe with normalized data components and mapped chains.
+
+    When `normalization_context` is provided, raw spreadsheet values are normalized to
+    official ATT&CK data component names before defensive chain mapping.
+    """
+    mapping_chains_by_row, normalized_components_by_row, normalization_methods_by_row, _ = (
+        map_source_rows(
+            dataframe,
+            mitre_attack_data,
+            data_component_column,
+            mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
+            normalization_context=normalization_context,
+        )
+    )
+
     result = dataframe.copy()
     if normalization_context is not None:
         result[NORMALIZED_DATA_COMPONENT_COLUMN_NAME] = normalized_components_by_row
         result[NORMALIZATION_METHOD_COLUMN_NAME] = normalization_methods_by_row
-    return format_techniques_in_dataframe(result, techniques_by_row, technique_format)
+    return format_techniques_in_dataframe(result, mapping_chains_by_row, technique_format)
 
 
 # ---------------------------------------------------------------------------
@@ -834,14 +1195,14 @@ def add_techniques_column(
 # ---------------------------------------------------------------------------
 
 
-def build_techniques_by_datacomponent_name_from_attack_xlsx(
+def build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
     analytics_xlsx: Path, relationships_xlsx: Path
-) -> dict[str, set[str]]:
+) -> dict[str, list[dict[str, str]]]:
     """
-    Build mapping of data component name -> technique IDs using ATT&CK excel exports:
+    Build mapping of data component name -> full defensive chains using ATT&CK excel exports:
 
       analytics.xlsx / sheet "defensive mappings" provides:
-        data_component_name, detection_strategy_attack_id (DET####)
+        data_component_name, analytic_name (AN####), detection_strategy_attack_id (DET####)
 
       relationships.xlsx / sheet "relationships" provides:
         DET#### --detects--> T####(.###)
@@ -849,7 +1210,6 @@ def build_techniques_by_datacomponent_name_from_attack_xlsx(
     defensive = pd.read_excel(analytics_xlsx, sheet_name=DEFENSIVE_MAPPINGS_SHEET)
     rel = pd.read_excel(relationships_xlsx, sheet_name=RELATIONSHIPS_SHEET)
 
-    # Build DET#### -> techniques lookup from the relationships export.
     rel_detects = rel[rel["mapping type"].astype(str).str.lower() == "detects"]
     det_to_techs: dict[str, set[str]] = {}
     for _, row in rel_detects.iterrows():
@@ -858,15 +1218,51 @@ def build_techniques_by_datacomponent_name_from_attack_xlsx(
         if det and tid and det.startswith("DET") and tid.startswith("T"):
             det_to_techs.setdefault(det, set()).add(tid)
 
-    # Join defensive mappings (DC -> DET) with relationships (DET -> T) to get DC -> T.
-    techniques_by_dc: dict[str, set[str]] = {}
+    chains_by_dc: dict[str, list[dict[str, str]]] = {}
+    seen_by_dc: dict[str, set[tuple[str, str, str]]] = {}
+
     for _, row in defensive.iterrows():
         dc_name = str(row.get("data_component_name", "")).strip().lower()
+        analytic = str(row.get("analytic_name", "")).strip().upper()
         det = str(row.get("detection_strategy_attack_id", "")).strip().upper()
         if not dc_name or not det:
             continue
-        techniques_by_dc.setdefault(dc_name, set()).update(det_to_techs.get(det, set()))
 
+        for tid in det_to_techs.get(det, set()):
+            chain_key = (analytic, det, tid)
+            seen = seen_by_dc.setdefault(dc_name, set())
+            if chain_key in seen:
+                continue
+            seen.add(chain_key)
+            chains_by_dc.setdefault(dc_name, []).append(
+                {
+                    ANALYTIC_COLUMN_NAME: analytic,
+                    DETECTION_STRATEGY_COLUMN_NAME: det,
+                    TECHNIQUE_COLUMN_NAME: tid,
+                }
+            )
+
+    for dc_name, chains in chains_by_dc.items():
+        chains_by_dc[dc_name] = sorted(
+            chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES)
+        )
+
+    return chains_by_dc
+
+
+def build_techniques_by_datacomponent_name_from_attack_xlsx(
+    analytics_xlsx: Path, relationships_xlsx: Path
+) -> dict[str, set[str]]:
+    """
+    Build mapping of data component name -> technique IDs using ATT&CK excel exports.
+
+    This is a convenience wrapper around the full defensive-chain builder.
+    """
+    techniques_by_dc: dict[str, set[str]] = {}
+    for dc_name, chains in build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
+        analytics_xlsx, relationships_xlsx
+    ).items():
+        techniques_by_dc[dc_name] = set(technique_ids_from_mapping_chains(chains))
     return techniques_by_dc
 
 
@@ -963,6 +1359,19 @@ def main() -> None:
         ),
     )
     parser.add_argument(
+        "--summary-output",
+        type=Path,
+        help=(
+            "Write unmapped mapping statistics to a multi-sheet Excel workbook "
+            "(default: <input>_unmapped_summary.xlsx)"
+        ),
+    )
+    parser.add_argument(
+        "--summary-only",
+        action="store_true",
+        help="Only write the unmapped summary workbook (skip technique output spreadsheet)",
+    )
+    parser.add_argument(
         "--no-collapse",
         action="store_true",
         help="Leave grouped technique rows expanded when the workbook opens",
@@ -973,6 +1382,10 @@ def main() -> None:
         f"{args.input_spreadsheet.stem}_with_techniques"
         f"{args.input_spreadsheet.suffix}"
     )
+    summary_output_path = args.summary_output or args.input_spreadsheet.with_name(
+        f"{args.input_spreadsheet.stem}_unmapped_summary"
+        f"{args.input_spreadsheet.suffix}"
+    )
 
     data_component_column: str | int
     if str(args.data_component_column).isdigit():
@@ -980,7 +1393,7 @@ def main() -> None:
     else:
         data_component_column = args.data_component_column
 
-    techniques_by_datacomponent_name: dict[str, set[str]] | None = None
+    mapping_chains_by_datacomponent_name: dict[str, list[dict[str, str]]] | None = None
     mitre_attack_data: MitreAttackData | None
     normalization_context: NormalizationContext | None = None
 
@@ -989,8 +1402,10 @@ def main() -> None:
             raise SystemExit(
                 "If using ATT&CK excel exports, both --attack-analytics-xlsx and --attack-relationships-xlsx are required."
             )
-        techniques_by_datacomponent_name = build_techniques_by_datacomponent_name_from_attack_xlsx(
-            args.attack_analytics_xlsx, args.attack_relationships_xlsx
+        mapping_chains_by_datacomponent_name = (
+            build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
+                args.attack_analytics_xlsx, args.attack_relationships_xlsx
+            )
         )
         mitre_attack_data = None
         if not args.no_normalize:
@@ -1003,39 +1418,90 @@ def main() -> None:
             normalization_context = build_normalization_context_from_stix(mitre_attack_data)
 
     dataframe = pd.read_excel(args.input_spreadsheet, sheet_name=args.sheet)
-    result = add_techniques_column(
-        dataframe,
-        mitre_attack_data,
-        data_component_column=data_component_column,
-        techniques_by_datacomponent_name=techniques_by_datacomponent_name,
-        normalization_context=normalization_context,
-        technique_format=args.technique_format,
+    mapping_chains_by_row, normalized_components_by_row, normalization_methods_by_row, summary_dataframe = (
+        map_source_rows(
+            dataframe,
+            mitre_attack_data,
+            data_component_column,
+            mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
+            normalization_context=normalization_context,
+        )
     )
+
+    summary_output_path = write_unmapped_summary_excel(summary_output_path, summary_dataframe)
+    print(f"Wrote unmapped summary to {summary_output_path}")
+
+    if args.summary_only:
+        mapped_source_rows = int((summary_dataframe["Mapped"] == "Yes").sum())
+        print(
+            f"Mapped techniques for {mapped_source_rows} of "
+            f"{len(summary_dataframe)} source row(s)"
+        )
+        return
+
+    result = dataframe.copy()
+    if normalization_context is not None:
+        result[NORMALIZED_DATA_COMPONENT_COLUMN_NAME] = normalized_components_by_row
+        result[NORMALIZATION_METHOD_COLUMN_NAME] = normalization_methods_by_row
+    result = format_techniques_in_dataframe(result, mapping_chains_by_row, args.technique_format)
+    print(f"Prepared {len(result):,} output row(s)", flush=True)
 
     group_count = 0
     if args.technique_format == "rows" and args.group_by != "none":
         result = sort_dataframe_for_grouping(result, args.group_by)
         group_keys = build_group_key_series(result, args.group_by).tolist()
         export_result = result.drop(columns=[SOURCE_ROW_INDEX_COLUMN], errors="ignore")
-        export_result.to_excel(output_path, index=False)
-        group_count = apply_excel_row_grouping(
-            output_path,
-            group_keys,
-            collapse_groups=not args.no_collapse,
+        apply_grouping = len(export_result) <= LARGE_EXPORT_GROUPING_SKIP
+
+        if not apply_grouping:
+            print(
+                f"Skipping Excel row grouping for {len(export_result):,} rows "
+                f"(>{LARGE_EXPORT_GROUPING_SKIP:,}). "
+                "Use --group-by none on smaller exports if you need grouping.",
+                flush=True,
+            )
+        elif len(export_result) > LARGE_EXPORT_ROW_WARNING:
+            print(
+                f"Writing {len(export_result):,} rows with Excel grouping may take "
+                "10-30+ minutes. Use --group-by none for a faster export.",
+                flush=True,
+            )
+
+        def write_grouped(path: Path) -> None:
+            nonlocal group_count
+            print(f"Writing {len(export_result):,} rows to {path} ...", flush=True)
+            export_result.to_excel(path, index=False)
+            if apply_grouping:
+                print("Applying Excel row grouping (this can take several minutes) ...", flush=True)
+                group_count = apply_excel_row_grouping(
+                    path,
+                    group_keys,
+                    collapse_groups=not args.no_collapse,
+                )
+
+        output_path = write_excel_path_with_fallback(
+            output_path, write_grouped, label="output spreadsheet"
         )
     else:
         export_result = result.drop(columns=[SOURCE_ROW_INDEX_COLUMN], errors="ignore")
-        export_result.to_excel(output_path, index=False)
+
+        def write_plain(path: Path) -> None:
+            print(f"Writing {len(export_result):,} rows to {path} ...", flush=True)
+            export_result.to_excel(path, index=False)
+
+        output_path = write_excel_path_with_fallback(
+            output_path, write_plain, label="output spreadsheet"
+        )
 
     if args.technique_format == "combined":
         mapped_rows = sum(1 for value in result[TECHNIQUES_COLUMN_NAME] if value)
     elif args.technique_format == "columns":
-        technique_columns = [
+        chain_columns = [
             column
             for column in result.columns
             if str(column).startswith(f"{TECHNIQUE_COLUMN_NAME} ")
         ]
-        mapped_rows = int(result[technique_columns].ne("").any(axis=1).sum()) if technique_columns else 0
+        mapped_rows = int(result[chain_columns].ne("").any(axis=1).sum()) if chain_columns else 0
     else:
         mapped_rows = int(result[TECHNIQUE_COLUMN_NAME].astype(str).str.strip().ne("").sum())
 
