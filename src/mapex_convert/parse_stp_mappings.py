@@ -194,7 +194,9 @@ def build_official_datacomponent_names_from_stix(
     return names
 
 
-def build_official_datacomponent_names_from_xlsx(analytics_xlsx: Path) -> dict[str, str]:
+def build_official_datacomponent_names_from_xlsx(
+    analytics_xlsx: Path,
+) -> dict[str, str]:
     """Return lowercased data component name -> canonical ATT&CK display name."""
     defensive = pd.read_excel(analytics_xlsx, sheet_name=DEFENSIVE_MAPPINGS_SHEET)
     names: dict[str, str] = {}
@@ -211,10 +213,13 @@ def build_event_id_to_datacomponents_from_stix(
     """Parse ATT&CK analytics channels for EventCode=#### -> data component names."""
     event_lookup: dict[tuple[str, str], set[str]] = {}
     for analytic in mitre_attack_data.get_analytics(remove_revoked_deprecated=True):
-        for log_ref in mitre_attack_data.get_field(
-            analytic, "x_mitre_log_source_references", []
-        ) or []:
-            log_source = str(mitre_attack_data.get_field(log_ref, "name", "")).strip().lower()
+        for log_ref in (
+            mitre_attack_data.get_field(analytic, "x_mitre_log_source_references", [])
+            or []
+        ):
+            log_source = (
+                str(mitre_attack_data.get_field(log_ref, "name", "")).strip().lower()
+            )
             channel = str(mitre_attack_data.get_field(log_ref, "channel", "") or "")
             data_component_ref = mitre_attack_data.get_field(
                 log_ref, "x_mitre_data_component_ref", None
@@ -257,7 +262,9 @@ def supplemental_datacomponents_for_event(
     attack_log_source: str, event_id: str
 ) -> set[str]:
     """Return supplemental data component names for event IDs missing from ATT&CK analytics."""
-    data_components = set(SUPPLEMENTAL_EVENT_TO_DATACOMPONENT.get((attack_log_source, event_id), ()))
+    data_components = set(
+        SUPPLEMENTAL_EVENT_TO_DATACOMPONENT.get((attack_log_source, event_id), ())
+    )
     event_number = int(event_id)
     if attack_log_source == "wineventlog:security":
         if 4651 <= event_number <= 4662 or 4976 <= event_number <= 4999:
@@ -306,12 +313,16 @@ def normalize_row_datacomponents(
     log_source = str(row.get("Log Source", "")).strip().lower()
     attack_log_source = LOG_SOURCE_ATTACK_ALIASES.get(log_source)
 
-    if attack_log_source and event_id is not None and not (
-        isinstance(event_id, float) and pd.isna(event_id)
+    if (
+        attack_log_source
+        and event_id is not None
+        and not (isinstance(event_id, float) and pd.isna(event_id))
     ):
         event_id_text = str(int(float(event_id)))
         data_components = set(
-            context.event_id_to_datacomponents.get((attack_log_source, event_id_text), set())
+            context.event_id_to_datacomponents.get(
+                (attack_log_source, event_id_text), set()
+            )
         )
         data_components.update(
             supplemental_datacomponents_for_event(attack_log_source, event_id_text)
@@ -477,7 +488,9 @@ def get_techniques_for_datacomponent(
 
     for analytic_id in datacomponent_to_analytics.get(datacomponent_stix_id, set()):
         for strategy_id in analytic_to_strategies.get(analytic_id, set()):
-            for technique_entry in mitre_attack_data.get_techniques_detected_by_detection_strategy(
+            for (
+                technique_entry
+            ) in mitre_attack_data.get_techniques_detected_by_detection_strategy(
                 strategy_id
             ):
                 technique_id = get_technique_id(mitre_attack_data, technique_entry)
@@ -501,13 +514,17 @@ def get_mapping_chains_for_datacomponent(
     chains: list[dict[str, str]] = []
     seen: set[tuple[str, str, str]] = set()
 
-    for analytic_stix_id in datacomponent_to_analytics.get(datacomponent_stix_id, set()):
+    for analytic_stix_id in datacomponent_to_analytics.get(
+        datacomponent_stix_id, set()
+    ):
         analytic_attack_id = mitre_attack_data.get_attack_id(analytic_stix_id) or ""
         for strategy_stix_id in analytic_to_strategies.get(analytic_stix_id, set()):
             detection_strategy_attack_id = (
                 mitre_attack_data.get_attack_id(strategy_stix_id) or ""
             )
-            for technique_entry in mitre_attack_data.get_techniques_detected_by_detection_strategy(
+            for (
+                technique_entry
+            ) in mitre_attack_data.get_techniques_detected_by_detection_strategy(
                 strategy_stix_id
             ):
                 technique_id = get_technique_id(mitre_attack_data, technique_entry)
@@ -529,7 +546,9 @@ def get_mapping_chains_for_datacomponent(
                     }
                 )
 
-    return sorted(chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES))
+    return sorted(
+        chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES)
+    )
 
 
 def map_data_component_name_to_techniques(
@@ -583,7 +602,9 @@ def resolve_mapping_chains_for_datacomponent_names(
             continue
 
         if mapping_chains_by_datacomponent_name is not None:
-            component_chains = mapping_chains_by_datacomponent_name.get(normalized_name, [])
+            component_chains = mapping_chains_by_datacomponent_name.get(
+                normalized_name, []
+            )
         else:
             datacomponent_stix_id = name_to_stix_id.get(normalized_name)
             if not datacomponent_stix_id:
@@ -602,7 +623,9 @@ def resolve_mapping_chains_for_datacomponent_names(
             seen.add(chain_key)
             chains.append(chain)
 
-    return sorted(chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES))
+    return sorted(
+        chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES)
+    )
 
 
 def technique_ids_from_mapping_chains(
@@ -632,7 +655,9 @@ def resolve_techniques_for_datacomponent_names(
         for data_component_name in data_component_names:
             normalized_name = data_component_name.strip().lower()
             if normalized_name:
-                technique_ids.update(techniques_by_datacomponent_name.get(normalized_name, set()))
+                technique_ids.update(
+                    techniques_by_datacomponent_name.get(normalized_name, set())
+                )
         return sorted(technique_ids)
 
     mapping_chains = resolve_mapping_chains_for_datacomponent_names(
@@ -672,7 +697,13 @@ def format_techniques_in_dataframe(
     if technique_format == "combined":
         result[ANALYTIC_COLUMN_NAME] = [
             ", ".join(
-                sorted({chain[ANALYTIC_COLUMN_NAME] for chain in chains if chain[ANALYTIC_COLUMN_NAME]})
+                sorted(
+                    {
+                        chain[ANALYTIC_COLUMN_NAME]
+                        for chain in chains
+                        if chain[ANALYTIC_COLUMN_NAME]
+                    }
+                )
             )
             for chains in mapping_chains_by_row
         ]
@@ -703,7 +734,11 @@ def format_techniques_in_dataframe(
                 for chains in mapping_chains_by_row
             ]
             result[f"{DETECTION_STRATEGY_COLUMN_NAME} {slot}"] = [
-                chains[index][DETECTION_STRATEGY_COLUMN_NAME] if index < len(chains) else ""
+                (
+                    chains[index][DETECTION_STRATEGY_COLUMN_NAME]
+                    if index < len(chains)
+                    else ""
+                )
                 for chains in mapping_chains_by_row
             ]
             result[f"{TECHNIQUE_COLUMN_NAME} {slot}"] = [
@@ -826,7 +861,9 @@ def find_consecutive_group_ranges(group_keys: list[str]) -> list[tuple[int, int]
     index = 0
     while index < len(group_keys):
         end_index = index + 1
-        while end_index < len(group_keys) and group_keys[end_index] == group_keys[index]:
+        while (
+            end_index < len(group_keys) and group_keys[end_index] == group_keys[index]
+        ):
             end_index += 1
         if end_index - index > 1:
             first_data_row = index + 2
@@ -892,7 +929,9 @@ def map_source_rows(
                 "mitre_attack_data is required when mapping_chains_by_datacomponent_name is not provided"
             )
         name_to_stix_id = build_datacomponent_name_to_stix_id(mitre_attack_data)
-        datacomponent_to_analytics = build_datacomponent_to_analytic_ids(mitre_attack_data)
+        datacomponent_to_analytics = build_datacomponent_to_analytic_ids(
+            mitre_attack_data
+        )
         analytic_to_strategies = build_analytic_to_detection_strategy_ids(
             mitre_attack_data
         )
@@ -910,8 +949,10 @@ def map_source_rows(
             raw_data_component = row[data_component_column]
 
         if normalization_context is not None:
-            normalized_datacomponents, normalization_method = normalize_row_datacomponents(
-                row, raw_data_component, normalization_context
+            normalized_datacomponents, normalization_method = (
+                normalize_row_datacomponents(
+                    row, raw_data_component, normalization_context
+                )
             )
         else:
             normalized_datacomponents = []
@@ -948,14 +989,18 @@ def map_source_rows(
             unmatched_data_components.add(raw_text)
 
         event_id = row.get(EVENT_ID_COLUMN_NAME, "")
-        if event_id is not None and not (isinstance(event_id, float) and pd.isna(event_id)):
+        if event_id is not None and not (
+            isinstance(event_id, float) and pd.isna(event_id)
+        ):
             event_id_text = str(int(float(event_id))) if str(event_id).strip() else ""
         else:
             event_id_text = ""
 
         summary_rows.append(
             {
-                LOG_SOURCE_COLUMN_NAME: str(row.get(LOG_SOURCE_COLUMN_NAME, "")).strip(),
+                LOG_SOURCE_COLUMN_NAME: str(
+                    row.get(LOG_SOURCE_COLUMN_NAME, "")
+                ).strip(),
                 EVENT_ID_COLUMN_NAME: event_id_text,
                 DATA_COMPONENT_COLUMN_NAME: raw_text,
                 NORMALIZED_DATA_COMPONENT_COLUMN_NAME: normalized_label,
@@ -984,7 +1029,9 @@ def map_source_rows(
     )
 
 
-def build_unmapped_summary_sheets(summary_dataframe: pd.DataFrame) -> dict[str, pd.DataFrame]:
+def build_unmapped_summary_sheets(
+    summary_dataframe: pd.DataFrame,
+) -> dict[str, pd.DataFrame]:
     """Build overview and breakdown sheets for unmapped / mapping coverage reporting."""
     total_rows = len(summary_dataframe)
     mapped_rows = int((summary_dataframe["Mapped"] == "Yes").sum())
@@ -1046,11 +1093,13 @@ def build_unmapped_summary_sheets(summary_dataframe: pd.DataFrame) -> dict[str, 
     )
     by_method["Unmapped Rows"] = by_method["Rows"] - by_method["Mapped Rows"]
     by_method["Mapped (%)"] = (
-        (by_method["Mapped Rows"] / by_method["Rows"] * 100).round(2)
-    )
+        by_method["Mapped Rows"] / by_method["Rows"] * 100
+    ).round(2)
 
     unmapped_value_counts = (
-        summary_dataframe.loc[summary_dataframe["Mapped"] == "No", DATA_COMPONENT_COLUMN_NAME]
+        summary_dataframe.loc[
+            summary_dataframe["Mapped"] == "No", DATA_COMPONENT_COLUMN_NAME
+        ]
         .fillna("")
         .astype(str)
         .str.strip()
@@ -1076,10 +1125,12 @@ def build_unmapped_summary_sheets(summary_dataframe: pd.DataFrame) -> dict[str, 
             }
         )
     )
-    by_log_source["Unmapped Rows"] = by_log_source["Rows"] - by_log_source["Mapped Rows"]
-    by_log_source["Mapped (%)"] = (
-        (by_log_source["Mapped Rows"] / by_log_source["Rows"] * 100).round(2)
+    by_log_source["Unmapped Rows"] = (
+        by_log_source["Rows"] - by_log_source["Mapped Rows"]
     )
+    by_log_source["Mapped (%)"] = (
+        by_log_source["Mapped Rows"] / by_log_source["Rows"] * 100
+    ).round(2)
 
     by_event = (
         summary_dataframe.groupby(
@@ -1173,21 +1224,26 @@ def add_techniques_column(
     When `normalization_context` is provided, raw spreadsheet values are normalized to
     official ATT&CK data component names before defensive chain mapping.
     """
-    mapping_chains_by_row, normalized_components_by_row, normalization_methods_by_row, _ = (
-        map_source_rows(
-            dataframe,
-            mitre_attack_data,
-            data_component_column,
-            mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
-            normalization_context=normalization_context,
-        )
+    (
+        mapping_chains_by_row,
+        normalized_components_by_row,
+        normalization_methods_by_row,
+        _,
+    ) = map_source_rows(
+        dataframe,
+        mitre_attack_data,
+        data_component_column,
+        mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
+        normalization_context=normalization_context,
     )
 
     result = dataframe.copy()
     if normalization_context is not None:
         result[NORMALIZED_DATA_COMPONENT_COLUMN_NAME] = normalized_components_by_row
         result[NORMALIZATION_METHOD_COLUMN_NAME] = normalization_methods_by_row
-    return format_techniques_in_dataframe(result, mapping_chains_by_row, technique_format)
+    return format_techniques_in_dataframe(
+        result, mapping_chains_by_row, technique_format
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -1244,7 +1300,8 @@ def build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
 
     for dc_name, chains in chains_by_dc.items():
         chains_by_dc[dc_name] = sorted(
-            chains, key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES)
+            chains,
+            key=lambda chain: tuple(chain[column] for column in CHAIN_COLUMN_NAMES),
         )
 
     return chains_by_dc
@@ -1415,20 +1472,27 @@ def main() -> None:
     else:
         mitre_attack_data = MitreAttackData(str(args.attack_stix))
         if not args.no_normalize:
-            normalization_context = build_normalization_context_from_stix(mitre_attack_data)
+            normalization_context = build_normalization_context_from_stix(
+                mitre_attack_data
+            )
 
     dataframe = pd.read_excel(args.input_spreadsheet, sheet_name=args.sheet)
-    mapping_chains_by_row, normalized_components_by_row, normalization_methods_by_row, summary_dataframe = (
-        map_source_rows(
-            dataframe,
-            mitre_attack_data,
-            data_component_column,
-            mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
-            normalization_context=normalization_context,
-        )
+    (
+        mapping_chains_by_row,
+        normalized_components_by_row,
+        normalization_methods_by_row,
+        summary_dataframe,
+    ) = map_source_rows(
+        dataframe,
+        mitre_attack_data,
+        data_component_column,
+        mapping_chains_by_datacomponent_name=mapping_chains_by_datacomponent_name,
+        normalization_context=normalization_context,
     )
 
-    summary_output_path = write_unmapped_summary_excel(summary_output_path, summary_dataframe)
+    summary_output_path = write_unmapped_summary_excel(
+        summary_output_path, summary_dataframe
+    )
     print(f"Wrote unmapped summary to {summary_output_path}")
 
     if args.summary_only:
@@ -1443,7 +1507,9 @@ def main() -> None:
     if normalization_context is not None:
         result[NORMALIZED_DATA_COMPONENT_COLUMN_NAME] = normalized_components_by_row
         result[NORMALIZATION_METHOD_COLUMN_NAME] = normalization_methods_by_row
-    result = format_techniques_in_dataframe(result, mapping_chains_by_row, args.technique_format)
+    result = format_techniques_in_dataframe(
+        result, mapping_chains_by_row, args.technique_format
+    )
     print(f"Prepared {len(result):,} output row(s)", flush=True)
 
     group_count = 0
@@ -1472,7 +1538,10 @@ def main() -> None:
             print(f"Writing {len(export_result):,} rows to {path} ...", flush=True)
             export_result.to_excel(path, index=False)
             if apply_grouping:
-                print("Applying Excel row grouping (this can take several minutes) ...", flush=True)
+                print(
+                    "Applying Excel row grouping (this can take several minutes) ...",
+                    flush=True,
+                )
                 group_count = apply_excel_row_grouping(
                     path,
                     group_keys,
@@ -1501,9 +1570,13 @@ def main() -> None:
             for column in result.columns
             if str(column).startswith(f"{TECHNIQUE_COLUMN_NAME} ")
         ]
-        mapped_rows = int(result[chain_columns].ne("").any(axis=1).sum()) if chain_columns else 0
+        mapped_rows = (
+            int(result[chain_columns].ne("").any(axis=1).sum()) if chain_columns else 0
+        )
     else:
-        mapped_rows = int(result[TECHNIQUE_COLUMN_NAME].astype(str).str.strip().ne("").sum())
+        mapped_rows = int(
+            result[TECHNIQUE_COLUMN_NAME].astype(str).str.strip().ne("").sum()
+        )
 
     print(f"Wrote {len(export_result)} rows to {output_path}")
     print(f"Mapped techniques for {mapped_rows} row(s)")
