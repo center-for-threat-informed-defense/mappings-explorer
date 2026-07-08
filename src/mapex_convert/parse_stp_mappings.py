@@ -1436,12 +1436,10 @@ def main() -> None:
     args = parser.parse_args()
 
     output_path = args.output or args.input_spreadsheet.with_name(
-        f"{args.input_spreadsheet.stem}_with_techniques"
-        f"{args.input_spreadsheet.suffix}"
+        f"{args.input_spreadsheet.stem}_with_techniques{args.input_spreadsheet.suffix}"
     )
     summary_output_path = args.summary_output or args.input_spreadsheet.with_name(
-        f"{args.input_spreadsheet.stem}_unmapped_summary"
-        f"{args.input_spreadsheet.suffix}"
+        f"{args.input_spreadsheet.stem}_unmapped_summary{args.input_spreadsheet.suffix}"
     )
 
     data_component_column: str | int
