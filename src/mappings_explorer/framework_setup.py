@@ -53,6 +53,14 @@ class CapabilityGroup:
     description = ""
 
 
+class LogField:
+    id = ""
+    label = ""
+    description = ""
+    mappings = []
+    num_mappings = 0
+
+
 def load_projects():
     nist = ExternalControl()
     nist.id = "nist"
@@ -437,17 +445,47 @@ def load_projects():
     csa_ccm.has_non_mappable_comments = False
     csa_ccm.has_non_mappables = False
 
+    windows = ExternalControl()
+    windows.id = "windows"
+    windows.label = "Windows"
+    windows.description = "description saying that this is part of STP"
+    windows.attackDomains = ["Enterprise"]
+    windows.attackDomain = csa_ccm.attackDomains[0]
+    windows.attackVersions = ["19.1"]
+    windows.attackVersion = csa_ccm.attackVersions[0]
+    windows.versions = ["1.0"]
+    windows.validVersions = [
+        ("1.0", "19.1", "Enterprise"),
+    ]
+    windows.mappings = []
+    windows.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/csa-ccm-scope/",
+            "label": "Mapping Scope",
+        },
+        {
+            "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
+            "label": "Windows (External link)",
+            "external": True,
+        },
+    ]
+
     projects = [
-        csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
-        veris,
-        azure,
-        gcp,
-        aws,
+        # csa_ccm,
+        # cri_profile,
+        # intel_vpro,
+        # nist,
+        # kev,
+        # veris,
+        # azure,
+        # gcp,
+        # aws,
         m365,
+        windows,
     ]
     return projects
 

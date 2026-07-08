@@ -13,6 +13,7 @@ from .framework_setup import (
     Capability,
     CapabilityGroup,
     ExternalControl,
+    LogField,
     delete_all_descriptions,
     get_description_for_capability,
     get_description_for_capability_group,
@@ -157,6 +158,70 @@ def parse_capability_groups(
 
     if project.id == "aws" or project.id == "m365":
         get_security_stack_descriptions(project=project)
+
+    # Parse log fields for Windows project
+    # TODO: set a variable to group all STP projects together
+    parse_log_fields(mappings, project, project_version, attack_version, attack_domain)
+
+
+def parse_log_fields(
+    mappings: list,
+    project: ExternalControl,
+    project_version: str,
+    attack_version: str,
+    attack_domain: str,
+):
+    """Create log field objects for each unique log field found in list of mappings
+
+    Args:
+        mappings: list of mappings to build log field list from
+        project: project associated with list of mappings
+        project_version: version of project associated with list of mappings
+        attack_version: version of ATT&CK associated with list of mappings
+        attack_domain: domain of ATT&CK associated with list of mappings
+         (ex. Enterprise, mobile, or ics)
+
+    Returns:
+        List of log field objects
+    """
+    if project.id != "windows":
+        return
+
+    all_fields = [m.get("log_field", "") for m in mappings if m.get("log_field")]
+    log_field_ids = list(set(all_fields))
+    log_fields = []
+
+    for field_id in log_field_ids:
+        if not field_id:
+            continue
+
+        lf = LogField()
+        lf.id = field_id
+
+        field_mappings = [
+            m
+            for m in mappings
+            if (m.get("log_field") == field_id) and m["status"] != "non_mappable"
+        ]
+
+        lf.num_mappings = len(field_mappings)
+        lf.mappings = field_mappings
+
+        if len(field_mappings) > 0:
+            lf.label = field_mappings[0].get("log_field", field_id)
+            for mapping in field_mappings:
+                mapping["project"] = project.id
+                mapping["project_version"] = project_version
+                mapping["attack_version"] = attack_version
+                mapping["attack_domain"] = attack_domain
+            logger.trace(
+                "for log field {id} the number of mappings is {count}",
+                id=lf.id,
+                count=str(len(lf.mappings)),
+            )
+            log_fields.append(lf)
+
+    project.log_fields = log_fields
 
 
 def parse_capabilities(
@@ -394,6 +459,48 @@ def build_external_landing(
         info_box_headers = [
             ("comments", "Comments"),
         ]
+    if project.id == "windows":
+        standard_headers = [
+            (
+                ":pfx_link:",
+                "capability_id",
+                "Capability ID",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "capability_description",
+                "Capability Description",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "log_field",
+                "Contains Field",
+                "log_field",
+                external_prefix,
+            ),
+            (":text:", "mapping_type", "Mapping Type"),
+            (
+                ":pfx_link:",
+                "attack_object_id",
+                "ATT&CK ID",
+                "attack_object_id",
+                attack_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "attack_object_name",
+                "ATT&CK Name",
+                "attack_object_id",
+                attack_prefix,
+            ),
+        ]
+        info_box_headers = [
+            ("comments", "Comments"),
+        ]
 
     # Resolve additional download artifacts
     additional_artifacts = []
@@ -574,6 +681,30 @@ def build_external_landing(
                 previous_link=previous_link,
             )
 
+    # Build log field pages for Windows project
+    if project.id == "windows" and hasattr(project, "log_fields"):
+        for log_field in project.log_fields:
+            if log_field.num_mappings > 0:
+                log_field_nav = breadcrumbs + [
+                    (
+                        f"{external_prefix}{log_field.id}/",
+                        f"{log_field.label if log_field.label else log_field.id}",
+                    ),
+                ]
+                build_log_field(
+                    project=project,
+                    url_prefix=url_prefix,
+                    parent_dir=domain_dir,
+                    project_version=project_version,
+                    attack_version=attack_version,
+                    standard_headers=standard_headers,
+                    info_box_headers=info_box_headers,
+                    log_field=log_field,
+                    attack_domain=attack_domain,
+                    breadcrumbs=log_field_nav,
+                    previous_link=previous_link,
+                )
+
 
 def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
     """Parse ATT&CK data and build all pages for ATT&CK objects
@@ -690,6 +821,66 @@ def build_capability_group(
     logger.trace(
         "          Created capability group page {group}", group=capability_group.label
     )
+
+
+def build_log_field(
+    project: ExternalControl,
+    url_prefix: str,
+    parent_dir: os.path,
+    project_version: str,
+    attack_version: str,
+    standard_headers: list,
+    info_box_headers: list,
+    log_field: LogField,
+    attack_domain: str,
+    breadcrumbs: list,
+    previous_link: str,
+):
+    """Builds a log field page for a given log field
+
+    Args:
+       project: object that contains the log field (used for metadata and linking)
+       url_prefix: the root url for the built site
+       parent_dir: folder 1 level above where the log field page will be built
+       project_version: project version for the page
+       attack_version: version of ATT&CK for the page
+       headers: headers for mapping table
+       log_field: log field object that the page is being built for
+       attack_domain: ATT&CK domain for the page
+       breadcrumbs: the navigation tree above the page being built in this function
+        previous_link: link to go to in order to "change versions" on banner or badges
+    """
+    dir = parent_dir / log_field.id.replace(" ", "_")
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("log_field.html.j2")
+    prev_page = parent_dir
+    stream = template.stream(
+        title=f"{project.label} {log_field.id}",
+        url_prefix=url_prefix,
+        control=project.label,
+        project=project,
+        project_id=project.id,
+        description=log_field.description,
+        control_version=project_version,
+        versions=project.versions,
+        attack_version=attack_version,
+        attackVersions=project.attackVersions,
+        attack_domain=attack_domain,
+        domains=project.attackDomains,
+        prev_page=prev_page,
+        mappings=log_field.mappings,
+        standard_headers=standard_headers,
+        info_box_headers=info_box_headers,
+        log_field=log_field,
+        breadcrumbs=breadcrumbs,
+        previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
+    )
+    stream.dump(str(output_path))
+    logger.trace("          Created log field page {id}", id=log_field.id)
 
 
 def build_external_capability(
