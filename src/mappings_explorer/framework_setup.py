@@ -473,6 +473,34 @@ def load_projects():
             "external": True,
         },
     ]
+    sysmon = ExternalControl()
+    sysmon.id = "sysmon"
+    sysmon.label = "Sysmon"
+    sysmon.description = "description saying that this is part of STP"
+    sysmon.attackDomains = ["Enterprise"]
+    sysmon.attackDomain = csa_ccm.attackDomains[0]
+    sysmon.attackVersions = ["19.1"]
+    sysmon.attackVersion = csa_ccm.attackVersions[0]
+    sysmon.versions = ["15"]
+    sysmon.validVersions = [
+        ("15", "19.1", "Enterprise"),
+    ]
+    sysmon.mappings = []
+    sysmon.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/csa-ccm-scope/",
+            "label": "Mapping Scope",
+        },
+        {
+            "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
+            "label": "Sysmon (External link)",
+            "external": True,
+        },
+    ]
 
     projects = [
         # csa_ccm,
@@ -486,6 +514,7 @@ def load_projects():
         # aws,
         m365,
         windows,
+        sysmon,
     ]
     return projects
 

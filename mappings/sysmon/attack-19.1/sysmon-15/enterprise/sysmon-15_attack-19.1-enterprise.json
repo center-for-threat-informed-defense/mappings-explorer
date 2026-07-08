@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "19.1",
+        "mapping_framework": "sysmon",
+        "mapping_framework_version": "15",
+        "author": "Center for Threat-Informed Defense",
+        "contact": "ctid@mitre.org",
+        "organization": "Center for Threat-Informed Defense",
+        "creation_date": "07/18/2025",
+        "last_update": "07/24/2025",
+        "mapping_types": {
+            "detects": {
+                "name": "Detects",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+        }
+    },
+    "mapping_objects": [
+         {
+            "capability_id": "10",
+            "capability_description": "CallTrace",
+            "log_field": "process.call_trace",
+            "mapping_type": "detects",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "comments": "Windows Event ID 4103 contains field System.TimeCreated and can be categorized under OCSF's schema mapping time because the OCSF category is System and the OCSF Activity is Process Activity",
+            "references": [
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis2 licensing",
+                "https://learn.microsoft.com/en-us/entra/identity/conditional-access/howto-conditional-access-apis"
+            ],
+            "status": "complete"
+        }
+    ]
+}
