@@ -242,8 +242,7 @@ def build_event_id_to_datacomponents_from_stix(
 def build_event_id_to_datacomponents_from_xlsx(
     analytics_xlsx: Path,
 ) -> dict[tuple[str, str], set[str]]:
-    """Build (attack_log_source, event_id) -> data component names from defensive
-    mappings."""
+    """Build (attack_log_source, event_id) -> data component names from defensive mappings."""
     defensive = pd.read_excel(analytics_xlsx, sheet_name=DEFENSIVE_MAPPINGS_SHEET)
     event_lookup: dict[tuple[str, str], set[str]] = {}
     for _, row in defensive.iterrows():
@@ -262,8 +261,7 @@ def build_event_id_to_datacomponents_from_xlsx(
 def supplemental_datacomponents_for_event(
     attack_log_source: str, event_id: str
 ) -> set[str]:
-    """Return supplemental data component names for event IDs missing from ATT&CK
-    analytics."""
+    """Return supplemental data component names for event IDs missing from ATT&CK analytics."""
     data_components = set(
         SUPPLEMENTAL_EVENT_TO_DATACOMPONENT.get((attack_log_source, event_id), ())
     )
@@ -306,10 +304,7 @@ def normalize_row_datacomponents(
         raw_text = str(raw_data_component).strip()
 
     if raw_text and raw_text.lower() in context.official_datacomponent_names:
-        return (
-            [context.official_datacomponent_names[raw_text.lower()]],
-            "exact_match",
-        )
+        return ([context.official_datacomponent_names[raw_text.lower()]], "exact_match")
 
     event_id = row.get("EventID")
     log_source = str(row.get("Log Source", "")).strip().lower()
@@ -422,7 +417,7 @@ def build_datacomponent_to_analytic_ids(
     Build a mapping: data component STIX ID -> set of analytic STIX IDs.
 
     ATT&CK analytics link to data components through x_mitre_log_source_references
-     entries, which may contain either:
+    entries, which may contain either:
       - x_mitre_data_component_ref (single)
       - x_mitre_data_component_refs (list)
     """
@@ -674,11 +669,6 @@ def resolve_techniques_for_datacomponent_names(
     return technique_ids_from_mapping_chains(mapping_chains)
 
 
-# ---------------------------------------------------------------------------
-# Excel output formatting and collapsible row grouping
-# ---------------------------------------------------------------------------
-
-
 def _empty_mapping_chain() -> dict[str, str]:
     return {column: "" for column in CHAIN_COLUMN_NAMES}
 
@@ -792,8 +782,8 @@ def build_group_key_series(dataframe: pd.DataFrame, group_by: str) -> pd.Series:
     if group_by == "source_row":
         if SOURCE_ROW_INDEX_COLUMN not in dataframe.columns:
             raise ValueError(
-                f"""Missing {SOURCE_ROW_INDEX_COLUMN!r}; row grouping requires rows
-                  technique format"""
+                f"Missing {SOURCE_ROW_INDEX_COLUMN!r}; row grouping requires rows "
+                "technique format"
             )
         return dataframe[SOURCE_ROW_INDEX_COLUMN].astype(str)
 
@@ -904,11 +894,6 @@ def apply_excel_row_grouping(
     return len(ranges)
 
 
-# ---------------------------------------------------------------------------
-# Spreadsheet enrichment: normalize data components and attach techniques
-# ---------------------------------------------------------------------------
-
-
 def map_source_rows(
     dataframe: pd.DataFrame,
     mitre_attack_data: MitreAttackData | None,
@@ -919,7 +904,7 @@ def map_source_rows(
 ) -> tuple[list[list[dict[str, str]]], list[str], list[str], pd.DataFrame]:
     """
     Map each source spreadsheet row to defensive chains and collect per-row summary
-      stats.
+    stats.
 
     Returns mapping chains per row (analytic -> detection strategy -> technique),
     normalized component labels, normalization methods, and a summary dataframe.
@@ -930,8 +915,10 @@ def map_source_rows(
 
     if mapping_chains_by_datacomponent_name is None:
         if mitre_attack_data is None:
-            raise ValueError("""mitre_attack_data is required when
-                 mapping_chains_by_datacomponent_name is not provided""")
+            raise ValueError(
+                "mitre_attack_data is required when "
+                "mapping_chains_by_datacomponent_name is not provided"
+            )
         name_to_stix_id = build_datacomponent_name_to_stix_id(mitre_attack_data)
         datacomponent_to_analytics = build_datacomponent_to_analytic_ids(
             mitre_attack_data
@@ -1250,21 +1237,16 @@ def add_techniques_column(
     )
 
 
-# ---------------------------------------------------------------------------
-# ATT&CK Excel export mode (alternative to STIX JSON parsing)
-# ---------------------------------------------------------------------------
-
-
 def build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
     analytics_xlsx: Path, relationships_xlsx: Path
 ) -> dict[str, list[dict[str, str]]]:
     """
     Build mapping of data component name -> full defensive chains using ATT&CK excel
-     exports:
+    exports:
 
       analytics.xlsx / sheet "defensive mappings" provides:
         data_component_name, analytic_name (AN####), detection_strategy_attack_id
-          (DET####)
+        (DET####)
 
       relationships.xlsx / sheet "relationships" provides:
         DET#### --detects--> T####(.###)
@@ -1329,15 +1311,8 @@ def build_techniques_by_datacomponent_name_from_attack_xlsx(
     return techniques_by_dc
 
 
-# ---------------------------------------------------------------------------
-# Command-line interface
-# ---------------------------------------------------------------------------
-
-
 def main() -> None:
-    """CLI entry point: read STP spreadsheet, map techniques, write updated
-    spreadsheet.
-    """
+    """CLI entry point: read STP spreadsheet, map techniques, write updated spreadsheet."""
     parser = argparse.ArgumentParser(
         description=(
             "Add ATT&CK technique mappings to an STP spreadsheet using "
@@ -1363,19 +1338,18 @@ def main() -> None:
         "--attack-analytics-xlsx",
         type=Path,
         help=(
-            """ATT&CK analytics excel export
-            (e.g., enterprise-attack-v19.1-analytics.xlsx). """
-            """If provided with --attack-relationships-xlsx, the script will use the
-             excel exports """
-            "instead of parsing STIX JSON."
+            "ATT&CK analytics excel export "
+            "(e.g., enterprise-attack-v19.1-analytics.xlsx). "
+            "If provided with --attack-relationships-xlsx, the script will use the "
+            "excel exports instead of parsing STIX JSON."
         ),
     )
     parser.add_argument(
         "--attack-relationships-xlsx",
         type=Path,
         help=(
-            """ATT&CK relationships excel export
-             (e.g., enterprise-attack-v19.1-relationships.xlsx). """
+            "ATT&CK relationships excel export "
+            "(e.g., enterprise-attack-v19.1-relationships.xlsx). "
             "Must be provided with --attack-analytics-xlsx."
         ),
     )
@@ -1401,8 +1375,10 @@ def main() -> None:
     parser.add_argument(
         "--no-normalize",
         action="store_true",
-        help="""Disable normalization of event descriptions to official ATT&CK data
-          components""",
+        help=(
+            "Disable normalization of event descriptions to official ATT&CK data "
+            "components"
+        ),
     )
     parser.add_argument(
         "--technique-format",
@@ -1420,8 +1396,8 @@ def main() -> None:
         choices=("data_component", "event_id", "source_row", "none"),
         default="event_id",
         help=(
-            """For --technique-format rows, group technique rows in Excel with +/-
-             toggles. """
+            "For --technique-format rows, group technique rows in Excel with +/- "
+            "toggles. "
             "'event_id' groups by Log Source + EventID (default), "
             "'data_component' groups by ATT&CK Data Component, "
             "'source_row' groups techniques for each input spreadsheet row, "
@@ -1439,8 +1415,10 @@ def main() -> None:
     parser.add_argument(
         "--summary-only",
         action="store_true",
-        help="""Only write the unmapped summary workbook (skip technique output
-         spreadsheet)""",
+        help=(
+            "Only write the unmapped summary workbook (skip technique output "
+            "spreadsheet)"
+        ),
     )
     parser.add_argument(
         "--no-collapse",
@@ -1469,8 +1447,8 @@ def main() -> None:
     if args.attack_analytics_xlsx or args.attack_relationships_xlsx:
         if not (args.attack_analytics_xlsx and args.attack_relationships_xlsx):
             raise SystemExit(
-                """If using ATT&CK excel exports, both --attack-analytics-xlsx and
-                  --attack-relationships-xlsx are required."""
+                "If using ATT&CK excel exports, both --attack-analytics-xlsx and "
+                "--attack-relationships-xlsx are required."
             )
         mapping_chains_by_datacomponent_name = (
             build_mapping_chains_by_datacomponent_name_from_attack_xlsx(
@@ -1595,8 +1573,10 @@ def main() -> None:
     print(f"Mapped techniques for {mapped_rows} row(s)")
     if group_count:
         collapse_state = "collapsed" if not args.no_collapse else "expanded"
-        print(f"""Applied {group_count} Excel row group(s) by {args.group_by}
-            ({collapse_state})""")
+        print(
+            f"Applied {group_count} Excel row group(s) by {args.group_by} "
+            f"({collapse_state})"
+        )
 
 
 if __name__ == "__main__":
