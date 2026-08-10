@@ -338,6 +338,7 @@ def build_external_landing(
     external_prefix = f"""
         {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
     capability_group_prefix = f"{external_prefix}capability-groups/"
+    log_source_prefix = f"{url_prefix}external/logsources/"
     standard_headers = [
         (
             ":pfx_link:",
@@ -480,7 +481,7 @@ def build_external_landing(
                 "log_field",
                 "Contains Field",
                 "log_field",
-                external_prefix,
+                log_source_prefix,
             ),
             (":text:", "mapping_type", "Mapping Type"),
             (
@@ -683,18 +684,20 @@ def build_external_landing(
 
     # Build log field pages for Windows project
     if project.id == "windows" and hasattr(project, "log_fields"):
+        log_sources_dir = PUBLIC_DIR / "external" / "logsources"
+        log_sources_dir.mkdir(parents=True, exist_ok=True)
         for log_field in project.log_fields:
             if log_field.num_mappings > 0:
                 log_field_nav = breadcrumbs + [
                     (
-                        f"{external_prefix}{log_field.id}/",
+                        f"{log_source_prefix}{log_field.id}/",
                         f"{log_field.label if log_field.label else log_field.id}",
                     ),
                 ]
                 build_log_field(
                     project=project,
                     url_prefix=url_prefix,
-                    parent_dir=domain_dir,
+                    parent_dir=log_sources_dir,
                     project_version=project_version,
                     attack_version=attack_version,
                     standard_headers=standard_headers,
@@ -833,7 +836,6 @@ def build_log_field(
     info_box_headers: list,
     log_field: LogField,
     attack_domain: str,
-    breadcrumbs: list,
     previous_link: str,
 ):
     """Builds a log field page for a given log field
@@ -847,14 +849,18 @@ def build_log_field(
        headers: headers for mapping table
        log_field: log field object that the page is being built for
        attack_domain: ATT&CK domain for the page
-       breadcrumbs: the navigation tree above the page being built in this function
         previous_link: link to go to in order to "change versions" on banner or badges
     """
+    breadcrumbs = [
+        (f"{url_prefix}", "Home"),
+        (f"{url_prefix}external/", "Mapping Frameworks"),
+        (f"{url_prefix}external/logsources/", "Log Sources"),
+    ]
     dir = parent_dir / log_field.id.replace(" ", "_")
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("log_field.html.j2")
-    prev_page = parent_dir
+    prev_page = f"{url_prefix}external/logsources/"
     stream = template.stream(
         title=f"{project.label} {log_field.id}",
         url_prefix=url_prefix,
