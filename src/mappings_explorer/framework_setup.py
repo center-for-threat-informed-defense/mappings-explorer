@@ -269,12 +269,13 @@ def load_projects():
 
     gcp.attackDomains = ["Enterprise"]
     gcp.attackDomain = gcp.attackDomains[0]
-    gcp.attackVersions = ["16.1", "10.0"]
+    gcp.attackVersions = ["19.1", "16.1", "10.0"]
     gcp.attackVersion = gcp.attackVersions[0]
-    gcp.versions = ["06.28.2022", "03.06.2025"]
+    gcp.versions = ["06.28.2022", "03.06.2025", "08.12.2026"]
     gcp.validVersions = [
         ("06.28.2022", "10.0", "Enterprise"),
         ("03.06.2025", "16.1", "Enterprise"),
+        ("08.12.2026", "19.1", "Enterprise"),
     ]
     gcp.mappings = []
     gcp.resources = [
