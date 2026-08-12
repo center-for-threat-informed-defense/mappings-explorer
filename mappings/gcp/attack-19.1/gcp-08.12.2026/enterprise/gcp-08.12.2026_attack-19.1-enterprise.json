@@ -77,7 +77,22 @@
             "web_risk": "Web Risk"
         }
     },
-    "mapping_objects": [
+     "mapping_objects": [
+        {
+            "capability_id": "identity_and_access_management",
+            "capability_description": "Identity and Access Management",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1688",
+            "attack_object_name": "Safe Mode Boot",
+            "capability_group": "identity_and_access_management",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "GCP Identity and Access Management allows admins to set permissions based on accounts and account types, following least privilege principles, that may be abused to remotely boot a machine in safe mode.",
+            "references": [
+                "https://cloud.google.com/iam"
+            ],
+            "status": "complete"
+        },
         {
             "capability_id": "artifact_analysis",
             "capability_description": "Artifact Analysis",
@@ -8722,22 +8737,6 @@
             "capability_id": "vm_manager",
             "capability_description": "VM Manager",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1688",
-            "attack_object_name": "Safe Mode Boot",
-            "capability_group": "vm_manager",
-            "score_category": "protect",
-            "score_value": "partial",
-            "comments": "VM Manager OS policies can automate and enforce software configuration on managed Compute Engine VMs, including maintaining security agents and applying condition-based configuration scripts. This can be used to configure endpoint defenses so that they remain available during Windows safe mode. The mapping is Partial because the safeguard depends on an explicitly authored OS policy, applies only to managed Windows VMs, and does not by itself prevent a privileged adversary from initiating a safe-mode boot.",
-            "references": [
-                "https://cloud.google.com/compute/docs/vm-manager",
-                "https://cloud.google.com/compute/vm-manager/docs/os-policies"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "vm_manager",
-            "capability_description": "VM Manager",
-            "mapping_type": "technique_scores",
             "attack_object_id": "T1689",
             "attack_object_name": "Downgrade Attack",
             "capability_group": "vm_manager",
@@ -8768,22 +8767,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "sensitive_data_protection",
-            "capability_description": "Sensitive Data Protection ",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1682",
-            "attack_object_name": "Query Public AI Services",
-            "capability_group": "sensitive_data_protection",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "Sensitive Data Protection can discover, classify, de-identify, mask, redact, or tokenize sensitive data stored in supported Google Cloud services. Where these protections are applied before sensitive information is exposed externally, they can reduce the amount and sensitivity of data available for adversaries to obtain through queries to public AI services. This mapping is Minimal because the capability does not prevent adversaries from querying public AI services or obtaining information from external sources outside the protected data environment.",
-            "references": [
-                "https://cloud.google.com/sensitive-data-protection/docs",
-                "https://attack.mitre.org/techniques/T1682/"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "vm_manager",
             "capability_description": "VM Manager",
             "mapping_type": "technique_scores",
@@ -8795,8 +8778,7 @@
             "related_score": "T1686",
             "comments": "VM Manager OS policies can enforce Windows configuration state through managed files, scripts, packages, and policy assignments. If an organization explicitly uses OS policies to maintain Windows Firewall configuration or associated permissions, VM Manager can help restore or enforce the intended firewall state after unauthorized modification. This mapping is Minimal because the protection depends on specific policy configuration and VM Manager does not inherently prevent all firewall changes.",
             "references": [
-                "https://cloud.google.com/compute/docs/vm-manager",
-                "https://attack.mitre.org/techniques/T1686/003/"
+                "https://cloud.google.com/compute/docs/vm-manager"
             ],
             "status": "complete"
         },
@@ -8812,8 +8794,7 @@
             "related_score": "T1684",
             "comments": "Mandiant Digital Threat Monitoring monitors external sources for malicious targeting, brand abuse, domain-related threats, and other activity that may indicate impersonation of an organization or its personnel. This can provide limited detection of impersonation infrastructure or content once it appears in monitored external sources. This mapping is Minimal because private email, phone, messaging, and other non-public impersonation activity may not be visible to the service.",
             "references": [
-                "https://cloud.google.com/security/products/digital-threat-monitoring",
-                "https://attack.mitre.org/techniques/T1684/001/"
+                "https://cloud.google.com/security/products/digital-threat-monitoring"
             ],
             "status": "complete"
         }
