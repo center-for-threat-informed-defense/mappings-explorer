@@ -277,14 +277,30 @@ def parse_capabilities(
                 mapping["attack_version"] = attack_version
                 mapping["attack_domain"] = attack_domain
             if capability_mappable_mappings[0].get("capability_group"):
-                capability_group = [
-                    g
-                    for g in project.capability_groups
-                    if (g.id == mapping["capability_group"])
+                capability_group_id = capability_mappable_mappings[0][
+                    "capability_group"
                 ]
-                capability_group[0].capabilities.append(c)
-                capability_group[0].num_capabilities += 1
-                c.capability_group = capability_group[0]
+                capability_group = next(
+                    (
+                        g
+                        for g in project.capability_groups
+                        if g.id == capability_group_id
+                    ),
+                    None,
+                )
+
+                if capability_group is not None:
+                    capability_group.capabilities.append(c)
+                    capability_group.num_capabilities += 1
+                    c.capability_group = capability_group
+                else:
+                    logger.warning(
+                        "Capability group '{group_id}' not found for capability '{capability_id}' in project '{project_id}'",
+                        group_id=capability_group_id,
+                        capability_id=c.id,
+                        project_id=project.id,
+                    )
+                    c.capability_group = None
             else:
                 print(capability_mappable_mappings[0])
             logger.trace(
@@ -295,13 +311,33 @@ def parse_capabilities(
             capabilities.append(c)
         else:
             c.label = capability_non_mappables[0]["capability_description"]
-            if capability_non_mappables[0].get("capability_group"):
-                capability_group = [
-                    g
-                    for g in project.capability_groups
-                    if (g.id == capability_non_mappables[0]["capability_group"])
+            if capability_mappable_mappings[0].get("capability_group"):
+                capability_group_id = capability_mappable_mappings[0][
+                    "capability_group"
                 ]
-                c.capability_group = capability_group[0]
+                capability_group = next(
+                    (
+                        g
+                        for g in project.capability_groups
+                        if g.id == capability_group_id
+                    ),
+                    None,
+                )
+
+                if capability_group is not None:
+                    capability_group.capabilities.append(c)
+                    capability_group.num_capabilities += 1
+                    c.capability_group = capability_group
+                else:
+                    logger.warning(
+                        "Capability group '{group_id}' not found for capability '{capability_id}' in project '{project_id}'",
+                        group_id=capability_group_id,
+                        capability_id=c.id,
+                        project_id=project.id,
+                    )
+                    c.capability_group = None
+            else:
+                print(capability_mappable_mappings[0])
             c.non_mappable_comment = capability_non_mappables[0].get("comments", None)
             non_mappables.append(c)
 
