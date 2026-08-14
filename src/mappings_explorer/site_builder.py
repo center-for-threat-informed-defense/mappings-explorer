@@ -836,6 +836,7 @@ def build_log_field(
     info_box_headers: list,
     log_field: LogField,
     attack_domain: str,
+    breadcrumbs: list,
     previous_link: str,
 ):
     """Builds a log field page for a given log field
@@ -846,16 +847,13 @@ def build_log_field(
        parent_dir: folder 1 level above where the log field page will be built
        project_version: project version for the page
        attack_version: version of ATT&CK for the page
-       headers: headers for mapping table
+       standard_headers: headers for mapping table
+       info_box_headers: headers for info box
        log_field: log field object that the page is being built for
        attack_domain: ATT&CK domain for the page
-        previous_link: link to go to in order to "change versions" on banner or badges
+       breadcrumbs: breadcrumb navigation for the page
+       previous_link: link to go to in order to "change versions" on banner or badges
     """
-    breadcrumbs = [
-        (f"{url_prefix}", "Home"),
-        (f"{url_prefix}external/", "Mapping Frameworks"),
-        (f"{url_prefix}external/logsources/", "Log Sources"),
-    ]
     dir = parent_dir / log_field.id.replace(" ", "_")
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
@@ -934,7 +932,7 @@ def build_external_capability(
         attackVersions=project.attackVersions,
         attack_domain=attack_domain,
         domains=project.attackDomains,
-        prev_page=prev_page,
+        prev_page=prev_page,x
         mappings=capability.mappings,
         standard_headers=standard_headers,
         info_box_headers=info_box_headers,
