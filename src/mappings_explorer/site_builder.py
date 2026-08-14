@@ -932,7 +932,7 @@ def build_external_capability(
         attackVersions=project.attackVersions,
         attack_domain=attack_domain,
         domains=project.attackDomains,
-        prev_page=prev_page,x
+        prev_page=prev_page,
         mappings=capability.mappings,
         standard_headers=standard_headers,
         info_box_headers=info_box_headers,
