@@ -295,7 +295,8 @@ def parse_capabilities(
                     c.capability_group = capability_group
                 else:
                     logger.warning(
-                        "Capability group '{group_id}' not found for capability '{capability_id}' in project '{project_id}'",
+                        "Capability group '{group_id}' not found for capability "
+                        "'{capability_id}' in project '{project_id}'",
                         group_id=capability_group_id,
                         capability_id=c.id,
                         project_id=project.id,
@@ -330,7 +331,8 @@ def parse_capabilities(
                     c.capability_group = capability_group
                 else:
                     logger.warning(
-                        "Capability group '{group_id}' not found for capability '{capability_id}' in project '{project_id}'",
+                        "Capability group '{group_id}' not found for capability "
+                        "'{capability_id}' in project '{project_id}'",
                         group_id=capability_group_id,
                         capability_id=c.id,
                         project_id=project.id,

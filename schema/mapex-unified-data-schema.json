@@ -183,6 +183,10 @@
           "related_score": {
             "description": "When the ATT&CK object ID is a sub-technique, related score contains the parent technique ID.",
             "type": ["string", "null"]
+          },
+          "log_field": {
+            "description": "The specific log field that detects this kind of attack. Used in Summitting the Pyramid mappings.",
+            "type": ["string", "null"]
           }
         },
         "required": ["mapping_type", "capability_group"]

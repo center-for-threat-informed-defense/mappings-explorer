@@ -98,7 +98,8 @@ def write_json_file(path, data):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert Excel ATT&CK mapping sheet into sysmon.json and windows.json"
+        description="Convert Excel ATT&CK mapping sheet into sysmon.json and "
+        "windows.json"
     )
     parser.add_argument("excel_file", help="Path to the Excel file")
     parser.add_argument(
