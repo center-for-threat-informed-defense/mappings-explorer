@@ -512,7 +512,7 @@ def load_projects():
         # azure,
         # gcp,
         # aws,
-        m365,
+        # m365,
         windows,
         sysmon,
     ]
