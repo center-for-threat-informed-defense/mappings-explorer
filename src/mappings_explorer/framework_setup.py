@@ -474,8 +474,8 @@ def load_projects():
             "external": True,
         },
     ]
-    cis.has_non_mappable_comments = False
-    cis.has_non_mappables = False
+    cis.has_non_mappable_comments = True
+    cis.has_non_mappables = True
 
     projects = [
         cis,
