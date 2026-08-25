@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "04/28/2026",
-        "last_update": "08/21/2026",
+        "last_update": "08/25/2026",
         "mapping_types": {
             "mitigates": {
                 "name": "mitigates",
@@ -42,6 +42,590 @@
         }
     },
     "mapping_objects": [
+        {
+            "capability_id": "4.7",
+            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1586.003",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.7",
+            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078.003",
+            "attack_object_name": "Local Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.7",
+            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078.002",
+            "attack_object_name": "Domain Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1667",
+            "attack_object_name": "Email Bombing",
+            "capability_group": "CIS Control 9",
+            "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email bombing technique page, including how enabling these mechanisms within an organization (through policies such as DMARC) may enable recipients (intra-org and cross domain) to perform similar message filtering and validation to mitigate this technique. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.7",
+            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078.001",
+            "attack_object_name": "Default Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.7",
+            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.3",
+            "capability_description": "Configure Automatic Session Locking on Enterprise Assets",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "CIS Control 4",
+            "comments": "The safeguard forces a renewed authentication checkpoint after inactivity and therefore reduces any possibility of opportunistic use of a still-authenticated user on an open unlocked enterprise asset.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1566.002",
+            "attack_object_name": "Spearphishing Link",
+            "capability_group": "CIS Control 9",
+            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce link-led spearphishing at the sender-authentication and mail acceptance time. It does not inspect the attachment itself though. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "CIS Control 9",
+            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce attachment-led spearphishing when the campaign depends on spoofed sender trust and domain authentication failure. It does not inspect the attachment itself though. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "CIS Control 9",
+            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1684",
+            "attack_object_name": "Social Engineering",
+            "capability_group": "CIS Control 9",
+            "comments": "Social engineering is broadly defined as influencing users into actions while minimizing technical indicators, DMARC can be a meaningful control against the email-spoofing branch of this broader technique. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1684.001",
+            "attack_object_name": "Impersonation",
+            "capability_group": "CIS Control 9",
+            "comments": "DMARC may not stop all impersonation, but it reduces a major subset where trust is created through control of the visible sender identity and aligned sending domain.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.5",
+            "capability_description": "Implement DMARC",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1684.002",
+            "attack_object_name": "Email Spoofing",
+            "capability_group": "CIS Control 9",
+            "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email Spoofing technique page, including how weak or absent DMARC leaves spoofed messages deliverable and how DMARC-enabled filtering mitigates the behavior",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "5.3",
+            "capability_description": "Disable Dormant Accounts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078.001",
+            "attack_object_name": "Default Accounts",
+            "capability_group": "CIS Control 5",
+            "comments": "Disabling stale accounts removes valid authentication paths available to adversaries.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1553.005",
+            "attack_object_name": "Mark-of-the-Web Bypass",
+            "capability_group": "CIS Control 9",
+            "comments": "Adversaries may abuse container files such as compressed/archive (.arj, .gzip) and/or disk image (.iso, .vhd) file formats to deliver malicious payloads. The execution prevention mitigation mentions the use of blocking container file types at web and/or email gateways which could apply to the implementation of this safeguard.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.005",
+            "attack_object_name": "Visual Basic",
+            "capability_group": "CIS Control 9",
+            "comments": "Adversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into spearphishing Attachment payloads. If .VB objects are blocked at the email boundary then it can mitigate the spearphishing delivery of this technique. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.001",
+            "attack_object_name": "Compiled HTML File",
+            "capability_group": "CIS Control 9",
+            "comments": "A custom CHM file containing embedded payloads could be delivered to a victim through email then triggered by User Execution If those custom CHM files are blocked at the email boundary, then it can mitigate the delivery of this technique. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1137.006",
+            "attack_object_name": "Add-ins",
+            "capability_group": "CIS Control 9",
+            "comments": "dversaries often weaponize Office add-ins (e.g., Excel .xll files or Outlook .wll / .ecf extensions) by sending them via phishing campaigns. Blocking these file types at the email boundary prevents the initial execution and subsequent installation of malicious persistence mechanisms. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027.009",
+            "attack_object_name": "Embedded Payloads",
+            "capability_group": "CIS Control 9",
+            "comments": "File blocking mitigates embedded payloads by completely stripping high-risk file types at the perimeter, denying attackers the ability to deliver the initial malicious file or its nested, obfuscated components. Attackers frequently embed malicious scripts (e.g., .js, .vbs) inside legitimate document formats (e.g., PDFs, Word docs). By blocking macro-enabled or script-based file types, gateways prevent these malicious combinations from ever reaching the user's inbox",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027.012",
+            "attack_object_name": "LNK Icon Smuggling",
+            "capability_group": "CIS Control 9",
+            "comments": "LNK files are used as phishing payloads and when a user invokes them they can download or execute additional payloads. If .lnk objects are blocked at the email boundary then it can mitigate the delivery of this technique. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027.006",
+            "attack_object_name": "HTML Smuggling",
+            "capability_group": "CIS Control 9",
+            "comments": "For this technique, adversaries may smuggle data and files past content filters by hiding malicious payloads inside of seemingly benign HTML files. If the implementation for 9.3 can mitigate this technique if it disallows .html, .htm, .hta, and similar active content files as email attachments on the block list. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027.015",
+            "attack_object_name": "Compression",
+            "capability_group": "CIS Control 9",
+            "comments": "9.6 can prevent this type of technique if it blocks RAR, 7z, and other known unauthorized self-extracting archive types from specific machines. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "CIS Control 9",
+            "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "CIS Control 9",
+            "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1566.001",
+            "attack_object_name": "Spearphishing Attachment",
+            "capability_group": "CIS Control 9",
+            "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.6",
+            "capability_description": "Block Unnecessary File Types",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1566",
+            "attack_object_name": "Phishing",
+            "capability_group": "CIS Control 9",
+            "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.009",
+            "attack_object_name": "Clear Persistence",
+            "capability_group": "CIS Control 3",
+            "comments": "This sub-technique removes scheduled tasks or registry keys after use. Retaining system modification logs according to enterprise timelines ensures the lifecycle of the persistence mechanism remains fully reviewable.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.008",
+            "attack_object_name": "Clear Mailbox Data",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1070",
+            "comments": "This sub-technique permanently purges emails to hide phishing or exfiltration. CIS 3.4 requires a minimum retention window for email archives, blocking adversaries from destroying corporate messaging records.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.007",
+            "attack_object_name": "Clear Network Connection History and Configurations",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1070",
+            "comments": "This sub-technique wipes local network state data and active connection logs. Enforcing retention timelines on network telemetry ensures lateral movement records survive local configuration resets.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.003",
+            "attack_object_name": "Clear Command History",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1070",
+            "comments": "This sub-technique purges terminal histories like .bash_history or PowerShell logs. Data retention policies mandate logging shell commands directly to a central repository, preserving the operational history despite local terminal purges.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1685.005",
+            "attack_object_name": "Clear Windows Event Logs",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1685",
+            "comments": "This technique targets local Windows security and system event logs. Enforcing a minimum retention timeline ensures Windows event data is moved off-host and preserved, defeating local log-clearing attempts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1685.006",
+            "attack_object_name": "Clear Linux or Mac System Logs",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1685",
+            "comments": "This technique deletes critical Unix artifacts like /var/log system logs. Documented retention processes guarantee that Unix system trails are streamed to a repository where minimum storage timelines are strictly enforced.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070",
+            "attack_object_name": "Indicator Removal",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "This overarching technique covers deleting artifacts across an environment. CIS 3.4 protects the evidence chain by establishing mandatory retention periods that an attacker cannot alter or shorten.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1485",
+            "attack_object_name": "Data Destruction",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Retention is protective because it limits the time window in which valuable data remains available for destruction, tampering, or cleanup by an attacker. Data retention policies protect against adversaries deleting logs by mandating strict storage lifecycles, off-site replication, and immutability. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.004",
+            "attack_object_name": "File Deletion",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1070",
+            "comments": "The safeguard specifically concerns secure deletion and sanitization of residual data artifacts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1561",
+            "attack_object_name": "Disk Wipe",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "This control protects against attacker behaviors that destroy or overwrite data and storage media. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1485",
+            "attack_object_name": "Data Destruction",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Secure disposal directly addresses preventing unauthorized recovery or persistence of sensitive data remnants.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.6",
+            "capability_description": "Encrypt Data on End-User Devices",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1025",
+            "attack_object_name": "Data from Removable Media",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption protects copied endpoint data stored on removable media from unauthorized disclosure.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.6",
+            "capability_description": "Encrypt Data on End-User Devices",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption on endpoints reduces the value of locally collected data and raises the bar for simple exfiltration after collection.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.9",
+            "capability_description": "Encrypt Data on Removable Media",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1052.001",
+            "attack_object_name": "Exfiltration over USB",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1052",
+            "comments": "Encrypting removable media directly reduces the usefulness of data exfiltrated via USB storage devices.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.9",
+            "capability_description": "Encrypt Data on Removable Media",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1025",
+            "attack_object_name": "Data from Removable Media",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "The safeguard explicitly protects removable-media-stored data from unauthorized access.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.11",
+            "capability_description": "Encrypt Sensitive Data At Rest",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Credentials and authentication material are often stored within files, databases, configuration repositories, and application data stores. Encrypting sensitive data at rest reduces the usefulness of credential artifacts obtained from protected storage locations by preventing direct access to plaintext credential material.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "CIS Control 3",
+            "comments": "Secure disposal reduces sensitive data retained in cloud object storage, lowering the value of compromised storage access\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "CIS Control 3",
+            "comments": "This applies when secure disposal explicitly removes old credential files, keys, exports, secrets, or configuration files that could expose credentials.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Secure disposal reduces stale sensitive records in repositories such as document stores, collaboration platforms, or knowledge bases.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1039",
+            "attack_object_name": "Data from Network Shared Drive",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Secure disposal reduces obsolete or unnecessary sensitive data left on shared drives, limiting what an adversary can collect from network shares.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Secure disposal reduces residual sensitive files on endpoints and servers that an adversary could later collect from local storage.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
         {
             "capability_id": "12.8",
             "capability_description": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
@@ -11125,159 +11709,641 @@
             "status": "complete"
         },
         {
-            "capability_id": "4.7",
-            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1586.003",
+            "attack_object_id": "T1041",
+            "attack_object_name": "Exfiltration Over C2 Channel",
+            "capability_group": "CIS Control 4",
+            "comments": "This technique may be mitigated depending on where ingress and egress is tightly controlled. For example, the use network signatures such as IP addresses or domain names to identify traffic for specific adversary malware can be used to mitigate activity at the network level.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1205.002",
+            "attack_object_name": "Socket Filters",
+            "capability_group": "CIS Control 4",
+            "comments": "ATT&CK mentions that the mitigation of some variants of this technique could be achieved through the use of stateful firewalls, depending upon how it is implemented.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1552.005",
+            "attack_object_name": "Cloud Instance Metadata API",
+            "capability_group": "CIS Control 4",
+            "comments": "ATT&CK mentions to limit access to the Instance Metadata API using a host-based firewall such as iptables. A properly configured Web Application Firewall (WAF) may help prevent external adversaries from exploiting Server-side Request Forgery (SSRF) attacks that allow access to the Cloud Instance Metadata API.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.012",
+            "attack_object_name": "Verclsid",
+            "capability_group": "CIS Control 4",
+            "comments": "Consider modifying host firewall rules to prevent egress traffic from verclsid.exe.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1090.003",
+            "attack_object_name": "Multi-hop Proxy",
+            "capability_group": "CIS Control 4",
+            "comments": "This technique may be lessened or mitigated though the use of firewall policy that constrains relay and redirect paths. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1197",
+            "attack_object_name": "BITS Jobs",
+            "capability_group": "CIS Control 4",
+            "comments": "Modify network and/or host firewall rules, as well as other network controls, to only allow legitimate BITS traffic.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1205",
+            "attack_object_name": "Traffic Signaling",
+            "capability_group": "CIS Control 4",
+            "comments": "ATT&CK mentions that the mitigation of some variants of this technique could be achieved through the use of stateful firewalls, depending upon how it is implemented.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1071.001",
+            "attack_object_name": "Web Protocols",
+            "capability_group": "CIS Control 4",
+            "comments": "Adversaries use web protocols to blend with normal traffic. A server firewall can partially restrict which destinations, ports, and web services a server may contact, though it will not stop all HTTP/S abuse. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.4",
+            "capability_description": "Implement and Manage a Firewall on Servers",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1563.002",
+            "attack_object_name": "RDP Hijacking",
+            "capability_group": "CIS Control 4",
+            "comments": "Adversaries leverage RDP if it is reachable. Firewall rules are among the most direct ways to prevent unauthorized RDP reachability to servers. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "5.2",
+            "capability_description": "Use Unique Passwords",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "CIS Control 5",
+            "comments": "This directly counters password overlap from breached credentials reused across personal, third-party, and enterprise accounts.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "5.2",
+            "capability_description": "Use Unique Passwords",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078.004",
             "attack_object_name": "Cloud Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "capability_group": "CIS Control 5",
+            "comments": "Unique passwords reduce cloud/SaaS credential overlap and lateral reuse risk",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1546.013",
+            "attack_object_name": "PowerShell Profile",
+            "capability_group": "CIS Control 2",
+            "comments": "PowerShell profile persistence relies on executing a script at interpreter startup. Script allowlisting prevents unauthorized profile scripts from executing.",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "4.7",
-            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1078.003",
-            "attack_object_name": "Local Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "attack_object_id": "T1216",
+            "attack_object_name": "System Script Proxy Execution",
+            "capability_group": "CIS Control 2",
+            "comments": "If script payload execution is enforced regardless of invoking binary, proxy-based script execution is reduced.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1137.001",
+            "attack_object_name": "Office Template Macros",
+            "capability_group": "CIS Control 2",
+            "comments": "Macro scripts blocked if script enforcement applies to macro execution policies.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1037",
+            "attack_object_name": "Boot or Logon Initialization Scripts",
+            "capability_group": "CIS Control 2",
+            "comments": "Startup scripts not on the allowlist cannot execute, disrupting persistence.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.007",
+            "attack_object_name": "JavaScript",
+            "capability_group": "CIS Control 2",
+            "comments": "Script enforcement blocks execution of non-authorized JavaScript files invoked via host interpreters.",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "4.7",
-            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1078.002",
-            "attack_object_name": "Domain Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "attack_object_id": "T1059.006",
+            "attack_object_name": "Python",
+            "capability_group": "CIS Control 2",
+            "comments": "Unauthorized Python scripts are blocked when interpreter policies enforce script validation.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.005",
+            "attack_object_name": "Visual Basic",
+            "capability_group": "CIS Control 2",
+            "comments": "Malicious VB scripts/macros are prevented if not allowlisted.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.004",
+            "attack_object_name": "Unix Shell",
+            "capability_group": "CIS Control 2",
+            "comments": "Unauthorized shell scripts fail execution when enforced through script hash/signature/path validation.",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1667",
-            "attack_object_name": "Email Bombing",
+            "attack_object_id": "T1059.003",
+            "attack_object_name": "Windows Command Shell",
+            "capability_group": "CIS Control 2",
+            "comments": "Non-authorized batch or shell scripts are blocked.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.002",
+            "attack_object_name": "AppleScript",
+            "capability_group": "CIS Control 2",
+            "comments": "Script allowlisting prevents execution of unauthorized AppleScript files under enforced script validation policies.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.7",
+            "capability_description": "Allowlist Authorized Scripts",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.001",
+            "attack_object_name": "PowerShell",
+            "capability_group": "CIS Control 2",
+            "comments": "Unauthorized PowerShell scripts fail execution under enforced script allowlisting.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1546.010",
+            "attack_object_name": "AppInit DLLs",
+            "capability_group": "CIS Control 2",
+            "comments": "Prevents unauthorized AppInit DLL persistence where load control is enforced.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1546.009",
+            "attack_object_name": "AppCert DLLs",
+            "capability_group": "CIS Control 2",
+            "comments": "Unauthorized persistence DLLs cannot load if restricted by library allowlisting.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1574.006",
+            "attack_object_name": "Dynamic Linker Hijacking",
+            "capability_group": "CIS Control 2",
+            "comments": "Enforced library validation prevents execution of malicious shared objects via linker abuse.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1574.012",
+            "attack_object_name": "COR_PROFILER",
+            "capability_group": "CIS Control 2",
+            "comments": "COR_PROFILER abuse requires loading a malicious profiling DLL. Library enforcement prevents unauthorized profiler DLLs from loading into .NET processes.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1547.005",
+            "attack_object_name": "Security Support Provider",
+            "capability_group": "CIS Control 2",
+            "comments": "SSP persistence requires loading a malicious authentication DLL. Load validation blocks unauthorized SSP modules from being loaded into LSASS.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1547.004",
+            "attack_object_name": "Winlogon Helper DLL",
+            "capability_group": "CIS Control 2",
+            "comments": "Winlogon helper persistence relies on loading an unauthorized DLL. Library allowlisting prevents loading of non-authorized modules, directly disrupting this persistence method.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.6",
+            "capability_description": "Allowlist Authorized Libraries",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1574.001",
+            "attack_object_name": "DLL",
+            "capability_group": "CIS Control 2",
+            "comments": "Unauthorized DLLs fail to load if not on the allowlist, directly mitigating search order hijacking. Side-loaded malicious libraries are blocked when load validation is enforced.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1105",
+            "attack_object_name": "Ingress Tool Transfer",
+            "capability_group": "CIS Control 2",
+            "comments": "Transferred malware payloads cannot execute if not explicitly authorized. Control reduces operational effectiveness post-transfer.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1543",
+            "attack_object_name": "Create or Modify System Process",
+            "capability_group": "CIS Control 2",
+            "comments": "Services relying on non-allowlisted binaries will fail to execute.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1219",
+            "attack_object_name": "Remote Access Tools",
+            "capability_group": "CIS Control 2",
+            "comments": "Application allowlisting prevents execution of unauthorized remote access tools (e.g., AnyDesk, TeamViewer, custom RATs). If not explicitly authorized, these binaries cannot execute, directly reducing adversary persistence and command-and-control capability.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218",
+            "attack_object_name": "System Binary Proxy Execution",
+            "capability_group": "CIS Control 2",
+            "comments": "If policy restricts execution to explicitly authorized binaries, unauthorized or abused proxy binaries may be prevented from executing.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059",
+            "attack_object_name": "Command and Scripting Interpreter",
+            "capability_group": "CIS Control 2",
+            "comments": "If interpreters themselves are restricted or constrained by allowlisting, adversary-launched unauthorized interpreter binaries are blocked.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204.002",
+            "attack_object_name": "Malicious File",
+            "capability_group": "CIS Control 2",
+            "comments": "Malicious binaries fail execution if not on the allowlist.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "CIS Control 2",
+            "comments": "Non-allowlisted executables cannot run, directly preventing execution of malicious binaries delivered via user interaction.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1547",
+            "attack_object_name": "Boot or Logon Autostart Execution",
+            "capability_group": "CIS Control 2",
+            "comments": "If unauthorized startup software is identified and removed, persistence via installed startup components is disrupted.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1543.003",
+            "attack_object_name": "Windows Service",
+            "capability_group": "CIS Control 2",
+            "comments": "Removal of unauthorized service binaries prevents continued execution of adversary-installed services.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1543",
+            "attack_object_name": "Create or Modify System Process",
+            "capability_group": "CIS Control 2",
+            "comments": "Automated detection and removal of unauthorized installed services can directly disrupt adversary-created system services used for persistence. Enforcement reduces persistence reliability.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.2",
+            "capability_description": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
+            "mapping_type": null,
+            "attack_object_id": null,
+            "attack_object_name": null,
+            "capability_group": "CIS Control 4",
+            "comments": "Out of scope",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "4.1",
+            "capability_description": "Establish and Maintain a Secure Configuration Process",
+            "mapping_type": null,
+            "attack_object_id": null,
+            "attack_object_name": null,
+            "capability_group": "CIS Control 4",
+            "comments": "Out of scope",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1189",
+            "attack_object_name": "Drive-by Compromise",
             "capability_group": "CIS Control 9",
-            "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email bombing technique page, including how enabling these mechanisms within an organization (through policies such as DMARC) may enable recipients (intra-org and cross domain) to perform similar message filtering and validation to mitigate this technique. ",
+            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "4.7",
-            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1078.001",
-            "attack_object_name": "Default Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "attack_object_id": "T1105",
+            "attack_object_name": "Ingress Tool Transfer",
+            "capability_group": "CIS Control 9",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. \n\nIn practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 implementation blocks outbound traffic from machines to unapproved external destinations. Restricting access to known, trusted IP addresses and protocols can prevent attackers from downloading malicious tools or payloads onto compromised servers after gaining initial access. ",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "4.7",
-            "capability_description": "Manage Default Accounts on Enterprise Assets and Software",
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
+            "attack_object_id": "T1567.003",
+            "attack_object_name": "Exfiltration to Text Storage Sites",
+            "capability_group": "CIS Control 9",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. Adversaries may exfiltrate data to text storage sites instead of their primary command and control channel. If 9.3 implementation blocks unauthorized text storage sites, the technique is defensible. ",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "4.3",
-            "capability_description": "Configure Automatic Session Locking on Enterprise Assets",
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
             "mapping_type": "mitigates",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "CIS Control 4",
-            "comments": "The safeguard forces a renewed authentication checkpoint after inactivity and therefore reduces any possibility of opportunistic use of a still-authenticated user on an open unlocked enterprise asset.",
+            "attack_object_id": "T1567.002",
+            "attack_object_name": "Exfiltration to Cloud Storage",
+            "capability_group": "CIS Control 9",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved sites. If 9.3 implementation blocks the URLs of unauthorized cloud storage services that are not approved by the organization then this technique is defensible. ",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1593.003",
+            "attack_object_name": "Code Repositories",
+            "capability_group": "CIS Control 9",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content. If 9.3 implementation blocks unapproved code repositories and repository APIs, this is applicable.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1102.002",
+            "attack_object_name": "Bidirectional Communication",
+            "capability_group": "CIS Control 9",
+            "comments": "If 9.3 implementation includes outbound web-service use broadly enough to block unauthorized services and risky websites, then this technique is applicable. ATT&CK describes two-way C2 via legitimate web services and again points to web proxies and blocking unauthorized external services as mitigation.",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1102.003",
+            "attack_object_name": "One-Way Communication",
+            "capability_group": "CIS Control 9",
+            "comments": "Popular websites and social media acting as a mechanism for C2 may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to a compromise. Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise.\n\n9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content.  If 9.3 implementation includes outbound web-services used broadly enough to block unauthorized services and restrict access to unsafe websites, then this technique is defensible. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1102.001",
+            "attack_object_name": "Dead Drop Resolver",
+            "capability_group": "CIS Control 9",
+            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content. If 9.3 implementation blocks unapproved social media, code repositories, paste sites, and similar web services across enterprise HTTP/S traffic, this becomes defensible. Adversaries may post content, known as a dead drop resolver, on Web services with embedded (and often obfuscated/encoded) domains or IP addresses. Once infected, victims will reach out to and be redirected by these resolvers.\n\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1102",
+            "attack_object_name": "Web Service",
+            "capability_group": "CIS Control 9",
+            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 implementation includes certain risky or suspicious web-services used broadly enough to block unauthorized services, then this technique is applicable. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204",
+            "attack_object_name": "User Execution",
+            "capability_group": "CIS Control 9",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 is implemented as a secure web gateway or proxy that can stop the post-click fetch/download, then this technique is applicable. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1204.001",
+            "attack_object_name": "Malicious Link",
+            "capability_group": "CIS Control 9",
+            "comments": " 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 is implemented as a secure web gateway or proxy that can stop the post-click fetch/download, then this technique is applicable. ",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
             "mapping_type": "mitigates",
             "attack_object_id": "T1566.002",
             "attack_object_name": "Spearphishing Link",
             "capability_group": "CIS Control 9",
-            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce link-led spearphishing at the sender-authentication and mail acceptance time. It does not inspect the attachment itself though. ",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
             "references": [],
             "status": "complete"
         },
         {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1566.001",
-            "attack_object_name": "Spearphishing Attachment",
-            "capability_group": "CIS Control 9",
-            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce attachment-led spearphishing when the campaign depends on spoofed sender trust and domain authentication failure. It does not inspect the attachment itself though. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
+            "capability_id": "9.3",
+            "capability_description": "Maintain and Enforce Network-Based URL Filters",
             "mapping_type": "mitigates",
             "attack_object_id": "T1566",
             "attack_object_name": "Phishing",
             "capability_group": "CIS Control 9",
-            "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains.",
+            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
             "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1684",
-            "attack_object_name": "Social Engineering",
-            "capability_group": "CIS Control 9",
-            "comments": "Social engineering is broadly defined as influencing users into actions while minimizing technical indicators, DMARC can be a meaningful control against the email-spoofing branch of this broader technique. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1684.001",
-            "attack_object_name": "Impersonation",
-            "capability_group": "CIS Control 9",
-            "comments": "DMARC may not stop all impersonation, but it reduces a major subset where trust is created through control of the visible sender identity and aligned sending domain.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.5",
-            "capability_description": "Implement DMARC",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1684.002",
-            "attack_object_name": "Email Spoofing",
-            "capability_group": "CIS Control 9",
-            "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email Spoofing technique page, including how weak or absent DMARC leaves spoofed messages deliverable and how DMARC-enabled filtering mitigates the behavior",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "5.3",
-            "capability_description": "Disable Dormant Accounts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1078.001",
-            "attack_object_name": "Default Accounts",
-            "capability_group": "CIS Control 5",
-            "comments": "Disabling stale accounts removes valid authentication paths available to adversaries.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
-            ],
             "status": "complete"
         },
         {
@@ -12071,1072 +13137,6 @@
             "comments": "Out of scope",
             "references": [],
             "status": "non_mappable"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1041",
-            "attack_object_name": "Exfiltration Over C2 Channel",
-            "capability_group": "CIS Control 4",
-            "comments": "This technique may be mitigated depending on where ingress and egress is tightly controlled. For example, the use network signatures such as IP addresses or domain names to identify traffic for specific adversary malware can be used to mitigate activity at the network level.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1205.002",
-            "attack_object_name": "Socket Filters",
-            "capability_group": "CIS Control 4",
-            "comments": "ATT&CK mentions that the mitigation of some variants of this technique could be achieved through the use of stateful firewalls, depending upon how it is implemented.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1552.005",
-            "attack_object_name": "Cloud Instance Metadata API",
-            "capability_group": "CIS Control 4",
-            "comments": "ATT&CK mentions to limit access to the Instance Metadata API using a host-based firewall such as iptables. A properly configured Web Application Firewall (WAF) may help prevent external adversaries from exploiting Server-side Request Forgery (SSRF) attacks that allow access to the Cloud Instance Metadata API.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1218.012",
-            "attack_object_name": "Verclsid",
-            "capability_group": "CIS Control 4",
-            "comments": "Consider modifying host firewall rules to prevent egress traffic from verclsid.exe.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1090.003",
-            "attack_object_name": "Multi-hop Proxy",
-            "capability_group": "CIS Control 4",
-            "comments": "This technique may be lessened or mitigated though the use of firewall policy that constrains relay and redirect paths. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1197",
-            "attack_object_name": "BITS Jobs",
-            "capability_group": "CIS Control 4",
-            "comments": "Modify network and/or host firewall rules, as well as other network controls, to only allow legitimate BITS traffic.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1205",
-            "attack_object_name": "Traffic Signaling",
-            "capability_group": "CIS Control 4",
-            "comments": "ATT&CK mentions that the mitigation of some variants of this technique could be achieved through the use of stateful firewalls, depending upon how it is implemented.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1071.001",
-            "attack_object_name": "Web Protocols",
-            "capability_group": "CIS Control 4",
-            "comments": "Adversaries use web protocols to blend with normal traffic. A server firewall can partially restrict which destinations, ports, and web services a server may contact, though it will not stop all HTTP/S abuse. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.4",
-            "capability_description": "Implement and Manage a Firewall on Servers",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1563.002",
-            "attack_object_name": "RDP Hijacking",
-            "capability_group": "CIS Control 4",
-            "comments": "Adversaries leverage RDP if it is reachable. Firewall rules are among the most direct ways to prevent unauthorized RDP reachability to servers. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1553.005",
-            "attack_object_name": "Mark-of-the-Web Bypass",
-            "capability_group": "CIS Control 9",
-            "comments": "Adversaries may abuse container files such as compressed/archive (.arj, .gzip) and/or disk image (.iso, .vhd) file formats to deliver malicious payloads. The execution prevention mitigation mentions the use of blocking container file types at web and/or email gateways which could apply to the implementation of this safeguard.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.005",
-            "attack_object_name": "Visual Basic",
-            "capability_group": "CIS Control 9",
-            "comments": "Adversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into spearphishing Attachment payloads. If .VB objects are blocked at the email boundary then it can mitigate the spearphishing delivery of this technique. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1218.001",
-            "attack_object_name": "Compiled HTML File",
-            "capability_group": "CIS Control 9",
-            "comments": "A custom CHM file containing embedded payloads could be delivered to a victim through email then triggered by User Execution If those custom CHM files are blocked at the email boundary, then it can mitigate the delivery of this technique. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1137.006",
-            "attack_object_name": "Add-ins",
-            "capability_group": "CIS Control 9",
-            "comments": "dversaries often weaponize Office add-ins (e.g., Excel .xll files or Outlook .wll / .ecf extensions) by sending them via phishing campaigns. Blocking these file types at the email boundary prevents the initial execution and subsequent installation of malicious persistence mechanisms. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1027.009",
-            "attack_object_name": "Embedded Payloads",
-            "capability_group": "CIS Control 9",
-            "comments": "File blocking mitigates embedded payloads by completely stripping high-risk file types at the perimeter, denying attackers the ability to deliver the initial malicious file or its nested, obfuscated components. Attackers frequently embed malicious scripts (e.g., .js, .vbs) inside legitimate document formats (e.g., PDFs, Word docs). By blocking macro-enabled or script-based file types, gateways prevent these malicious combinations from ever reaching the user's inbox",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1027.012",
-            "attack_object_name": "LNK Icon Smuggling",
-            "capability_group": "CIS Control 9",
-            "comments": "LNK files are used as phishing payloads and when a user invokes them they can download or execute additional payloads. If .lnk objects are blocked at the email boundary then it can mitigate the delivery of this technique. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1027.006",
-            "attack_object_name": "HTML Smuggling",
-            "capability_group": "CIS Control 9",
-            "comments": "For this technique, adversaries may smuggle data and files past content filters by hiding malicious payloads inside of seemingly benign HTML files. If the implementation for 9.3 can mitigate this technique if it disallows .html, .htm, .hta, and similar active content files as email attachments on the block list. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1027.015",
-            "attack_object_name": "Compression",
-            "capability_group": "CIS Control 9",
-            "comments": "9.6 can prevent this type of technique if it blocks RAR, 7z, and other known unauthorized self-extracting archive types from specific machines. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204.002",
-            "attack_object_name": "Malicious File",
-            "capability_group": "CIS Control 9",
-            "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204",
-            "attack_object_name": "User Execution",
-            "capability_group": "CIS Control 9",
-            "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1566.001",
-            "attack_object_name": "Spearphishing Attachment",
-            "capability_group": "CIS Control 9",
-            "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.6",
-            "capability_description": "Block Unnecessary File Types",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1566",
-            "attack_object_name": "Phishing",
-            "capability_group": "CIS Control 9",
-            "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.009",
-            "attack_object_name": "Clear Persistence",
-            "capability_group": "CIS Control 3",
-            "comments": "This sub-technique removes scheduled tasks or registry keys after use. Retaining system modification logs according to enterprise timelines ensures the lifecycle of the persistence mechanism remains fully reviewable.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.008",
-            "attack_object_name": "Clear Mailbox Data",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1070",
-            "comments": "This sub-technique permanently purges emails to hide phishing or exfiltration. CIS 3.4 requires a minimum retention window for email archives, blocking adversaries from destroying corporate messaging records.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.007",
-            "attack_object_name": "Clear Network Connection History and Configurations",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1070",
-            "comments": "This sub-technique wipes local network state data and active connection logs. Enforcing retention timelines on network telemetry ensures lateral movement records survive local configuration resets.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.003",
-            "attack_object_name": "Clear Command History",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1070",
-            "comments": "This sub-technique purges terminal histories like .bash_history or PowerShell logs. Data retention policies mandate logging shell commands directly to a central repository, preserving the operational history despite local terminal purges.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1685.005",
-            "attack_object_name": "Clear Windows Event Logs",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1685",
-            "comments": "This technique targets local Windows security and system event logs. Enforcing a minimum retention timeline ensures Windows event data is moved off-host and preserved, defeating local log-clearing attempts.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1685.006",
-            "attack_object_name": "Clear Linux or Mac System Logs",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1685",
-            "comments": "This technique deletes critical Unix artifacts like /var/log system logs. Documented retention processes guarantee that Unix system trails are streamed to a repository where minimum storage timelines are strictly enforced.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070",
-            "attack_object_name": "Indicator Removal",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "This overarching technique covers deleting artifacts across an environment. CIS 3.4 protects the evidence chain by establishing mandatory retention periods that an attacker cannot alter or shorten.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.4",
-            "capability_description": "Enforce Data Retention",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1485",
-            "attack_object_name": "Data Destruction",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Retention is protective because it limits the time window in which valuable data remains available for destruction, tampering, or cleanup by an attacker. Data retention policies protect against adversaries deleting logs by mandating strict storage lifecycles, off-site replication, and immutability. ",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.004",
-            "attack_object_name": "File Deletion",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1070",
-            "comments": "The safeguard specifically concerns secure deletion and sanitization of residual data artifacts.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1561",
-            "attack_object_name": "Disk Wipe",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "This control protects against attacker behaviors that destroy or overwrite data and storage media. ",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1485",
-            "attack_object_name": "Data Destruction",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Secure disposal directly addresses preventing unauthorized recovery or persistence of sensitive data remnants.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.6",
-            "capability_description": "Encrypt Data on End-User Devices",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1025",
-            "attack_object_name": "Data from Removable Media",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption protects copied endpoint data stored on removable media from unauthorized disclosure.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.6",
-            "capability_description": "Encrypt Data on End-User Devices",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1005",
-            "attack_object_name": "Data from Local System",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption on endpoints reduces the value of locally collected data and raises the bar for simple exfiltration after collection.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.9",
-            "capability_description": "Encrypt Data on Removable Media",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1052.001",
-            "attack_object_name": "Exfiltration over USB",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1052",
-            "comments": "Encrypting removable media directly reduces the usefulness of data exfiltrated via USB storage devices.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.9",
-            "capability_description": "Encrypt Data on Removable Media",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1025",
-            "attack_object_name": "Data from Removable Media",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "The safeguard explicitly protects removable-media-stored data from unauthorized access.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.11",
-            "capability_description": "Encrypt Sensitive Data At Rest",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1552",
-            "attack_object_name": "Unsecured Credentials",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Credentials and authentication material are often stored within files, databases, configuration repositories, and application data stores. Encrypting sensitive data at rest reduces the usefulness of credential artifacts obtained from protected storage locations by preventing direct access to plaintext credential material.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "5.2",
-            "capability_description": "Use Unique Passwords",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1110.004",
-            "attack_object_name": "Credential Stuffing",
-            "capability_group": "CIS Control 5",
-            "comments": "This directly counters password overlap from breached credentials reused across personal, third-party, and enterprise accounts.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "5.2",
-            "capability_description": "Use Unique Passwords",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1078.004",
-            "attack_object_name": "Cloud Accounts",
-            "capability_group": "CIS Control 5",
-            "comments": "Unique passwords reduce cloud/SaaS credential overlap and lateral reuse risk",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1546.013",
-            "attack_object_name": "PowerShell Profile",
-            "capability_group": "CIS Control 2",
-            "comments": "PowerShell profile persistence relies on executing a script at interpreter startup. Script allowlisting prevents unauthorized profile scripts from executing.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1216",
-            "attack_object_name": "System Script Proxy Execution",
-            "capability_group": "CIS Control 2",
-            "comments": "If script payload execution is enforced regardless of invoking binary, proxy-based script execution is reduced.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1137.001",
-            "attack_object_name": "Office Template Macros",
-            "capability_group": "CIS Control 2",
-            "comments": "Macro scripts blocked if script enforcement applies to macro execution policies.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1037",
-            "attack_object_name": "Boot or Logon Initialization Scripts",
-            "capability_group": "CIS Control 2",
-            "comments": "Startup scripts not on the allowlist cannot execute, disrupting persistence.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.007",
-            "attack_object_name": "JavaScript",
-            "capability_group": "CIS Control 2",
-            "comments": "Script enforcement blocks execution of non-authorized JavaScript files invoked via host interpreters.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.006",
-            "attack_object_name": "Python",
-            "capability_group": "CIS Control 2",
-            "comments": "Unauthorized Python scripts are blocked when interpreter policies enforce script validation.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.005",
-            "attack_object_name": "Visual Basic",
-            "capability_group": "CIS Control 2",
-            "comments": "Malicious VB scripts/macros are prevented if not allowlisted.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.004",
-            "attack_object_name": "Unix Shell",
-            "capability_group": "CIS Control 2",
-            "comments": "Unauthorized shell scripts fail execution when enforced through script hash/signature/path validation.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.003",
-            "attack_object_name": "Windows Command Shell",
-            "capability_group": "CIS Control 2",
-            "comments": "Non-authorized batch or shell scripts are blocked.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.002",
-            "attack_object_name": "AppleScript",
-            "capability_group": "CIS Control 2",
-            "comments": "Script allowlisting prevents execution of unauthorized AppleScript files under enforced script validation policies.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.7",
-            "capability_description": "Allowlist Authorized Scripts",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059.001",
-            "attack_object_name": "PowerShell",
-            "capability_group": "CIS Control 2",
-            "comments": "Unauthorized PowerShell scripts fail execution under enforced script allowlisting.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1546.010",
-            "attack_object_name": "AppInit DLLs",
-            "capability_group": "CIS Control 2",
-            "comments": "Prevents unauthorized AppInit DLL persistence where load control is enforced.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1546.009",
-            "attack_object_name": "AppCert DLLs",
-            "capability_group": "CIS Control 2",
-            "comments": "Unauthorized persistence DLLs cannot load if restricted by library allowlisting.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1574.006",
-            "attack_object_name": "Dynamic Linker Hijacking",
-            "capability_group": "CIS Control 2",
-            "comments": "Enforced library validation prevents execution of malicious shared objects via linker abuse.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1574.012",
-            "attack_object_name": "COR_PROFILER",
-            "capability_group": "CIS Control 2",
-            "comments": "COR_PROFILER abuse requires loading a malicious profiling DLL. Library enforcement prevents unauthorized profiler DLLs from loading into .NET processes.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1547.005",
-            "attack_object_name": "Security Support Provider",
-            "capability_group": "CIS Control 2",
-            "comments": "SSP persistence requires loading a malicious authentication DLL. Load validation blocks unauthorized SSP modules from being loaded into LSASS.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1547.004",
-            "attack_object_name": "Winlogon Helper DLL",
-            "capability_group": "CIS Control 2",
-            "comments": "Winlogon helper persistence relies on loading an unauthorized DLL. Library allowlisting prevents loading of non-authorized modules, directly disrupting this persistence method.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.6",
-            "capability_description": "Allowlist Authorized Libraries",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1574.001",
-            "attack_object_name": "DLL",
-            "capability_group": "CIS Control 2",
-            "comments": "Unauthorized DLLs fail to load if not on the allowlist, directly mitigating search order hijacking. Side-loaded malicious libraries are blocked when load validation is enforced.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1105",
-            "attack_object_name": "Ingress Tool Transfer",
-            "capability_group": "CIS Control 2",
-            "comments": "Transferred malware payloads cannot execute if not explicitly authorized. Control reduces operational effectiveness post-transfer.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1543",
-            "attack_object_name": "Create or Modify System Process",
-            "capability_group": "CIS Control 2",
-            "comments": "Services relying on non-allowlisted binaries will fail to execute.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1219",
-            "attack_object_name": "Remote Access Tools",
-            "capability_group": "CIS Control 2",
-            "comments": "Application allowlisting prevents execution of unauthorized remote access tools (e.g., AnyDesk, TeamViewer, custom RATs). If not explicitly authorized, these binaries cannot execute, directly reducing adversary persistence and command-and-control capability.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1218",
-            "attack_object_name": "System Binary Proxy Execution",
-            "capability_group": "CIS Control 2",
-            "comments": "If policy restricts execution to explicitly authorized binaries, unauthorized or abused proxy binaries may be prevented from executing.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1059",
-            "attack_object_name": "Command and Scripting Interpreter",
-            "capability_group": "CIS Control 2",
-            "comments": "If interpreters themselves are restricted or constrained by allowlisting, adversary-launched unauthorized interpreter binaries are blocked.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204.002",
-            "attack_object_name": "Malicious File",
-            "capability_group": "CIS Control 2",
-            "comments": "Malicious binaries fail execution if not on the allowlist.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.5",
-            "capability_description": "Allowlist Authorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204",
-            "attack_object_name": "User Execution",
-            "capability_group": "CIS Control 2",
-            "comments": "Non-allowlisted executables cannot run, directly preventing execution of malicious binaries delivered via user interaction.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.3",
-            "capability_description": "Address Unauthorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1547",
-            "attack_object_name": "Boot or Logon Autostart Execution",
-            "capability_group": "CIS Control 2",
-            "comments": "If unauthorized startup software is identified and removed, persistence via installed startup components is disrupted.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.3",
-            "capability_description": "Address Unauthorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1543.003",
-            "attack_object_name": "Windows Service",
-            "capability_group": "CIS Control 2",
-            "comments": "Removal of unauthorized service binaries prevents continued execution of adversary-installed services.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "2.3",
-            "capability_description": "Address Unauthorized Software",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1543",
-            "attack_object_name": "Create or Modify System Process",
-            "capability_group": "CIS Control 2",
-            "comments": "Automated detection and removal of unauthorized installed services can directly disrupt adversary-created system services used for persistence. Enforcement reduces persistence reliability.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "CIS Control 3",
-            "comments": "Secure disposal reduces sensitive data retained in cloud object storage, lowering the value of compromised storage access\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1552",
-            "attack_object_name": "Unsecured Credentials",
-            "capability_group": "CIS Control 3",
-            "comments": "This applies when secure disposal explicitly removes old credential files, keys, exports, secrets, or configuration files that could expose credentials.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1213",
-            "attack_object_name": "Data from Information Repositories",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Secure disposal reduces stale sensitive records in repositories such as document stores, collaboration platforms, or knowledge bases.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1039",
-            "attack_object_name": "Data from Network Shared Drive",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Secure disposal reduces obsolete or unnecessary sensitive data left on shared drives, limiting what an adversary can collect from network shares.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1005",
-            "attack_object_name": "Data from Local System",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Secure disposal reduces residual sensitive files on endpoints and servers that an adversary could later collect from local storage.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.2",
-            "capability_description": "Establish and Maintain a Secure Configuration Process for Network Infrastructure",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "CIS Control 4",
-            "comments": "Out of scope",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "4.1",
-            "capability_description": "Establish and Maintain a Secure Configuration Process",
-            "mapping_type": null,
-            "attack_object_id": null,
-            "attack_object_name": null,
-            "capability_group": "CIS Control 4",
-            "comments": "Out of scope",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1189",
-            "attack_object_name": "Drive-by Compromise",
-            "capability_group": "CIS Control 9",
-            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1105",
-            "attack_object_name": "Ingress Tool Transfer",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. \n\nIn practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 implementation blocks outbound traffic from machines to unapproved external destinations. Restricting access to known, trusted IP addresses and protocols can prevent attackers from downloading malicious tools or payloads onto compromised servers after gaining initial access. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1567.003",
-            "attack_object_name": "Exfiltration to Text Storage Sites",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. Adversaries may exfiltrate data to text storage sites instead of their primary command and control channel. If 9.3 implementation blocks unauthorized text storage sites, the technique is defensible. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1567.002",
-            "attack_object_name": "Exfiltration to Cloud Storage",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved sites. If 9.3 implementation blocks the URLs of unauthorized cloud storage services that are not approved by the organization then this technique is defensible. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1593.003",
-            "attack_object_name": "Code Repositories",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content. If 9.3 implementation blocks unapproved code repositories and repository APIs, this is applicable.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1102.002",
-            "attack_object_name": "Bidirectional Communication",
-            "capability_group": "CIS Control 9",
-            "comments": "If 9.3 implementation includes outbound web-service use broadly enough to block unauthorized services and risky websites, then this technique is applicable. ATT&CK describes two-way C2 via legitimate web services and again points to web proxies and blocking unauthorized external services as mitigation.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1102.003",
-            "attack_object_name": "One-Way Communication",
-            "capability_group": "CIS Control 9",
-            "comments": "Popular websites and social media acting as a mechanism for C2 may give a significant amount of cover due to the likelihood that hosts within a network are already communicating with them prior to a compromise. Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise.\n\n9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content.  If 9.3 implementation includes outbound web-services used broadly enough to block unauthorized services and restrict access to unsafe websites, then this technique is defensible. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1102.001",
-            "attack_object_name": "Dead Drop Resolver",
-            "capability_group": "CIS Control 9",
-            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content. If 9.3 implementation blocks unapproved social media, code repositories, paste sites, and similar web services across enterprise HTTP/S traffic, this becomes defensible. Adversaries may post content, known as a dead drop resolver, on Web services with embedded (and often obfuscated/encoded) domains or IP addresses. Once infected, victims will reach out to and be redirected by these resolvers.\n\n",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1102",
-            "attack_object_name": "Web Service",
-            "capability_group": "CIS Control 9",
-            "comments": "CIS 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 implementation includes certain risky or suspicious web-services used broadly enough to block unauthorized services, then this technique is applicable. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204",
-            "attack_object_name": "User Execution",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 is implemented as a secure web gateway or proxy that can stop the post-click fetch/download, then this technique is applicable. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1204.001",
-            "attack_object_name": "Malicious Link",
-            "capability_group": "CIS Control 9",
-            "comments": " 9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery. If 9.3 is implemented as a secure web gateway or proxy that can stop the post-click fetch/download, then this technique is applicable. ",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1566.002",
-            "attack_object_name": "Spearphishing Link",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "9.3",
-            "capability_description": "Maintain and Enforce Network-Based URL Filters",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1566",
-            "attack_object_name": "Phishing",
-            "capability_group": "CIS Control 9",
-            "comments": "9.3 helps prevent link-based and web-based initial access by stopping users from reaching malicious or unapproved content in the first place. It does this by requiring updated network-based URL filtering across all enterprise assets, using methods such as category-based filtering, reputation-based filtering, and block lists. In practice, this means enforcing controls that restrict access to unsafe websites, malicious downloads, risky scripts, and unauthorized browser extensions, reducing the risk of phishing, exploitation, and malware delivery.",
-            "references": [],
-            "status": "complete"
         }
     ]
 }
