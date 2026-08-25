@@ -207,8 +207,8 @@ def write_parsed_mappings_stix(parsed_mappings, filepath):
         related_source_ref = [
             stix_object["id"]
             for stix_object in stix_bundle["objects"]
-            if stix_object.get("name") == mapping["capability_id"]
-            and mapping["capability_id"]
+            if stix_object.get("name") == mapping.get("capability_id")
+            and mapping.get("capability_id")
         ]
         related_target_ref = technique_target_dict.get(mapping["attack_object_id"], "")
 
