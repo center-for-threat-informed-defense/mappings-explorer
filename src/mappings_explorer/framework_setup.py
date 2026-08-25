@@ -438,17 +438,49 @@ def load_projects():
     csa_ccm.has_non_mappable_comments = False
     csa_ccm.has_non_mappables = False
 
+    cis = ExternalControl()
+    cis.id = "cis"
+    cis.label = "CIS"
+    cis.description = """description goes here."""
+    cis.attackDomains = ["Enterprise"]
+    cis.attackDomain = csa_ccm.attackDomains[0]
+    cis.attackVersions = ["19.1"]
+    cis.attackVersion = csa_ccm.attackVersions[0]
+    cis.versions = ["8.2"]
+    cis.validVersions = [
+        ("8.2", "19.1", "Enterprise"),
+    ]
+    cis.mappings = []
+    cis.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/csa-ccm-scope/",
+            "label": "Mapping Scope",
+        },
+        {
+            "link": "https://www.cisecurity.org/controls",
+            "label": "CIS (External link)",
+            "external": True,
+        },
+    ]
+    cis.has_non_mappable_comments = False
+    cis.has_non_mappables = False
+
     projects = [
+        cis,
         csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
-        veris,
-        azure,
-        gcp,
-        aws,
-        m365,
+        # cri_profile,
+        # intel_vpro,
+        # nist,
+        # kev,
+        # veris,
+        # azure,
+        # gcp,
+        # aws,
+        # m365,
     ]
     return projects
 
