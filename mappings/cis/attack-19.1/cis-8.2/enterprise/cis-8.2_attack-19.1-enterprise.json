@@ -11133,7 +11133,7 @@
             "capability_group": "CIS Control 4",
             "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.7",
@@ -11144,7 +11144,7 @@
             "capability_group": "CIS Control 4",
             "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.7",
@@ -11155,7 +11155,7 @@
             "capability_group": "CIS Control 4",
             "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11166,7 +11166,7 @@
             "capability_group": "CIS Control 9",
             "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email bombing technique page, including how enabling these mechanisms within an organization (through policies such as DMARC) may enable recipients (intra-org and cross domain) to perform similar message filtering and validation to mitigate this technique. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.7",
@@ -11177,7 +11177,7 @@
             "capability_group": "CIS Control 4",
             "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.7",
@@ -11188,7 +11188,7 @@
             "capability_group": "CIS Control 4",
             "comments": "Default accounts are defined as built-in or factory/provider-set accounts across systems, software, and devices. Managing, changing default passwords, disabling state accounts, or otherwise hardening them through additional mechanisms directly constrains an adversary's abuse of the valid account technique.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.3",
@@ -11199,7 +11199,7 @@
             "capability_group": "CIS Control 4",
             "comments": "The safeguard forces a renewed authentication checkpoint after inactivity and therefore reduces any possibility of opportunistic use of a still-authenticated user on an open unlocked enterprise asset.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11210,7 +11210,7 @@
             "capability_group": "CIS Control 9",
             "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce link-led spearphishing at the sender-authentication and mail acceptance time. It does not inspect the attachment itself though. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11221,7 +11221,7 @@
             "capability_group": "CIS Control 9",
             "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains. DMARC may reduce attachment-led spearphishing when the campaign depends on spoofed sender trust and domain authentication failure. It does not inspect the attachment itself though. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11232,7 +11232,7 @@
             "capability_group": "CIS Control 9",
             "comments": "DMARC may materially reduces phishing campaigns that rely on spoofed or unauthenticated sender domains.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11243,7 +11243,7 @@
             "capability_group": "CIS Control 9",
             "comments": "Social engineering is broadly defined as influencing users into actions while minimizing technical indicators, DMARC can be a meaningful control against the email-spoofing branch of this broader technique. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11254,7 +11254,7 @@
             "capability_group": "CIS Control 9",
             "comments": "DMARC may not stop all impersonation, but it reduces a major subset where trust is created through control of the visible sender identity and aligned sending domain.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.5",
@@ -11265,7 +11265,7 @@
             "capability_group": "CIS Control 9",
             "comments": "ATT&CK explicitly discusses DMARC, SPF, and DKIM on the Email Spoofing technique page, including how weak or absent DMARC leaves spoofed messages deliverable and how DMARC-enabled filtering mitigates the behavior",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "5.3",
@@ -11278,7 +11278,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls5/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "18.4",
@@ -12180,7 +12180,7 @@
             "capability_group": "CIS Control 9",
             "comments": "Adversaries may abuse container files such as compressed/archive (.arj, .gzip) and/or disk image (.iso, .vhd) file formats to deliver malicious payloads. The execution prevention mitigation mentions the use of blocking container file types at web and/or email gateways which could apply to the implementation of this safeguard.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12191,7 +12191,7 @@
             "capability_group": "CIS Control 9",
             "comments": "Adversaries may use VB payloads to execute malicious commands. Common malicious usage includes automating execution of behaviors with VBScript or embedding VBA content into spearphishing Attachment payloads. If .VB objects are blocked at the email boundary then it can mitigate the spearphishing delivery of this technique. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12202,7 +12202,7 @@
             "capability_group": "CIS Control 9",
             "comments": "A custom CHM file containing embedded payloads could be delivered to a victim through email then triggered by User Execution If those custom CHM files are blocked at the email boundary, then it can mitigate the delivery of this technique. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12213,7 +12213,7 @@
             "capability_group": "CIS Control 9",
             "comments": "dversaries often weaponize Office add-ins (e.g., Excel .xll files or Outlook .wll / .ecf extensions) by sending them via phishing campaigns. Blocking these file types at the email boundary prevents the initial execution and subsequent installation of malicious persistence mechanisms. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12224,7 +12224,7 @@
             "capability_group": "CIS Control 9",
             "comments": "File blocking mitigates embedded payloads by completely stripping high-risk file types at the perimeter, denying attackers the ability to deliver the initial malicious file or its nested, obfuscated components. Attackers frequently embed malicious scripts (e.g., .js, .vbs) inside legitimate document formats (e.g., PDFs, Word docs). By blocking macro-enabled or script-based file types, gateways prevent these malicious combinations from ever reaching the user's inbox",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12235,7 +12235,7 @@
             "capability_group": "CIS Control 9",
             "comments": "LNK files are used as phishing payloads and when a user invokes them they can download or execute additional payloads. If .lnk objects are blocked at the email boundary then it can mitigate the delivery of this technique. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12246,7 +12246,7 @@
             "capability_group": "CIS Control 9",
             "comments": "For this technique, adversaries may smuggle data and files past content filters by hiding malicious payloads inside of seemingly benign HTML files. If the implementation for 9.3 can mitigate this technique if it disallows .html, .htm, .hta, and similar active content files as email attachments on the block list. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12257,7 +12257,7 @@
             "capability_group": "CIS Control 9",
             "comments": "9.6 can prevent this type of technique if it blocks RAR, 7z, and other known unauthorized self-extracting archive types from specific machines. ",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12268,7 +12268,7 @@
             "capability_group": "CIS Control 9",
             "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12279,7 +12279,7 @@
             "capability_group": "CIS Control 9",
             "comments": "9.6 enforcement can reduce user exposure by removing risky files upstream at the point of email delivery.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12290,7 +12290,7 @@
             "capability_group": "CIS Control 9",
             "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "9.6",
@@ -12301,7 +12301,7 @@
             "capability_group": "CIS Control 9",
             "comments": "9.6 is a preventive email-gateway control that blocks disallowed attachment types before delivery.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12314,7 +12314,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12329,7 +12329,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12344,7 +12344,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12359,7 +12359,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12374,7 +12374,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12389,7 +12389,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12403,7 +12403,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.4",
@@ -12417,7 +12417,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12432,7 +12432,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12446,7 +12446,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12460,7 +12460,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.6",
@@ -12474,7 +12474,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.6",
@@ -12488,7 +12488,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.9",
@@ -12503,7 +12503,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.9",
@@ -12517,7 +12517,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.11",
@@ -12529,7 +12529,7 @@
             "score_category": "protect",
             "comments": "Credentials and authentication material are often stored within files, databases, configuration repositories, and application data stores. Encrypting sensitive data at rest reduces the usefulness of credential artifacts obtained from protected storage locations by preventing direct access to plaintext credential material.",
             "references": [],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "5.2",
@@ -12916,7 +12916,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12929,7 +12929,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/#35-securely-dispose-of-data"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12943,7 +12943,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12957,7 +12957,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "3.5",
@@ -12971,7 +12971,7 @@
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
-            "status": "participant_review"
+            "status": "complete"
         },
         {
             "capability_id": "4.2",
