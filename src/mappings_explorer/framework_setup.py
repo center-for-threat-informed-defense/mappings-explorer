@@ -584,6 +584,8 @@ def get_description_location(
         folder_name = DATA_DIR / "cri_profile"
     elif project.id == "csa_ccm":
         folder_name = DATA_DIR / "csa_ccm"
+    elif project.id == "cis":
+        folder_name = DATA_DIR / "cis"
 
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if group:
