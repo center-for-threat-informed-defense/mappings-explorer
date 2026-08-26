@@ -66,7 +66,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: "16"
+          node-version: "18"
       - run: npm install -g staticrypt@latest
       - name: Download Web Site
         uses: actions/download-artifact@v4
@@ -75,6 +75,10 @@ jobs:
           path: .
       - name: Decompress Artifacts
         run: unzip -q output.zip
+      - name: Inspect output size
+        run: |
+          du -sh output || true
+          find output -maxdepth 3 -type f | wc -l || true
       - env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
           NODE_OPTIONS: --max-old-space-size=8192
