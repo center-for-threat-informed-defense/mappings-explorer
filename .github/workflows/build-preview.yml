@@ -24,29 +24,38 @@ jobs:
       LOGURU_LEVEL: DEBUG
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: "3.9"
+
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
-            version: 1.8.5
+          version: 1.8.5
+
       - name: Collect Error Logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: logs
           path: /home/runner/work/**/*.log
+
       - name: Add Poetry to PATH
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+
       - name: Install dependencies
         run: poetry install
+
       - name: Build Web Site
         run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
+
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
+
       - name: Compress Artifacts
         run: zip -rq output.zip output/
+
       - name: Upload Web Site
         uses: actions/upload-artifact@v4
         with:
@@ -64,45 +73,71 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
     steps:
+      # Use a modern supported Node version for staticrypt
       - uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "22"
+
       - run: npm install -g staticrypt@latest
+
       - name: Download Web Site
         uses: actions/download-artifact@v4
         with:
           name: mapex-web-preview
           path: .
+
       - name: Decompress Artifacts
         run: unzip -q output.zip
+
+      # Optional: quick size check (you can remove this if you don't need it)
       - name: Inspect output size
         run: |
           du -sh output || true
           find output -maxdepth 3 -type f | wc -l || true
-      - env:
+
+      # Build an HTML-only tree that mirrors output/, to avoid encrypting large data files
+      - name: Prepare HTML-only tree for encryption
+        run: |
+          mkdir -p output-html
+          rsync -Ir \
+            --include='*/' \
+            --include='*.html' \
+            --exclude='*' \
+            output/ output-html/
+
+      - name: Run StatiCrypt on HTML-only tree
+        env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
           NODE_OPTIONS: --max-old-space-size=8192
         run: >
-          staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
-            --password $STATICRYPT_PASS --short \
-            --template-title "Mappings Explorer (branch: '${{ env.BRANCH_NAME }}/*'" \
-            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
-            --template-color-primary "#6241c5" \
-            --template-color-secondary "#b2b2b2" \
-            --template-button "Log In" \
-            -r output/
+          staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf
+            --password $STATICRYPT_PASS --short
+            --template-title "Mappings Explorer (branch: '${{ env.BRANCH_NAME }}/*'"
+            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals."
+            --template-color-primary "#6241c5"
+            --template-color-secondary "#b2b2b2"
+            --template-button "Log In"
+            -r output-html/
+
       - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
         run: test -d encrypted
-      - name: Copy encrypted HTML files
-        run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
+
+      # Overlay encrypted HTML files back into the main output/ tree
+      - name: Copy encrypted HTML files into output
+        run: rsync -Ir encrypted/output-html/ output/
+
       - name: Set the branch name
         run: mv output ${{ env.BRANCH_NAME }}
+
       - name: Install Azure CLI
         run: pip install azure-cli==2.76.0
+
       - name: Delete old blobs
         run: az storage blob delete-batch -s '$web' --pattern '${{ env.BRANCH_NAME }}/*'
+
       - name: Upload to blob storage
         run: az storage blob upload-batch -s . --pattern '${{ env.BRANCH_NAME }}/*' -d '$web'
+
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
