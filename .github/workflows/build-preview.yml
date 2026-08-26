@@ -73,12 +73,13 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
     steps:
-      # Use a modern supported Node version for staticrypt
+      # Use Node 18 (widely supported, stable) for Staticrypt
       - uses: actions/setup-node@v3
         with:
-          node-version: "22"
+          node-version: "18"
 
-      - run: npm install -g staticrypt@latest
+      # Pin Staticrypt to a specific stable v3.x version instead of "latest"
+      - run: npm install -g staticrypt@3.4.0
 
       - name: Download Web Site
         uses: actions/download-artifact@v4
@@ -89,7 +90,7 @@ jobs:
       - name: Decompress Artifacts
         run: unzip -q output.zip
 
-      # Optional: quick size check
+      # Optional: quick size check while we’re debugging
       - name: Inspect output size
         run: |
           du -sh output || true
@@ -105,7 +106,7 @@ jobs:
             --exclude='*' \
             output/ output-html/
 
-      # Correct staticrypt usage: single command with -r on the same line
+      # Run Staticrypt on the HTML-only tree (single command, -r flag on the same line)
       - name: Run StatiCrypt on HTML-only tree
         env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
