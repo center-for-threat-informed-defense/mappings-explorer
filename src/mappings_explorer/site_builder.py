@@ -28,6 +28,31 @@ from .template import (
 )
 
 
+def normalize_log_field_values(value):
+    """Always return log_field as a list of strings."""
+    if value is None:
+        return []
+
+    if isinstance(value, list):
+        return [str(v) for v in value if v not in (None, "")]
+
+    if value == "":
+        return []
+
+    return [str(value)]
+
+
+def log_field_slug(value: str) -> str:
+    """Build the same path segment used for log field pages."""
+    return str(value).replace(" ", "_")
+
+
+def normalize_mapping_log_fields(mappings: list):
+    """Normalize log_field on every mapping object."""
+    for mapping in mappings:
+        mapping["log_field"] = normalize_log_field_values(mapping.get("log_field"))
+
+
 def replace_mapping_type(mapping: dict, type_list: list):
     """Replace the mapping_type value with the more descriptive name found in mappings
     file metadata
@@ -93,6 +118,9 @@ def parse_capability_groups(
             mapping, metadata["mapping_types"]
         )
         mapping["framework"] = project.id
+
+    normalize_mapping_log_fields(mappings)
+
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
             g = CapabilityGroup()
@@ -187,8 +215,11 @@ def parse_log_fields(
     if project.id != "windows":
         return
 
-    all_fields = [m.get("log_field", "") for m in mappings if m.get("log_field")]
-    log_field_ids = list(set(all_fields))
+    all_fields = []
+    for m in mappings:
+        all_fields.extend(normalize_log_field_values(m.get("log_field")))
+
+    log_field_ids = list(dict.fromkeys(all_fields))
     log_fields = []
 
     for field_id in log_field_ids:
@@ -201,14 +232,15 @@ def parse_log_fields(
         field_mappings = [
             m
             for m in mappings
-            if (m.get("log_field") == field_id) and m["status"] != "non_mappable"
+            if field_id in normalize_log_field_values(m.get("log_field"))
+            and m["status"] != "non_mappable"
         ]
 
         lf.num_mappings = len(field_mappings)
         lf.mappings = field_mappings
+        lf.label = field_id
 
         if len(field_mappings) > 0:
-            lf.label = field_mappings[0].get("log_field", field_id)
             for mapping in field_mappings:
                 mapping["project"] = project.id
                 mapping["project_version"] = project_version
@@ -515,7 +547,7 @@ def build_external_landing(
                 external_prefix,
             ),
             (
-                ":pfx_link:",
+                ":pfx_link_list:",
                 "log_field",
                 "Contains Field",
                 "log_field",
@@ -601,6 +633,7 @@ def build_external_landing(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
 
@@ -637,6 +670,7 @@ def build_external_landing(
             table_max_count=table_max_count,
             full_link="all-data.html",
             full_size=full_size,
+            log_field_slug=log_field_slug,
         )
         stream.dump(str(output_path))
 
@@ -728,7 +762,7 @@ def build_external_landing(
             if log_field.num_mappings > 0:
                 log_field_nav = breadcrumbs + [
                     (
-                        f"{log_source_prefix}{log_field.id}/",
+                        f"{log_source_prefix}{log_field_slug(log_field.id)}/",
                         f"{log_field.label if log_field.label else log_field.id}",
                     ),
                 ]
@@ -857,6 +891,7 @@ def build_capability_group(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace(
@@ -892,7 +927,7 @@ def build_log_field(
        breadcrumbs: breadcrumb navigation for the page
        previous_link: link to go to in order to "change versions" on banner or badges
     """
-    dir = parent_dir / log_field.id.replace(" ", "_")
+    dir = parent_dir / log_field_slug(log_field.id)
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     template = load_template("log_field.html.j2")
@@ -920,6 +955,7 @@ def build_log_field(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace("          Created log field page {id}", id=log_field.id)
@@ -980,6 +1016,7 @@ def build_external_capability(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace("          Created capability page {id}", id=capability.id)
