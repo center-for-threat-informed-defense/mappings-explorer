@@ -89,7 +89,7 @@ jobs:
       - name: Decompress Artifacts
         run: unzip -q output.zip
 
-      # Optional: quick size check (keep for now while debugging; remove later if desired)
+      # Optional: quick size check
       - name: Inspect output size
         run: |
           du -sh output || true
@@ -105,23 +105,21 @@ jobs:
             --exclude='*' \
             output/ output-html/
 
-      # Correct staticrypt usage: pass the input directory as a positional argument,
-      # and use -r / --recursive as a flag (no value)
+      # Correct staticrypt usage: single command with -r on the same line
       - name: Run StatiCrypt on HTML-only tree
         env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
           NODE_OPTIONS: --max-old-space-size=8192
-        run: >
-          staticrypt output-html/
-            -r
-            --remember 30
-            --salt c0c22fdf0cd9d2a099db9c90ca4a58bf
-            --password "$STATICRYPT_PASS"
-            --short
-            --template-title "Mappings Explorer (branch: '${{ env.BRANCH_NAME }}')"
-            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals."
-            --template-color-primary "#6241c5"
-            --template-color-secondary "#b2b2b2"
+        run: |
+          staticrypt -r output-html/ \
+            --remember 30 \
+            --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
+            --password "$STATICRYPT_PASS" \
+            --short \
+            --template-title "Mappings Explorer (branch: '${{ env.BRANCH_NAME }}')" \
+            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
+            --template-color-primary "#6241c5" \
+            --template-color-secondary "#b2b2b2" \
             --template-button "Log In"
 
       - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
