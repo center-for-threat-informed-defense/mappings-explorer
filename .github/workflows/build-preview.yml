@@ -3,9 +3,6 @@ name: Build Website
 on:
   pull_request:
 
-# If another web build starts for the same branch, cancel the previous build. This
-# protects us from two builds trying to upload at the same time and clobbering each
-# other.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -34,13 +31,6 @@ jobs:
         with:
           version: 1.8.5
 
-      - name: Collect Error Logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs
-          path: /home/runner/work/**/*.log
-
       - name: Add Poetry to PATH
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
 
@@ -62,7 +52,14 @@ jobs:
           name: mapex-web-preview
           path: output.zip
 
-  # Publish to Azure blob only on PRs, not main.
+      - name: Collect Error Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-build-preview
+          path: /home/runner/work/**/*.log
+          if-no-files-found: ignore
+
   azure_blob:
     if: github.ref_name != 'main'
     needs: build_preview
@@ -73,13 +70,17 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
     steps:
-      # Use Node 18 (widely supported, stable) for Staticrypt
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
 
-      # Pin Staticrypt to a specific stable v3.x version instead of "latest"
       - run: npm install -g staticrypt@3.4.0
+
+      - name: Show tool versions
+        run: |
+          node --version
+          npm --version
+          staticrypt --version || true
 
       - name: Download Web Site
         uses: actions/download-artifact@v4
@@ -90,24 +91,50 @@ jobs:
       - name: Decompress Artifacts
         run: unzip -q output.zip
 
-      # Optional: quick size check while we’re debugging
-      - name: Inspect output size
+      - name: Inspect raw output tree
         run: |
+          echo "Overall size:"
           du -sh output || true
-          find output -maxdepth 3 -type f | wc -l || true
+          echo
+          echo "Directory count:"
+          find output -type d | wc -l || true
+          echo "File count:"
+          find output -type f | wc -l || true
+          echo "HTML file count:"
+          find output -type f -name '*.html' | wc -l || true
+          echo
+          echo "Largest HTML files:"
+          find output -type f -name '*.html' -printf '%s\t%p\n' | sort -nr | head -20 || true
 
-      # Build an HTML-only tree that mirrors output/, to avoid encrypting large data files
       - name: Prepare HTML-only tree for encryption
         run: |
+          rm -rf output-html encrypted
           mkdir -p output-html
-          rsync -Ir \
-            --include='*/' \
-            --include='*.html' \
-            --exclude='*' \
-            output/ output-html/
 
-      # Run Staticrypt on the HTML-only tree (single command, -r flag on the same line)
-      - name: Run StatiCrypt on HTML-only tree
+          find output -type f -name '*.html' -print0 | while IFS= read -r -d '' file; do
+            rel="${file#output/}"
+            mkdir -p "output-html/$(dirname "$rel")"
+            cp "$file" "output-html/$rel"
+          done
+
+      - name: Inspect HTML-only tree
+        run: |
+          echo "output-html size:"
+          du -sh output-html || true
+          echo
+          echo "output-html directory count:"
+          find output-html -type d | wc -l || true
+          echo "output-html empty directory count:"
+          find output-html -type d -empty | wc -l || true
+          echo "output-html file count:"
+          find output-html -type f | wc -l || true
+          echo "output-html HTML count:"
+          find output-html -type f -name '*.html' | wc -l || true
+          echo
+          echo "Largest HTML files in output-html:"
+          find output-html -type f -name '*.html' -printf '%s\t%p\n' | sort -nr | head -20 || true
+
+      - name: Run Staticrypt on HTML-only tree
         env:
           STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
           NODE_OPTIONS: --max-old-space-size=8192
@@ -123,10 +150,12 @@ jobs:
             --template-color-secondary "#b2b2b2" \
             --template-button "Log In"
 
-      - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
-        run: test -d encrypted
+      - name: Verify Staticrypt output
+        run: |
+          test -d encrypted/output-html
+          echo "Encrypted HTML count:"
+          find encrypted/output-html -type f -name '*.html' | wc -l
 
-      # Overlay encrypted HTML files back into the main output/ tree
       - name: Copy encrypted HTML files into output
         run: rsync -Ir encrypted/output-html/ output/
 
@@ -152,3 +181,11 @@ jobs:
               repo: context.repo.repo,
               body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
             })
+
+      - name: Collect Error Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-azure-blob
+          path: /home/runner/work/**/*.log
+          if-no-files-found: ignore
