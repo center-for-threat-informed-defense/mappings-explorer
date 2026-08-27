@@ -4,7 +4,6 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -19,10 +18,17 @@ jobs:
   build_preview:
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: ${{ replace(github.head_ref || github.ref_name, '/', '-') }}
       LOGURU_LEVEL: DEBUG
 
     steps:
+      - name: Set branch name
+        shell: bash
+        run: |
+          RAW_BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          SANITIZED_BRANCH="${RAW_BRANCH//\//-}"
+          echo "BRANCH_NAME=$SANITIZED_BRANCH" >> "$GITHUB_ENV"
+          echo "Using branch name: $SANITIZED_BRANCH"
+
       - name: Check out repository
         uses: actions/checkout@v4
 
@@ -69,10 +75,17 @@ jobs:
       AZURE_STORAGE_ACCOUNT: mappingsexplorer
       AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
-      BRANCH_NAME: ${{ replace(github.head_ref || github.ref_name, '/', '-') }}
       PREVIEW_MAX_HTML_BYTES: "20000000"
 
     steps:
+      - name: Set branch name
+        shell: bash
+        run: |
+          RAW_BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          SANITIZED_BRANCH="${RAW_BRANCH//\//-}"
+          echo "BRANCH_NAME=$SANITIZED_BRANCH" >> "$GITHUB_ENV"
+          echo "Using branch name: $SANITIZED_BRANCH"
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
