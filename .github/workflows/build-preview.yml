@@ -146,20 +146,20 @@ jobs:
                   skipped.append((size, str(rel)))
                   out.write_text(
                       f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Preview omitted</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <h1>Preview omitted for oversized page</h1>
-  <p>This PR preview omits this page because the generated HTML is too large for Staticrypt to process reliably in GitHub Actions.</p>
-  <p><strong>Path:</strong> <code>{html.escape(str(rel))}</code></p>
-  <p><strong>Size:</strong> {size} bytes</p>
-</body>
-</html>
-""",
+                        <html lang="en">
+                        <head>
+                          <meta charset="utf-8">
+                          <title>Preview omitted</title>
+                          <meta name="viewport" content="width=device-width, initial-scale=1">
+                        </head>
+                        <body>
+                          <h1>Preview omitted for oversized page</h1>
+                          <p>This PR preview omits this page because the generated HTML is too large for Staticrypt to process reliably in GitHub Actions.</p>
+                          <p><strong>Path:</strong> <code>{html.escape(str(rel))}</code></p>
+                          <p><strong>Size:</strong> {size} bytes</p>
+                        </body>
+                        </html>
+                        """,
                       encoding="utf-8",
                   )
               else:
