@@ -1978,6 +1978,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
 
     build_about_page(
         url_prefix=url_prefix,
+        url_suffix="about/methodology/stp-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/stp_methodology.html.j2",
+        title="Summitting the Pyramid Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
         url_suffix="about/scoring",
         breadcrumbs=about_breadcrumbs,
         template_path="scoring_rubric.html.j2",
@@ -2073,6 +2081,4 @@ def main():
     build_search_index(url_prefix, breadcrumbs)
     logger.info("Done building site")
 
-
-if __name__ == "__main__":
     main()

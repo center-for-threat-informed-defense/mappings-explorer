@@ -1,0 +1,121 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container ">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">Summitting the Pyramid <span class="highlight">MAPPING METHODOLOGY</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Overview</h2>
+        </div>
+
+        <p>This project produced a structured dataset of Windows Event Log reference fields indexed by Windows Event ID. The purpose of the dataset was to create a consistent set of XML fields found within common and advanced Windows Security auditing events, and to provide a foundation for later analytic work.</p>
+        <p> The work was limited to documenting the published XML structure and normalizing to appropriate fields. The derived data set does not directly interpret the meaning of individual fields or create specific detection mappings. However, the data set can be used to map to different frameworks, detection analytics, and other use cases.</p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Scope</h2>
+        </div>
+        <p>This methodology describes only the extraction and normalization of Windows Event Log reference fields. It does not define ATT&CK mappings, OCSF mappings, ECS mappings, Sigma field mappings, or detection logic. </p>
+        <p>Those activities build upon the reference field dataset but are outside the scope of this methodology. </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Event Selection</h2>
+        </div>
+        <p>In choosing which Windows Event IDs to select for review, this project leveraged previous work done with <a href="https://center-for-threat-informed-defense.github.io/sensor-mappings-to-attack/levels/mapping_winevtx/" target="_blank">Sensor Mappings to ATT&CK</a>. While this list contained a comprehensive list of Windows Event IDs, their corresponding ATT&CK ID, and ATT&CK data component, the list did not include specific reference fields for each event.</p>
+        <p>By providing a detailed list of XML fields for each event, this project can be used as a starting point for any field-level detail needed for later mapping and analysis. </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Source Selection and Version Handling </h2>
+        </div>
+        <p>The primary source for event definitions was Microsoft's official Windows Security Auditing documentation found at <a href="http://learn.microsoft.com/" target="_blank">learn.microsoft.com</a>. Whenever available, the most recent XML event definition published by Microsoft was used as the authoritative source. </p>
+        <p>When the relevant Microsoft Learn page did not include a complete XML example, other Microsoft-published material was consulted as necessary. External sources were considered only when the required information could not be verified through Microsoft documentation.  </p>
+        <p>Older event versions were intentionally ignored unless the latest version is unavailable, documentation is missing, or historical compatibility is specifically required. Furthermore, fields from earlier versions were not merged into the current version. Combining versions could produce a field list that does not correspond to an XML structure emitted by any single version of the event.  </p>
+        <p>If no documentation could be found, then the event in question was excluded from analysis.</p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Dataset Organization/h2>
+        </div>
+        <p>The final dataset is organized by Event ID. Each record contains the Windows Event ID, the XML section, the normalized reference field, and validation-related notes or references as needed. </p>
+       <p>This structure provides a reusable reference for future mapping efforts while remaining independent of any target schema. </p>
+    </div>
+</section>
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+        <div class="section-header">
+            <h2>XML Analysis /h2>
+        </div>
+        <p>For every event, the latest documented XML was identified, the event version was verified, the complete XML definition was recorded, and then each event was separated into its System and EventData sections. </p>
+        <p>This separation reflects the native Windows Event Log schema and avoids mixing event metadata with event-specific data during extraction. </p>
+        <p>Each XML document is then parsed to identify every published field. The methodology does not interpret field meaning during this stage. Instead, the objective is to enumerate the field name, XML location, ordering, and whether the field belongs to System or EventData. </p>
+        <p>For example, a field such as <Data Name="TargetUserName"/> is treated as an EventData field and is preserved as EventData.TargetUserName. Likewise, a System field such as EventID becomes System.EventID. </p>
+    </div>
+</section>
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+        <div class="section-header">
+            <h2>Reference Field Extraction /h2>
+        </div>
+        <p>Every XML element representing event data is converted into a normalized reference field. System fields are prefixed with “System.*”, and EventData fields are prefixed with “EventData.*”. This creates a consistent naming convention across all Windows events while preserving the original XML hierarchy. </p>
+        <p>The resulting reference field name is intentionally simple. It reflects only the XML section and the XML field name. It does not infer technique mappings, schema mappings, or detection semantics. </p>
+    </div>
+</section>
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+        <div class="section-header">
+            <h2>Automation/h2>
+        </div>
+        <p>Because several hundred Windows Security events were analyzed, automation was used wherever practical. Web scraping scripts helped pull reference XMLs and other documents whenever possible. A combination of MITRE-owned LLMs and enterprise chatbots helped parse XML definitions, enumerate XML elements, generate normalized reference field names, organize extracted fields by Event ID, and populate spreadsheet templates. In some cases, a human produced style document with mappings was introduced to helped guide automated processes. </p>
+        <p>Automation tooling was directed to intentionally avoid making semantic decisions or was directed to give options for expert review. Tasks requiring interpretation, including event validation, version selection, documentation gaps, and ambiguous field handling, were reviewed manually. </p>
+    </div>
+</section>
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+        <div class="section-header">
+            <h2>Manual Validation/h2>
+        </div>
+        <p>Automated extraction was supplemented by manual review. Each extracted event was compared against its source XML to verify Event ID, field names, field ordering, XML hierarchy, and the presence or absence of duplicate fields. </p>
+        <p>Manual validation was especially important for events with multiple versions, deprecated events, undocumented fields, localization artifacts, and inconsistencies across Microsoft documentation. </p>
+        <p>This form of validation also allowed for removing non-relevant fields. Certain System and EventData reference fields provide no additional benefit for mapping. For example, OpCode reference field provides very little benefit to mapping.  </p>
+    </div>
+</section>
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Limitations/h2>
+        </div>
+        <p>Microsoft documentation changes over time, and XML definitions may be updated in future Windows releases. Some events remain undocumented or only partially documented. Localized Windows installations may expose translated descriptions while retaining the same XML field names. </p>
+        <p>Finally, this methodology preserves Microsoft's published event structure rather than attempting to infer undocumented fields or normalize field semantics beyond the XML extraction process. </p>
+    </div>
+</section>
+{% endblock content %}

@@ -460,12 +460,8 @@ def load_projects():
     windows.mappings = []
     windows.resources = [
         {
-            "link": "about/methodology/",
+            "link": "about/methodology/stp-methodology",
             "label": "Mapping Methodology",
-        },
-        {
-            "link": "about/methodology/csa-ccm-scope/",
-            "label": "Mapping Scope",
         },
         {
             "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
@@ -488,12 +484,8 @@ def load_projects():
     sysmon.mappings = []
     sysmon.resources = [
         {
-            "link": "about/methodology/",
+            "link": "about/methodology/stp-methodology",
             "label": "Mapping Methodology",
-        },
-        {
-            "link": "about/methodology/csa-ccm-scope/",
-            "label": "Mapping Scope",
         },
         {
             "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
