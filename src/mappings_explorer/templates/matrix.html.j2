@@ -1,8 +1,14 @@
-{% extends "base.html.j2" %} {% block content %}
+{% extends "base.html.j2" %}
+
+{% block content %}
 <div id="matrix-component">
-  <Matrix :url_prefix="'{{url_prefix}}'" :all_attack_versions="{{all_attack_versions}}"
-    :all_attack_domains="{{attack_domains}}" :matrix_order="{{matrix_order}}"
-    :attack_domain_versions_with_mappings="{{attack_domain_versions_with_mappings}}"></Matrix>
+  <Matrix
+    :url_prefix="'{{ url_prefix }}'"
+    :all_attack_versions='{{ all_attack_versions|tojson }}'
+    :all_attack_domains='{{ attack_domains|tojson }}'
+    :matrix_order='{{ matrix_order|tojson }}'
+    :attack_domain_versions_with_mappings='{{ attack_domain_versions_with_mappings|tojson }}'
+  ></Matrix>
 </div>
 
 <script>
@@ -13,20 +19,21 @@
           {% include "_breadcrumbs.html.j2" %}
           <div class="row justify-content-left">
             <div class="col-lg-8 col-md-10 col-sm-12">
-              <h1> <span class="highlight">ATT&CK</span> MATRIX</h1>
-              <p>[[description]]</p>
+              <h1><span class="highlight">ATT&CK</span> MATRIX</h1>
+              <p>[[ description ]]</p>
               <p>
                 View information about techniques, how techniques and tactics interact, and the
                 <a href="https://ctid.mitre.org/" target="_blank">
-                Center for Threat-Informed Defense
+                  Center for Threat-Informed Defense
                 </a>'s mappings coverage of
                 <a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK®</a>
                 techniques in the Mappings Explorer matrix view below.
               </p>
             </div>
+
             <div
               class="download-artifacts col-lg-4 col-md-2 col-sm-12 ml-20"
-              v-if="attack_domain_versions_with_mappings[selectedDomain].includes(selectedAttackVersion)"
+              v-if="canDownloadArtifacts"
             >
               <h6>Download Mapping Artifacts:</h6>
               <div class="downloads">
@@ -34,10 +41,13 @@
                   <a
                     class="link"
                     @click="downloadJson(
-                    url_prefix + 'static/matrices/' + selectedDomain.toLowerCase() + '/' + selectedAttackVersion + '/' + selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json',
-                    selectedDomain.toLowerCase() + '-' + selectedAttackVersion + '_navigator_layer.json'
-                  )">
-                    <span><img src="{{url_prefix}}static/img/download.svg" alt="download" style="height: 20px;"/></span>
+                      url_prefix + 'static/matrices/' + selectedDomain + '/' + selectedAttackVersion + '/' + selectedDomain + '-' + selectedAttackVersion + '_navigator_layer.json',
+                      selectedDomain + '-' + selectedAttackVersion + '_navigator_layer.json'
+                    )"
+                  >
+                    <span>
+                      <img src="{{ url_prefix }}static/img/download.svg" alt="download" style="height: 20px;"/>
+                    </span>
                     Navigator Layers
                   </a>
                 </p>
@@ -46,6 +56,7 @@
           </div>
         </div>
       </section>
+
       <div class="matrix-component" id="matrix">
         <div class="container">
           <div class="row justify-content-left">
@@ -59,36 +70,37 @@
                   </div>
                   <div v-if="attackSelectOpen" class="dropdown-items">
                     <div
-                      :class="{
-                        'dropdown-item': true,
-                        'invalid-option': !attack_domain_versions_with_mappings[selectedDomain].includes(attackVersion),
-                        'selected-option': selectedAttackVersion === attackVersion
-                      }"
                       v-for="attackVersion in attackVersions"
                       :key="attackVersion"
-                      @click="selectedAttackVersion = attackVersion; getAttackObjectDict(); attackSelectOpen = false;"
+                      :class="{
+                        'dropdown-item': true,
+                        'invalid-option': !isVersionValidForDomain(attackVersion, selectedDomain),
+                        'selected-option': selectedAttackVersion === attackVersion
+                      }"
+                      @click="setSelectedAttackVersion(attackVersion); attackSelectOpen = false;"
                     >
                       <span class="dropdown-item-text">[[ attackVersion ]]</span>
                     </div>
                   </div>
                 </div>
+
                 <div class="col-md-2 col-sm-4 form-group" @focusout="handleOutsideClick" tabindex="-1">
                   <p>ATT&CK Domain</p>
                   <div class="form-control select" @click="domainSelectOpen = !domainSelectOpen">
-                    <span class="selected-item">[[ selectedDomain ]]</span>
+                    <span class="selected-item">[[ formatDomainLabel(selectedDomain) ]]</span>
                   </div>
                   <div v-if="domainSelectOpen" class="dropdown-items">
                     <div
-                      :class="{
-                        'dropdown-item': true,
-                        'invalid-option': !attack_domain_versions_with_mappings[domain].includes(selectedAttackVersion),
-                        'selected-option': selectedDomain === domain
-                      }"
                       v-for="domain in attackDomains"
                       :key="domain"
-                      @click="selectedDomain = domain; getAttackObjectDict(); domainSelectOpen = false;"
+                      :class="{
+                        'dropdown-item': true,
+                        'invalid-option': !isVersionValidForDomain(selectedAttackVersion, domain),
+                        'selected-option': selectedDomain === domain
+                      }"
+                      @click="setSelectedDomain(domain); domainSelectOpen = false;"
                     >
-                      <span class="dropdown-item-text">[[ domain ]]</span>
+                      <span class="dropdown-item-text">[[ formatDomainLabel(domain) ]]</span>
                     </div>
                   </div>
                 </div>
@@ -101,34 +113,63 @@
           <div class="container">
             <div class="row justify-content-left">
               <div class="col-12">
-                <h2>ATT&CK v[[selectedAttackVersion]] [[selectedDomain.toUpperCase()]] MAPPINGS MATRIX</h2>
-                <div class="matrix-table-container">
+                <h2>ATT&CK v[[ selectedAttackVersion ]] [[ selectedDomain.toUpperCase() ]] MAPPINGS MATRIX</h2>
+
+                <div v-if="errorMessage" class="alert alert-warning mt-3" role="alert">
+                  [[ errorMessage ]]
+                </div>
+
+                <div class="matrix-table-container" v-if="!errorMessage">
                   <div class="row">
                     <div class="col-md-12" style="display: flex">
-                      <button @click="toggleAllTechniques(true)" class="toggle-subtechniques-btn">Show All Sub-Techniques</button>
-                      <button @click="toggleAllTechniques(false)" class="toggle-subtechniques-btn">Hide All Sub-Techniques</button>
+                      <button type="button" @click="toggleAllTechniques(true)" class="toggle-subtechniques-btn">
+                        Show All Sub-Techniques
+                      </button>
+                      <button type="button" @click="toggleAllTechniques(false)" class="toggle-subtechniques-btn">
+                        Hide All Sub-Techniques
+                      </button>
                     </div>
                   </div>
+
                   <div class="matrix-table-container-relative">
                     <div class="scroll-indicator-left" v-if="!scrolledCompletelyToLeft"></div>
+
                     <div class="overflow-scroll" id="matrix-table-scrollable" @scroll="handleScroll">
                       <div class="row tactic-row row--no-x-margin row--no-padding flex-nowrap">
-                        <div v-for="tactic in tactics" class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding tactic-box">
+                        <div
+                          v-for="tactic in tactics"
+                          :key="tactic.id"
+                          class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding tactic-box"
+                        >
                           <div class="tactic-header">
-                            <a :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/tactics/' + tactic.id + '/'"  class="tactic-name">[[  tactic.name ]]</a>
+                            <a
+                              :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/tactics/' + tactic.id + '/'"
+                              class="tactic-name"
+                            >
+                              [[ tactic.name ]]
+                            </a>
                             <br/>
                             ([[ tactic.id ]])
                           </div>
                         </div>
                       </div>
+
                       <div class="row row--no-x-margin row--no-padding flex-nowrap">
-                        <div class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding" v-for="tactic in tactics">
-                          <div class="row row--no-x-margin row--no-padding" v-for="technique in tactic.techniques">
+                        <div
+                          class="col-lg-1 col-md-2 col-sm-4 col--less-x-padding"
+                          v-for="tactic in tactics"
+                          :key="'col-' + tactic.id"
+                        >
+                          <div
+                            class="row row--no-x-margin row--no-padding"
+                            v-for="technique in tactic.techniques"
+                            :key="technique.id + '-' + tactic.id"
+                          >
                             <div class="row row--no-x-margin row--no-padding">
                               <div
                                 :class="{
                                   'col-2 align-items-center col--less-x-padding d-flex': true,
-                                  'subtechnique-toggle-col' : technique.subtechniques.length,
+                                  'subtechnique-toggle-col': technique.subtechniques.length,
                                   'subtechnique-toggle-col--no-icon': !technique.subtechniques.length
                                 }"
                               >
@@ -136,17 +177,18 @@
                                   v-if="technique.subtechniques.length && !technique.open"
                                   @click="handleClick(technique)"
                                   class="icon"
-                                  src="{{url_prefix}}static/img/chevron-right.svg"
+                                  src="{{ url_prefix }}static/img/chevron-right.svg"
                                   alt=""
                                 />
                                 <img
                                   v-else-if="technique.subtechniques.length && technique.open"
                                   @click="handleClick(technique)"
                                   class="icon"
-                                  src="{{url_prefix}}static/img/chevron-down.svg"
+                                  src="{{ url_prefix }}static/img/chevron-down.svg"
                                   alt=""
                                 />
                               </div>
+
                               <div
                                 class="col-10 col--no-x-padding"
                                 @mouseenter="techniqueHovered = technique"
@@ -155,44 +197,60 @@
                               >
                                 <div
                                   class="technique-box"
-                                  :style="technique.background_color ? { 'backgroundColor': technique.background_color} : ''"
+                                  :style="technique.background_color ? { backgroundColor: technique.background_color } : {}"
                                 >
                                   <a
                                     v-if="technique.score > 0"
-                                    :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + technique.id"
+                                    :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/techniques/' + technique.id"
                                     @mouseenter="techniqueHovered = technique"
                                   >
-                                    [[  technique.name  ]]
+                                    [[ technique.name ]]
                                   </a>
                                   <span v-else>[[ technique.name ]]</span>
                                   <br/>
-                                  ( [[ technique.id ]] )
+                                  ([[ technique.id ]])
                                   <span class="technique-score" v-if="technique.subtechniques.length">
                                     ([[ technique.subtechniques.length ]])
                                   </span>
                                 </div>
                               </div>
                             </div>
+
                             <div class="row row--no-x-margin row--no-padding">
                               <div class="col-2 col--no-x-padding subtechniques-col">
-                                <svg fill="grey" v-if="technique.open && technique.subtechniques.length" width="12px" height="20px"><path d="M0 0H12V12Z"/></svg>
+                                <svg
+                                  fill="grey"
+                                  v-if="technique.open && technique.subtechniques.length"
+                                  width="12px"
+                                  height="20px"
+                                >
+                                  <path d="M0 0H12V12Z"/>
+                                </svg>
                               </div>
-                              <div
-                                class="col-10
-                                col--no-x-padding"
-                              >
+
+                              <div class="col-10 col--no-x-padding">
                                 <div
                                   v-if="technique.open"
                                   v-for="subtechnique in technique.subtechniques"
+                                  :key="subtechnique.id + '-' + subtechnique.parent"
                                   @mouseenter="techniqueHovered = subtechnique"
                                   @mouseleave="techniqueHovered = ''"
-                                  :id="subtechnique.id + '_'+ subtechnique.parent + '_box'"
+                                  :id="subtechnique.id + '_' + subtechnique.parent + '_box'"
                                 >
-                                  <div class="subtechnique-box" :style="subtechnique.background_color ? { 'backgroundColor': subtechnique.background_color} : ''">
-                                    <a v-if="subtechnique.score >0" :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain.toLowerCase() + '/techniques/' + subtechnique.id" @mouseenter="techniqueHovered = subtechnique">[[ subtechnique.name ]]</a>
+                                  <div
+                                    class="subtechnique-box"
+                                    :style="subtechnique.background_color ? { backgroundColor: subtechnique.background_color } : {}"
+                                  >
+                                    <a
+                                      v-if="subtechnique.score > 0"
+                                      :href="url_prefix + 'attack/attack-' + selectedAttackVersion + '/domain-' + selectedDomain + '/techniques/' + subtechnique.id"
+                                      @mouseenter="techniqueHovered = subtechnique"
+                                    >
+                                      [[ subtechnique.name ]]
+                                    </a>
                                     <span v-else>[[ subtechnique.name ]]</span>
                                     <br/>
-                                    ( [[ subtechnique.id ]] )
+                                    ([[ subtechnique.id ]])
                                   </div>
                                 </div>
                               </div>
@@ -201,6 +259,7 @@
                         </div>
                       </div>
                     </div>
+
                     <div class="scroll-indicator-right" v-if="!scrolledCompletelyToRight"></div>
                   </div>
                 </div>
@@ -208,6 +267,7 @@
             </div>
           </div>
         </section>
+
         <div
           v-if="techniqueHovered && techniqueHovered.score > 0"
           class="technique-tooltip align-self-center align-content-start"
@@ -219,14 +279,21 @@
           <span>Mapped To:</span>
           <br/>
           <ul class="mapped-capability-list">
-            <li v-for="mappedCapability in techniqueHovered.mapped_capabilities">
+            <li v-for="mappedCapability in techniqueHovered.mapped_capabilities" :key="mappedCapability">
               [[ mappedCapability ]]
             </li>
           </ul>
         </div>
       </div>
-  `,
+    `,
     delimiters: ["[[", "]]"],
+    props: {
+      url_prefix: String,
+      matrix_order: Object,
+      all_attack_versions: Array,
+      all_attack_domains: Object,
+      attack_domain_versions_with_mappings: Object,
+    },
     data() {
       return {
         amountMatrixColsShown: undefined,
@@ -235,218 +302,328 @@
         selectedAttackVersion: "16.1",
         attackObjectDict: {},
         techniqueHovered: "",
-        selectedDomain: "Enterprise",
+        selectedDomain: "enterprise",
         scrolledCompletelyToRight: false,
         scrolledCompletelyToLeft: true,
         attackSelectOpen: false,
         domainSelectOpen: false,
         description: "",
         matrixOrder: [],
+        errorMessage: "",
       };
-    },
-    props: {
-      url_prefix: String,
-      matrix_order: Object,
-      all_attack_versions: Array,
-      all_attack_domains: Object,
-      attack_domain_versions_with_mappings: Object,
     },
     computed: {
       attackDomains() {
-        if (this.all_attack_domains) {
-          return Object.keys(this.all_attack_domains).filter((domain) => {
-            return this.all_attack_domains[domain].includes(
-              this.selectedAttackVersion
-            );
-          });
-        }
-        return [];
+        return Object.keys(this.all_attack_domains || {});
       },
       attackVersions() {
-        if (this.all_attack_versions) {
-          return this.all_attack_domains[this.selectedDomain];
-        }
+        return this.all_attack_versions || [];
+      },
+      canDownloadArtifacts() {
+        return (this.attack_domain_versions_with_mappings?.[this.selectedDomain] || []).includes(this.selectedAttackVersion);
       },
     },
     methods: {
-      downloadJson(file, filename){
+      formatDomainLabel(domain) {
+        if (!domain) return "";
+        return domain.charAt(0).toUpperCase() + domain.slice(1);
+      },
+
+      isVersionValidForDomain(version, domain) {
+        return (this.attack_domain_versions_with_mappings?.[domain] || []).includes(version);
+      },
+
+      syncUrl() {
+        const newurl =
+          `${window.location.origin}${window.location.pathname}` +
+          `?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain}`;
+        window.history.pushState({ path: newurl }, "", newurl);
+      },
+
+      normalizeSelection() {
+        const domains = this.attackDomains;
+        if (!domains.length) {
+          this.selectedDomain = "";
+          return;
+        }
+
+        if (!domains.includes(this.selectedDomain)) {
+          this.selectedDomain = domains[0];
+        }
+
+        const validVersionsForDomain =
+          this.attack_domain_versions_with_mappings?.[this.selectedDomain] ||
+          this.all_attack_domains?.[this.selectedDomain] ||
+          [];
+
+        if (!validVersionsForDomain.length) {
+          this.selectedAttackVersion = this.attackVersions[0] || "";
+          return;
+        }
+
+        if (!validVersionsForDomain.includes(this.selectedAttackVersion)) {
+          this.selectedAttackVersion = validVersionsForDomain[0];
+        }
+      },
+
+      setSelectedAttackVersion(version) {
+        this.selectedAttackVersion = version;
+
+        if (!this.isVersionValidForDomain(version, this.selectedDomain)) {
+          const fallbackDomain = this.attackDomains.find((domain) =>
+            this.isVersionValidForDomain(version, domain)
+          );
+          if (fallbackDomain) {
+            this.selectedDomain = fallbackDomain;
+          }
+        }
+
+        this.normalizeSelection();
+        this.syncUrl();
+        this.getAttackObjectDict();
+      },
+
+      setSelectedDomain(domain) {
+        this.selectedDomain = String(domain || "").toLowerCase();
+
+        if (!this.isVersionValidForDomain(this.selectedAttackVersion, this.selectedDomain)) {
+          const validVersions =
+            this.attack_domain_versions_with_mappings?.[this.selectedDomain] ||
+            this.all_attack_domains?.[this.selectedDomain] ||
+            [];
+          if (validVersions.length) {
+            this.selectedAttackVersion = validVersions[0];
+          }
+        }
+
+        this.normalizeSelection();
+        this.syncUrl();
+        this.getAttackObjectDict();
+      },
+
+      downloadJson(file, filename) {
         fetch(file)
-          .then((response) => response.json())
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to download file: " + response.status);
+            }
+            return response.json();
+          })
           .then((json) => {
-            json = JSON.stringify(json);
-            let blob = new Blob([json], {
-              type: 'application/json'
+            const blob = new Blob([JSON.stringify(json)], {
+              type: "application/json",
             });
-            let link = document.createElement('a');
+            const link = document.createElement("a");
             link.href = window.URL.createObjectURL(blob);
             link.download = filename;
             link.click();
+          })
+          .catch((error) => {
+            console.error(error);
+            this.errorMessage = "Unable to download the navigator layer for this ATT&CK version/domain.";
           });
       },
+
       handleScroll(e) {
-        const { offsetWidth, scrollWidth, scrollLeft, scrollRight } = e.target;
+        const { offsetWidth, scrollWidth, scrollLeft } = e.target;
         this.scrolledCompletelyToRight = (scrollLeft + offsetWidth) > (scrollWidth - 1);
         this.scrolledCompletelyToLeft = scrollLeft === 0;
       },
+
       getTooltipPosition() {
-        let hoveredElement = document
-          .getElementById(
-            `${this.techniqueHovered.id}_${this.techniqueHovered.parent}_box`
-          )
+        const hoveredElement = document
+          .getElementById(`${this.techniqueHovered.id}_${this.techniqueHovered.parent}_box`)
           ?.getBoundingClientRect();
-        let xPosition = window.scrollX + hoveredElement?.x;
-        let yPosition = window.scrollY + hoveredElement?.y;
-        return `top:${yPosition}px;left:${xPosition - 65}px;`;
+
+        if (!hoveredElement) {
+          return "";
+        }
+
+        const xPosition = window.scrollX + hoveredElement.x;
+        const yPosition = window.scrollY + hoveredElement.y;
+        return "top:" + yPosition + "px;left:" + (xPosition - 65) + "px;";
       },
+
       getAttackObjectDict() {
-        attack_object_file = `${this.url_prefix
-          }static/matrices/${this.selectedDomain.toLowerCase()}/${this.selectedAttackVersion
-          }/${this.selectedDomain.toLowerCase()}-${this.selectedAttackVersion
-          }_matrix_data.json`;
+        this.errorMessage = "";
+
+        const attack_object_file =
+          `${this.url_prefix}static/matrices/${this.selectedDomain}/${this.selectedAttackVersion}/` +
+          `${this.selectedDomain}-${this.selectedAttackVersion}_matrix_data.json`;
+
         fetch(attack_object_file)
-          .then((response) => response.json())
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to load matrix data: " + response.status);
+            }
+            return response.json();
+          })
           .then((json) => {
-            this.attackObjectDict = json;
+            this.attackObjectDict = json || {};
             this.getTactics();
             this.getDescription();
+          })
+          .catch((error) => {
+            console.error(error);
+            this.attackObjectDict = {};
+            this.tactics = [];
+            this.description = "";
+            this.errorMessage = "Unable to load matrix data for this ATT&CK version/domain combination.";
           });
       },
+
       getDescription() {
-       attack_object_file = `${this.url_prefix
-          }data/attack/${this.selectedDomain.toLowerCase()}-attack-${this.selectedAttackVersion
-          }.json`;
+        const attack_object_file =
+          `${this.url_prefix}data/attack/${this.selectedDomain}-attack-${this.selectedAttackVersion}.json`;
+
         fetch(attack_object_file)
-          .then((response) => response.json())
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed to load ATT&CK description: " + response.status);
+            }
+            return response.json();
+          })
           .then((json) => {
-            objects = json["objects"]
-            let d = Object.values(objects).filter((value) => {
+            const objects = json["objects"] || [];
+            const d = Object.values(objects).filter((value) => {
               return value.type === "x-mitre-collection";
             });
-            this.description = d[0].description
+            this.description = d.length ? d[0].description : "";
           })
-        },
+          .catch((error) => {
+            console.error(error);
+            this.description = "";
+          });
+      },
+
       getTactics() {
         if (this.selectedDomain && this.matrix_order) {
-          this.matrixOrder = this.matrix_order[this.selectedDomain.toLowerCase()]
+          this.matrixOrder = this.matrix_order[this.selectedDomain] || [];
+        } else {
+          this.matrixOrder = [];
         }
-        let tactics = Object.values(this.attackObjectDict).filter((value) => {
-          return value.type === "tactic";
+
+        const tactics = Object.values(this.attackObjectDict || {}).filter((value) => {
+          return value && value.type === "tactic";
         });
+
         let sortedTactics = [];
         this.matrixOrder.forEach((t) => {
-          tactic = tactics.find(tactic => tactic.id === t);
-          sortedTactics.push(tactic);
+          const tactic = tactics.find((candidate) => candidate.id === t);
+          if (tactic) {
+            sortedTactics.push(tactic);
+          }
         });
+
         sortedTactics = sortedTactics.map((tactic) => {
-          tactic.techniques = Object.values(this.attackObjectDict).filter(
-            (value) => {
-              return (
-                value.type === "technique" &&
-                value.tactics.includes(tactic.short_name)
-              );
-            }
-          );
+          tactic.techniques = Object.values(this.attackObjectDict || {}).filter((value) => {
+            return (
+              value &&
+              value.type === "technique" &&
+              (value.tactics || []).includes(tactic.short_name)
+            );
+          });
+
           tactic.techniques = tactic.techniques.map((technique) => {
             technique.open = false;
             technique.parent = tactic.id;
-            technique.subtechniques = Object.values(
-              this.attackObjectDict
-            ).filter((value) => {
+            technique.subtechniques = Object.values(this.attackObjectDict || {}).filter((value) => {
               return (
+                value &&
                 value.type === "subtechnique" &&
                 value.technique === technique.id
               );
             });
+
             technique.subtechniques = technique.subtechniques.map((subtechnique) => {
               subtechnique.parent = technique.parent;
               return { ...subtechnique };
             });
+
             return { ...technique };
           });
+
           return { ...tactic };
         });
+
         this.tactics = sortedTactics;
       },
+
       handleClick(technique) {
         technique.open = !technique.open;
       },
+
       toggleAllTechniques(open) {
         this.tactics.forEach((tactic) =>
-          tactic.techniques.forEach((technique) => {
+          (tactic.techniques || []).forEach((technique) => {
             technique.open = open;
           })
         );
       },
+
       setVersionsAccoringToQueryParams() {
-        const url = new URL(window.location.href)
-        if (url.searchParams.has('attack-version') && this.attackVersions.includes(url.searchParams.get('attack-version'))) {
-          this.selectedAttackVersion = url.searchParams.get('attack-version');
+        const url = new URL(window.location.href);
+        const requestedDomain = url.searchParams.get("domain");
+        const requestedVersion = url.searchParams.get("attack-version");
+
+        if (
+          requestedDomain &&
+          this.attackDomains.includes(requestedDomain.toLowerCase())
+        ) {
+          this.selectedDomain = requestedDomain.toLowerCase();
         }
-        else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({ path: newurl }, '', newurl);
+
+        if (requestedVersion) {
+          this.selectedAttackVersion = requestedVersion;
         }
-        if (url.searchParams.has('domain') && this.attackDomains.includes(url.searchParams.get('domain').toLowerCase())) {
-          this.selectedDomain = this.attackDomains.find(domain => domain.toLowerCase() === url.searchParams.get('domain').toLowerCase());
-        }
-        else {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({ path: newurl }, '', newurl);
-        }
+
+        this.normalizeSelection();
+        this.syncUrl();
       },
+
       handleOutsideClick() {
         this.attackSelectOpen = false;
         this.domainSelectOpen = false;
       },
-      setMatrixColumnAmount(){
-        let matrixWidth = document.getElementById("matrix-table-scrollable").clientWidth;
-        // based off of bootsrap breakpoint sizes
-        // matrix column size is set to col-lg-1 col-md-2 col-sm-4
-        this.amountMatrixColsShown = matrixWidth <= 576 ? 3 : matrixWidth <= 768 ? 5 : 12;
+
+      setMatrixColumnAmount() {
+        const el = document.getElementById("matrix-table-scrollable");
+        if (!el) return;
+
+        const matrixWidth = el.clientWidth;
+        this.amountMatrixColsShown =
+          matrixWidth <= 576 ? 3 : matrixWidth <= 768 ? 5 : 12;
       },
-      handleWindowResize(){
+
+      handleWindowResize() {
         this.setMatrixColumnAmount();
-      }
+      },
     },
     watch: {
-      selectedAttackVersion: {
-        handler(newValue) {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({ path: newurl }, '', newurl);
-        },
-      },
-      selectedDomain: {
-        handler(newValue) {
-          let newurl = `${window.location.origin}${window.location.pathname}?attack-version=${this.selectedAttackVersion}&domain=${this.selectedDomain.toLowerCase()}`
-          window.history.pushState({ path: newurl }, '', newurl);
-        },
-      },
-      tactics(value){
-        if(value.length > this.amountMatrixColsShown){
+      tactics(value) {
+        if ((value || []).length > this.amountMatrixColsShown) {
           this.scrolledCompletelyToRight = false;
-        }
-        else {
+        } else {
           this.scrolledCompletelyToRight = true;
         }
       },
-      amountMatrixColsShown(value){
-        if(this.tactics.length > value){
+      amountMatrixColsShown(value) {
+        if ((this.tactics || []).length > value) {
           this.scrolledCompletelyToRight = false;
-        }
-        else {
+        } else {
           this.scrolledCompletelyToRight = true;
         }
-      }
+      },
     },
     mounted() {
       window.addEventListener("resize", this.handleWindowResize);
-      this.getAttackObjectDict();
       this.setVersionsAccoringToQueryParams();
+      this.getAttackObjectDict();
       this.setMatrixColumnAmount();
     },
-    unmounted(){
+    unmounted() {
       window.removeEventListener("resize", this.handleWindowResize);
-    }
+    },
   };
 
   Vue.createApp({
@@ -454,8 +631,5 @@
       Matrix
     }
   }).mount("#matrix-component");
-
 </script>
-
-
 {% endblock content %}

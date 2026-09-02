@@ -495,16 +495,16 @@ def load_projects():
     ]
 
     projects = [
-        # csa_ccm,
-        # cri_profile,
-        # intel_vpro,
-        # nist,
-        # kev,
-        # veris,
-        # azure,
-        # gcp,
-        # aws,
-        # m365,
+        csa_ccm,
+        cri_profile,
+        intel_vpro,
+        nist,
+        kev,
+        veris,
+        azure,
+        gcp,
+        aws,
+        m365,
         windows,
         sysmon,
     ]
