@@ -13,6 +13,7 @@ from .framework_setup import (
     Capability,
     CapabilityGroup,
     ExternalControl,
+    LogField,
     delete_all_descriptions,
     get_description_for_capability,
     get_description_for_capability_group,
@@ -25,6 +26,46 @@ from .template import (
     TEMPLATE_DIR,
     load_template,
 )
+
+
+def normalize_log_field_values(value):
+    """Always return log_field as a list of strings."""
+    if value is None:
+        return []
+
+    if isinstance(value, list):
+        return [str(v) for v in value if v not in (None, "")]
+
+    if value == "":
+        return []
+
+    return [str(value)]
+
+
+def log_field_slug(value: str) -> str:
+    """Build the same path segment used for log field pages."""
+    return str(value).replace(" ", "_")
+
+
+def normalize_mapping_log_fields(mappings: list):
+    """Normalize log_field on every mapping object."""
+    for mapping in mappings:
+        mapping["log_field"] = normalize_log_field_values(mapping.get("log_field"))
+
+
+def normalize_mapping_identifiers(mappings: list):
+    """Normalize identifier-like fields on every mapping object."""
+    for mapping in mappings:
+        for key in (
+            "capability_id",
+            "capability_group",
+            "attack_object_id",
+            "status",
+            "mapping_type",
+        ):
+            value = mapping.get(key)
+            if isinstance(value, str):
+                mapping[key] = value.strip()
 
 
 def replace_mapping_type(mapping: dict, type_list: list):
@@ -92,6 +133,10 @@ def parse_capability_groups(
             mapping, metadata["mapping_types"]
         )
         mapping["framework"] = project.id
+
+    normalize_mapping_log_fields(mappings)
+    normalize_mapping_identifiers(mappings)
+
     if metadata.get("capability_groups"):
         for i in metadata["capability_groups"]:
             g = CapabilityGroup()
@@ -158,18 +203,22 @@ def parse_capability_groups(
     if project.id == "aws" or project.id == "m365":
         get_security_stack_descriptions(project=project)
 
+    # Parse log fields for Windows project
+    # TODO: set a variable to group all STP projects together
+    parse_log_fields(mappings, project, project_version, attack_version, attack_domain)
 
-def parse_capabilities(
+
+def parse_log_fields(
     mappings: list,
     project: ExternalControl,
     project_version: str,
     attack_version: str,
     attack_domain: str,
 ):
-    """Create capability objects for each unique capability id found in list of mappings
+    """Create log field objects for each unique log field found in list of mappings
 
     Args:
-        mappings: list of mappings to build capability list from
+        mappings: list of mappings to build log field list from
         project: project associated with list of mappings
         project_version: version of project associated with list of mappings
         attack_version: version of ATT&CK associated with list of mappings
@@ -177,102 +226,69 @@ def parse_capabilities(
          (ex. Enterprise, mobile, or ics)
 
     Returns:
-        List of capability objects
+        List of log field objects
     """
-    allIds = [m["capability_id"] for m in mappings]
-    capabilityIds = list(set(allIds))
-    capabilities = []
-    non_mappables = []
-    for id in capabilityIds:
-        c = Capability()
-        c.id = id
+    if project.id != "windows":
+        return
 
-        capability_mappable_mappings = [
+    all_fields = []
+    for m in mappings:
+        all_fields.extend(normalize_log_field_values(m.get("log_field")))
+
+    log_field_ids = list(dict.fromkeys(all_fields))
+    log_fields = []
+
+    for field_id in log_field_ids:
+        if not field_id:
+            continue
+
+        lf = LogField()
+        lf.id = field_id
+
+        field_mappings = [
             m
             for m in mappings
-            if (m["capability_id"] == id) and m["status"] != "non_mappable"
+            if field_id in normalize_log_field_values(m.get("log_field"))
+            and m["status"] != "non_mappable"
         ]
-        capability_non_mappables = [
-            m
-            for m in mappings
-            if (m["capability_id"] == id) and m["status"] == "non_mappable"
-        ]
-        capability_not_mappable = (
-            len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
-        )
 
-        c.num_mappings = len(capability_mappable_mappings)
-        c.mappings = capability_mappable_mappings
+        lf.num_mappings = len(field_mappings)
+        lf.mappings = field_mappings
+        lf.label = field_id
 
-        if not capability_not_mappable:
-            c.label = capability_mappable_mappings[0]["capability_description"]
-            for mapping in capability_mappable_mappings:
+        if len(field_mappings) > 0:
+            for mapping in field_mappings:
                 mapping["project"] = project.id
                 mapping["project_version"] = project_version
                 mapping["attack_version"] = attack_version
                 mapping["attack_domain"] = attack_domain
-            if capability_mappable_mappings[0].get("capability_group"):
-                capability_group = [
-                    g
-                    for g in project.capability_groups
-                    if (g.id == mapping["capability_group"])
-                ]
-                capability_group[0].capabilities.append(c)
-                capability_group[0].num_capabilities += 1
-                c.capability_group = capability_group[0]
-            else:
-                print(capability_mappable_mappings[0])
             logger.trace(
-                "for capability {id} the number of mappings is {count}",
-                id=c.id,
-                count=str(len(c.mappings)),
+                "for log field {id} the number of mappings is {count}",
+                id=lf.id,
+                count=str(len(lf.mappings)),
             )
-            capabilities.append(c)
-        else:
-            c.label = capability_non_mappables[0]["capability_description"]
-            if capability_non_mappables[0].get("capability_group"):
-                capability_group = [
-                    g
-                    for g in project.capability_groups
-                    if (g.id == capability_non_mappables[0]["capability_group"])
-                ]
-                c.capability_group = capability_group[0]
-            c.non_mappable_comment = capability_non_mappables[0].get("comments", None)
-            non_mappables.append(c)
+            log_fields.append(lf)
 
-    project.non_mappables = non_mappables
-    project.capabilities = capabilities
+    project.log_fields = log_fields
 
 
-def build_external_landing(
+def get_project_table_config(
     project: ExternalControl,
-    url_prefix,
-    project_version,
-    attack_version,
-    domain_dir,
-    mappings,
-    attack_domain,
-    breadcrumbs,
+    url_prefix: str,
+    project_version: str,
+    attack_version: str,
+    attack_domain: str,
 ):
-    """Create landing page for each project and build pages for each capability group
-        and capability for the specified project and version combination
-    Args:
-        project: the project object (containing mappings and description information)
-        url_prefix: the root url for the built site
-        project_version: version of project to build page for
-        attack_version: version of ATT&CK to build page for
-        domain_dir: folder for page to be built in
-        mappings: list of mappings to be displayed on the page
-        attack_domain: ATT&CK domain to build page for
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
+    )
+    external_prefix = (
+        f"{url_prefix}external/{project.id}/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/{project.id}-{project_version.replace('/', '.')}/"
+    )
+    log_source_prefix = f"{url_prefix}external/logsources/"
 
-    """
-    output_path = domain_dir / "index.html"
-    template = load_template("framework_landing.html.j2")
-    attack_prefix = f"""
-        {url_prefix}attack/attack-{attack_version}/domain-{attack_domain.lower()}/techniques/"""
-    external_prefix = f"""
-        {url_prefix}external/{project.id}/attack-{attack_version}/domain-{attack_domain.lower()}/{project.id}-{project_version}/"""
-    capability_group_prefix = f"{external_prefix}capability-groups/"
     standard_headers = [
         (
             ":pfx_link:",
@@ -305,17 +321,14 @@ def build_external_landing(
         ),
     ]
     info_box_headers = []
+
     if project.id == "kev":
         info_box_headers = [
             ("comments", "Comments"),
             ("references", "References"),
         ]
-    if (
-        project.id == "azure"
-        or project.id == "aws"
-        or project.id == "gcp"
-        or project.id == "m365"
-    ):
+
+    if project.id in ("azure", "aws", "gcp", "m365"):
         standard_headers = [
             (
                 ":pfx_link:",
@@ -352,6 +365,7 @@ def build_external_landing(
             ("comments", "Comments"),
             ("references", "References"),
         ]
+
     if project.id == "intel-vpro":
         standard_headers = [
             (
@@ -390,10 +404,264 @@ def build_external_landing(
             ("comments", "Comments"),
             ("references", "References"),
         ]
-    if project.id == "cri_profile" or project.id == "csa_ccm":
+
+    if project.id in ("cri_profile", "csa_ccm"):
         info_box_headers = [
             ("comments", "Comments"),
         ]
+
+    if project.id == "windows":
+        standard_headers = [
+            (
+                ":pfx_link:",
+                "capability_id",
+                "Event ID",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "capability_description",
+                "Event Description",
+                "capability_id",
+                external_prefix,
+            ),
+            (
+                ":pfx_link_list:",
+                "log_field",
+                "Contains Field(s)",
+                "log_field",
+                log_source_prefix,
+            ),
+            (":text:", "mapping_type", "Mapping Type"),
+            (
+                ":pfx_link:",
+                "attack_object_id",
+                "ATT&CK ID",
+                "attack_object_id",
+                attack_prefix,
+            ),
+            (
+                ":pfx_link:",
+                "attack_object_name",
+                "ATT&CK Name",
+                "attack_object_id",
+                attack_prefix,
+            ),
+        ]
+        info_box_headers = [
+            ("comments", "Comments"),
+        ]
+
+    return {
+        "standard_headers": standard_headers,
+        "info_box_headers": info_box_headers,
+    }
+
+
+def parse_capabilities(
+    mappings: list,
+    project: ExternalControl,
+    project_version: str,
+    attack_version: str,
+    attack_domain: str,
+):
+    """Create capability objects for each unique capability id found in list of mappings
+
+    Args:
+        mappings: list of mappings to build capability list from
+        project: project associated with list of mappings
+        project_version: version of project associated with list of mappings
+        attack_version: version of ATT&CK associated with list of mappings
+        attack_domain: domain of ATT&CK associated with list of mappings
+         (ex. Enterprise, mobile, or ics)
+
+    Returns:
+        List of capability objects
+    """
+    capability_ids = sorted(
+        {
+            m.get("capability_id")
+            for m in mappings
+            if m.get("capability_id") not in (None, "")
+        },
+        key=str,
+    )
+
+    capabilities = []
+    non_mappables = []
+
+    for capability_id in capability_ids:
+        c = Capability()
+        c.id = capability_id
+
+        capability_mappable_mappings = [
+            m
+            for m in mappings
+            if m.get("capability_id") == capability_id
+            and m.get("status") != "non_mappable"
+        ]
+
+        capability_non_mappables = [
+            m
+            for m in mappings
+            if m.get("capability_id") == capability_id
+            and m.get("status") == "non_mappable"
+        ]
+
+        capability_not_mappable = (
+            len(capability_mappable_mappings) == 0 and len(capability_non_mappables) > 0
+        )
+
+        if capability_mappable_mappings:
+            first_mapping = capability_mappable_mappings[0]
+
+            c.num_mappings = len(capability_mappable_mappings)
+            c.mappings = capability_mappable_mappings
+            c.label = first_mapping.get("capability_description") or capability_id
+
+            for mapping in capability_mappable_mappings:
+                mapping["project"] = project.id
+                mapping["project_version"] = project_version
+                mapping["attack_version"] = attack_version
+                mapping["attack_domain"] = attack_domain
+
+            capability_group_id = first_mapping.get("capability_group")
+            if capability_group_id:
+                capability_group = next(
+                    (
+                        g
+                        for g in project.capability_groups
+                        if g.id == capability_group_id
+                    ),
+                    None,
+                )
+
+                if capability_group is not None:
+                    capability_group.capabilities.append(c)
+                    capability_group.num_capabilities += 1
+                    c.capability_group = capability_group
+                else:
+                    logger.warning(
+                        "Capability group '{group_id}' not found for capability "
+                        "'{capability_id}' in project '{project_id}'",
+                        group_id=capability_group_id,
+                        capability_id=c.id,
+                        project_id=project.id,
+                    )
+                    c.capability_group = None
+            else:
+                c.capability_group = None
+                logger.debug(
+                    "Capability '{capability_id}' in project '{project_id}' has no capability_group",
+                    capability_id=c.id,
+                    project_id=project.id,
+                )
+
+            logger.trace(
+                "for capability {id} the number of mappings is {count}",
+                id=c.id,
+                count=str(len(c.mappings)),
+            )
+            capabilities.append(c)
+
+        elif capability_not_mappable:
+            first_mapping = capability_non_mappables[0]
+
+            c.num_mappings = 0
+            c.mappings = []
+            c.label = first_mapping.get("capability_description") or capability_id
+            c.non_mappable_comment = first_mapping.get("comments", None)
+
+            capability_group_id = first_mapping.get("capability_group")
+            if capability_group_id:
+                capability_group = next(
+                    (
+                        g
+                        for g in project.capability_groups
+                        if g.id == capability_group_id
+                    ),
+                    None,
+                )
+
+                if capability_group is not None:
+                    capability_group.capabilities.append(c)
+                    capability_group.num_capabilities += 1
+                    c.capability_group = capability_group
+                else:
+                    logger.warning(
+                        "Capability group '{group_id}' not found for non-mappable capability "
+                        "'{capability_id}' in project '{project_id}'",
+                        group_id=capability_group_id,
+                        capability_id=c.id,
+                        project_id=project.id,
+                    )
+                    c.capability_group = None
+            else:
+                c.capability_group = None
+                logger.debug(
+                    "Non-mappable capability '{capability_id}' in project '{project_id}' has no capability_group",
+                    capability_id=c.id,
+                    project_id=project.id,
+                )
+
+            non_mappables.append(c)
+
+        else:
+            logger.warning(
+                "Capability '{capability_id}' in project '{project_id}' had no usable mappings",
+                capability_id=capability_id,
+                project_id=project.id,
+            )
+
+    project.non_mappables = non_mappables
+    project.capabilities = capabilities
+
+
+def build_external_landing(
+    project: ExternalControl,
+    url_prefix,
+    project_version,
+    attack_version,
+    domain_dir,
+    mappings,
+    attack_domain,
+    breadcrumbs,
+):
+    """Create landing page for each project and build pages for each capability group
+        and capability for the specified project and version combination
+    Args:
+        project: the project object (containing mappings and description information)
+        url_prefix: the root url for the built site
+        project_version: version of project to build page for
+        attack_version: version of ATT&CK to build page for
+        domain_dir: folder for page to be built in
+        mappings: list of mappings to be displayed on the page
+        attack_domain: ATT&CK domain to build page for
+
+    """
+    output_path = domain_dir / "index.html"
+    template = load_template("framework_landing.html.j2")
+
+    attack_prefix = (
+        f"{url_prefix}attack/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/techniques/"
+    )
+    external_prefix = (
+        f"{url_prefix}external/{project.id}/attack-{attack_version}/"
+        f"domain-{attack_domain.lower()}/{project.id}-{project_version}/"
+    )
+    capability_group_prefix = f"{external_prefix}capability-groups/"
+
+    table_config = get_project_table_config(
+        project=project,
+        url_prefix=url_prefix,
+        project_version=project_version,
+        attack_version=attack_version,
+        attack_domain=attack_domain,
+    )
+    standard_headers = table_config["standard_headers"]
+    info_box_headers = table_config["info_box_headers"]
 
     # Resolve additional download artifacts
     additional_artifacts = []
@@ -455,6 +723,7 @@ def build_external_landing(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
 
@@ -491,6 +760,7 @@ def build_external_landing(
             table_max_count=table_max_count,
             full_link="all-data.html",
             full_size=full_size,
+            log_field_slug=log_field_slug,
         )
         stream.dump(str(output_path))
 
@@ -573,6 +843,33 @@ def build_external_landing(
                 breadcrumbs=capability_nav,
                 previous_link=previous_link,
             )
+
+    # Build log field pages for Windows project
+    if project.id == "windows" and hasattr(project, "log_fields"):
+        log_sources_dir = PUBLIC_DIR / "external" / "logsources"
+        log_sources_dir.mkdir(parents=True, exist_ok=True)
+        log_source_prefix = f"{url_prefix}external/logsources/"
+        for log_field in project.log_fields:
+            if log_field.num_mappings > 0:
+                log_field_nav = breadcrumbs + [
+                    (
+                        f"{log_source_prefix}{log_field_slug(log_field.id)}/",
+                        f"{log_field.label if log_field.label else log_field.id}",
+                    ),
+                ]
+                build_log_field(
+                    project=project,
+                    url_prefix=url_prefix,
+                    parent_dir=log_sources_dir,
+                    project_version=project_version,
+                    attack_version=attack_version,
+                    standard_headers=standard_headers,
+                    info_box_headers=info_box_headers,
+                    log_field=log_field,
+                    attack_domain=attack_domain,
+                    breadcrumbs=log_field_nav,
+                    previous_link=previous_link,
+                )
 
 
 def build_external_pages(projects: list, url_prefix: str, breadcrumbs: list):
@@ -685,11 +982,74 @@ def build_capability_group(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace(
         "          Created capability group page {group}", group=capability_group.label
     )
+
+
+def build_log_field(
+    project: ExternalControl,
+    url_prefix: str,
+    parent_dir: os.path,
+    project_version: str,
+    attack_version: str,
+    standard_headers: list,
+    info_box_headers: list,
+    log_field: LogField,
+    attack_domain: str,
+    breadcrumbs: list,
+    previous_link: str,
+):
+    """Builds a log field page for a given log field
+
+    Args:
+       project: object that contains the log field (used for metadata and linking)
+       url_prefix: the root url for the built site
+       parent_dir: folder 1 level above where the log field page will be built
+       project_version: project version for the page
+       attack_version: version of ATT&CK for the page
+       standard_headers: headers for mapping table
+       info_box_headers: headers for info box
+       log_field: log field object that the page is being built for
+       attack_domain: ATT&CK domain for the page
+       breadcrumbs: breadcrumb navigation for the page
+       previous_link: link to go to in order to "change versions" on banner or badges
+    """
+    dir = parent_dir / log_field_slug(log_field.id)
+    dir.mkdir(parents=True, exist_ok=True)
+    output_path = dir / "index.html"
+    template = load_template("log_field.html.j2")
+    prev_page = f"{url_prefix}external/logsources/"
+    stream = template.stream(
+        title=f"{project.label} {log_field.id}",
+        url_prefix=url_prefix,
+        control=project.label,
+        project=project,
+        project_id=project.id,
+        description=log_field.description,
+        control_version=project_version,
+        versions=project.versions,
+        attack_version=attack_version,
+        attackVersions=project.attackVersions,
+        attack_domain=attack_domain,
+        domains=project.attackDomains,
+        prev_page=prev_page,
+        mappings=log_field.mappings,
+        standard_headers=standard_headers,
+        info_box_headers=info_box_headers,
+        log_field=log_field,
+        breadcrumbs=breadcrumbs,
+        previous_link=previous_link,
+        table_max_count=999_999,
+        full_link="",
+        full_size=0,
+        log_field_slug=log_field_slug,
+    )
+    stream.dump(str(output_path))
+    logger.trace("          Created log field page {id}", id=log_field.id)
 
 
 def build_external_capability(
@@ -747,6 +1107,7 @@ def build_external_capability(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace("          Created capability page {id}", id=capability.id)
@@ -1042,52 +1403,61 @@ def build_technique_page(
             f"{technique.id} {technique.label}",
         ),
     ]
-    standard_headers = [
-        (":link:", "capability_id", "Capability ID", "capability_id"),
-        (
-            ":link:",
-            "capability_description",
-            "Capability Description",
-            "capability_id",
-        ),
-        (":text:", "mapping_type", "Mapping Type"),
-        (
-            ":pfx_link:",
-            "attack_object_id",
-            "ATT&CK ID",
-            "attack_object_id",
-            attack_prefix,
-        ),
-        (
-            ":pfx_link:",
-            "attack_object_name",
-            "ATT&CK Name",
-            "attack_object_id",
-            attack_prefix,
-        ),
-    ]
-    info_box_headers = [
-        ("comments", "Comments"),
-        ("references", "References"),
-    ]
+
     dir = parent_dir / technique.id
     dir.mkdir(parents=True, exist_ok=True)
     output_path = dir / "index.html"
     prev_page = parent_dir
     template = load_template("technique.html.j2")
+
     split_mappings = []
     for project in projects:
-        cutup = [m for m in technique.mappings if m.get("framework") == project.id]
-        split_mappings.append(
-            {"id": project.id, "label": project.label, "mappings": cutup}
+        project_mappings = [
+            m for m in technique.mappings if m.get("framework") == project.id
+        ]
+        if not project_mappings:
+            continue
+
+        project_version = project_mappings[0].get("project_version")
+
+        if not project_version:
+            matching_versions = [
+                valid_combo[0]
+                for valid_combo in project.validVersions
+                if str(valid_combo[1]) == str(attack_version)
+                and valid_combo[2] == attack_domain
+            ]
+            if matching_versions:
+                project_version = matching_versions[-1]
+            elif project.versions:
+                project_version = project.versions[-1]
+            else:
+                project_version = ""
+
+        table_config = get_project_table_config(
+            project=project,
+            url_prefix=url_prefix,
+            project_version=project_version,
+            attack_version=attack_version,
+            attack_domain=attack_domain,
         )
+
+        split_mappings.append(
+            {
+                "id": project.id,
+                "label": project.label,
+                "project_version": project_version,
+                "mappings": project_mappings,
+                "standard_headers": table_config["standard_headers"],
+                "info_box_headers": table_config["info_box_headers"],
+            }
+        )
+
     stream = template.stream(
         title=f"ATT&CK Technique {technique.id}",
         url_prefix=url_prefix,
         attack_version=attack_version,
         attack_domain=attack_domain,
-        standard_headers=standard_headers,
-        info_box_headers=info_box_headers,
         technique_headers=technique_headers,
         technique=technique,
         prev_page=prev_page,
@@ -1099,6 +1469,7 @@ def build_technique_page(
         table_max_count=999_999,
         full_link="",
         full_size=0,
+        log_field_slug=log_field_slug,
     )
     stream.dump(str(output_path))
     logger.trace("          Created technique page {id}", id=technique.id)
@@ -1281,6 +1652,44 @@ def build_technique_landing_page(
     logger.trace("Built techniques and tactics landing pages ")
 
 
+def get_attack_domains_from_mappings(mappings_filepath):
+    """Build ATT&CK domain/version combinations dynamically from mapping files."""
+    dynamic_attack_domains = {}
+
+    for mappings_file in mappings_filepath.rglob("**/*.json"):
+        if (
+            mappings_file.parent.name != "attack"
+            and "stix" not in mappings_file.name
+            and "navigator_layer" not in mappings_file.name
+        ):
+            try:
+                mappings = json.loads(mappings_file.read_text(encoding="UTF-8"))
+                metadata = mappings.get("metadata", {})
+                domain = metadata.get("technology_domain")
+                version = metadata.get("attack_version")
+
+                if not domain or not version:
+                    continue
+
+                domain = domain.lower()
+                if domain not in dynamic_attack_domains:
+                    dynamic_attack_domains[domain] = []
+
+                if version not in dynamic_attack_domains[domain]:
+                    dynamic_attack_domains[domain].append(version)
+            except Exception as e:
+                logger.warning(
+                    "Skipping mapping file {file} while building matrix domain/version map: {error}",
+                    file=str(mappings_file),
+                    error=str(e),
+                )
+
+    for domain in dynamic_attack_domains:
+        dynamic_attack_domains[domain].sort(key=lambda v: float(v))
+
+    return dynamic_attack_domains
+
+
 def build_matrix(url_prefix, projects, breadcrumbs):
     external_dir = PUBLIC_DIR / "attack" / "matrix"
     external_dir.mkdir(parents=True, exist_ok=True)
@@ -1290,107 +1699,32 @@ def build_matrix(url_prefix, projects, breadcrumbs):
         (f"{url_prefix}attack/matrix/", "ATT&CK Matrix"),
     ]
 
-    all_attack_versions = [
-        "8.2",
-        "9.0",
-        "10.0",
-        "10.1",
-        "11.0",
-        "11.1",
-        "11.2",
-        "11.3",
-        "12.0",
-        "12.1",
-        "13.0",
-        "13.1",
-        "14.0",
-        "14.1",
-        "15.0",
-        "15.1",
-        "16.1",
-        "17.1",
-    ]
+    mappings_filepath = PUBLIC_DIR / "data"
 
     attack_domain_versions_with_mappings = {}
     for project in projects:
         for valid_version in project.validVersions:
-            if valid_version[2] not in attack_domain_versions_with_mappings:
-                attack_domain_versions_with_mappings[valid_version[2]] = [
-                    valid_version[1]
-                ]
-            elif (
-                valid_version[1]
-                not in attack_domain_versions_with_mappings[valid_version[2]]
-            ):
-                attack_domain_versions_with_mappings[valid_version[2]].append(
-                    valid_version[1]
-                )
+            domain = valid_version[2].lower()
+            version = valid_version[1]
+            if domain not in attack_domain_versions_with_mappings:
+                attack_domain_versions_with_mappings[domain] = [version]
+            elif version not in attack_domain_versions_with_mappings[domain]:
+                attack_domain_versions_with_mappings[domain].append(version)
 
-    attack_domains = {
-        "Enterprise": [
-            "8.2",
-            "9.0",
-            "10.0",
-            "10.1",
-            "11.0",
-            "11.1",
-            "11.2",
-            "11.3",
-            "12.0",
-            "12.1",
-            "13.0",
-            "13.1",
-            "14.0",
-            "14.1",
-            "15.0",
-            "15.1",
-            "16.0",
-            "16.1",
-            "17.1",
-            "19.1",
-        ],
-        "ICS": [
-            "8.2",
-            "9.0",
-            "10.0",
-            "10.1",
-            "11.0",
-            "11.1",
-            "11.2",
-            "11.3",
-            "12.0",
-            "12.1",
-            "13.0",
-            "13.1",
-            "14.0",
-            "14.1",
-            "15.0",
-            "15.1",
-            "16.0",
-            "16.1",
-            "17.1",
-            "19.1",
-        ],
-        "Mobile": [
-            "8.2",
-            "9.0",
-            "10.0",
-            "10.1",
-            "11.3",
-            "12.0",
-            "12.1",
-            "13.0",
-            "13.1",
-            "14.0",
-            "14.1",
-            "15.0",
-            "15.1",
-            "16.0",
-            "16.1",
-            "17.1",
-            "19.1",
-        ],
-    }
+    for domain in attack_domain_versions_with_mappings:
+        attack_domain_versions_with_mappings[domain].sort(key=lambda v: float(v))
+
+    attack_domains = get_attack_domains_from_mappings(mappings_filepath)
+
+    if not attack_domains:
+        logger.warning("No ATT&CK domain/version combinations found in mapping files")
+        attack_domains = {}
+
+    all_attack_versions_for_matrix = sorted(
+        {version for versions in attack_domains.values() for version in versions},
+        key=lambda v: float(v),
+    )
+
     matrix_order = {
         "enterprise": [
             "TA0043",
@@ -1441,14 +1775,13 @@ def build_matrix(url_prefix, projects, breadcrumbs):
     }
 
     json_matrices_dir = TEMPLATE_DIR / PUBLIC_DIR / "static" / "matrices"
-    mappings_filepath = PUBLIC_DIR / "data"
     create_attack_jsons(attack_domains, json_matrices_dir, mappings_filepath)
 
     template = load_template("matrix.html.j2")
     stream = template.stream(
         title="ATT&CK Matrix",
         matrix_order=matrix_order,
-        all_attack_versions=all_attack_versions,
+        all_attack_versions=all_attack_versions_for_matrix,
         url_prefix=url_prefix,
         attack_domains=attack_domains,
         attack_domain_versions_with_mappings=attack_domain_versions_with_mappings,
@@ -1708,6 +2041,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
 
     build_about_page(
         url_prefix=url_prefix,
+        url_suffix="about/methodology/stp-methodology",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/stp_methodology.html.j2",
+        title="Summitting the Pyramid Mapping Methodology",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
         url_suffix="about/scoring",
         breadcrumbs=about_breadcrumbs,
         template_path="scoring_rubric.html.j2",
@@ -1727,7 +2068,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--url-prefix",
-        default="http://[::]:8000/",
+        default="http://localhost:3000/",
         help="A prefix to apply to generated (default: /public)",
     )
     parser.add_argument(

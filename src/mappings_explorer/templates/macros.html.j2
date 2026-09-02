@@ -42,6 +42,25 @@
                 {{ header[1] | format_cell_value(mapping[header[1]]) }}
               </a>
             </td>
+         {% elif header[0] == ":pfx_link_list:" -%}
+            <td>
+              {% set raw_values = mapping[header[1]] %}
+              {% if raw_values %}
+                {% if raw_values is string %}
+                  {% set values = [raw_values] %}
+                {% else %}
+                  {% set values = raw_values %}
+                {% endif %}
+
+                {% for value in values %}
+                  {% if value %}
+                    <a href="{{header[4]}}{{value | replace(' ', '_') }}/">
+                      {{ value }}
+                    </a>{% if not loop.last %}, {% endif %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </td>
           {%- elif header[0] == ":link:" -%}
             <td>
               <a href="{{mapping | build_capability_url(url_prefix, mapping[header[3]])}}">
