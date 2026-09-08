@@ -132,6 +132,7 @@ def parse_capability_groups(
         or project.id == "azure"
         or project.id == "cri_profile"
         or project.id == "csa_ccm"
+        or project.id == "cis"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
