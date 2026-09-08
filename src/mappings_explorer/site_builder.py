@@ -305,7 +305,7 @@ def build_external_landing(
         ),
     ]
     info_box_headers = []
-    if project.id == "kev":
+    if project.id == "kev" or project.id == "cis":
         info_box_headers = [
             ("comments", "Comments"),
             ("references", "References"),
