@@ -438,17 +438,57 @@ def load_projects():
     csa_ccm.has_non_mappable_comments = False
     csa_ccm.has_non_mappables = False
 
+    cis = ExternalControl()
+    cis.id = "cis"
+    cis.label = "CIS Controls"
+    cis.description = """The CIS Critical Security Controls® (CIS Controls®) are a
+     prioritized set of actions that collectively form a defense-in-depth set of best
+     practices that mitigate the most common attacks against systems and networks. These
+     mappings provide resources for assessing effective technical defenses against
+     actual real-world threats as described in the MITRE ATT&CK® knowledge base and
+     provide a foundation for integrating ATT&CK-based threat intelligence into the
+     process. The connection of ATT&CK with the CIS Controls empowers threat-informed
+     analysis and decision-making for cybersecurity control program design and
+     implementation. """
+    cis.attackDomains = ["Enterprise"]
+    cis.attackDomain = csa_ccm.attackDomains[0]
+    cis.attackVersions = ["19.1"]
+    cis.attackVersion = csa_ccm.attackVersions[0]
+    cis.versions = ["8.1"]
+    cis.validVersions = [
+        ("8.1", "19.1", "Enterprise"),
+    ]
+    cis.mappings = []
+    cis.resources = [
+        {
+            "link": "about/methodology/",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "about/methodology/csa-ccm-scope/",
+            "label": "Mapping Scope",
+        },
+        {
+            "link": "https://cas.docs.cisecurity.org/en/latest/source/About%20the%20CIS%20Controls/",
+            "label": "CIS Controls (External link)",
+            "external": True,
+        },
+    ]
+    cis.has_non_mappable_comments = True
+    cis.has_non_mappables = True
+
     projects = [
+        cis,
         csa_ccm,
-        cri_profile,
-        intel_vpro,
-        nist,
-        kev,
-        veris,
-        azure,
-        gcp,
-        aws,
-        m365,
+        # cri_profile,
+        # intel_vpro,
+        # nist,
+        # kev,
+        # veris,
+        # azure,
+        # gcp,
+        # aws,
+        # m365,
     ]
     return projects
 
@@ -544,6 +584,8 @@ def get_description_location(
         folder_name = DATA_DIR / "cri_profile"
     elif project.id == "csa_ccm":
         folder_name = DATA_DIR / "csa_ccm"
+    elif project.id == "cis":
+        folder_name = DATA_DIR / "cis"
 
     file_name = folder_name / f"{project.id}-{version}_descriptions.json"
     if group:

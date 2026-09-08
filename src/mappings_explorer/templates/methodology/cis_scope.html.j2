@@ -1,0 +1,159 @@
+{% extends "base.html.j2" %}
+
+{% block content %}
+<section class="header-container">
+    <div class="container ">
+        {% include "_breadcrumbs.html.j2" %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center">CIS Control <span class="highlight">MAPPING SCOPE</span></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-cards gray-bg">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2>Scope Overview</h2>
+        </div>
+
+        <p>
+         Scoping decisions for mapping <a href="https://www.cisecurity.org/controls" target="_blank">CIS Critical Security Controls (CIS Controls)</a> are documented below. These scoping decisions were used for control review and selection for mapping according to the
+         <a href="about/methodology/methodology/">Mapping Methodology</a>.
+        </p>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2><span class="highlight">General</span> Scoping Decisions</h2>
+        </div>
+        <dl>
+            <dt>Operational vs. Policy and Procedural Controls</dt>
+            <dd>This effort is focused on the technical and operational elements of the CIS Controls and did not take into account the management elements that are often focused on organization specific policies and procedures. This decision was made because management specific capabilities are policy-based, and the intent of this effort was focusing on technical and operation capabilities that correlate to ATT&CK mitigations, techniques, and sub-techniques. </dd>
+            <dt>Mitigation vs. Monitoring</dt>
+            <dd>Capabilities that may only monitor adversary behaviors are out of scope. The focus of this effort is on technical capabilities that mitigate adversary techniques and sub-techniques. Consideration is not given for the potential that an adversary might be dissuaded or change their tactics to try and avoid detection if they thought activity was being monitored. </dd>
+            <dt>Controls vs.Safeguards</dt>
+            <dd>This effort maps at the CIS Safeguard level. Consideration was given to each Safeguard's control grouping for context. </dd>
+            <dt>Implicit vs. Explicit Mitigation</dt>
+            <dd>This effort focuses on system-specific technical mitigations (e.g., block USB devices, perform data backups) and capabilities that support those mitigations rather than other, non-technical methods of mitigation (e.g., permit physical access to systems, develop a backup policy). </dd>
+            <dt><a href="https://attack.mitre.org/mitigations/M1056">Pre-compromise Mitigation</a></dt>
+            <dd>Those techniques only associated with the Pre-compromise Mitigation are excluded. These apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques, and are considered out of scope. </dd>
+        </dl>
+    </div>
+</section>
+
+<section class="services-cards">
+    <div class="container col-lg-8 offset-lg-2">
+
+        <div class="section-header">
+            <h2><span class="highlight">CIS Control</span> Scoping Decisions</h2>
+        </div>
+
+        <p>
+The CIS scoping decisions are captured below at the CIS Control level along with our rationale for capabilities in those categories being in or out of scope:
+        </p>
+        <table class="table">
+            <tr>
+                <th>Control Family</th>
+                <th>In Scope</th>
+                <th>Rationale</th>
+            </tr>
+            <tr>
+                <td>CIS Control 1: Inventory and Control of Enterprise Assets </td>
+                <td>No</td>
+                <td>Enterprise asset inventory safeguards are out of scope as they do not provide technical capabilities that directly mitigate adversary techniques. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 2: Inventory and Control of Software Assets </td>
+                <td>Yes</td>
+                <td>The software asset inventory safeguards that implement technical controls to mitigate adversary techniques are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 3: Data Protection </td>
+                <td>Yes</td>
+                <td>Data Protection family is in scope as it provides technical and operational controls for protecting organizational data. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 4: Secure Configuration of Enterprise Assets and Software </td>
+                <td>Yes</td>
+                <td>Configuration Management safeguards that provide technical and operational controls for maintaining secure configuration of assets and software are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 5: Account Management </td>
+                <td>Yes</td>
+                <td>Access Control family is in scope as it provides technical and operational controls for managing and enforcing identification and authentication of network and system users and devices. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 6: Access Control Management </td>
+                <td>Yes</td>
+                <td>Access Control family is in scope as it provides technical and operational controls for the control and enforcement of system access, accounts, and information. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 7: Continuous Vulnerability Management </td>
+                <td>Yes</td>
+                <td>Continuous Vulnerability Management safeguards that provide for the remediation of vulnerabilities are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 8: Audit Log Management </td>
+                <td>No</td>
+                <td>Audit safeguards are not applicable as they do not provide mitigations of specific threats but instead detect successful attacks. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 9: Email and Web Browser Protections </td>
+                <td>Yes</td>
+                <td>Email and web browser protections are in scope as they provide technical and operational controls for protecting against threats. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 10: Malware Defenses </td>
+                <td>Yes</td>
+                <td>Malware safeguards that provide technical and operational controls for protecting against threats. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 11: Data Recovery </td>
+                <td>Yes</td>
+                <td>Data Recovery family is in scope as it provides technical and operational controls for protecting organizational data. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 12: Network Infrastructure Management </td>
+                <td>Yes</td>
+                <td>Network Infrastructure Management safeguards that provide technical and operational controls for implementing security at the network level are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 13: Network Monitoring and Defense </td>
+                <td>Yes</td>
+                <td>Network Monitoring and Defense safeguards that provide technical and operational controls for implementing security at the network level are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 14: Security Awareness and Skills Training </td>
+                <td>No</td>
+                <td>Awareness and Training controls are not applicable as they are for general security awareness training and not specific threat mitigations. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 15: Service Provider Management </td>
+                <td>Yes</td>
+                <td>Service Provider Management safeguards are generally out of scope except where directly supporting technical actions that mitigate adversary techniques. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 16: Application Software Security </td>
+                <td>Yes</td>
+                <td>Application Software Security safeguards that implement technical controls to mitigate adversary techniques are in scope. </td>
+            </tr>
+            <tr>
+                <td>CIS Control 17: Incident Response Management </td>
+                <td>No</td>
+                <td><The Incident Response safeguards are out of scope as they primarily provide for management and governance activities. /td>
+            </tr>
+            <tr>
+                <td>CIS Control 18: Penetration Testing </td>
+                <td>Yes</td>
+                <td>Penetration testing safeguards are generally out of scope except where directly support technical actions that protect against adversary techniques. </td>
+            </tr>
+        </table>
+    </div>
+</section>
+{% endblock content %}
