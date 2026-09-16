@@ -2,14 +2,14 @@
     "metadata": {
         "mapping_version": "",
         "technology_domain": "enterprise",
-        "attack_version": "19.1",
-        "mapping_framework": "cis",
-        "mapping_framework_version": "8.1",
+        "attack_version": "19.0",
+        "mapping_framework": "cis_controls",
+        "mapping_framework_version": "8.1.2",
         "author": null,
         "contact": null,
         "organization": null,
         "creation_date": "08/31/2026",
-        "last_update": "09/03/2026",
+        "last_update": "09/10/2026",
         "mapping_types": {
             "mitigates": {
                 "name": "mitigates",
@@ -42,6 +42,279 @@
         }
     },
     "mapping_objects": [
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.011",
+            "attack_object_name": "Lua",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use Lua interpreters to execute Lua code. An application-control policy denying unauthorized Lua interpreters prevents those binaries from running, directly restricting Lua execution. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.006",
+            "attack_object_name": "Python",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use Python interpreters to execute malicious commands and payloads. An enforced allowlist denying Python prevents the interpreter from executing, directly removing the prerequisite for Python-based execution.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1176",
+            "attack_object_name": "Software Extensions",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries install or use malicious browser or IDE extensions to obtain execution or persistence. The implementation to explicitly allowlists authorized extensions and blocks all others, unauthorized extensions cannot be installed or loaded, directly constraining the technique.  ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1564.003",
+            "attack_object_name": "Hidden Window",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries may hide application windows while malicious programs execute. Where an unauthorized program is responsible for the hidden-window behavior, application allowlisting prevents that program from running and therefore prevents that implementation of the technique.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1548.004",
+            "attack_object_name": "Elevated Execution with Prompt",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries may persuade users to approve elevated execution of malicious applications. If application control prevents the unapproved application from executing regardless of user approval, the malicious program cannot reach the elevation stage through this path. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1546.002",
+            "attack_object_name": "Screensaver",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries can establish execution or persistence using malicious .scr screensaver files. Application-control rules can prevent unauthorized .scr files from executing, directly blocking the malicious executable used by the technique",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.014",
+            "attack_object_name": "MMC",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries can abuse Microsoft Management Console to execute malicious content through a trusted system binary. Application allowlisting can block MMC on systems where its use is not authorized, directly preventing the executable from being used for proxy execution.  ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.013",
+            "attack_object_name": "Mavinject",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse mavinject.exe to inject malicious code into another process through a trusted Microsoft executable. Application allowlisting can deny execution of mavinject.exe where it is not authorized, directly preventing use of that binary for the technique.  ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.012",
+            "attack_object_name": "Verclsid",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse verclsid.exe to execute malicious COM objects through a trusted Windows binary. Application allowlisting can block verclsid.exe where it is unnecessary, directly preventing its use as the proxy executable.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.009",
+            "attack_object_name": "Regsvcs/Regasm",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use Regsvcs.exe or Regasm.exe to proxy execution of malicious .NET code. Application allowlisting can prevent these binaries from executing on systems where they are not authorized, directly preventing this execution path.  ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.008",
+            "attack_object_name": "Odbcconf",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse odbcconf.exe to execute malicious code through a trusted Windows utility. Application allowlisting can deny execution of odbcconf.exe where it is not required, directly preventing use of that proxy-execution mechanism. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.005",
+            "attack_object_name": "Mshta",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse mshta.exe to execute HTML application or script content through a trusted Windows binary. Application allowlisting can explicitly deny mshta.exe, preventing the executable from being used for proxy execution.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.004",
+            "attack_object_name": "InstallUtil",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use InstallUtil.exe to execute malicious .NET code while proxying execution through a trusted binary. Application allowlisting can block InstallUtil where it is not authorized, directly preventing use of the utility for this behavior.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.003",
+            "attack_object_name": "CMSTP",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse cmstp.exe to proxy execution of malicious code through a trusted Windows utility. Application allowlisting can prevent cmstp.exe from executing on systems where it is not required, directly removing the proxy-execution mechanism. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.001",
+            "attack_object_name": "Compiled HTML File",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse hh.exe to execute malicious compiled HTML content through a trusted Windows binary. Application allowlisting can block hh.exe where it is not authorized, preventing use of that binary for proxy execution. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1127.001",
+            "attack_object_name": "MSBuild",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse msbuild.exe to execute malicious code through a trusted Microsoft developer utility. Application allowlisting can deny execution of MSBuild on systems where it is not authorized, directly eliminating the binary used for proxy execution. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.5",
+            "capability_description": "Allowlist Authorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.010",
+            "attack_object_name": "AutoHotKey & AutoIT",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use AutoHotKey and AutoIT interpreters to execute automated commands and malicious scripts. Application allowlisting can block AutoHotkey.exe, AutoIt3.exe, and related unauthorized executables, directly preventing those interpreters from executing.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#25-allowlist-authorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1127.001",
+            "attack_object_name": "MSBuild",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries abuse MSBuild to execute malicious code through a trusted developer utility. When MSBuild is unnecessary, explicitly classified as unauthorized, and removed under this safeguard, the executable required for this proxy-execution technique is eliminated.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#23-address-unauthorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.011",
+            "attack_object_name": "Lua",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries can use a Lua interpreter to execute malicious Lua commands or scripts. When Lua is unauthorized on the asset and is removed through this safeguard, the interpreter required to execute Lua code is no longer available, directly restricting the technique. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#23-address-unauthorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.006",
+            "attack_object_name": "Python",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use installed Python interpreters to execute commands, scripts, and payloads. When Python is classified as unauthorized and removed under this safeguard, the local interpreter required for Python-based execution is eliminated, directly restricting this execution path.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#23-address-unauthorized-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "2.3",
+            "capability_description": "Address Unauthorized Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1021.005",
+            "attack_object_name": "VNC",
+            "capability_group": "CIS Control 2",
+            "comments": "Adversaries use VNC server software to establish remote interactive access to systems. When VNC server software is classified as unauthorized, this safeguard requires it to be removed, eliminating the VNC server endpoint required to establish the remote session.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls2/#23-address-unauthorized-software"
+            ],
+            "status": "complete"
+        },
         {
             "capability_id": "12.8",
             "capability_description": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
@@ -7445,118 +7718,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "3.3",
-            "capability_description": "Configure Data Access Control Lists",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "ACLs constrain which accounts can reach data and therefore directly reduce abuse of valid accounts and local data access for collection.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.3",
-            "capability_description": "Configure Data Access Control Lists",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1005",
-            "attack_object_name": "Data from Local System",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "The control either restricts, detects, hardens against, or increases visibility into the adversary behavior associated with this technique. The control reduces unauthorized access opportunities and raises the difficulty of account misuse.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.10",
-            "capability_description": "Encrypt Sensitive Data in Transit",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1557",
-            "attack_object_name": "Adversary-in-the-Middle",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Transport encryption directly constrains interception and manipulation of communications.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.10",
-            "capability_description": "Encrypt Sensitive Data in Transit",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1040",
-            "attack_object_name": "Network Sniffing",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption in transit directly mitigates readable interception of network traffic.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.11",
-            "capability_description": "Encrypt Sensitive Data At Rest",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1005",
-            "attack_object_name": "Data from Local System",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption at rest directly reduces usability of stolen or accessed local data.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.11",
-            "capability_description": "Encrypt Sensitive Data At Rest",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1213",
-            "attack_object_name": "Data from Information Repositories",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Repository encryption protects stored sensitive data even after unauthorized access.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.11",
-            "capability_description": "Encrypt Sensitive Data At Rest",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1039",
-            "attack_object_name": "Data from Network Shared Drive",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption protects sensitive shared-drive data against unauthorized disclosure",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.11",
-            "capability_description": "Encrypt Sensitive Data At Rest",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Cloud storage encryption directly protects sensitive stored cloud data.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "3.11",
             "capability_description": "Encrypt Sensitive Data At Rest",
             "mapping_type": "mitigates",
@@ -7619,105 +7780,6 @@
             "attack_object_name": "Application Access Token",
             "capability_group": "CIS Control 3",
             "comments": "Application access tokens are sensitive credential material commonly stored in databases, configuration stores, browser profiles, caches, or application files. Encrypting those tokens at rest can prevent an adversary who obtains raw storage, a database backup, snapshot, or filesystem access from reading and reusing the tokens.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.12",
-            "capability_description": "Segment Data Processing and Storage Based on Sensitivity",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1530",
-            "attack_object_name": "Data from Cloud Storage",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Segregated cloud environments reduce exposure of sensitive cloud storage resources.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.12",
-            "capability_description": "Segment Data Processing and Storage Based on Sensitivity",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1021",
-            "attack_object_name": "Remote Services",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Segmentation directly limits attacker movement between remote-accessible systems and sensitive environments.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.13",
-            "capability_description": "Deploy a Data Loss Prevention Solution",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1537",
-            "attack_object_name": "Transfer Data to Cloud Account",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP solutions commonly inspect and restrict uploads to external cloud services. ",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.13",
-            "capability_description": "Deploy a Data Loss Prevention Solution",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1048",
-            "attack_object_name": "Exfiltration Over Alternative Protocol",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP inspection capabilities may identify sensitive-data transfer across non-standard protocols.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.13",
-            "capability_description": "Deploy a Data Loss Prevention Solution",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1567",
-            "attack_object_name": "Exfiltration Over Web Service",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. Web upload monitoring and restriction are core DLP use cases.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.13",
-            "capability_description": "Deploy a Data Loss Prevention Solution",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1052.001",
-            "attack_object_name": "Exfiltration over USB",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1052",
-            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. Device-control and removable-media DLP policies directly target USB-based exfiltration.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.13",
-            "capability_description": "Deploy a Data Loss Prevention Solution",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1041",
-            "attack_object_name": "Exfiltration Over C2 Channel",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP solutions explicitly monitor and restrict unauthorized outbound transfer of sensitive data.",
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
@@ -12410,106 +12472,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1070.004",
-            "attack_object_name": "File Deletion",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1070",
-            "comments": "The safeguard specifically concerns secure deletion and sanitization of residual data artifacts.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1561",
-            "attack_object_name": "Disk Wipe",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "This control protects against attacker behaviors that destroy or overwrite data and storage media. ",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.5",
-            "capability_description": "Securely Dispose of Data",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1485",
-            "attack_object_name": "Data Destruction",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Secure disposal directly addresses preventing unauthorized recovery or persistence of sensitive data remnants.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.6",
-            "capability_description": "Encrypt Data on End-User Devices",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1025",
-            "attack_object_name": "Data from Removable Media",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption protects copied endpoint data stored on removable media from unauthorized disclosure.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.6",
-            "capability_description": "Encrypt Data on End-User Devices",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1005",
-            "attack_object_name": "Data from Local System",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "Encryption on endpoints reduces the value of locally collected data and raises the bar for simple exfiltration after collection.\n",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.9",
-            "capability_description": "Encrypt Data on Removable Media",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1052.001",
-            "attack_object_name": "Exfiltration over USB",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "related_score": "T1052",
-            "comments": "Encrypting removable media directly reduces the usefulness of data exfiltrated via USB storage devices.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "3.9",
-            "capability_description": "Encrypt Data on Removable Media",
-            "mapping_type": "mitigates",
-            "attack_object_id": "T1025",
-            "attack_object_name": "Data from Removable Media",
-            "capability_group": "CIS Control 3",
-            "score_category": "protect",
-            "comments": "The safeguard explicitly protects removable-media-stored data from unauthorized access.",
-            "references": [
-                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "3.11",
             "capability_description": "Encrypt Sensitive Data At Rest",
             "mapping_type": "mitigates",
@@ -12958,6 +12920,345 @@
             "capability_group": "CIS Control 3",
             "score_category": "protect",
             "comments": "Secure disposal reduces residual sensitive files on endpoints and servers that an adversary could later collect from local storage.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.12",
+            "capability_description": "Segment Data Processing and Storage Based on Sensitivity",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Segregated cloud environments reduce exposure of sensitive cloud storage resources.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.12",
+            "capability_description": "Segment Data Processing and Storage Based on Sensitivity",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1021",
+            "attack_object_name": "Remote Services",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Segmentation directly limits attacker movement between remote-accessible systems and sensitive environments.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070",
+            "attack_object_name": "Indicator Removal",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Data Retention restricts, hardens against, or increases visibility into the adversary behavior. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.4",
+            "capability_description": "Enforce Data Retention",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1485",
+            "attack_object_name": "Data Destruction",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Retention is protective because it limits the time window in which valuable data remains available for destruction, tampering, or cleanup by an attacker.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.13",
+            "capability_description": "Deploy a Data Loss Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1537",
+            "attack_object_name": "Transfer Data to Cloud Account",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP solutions commonly inspect and restrict uploads to external cloud services. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.13",
+            "capability_description": "Deploy a Data Loss Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1048",
+            "attack_object_name": "Exfiltration Over Alternative Protocol",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP inspection capabilities may identify sensitive-data transfer across non-standard protocols.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.13",
+            "capability_description": "Deploy a Data Loss Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1567",
+            "attack_object_name": "Exfiltration Over Web Service",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. Web upload monitoring and restriction are core DLP use cases.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.13",
+            "capability_description": "Deploy a Data Loss Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1052.001",
+            "attack_object_name": "Exfiltration over USB",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1052",
+            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. Device-control and removable-media DLP policies directly target USB-based exfiltration.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.13",
+            "capability_description": "Deploy a Data Loss Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1041",
+            "attack_object_name": "Exfiltration Over C2 Channel",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "DLP is a direct control for blocking or alerting on exfiltration and data staging behaviors. DLP solutions explicitly monitor and restrict unauthorized outbound transfer of sensitive data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.11",
+            "capability_description": "Encrypt Sensitive Data At Rest",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1039",
+            "attack_object_name": "Data from Network Shared Drive",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption protects sensitive shared-drive data against unauthorized disclosure",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.11",
+            "capability_description": "Encrypt Sensitive Data At Rest",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Cloud storage encryption directly protects sensitive stored cloud data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.11",
+            "capability_description": "Encrypt Sensitive Data At Rest",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1213",
+            "attack_object_name": "Data from Information Repositories",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Repository encryption protects stored sensitive data even after unauthorized access.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.11",
+            "capability_description": "Encrypt Sensitive Data At Rest",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption at rest directly reduces usability of stolen or accessed local data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.10",
+            "capability_description": "Encrypt Sensitive Data in Transit",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1557",
+            "attack_object_name": "Adversary-in-the-Middle",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Transport encryption directly constrains interception and manipulation of communications.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.10",
+            "capability_description": "Encrypt Sensitive Data in Transit",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1040",
+            "attack_object_name": "Network Sniffing",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption in transit directly mitigates readable interception of network traffic.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.9",
+            "capability_description": "Encrypt Data on Removable Media",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1052.001",
+            "attack_object_name": "Exfiltration over USB",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1052",
+            "comments": "Encrypting removable media directly reduces the usefulness of data exfiltrated via USB storage devices.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.9",
+            "capability_description": "Encrypt Data on Removable Media",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1025",
+            "attack_object_name": "Data from Removable Media",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "The safeguard explicitly protects removable-media-stored data from unauthorized access.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.6",
+            "capability_description": "Encrypt Data on End-User Devices",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1025",
+            "attack_object_name": "Data from Removable Media",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption protects copied endpoint data stored on removable media from unauthorized disclosure.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.6",
+            "capability_description": "Encrypt Data on End-User Devices",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Encryption on endpoints reduces the value of locally collected data and raises the bar for simple exfiltration after collection.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1070.004",
+            "attack_object_name": "File Deletion",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "related_score": "T1070",
+            "comments": "The safeguard specifically concerns secure deletion and sanitization of residual data artifacts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1561",
+            "attack_object_name": "Disk Wipe",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "This control protects against attacker behaviors that destroy or overwrite data and storage media. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.5",
+            "capability_description": "Securely Dispose of Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1485",
+            "attack_object_name": "Data Destruction",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "Secure disposal directly addresses preventing unauthorized recovery or persistence of sensitive data remnants.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.3",
+            "capability_description": "Configure Data Access Control Lists",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "ACLs constrain which accounts can reach data and therefore directly reduce abuse of valid accounts and local data access for collection.\n",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "3.3",
+            "capability_description": "Configure Data Access Control Lists",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1005",
+            "attack_object_name": "Data from Local System",
+            "capability_group": "CIS Control 3",
+            "score_category": "protect",
+            "comments": "The control either restricts, detects, hardens against, or increases visibility into the adversary behavior associated with this technique. The control reduces unauthorized access opportunities and raises the difficulty of account misuse.",
             "references": [
                 "https://cas.docs.cisecurity.org/en/latest/source/Controls3/"
             ],
