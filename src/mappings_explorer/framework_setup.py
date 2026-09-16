@@ -465,17 +465,17 @@ def load_projects():
             "label": "Mapping Methodology",
         },
         {
-            "link": "about/methodology/csa-ccm-scope/",
+            "link": "about/methodology/cis-scope/",
             "label": "Mapping Scope",
         },
         {
-            "link": "https://cas.docs.cisecurity.org/en/latest/source/About%20the%20CIS%20Controls/",
+            "link": "https://www.cisecurity.org/controls",
             "label": "CIS Controls (External link)",
             "external": True,
         },
     ]
-    cis.has_non_mappable_comments = True
-    cis.has_non_mappables = True
+    cis.has_non_mappable_comments = False
+    cis.has_non_mappables = False
 
     projects = [
         cis,
