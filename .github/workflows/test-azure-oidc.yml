@@ -1,0 +1,34 @@
+name: Test Azure OIDC
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 10
+    steps:
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Verify subscription access
+        run: az account show --output none
+
+      - name: Verify storage access
+        run: |
+          az storage blob list \
+            --account-name '${{ vars.AZURE_STORAGE_ACCOUNT }}' \
+            --container-name '$web' \
+            --auth-mode login \
+            --num-results 1 \
+            --only-show-errors \
+            --output none
