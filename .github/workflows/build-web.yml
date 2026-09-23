@@ -4,48 +4,45 @@ on:
   push:
     branches: [main]
 
-# If another web build starts for the same branch, cancel the previous build. This
-# protects us from two builds trying to upload at the same time and clobbering each
-# other.
+# Do not interrupt an in-progress production synchronization.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: mappings-explorer-production
+  cancel-in-progress: false
 
 permissions:
   contents: read
-  id-token: write
-  pages: write
-  pull-requests: write
 
 jobs:
   web_site:
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       LOGURU_LEVEL: DEBUG
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.9"
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
             version: 1.8.5
-      - name: Collect Error Logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs
-          path: /home/runner/work/**/*.log
       - name: Add Poetry to PATH
         run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
       - name: Install dependencies
         run: poetry install
       - name: Build Web Site
-        run: poetry run build-mappings-explorer --url-prefix 'https://center-for-threat-informed-defense.github.io/mappings-explorer/'
+        run: poetry run build-mappings-explorer --url-prefix 'https://ctid.mitre.org/mappings/'
       - name: Export Download Artifacts
         run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
+      - name: Verify Web Site
+        run: |
+          test -s output/index.html
+          test -s output/404.html
+          test -s output/search/index.html
+          test -s output/static/main.css
+          test -s output/static/lunr-index.zip
+          compgen -G 'output/data/attack/enterprise-attack-*.json' > /dev/null
+          grep -Fq 'https://ctid.mitre.org/mappings/static/main.css' output/index.html
       - name: Compress Artifacts
         run: zip -rq output.zip output/
       - name: Upload Web Site
@@ -53,30 +50,63 @@ jobs:
         with:
           name: mapex-web
           path: output.zip
+          retention-days: 1
+      - name: Collect Error Logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: /home/runner/work/**/*.log
+          if-no-files-found: ignore
+          retention-days: 7
 
-  github_pages:
-    # This job only runs when committing or merging to main branch.
-    if: github.ref_name == 'main'
+  deploy_azure:
     needs: web_site
     runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+      id-token: write
     environment:
-      name: github-pages
-      url: $\{\{ steps.deployment.outputs.page_url \}\}
-
+      name: production
+      url: ${{ vars.AZURE_STATIC_WEBSITE_ENDPOINT }}
     steps:
-    - name: Setup Pages
-      uses: actions/configure-pages@v5
-    - name: Download Web Site
-      uses: actions/download-artifact@v4
-      with:
-        name: mapex-web
-        path: .
-    - name: Decompress Artifacts
-      run: unzip -q output.zip
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./output
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Download Web Site
+        uses: actions/download-artifact@v4
+        with:
+          name: mapex-web
+          path: .
+      - name: Decompress Web Site
+        run: unzip -q output.zip
+      - name: Verify Deployment Source
+        run: |
+          test -s output/index.html
+          test -s output/404.html
+          test -s output/static/main.css
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Synchronize Static Website
+        run: |
+          az storage blob sync \
+            --account-name '${{ vars.AZURE_STORAGE_ACCOUNT }}' \
+            --container '$web' \
+            --source output \
+            --auth-mode login \
+            --delete-destination true \
+            --only-show-errors
+      - name: Verify Static Website
+        run: |
+          endpoint='${{ vars.AZURE_STATIC_WEBSITE_ENDPOINT }}'
+          endpoint="${endpoint%/}"
+          curl --fail --silent --show-error --retry 6 --retry-delay 10 \
+            "$endpoint/" > /dev/null
+          curl --fail --silent --show-error --retry 6 --retry-delay 10 \
+            "$endpoint/static/main.css" > /dev/null
+          status=$(curl --silent --show-error --output /tmp/mapex-404.html \
+            --write-out '%{http_code}' "$endpoint/not-a-real-page")
+          test "$status" = '404'
+          grep -Fq 'Page Not Found' /tmp/mapex-404.html

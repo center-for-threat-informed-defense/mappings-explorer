@@ -209,8 +209,9 @@ function parseParams() {
   let attackVersion = '';
   let controlVersion = '';
   let attackDomain = '';
+  const siteRoot = new URL("{{ url_prefix }}").pathname;
   let uri = window.location.pathname;
-  let params = uri.split("/").filter(n => n);
+  let params = uri.slice(siteRoot.length).split("/").filter(n => n);
   if (params.length >= 4){
     attackDomain = params[params.length - 2].split("-")[1];
     if (attackDomain) {
@@ -228,8 +229,9 @@ function parseParams() {
 /* handle click on see mappings button- route to the new version url */
 function handleSubmission(event) {
   event.preventDefault()
+  const siteRoot = new URL("{{ url_prefix }}").pathname;
   let uri = window.location.pathname;
-  let params = uri.split("/").filter(n => n);
+  let params = uri.slice(siteRoot.length).split("/").filter(n => n);
   let newAttack = document.getElementById("attack_version_select").value
   let newDomain = document.getElementById("attack_domain_select").value.toLowerCase()
   if (params.length >= 4) {
@@ -241,7 +243,7 @@ function handleSubmission(event) {
     params.push("domain-" + newDomain)
   }
   let newUrl = params.join("/")
-  window.location = "/" + newUrl + "/"
+  window.location = siteRoot + newUrl + "/"
 }
 
 window.onload = parseParams
