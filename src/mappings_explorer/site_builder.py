@@ -1742,6 +1742,11 @@ def main():
     reset_descriptions = args.reset_descriptions
     logger.info(f"url prefix: {url_prefix}")
     logger.info(f"Reset descriptions? {reset_descriptions}")
+
+    # Generated exports choose a new filename when one already exists, so every site
+    # build must start with an empty output directory.
+    shutil.rmtree(PUBLIC_DIR, ignore_errors=True)
+    PUBLIC_DIR.mkdir(parents=True)
     projects = load_projects()
 
     static_dir = PUBLIC_DIR / "static"
@@ -1766,6 +1771,12 @@ def main():
     )
     stream.dump(str(output_path))
     logger.info("Created site homepage")
+
+    output_path = PUBLIC_DIR / "404.html"
+    template = load_template("404.html.j2")
+    stream = template.stream(title="Page Not Found", url_prefix=url_prefix)
+    stream.dump(str(output_path))
+    logger.info("Created site error page")
 
     dir = PUBLIC_DIR / "external"
     dir.mkdir(parents=True, exist_ok=True)
