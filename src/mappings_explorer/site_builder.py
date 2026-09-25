@@ -132,6 +132,7 @@ def parse_capability_groups(
         or project.id == "azure"
         or project.id == "cri_profile"
         or project.id == "csa_ccm"
+        or project.id == "cis"
     ):
         # if the project has non mappable comments and we are therefore building the
         # capability page even though it is non_mappable, get non_mappable capabilities'
@@ -305,7 +306,7 @@ def build_external_landing(
         ),
     ]
     info_box_headers = []
-    if project.id == "kev":
+    if project.id == "kev" or project.id == "cis":
         info_box_headers = [
             ("comments", "Comments"),
             ("references", "References"),
@@ -1688,6 +1689,14 @@ def build_about_pages(url_prefix: str, breadcrumbs: list):
         breadcrumbs=methodology_breadcrumbs,
         template_path="methodology/csa_ccm_scope.html.j2",
         title="CSA CCM Mapping Scope",
+    )
+
+    build_about_page(
+        url_prefix=url_prefix,
+        url_suffix="about/methodology/cis-scope",
+        breadcrumbs=methodology_breadcrumbs,
+        template_path="methodology/cis_scope.html.j2",
+        title="CIS Control Mapping Scope",
     )
 
     build_about_page(
