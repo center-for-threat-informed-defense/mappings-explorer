@@ -291,6 +291,8 @@ def add_background_colors(attack_version_data):
         "kev": "Known Exploited Vulnerabilities",
         "cri_profile": "CRI Profile",
         "csa_ccm": "CSA CCM",
+        "windows": "Windows Event Logs",
+        "sysmon": "Sysmon",
     }
     max_score = 0
     min_score = 100000

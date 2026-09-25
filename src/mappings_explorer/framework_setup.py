@@ -31,6 +31,7 @@ class ExternalControl:
     has_non_mappables = True
     has_non_mappable_comments = False
     additional_artifacts = {}
+    hide_capability_groups = False
 
 
 class Capability:
@@ -51,6 +52,14 @@ class CapabilityGroup:
     capabilities = []
     num_capabilities = 0
     description = ""
+
+
+class LogField:
+    id = ""
+    label = ""
+    description = ""
+    mappings = []
+    num_mappings = 0
 
 
 def load_projects():
@@ -438,6 +447,56 @@ def load_projects():
     csa_ccm.has_non_mappable_comments = False
     csa_ccm.has_non_mappables = False
 
+    windows = ExternalControl()
+    windows.id = "windows"
+    windows.label = "Windows"
+    windows.description = "description saying that this is part of STP"
+    windows.attackDomains = ["Enterprise"]
+    windows.attackDomain = csa_ccm.attackDomains[0]
+    windows.attackVersions = ["19.1"]
+    windows.attackVersion = csa_ccm.attackVersions[0]
+    windows.versions = ["1.0"]
+    windows.validVersions = [
+        ("1.0", "19.1", "Enterprise"),
+    ]
+    windows.mappings = []
+    windows.resources = [
+        {
+            "link": "about/methodology/stp-methodology",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
+            "label": "Windows (External link)",
+            "external": True,
+        },
+    ]
+    windows.hide_capability_groups = True
+    sysmon = ExternalControl()
+    sysmon.id = "sysmon"
+    sysmon.label = "Sysmon"
+    sysmon.description = "description saying that this is part of STP"
+    sysmon.attackDomains = ["Enterprise"]
+    sysmon.attackDomain = csa_ccm.attackDomains[0]
+    sysmon.attackVersions = ["19.1"]
+    sysmon.attackVersion = csa_ccm.attackVersions[0]
+    sysmon.versions = ["15"]
+    sysmon.validVersions = [
+        ("15", "19.1", "Enterprise"),
+    ]
+    sysmon.mappings = []
+    sysmon.resources = [
+        {
+            "link": "about/methodology/stp-methodology",
+            "label": "Mapping Methodology",
+        },
+        {
+            "link": "http://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4",
+            "label": "Sysmon (External link)",
+            "external": True,
+        },
+    ]
+
     projects = [
         csa_ccm,
         cri_profile,
@@ -449,6 +508,8 @@ def load_projects():
         gcp,
         aws,
         m365,
+        windows,
+        sysmon,
     ]
     return projects
 

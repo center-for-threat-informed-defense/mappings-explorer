@@ -2,10 +2,8 @@ name: Build Website
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
 
-# If another web build starts for the same branch, cancel the previous build. This
-# protects us from two builds trying to upload at the same time and clobbering each
-# other.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -20,92 +18,291 @@ jobs:
   build_preview:
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       LOGURU_LEVEL: DEBUG
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Set branch name
+        shell: bash
+        run: |
+          RAW_BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          SANITIZED_BRANCH="${RAW_BRANCH//\//-}"
+          echo "BRANCH_NAME=$SANITIZED_BRANCH" >> "$GITHUB_ENV"
+          echo "Using branch name: $SANITIZED_BRANCH"
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.9"
+
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
-            version: 1.8.5
-      - name: Collect Error Logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs
-          path: /home/runner/work/**/*.log
+          version: "1.8.5"
+
       - name: Add Poetry to PATH
-        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+        shell: bash
+        run: echo "$HOME/.poetry/bin" >> "$GITHUB_PATH"
+
       - name: Install dependencies
+        shell: bash
         run: poetry install
+
       - name: Build Web Site
-        run: poetry run build-mappings-explorer --url-prefix 'https://mappingsexplorer.z13.web.core.windows.net/${{env.BRANCH_NAME}}/'
+        shell: bash
+        run: poetry run build-mappings-explorer --url-prefix "https://mappingsexplorer.z13.web.core.windows.net/${BRANCH_NAME}/"
+
       - name: Export Download Artifacts
-        run: poetry run mapex export ${GITHUB_WORKSPACE}/mappings ${GITHUB_WORKSPACE}/output/data
+        shell: bash
+        run: poetry run mapex export "${GITHUB_WORKSPACE}/mappings" "${GITHUB_WORKSPACE}/output/data"
+
       - name: Compress Artifacts
+        shell: bash
         run: zip -rq output.zip output/
+
       - name: Upload Web Site
         uses: actions/upload-artifact@v4
         with:
           name: mapex-web-preview
           path: output.zip
 
-  # Publish to Azure blob only on PRs, not main.
   azure_blob:
-    if: github.ref_name != 'main'
     needs: build_preview
     runs-on: ubuntu-latest
     env:
       AZURE_STORAGE_ACCOUNT: mappingsexplorer
       AZURE_STORAGE_SAS_TOKEN: ${{ secrets.AZURE_SAS_TOKEN }}
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
       STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+      PREVIEW_MAX_HTML_BYTES: "20000000"
+
     steps:
-      - uses: actions/setup-node@v3
+      - name: Set branch name
+        shell: bash
+        run: |
+          RAW_BRANCH="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          SANITIZED_BRANCH="${RAW_BRANCH//\//-}"
+          echo "BRANCH_NAME=$SANITIZED_BRANCH" >> "$GITHUB_ENV"
+          echo "Using branch name: $SANITIZED_BRANCH"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - run: npm install -g staticrypt
+
+      - name: Install Staticrypt
+        shell: bash
+        run: npm install -g staticrypt@3.4.0
+
+      - name: Show tool versions
+        shell: bash
+        run: |
+          node --version
+          npm --version
+          staticrypt --version || true
+
       - name: Download Web Site
         uses: actions/download-artifact@v4
         with:
           name: mapex-web-preview
           path: .
+
       - name: Decompress Artifacts
+        shell: bash
         run: unzip -q output.zip
-      - env:
-          STATICRYPT_PASS: ${{ secrets.STATICRYPT_PASS }}
+
+      - name: Inspect raw output tree
+        shell: bash
+        run: |
+          echo "Overall size:"
+          du -sh output || true
+          echo
+          echo "Directory count:"
+          find output -type d | wc -l || true
+          echo "File count:"
+          find output -type f | wc -l || true
+          echo "HTML file count:"
+          find output -type f -name '*.html' | wc -l || true
+          echo
+          echo "Largest HTML files:"
+          find output -type f -name '*.html' -printf '%s\t%p\n' | sort -nr | head -20 || true
+
+      - name: Prepare HTML-only tree for encryption
+        shell: bash
+        run: |
+          rm -rf output-html encrypted-html html-files.txt skipped-html.txt
+          mkdir -p output-html encrypted-html
+          python <<'PY'
+          import html
+          import os
+          import shutil
+          from pathlib import Path
+
+          src = Path("output")
+          dst = Path("output-html")
+          dst.mkdir(parents=True, exist_ok=True)
+
+          max_bytes = int(os.environ["PREVIEW_MAX_HTML_BYTES"])
+          skipped = []
+          copied = 0
+
+          for path in src.rglob("*.html"):
+              rel = path.relative_to(src)
+              out = dst / rel
+              out.parent.mkdir(parents=True, exist_ok=True)
+              size = path.stat().st_size
+
+              if size > max_bytes:
+                  skipped.append((size, str(rel)))
+                  out.write_text(
+                      f"""<!doctype html>
+                        <html lang="en">
+                        <head>
+                          <meta charset="utf-8">
+                          <title>Preview omitted</title>
+                          <meta name="viewport" content="width=device-width, initial-scale=1">
+                        </head>
+                        <body>
+                          <h1>Preview omitted for oversized page</h1>
+                          <p>This PR preview omits this page because the generated HTML is too large for Staticrypt to process reliably in GitHub Actions.</p>
+                          <p><strong>Path:</strong> <code>{html.escape(str(rel))}</code></p>
+                          <p><strong>Size:</strong> {size} bytes</p>
+                        </body>
+                        </html>
+                        """,
+                      encoding="utf-8",
+                  )
+              else:
+                  shutil.copy2(path, out)
+
+              copied += 1
+
+          with open("skipped-html.txt", "w", encoding="utf-8") as f:
+              for size, rel in skipped:
+                  f.write(f"{size}\t{rel}\n")
+
+          print(f"Prepared {copied} HTML files")
+          print(f"Skipped {len(skipped)} oversized HTML files")
+          PY
+
+      - name: Inspect HTML-only tree
+        shell: bash
+        run: |
+          echo "output-html size:"
+          du -sh output-html || true
+          echo
+          echo "output-html directory count:"
+          find output-html -type d | wc -l || true
+          echo "output-html file count:"
+          find output-html -type f | wc -l || true
+          echo "output-html HTML count:"
+          find output-html -type f -name '*.html' | wc -l || true
+          echo
+          echo "Largest HTML files in output-html:"
+          find output-html -type f -name '*.html' -printf '%s\t%p\n' | sort -nr | head -20 || true
+          echo
+          echo "Skipped oversized HTML files:"
+          if [ -s skipped-html.txt ]; then
+            cat skipped-html.txt
+          else
+            echo "None"
+          fi
+
+      - name: Upload skipped HTML manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: skipped-html-manifest
+          path: skipped-html.txt
+          if-no-files-found: ignore
+
+      - name: Build HTML file list
+        shell: bash
+        run: find output-html -type f -name '*.html' | LC_ALL=C sort > html-files.txt
+
+      - name: Encrypt HTML files one at a time
+        shell: bash
+        env:
           NODE_OPTIONS: --max-old-space-size=8192
-        run: >
-          staticrypt --remember 30 --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
-            --password $STATICRYPT_PASS --short \
-            --template-title "Mappings Explorer (branch: '${{ env.BRANCH_NAME }}/*'" \
-            --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
-            --template-color-primary "#6241c5" \
-            --template-color-secondary "#b2b2b2" \
-            --template-button "Log In" \
-            -r output/
-      - name: Ensure StatiCrypt ran # StatiCrypt will fail without warning; verify it created a directory
-        run: test -d encrypted
-      - name: Copy encrypted HTML files
-        run: rsync -Ir -v --include='*.html' --exclude='*.*' encrypted/output .
-      - name: Set the branch name
-        run: mv output ${{ env.BRANCH_NAME }}
+        run: |
+          count=0
+          while IFS= read -r file; do
+            if [ -z "$file" ]; then
+              continue
+            fi
+
+            rel="${file#output-html/}"
+            count=$((count + 1))
+            echo "[$count] Encrypting $rel"
+
+            tmpdir="$(mktemp -d)"
+            mkdir -p "$tmpdir/in/$(dirname "$rel")"
+            cp "$file" "$tmpdir/in/$rel"
+
+            (
+              cd "$tmpdir"
+              staticrypt -r in \
+                --remember 30 \
+                --salt c0c22fdf0cd9d2a099db9c90ca4a58bf \
+                --password "$STATICRYPT_PASS" \
+                --short \
+                --template-title "Mappings Explorer (branch: '${BRANCH_NAME}')" \
+                --template-instructions "The contents of this site are marked TLP:AMBER:CTID-R&D:22-80. Do not share with unauthorized individuals." \
+                --template-color-primary "#6241c5" \
+                --template-color-secondary "#b2b2b2" \
+                --template-button "Log In"
+            )
+
+            if [ ! -f "$tmpdir/encrypted/in/$rel" ]; then
+              echo "Expected encrypted file not found for $rel"
+              find "$tmpdir" -maxdepth 5 -type f | sort || true
+              exit 1
+            fi
+
+            mkdir -p "encrypted-html/$(dirname "$rel")"
+            cp "$tmpdir/encrypted/in/$rel" "encrypted-html/$rel"
+            rm -rf "$tmpdir"
+          done < html-files.txt
+
+      - name: Inspect encrypted HTML tree
+        shell: bash
+        run: |
+          echo "encrypted-html size:"
+          du -sh encrypted-html || true
+          echo
+          echo "encrypted-html file count:"
+          find encrypted-html -type f -name '*.html' | wc -l || true
+
+      - name: Overlay encrypted HTML files back into output
+        shell: bash
+        run: rsync -Ir encrypted-html/ output/
+
+      - name: Rename output folder to branch name
+        shell: bash
+        run: |
+          rm -rf "$BRANCH_NAME"
+          mv output "$BRANCH_NAME"
+
       - name: Install Azure CLI
+        shell: bash
         run: pip install azure-cli==2.76.0
+
       - name: Delete old blobs
-        run: az storage blob delete-batch -s '$web' --pattern '${{ env.BRANCH_NAME }}/*'
+        shell: bash
+        run: az storage blob delete-batch -s '$web' --pattern "${BRANCH_NAME}/*"
+
       - name: Upload to blob storage
-        run: az storage blob upload-batch -s . --pattern '${{ env.BRANCH_NAME }}/*' -d '$web'
-      - uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
+        shell: bash
+        run: az storage blob upload-batch -s . --pattern "${BRANCH_NAME}/*" -d '$web'
+
+      - name: Comment on PR with preview link
+        uses: actions/github-script@v7
         with:
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env['BRANCH_NAME']}/`,
+              body: `This PR has been published to https://mappingsexplorer.z13.web.core.windows.net/${process.env.BRANCH_NAME}/`,
             })

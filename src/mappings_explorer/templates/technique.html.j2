@@ -22,7 +22,7 @@
     </div>
   </section>
   {% for item in split_mappings %}
-  {% if item.mappings|length > 0 %}
+  {% if item.mappings | length > 0 %}
     <section class="mapping-table">
       <div class="container">
         <div class="row justify-content-left">
@@ -35,7 +35,18 @@
             </div>
           </div>
           <div class="col-12">
-              {{ macros.table(standard_headers, info_box_headers, item.mappings, url_prefix, table_max_count, full_link, full_size, attack_version, attack_domain, previous_link) }}
+            {{  macros.table(
+                item.standard_headers,
+                item.info_box_headers,
+                item.mappings,
+                url_prefix,
+                table_max_count,
+                full_link,
+                full_size,
+                attack_version,
+                attack_domain,
+                previous_link
+            ) }}
           </div>
         </div>
       </div>
