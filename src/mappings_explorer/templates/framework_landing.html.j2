@@ -93,7 +93,7 @@
 {% include "_set_versions.html.j2" %}
 {% endblock set_version %}
 {% endif %}
-{% if capability_groups %}
+{% if capability_groups and not hide_capability_groups %}
 <section id="groups-table" class="mapping-table">
   <div class="container">
     <div class="row justify-content-left">

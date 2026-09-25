@@ -31,6 +31,7 @@ class ExternalControl:
     has_non_mappables = True
     has_non_mappable_comments = False
     additional_artifacts = {}
+    hide_capability_groups = False
 
 
 class Capability:
@@ -469,6 +470,7 @@ def load_projects():
             "external": True,
         },
     ]
+    windows.hide_capability_groups = True
     sysmon = ExternalControl()
     sysmon.id = "sysmon"
     sysmon.label = "Sysmon"

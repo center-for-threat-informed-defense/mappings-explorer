@@ -724,6 +724,7 @@ def build_external_landing(
         full_link="",
         full_size=0,
         log_field_slug=log_field_slug,
+        hide_capability_groups=project.hide_capability_groups,
     )
     stream.dump(str(output_path))
 
@@ -761,6 +762,7 @@ def build_external_landing(
             full_link="all-data.html",
             full_size=full_size,
             log_field_slug=log_field_slug,
+            hide_capability_groups=project.hide_capability_groups,
         )
         stream.dump(str(output_path))
 
