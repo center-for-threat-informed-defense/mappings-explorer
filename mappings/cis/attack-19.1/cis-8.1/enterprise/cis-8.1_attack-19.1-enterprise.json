@@ -9,7 +9,7 @@
         "contact": null,
         "organization": null,
         "creation_date": "08/31/2026",
-        "last_update": "09/10/2026",
+        "last_update": "09/25/2026",
         "mapping_types": {
             "mitigates": {
                 "name": "mitigates",
@@ -42,6 +42,656 @@
         }
     },
     "mapping_objects": [
+        {
+            "capability_id": "CIS-13.7",
+            "capability_description": "Deploy a Host-Based Intrusion Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1547.006",
+            "attack_object_name": "Kernel Modules and Extensions",
+            "capability_group": "CIS-13",
+            "comments": "Adversaries load malicious kernel modules or extensions for persistence or privilege escalation. Host-based security solutions can monitor module loading, detect known rootkits or unauthorized kernel modifications, and block or alert on suspicious kernel-extension activity.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls13/#137-deploy-a-host-based-intrusion-prevention-solution"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-13.7",
+            "capability_description": "Deploy a Host-Based Intrusion Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.006",
+            "attack_object_name": "Python",
+            "capability_group": "CIS-13",
+            "comments": "Adversaries use Python interpreters and scripts to execute malicious commands and payloads. EDR/HIPS can monitor anomalous Python execution, unusual parent-child relationships, network activity, and other suspicious behaviors, and can block or quarantine malicious payloads.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls13/#137-deploy-a-host-based-intrusion-prevention-solution"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-13.7",
+            "capability_description": "Deploy a Host-Based Intrusion Prevention Solution",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.001",
+            "attack_object_name": "PowerShell",
+            "capability_group": "CIS-13",
+            "comments": "Adversaries use PowerShell to execute commands, scripts, and payloads. EDR/HIPS can monitor PowerShell process behavior, command lines, script activity, child processes, and suspicious follow-on actions, and can block or quarantine malicious activity",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls13/#137-deploy-a-host-based-intrusion-prevention-solution"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-13.4",
+            "capability_description": "Perform Traffic Filtering Between Network Segments",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1187",
+            "attack_object_name": "Forced Authentication",
+            "capability_group": "CIS-13",
+            "comments": " Adversaries coerce systems into authenticating to attacker-controlled SMB or WebDAV resources in order to capture credential material. This control requires traffic filtering between network segments, which can block or tightly restrict SMB and WebDAV communications to untrusted or unauthorized destinations, directly preventing the outbound authentication path required by the technique.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls13/#134-perform-traffic-filtering-between-network-segments"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.8",
+            "capability_description": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1563.002",
+            "attack_object_name": "RDP Hijacking",
+            "capability_group": "CIS-12",
+            "comments": "Dedicated administrative workstations and segmented management networks reduce who can reach hosts carrying privileged RDP sessions and separate administrative activity from ordinary user networks. This does not prevent hijacking after the admin host itself is compromised, but it directly reduces network exposure of those sessions.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#128-establish-and-maintain-dedicated-computing-resources-for-all-administrative-work"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.8",
+            "capability_description": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1563",
+            "attack_object_name": "Remote Service Session Hijacking",
+            "capability_group": "CIS-12",
+            "comments": "Adversaries hijack existing SSH, RDP, or other remote-management sessions. Keeping administrative sessions on dedicated, segmented resources reduces exposure of those sessions to compromised user endpoints and limits unnecessary network paths to privileged remote services. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#128-establish-and-maintain-dedicated-computing-resources-for-all-administrative-work"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.8",
+            "capability_description": "Establish and Maintain Dedicated Computing Resources for All Administrative Work",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1557",
+            "attack_object_name": "Adversary-in-the-Middle",
+            "capability_group": "CIS-12",
+            "comments": "Dedicated administrative resources are explicitly segmented from the primary enterprise network and denied Internet access. That separation reduces opportunities for adversaries on user or Internet-connected networks to position themselves between administrative systems and managed infrastructure, directly shrinking the attack surface for interception of privileged sessions.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#128-establish-and-maintain-dedicated-computing-resources-for-all-administrative-work"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1599.001",
+            "attack_object_name": "Network Address Translation Traversal",
+            "capability_group": "CIS-12",
+            "comments": "This sub-technique concerns traversing or bypassing network boundaries implemented through NAT and perimeter devices. Secure architecture using explicit trust zones, controlled routing, segmentation, and restricted inbound/outbound paths directly constrains the network reachability needed for NAT traversal.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1599",
+            "attack_object_name": "Network Boundary Bridging",
+            "capability_group": "CIS-12",
+            "comments": "This technique directly concerns adversaries compromising network devices to bypass segmentation and route prohibited traffic across trust boundaries. Because this control requires network segmentation and least privilege, designing and maintaining strong trust boundaries directly constrains the traffic paths the adversary is attempting to bridge. ATT&CK describes the technique specifically in terms of bypassing segmentation and boundary-device policy",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1557",
+            "attack_object_name": "Adversary-in-the-Middle",
+            "capability_group": "CIS-12",
+            "comments": "ATT&CK recommends network segmentation, traffic filtering, restricted access to network infrastructure, encryption, and network intrusion prevention for AiTM activity. Segmentation under this control reduces the network scope in which an adversary can position itself between communicating systems and restricts access to infrastructure capable of reshaping traffic",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.004",
+            "attack_object_name": "Network Device Authentication",
+            "capability_group": "CIS-12",
+            "comments": "This sub-technique specifically targets authentication on network devices. ATT&CK recommends MFA, privileged-account restriction, TACACS+/RADIUS, and vendor hardening; a secure network architecture that isolates the management plane and applies least-privilege administrative access directly constrains the access needed to modify network-device authentication.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1542.005",
+            "attack_object_name": "TFTP Boot",
+            "capability_group": "CIS-12",
+            "comments": "Adversaries can manipulate network-device boot configuration to load an unauthorized image from a malicious TFTP server. ATT&CK recommends limiting access to administrative interfaces, restricting insecure protocols, AAA/command authorization, and network-level filtering which are mechanisms that can be implemented as part of a secure management-plane architecture under this control.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1200",
+            "attack_object_name": "Hardware Additions",
+            "capability_group": "CIS-12",
+            "comments": "Adversaries may introduce unauthorized devices onto the network. ATT&CK recommends network access controls such as 802.1X, device certificates, and restricting DHCP to registered devices; these are architectural admission-control mechanisms that directly prevent unauthorized hardware from communicating with trusted systems.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1059.008",
+            "attack_object_name": "Network Device CLI",
+            "capability_group": "CIS-12",
+            "comments": " Adversaries use network-device CLIs to execute commands and modify device behavior. ATT&CK recommends AAA, least privilege, and command authorization such as TACACS+ to restrict which administrative commands users may execute. Because this control explicitly requires least privilege within the network architecture, this is a strong mapping when that architecture includes management-plane and command-access controls.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-12.2",
+            "capability_description": "Establish and Maintain a Secure Network Architecture",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1021.002",
+            "attack_object_name": "SMB/Windows Admin Shares",
+            "capability_group": "CIS-12",
+            "comments": "Adversaries use SMB and administrative shares for remote access and lateral movement. A secure network architecture that enforces segmentation and least-privilege network access can restrict SMB connectivity to approved source/destination relationships, directly reducing the network reachability required for unauthorized lateral movement.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls12/#122-establish-and-maintain-a-secure-network-architecture"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-11.3",
+            "capability_description": "Protect Recovery Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "CIS-11",
+            "comments": "Adversaries collect data directly from improperly secured or compromised cloud storage. When backup or recovery data is stored in cloud object storage, this safeguard requires that recovery data be protected with controls such as encryption and separation, directly reducing unauthorized access to those backup objects",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls11/#113-protect-recovery-data"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-11.3",
+            "capability_description": "Protect Recovery Data",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1003.003",
+            "attack_object_name": "NTDS",
+            "capability_group": "CIS-11",
+            "comments": "Adversaries may obtain NTDS.dit from Domain Controller backups rather than directly from a live Domain Controller and extract credential material from the database. This safeguard requires recovery data to receive equivalent protections, including encryption or separation, which directly restricts unauthorized access to Domain Controller backup copies containing NTDS data",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls11/#113-protect-recovery-data"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-11.2",
+            "capability_description": "Perform Automated Backups",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1490",
+            "attack_object_name": "Inhibit System Recovery",
+            "capability_group": "CIS-11",
+            "comments": "Adversaries inhibit recovery by deleting or disabling backups, snapshots, recovery catalogs, and related recovery mechanisms. This safeguard requires automated, recurring backups of in-scope enterprise assets, ensuring that recoverable copies are created on a regular basis and thereby reducing the effectiveness of attempts to eliminate available recovery data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls11/#112-perform-automated-backups"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-10.1",
+            "capability_description": "Deploy and Maintain Anti-Malware Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "CIS-10",
+            "comments": "Anti-malware software can detect and quarantine malicious files or commands that use encoding, packing, encryption, or other obfuscation techniques to evade detection. ",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls10/#101-deploy-and-maintain-anti-malware-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-10.7",
+            "capability_description": "Use Behavior-Based Anti-Malware Software",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1027",
+            "attack_object_name": "Obfuscated Files or Information",
+            "capability_group": "CIS-10",
+            "comments": "Behavior-based anti-malware can identify malicious activity after obfuscated content is decoded, unpacked, interpreted, or executed, allowing detection or blocking based on runtime behavior rather than relying solely on static signatures.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls10/#107-use-behavior-based-anti-malware-software"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-7.7",
+            "capability_description": "Remediate Detected Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1602",
+            "attack_object_name": "Data from Configuration Repository",
+            "capability_group": "CIS-7",
+            "comments": "When known vulnerabilities affect network-device software, system images, or management components that expose configuration repositories, applying patches or supported software upgrades removes those weaknesses and reduces vulnerability dependent access to configuration data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls7/#77-remediate-detected-vulnerabilities"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-7.7",
+            "capability_description": "Remediate Detected Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1602.001",
+            "attack_object_name": "SNMP (MIB Dump)",
+            "capability_group": "CIS-7",
+            "comments": "When known vulnerabilities affect SNMP-enabled network-device software or system images, applying patches or supported software upgrades removes those weaknesses and reduces opportunities to collect MIB data through vulnerable implementations.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls7/#77-remediate-detected-vulnerabilities"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-7.7",
+            "capability_description": "Remediate Detected Vulnerabilities",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1602.002",
+            "attack_object_name": "Network Device Configuration Dump",
+            "capability_group": "CIS-7",
+            "comments": "When known vulnerabilities affect network-device software or system images used to expose or retrieve device configurations, applying patches or supported software upgrades removes those weaknesses and reduces exploit-based opportunities to obtain configuration data.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls7/#77-remediate-detected-vulnerabilities"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1003.006",
+            "attack_object_name": "DCSync",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict Active Directory replication permissions, including Replicating Directory Changes rights, to authorized administrative roles. Enforcing these permissions limits which identities can perform the directory replication operations required for DCSync.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1021.002",
+            "attack_object_name": "SMB/Windows Admin Shares",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict local administrator membership and administrative-share access to authorized roles. These enforced permissions limit the accounts that can use SMB and Windows administrative shares for remote administration and lateral movement.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1021.006",
+            "attack_object_name": "Windows Remote Management",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict WinRM accounts and permissions to authorized administrative roles. Enforced WinRM permissions limit which identities can use the service for remote execution and lateral movement.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1218.007",
+            "attack_object_name": "Msiexec",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict execution of Msiexec.exe to privileged accounts or groups with an authorized operational need. Enforcing this entitlement reduces opportunities for adversaries to abuse Windows Installer for proxy execution.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can limit permissions to create, modify, or publish platform and container images to authorized roles. Enforcing these permissions reduces an adversary's ability to implant malicious images within enterprise repositories.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1538",
+            "attack_object_name": "Cloud Service Dashboard",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can enforce least-privilege dashboard visibility so users can access only the cloud resources required for their assigned roles. This limits the information and resources exposed through a cloud service dashboard when an account is compromised.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1548.002",
+            "attack_object_name": "Bypass User Account Control",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict local administrator membership to authorized roles. Removing unnecessary administrative rights reduces the accounts from which adversaries can leverage UAC bypass techniques to obtain elevated privileges.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1548.003",
+            "attack_object_name": "Sudo and Sudo Caching",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can enforce which users or groups are authorized for sudo privileges and which elevated commands they may run. Restricting these entitlements limits the identities and operations available for privilege elevation through sudo.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.8",
+            "capability_description": "Define and Maintain Role-Based Access Control",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.004",
+            "attack_object_name": "Network Device Authentication",
+            "capability_group": "CIS-6",
+            "comments": "Role-based access control (RBAC) can restrict network-device administrator privileges to narrowly scoped authorized roles. Enforcing least-privilege administrative access reduces the identities capable of modifying network-device authentication mechanisms.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#68-define-and-maintain-role-based-access-control"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-10.5",
+            "capability_description": "Enable Anti-Exploitation Features",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1211",
+            "attack_object_name": "Exploitation for Stealth",
+            "capability_group": "CIS-10",
+            "comments": "Security anti-exploitation tools and applications that look for behavior used during exploitation such as Windows Defender Exploit Guard (WDEG) and the Enhanced Mitigation Experience Toolkit (EMET) can be used to help mitigate some exploitation behavior to evade detection.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls10/#105-enable-anti-exploitation-features"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-10.3",
+            "capability_description": "Disable Autorun and Autoplay for Removable Media",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1092",
+            "attack_object_name": "Communication Through Removable Media",
+            "capability_group": "CIS-10",
+            "comments": "Disable Autoruns if it is unnecessary to help prevent adversaries from performing command and control between compromised hosts on potentially disconnected networks by using removable media to transfer commands from system to system.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls10/#103-disable-autorun-and-autoplay-for-removable-media"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.008",
+            "attack_object_name": "Network Provider DLL",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to register malicious network provider dynamic link libraries (DLLs) to capture cleartext user credentials during the authentication process.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.007",
+            "attack_object_name": "Hybrid Identity",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials (e.g., hybrid identity environment admin, synchronization service, cloud tenant) to patch, modify, or otherwise backdoor cloud authentication processes",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.006",
+            "attack_object_name": "Multi-Factor Authentication",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to disable or modify MFA mechanisms and enable persistent access to compromised accounts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.005",
+            "attack_object_name": "Reversible Encryption",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials (e.g., domain/identity policy administrator, local security policy administrator) to abuse Active Directory encryption properties and gain access to credentials on Windows systems.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.004",
+            "attack_object_name": "Network Device Authentication",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to bypass of native authentication mechanisms for tenant/device management accounts on network devices.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.003",
+            "attack_object_name": "Pluggable Authentication Modules",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to modify pluggable authentication modules (PAM) to access user credentials or enable otherwise unwarranted access to accounts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.002",
+            "attack_object_name": "Password Filter DLL",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to register malicious password filter dynamic link libraries (DLLs) into the authentication process.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.001",
+            "attack_object_name": "Domain Controller Authentication",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to patch the authentication process on a domain controller to bypass the typical authentication mechanisms and enable access to accounts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556",
+            "attack_object_name": "Modify Authentication Process",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to modify authentication processes or mechanisms.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110.004",
+            "attack_object_name": "Credential Stuffing",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to help prevent adversaries from using credentials obtained from breach dumps to gain access to admin accounts through credential overlap.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110.003",
+            "attack_object_name": "Password Spraying",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to help prevent adversaries from using commonly used passwords to attempt to acquire valid admin credentials.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110.002",
+            "attack_object_name": "Password Cracking",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to help prevent adversaries from using password cracking to recover admin credentials.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110.001",
+            "attack_object_name": "Password Guessing",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to help prevent adversaries from using password guessing to access admin accounts.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1110",
+            "attack_object_name": "Brute Force",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to help prevent adversaries from brute forcing admin credentials.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1072",
+            "attack_object_name": "Software Deployment Tools",
+            "capability_group": "CIS-6",
+            "comments": "Implement multi-factor authentication (MFA) for administrative accounts to provide system and access isolation for critical network systems.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "CIS-6.5",
+            "capability_description": "Require MFA for Administrative Access",
+            "mapping_type": "mitigates",
+            "attack_object_id": "T1556.009",
+            "attack_object_name": "Conditional Access Policies",
+            "capability_group": "CIS-6",
+            "comments": "Integrate multi-factor authentication (MFA) for administrative accounts to reduce the risk of adversaries using compromised privileged credentials to disable or modify conditional access policies.",
+            "references": [
+                "https://cas.docs.cisecurity.org/en/latest/source/Controls6/#65-require-mfa-for-administrative-access"
+            ],
+            "status": "complete"
+        },
         {
             "capability_id": "CIS-2.5",
             "capability_description": "Allowlist Authorized Software",
