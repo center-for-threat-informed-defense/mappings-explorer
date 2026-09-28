@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://ctid.mitre.org/mappings/">
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://ctid.mitre.org/mappings/">
+  </noscript>
+  <title>Mappings Explorer has moved</title>
+  <script>
+    const legacyPrefix = "/mappings-explorer";
+    let path = window.location.pathname;
+    if (path.startsWith(legacyPrefix)) {
+      path = path.slice(legacyPrefix.length);
+    }
+    if (!path.startsWith("/")) {
+      path = "/" + path;
+    }
+    window.location.replace(
+      "https://ctid.mitre.org/mappings" +
+      path + window.location.search + window.location.hash
+    );
+  </script>
+</head>
+<body>
+  <p>
+    Mappings Explorer has moved to
+    <a href="https://ctid.mitre.org/mappings/">ctid.mitre.org</a>.
+  </p>
+</body>
+</html>

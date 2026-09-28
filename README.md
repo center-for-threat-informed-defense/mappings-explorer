@@ -25,7 +25,7 @@ To get started, visit the project website.
 
 | Resource                                                                                     | Description                                                                                                 |
 | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| [Mappings Explorer](https://center-for-threat-informed-defense.github.io/mappings-explorer/) | A website to navigate, explore, search, and download our ATT&CK mappings.                                   |
+| [Mappings Explorer](https://ctid.mitre.org/mappings/)                                       | A website to navigate, explore, search, and download our ATT&CK mappings.                                   |
 | [Mappings Editor](https://github.com/center-for-threat-informed-defense/mappings-editor)     | An interactive, web-based tool for creating your own mappings. (This tool is available as a *public beta*.) |
 
 ## Getting Involved
@@ -74,6 +74,23 @@ Please submit [issues](https://github.com/center-for-threat-informed-defense/map
 any technical questions/concerns or contact
 [ctid@mitre.org](mailto:ctid@mitre.org?subject=Question%20about%20Mappings%20Explorer)
 directly for more general inquiries.
+
+## Deployment
+
+Production is hosted at <https://ctid.mitre.org/mappings/> from a dedicated
+Azure Storage static website behind the CTID Azure Front Door. A successful build from
+this repository's `main` branch deploys directly to the storage account using GitHub
+OIDC and the `production` environment.
+
+The environment provides `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and
+`AZURE_SUBSCRIPTION_ID` secrets, plus `AZURE_STORAGE_ACCOUNT` and
+`AZURE_STATIC_WEBSITE_ENDPOINT` variables. The Azure identity has Storage Blob Data
+Contributor access only to the dedicated Mappings Explorer storage account.
+Production and PR previews use separate storage accounts; production synchronization
+must never target the preview account named `mappingsexplorer`.
+
+After the Front Door route is verified, manually run the **Deploy GitHub Pages
+Redirect** workflow to replace the legacy Pages site with a small client-side redirect.
 
 ## Notice
 

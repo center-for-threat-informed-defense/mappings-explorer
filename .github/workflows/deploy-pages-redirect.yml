@@ -1,0 +1,38 @@
+name: Deploy GitHub Pages Redirect
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_front_door:
+        description: Confirm the CTID Front Door route is live and verified
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && inputs.confirm_front_door
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Redirect Site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: github-pages-redirect/
+      - name: Deploy Redirect Site
+        id: deployment
+        uses: actions/deploy-pages@v4
