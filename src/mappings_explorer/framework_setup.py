@@ -454,9 +454,9 @@ def load_projects():
     cis.attackDomain = csa_ccm.attackDomains[0]
     cis.attackVersions = ["19.1"]
     cis.attackVersion = csa_ccm.attackVersions[0]
-    cis.versions = ["8.1"]
+    cis.versions = ["8.1.2"]
     cis.validVersions = [
-        ("8.1", "19.1", "Enterprise"),
+        ("8.1.2", "19.1", "Enterprise"),
     ]
     cis.mappings = []
     cis.resources = [
