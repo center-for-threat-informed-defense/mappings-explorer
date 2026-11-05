@@ -208,11 +208,12 @@ def load_projects():
         behaviors that are most important for their environment."""
     aws.attackDomains = ["Enterprise"]
     aws.attackDomain = aws.attackDomains[0]
-    aws.attackVersions = ["16.1", "9.0"]
-    aws.versions = ["12.12.2024", "09.21.2021"]
+    aws.attackVersions = ["19.1", "16.1", "9.0"]
+    aws.versions = ["11.06.2026", "12.12.2024", "09.21.2021"]
     aws.validVersions = [
         ("09.21.2021", "9.0", "Enterprise"),
         ("12.12.2024", "16.1", "Enterprise"),
+        ("11.06.2026", "19.1", "Enterprise"),
     ]
     aws.mappings = []
     aws.resources = [

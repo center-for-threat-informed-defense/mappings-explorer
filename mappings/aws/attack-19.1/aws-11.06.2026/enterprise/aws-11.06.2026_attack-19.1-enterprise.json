@@ -1,0 +1,86 @@
+{
+    "metadata": {
+        "mapping_version": "",
+        "technology_domain": "enterprise",
+        "attack_version": "19.1",
+        "mapping_framework": "aws",
+        "mapping_framework_version": "11/06/2026",
+        "author": null,
+        "contact": "ctid@mitre.org",
+        "organization": null,
+        "creation_date": "09/21/2021",
+        "last_update": "11/06/2026",
+        "mapping_types": {
+            "technique_scores": {
+                "name": "technique_scores",
+                "description": ""
+            }
+        },
+        "capability_groups": {
+            "aws_rds": "AWS RDS",
+            "aws_config": "AWS Config",
+            "aws_s3": "AWS S3",
+            "amazon_guardduty": "Amazon GuardDuty",
+            "aws_shield": "AWS Shield",
+            "aws_resource_access_manager": "AWS Resource Access Manager",
+            "aws_iot_device_defender": "AWS IoT Device Defender",
+            "aws_organizations": "AWS Organizations",
+            "aws_cloudendure_disaster_recovery": "AWS CloudEndure Disaster Recovery",
+            "aws_key_management_service": "AWS Key Management Service",
+            "amazon_inspector": "Amazon Inspector",
+            "aws_cloudtrail": "AWS CloudTrail",
+            "aws_directory_service": "AWS Directory Service",
+            "aws_artifact": "AWS Artifact",
+            "amazon_virtual_private_cloud": "Amazon Virtual Private Cloud",
+            "amazon_cognito": "Amazon Cognito",
+            "aws_web_application_firewall": "AWS Web Application Firewall",
+            "amazon_detective": "Amazon Detective",
+            "aws_cloudwatch": "AWS CloudWatch",
+            "aws_security_hub": "AWS Security Hub",
+            "aws_firewall_manager": "AWS Firewall Manager",
+            "aws_identity_and_access_management": "AWS Identity and Access Management",
+            "aws_certificate_manager": "AWS Certificate Manager",
+            "aws_secrets_manager": "AWS Secrets Manager",
+            "aws_network_firewall": "AWS Network Firewall",
+            "aws_single_sign-on": "AWS Single Sign-On",
+            "aws_audit_manager": "AWS Audit Manager",
+            "aws_cloudhsm": "AWS CloudHSM",
+            "aws_security_lake": "AWS Security Lake",
+            "amazon_macie": "Amazon Macie",
+            "aws_iam_access_analyzer": "AWS IAM Access Analyzer"
+        }
+    },
+    "mapping_objects": [
+        {
+            "capability_id": "amazon_cognito",
+            "capability_description": "Amazon Cognito",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1078",
+            "attack_object_name": "Valid Accounts",
+            "capability_group": "amazon_cognito",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "This control provides partial protection for one of this technique's sub-techniques and a few of its procedure examples resulting in an overall Minimal protection score.",
+            "references": [
+                "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
+                "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
+                "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1078.004",
+            "attack_object_name": "Cloud Accounts",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1078",
+            "comments": "AWS IAM Access Analyzer has the ability to alert and block accounts where credentials were found to be compromised elsewhere (compromised credential protection). The service also detects unusual sign-in activity, such as sign-in attempts from new locations and devices and can either prompt users for additional verification or block the sign-in request.  There was insufficient detail on the operation of these capabilities and therefore a conservative assessment of a Partial score has been assigned.",
+            "references": [],
+            "status": "complete"
+        }
+    ]
+}
