@@ -8,7 +8,7 @@
         "author": null,
         "contact": "ctid@mitre.org",
         "organization": null,
-        "creation_date": "09/21/2021",
+        "creation_date": "11/05/2026",
         "last_update": "11/06/2026",
         "mapping_types": {
             "technique_scores": {
@@ -45,28 +45,941 @@
             "aws_single_sign-on": "AWS Single Sign-On",
             "aws_audit_manager": "AWS Audit Manager",
             "aws_cloudhsm": "AWS CloudHSM",
-            "aws_security_lake": "AWS Security Lake",
-            "amazon_macie": "Amazon Macie",
             "aws_iam_access_analyzer": "AWS IAM Access Analyzer"
         }
     },
     "mapping_objects": [
         {
+            "capability_id": "aws_security_hub",
+            "capability_description": "AWS Security Hub",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1552",
+            "attack_object_name": "Unsecured Credentials",
+            "capability_group": "aws_security_hub",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "AWS Security Hub CSPM identifies supported configurations that expose credentials and recommends remediation, including removing cleartext credentials from CodeBuild configurations and requiring IMDSv2 on EC2 instances. Applying these recommendations can reduce opportunities to obtain unsecured credentials.",
+            "references": [
+                "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_security_hub",
+            "capability_description": "AWS Security Hub",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1552.005",
+            "attack_object_name": "Cloud Instance Metadata API",
+            "capability_group": "aws_security_hub",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1552",
+            "comments": "AWS Security Hub CSPM identifies EC2 instances that do not require IMDSv2 and recommends enabling it. Applying this recommendation can reduce credential exposure through metadata requests exploiting SSRF and misconfigured proxies. Security Hub does not enforce the change by default.",
+            "references": [
+                "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "amazon_cognito",
             "capability_description": "Amazon Cognito",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1078",
-            "attack_object_name": "Valid Accounts",
+            "attack_object_id": "T1671",
+            "attack_object_name": "Cloud Application Integration",
             "capability_group": "amazon_cognito",
-            "score_category": "protect",
+            "score_category": "respond",
             "score_value": "minimal",
-            "comments": "This control provides partial protection for one of this technique's sub-techniques and a few of its procedure examples resulting in an overall Minimal protection score.",
+            "comments": "Amazon Cognito can revoke Cognito-issued tokens used to sustain unauthorized application access, interrupting a malicious integration when the relying application enforces revocation.",
             "references": [
-                "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html",
-                "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-compromised-credentials.html",
-                "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html"
+                "https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html"
             ],
             "status": "complete"
+        },
+        {
+            "capability_id": "amazon_inspector",
+            "capability_description": "Amazon Inspector",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1690",
+            "attack_object_name": "Prevent Command History Logging",
+            "capability_group": "amazon_inspector",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "Although AWS Inspector cannot prevent changes to HISTCONTROL, HISTFILE, and HISTFILESIZE environment variables, in this senario it can only detect weak security controls and flag those for remediation. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "amazon_inspector",
+            "capability_description": "Amazon Inspector",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1687",
+            "attack_object_name": "Exploitation for Defense Impairment",
+            "capability_group": "amazon_inspector",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "comments": "Inspector does perform scanning for software vulnerabilites and unintended network exposure. However this capability is limited to Amazon EC2 instances, container images in Amazon ECR, and Lamba functions. Although Inspector itself cannot take any remediation actions, it can handoff to other remediation workflow tools for action. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "amazon_inspector",
+            "capability_description": "Amazon Inspector",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1204.005",
+            "attack_object_name": "Malicious Library",
+            "capability_group": "amazon_inspector",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "related_score": "T1204",
+            "comments": "Amazon Inspector incorporates intelligence on known-malicious npm and PyPI packages into findings for supported workloads that consume those dependencies. This can reveal malicious libraries introduced through software installation, subject to package and scanning coverage.",
+            "references": [
+                "https://docs.aws.amazon.com/inspector/latest/user/security-research.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685",
+            "attack_object_name": "Disable or Modify Tools",
+            "capability_group": "aws_config",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "AWS Config can detect configuration changes to supported AWS security resources and identify disabled or modified security controls through configured compliance rules\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1219.002",
+            "attack_object_name": "Remote Desktop Software",
+            "capability_group": "aws_config",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1219",
+            "comments": "AWS Network Firewall can restrict or interrupt unauthorized remote desktop and RMM communications by enforcing network policies against relevant ports, protocols, IP addresses, and known remote access service infrastructure. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1219.001",
+            "attack_object_name": "IDE Tunneling",
+            "capability_group": "aws_config",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1219",
+            "comments": "AWS Network Firewall can reduce the impact of IDE tunneling abuse by restricting or blocking network connections used to establish and maintain unauthorized remote development tunnels. \n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1213.006",
+            "attack_object_name": "Databases",
+            "capability_group": "aws_config",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1213",
+            "comments": "Amazon RDS provides access control capabilities that directly reduce the likelihood and scope of unauthorized database collection\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1204.005",
+            "attack_object_name": "Malicious Library",
+            "capability_group": "aws_config",
+            "score_category": "detect",
+            "score_value": "minimal",
+            "related_score": "T1204",
+            "comments": "Amazon Inspector can analyzes public package registries such as npm and PyPI and incorporates confirmed malicious package intelligence into Inspector findings.\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1176.001",
+            "attack_object_name": "Browser Extensions",
+            "capability_group": "aws_config",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1176",
+            "comments": "AWS Network Firewall can restrict communication with known malicious extension update or C2 endpoints when traffic traverses an inspected VPC.\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_config",
+            "capability_description": "AWS Config",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1684.002",
+            "attack_object_name": "Email Spoofing",
+            "capability_group": "aws_config",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1684",
+            "comments": "Custom AWS Config compliance rules and remediation workflows can check and help correct SPF, DKIM, and DMARC settings for domains using Route 53. These configurations reduce some domain-spoofing opportunities when receiving mail systems enforce them.",
+            "references": [
+                "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_directory_service",
+            "capability_description": "AWS Directory Service",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1674",
+            "attack_object_name": "Input Injection",
+            "capability_group": "aws_directory_service",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "AWS Managed Microsoft AD can distribute Windows Group Policies that restrict unauthorized HID device installation or execution on domain-joined computers. Those enforcement policies reduce selected input-injection paths but do not cover all simulated keystroke attacks.",
+            "references": [
+                "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_identity_and_access_management",
+            "capability_description": "AWS Identity and Access Management",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685",
+            "attack_object_name": "Disable or Modify Tools",
+            "capability_group": "aws_identity_and_access_management",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "AWS IAM can prevent unauthorized disabling or modification of AWS security tools by enforcing least-privilege policies and explicit deny permissions for security-sensitive API operations. Protection is limited to AWS services and resources governed by IAM.\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_identity_and_access_management",
+            "capability_description": "AWS Identity and Access Management",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1677",
+            "attack_object_name": "Poisoned Pipeline Execution",
+            "capability_group": "aws_identity_and_access_management",
+            "score_category": "respond",
+            "score_value": "partial",
+            "comments": "AWS IAM restricts cloud actions available to compromised CI/CD execution roles, limiting unauthorized access or follow-on damage after malicious pipeline code runs. ",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_iot_device_defender",
+            "capability_description": "AWS IoT Device Defender",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685",
+            "attack_object_name": "Disable or Modify Tools",
+            "capability_group": "aws_iot_device_defender",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "comments": "AWS IoT Device Defender can flag abnormal IoT device communications that may signal compromised or impaired protections and support configured mitigation actions. This can limit ongoing impact in monitored IoT environments but does not prevent arbitrary host-level tool tampering.",
+            "references": [
+                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/device-defender-detect.html",
+                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/dd-mitigation-actions.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_iot_device_defender",
+            "capability_description": "AWS IoT Device Defender",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685.002",
+            "attack_object_name": "Disable or Modify Cloud Log",
+            "capability_group": "aws_iot_device_defender",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1685",
+            "comments": "AWS IoT Device Defender's logging-disabled audit check identifies disabled AWS IoT logging and can support a configured action to re-enable it. This detects a narrow form of cloud-log impairment affecting AWS IoT telemetry.",
+            "references": [
+                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/audit-chk-logging-disabled.html",
+                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/dd-mitigation-actions.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685.002",
+            "attack_object_name": "Disable or Modify Cloud Log",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1685",
+            "comments": "AWS IoT Device Defender can respond to disabled AWS IoT logging by applying the ENABLE_IOT_LOGGING mitigation action to restore logging in Amazon CloudWatch following an audit finding.\n",
+            "references": [],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1176.001",
+            "attack_object_name": "Browser Extensions",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1176",
+            "comments": "AWS Network Firewall can interrupt a malicious browser extension's connections to known command-and-control or update destinations when that traffic traverses an inspected VPC. This limits the extension's operational impact without removing its persistence.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1219.001",
+            "attack_object_name": "IDE Tunneling",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1219",
+            "comments": "AWS Network Firewall can block the network destinations and traffic patterns used by unauthorized IDE tunnels, disrupting an adversary's remote-control connection. Effectiveness depends on traffic passing through the firewall and distinguishable tunnel indicators.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1219.002",
+            "attack_object_name": "Remote Desktop Software",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "partial",
+            "related_score": "T1219",
+            "comments": "AWS Network Firewall can block or restrict traffic associated with unauthorized remote desktop and RMM sessions over inspected VPC connections. Interrupting those sessions limits an attacker's continued interactive access, although permitted encrypted services may remain usable.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1219.003",
+            "attack_object_name": "Remote Access Hardware",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1219",
+            "comments": "When IP-based remote access hardware communicates through an inspected AWS VPC path, Network Firewall can block its remote-control connections to adversary infrastructure. Separate out-of-band or local network links remain outside its coverage.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1537",
+            "attack_object_name": "Transfer Data to Cloud Account",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "AWS Network Firewall can mitigate transfer of data to an adversary-controlled cloud account by restricting outbound traffic to unauthorized cloud service destinations. Partial because protection depends on network-based filtering restrictions to prohibit data transfers to untrusted VPCs.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1496.002",
+            "attack_object_name": "Bandwidth Hijacking",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1496",
+            "comments": "AWS Network Firewall can restrict unauthorized outbound destinations, ports, and protocols to disrupt adversaries’ use of compromised workloads for proxy services, scanning, or botnet traffic.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1496.001",
+            "attack_object_name": "Compute Hijacking",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "related_score": "T1496",
+            "comments": "AWS Network Firewall active threat defense can block connections to known cryptocurrency mining pools, disrupting adversaries’ use of compromised compute resources for pool-based mining.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1496",
+            "attack_object_name": "Resource Hijacking",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "AWS Network Firewall can mitigate resource hijacking by blocking traffic associated with unauthorized resource use. Active threat defense blocks connections to known cryptocurrency mining pools and botnet infrastructure, while configured rules can restrict unauthorized outbound communications.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1190",
+            "attack_object_name": "Exploit Public-Facing Application",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "AWS Network Firewall can mitigate exploitation of public-facing applications by inspecting inbound traffic and blocking requests that match intrusion prevention rules or known exploit signatures.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1105",
+            "attack_object_name": "Ingress Tool Transfer",
+            "capability_group": "aws_network_firewall",
+            "score_category": "protect",
+            "score_value": "significant",
+            "comments": "AWS Network Firewall active threat defense can block connections to known malicious domains, IP addresses, and URLs associated with malware staging infrastructure. This can prevent adversaries from transferring tools or payloads into the environment from those destinations.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1686.002",
+            "attack_object_name": "Network Device Firewall",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1686",
+            "comments": "If an adversary weakens a network-device firewall, independently configured AWS Network Firewall rules can still restrict traffic routed through inspected VPC paths. This limits the connectivity gained from the device-firewall change without preventing or reversing that change.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-rules-engines.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_network_firewall",
+            "capability_description": "AWS Network Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1686.003",
+            "attack_object_name": "Windows Host Firewall",
+            "capability_group": "aws_network_firewall",
+            "score_category": "respond",
+            "score_value": "minimal",
+            "related_score": "T1686",
+            "comments": "When an attacker disables the Windows host firewall, AWS Network Firewall can continue blocking disallowed connections that traverse its VPC inspection points. This limits the impact of host-firewall tampering without restoring the Windows firewall.",
+            "references": [
+                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-rules-engines.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_rds",
+            "capability_description": "AWS RDS",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1213.006",
+            "attack_object_name": "Databases",
+            "capability_group": "aws_rds",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1213",
+            "comments": "Amazon RDS supports network access restrictions, authentication, and database-level permissions that limit unauthorized access to sensitive records. These protections constrain database collection but do not prevent misuse of permissions already granted to a compromised identity.",
+            "references": [
+                "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_s3",
+            "capability_description": "AWS S3",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685.005",
+            "attack_object_name": "Clear Windows Event Logs",
+            "capability_group": "aws_s3",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1685",
+            "comments": "When Windows Event Logs are forwarded to Amazon S3, S3 Object Lock can preserve protected off-host copies even if an adversary clears the local logs. This reduces loss of evidence but does not prevent the host-level clearing action.",
+            "references": [
+                "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_web_application_firewall",
+            "capability_description": "AWS Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1027.017",
+            "attack_object_name": "SVG Smuggling",
+            "capability_group": "aws_web_application_firewall",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1027",
+            "comments": "Configured AWS WAF rules can block HTTP requests carrying suspicious SVG content to protected applications, preventing certain SVG-smuggling uploads. ",
+            "references": [
+                "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_web_application_firewall",
+            "capability_description": "AWS Web Application Firewall",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1667",
+            "attack_object_name": "Email Bombing",
+            "capability_group": "aws_web_application_firewall",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "comments": "AWS WAF rate-based and bot-management rules can limit automated submissions to protected signup or registration endpoints that generate unwanted emails. This is related to email bombing through those AWS-hosted applications, not messages sent from unrelated services.",
+            "references": [
+                "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"
+            ],
+            "status": "complete"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1098.001",
+            "attack_object_name": "Additional Cloud Credentials",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "IAM Access Analyzer can protect against adversaries adding credentials to cloud accounts to maintain access. Its policy generation helps administrators remove unneeded permissions to create access keys or other credentials. It is scored as Partial because generated policies are based only on observed CloudTrail activity, and must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries manipulating accounts to maintain and/or elevate access to victim systems through its external access analysis and access policy generation. It is scored as Partial because findings are not generated in real time and must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "detect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "IAM Access Analyzer can detect adversaries modifying IAM roles to maintain access to cloud environments. It generates a finding when a role trust policy is changed to allow external principals to assume the role. It is scored as Partial because it detects only changes that grant access to principals outside the zone of trust, not permissions added within the account, and generates findings periodically or when triggered rather than in real time.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1098",
+            "attack_object_name": "Account Manipulation",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can detect adversaries manipulating accounts to maintain and/or elevate access to victim systems through its external access analysis. It is scored as Partial because findings are not generated in real time and must be acted upon by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1686.001",
+            "attack_object_name": "Cloud Firewall",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1686",
+            "comments": "IAM Access Analyzer can protect against adversaries modifying cloud firewalls to allow access or evade defenses. Its policy generation helps administrators remove unneeded permissions to modify security groups and network ACLs. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685",
+            "attack_object_name": "Disable or Modify Tools",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries disabling or modifying security tools or applications through policy generation, which helps administrators remove unneeded permissions. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685.002",
+            "attack_object_name": "Disable or Modify Cloud Log",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1685",
+            "comments": "IAM Access Analyzer can protect against adversaries disabling or modifying cloud logging to evade detection. Its policy generation helps administrators remove unneeded permissions to stop, modify, or delete AWS CloudTrail trails and other logs. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1666",
+            "attack_object_name": "Modify Cloud Resource Hierarchy",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries modifying the cloud resource hierarchy to evade defenses. Its policy generation helps administrators remove unneeded AWS Organizations permissions, such as leaving the organization or creating accounts. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1490",
+            "attack_object_name": "Inhibit System Recovery",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries deleting backups and snapshots to prevent recovery. Its policy generation helps administrators remove unneeded permissions to delete backups, snapshots, and recovery points. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1486",
+            "attack_object_name": "Data Encrypted for Impact",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries encrypting cloud data to disrupt availability. Its policy generation helps administrators remove unneeded permissions to use SSE-C on S3 buckets or overwrite stored objects. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1485.001",
+            "attack_object_name": "Lifecycle-Triggered Deletion",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1485",
+            "comments": "IAM Access Analyzer can protect against adversaries modifying storage lifecycle policies to delete data. Its policy generation helps administrators remove unneeded permissions to change S3 bucket lifecycle configurations. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1485",
+            "attack_object_name": "Data Destruction",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries destroying data and resources in cloud environments. Its policy generation helps administrators remove unneeded permissions to delete storage objects, buckets, and other resources. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1525",
+            "attack_object_name": "Implant Internal Image",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries implanting malicious images in cloud environments to maintain persistence. Its policy generation helps administrators remove unneeded permissions to register or modify machine and container images. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1537",
+            "attack_object_name": "Transfer Data to Cloud Account",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "detect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can detect adversaries transferring data to cloud accounts they control. It generates a finding when a snapshot, S3 bucket, or other supported resource is newly shared with an external account. It is scored as Partial because it covers only supported resource types and generates findings periodically or when triggered rather than in real time.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578.001",
+            "attack_object_name": "Create Snapshot",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1578",
+            "comments": "IAM Access Analyzer can protect against adversaries creating snapshots to bypass restrictions or access data. Its policy generation helps administrators remove unneeded permissions to create, copy, or share snapshots. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578.002",
+            "attack_object_name": "Create Cloud Instance",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1578",
+            "comments": "IAM Access Analyzer can protect against adversaries creating cloud instances to evade defenses. Its policy generation helps administrators remove unneeded permissions to launch instances. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578.003",
+            "attack_object_name": "Delete Cloud Instance",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1578",
+            "comments": "IAM Access Analyzer can protect against adversaries deleting cloud instances to remove evidence of their activity. Its policy generation helps administrators remove unneeded permissions to terminate instances. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578.004",
+            "attack_object_name": "Revert Cloud Instance",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1578",
+            "comments": "IAM Access Analyzer can protect against adversaries reverting cloud instances to remove evidence of their activity. Its policy generation helps administrators remove unneeded permissions to restore or replace instance volumes. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578.005",
+            "attack_object_name": "Modify Cloud Compute Configurations",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1578",
+            "comments": "IAM Access Analyzer can protect against adversaries modifying cloud compute configurations, such as quotas or allowed regions, to support malicious activity. Its policy generation helps administrators remove unneeded permissions to change these settings. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1548.005",
+            "attack_object_name": "Temporary Elevated Cloud Access",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1548",
+            "comments": "IAM Access Analyzer can protect against adversaries abusing role assumption or role passing to gain elevated access. Its policy generation helps administrators remove unneeded permissions such as sts:AssumeRole and iam:PassRole. It is scored as Partial because generated policies are based only on observed CloudTrail activity, and must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1651",
+            "attack_object_name": "Cloud Administration Command",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries abusing cloud administration services to run commands on virtual machines. Its policy generation helps administrators remove unneeded permissions for services such as AWS Systems Manager Run Command. It is scored as Partial because it reports findings and recommends policies without applying them.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1059.009",
+            "attack_object_name": "Cloud API",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1059",
+            "comments": "IAM Access Analyzer can protect against adversaries using cloud APIs to run malicious commands. Its policy generation helps administrators restrict identities to the API actions they actually use. It is scored as Partial because generated policies are based only on observed CloudTrail activity, and must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1098.003",
+            "attack_object_name": "Additional Cloud Roles",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1098",
+            "comments": "IAM Access Analyzer can protect against adversaries adding roles or permissions to maintain access. Its external access analysis identifies role trust policies modified to grant access to external principals, and its policy generation helps administrators remove unneeded IAM write permissions. It is scored as Partial because findings are not generated in real time, and generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1648",
+            "attack_object_name": "Serverless Execution",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries abusing serverless functions to execute code. It identifies AWS Lambda functions that external principals can invoke, and its policy generation helps administrators remove unneeded permissions to create, modify, or invoke functions. It is scored as Partial because it reports findings and recommends policies without applying them.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1555.006",
+            "attack_object_name": "Cloud Secrets Management Stores",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "related_score": "T1555",
+            "comments": "IAM Access Analyzer can protect against adversaries retrieving credentials from cloud secrets management stores. It identifies AWS Secrets Manager secrets and AWS KMS keys shared with external accounts, so administrators can remove unintended access. It is scored as Partial because it reports findings without restricting access itself.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1199",
+            "attack_object_name": "Trusted Relationship",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries abusing trusted third-party relationships to access cloud resources. It identifies role trust policies and resource policies that grant access to principals outside the configured zone of trust, so administrators can remove unintended relationships. It is scored as Partial because findings are not generated in real time and access is not restricted automatically.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
         },
         {
             "capability_id": "aws_iam_access_analyzer",
@@ -78,9 +991,56 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1078",
-            "comments": "AWS IAM Access Analyzer has the ability to alert and block accounts where credentials were found to be compromised elsewhere (compromised credential protection). The service also detects unusual sign-in activity, such as sign-in attempts from new locations and devices and can either prompt users for additional verification or block the sign-in request.  There was insufficient detail on the operation of these capabilities and therefore a conservative assessment of a Partial score has been assigned.",
-            "references": [],
-            "status": "complete"
+            "comments": "IAM Access Analyzer can protect against adversaries using compromised cloud accounts. It identifies IAM roles that external identities can assume, and its policy generation helps administrators reduce permissions to those used in CloudTrail activity, limiting what a compromised identity can do. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1537",
+            "attack_object_name": "Transfer Data to Cloud Account",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries transferring data to cloud accounts they control. It identifies snapshots, S3 buckets, and other supported resources shared with external accounts, including shares an adversary creates, so administrators can revoke that access. It is scored as Partial because it covers only supported resource types, runs periodically or when triggered rather than in real time, and reports findings without revoking access itself.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1530",
+            "attack_object_name": "Data from Cloud Storage",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries collecting data from cloud storage. It identifies Amazon S3 buckets and other supported storage resources that are shared publicly or with external accounts, so administrators can remove unintended access. It is scored as Partial because it covers only supported resource types, runs periodically or when triggered rather than in real time, and reports findings without restricting access itself.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
+        },
+        {
+            "capability_id": "aws_iam_access_analyzer",
+            "capability_description": "AWS IAM Access Analyzer",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1578",
+            "attack_object_name": "Modify Cloud Compute Infrastructure",
+            "capability_group": "aws_iam_access_analyzer",
+            "score_category": "protect",
+            "score_value": "partial",
+            "comments": "IAM Access Analyzer can protect against adversaries modify a cloud account's compute service infrastructure through policy generation, which helps administrators remove unneeded permissions. It is scored as Partial because generated policies must be reviewed and applied by administrators.",
+            "references": [
+                "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+            ],
+            "status": "final_draft"
         }
     ]
 }
