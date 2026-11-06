@@ -7,7 +7,8 @@ on:
 
 jobs:
   mappings_explorer_tests:
-    runs-on: ubuntu-latest
+    # Python 3.9 binaries are unavailable for Ubuntu 26.04.
+    runs-on: ubuntu-24.04
     steps:
       # Configure Environment
       - name: Checkout repository
@@ -16,7 +17,7 @@ jobs:
         id: setup-python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: "3.9"
 
       # Prepare Poetry
       - name: Attempt Poetry install from cache
