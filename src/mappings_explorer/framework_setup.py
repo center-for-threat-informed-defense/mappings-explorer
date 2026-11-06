@@ -479,15 +479,15 @@ def load_projects():
     cis.has_non_mappables = False
 
     projects = [
-        # cis,
-        # csa_ccm,
-        # cri_profile,
-        # intel_vpro,
-        # nist,
-        # kev,
-        # veris,
-        # azure,
-        # gcp,
+        cis,
+        csa_ccm,
+        cri_profile,
+        intel_vpro,
+        nist,
+        kev,
+        veris,
+        azure,
+        gcp,
         aws,
         m365,
     ]

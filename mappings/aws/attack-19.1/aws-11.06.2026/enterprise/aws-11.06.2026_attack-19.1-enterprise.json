@@ -52,6 +52,22 @@
     },
     "mapping_objects": [
         {
+            "capability_id": "aws_s3",
+            "capability_description": "AWS S3",
+            "mapping_type": "technique_scores",
+            "attack_object_id": "T1685.006",
+            "attack_object_name": "Clear Linux or Mac System Logs",
+            "capability_group": "aws_s3",
+            "score_category": "protect",
+            "score_value": "minimal",
+            "related_score": "T1685",
+            "comments": "When Linux Logs are forwarded off-host through CloudWatch Logs and archived in Amazon S3, S3 Object Lock can preserve copies despite an attacker clearing local logs. This requires configured log forwarding and protected retention. ",
+            "references": [
+                "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+            ],
+            "status": "complete"
+        },
+        {
             "capability_id": "aws_cloudendure_disaster_recovery",
             "capability_description": "AWS CloudEndure Disaster Recovery",
             "mapping_type": "technique_scores",
@@ -920,21 +936,6 @@
             "capability_id": "amazon_cognito",
             "capability_description": "Amazon Cognito",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1671",
-            "attack_object_name": "Cloud Application Integration",
-            "capability_group": "amazon_cognito",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "comments": "Amazon Cognito can revoke Cognito-issued tokens used to sustain unauthorized application access, interrupting a malicious integration when the relying application enforces revocation.",
-            "references": [
-                "https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "amazon_cognito",
-            "capability_description": "Amazon Cognito",
-            "mapping_type": "technique_scores",
             "attack_object_id": "T1078",
             "attack_object_name": "Valid Accounts",
             "capability_group": "amazon_cognito",
@@ -1039,25 +1040,12 @@
             "capability_id": "amazon_inspector",
             "capability_description": "Amazon Inspector",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1690",
-            "attack_object_name": "Prevent Command History Logging",
-            "capability_group": "amazon_inspector",
-            "score_category": "detect",
-            "score_value": "minimal",
-            "comments": "Although AWS Inspector cannot prevent changes to HISTCONTROL, HISTFILE, and HISTFILESIZE environment variables, in this senario it can only detect weak security controls and flag those for remediation. \n",
-            "references": [],
-            "status": "complete"
-        },
-        {
-            "capability_id": "amazon_inspector",
-            "capability_description": "Amazon Inspector",
-            "mapping_type": "technique_scores",
             "attack_object_id": "T1687",
             "attack_object_name": "Exploitation for Defense Impairment",
             "capability_group": "amazon_inspector",
             "score_category": "detect",
             "score_value": "minimal",
-            "comments": "Inspector does perform scanning for software vulnerabilites and unintended network exposure. However this capability is limited to Amazon EC2 instances, container images in Amazon ECR, and Lamba functions. Although Inspector itself cannot take any remediation actions, it can handoff to other remediation workflow tools for action. \n",
+            "comments": "Inspector does perform scanning for software vulnerabilites and unintended network exposure. However this capability is limited to Amazon EC2 instances, container images in Amazon ECR, and Lamba functions. ",
             "references": [],
             "status": "complete"
         },
@@ -1071,39 +1059,10 @@
             "score_category": "detect",
             "score_value": "minimal",
             "related_score": "T1204",
-            "comments": "Amazon Inspector incorporates intelligence on known-malicious npm and PyPI packages into findings for supported workloads that consume those dependencies. This can reveal malicious libraries introduced through software installation, subject to package and scanning coverage.",
+            "comments": "Amazon Inspector incorporates intelligence on known malicious npm and PyPI packages into findings for supported workloads that consume those dependencies. This can reveal malicious libraries introduced through software installation, subject to package and scanning coverage.",
             "references": [
                 "https://docs.aws.amazon.com/inspector/latest/user/security-research.html"
             ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "amazon_inspector",
-            "capability_description": "Amazon Inspector",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1003",
-            "attack_object_name": "OS Credential Dumping",
-            "capability_group": "amazon_inspector",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "The Amazon Inspector Best Practices assessment package can assess security control \"Configure permissions for system directories\" that prevents privilege escalation by local users and ensures only the root account can modify/execute system configuration information and binaries. Amazon Inspector does not directly protect against system modifications rather it just checks to see if security controls are in place which can inform decisions around hardening the system. Furthermore, Amazon Inspector only supports a subset of the sub-techniques for this technique. Due to these things and the fact the security control is only supported for Linux platforms, the score is Minimal. ",
-            "references": [
-                "https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "amazon_inspector",
-            "capability_description": "Amazon Inspector",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1003.007",
-            "attack_object_name": "Proc Filesystem",
-            "capability_group": "amazon_inspector",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1003",
-            "comments": "The Amazon Inspector Best Practices assessment package can assess security control \"Configure permissions for system directories\" that prevents privilege escalation by local users and ensures only the root account can modify/execute system configuration information and binaries. Amazon Inspector does not directly protect against system modifications rather it just checks to see if security controls are in place which can inform decisions around hardening the system. Due to this and the fact the security control is only supported for Linux platforms, the score is Minimal. ",
-            "references": [],
             "status": "complete"
         },
         {
@@ -1800,22 +1759,6 @@
             "comments": "AWS Config can detect configuration changes to supported AWS security resources and identify disabled or modified security controls through configured compliance rules\n",
             "references": [
                 "https://docs.aws.amazon.com/config/latest/developerguide/ec2-managedinstance-applications-required.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_config",
-            "capability_description": "AWS Config",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1684.002",
-            "attack_object_name": "Email Spoofing",
-            "capability_group": "aws_config",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1684",
-            "comments": "Custom AWS Config compliance rules and remediation workflows can check and help correct SPF, DKIM, and DMARC settings for domains using Route 53. These configurations reduce some domain-spoofing opportunities when receiving mail systems enforce them.",
-            "references": [
-                "https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html"
             ],
             "status": "complete"
         },
@@ -2705,21 +2648,6 @@
             "status": "complete"
         },
         {
-            "capability_id": "aws_directory_service",
-            "capability_description": "AWS Directory Service",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1674",
-            "attack_object_name": "Input Injection",
-            "capability_group": "aws_directory_service",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "AWS Managed Microsoft AD can distribute Windows Group Policies that restrict unauthorized HID device installation or execution on domain-joined computers. Those enforcement policies reduce selected input-injection paths but do not cover all simulated keystroke attacks.",
-            "references": [
-                "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html"
-            ],
-            "status": "complete"
-        },
-        {
             "capability_id": "aws_identity_and_access_management",
             "capability_description": "AWS Identity and Access Management",
             "mapping_type": "technique_scores",
@@ -2739,9 +2667,9 @@
             "attack_object_id": "T1677",
             "attack_object_name": "Poisoned Pipeline Execution",
             "capability_group": "aws_identity_and_access_management",
-            "score_category": "respond",
+            "score_category": "protect",
             "score_value": "partial",
-            "comments": "AWS IAM restricts cloud actions available to compromised CI/CD execution roles, limiting unauthorized access or follow-on damage after malicious pipeline code runs. ",
+            "comments": "AWS IAM trust policies can restrict which CI/CD identities and OIDC subjects may assume deployment roles, while least-privilege policies restrict the AWS actions those roles can take. These controls limit unauthorized pipeline access to cloud resources.",
             "references": [
                 "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html"
             ],
@@ -3004,39 +2932,6 @@
             "comments": "AWS Identity and Access Management variables can be used to allow or deny malicious severless execution behavior based on variables like aws:SourceIp and aws:username.",
             "references": [
                 "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_iot_device_defender",
-            "capability_description": "AWS IoT Device Defender",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1685",
-            "attack_object_name": "Disable or Modify Tools",
-            "capability_group": "aws_iot_device_defender",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "comments": "AWS IoT Device Defender can flag abnormal IoT device communications that may signal compromised or impaired protections and support configured mitigation actions. This can limit ongoing impact in monitored IoT environments but does not prevent arbitrary host-level tool tampering.",
-            "references": [
-                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/device-defender-detect.html",
-                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/dd-mitigation-actions.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_iot_device_defender",
-            "capability_description": "AWS IoT Device Defender",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1685.002",
-            "attack_object_name": "Disable or Modify Cloud Log",
-            "capability_group": "aws_iot_device_defender",
-            "score_category": "detect",
-            "score_value": "partial",
-            "related_score": "T1685",
-            "comments": "AWS IoT Device Defender's logging-disabled audit check identifies disabled AWS IoT logging and can support a configured action to re-enable it. This detects a narrow form of cloud-log impairment affecting AWS IoT telemetry.",
-            "references": [
-                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/audit-chk-logging-disabled.html",
-                "https://docs.aws.amazon.com/iot-device-defender/latest/devguide/dd-mitigation-actions.html"
             ],
             "status": "complete"
         },
@@ -3481,61 +3376,13 @@
             "capability_id": "aws_network_firewall",
             "capability_description": "AWS Network Firewall",
             "mapping_type": "technique_scores",
-            "attack_object_id": "T1176.001",
-            "attack_object_name": "Browser Extensions",
-            "capability_group": "aws_network_firewall",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "related_score": "T1176",
-            "comments": "AWS Network Firewall can interrupt a malicious browser extension's connections to known command-and-control or update destinations when that traffic traverses an inspected VPC. This limits the extension's operational impact without removing its persistence.",
-            "references": [
-                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_network_firewall",
-            "capability_description": "AWS Network Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1219.001",
-            "attack_object_name": "IDE Tunneling",
-            "capability_group": "aws_network_firewall",
-            "score_category": "respond",
-            "score_value": "partial",
-            "related_score": "T1219",
-            "comments": "AWS Network Firewall can block the network destinations and traffic patterns used by unauthorized IDE tunnels, disrupting an adversary's remote-control connection. Effectiveness depends on traffic passing through the firewall and distinguishable tunnel indicators.",
-            "references": [
-                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_network_firewall",
-            "capability_description": "AWS Network Firewall",
-            "mapping_type": "technique_scores",
             "attack_object_id": "T1219.002",
             "attack_object_name": "Remote Desktop Software",
             "capability_group": "aws_network_firewall",
-            "score_category": "respond",
+            "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1219",
-            "comments": "AWS Network Firewall can block or restrict traffic associated with unauthorized remote desktop and RMM sessions over inspected VPC connections. Interrupting those sessions limits an attacker's continued interactive access, although permitted encrypted services may remain usable.",
-            "references": [
-                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_network_firewall",
-            "capability_description": "AWS Network Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1219.003",
-            "attack_object_name": "Remote Access Hardware",
-            "capability_group": "aws_network_firewall",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "related_score": "T1219",
-            "comments": "When IP-based remote access hardware communicates through an inspected AWS VPC path, Network Firewall can block its remote-control connections to adversary infrastructure. Separate out-of-band or local network links remain outside its coverage.",
+            "comments": "AWS Network Firewall can block traffic to known remote desktop software destinations and restrict remote access ports when that traffic passes through inspected VPC paths. This can prevent unauthorized sessions from connecting, but does not cover allowed destinations or traffic that bypasses the firewall.",
             "references": [
                 "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
             ],
@@ -3630,38 +3477,6 @@
             "comments": "AWS Network Firewall active threat defense can block connections to known malicious domains, IP addresses, and URLs associated with malware staging infrastructure. This can prevent adversaries from transferring tools or payloads into the environment from those destinations.",
             "references": [
                 "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_network_firewall",
-            "capability_description": "AWS Network Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1686.002",
-            "attack_object_name": "Network Device Firewall",
-            "capability_group": "aws_network_firewall",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "related_score": "T1686",
-            "comments": "If an adversary weakens a network-device firewall, independently configured AWS Network Firewall rules can still restrict traffic routed through inspected VPC paths. This limits the connectivity gained from the device-firewall change without preventing or reversing that change.",
-            "references": [
-                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-rules-engines.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_network_firewall",
-            "capability_description": "AWS Network Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1686.003",
-            "attack_object_name": "Windows Host Firewall",
-            "capability_group": "aws_network_firewall",
-            "score_category": "respond",
-            "score_value": "minimal",
-            "related_score": "T1686",
-            "comments": "When an attacker disables the Windows host firewall, AWS Network Firewall can continue blocking disallowed connections that traverse its VPC inspection points. This limits the impact of host-firewall tampering without restoring the Windows firewall.",
-            "references": [
-                "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-rules-engines.html"
             ],
             "status": "complete"
         },
@@ -4462,7 +4277,7 @@
             "score_category": "protect",
             "score_value": "partial",
             "related_score": "T1213",
-            "comments": "Amazon RDS supports network access restrictions, authentication, and database-level permissions that limit unauthorized access to sensitive records. These protections constrain database collection but do not prevent misuse of permissions already granted to a compromised identity.",
+            "comments": "Amazon RDS supports IAM database authentication for supported engines, database-level permissions, and VPC network restrictions. These controls can limit unauthorized access to database records, but do not prevent collection by an identity that already has sufficient access.",
             "references": [
                 "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.html"
             ],
@@ -4839,40 +4654,9 @@
             "score_category": "protect",
             "score_value": "minimal",
             "related_score": "T1685",
-            "comments": "When Windows Event Logs are forwarded to Amazon S3, S3 Object Lock can preserve protected off-host copies even if an adversary clears the local logs. This reduces loss of evidence but does not prevent the host-level clearing action.",
+            "comments": "When Windows Event Logs are forwarded off-host through CloudWatch Logs and archived in Amazon S3, S3 Object Lock can preserve copies despite an attacker clearing local logs. This requires configured log forwarding and protected retention. ",
             "references": [
                 "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_web_application_firewall",
-            "capability_description": "AWS Web Application Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1027.017",
-            "attack_object_name": "SVG Smuggling",
-            "capability_group": "aws_web_application_firewall",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "related_score": "T1027",
-            "comments": "Configured AWS WAF rules can block HTTP requests carrying suspicious SVG content to protected applications, preventing certain SVG-smuggling uploads. ",
-            "references": [
-                "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
-            ],
-            "status": "complete"
-        },
-        {
-            "capability_id": "aws_web_application_firewall",
-            "capability_description": "AWS Web Application Firewall",
-            "mapping_type": "technique_scores",
-            "attack_object_id": "T1667",
-            "attack_object_name": "Email Bombing",
-            "capability_group": "aws_web_application_firewall",
-            "score_category": "protect",
-            "score_value": "minimal",
-            "comments": "AWS WAF rate-based and bot-management rules can limit automated submissions to protected signup or registration endpoints that generate unwanted emails. This is related to email bombing through those AWS-hosted applications, not messages sent from unrelated services.",
-            "references": [
-                "https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-rate-based.html"
             ],
             "status": "complete"
         },
