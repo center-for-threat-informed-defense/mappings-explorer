@@ -451,13 +451,14 @@ def load_projects():
      process. The connection of ATT&CK with the CIS Controls empowers threat-informed
      analysis and decision-making for cybersecurity control program design and
      implementation. """
-    cis.attackDomains = ["Enterprise"]
+    cis.attackDomains = ["Enterprise", "Mobile"]
     cis.attackDomain = csa_ccm.attackDomains[0]
     cis.attackVersions = ["19.1"]
     cis.attackVersion = csa_ccm.attackVersions[0]
     cis.versions = ["8.1.2"]
     cis.validVersions = [
         ("8.1.2", "19.1", "Enterprise"),
+        ("8.1.2", "19.1", "Mobile"),
     ]
     cis.mappings = []
     cis.resources = [
